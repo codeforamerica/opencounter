@@ -1,131 +1,158 @@
-Permit ID
-      <input type="text" name="permit_id" placeholder="">
-    </label>
-    <label>
-      Date
-      <input type="text" name="date" placeholder="">
-    </label>
-    <label>
-      Expansion plan check due date
-      <input type="text" name="expansion_plan_check_due_date" placeholder="">
-    </label>
-    <label>
-      Business Street Address
-      <input type="text" name="business_physical_address_street" placeholder="">
-    </label>
-    <label>
-      Business Street Address (Detail)
-      <input type="text" name="business_physical_address_detail" placeholder="">
-    </label>
-    <label>
-      Business City
-      <input type="text" name="business_physical_address_city" placeholder="">
-    </label>
-    <label>
-      Business State
-      <input type="text" name="business_physical_address_state" placeholder="">
-    </label>
-    <label>
-      Business ZIP Code
-      <input type="text" name="business_physical_address_zip" placeholder="">
-    </label>
-    <label>
-      APN
-      <input type="text" name="apn" placeholder="">
-    </label>
-    <label>
-      New Square Footage
-      <input type="text" name="square_footage_new" placeholder="">
-    </label>
-    <label>
-      Role of Applicant
-      <input type="text" name="role_of_applicant" placeholder="">
-    </label>
-    <label>
-      Applicant First Name
-      <input type="text" name="applicant_first_name" placeholder="">
-    </label>
-    <label>
-      Applicant Last Name
-      <input type="text" name="applicant_last_name" placeholder="">
-    </label>
-    <label>
-      Applicant Street Address
-      <input type="text" name="applicant_address_street" placeholder="">
-    </label>
-    <label>
-      Applicant Street Address (Detail)
-      <input type="text" name="applicant_address_detail" placeholder="">
-    </label>
-    <label>
-      Applicant City
-      <input type="text" name="applicant_address_city" placeholder="">
-    </label>
-    <label>
-      Applicant State
-      <input type="text" name="applicant_address_state" placeholder="">
-    </label>
-    <label>
-      Applicant Zip Code
-      <input type="text" name="applicant_address_zip" placeholder="">
-    </label>
-    <label>
-      Applicant Phone Number
-      <input type="text" name="applicant_phone" placeholder="">
-    </label>
-    <label>
-      Applicant Email Address
-      <input type="text" name="applicant_email" placeholder="">
-    </label>
-    <label>
-      Role of Professional
-      <input type="text" name="role_of_professional" placeholder="">
-    </label>
-    <label>
-      Professional's Name
-      <input type="text" name="professional_name" placeholder="">
-    </label>
-    <label>
-      Professional's Address
-      <input type="text" name="professional_address" placeholder="">
-    </label>
-    <label>
-      Professional's Phone Number
-      <input type="text" name="professional_phone" placeholder="">
-    </label>
-    <label>
-      Professional's Email Address
-      <input type="text" name="professional_email" placeholder="">
-    </label>
-    <label>
-      Contractor License Number
-      <input type="text" name="contractor_license_num" placeholder="">
-    </label>
-    <label>
-      Occupancy Class
-      <input type="text" name="occupancy_class" placeholder="">
-    </label>
-    <label>
-      Type of Construction
-      <input type="text" name="type_of_construction" placeholder="">
-    </label>
-    <label>
-      Building Height (feet)
-      <input type="text" name="building_height_feet" placeholder="">
-    </label>
-    <label>
-      Building Height (stories)
-      <input type="text" name="building_height_stories" placeholder="">
-    </label>
-    <label>
-      Sprinklers?
-      <input type="checkbox" name="has_sprinklers"  checked="">
-    </label>
-    <label>
-      Is Quimby Fee?
-      <input type="checkbox" name="has_quimby_fee" checked="">
-    </label>
-    <label>
-      Is TIF Project?
-      <input type="checkbox" name="has_tif_project" checked="">
-    </label>
+================================================================================
+
+  BUILDING PERMIT
+
+================================================================================
+
+----------------------------------------
+  Permit ID
+----------------------------------------
+
+  [permit_id]
+
+----------------------------------------
+  Date
+----------------------------------------
+
+  [date]
+
+----------------------------------------
+  Expansion plan check due date
+----------------------------------------
+
+  [expansion_plan_check_due_date]
+
+----------------------------------------
+  Applicant's Name
+----------------------------------------
+  
+  [applicant_first_name] [applicant_last_name]
+
+----------------------------------------
+  Applicant's Role
+----------------------------------------
+
+  [applicant_role]
+
+----------------------------------------
+  Applicant's Address
+----------------------------------------
+
+  [applicant_address_street]
+  [applicant_address_detail]
+  [applicant_address_city], [applicant_address_state] [applicant_address_zip]
+
+----------------------------------------
+  Applicant's Phone Number
+----------------------------------------
+
+  [applicant_phone]
+
+----------------------------------------
+  Applicant's Email Address
+----------------------------------------
+
+  [applicant_email]
+
+----------------------------------------
+  Professional's Name
+----------------------------------------
+
+  [professional_name]
+
+----------------------------------------
+  Professional's Role
+----------------------------------------
+
+  [professional_role]
+
+----------------------------------------
+  Professional's Address
+----------------------------------------
+
+  [professional_address_street]
+  [professional_address_detail]
+  [professional_address_city], [professional_address_state] [professional_address_zip]
+
+----------------------------------------
+  Professional's Phone Number
+----------------------------------------
+
+  [professional_phone]
+
+
+----------------------------------------
+  Professional's Email Address
+----------------------------------------
+
+  [professional_email]
+
+----------------------------------------
+  Contractor License Number
+----------------------------------------
+
+  [contractor_license_num]
+
+----------------------------------------
+  APN
+----------------------------------------
+
+  [apn]
+
+----------------------------------------
+  Business Address
+----------------------------------------
+
+  [business_physical_address_street]
+  [business_physical_address_detail]
+  [business_physical_address_city], [business_physical_address_state] [business_physical_address_zip]
+
+----------------------------------------
+  New Square Footage
+----------------------------------------
+
+  [square_footage_new]
+
+----------------------------------------
+  Occupancy Class
+----------------------------------------
+
+  [occupancy_class]
+
+----------------------------------------
+  Type of Construction
+----------------------------------------
+
+  [type_of_construction]
+
+----------------------------------------
+  Building Height (feet)
+----------------------------------------
+
+  [building_height_feet]
+
+----------------------------------------
+  Building Height (stories)
+----------------------------------------
+
+  [building_height_stories]
+
+----------------------------------------
+  Sprinklers?
+----------------------------------------
+
+  [has_sprinklers]
+
+----------------------------------------
+  Quimby Fee?
+----------------------------------------
+
+  [has_quimby_fee]
+
+----------------------------------------
+  TIF Project?
+----------------------------------------
+
+  [has_tif_project]
+  
+================================================================================
