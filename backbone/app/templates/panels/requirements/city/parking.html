@@ -9,35 +9,37 @@
     <h3>Downtown Businesses</h3>
     <p>If your business is downtown, you don't need to provide any parking spaces, but you will need to pay a Parking Deficiency Fee.</p>
 
-  <form class="well form-vertical" id="parking-deficiency-form">
-    <label>Business type</label>
-    <select id="proptype_existing" onchange="OC.calculator.parking.downtown.setUnits(this.value)">
-    <option value="APARTMENT">Apartment</option>
-    <option value="DOCTOR">Doctor or Dentist</option>
-    <option value="MERCANTILE">Mercantile / Professional</option>
-    <option value="FURNITURE">Furniture Store</option>
-    <option value="SERVICE">Service Area/Warehouse</option>
-    </select>
-
-    <label>Size of Property</label>
-    <input id="size_existing" name="num_units" type="text"/>&nbsp;<label id="units">units</label>
-
-    <label>Existing Spaces</label>
-    <input id="spaces_existing" name="spaces_existing" type="text" value="0"/>
-
-    <hr/>
-    <div id="docq" style="display:none;">
-    <strong>Doctors and Dentists</strong>
-    <br/>
-    <b>Practitioners:</b><input type="text" id="doctorcount" value="1"/>
-    <hr/>
-    </div>
-    <a class="submit" data-bypass onclick="OC.calculator.parking.downtown.calculate()">Calculate</a>
-
-    <p><span id="calculated">Fill out form to calculate</span> required spaces.</p>
-    <p>Estimated parking deficiency fee: <span id="fee" style="background-color:#fff;"></span></p>
-
-  </form>
+    <form class="calculator" id="parking-deficiency-form">
+      <label>
+        Business type
+        <select id="proptype_existing" onchange="OC.calculator.parking.downtown.setUnits(this.value)">
+          <option value="APARTMENT">Apartment</option>
+          <option value="DOCTOR">Doctor or Dentist</option>
+          <option value="MERCANTILE">Mercantile / Professional</option>
+          <option value="FURNITURE">Furniture Store</option>
+          <option value="SERVICE">Service Area/Warehouse</option>
+        </select>
+      </label>
+      <label>
+        Size of Property
+        <input id="size_existing" name="num_units" type="text"/>&nbsp;<label id="units">units</label>
+      </label>
+      <label>
+        Existing Spaces
+        <input id="spaces_existing" name="spaces_existing" type="text" value="0"/>
+      </label>
+      <div id="docq" style="display:none;">
+        <p>Doctors and Dentists</p>
+        <label>
+          Practitioners
+          <input type="text" id="doctorcount" value="1"/>
+        </label>
+      </div>
+      <a class="submit" data-bypass onclick="OC.calculator.parking.downtown.calculate()">Calculate</a>
+      <p><span id="calculated">Fill out form to calculate</span> required spaces.</p>
+      <p>Estimated parking deficiency fee: <span id="fee" style="background-color:#fff;"></span></p>
+  
+    </form>
   </div>
   <!-- @condition /parking downtown -->
   <hr class="visuallyhidden">
