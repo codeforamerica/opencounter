@@ -48,8 +48,68 @@ If Y:
 
 
 
-
 Let's calculate out some fees that you will incur at this location.
+
+The Traffic Impact Fee is calculated based on the size of the location, as well as its past and proposed use.
+
+		<form class="well form-vertical">
+			<!-- TODO: MAP TOOL -->
+			<label>1) Where is your business located?</label>
+			<input id="address" class="input" onkeydown="checkForEnter(event)" type="text" name="textfield" />
+			<a class="btn btn-info" href="#" onclick="getZoneFromAddress()" style="vertical-align:top;">Submit</a>
+			<br/>
+			<span id="regionOut">Region: </span>
+			<hr/>
+			<label>2) What is the existing property?</label>
+			<select id="proptype_existing">
+				<option value="APARTMENT">Apartment</option>
+				<option value="CONDO">Condo/Townhouse</option>
+				<option value="CONVENIENCE">Convenience Market</option>
+				<option value="HOTEL">Hotel/Motel</option>
+				<option value="MEDICAL">Medical Office</option>
+				<option value="OFFICE">Office</option>
+				<option value="RESIDENTIAL">Residential</option>
+				<option value="RESTAURANT">Restaurant</option>
+				<option value="RETAIL">Retail</option>
+				<option value="RETAIL_LARGE">Retail (Building Materials/Large Items)</option>
+				<option value="SENIOR">Senior Housing</option>
+				<option value="SERVICE">Service Station</option>
+				<option value="SINGLE">Single Family Residence</option>
+				<option value="SRO">SRO</option>
+				<option value="SUPERMARKET">Supermarket</option>
+			</select>
+			<br/>
+			<label>Size of Property</label>
+			<input id="size_existing" type="text"/>&nbsp;<label id="units">(units/square feet)</label>
+			<hr/>
+			<label>3) What is the proposed use?</label>
+			<select id="proptype_proposed">
+				<option value="APARTMENT">Apartment</option>
+				<option value="CONDO">Condo/Townhouse</option>
+				<option value="CONVENIENCE">Convenience Market</option>
+				<option value="HOTEL">Hotel/Motel</option>
+				<option value="MEDICAL">Medical Office</option>
+				<option value="OFFICE">Office</option>
+				<option value="RESIDENTIAL">Residential</option>
+				<option value="RESTAURANT">Restaurant</option>
+				<option value="RETAIL">Retail</option>
+				<option value="RETAIL_LARGE">Retail (Building Materials/Large Items)</option>
+				<option value="SENIOR">Senior Housing</option>
+				<option value="SERVICE">Service Station</option>
+				<option value="SINGLE">Single Family Residence</option>
+				<option value="SRO">SRO</option>
+				<option value="SUPERMARKET">Supermarket</option>
+			</select>
+			<br/>
+			<!--<label>Proposed Size</label>
+			<input id="size_proposed" type="text"/>&nbsp;<label id="units2">(units/square feet)</label>-->
+			<br/>
+			<a id="calcBtn" class="btn btn-info" href="#" onclick="calculate()">Calculate</a>
+			<br/><br/>
+			<span id="calculated">Fill out form to calculate</span> trips.
+			<br/>
+			Estimated TIF: <span id="fee" style="background-color:#fff;"> </span>
+		</form>
 
 Address, sq footage, parking fees, other fees calculator
 
