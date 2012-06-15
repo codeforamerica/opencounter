@@ -1,7 +1,11 @@
 source :rubygems
 
+
+gem 'sinatra'
+gem 'haml'
+
+
 group :production do
-  gem 'sinatra'
 end
 
 group :test, :development do
