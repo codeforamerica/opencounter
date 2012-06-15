@@ -52,6 +52,8 @@ Let's calculate out some fees that you will incur at this location.
 
 The Traffic Impact Fee is calculated based on the size of the location, as well as its past and proposed use.
 
+		
+		<!-- Begin Traffic Impact Fee Calculator -->
 		<form class="well form-vertical">
 			<!-- TODO: MAP TOOL -->
 			<label>1) Where is your business located?</label>
@@ -110,6 +112,80 @@ The Traffic Impact Fee is calculated based on the size of the location, as well 
 			<br/>
 			Estimated TIF: <span id="fee" style="background-color:#fff;"> </span>
 		</form>
+		<!-- End Traffic Impact Fee Calculator -->
+
+The Parking Deficiency fee is determined based on the type and size of your business and the number of parking spaces that you have.
+
+		<!-- Begin Parking Deficiency Calculator -->
+		<form class="well form-vertical">
+			<h3>Downtown Parking District only</h3>
+			<label>Business type</label>
+			<select id="proptype_existing" onchange="setUnits(this.value)">
+				<option value="APARTMENT">Apartment</option>
+				<option value="DOCTOR">Doctor or Dentist</option>
+				<option value="MERCANTILE">Mercantile / Professional</option>
+				<option value="FURNITURE">Furniture Store</option>
+				<option value="SERVICE">Service Area/Warehouse</option>
+			</select>
+			<br/>
+			<label>Size of Property</label>
+			<input id="size_existing" type="text"/>&nbsp;<label id="units">units</label>
+			<br/>
+			<label>Existing Spaces</label>
+			<input id="spaces_existing" type="text" value="0"/>
+			<hr/>
+			<div id="docq" style="display:none">
+				<strong>Doctors and Dentists</strong>
+				<br/>
+				<b>Practitioners:</b><input type="text" id="doctorcount" value="1"/>
+				<hr/>
+			</div>
+			<a id="calcBtn" class="btn btn-info" href="#" onclick="calculate()">Calculate</a>
+			<br/><br/>
+			<span id="calculated">Fill out form to calculate</span> required spaces.
+			<br/>
+			Estimated PDF: <span id="fee" style="background-color:#fff;"> </span>
+		</form>
+		<!-- End Parking Deficiency Calculator -->
+
+
+
+This form will determine the limitations on any signs you may want to have.
+
+		<!-- Begin Sign Calculator -->
+		<form class="well form-vertical">
+			<h3>Freestanding Signs Over Five Feet High</h3>
+			<label>Frontage of Lot</label>
+			<input class="small" id="frontage" type="text" value="0" class="small"/>&nbsp;feet
+			<br/>
+			<label>Parcel Area</label>
+			<input class="small" id="area" type="text" value="0" class="small"/>&nbsp;square feet
+			<br/>
+			<a class="btn btn-info" href="#" onclick="calcFront()">Calculate</a>
+			<br/>
+			<br/>
+			<div style="font-weight:bold;font-size:14pt;">
+				Limited to: <span id="freesignarea">__</span> square feet
+			</div>
+			
+			<br/>
+			<br/>
+			
+			<h3>Wall Signs ( outside residential areas )</h3>
+			<label>Length of Wall</label>
+			<input class="small" id="length_wall" type="text" value="0" class="small"/>&nbsp;feet
+			<label>Area of Wall</label>
+			<input class="small" id="area_wall" type="text" value="0" class="small"/>&nbsp;square feet
+			<br/>
+			<a class="btn btn-info" href="#" onclick="calcWall()">Calculate</a>
+			<br/>
+			<br/>
+			<div style="font-weight:bold;font-size:14pt;">
+				Limited to: <span id="wallsignarea">__</span> square feet
+			</div>
+		</form>
+		<!-- End Sign Calculator -->
+
 
 Address, sq footage, parking fees, other fees calculator
 
