@@ -4,8 +4,8 @@ source :rubygems
 gem 'sinatra'
 #gem 'haml'
 gem 'dm-postgres-adapter'
-gem 'data_mapper'
-gem 'json_pure'
+gem 'data_mapper', '~> 1.2.0'
+#gem 'json_pure'
 
 
 group :production do

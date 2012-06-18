@@ -12,7 +12,6 @@ describe "Application", :type => :request do
     last_response.should be_ok
   end
 
-
   it "should display the welcome on the home page" do
     get '/'
     last_response.body.should have_content('Guide!')
