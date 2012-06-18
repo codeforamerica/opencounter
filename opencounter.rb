@@ -2,10 +2,10 @@ require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
 
+require 'naics_model.rb'
 #DataMapper::Logger.new($stdout, :debug)
 DataMapper.setup(:default, ENV['DATABASE_URL'])
 
-set :haml, :format => :html5
 set :root, File.dirname(__FILE__)
 set :public_folder, 'public'
 enable :static
