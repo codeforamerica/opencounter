@@ -2,8 +2,8 @@ require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
 
-require 'models/naics.rb'
-require 'models/sic.rb'
+require_relative 'lib/models/naics.rb'
+require_relative 'lib/models/sic.rb'
 DataMapper::Logger.new($stdout, :debug)
 DataMapper.setup(:default, ENV['DATABASE_URL'])
 
@@ -16,9 +16,12 @@ get '/' do
 end
 
 get '/code-search' do
-  @naics = Naics.all(:description.like => "%#{params[:query]}%") |
-    Naics.all
-  @sic = Sic.all
+  erb :codes
+end
+
+post '/code-search' do
+  @naics = Naics.all(:description.like => "%#{params[:query]}%")
+  @sic = Sic.all(:description.like => "%#{params[:query]}%")
   erb :codes
 end
 
