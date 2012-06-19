@@ -21,7 +21,7 @@ end
 
 post '/code-search' do
   @naics = Naics.all(:description.like => "%#{params[:query]}%")
-  #@sic = Sic.all(:description.like => "%#{params[:query]}%")
+  @sic = Sic.all(:description.like => "%#{params[:query]}%")
   erb :codes
 end
 

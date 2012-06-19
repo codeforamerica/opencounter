@@ -1,16 +1,24 @@
 
-  <form method="post" action="/code-search">
+<form method="post" action="/code-search">
 
-    <label for="code-search">What type of business?</label>
-    <input type="search" name="query"  placeholder="e.g. yoga studio">
+  <label for="code-search">What type of business?</label>
+  <input type="search" name="query"  placeholder="e.g. yoga studio">
 
-  </form>
+</form>
 
 
-  <% if @naics %>
-    <%@naics.each do |r|%>
+<% if @naics %>
+  <p>NAICS Codes</p>
+  <%@naics.each do |r|%>
     <p><%=r.code%> | <%=r.description%></p>
-    <%end%>
   <%end%>
-  
+<%end%>
+
+<% if @sic %>
+  <p>SIC Codes</p>
+  <%@sic.each do |r|%>
+    <p><%=r.code%> | <%=r.description%></p>
+  <%end%>
+<%end%>
+
 
