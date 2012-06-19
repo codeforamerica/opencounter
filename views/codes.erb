@@ -1,0 +1,16 @@
+
+  <form method="get" action="/code-search">
+
+    <label for="code-search">What type of business?</label>
+    <input type="search" name="query"  placeholder="e.g. yoga studio">
+
+  </form>
+
+
+  <% if @naics %>
+    <%@naics.each do |r|%>
+    <p><%=r.code%> | <%=r.description%></p>
+    <%end%>
+  <%end%>
+  
+

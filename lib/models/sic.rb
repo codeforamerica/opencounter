@@ -5,9 +5,17 @@ DataMapper.setup(:default, ENV['DATABASE_URL'])
 
 class Sic
   include DataMapper::Resource
-  property :code, Serial
+  property :id, Serial
+  property :code, Integer
   property :description, Text
 end
 
+#Sic.auto_migrate!
 DataMapper.finalize
+
+
+#CSV.foreach("data/sic_index.csv") do |row|
+  #sic = Sic.create(:code => row[0], :description => row[1])
+  #sic.save!
+#end
 

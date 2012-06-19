@@ -17,8 +17,9 @@ describe "Application", :type => :request do
     last_response.body.should have_content('Guide!')
   end
 
-  it "should display static pages with redirect" do
-    get '/code-search'
-    last_response.body.should have_content('What type of business?')
+  it "should return search results" do
+    visit '/code-search'
+    page.should have_content('What type of business?')
+    fill_in 'query', :with => 'yoga'
   end
 end

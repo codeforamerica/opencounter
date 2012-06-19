@@ -5,10 +5,12 @@ DataMapper.setup(:default, ENV['DATABASE_URL'])
 
 class Naics
   include DataMapper::Resource
-  property :code, Serial
+  property :id, Serial
+  property :code, Integer
   property :description, Text
 end
 
+#Naics.auto_migrate!
 DataMapper.finalize
 
 #CSV.foreach("data/naics_index.csv") do |row|

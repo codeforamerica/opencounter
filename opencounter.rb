@@ -3,7 +3,8 @@ require 'sinatra'
 require 'data_mapper'
 
 require 'models/naics.rb'
-#DataMapper::Logger.new($stdout, :debug)
+require 'models/sic.rb'
+DataMapper::Logger.new($stdout, :debug)
 DataMapper.setup(:default, ENV['DATABASE_URL'])
 
 set :root, File.dirname(__FILE__)
@@ -15,8 +16,9 @@ get '/' do
 end
 
 get '/code-search' do
-  File.read(File.join('public', 'code-search.html'))
+  @naics = Naics.all(:description.like => "%#{params[:query]}%") |
+    Naics.all
+  @sic = Sic.all
+  erb :codes
 end
 
-post '/code-search' do
-end
