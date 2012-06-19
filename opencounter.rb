@@ -2,7 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
 
-require 'naics_model.rb'
+require 'models/naics.rb'
 #DataMapper::Logger.new($stdout, :debug)
 DataMapper.setup(:default, ENV['DATABASE_URL'])
 
