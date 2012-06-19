@@ -20,6 +20,17 @@ describe "Code-Search", :type => :request do
     page.should have_content('611699')
   end
 
+  it "should ignore case" do
+    visit '/code-search'
+    fill_in 'query', :with => 'Construction'
+    click_on 'Submit'
+    upper = page.html
+    fill_in 'query', :with => 'construction'
+    click_on 'Submit'
+    lower = page.html
+    upper.should eq(lower)
+  end
+
 end
 
 

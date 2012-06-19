@@ -20,8 +20,8 @@ get '/code-search' do
 end
 
 post '/code-search' do
-  @naics = Naics.all(:description.like => "%#{params[:query]}%")
-  @sic = Sic.all(:description.like => "%#{params[:query]}%")
+  @naics = Naics.all(:description.like => "%#{params[:query]}%".upcase)
+  @sic = Sic.all(:description.like => "%#{params[:query]}%".upcase)
   erb :codes
 end
 
