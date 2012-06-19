@@ -15,7 +15,7 @@ DataMapper.finalize
 
 
 #CSV.foreach("data/sic_index.csv") do |row|
-  #sic = Sic.create(:code => row[0], :description => row[1])
+  #sic = Sic.create(:code => row[0], :description => row[1].upcase)
   #sic.save!
 #end
 
