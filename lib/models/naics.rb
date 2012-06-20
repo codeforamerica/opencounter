@@ -10,12 +10,12 @@ class Naics
   property :description, Text
 end
 
-#Naics.auto_migrate!
+Naics.auto_migrate!
 DataMapper.finalize
 
-#CSV.foreach("data/naics_index.csv") do |row|
-  #naics = Naics.create( :code => row[0], :description => row[1].upcase)
-  #naics.save!
-#end
+CSV.foreach("data/naics_index.csv") do |row|
+  naics = Naics.create( :code => row[0], :description => row[1].upcase)
+  naics.save!
+end
 
 
