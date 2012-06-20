@@ -13,7 +13,7 @@ class Naics
     Naics.auto_migrate!
 
     CSV.foreach("data/naics_index.csv") do |row|
-      naics = Naics.create( :code => row[0], :description => row[1])
+      naics = Naics.create( :code => row[0], :description => row[1].upcase)
       naics.save!
     end
   end
