@@ -10,12 +10,12 @@ class Sic
   property :description, Text
 end
 
-Sic.auto_migrate!
+#Sic.auto_migrate!
 DataMapper.finalize
 
 
-CSV.foreach("data/sic_index.csv") do |row|
-  sic = Sic.create(:code => row[0], :description => row[1].upcase)
-  sic.save!
-end
+#CSV.foreach("data/sic_index.csv") do |row|
+  #sic = Sic.create(:code => row[0], :description => row[1])
+  #sic.save!
+#end
 
