@@ -70,6 +70,7 @@ GEM
     mime-types (1.18)
     multi_json (1.0.4)
     nokogiri (1.5.4)
+    pg (0.10.0)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
@@ -111,6 +112,7 @@ DEPENDENCIES
   capybara
   data_mapper (~> 1.2.0)
   dm-postgres-adapter
+  pg (= 0.10.0)
   rack-test
   rspec (~> 2.10.0)
   sinatra

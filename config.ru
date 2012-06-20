@@ -1,2 +1,2 @@
-require 'opencounter.rb'
+require './opencounter'
 run Sinatra::Application

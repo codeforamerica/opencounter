@@ -2,10 +2,9 @@ source :rubygems
 
 
 gem 'sinatra'
-#gem 'haml'
 gem 'dm-postgres-adapter'
 gem 'data_mapper', '~> 1.2.0'
-#gem 'json_pure'
+gem 'pg', '0.10.0'
 
 
 group :production do
@@ -16,5 +15,4 @@ group :test, :development do
   gem 'capybara'
   gem 'webrat'
   gem 'rspec', "~> 2.10.0"
-
 end
