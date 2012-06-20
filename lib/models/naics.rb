@@ -8,15 +8,16 @@ class Naics
   property :id, Serial
   property :code, Integer
   property :description, Text
+
+  def populate
+    Naics.auto_migrate!
+
+    CSV.foreach("data/naics_index.csv") do |row|
+      naics = Naics.create( :code => row[0], :description => row[1])
+      naics.save!
+    end
+  end
 end
 
 DataMapper.finalize
 
-def populate
-  Naics.auto_migrate!
-
-  CSV.foreach("data/naics_index.csv") do |row|
-    naics = Naics.create( :code => row[0], :description => row[1])
-    naics.save!
-  end
-end
