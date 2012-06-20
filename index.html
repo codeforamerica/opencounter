@@ -1,6 +1,7 @@
 <html>
 
 <head>
+  <title>OpenCounter</title>
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -12,7 +13,7 @@
 
       <div class="branding">
         <h1>OpenCounter</h1>
-        <p class="tagline">Set up shop in Santa Cruz.</p>
+        <p>Set up shop in <span class="city">Santa Cruz, CA</span>.</p>
       </div><!-- /.branding -->
 
       <nav>
@@ -22,6 +23,7 @@
           <li><a href="#business">Business</a></li>
           <li><a href="#location">Location</a></li>
           <li><a href="#regulations">Regulations</a></li>
+          <li><a href="#summary">Summary</a></li>
           <li><a href="#nextsteps">Next Steps</a></li>
         </ul>
       </nav>
@@ -30,15 +32,15 @@
     
   </header>
   
-  <div role="main" class="main">
+  <div role="main" class="main" data-spy="scroll">
   
     <a name="welcome"></a>
     <div id="welcome" class="frame">
 
       <div class="content clearfix">
       
-        <h1>Starting a business in Santa Cruz? We&rsquo;re here to help.</h1>
-        <p>This website will guide you through the business permitting process in Santa Cruz, CA. You'll learn about zoning, what regulations and fees apply to you, and get started on the paperwork you'll need to file to open your doors.</p>
+        <h1>Starting a business? We&rsquo;re here to help.</h1>
+        <p>This website will guide you through the business permitting process in Santa Cruz, CA. You'll learn about zoning, what regulations and fees apply to you, and we'll help you get started on -- or, in some cases, complete! -- the paperwork you'll need to file to open your doors.</p>
         <p>(This guide brought to you by the City of Santa Cruz's Planning Department, Economic Development, and Code for America.)</p>
         
       </div><!-- /.content .clearfix -->
@@ -153,9 +155,6 @@
           <p>If your use is not permitted, you should probably ⇣ pick another spot. (Changing the Zoning is very difficult, rare and takes years. It is not recommended, but you are welcome to contact the planning department for more information.)</p>
         </div>
 
-
-        Do you already have a space picked out?
-        
         
         
 Do you already have a place picked out?
@@ -755,6 +754,17 @@ Maybe a checklist?
       <p>A project of Code for America in collaboration with the city of Santa Cruz, CA.</p>
     </div>
   </footer>
+
+<script type="text/javascript" src="assets/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins.js"></script>
+<script type="text/javascript">
+
+(function(){
+  $('nav').scrollspy();
+})();
+
+</script>
+
 
 </body>
 
