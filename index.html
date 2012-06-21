@@ -17,7 +17,7 @@
       </div><!-- /.branding -->
 
       <nav>
-        <ul id="nav">
+        <ul>
           <li><a href="#welcome">Welcome</a></li>
           <li><a href="#people">People</a></li>
           <li><a href="#business">Business</a></li>
@@ -32,14 +32,18 @@
     
   </header>
   
-  <div class="profile">
+  <div id="profile">
     <h1>You've Told Us</h1>
     
     <h3>Your profile</h3>
-    Name
-    Email address
-    Phone number
-    Emergency contact #
+    <h5>Name</h5>
+    <p>Jane Doe</p>
+    <h5>Email address</h5>
+    <p>jane.doe@gmail.com</p>
+    <h5>Phone number</h5>
+    <p>(831) 555-1212</p>
+    <h5>Emergency contact number</h5>
+    <p>(831) 444-1313</p>
     
     <h3>Your business</h3>
     Business name
@@ -69,8 +73,7 @@
     Zoning Clearance
     Business License Application
     
-    
-  </div>
+  </div><!-- /#profile -->
   
   
   <div role="main" class="main">
@@ -79,9 +82,8 @@
 
       <div class="content clearfix">
       
-        <img src="assets/img/open-for-business.jpeg">
-      
         <h1>Starting a business? We&rsquo;re here to help.</h1>
+        <p><img src="assets/img/open-for-business.jpeg"></p>
         <p>This website will guide you through the business permitting process in Santa Cruz, CA. You&#146;ll learn about zoning, what regulations and fees apply to you, and we&#146;ll help you get started on&mdash;or, in some cases, complete!&mdash;the paperwork you&#146;ll need to file to open your doors.</p>
         <p>This guide brought to you by the City of Santa Cruz and Code for America.</p>
         
@@ -135,7 +137,7 @@
       
       </div><!-- /.content .clearfix -->
 
-    </div><!-- /#people -->
+    </section><!-- /#people -->
 
     <section id="business" class="frame">
       
@@ -287,119 +289,98 @@
           <p>NOTE THAT TIF CALCULATIONS FOR DOWNTOWN ARE DIFFERENT THAN TIF CALCULATIONS FOR ELSEWHERE! [Flesh this out]</p>
         </article>
 
+        <article class="tool">
+          <form>
+            <label for="keyword">Check a site's zoning and prior use</label>
+            <input type="text" placeholder="Enter address">
+          </form>
+        </article>
 
-<article class="tool">
-  <form>
-    <label for="keyword">Check a site's zoning and prior use</label>
-    <input type="text" placeholder="Enter address">
-  </form>
-</article>
-
-
-
-Let's calculate out some fees that you will incur at this location.
-
-The Traffic Impact Fee is calculated based on the size of the location, as well as its past and proposed use.
-
-		
-
-
-The Parking Deficiency fee is determined based on the type and size of your business and the number of parking spaces that you have.
-
-		<!-- Begin Parking Deficiency Calculator -->
-		<form class="well form-vertical">
-      <h3>Downtown Parking District only</h3>
-      <label>Business type</label>
-      <select id="proptype_existing" onchange="setUnits(this.value)">
-	      <option value="APARTMENT">Apartment</option>
-	      <option value="DOCTOR">Doctor or Dentist</option>
-	      <option value="MERCANTILE">Mercantile / Professional</option>
-	      <option value="FURNITURE">Furniture Store</option>
-	      <option value="SERVICE">Service Area/Warehouse</option>
-      </select>
-      <br/>
-      <label>Size of Property</label>
-      <input id="size_existing" type="text"/>&nbsp;<label id="units">units</label>
-      <br/>
-      <label>Existing Spaces</label>
-      <input id="spaces_existing" type="text" value="0"/>
-      <hr/>
-      <div id="docq" style="display:none">
-	      <strong>Doctors and Dentists</strong>
-	      <br/>
-	      <b>Practitioners:</b><input type="text" id="doctorcount" value="1"/>
-	      <hr/>
-      </div>
-      <a id="calcBtn" class="btn btn-info" href="#" onclick="calculate()">Calculate</a>
-      <br/><br/>
-      <span id="calculated">Fill out form to calculate</span> required spaces.
-      <br/>
-      Estimated PDF: <span id="fee" style="background-color:#fff;"> </span>
-		</form>
-		<!-- End Parking Deficiency Calculator -->
-
-
-
-This form will determine the limitations on any signs you may want to have.
-
-		<!-- Begin Sign Calculator -->
-		<form class="well form-vertical">
-      <h3>Freestanding Signs Over Five Feet High</h3>
-      <label>Frontage of Lot</label>
-      <input class="small" id="frontage" type="text" value="0" class="small"/>&nbsp;feet
-      <br/>
-      <label>Parcel Area</label>
-      <input class="small" id="area" type="text" value="0" class="small"/>&nbsp;square feet
-      <br/>
-      <a class="btn btn-info" href="#" onclick="calcFront()">Calculate</a>
-      <br/>
-      <br/>
-      <div style="font-weight:bold;font-size:14pt;">
-	      Limited to: <span id="freesignarea">__</span> square feet
-      </div>
-      
-      <br/>
-      <br/>
-      
-      <h3>Wall Signs ( outside residential areas )</h3>
-      <label>Length of Wall</label>
-      <input class="small" id="length_wall" type="text" value="0" class="small"/>&nbsp;feet
-      <label>Area of Wall</label>
-      <input class="small" id="area_wall" type="text" value="0" class="small"/>&nbsp;square feet
-      <br/>
-      <a class="btn btn-info" href="#" onclick="calcWall()">Calculate</a>
-      <br/>
-      <br/>
-      <div style="font-weight:bold;font-size:14pt;">
-	      Limited to: <span id="wallsignarea">__</span> square feet
-      </div>
-		</form>
-		<!-- End Sign Calculator -->
-
-
-		<!-- Begin Business Improvement Assessment -->
-
-Business Improvement Assessment goes HERE.
-The source code for this calc is in PHP. Should we convert it or just copy it over and use PHP?
-
-		<!-- End Business Improvement Assessment -->
-
-
-
-
-
-
-
-If N:
-
-SiteMyBiz, zoning map.
+        Let's calculate out some fees that you will incur at this location.
         
+        The Traffic Impact Fee is calculated based on the size of the location, as well as its past and proposed use.
         
+        The Parking Deficiency fee is determined based on the type and size of your business and the number of parking spaces that you have.
+
+    		<!-- Begin Parking Deficiency Calculator -->
+    		<form class="well form-vertical">
+          <h3>Downtown Parking District only</h3>
+          <label>Business type</label>
+          <select id="proptype_existing" onchange="setUnits(this.value)">
+    	      <option value="APARTMENT">Apartment</option>
+    	      <option value="DOCTOR">Doctor or Dentist</option>
+    	      <option value="MERCANTILE">Mercantile / Professional</option>
+    	      <option value="FURNITURE">Furniture Store</option>
+    	      <option value="SERVICE">Service Area/Warehouse</option>
+          </select>
+          <br/>
+          <label>Size of Property</label>
+          <input id="size_existing" type="text"/>&nbsp;<label id="units">units</label>
+          <br/>
+          <label>Existing Spaces</label>
+          <input id="spaces_existing" type="text" value="0"/>
+          <hr/>
+          <div id="docq" style="display:none">
+    	      <strong>Doctors and Dentists</strong>
+    	      <br/>
+    	      <b>Practitioners:</b><input type="text" id="doctorcount" value="1"/>
+    	      <hr/>
+          </div>
+          <a id="calcBtn" class="btn btn-info" href="#" onclick="calculate()">Calculate</a>
+          <br/><br/>
+          <span id="calculated">Fill out form to calculate</span> required spaces.
+          <br/>
+          Estimated PDF: <span id="fee" style="background-color:#fff;"> </span>
+    		</form>
+    		<!-- End Parking Deficiency Calculator -->
+
+        This form will determine the limitations on any signs you may want to have.
+
+    		<!-- Begin Sign Calculator -->
+    		<form class="well form-vertical">
+          <h3>Freestanding Signs Over Five Feet High</h3>
+          <label>Frontage of Lot</label>
+          <input class="small" id="frontage" type="text" value="0" class="small"/>&nbsp;feet
+          <br/>
+          <label>Parcel Area</label>
+          <input class="small" id="area" type="text" value="0" class="small"/>&nbsp;square feet
+          <br/>
+          <a class="btn btn-info" href="#" onclick="calcFront()">Calculate</a>
+          <br/>
+          <br/>
+          <div style="font-weight:bold;font-size:14pt;">
+    	      Limited to: <span id="freesignarea">__</span> square feet
+          </div>
+          
+          <br/>
+          <br/>
+          
+          <h3>Wall Signs ( outside residential areas )</h3>
+          <label>Length of Wall</label>
+          <input class="small" id="length_wall" type="text" value="0" class="small"/>&nbsp;feet
+          <label>Area of Wall</label>
+          <input class="small" id="area_wall" type="text" value="0" class="small"/>&nbsp;square feet
+          <br/>
+          <a class="btn btn-info" href="#" onclick="calcWall()">Calculate</a>
+          <br/>
+          <br/>
+          <div style="font-weight:bold;font-size:14pt;">
+    	      Limited to: <span id="wallsignarea">__</span> square feet
+          </div>
+    		</form>
+    		<!-- End Sign Calculator -->
+
+    		<!-- Begin Business Improvement Assessment -->
+
+        Business Improvement Assessment goes HERE.
+        The source code for this calc is in PHP. Should we convert it or just copy it over and use PHP?
+
+    		<!-- End Business Improvement Assessment -->
+
+        If N:
         
+        SiteMyBiz, zoning map.
         
-
-
-
         <div class="sitemybiz">
           <h3>Pick a Space</h3>
           <p>[Sitemybiz]</p>
@@ -590,198 +571,185 @@ SiteMyBiz, zoning map.
         </div>
         
       </div>
-    </div><!-- /#location -->
+    </section><!-- /#location -->
     
-    <div id="regulations" class="frame">
+    <section id="regulations" class="frame">
       <div class="content clearfix">
         <h1>Regulations</h1>
         <p>Every business in Santa Cruz needs a business license and a use permit, even if you are working from home.</p>
 
-<ul>
-  <li>Municipal Code</li>
-  <li>Downtown Recovery Plan</li>
-</ul>
+        <ul>
+          <li>Municipal Code</li>
+          <li>Downtown Recovery Plan</li>
+        </ul>
 
-This guide will explain what the city of Santa Cruz requires to start and locate a business.
-
-County, State and Federal agencies might have needs too. Please be sure to satisfy their regulations.
-
-
+        This guide will explain what the city of Santa Cruz requires to start and locate a business.
+        
+        County, State and Federal agencies might have needs too. Please be sure to satisfy their regulations.
 
       </div>
-    </div><!-- /#regulations -->
+    </section><!-- /#regulations -->
     
-    <div id="summary" class="frame">
-
-Based on everything you've told us, here's the paperwork you need to fill out.
-
-All businesses need to fill out this information first. Let's start there.
-
-This information is for your city Zoning Clearance and Business License.
-
-
-  <form>
-    <label for="">Your phone number:</label>
-    <input type="text">
+    <section id="summary" class="frame">
     
-    <label for="">Your address:</label>
-    <input type="text">
+      <h1>Your Summary</h1>
 
-    <label for="">Your Social Security Number (If you would rather not enter this here, that's okay):</label>
-    <input type="text">
+      <p>Based on everything you've told us, here's the paperwork you need to fill out.</p>
+      
+      <p>All businesses need to fill out this information first. Let's start there.</p>
+      
+      <p>This information is for your city Zoning Clearance and Business License.</p>
 
-    <label for="">Business phone number:</label>
-    <input type="text">  
+      <form>
+        <label for="">Your phone number:</label>
+        <input type="text">
+        
+        <label for="">Your address:</label>
+        <input type="text">
+    
+        <label for="">Your Social Security Number (If you would rather not enter this here, that's okay):</label>
+        <input type="text">
+    
+        <label for="">Business phone number:</label>
+        <input type="text">  
+    
+        <label for="">An emergency contact phone number:</label>
+        <input type="text">  
+    
+        <label for="">APN (Assessor's Parcel Number):</label>
+        <input type="text">
+    
+        <label for="">What date will you start?</label>
+        <input type="text">
+    
+        <label for="">Total Area (in square feet):</label>
+        <input type="text">
+    
+        <label for="">First Floor Area (in square feet):</label>
+        <input type="text">
+    
+        <label for="">Outdoor Area (in square feet):</label>
+        <input type="text">
 
-    <label for="">An emergency contact phone number:</label>
-    <input type="text">  
+       	<label>Will there be only one tenant, or more than one? (Choose one)</label>
+      	<select id="tenants">
+      		<option value="ONE">One</option>
+      		<option value="MULTIPLE">Multiple</option>
+      	</select>
 
-    <label for="">APN (Assessor's Parcel Number):</label>
-    <input type="text">
+        <label for="">Number of bicycle parking spaces:</label>
+        <input type="text">
 
-    <label for="">What date will you start?</label>
-    <input type="text">
+       	<label>What is your business' type of ownership? (Choose one)</label>
+      	<select id="ownership">
+      		<option value="SOLE_PROP">Sole Proprietor</option>
+      		<option value="PARTNERSHIP">Partnership</option>
+      		<option value="CORPORATION">Corporation</option>
+      		<option value="TRUST">Trust</option>
+      	</select>
 
-    <label for="">Total Area (in square feet):</label>
-    <input type="text">
+        <!-- NOTE: Conditional fields below -->
+        Tell us about the other owners.
+        <!-- These will include name, title, address, and phone # of other owners -->
 
-    <label for="">First Floor Area (in square feet):</label>
-    <input type="text">
+        <label for="">Number of rental units:</label>
+        <input type="text">
+    
+        <label for="">Your State ID Number:</label>
+        <input type="text">
+    
+        <label for="">Your State Sales Tax Number:</label>
+        <input type="text">
+    
+        <label for="">Your FIN / EIN:</label>
+        <input type="text">
+    
+        <label for="">Your State Contractor's License:</label>
+        <input type="text">
+    
+        <label for="">How many employees will work at your business?</label>
+        <input type="text">
+    
+      </form>
 
-    <label for="">Outdoor Area (in square feet):</label>
-    <input type="text">
+      [Paperwork]
+      
+      Based on what you've already told us, we've pre-filled out some of the fields.
+      
+      Here's what it will cost you.
+      
+      
+      Remaining Forms:
+      NOTE: Some of these may be able to be auto-excluded based on information already provided.
+      
+      
+      Will any non-owner be applying for a permit for the business?
+              <!-- Begin Owner Agent Form -->
+              <!-- CONDITION: A non-owner applies for a permit on behalf of business -->
+              <!-- End Owner Agent Form -->
+      
+      Will any construction or renovation be needed on the property?
+              <!-- Begin Building Permit -->
+              <!-- CONDITION: Construction or renevation is done -->
+              <!-- End Building Permit -->
+      
+      Use Permit goes HERE. Condition UNKNOWN.
+              <!-- Begin Use Permit (AUP / SUP) -->
+              <!-- CONDITION: UNKNOWN -->
+              <!-- End Use Permit (AUP / SUP) -->
+      
+      Will you be applying for utilities?
+              <!-- Begin Application for Utility Service -->
+              <!-- CONDITION: New utility registration will be done -->
+              <!-- End Application for Utility Service -->
+      
+      Will your business be making a profit under a fictitious business name?
+              <!-- Begin Fictitious Business Name Statement -->
+              <!-- CONDITION: Business is for-profit under a fictitious business name -->
+              <!-- End Fictitious Business Name Statement -->
+      
+      Is your business a food service establishment?
+              <!-- Begin Environmental Health Permit -->
+              <!-- CONDITION: Business is a food service establishment -->
+              <!-- End Environmental Health Permit -->
+      
+      Is your business a retail establishment?
+              <!-- Begin Seller's Permit -->
+              <!-- CONDITION: Business is a retail establishment -->
+              <!-- End Seller's Permit -->
+      
+      Is your business an LLC (Limited Liability Company)?
+              <!-- Begin Sec. State LLC Registration -->
+              <!-- CONDITON: Business is an LLC -->
+              <!-- End Sec. State LLC Registration -->
+      
+      Is your business an LLP (Limited Liability Partnership)
+              <!-- Begin Sec. State LLP Registration -->
+              <!-- CONDITION: Business is an LLP -->
+              <!-- End Sec. State LLP Registration -->
+      
+      Is your business a corporation? 
+              <!-- Begin Sec. State Articles of Incorporation Filing -->
+              <!-- CONDITION: Business is a corporation -->
+              <!-- End Sec. State Articles of Incorporation Filing -->
+      
+      Will your business have a payroll? (more than one employee)
+              <!-- Begin Payroll Tax Registration -->
+              <!-- CONDITION: Business has 2+ employees -->
+      NOTE: I'm still working out the conditions here, and a substitute tax if the person is working alone.
+              <!-- End Payroll Tax Registration -->
+      
+      IRS EIN Application HERE.
+      NOTE: IRS EIN applications may have to be filed by mail, phone or online through their own walkthrough.
+      Here is a nice link for an online IRS EIN application: https://gettaxidnumbers.com/apply-now?gclid=CMecjoqE27ACFYeo4AodSnbM1w
+              <!-- Begin IRS EIN Application (Corporation; S-Corp; etc) -->
+              <!-- CONDITION: Business is a corporation -->
+              <!-- End IRS EIN Application (Corporation; S-Corp; etc) -->
 
-
-
- 	<label>Will there be only one tenant, or more than one? (Choose one)</label>
-	<select id="tenants">
-		<option value="ONE">One</option>
-		<option value="MULTIPLE">Multiple</option>
-	</select>
-
-
-
-    <label for="">Number of bicycle parking spaces:</label>
-    <input type="text">
-
-
-
- 	<label>What is your business' type of ownership? (Choose one)</label>
-	<select id="ownership">
-		<option value="SOLE_PROP">Sole Proprietor</option>
-		<option value="PARTNERSHIP">Partnership</option>
-		<option value="CORPORATION">Corporation</option>
-		<option value="TRUST">Trust</option>
-	</select>
-
-<!-- NOTE: Conditional fields below -->
-Tell us about the other owners.
-<!-- These will include name, title, address, and phone # of other owners -->
-
-
-
-    <label for="">Number of rental units:</label>
-    <input type="text">
-
-    <label for="">Your State ID Number:</label>
-    <input type="text">
-
-    <label for="">Your State Sales Tax Number:</label>
-    <input type="text">
-
-    <label for="">Your FIN / EIN:</label>
-    <input type="text">
-
-    <label for="">Your State Contractor's License:</label>
-    <input type="text">
-
-    <label for="">How many employees will work at your business?</label>
-    <input type="text">
-
-  </form>
-
-
-
-
-
-[Paperwork]
-
-Based on what you've already told us, we've pre-filled out some of the fields.
-
-Here's what it will cost you.
-
-
-Remaining Forms:
-NOTE: Some of these may be able to be auto-excluded based on information already provided.
-
-
-Will any non-owner be applying for a permit for the business?
-        <!-- Begin Owner Agent Form -->
-        <!-- CONDITION: A non-owner applies for a permit on behalf of business -->
-        <!-- End Owner Agent Form -->
-
-Will any construction or renovation be needed on the property?
-        <!-- Begin Building Permit -->
-        <!-- CONDITION: Construction or renevation is done -->
-        <!-- End Building Permit -->
-
-Use Permit goes HERE. Condition UNKNOWN.
-        <!-- Begin Use Permit (AUP / SUP) -->
-        <!-- CONDITION: UNKNOWN -->
-        <!-- End Use Permit (AUP / SUP) -->
-
-Will you be applying for utilities?
-        <!-- Begin Application for Utility Service -->
-        <!-- CONDITION: New utility registration will be done -->
-        <!-- End Application for Utility Service -->
-
-Will your business be making a profit under a fictitious business name?
-        <!-- Begin Fictitious Business Name Statement -->
-        <!-- CONDITION: Business is for-profit under a fictitious business name -->
-        <!-- End Fictitious Business Name Statement -->
-
-Is your business a food service establishment?
-        <!-- Begin Environmental Health Permit -->
-        <!-- CONDITION: Business is a food service establishment -->
-        <!-- End Environmental Health Permit -->
-
-Is your business a retail establishment?
-        <!-- Begin Seller's Permit -->
-        <!-- CONDITION: Business is a retail establishment -->
-        <!-- End Seller's Permit -->
-
-Is your business an LLC (Limited Liability Company)?
-        <!-- Begin Sec. State LLC Registration -->
-        <!-- CONDITON: Business is an LLC -->
-        <!-- End Sec. State LLC Registration -->
-
-Is your business an LLP (Limited Liability Partnership)
-        <!-- Begin Sec. State LLP Registration -->
-        <!-- CONDITION: Business is an LLP -->
-        <!-- End Sec. State LLP Registration -->
-
-Is your business a corporation? 
-        <!-- Begin Sec. State Articles of Incorporation Filing -->
-        <!-- CONDITION: Business is a corporation -->
-        <!-- End Sec. State Articles of Incorporation Filing -->
-
-Will your business have a payroll? (more than one employee)
-        <!-- Begin Payroll Tax Registration -->
-        <!-- CONDITION: Business has 2+ employees -->
-NOTE: I'm still working out the conditions here, and a substitute tax if the person is working alone.
-        <!-- End Payroll Tax Registration -->
-
-IRS EIN Application HERE.
-NOTE: IRS EIN applications may have to be filed by mail, phone or online through their own walkthrough.
-Here is a nice link for an online IRS EIN application: https://gettaxidnumbers.com/apply-now?gclid=CMecjoqE27ACFYeo4AodSnbM1w
-        <!-- Begin IRS EIN Application (Corporation; S-Corp; etc) -->
-        <!-- CONDITION: Business is a corporation -->
-        <!-- End IRS EIN Application (Corporation; S-Corp; etc) -->
-
-    </div><!-- /#summary -->
+    </section><!-- /#summary -->
     
     
-    <div id="nextsteps" class="frame">
+    <section id="nextsteps" class="frame">
       <div class="content clearfix">
 
 Information about the process that the planning department goes through.
@@ -799,9 +767,9 @@ Maybe a checklist?
 
         Next Steps
       </div>
-    </div><!-- /#nextsteps -->
+    </section><!-- /#nextsteps -->
 
-  </div><!-- /.container -->
+  </div><!-- /.main -->
 
   <footer>
     <div class="content clearfix">
@@ -812,11 +780,12 @@ Maybe a checklist?
 <script type="text/javascript" src="assets/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="assets/js/plugins.js"></script>
 <script type="text/javascript">
-
 (function(){
-  $('#nav').scrollspy(
-    offset: 100
+
+  $('nav').scrollspy(
+    offset: 97;
   );
+
 })();
 
 </script>

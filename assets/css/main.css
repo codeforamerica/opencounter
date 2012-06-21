@@ -506,15 +506,18 @@ header .content nav a.active {
 
 /* --- Main --- */
 
-.main {
-  margin-top: 97px;
+.main section {
+  padding-top: 97px;
 }
 
-.main .content {
-  
+/* --- Profile --- */
+
+.profile {
+  position: absolute;
+  right: 0;
+  top: 97px;
+  width: 200px;
 }
-
-
 
 
 
