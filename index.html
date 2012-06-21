@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
-<body>
+<body data-spy="scroll">
 
   <header>
     
@@ -17,7 +17,7 @@
       </div><!-- /.branding -->
 
       <nav>
-        <ul>
+        <ul id="nav">
           <li><a href="#welcome">Welcome</a></li>
           <li><a href="#people">People</a></li>
           <li><a href="#business">Business</a></li>
@@ -32,43 +32,85 @@
     
   </header>
   
-  <div role="main" class="main" data-spy="scroll">
+  <div class="profile">
+    <h1>You've Told Us</h1>
+    
+    <h3>Your profile</h3>
+    Name
+    Email address
+    Phone number
+    Emergency contact #
+    
+    <h3>Your business</h3>
+    Business name
+    Business description
+    SIC Code
+    NAICS '12 Code
+    Type of business (sole prop, corp, etc)
+    
+    <h3>Your location</h3>
+    Home occ?
+    Business address
+    Business APN
+    Zoning
+    Prior Use
+    Square footage
+    Property type
+    Required parking spots
+    
+    <h3>Estimated fees</h3>
+    
+    Traffic Impact Fee
+    Business Improvement Assessment
+    Parking Deficiency Fee
+    
+    <h3>File these:</h3>
+    FBN
+    Zoning Clearance
+    Business License Application
+    
+    
+  </div>
   
-    <a name="welcome"></a>
-    <div id="welcome" class="frame">
+  
+  <div role="main" class="main">
+  
+    <section id="welcome" class="frame">
 
       <div class="content clearfix">
       
+        <img src="assets/img/open-for-business.jpeg">
+      
         <h1>Starting a business? We&rsquo;re here to help.</h1>
-        <p>This website will guide you through the business permitting process in Santa Cruz, CA. You'll learn about zoning, what regulations and fees apply to you, and we'll help you get started on -- or, in some cases, complete! -- the paperwork you'll need to file to open your doors.</p>
-        <p>(This guide brought to you by the City of Santa Cruz's Planning Department, Economic Development, and Code for America.)</p>
+        <p>This website will guide you through the business permitting process in Santa Cruz, CA. You&#146;ll learn about zoning, what regulations and fees apply to you, and we&#146;ll help you get started on&mdash;or, in some cases, complete!&mdash;the paperwork you&#146;ll need to file to open your doors.</p>
+        <p>This guide brought to you by the City of Santa Cruz and Code for America.</p>
         
       </div><!-- /.content .clearfix -->
 
-    </div><!-- /#welcome -->
+    </section><!-- /#welcome -->
   
-    <a name="people"></a>
-    <div id="people" class="frame">
+    <section id="people" class="frame">
 
       <div class="content clearfix">
 
-        <h1>Let's get acquainted.</h1>
+        <h1>Let&#146;s get acquainted.</h1>
 
-        <div class="planning">
+        <article class="planning">
           <h3>Meet the Planning Department.</h3>
-          <p>You are always welcome to visit Santa Cruz's Planning Department in person.</p>
-          <p>The Planning Department's public counter is located in room 206 of City Hall, on the second floor in the annex building.</p>
-          <p>The public counter is open Monday to Thursday, 7:30am through 12 noon.</p>
+          <p>You are always welcome to visit Santa Cruz&#146;s Planning Department in person.</p>
+          <p>The Planning Department&#146;s public counter is located in room 206 of City Hall, on the second floor in the annex building.</p>
+          <p>The public counter is open Monday through Thursday, 7:30am through 12 noon.</p>
           <p>Staff are available in the afternoon, from 1pm to 5pm, by phone or appointment only.</p>
+          <p>[Widget that figures out what time it is in Santa Cruz, CA and displays it]</p>
           <p>Santa Cruz City Hall<br>809 Center Street<br>Room 206<br>Santa Cruz, CA 95060</p>
           <p><a href="mailto:planningcounter@cityofsantacruz.com">planningcounter@cityofsantacruz.com</a></p>
           <p>Telephone: (831) 420-5100</p>
           <p>Fax: (831) 420-5434</p>
           <p>[Map]</p>
           <p>[Send us an email now]</p>
-        </div><!-- /.planning -->
+        </article><!-- /.planning -->
       
-        <div class="resources">
+        <article class="resources">
           <h3>Other resources</h3>
           <ul>
             <li>The Central Coast <a href="http://centralcoastsbdc.org/" class="external">Small Business Development Center</a> (SBDC).</li>
@@ -77,14 +119,14 @@
             <li>The Secretary of State&#8217;s office has a general <a href="http://www.sos.ca.gov/business/be/starting-a-business.htm" class="external">overview</a> of how to start a business.</li>
             <li>Your broker, property manager or landlord.</li>
           </ul>
-        </div><!-- /.resources -->
+        </article><!-- /.resources -->
         
         <div class="interactive">
           <form>
-            <label for="name">What's your name? First and last, please.</label>
+            <label for="name">What&#146;s your name? First and last, please.</label>
             <input type="text" placeholder="">
         
-            <label for="name">And your email address? We won't spam, sell, or share your address.</label>
+            <label for="name">And your email address? We won&#146;t spam, sell, or share your address.</label>
             <input type="text" placeholder="">
             
             <input type="submit" name="submit" value="Save this">
@@ -95,57 +137,75 @@
 
     </div><!-- /#people -->
 
-    <a name="business"></a>
-    <div id="business" class="frame">
+    <section id="business" class="frame">
+      
       <div class="content clearfix">
-        <h1>State your business.</h1>
         
-        <p>Starting a business requires some paperwork. Exactly <em>which</em> paperwork depends on what your business does, and where it's located. Let's get started.</p>
+        <article class="businesstype">
+          
+          <h1>State your business.</h1>
+          
+          <p>Starting a business requires some paperwork. Exactly <em>which</em> paperwork depends on what your business does, and where it's located. Let's get started.</p>
+          
+        </article>
         
-        <form>
-          <p>What will you be doing?</p>
-          <textarea placeholder="description of your business here"></textarea>
-        </form>
+        <div class="interactive">
+        
+          <form>
+            <p>What will you be doing?</p>
+            <textarea placeholder="description of your business here"></textarea>
+          </form>
 
-        <form>
-          <p>NAICS/SIC Calculator</p>
-          <input type="text" placeholder="(keywords here)">
-          <p>(results)</p>
-        </form>
-                
-        <form>
-          <p>Where will you be working from?</p>
-          <a href="#regulations">I'll be working from home</a>
-          <a href="#location">I'll be working out of a commercial space</a>
-        </form>
+          <form>
+            <p>NAICS/SIC Calculator</p>
+            <input type="text" placeholder="(keywords here)">
+            <p>(results)</p>
+          </form>
+          
+        </div><!-- /.interactive -->
 
-      </div>
-    </div><!-- /#business -->
+      </div><!-- /.content .clearfix -->
+      
+    </section><!-- /#business -->
     
-    <a name="location"></a>
-    <div id="location" class="frame">
+    <section id="location" class="frame">
+      
       <div class="content clearfix">
         
-        <h1>Location</h1>
+        <article class="location-summary">
+          <h1>Location</h1>
+          <p>If you're working from home, you get to skip most of this stuff.</p>
+        </article>
+
+        <div class="interactive">
+          <form>
+            <p>Where will you be working from?</p>
+            <a href="#regulations">I'll be working from home</a>
+            <a href="">I'll be working out of a commercial space</a>
+            <p>Do you already have a location for your business picked out?</p>
+            <a href="">Yes</a>
+            <a href="">Not yet</a>
+          </form>
+        </div>
         
-        <div class="zoning">
+        <article class="zoning">
           <h3>Zoning</h3>
           <p>Zoning basically makes sure a rubber factory can’t open next to a preschool.</p>
           <p>By clustering types of businesses, we can help preserve neighborhoods and share services.</p>
           <p>The first hurdle to starting a business is finding a location that permits your use.</p>
           <p>[zoningmap]</p>
-        </div>
+        </article>
         
-        <div class="use">
+        <article class="use">
           <h3>Prior Use</h3>
           <p>A good tip for finding a location that permits your use is to pick a space with a prior use as similar to yours as possible.</p>
           <p>If you are opening a restaurant try to go into a space that held a restaurant.</p>
           <p>If you are opening a yoga studio try to go into, say, a karate studio.</p>
           <p>This will make it more likely that your use will be approved.</p>
           <p>If the past use matches your use, the zoning will match and parking will likely not be an issue.</p>
-        </div>
+        </article>
 
-        <div class="permits">
+        <article class="permits">
           <h3>Permits</h3>
           <p>The type of use permit you need is dependent on the way your zoning district permits your use.</p>
           <p>If what you do is Principally Permitted all you need is a Zoning Clearance. This is the simplest form of a use permit.</p>
@@ -153,19 +213,86 @@
           <p>Admin Use Permit(AUP): This kind of application requires more staff analysis, and more information from the applicant. These permits entail a public hearing before the Zoning Administrator, and can take approximately 6-8 weeks to work their way through to completion.</p>
           <p>Special Use Permit(SUP): Requires a high level of scrutiny, typically due to the size of the project and its impact on the neighborhood. These applications go to Planning Commission, whose decision is ratified by the City Council. SUPs take 2-3 months.</p>
           <p>If your use is not permitted, you should probably ⇣ pick another spot. (Changing the Zoning is very difficult, rare and takes years. It is not recommended, but you are welcome to contact the planning department for more information.)</p>
-        </div>
+        </article>
 
-        
-        
-Do you already have a place picked out?
+        <article class="intensity">
+          <h3>Intensity of Use &amp; Traffic Impact Fee</h3>
+          <p>In California, if your business has a more intense use than the previous business in that space, it’s your responsibility to mitigate the impact of that change.</p>
+          <p>You do this via a one-time payment of a Traffic Impact Fee, or TIF.</p>
+          <p>TIF funds help the city of Santa Cruz pay for things like wider lanes and signalized intersections -- which helps the city of Santa Cruz accommodate the increased traffic and public parking burden that your business imposes.</p>
+          <p>Depending on where you site your business, your TIF can be $1000 to $200,000. This is why we recommend picking a location with a similar use to yours.</p>
 
-If Y:
+          <p>This tool will help you estimate the fee.</p>
+          <iframe src="http://pdfmongotest.herokuapp.com/tif-calculator.html"></iframe>
+          <!-- Begin Traffic Impact Fee Calculator -->
+          <form>
+            <fieldset>
+              <label>1) Where is your business located?</label>
+              <input id="address" class="input" onkeydown="checkForEnter(event)" type="text" name="textfield" />
+              <a class="btn btn-info" href="#" onclick="getZoneFromAddress()" style="vertical-align:top;">Submit</a>
+              <span id="regionOut">Region: </span>
+              <!-- TODO: MAP TOOL -->
+            </fieldset>
+            <fieldset>
+              <label>2) What is the existing property?</label>
+              <select id="proptype_existing">
+                <option value="APARTMENT">Apartment</option>
+                <option value="CONDO">Condo/Townhouse</option>
+                <option value="CONVENIENCE">Convenience Market</option>
+                <option value="HOTEL">Hotel/Motel</option>
+                <option value="MEDICAL">Medical Office</option>
+                <option value="OFFICE">Office</option>
+                <option value="RESIDENTIAL">Residential</option>
+                <option value="RESTAURANT">Restaurant</option>
+                <option value="RETAIL">Retail</option>
+                <option value="RETAIL_LARGE">Retail (Building Materials/Large Items)</option>
+                <option value="SENIOR">Senior Housing</option>
+                <option value="SERVICE">Service Station</option>
+                <option value="SINGLE">Single Family Residence</option>
+                <option value="SRO">SRO</option>
+                <option value="SUPERMARKET">Supermarket</option>
+              </select>
+              <label>Size of Property</label>
+              <input id="size_existing" type="text"/>&nbsp;<label id="units">(units/square feet)</label>
+            </fieldset>
+            
+            <fieldset>
+              <label>3) What is the proposed use?</label>
+              <select id="proptype_proposed">
+                <option value="APARTMENT">Apartment</option>
+                <option value="CONDO">Condo/Townhouse</option>
+                <option value="CONVENIENCE">Convenience Market</option>
+                <option value="HOTEL">Hotel/Motel</option>
+                <option value="MEDICAL">Medical Office</option>
+                <option value="OFFICE">Office</option>
+                <option value="RESIDENTIAL">Residential</option>
+                <option value="RESTAURANT">Restaurant</option>
+                <option value="RETAIL">Retail</option>
+                <option value="RETAIL_LARGE">Retail (Building Materials/Large Items)</option>
+                <option value="SENIOR">Senior Housing</option>
+                <option value="SERVICE">Service Station</option>
+                <option value="SINGLE">Single Family Residence</option>
+                <option value="SRO">SRO</option>
+                <option value="SUPERMARKET">Supermarket</option>
+              </select>
+            </fieldset>
+            
+            <a id="calcBtn" class="btn btn-info" href="#" onclick="calculate()">Calculate</a>
+            Trips: <span id="calculated">Fill out form to calculate</span>
+            Estimated TIF: <span id="fee" style="background-color:#fff;"> </span>
+          </form>
+          <!-- End Traffic Impact Fee Calculator -->
+
+          <p>If the space you love has a high Traffic Impact Fee associated with it, don't despair! Contact the Office of Economic Development. They will try to help.</p>
+          <p>NOTE THAT TIF CALCULATIONS FOR DOWNTOWN ARE DIFFERENT THAN TIF CALCULATIONS FOR ELSEWHERE! [Flesh this out]</p>
+        </article>
+
 
 <article class="tool">
-<form>
+  <form>
     <label for="keyword">Check a site's zoning and prior use</label>
     <input type="text" placeholder="Enter address">
-</form>
+  </form>
 </article>
 
 
@@ -175,98 +302,39 @@ Let's calculate out some fees that you will incur at this location.
 The Traffic Impact Fee is calculated based on the size of the location, as well as its past and proposed use.
 
 		
-		<!-- Begin Traffic Impact Fee Calculator -->
-		<form class="well form-vertical">
-			<!-- TODO: MAP TOOL -->
-			<label>1) Where is your business located?</label>
-			<input id="address" class="input" onkeydown="checkForEnter(event)" type="text" name="textfield" />
-			<a class="btn btn-info" href="#" onclick="getZoneFromAddress()" style="vertical-align:top;">Submit</a>
-			<br/>
-			<span id="regionOut">Region: </span>
-			<hr/>
-			<label>2) What is the existing property?</label>
-			<select id="proptype_existing">
-				<option value="APARTMENT">Apartment</option>
-				<option value="CONDO">Condo/Townhouse</option>
-				<option value="CONVENIENCE">Convenience Market</option>
-				<option value="HOTEL">Hotel/Motel</option>
-				<option value="MEDICAL">Medical Office</option>
-				<option value="OFFICE">Office</option>
-				<option value="RESIDENTIAL">Residential</option>
-				<option value="RESTAURANT">Restaurant</option>
-				<option value="RETAIL">Retail</option>
-				<option value="RETAIL_LARGE">Retail (Building Materials/Large Items)</option>
-				<option value="SENIOR">Senior Housing</option>
-				<option value="SERVICE">Service Station</option>
-				<option value="SINGLE">Single Family Residence</option>
-				<option value="SRO">SRO</option>
-				<option value="SUPERMARKET">Supermarket</option>
-			</select>
-			<br/>
-			<label>Size of Property</label>
-			<input id="size_existing" type="text"/>&nbsp;<label id="units">(units/square feet)</label>
-			<hr/>
-			<label>3) What is the proposed use?</label>
-			<select id="proptype_proposed">
-				<option value="APARTMENT">Apartment</option>
-				<option value="CONDO">Condo/Townhouse</option>
-				<option value="CONVENIENCE">Convenience Market</option>
-				<option value="HOTEL">Hotel/Motel</option>
-				<option value="MEDICAL">Medical Office</option>
-				<option value="OFFICE">Office</option>
-				<option value="RESIDENTIAL">Residential</option>
-				<option value="RESTAURANT">Restaurant</option>
-				<option value="RETAIL">Retail</option>
-				<option value="RETAIL_LARGE">Retail (Building Materials/Large Items)</option>
-				<option value="SENIOR">Senior Housing</option>
-				<option value="SERVICE">Service Station</option>
-				<option value="SINGLE">Single Family Residence</option>
-				<option value="SRO">SRO</option>
-				<option value="SUPERMARKET">Supermarket</option>
-			</select>
-			<br/>
-			<!--<label>Proposed Size</label>
-			<input id="size_proposed" type="text"/>&nbsp;<label id="units2">(units/square feet)</label>-->
-			<br/>
-			<a id="calcBtn" class="btn btn-info" href="#" onclick="calculate()">Calculate</a>
-			<br/><br/>
-			<span id="calculated">Fill out form to calculate</span> trips.
-			<br/>
-			Estimated TIF: <span id="fee" style="background-color:#fff;"> </span>
-		</form>
-		<!-- End Traffic Impact Fee Calculator -->
+
 
 The Parking Deficiency fee is determined based on the type and size of your business and the number of parking spaces that you have.
 
 		<!-- Begin Parking Deficiency Calculator -->
 		<form class="well form-vertical">
-			<h3>Downtown Parking District only</h3>
-			<label>Business type</label>
-			<select id="proptype_existing" onchange="setUnits(this.value)">
-				<option value="APARTMENT">Apartment</option>
-				<option value="DOCTOR">Doctor or Dentist</option>
-				<option value="MERCANTILE">Mercantile / Professional</option>
-				<option value="FURNITURE">Furniture Store</option>
-				<option value="SERVICE">Service Area/Warehouse</option>
-			</select>
-			<br/>
-			<label>Size of Property</label>
-			<input id="size_existing" type="text"/>&nbsp;<label id="units">units</label>
-			<br/>
-			<label>Existing Spaces</label>
-			<input id="spaces_existing" type="text" value="0"/>
-			<hr/>
-			<div id="docq" style="display:none">
-				<strong>Doctors and Dentists</strong>
-				<br/>
-				<b>Practitioners:</b><input type="text" id="doctorcount" value="1"/>
-				<hr/>
-			</div>
-			<a id="calcBtn" class="btn btn-info" href="#" onclick="calculate()">Calculate</a>
-			<br/><br/>
-			<span id="calculated">Fill out form to calculate</span> required spaces.
-			<br/>
-			Estimated PDF: <span id="fee" style="background-color:#fff;"> </span>
+      <h3>Downtown Parking District only</h3>
+      <label>Business type</label>
+      <select id="proptype_existing" onchange="setUnits(this.value)">
+	      <option value="APARTMENT">Apartment</option>
+	      <option value="DOCTOR">Doctor or Dentist</option>
+	      <option value="MERCANTILE">Mercantile / Professional</option>
+	      <option value="FURNITURE">Furniture Store</option>
+	      <option value="SERVICE">Service Area/Warehouse</option>
+      </select>
+      <br/>
+      <label>Size of Property</label>
+      <input id="size_existing" type="text"/>&nbsp;<label id="units">units</label>
+      <br/>
+      <label>Existing Spaces</label>
+      <input id="spaces_existing" type="text" value="0"/>
+      <hr/>
+      <div id="docq" style="display:none">
+	      <strong>Doctors and Dentists</strong>
+	      <br/>
+	      <b>Practitioners:</b><input type="text" id="doctorcount" value="1"/>
+	      <hr/>
+      </div>
+      <a id="calcBtn" class="btn btn-info" href="#" onclick="calculate()">Calculate</a>
+      <br/><br/>
+      <span id="calculated">Fill out form to calculate</span> required spaces.
+      <br/>
+      Estimated PDF: <span id="fee" style="background-color:#fff;"> </span>
 		</form>
 		<!-- End Parking Deficiency Calculator -->
 
@@ -276,35 +344,35 @@ This form will determine the limitations on any signs you may want to have.
 
 		<!-- Begin Sign Calculator -->
 		<form class="well form-vertical">
-			<h3>Freestanding Signs Over Five Feet High</h3>
-			<label>Frontage of Lot</label>
-			<input class="small" id="frontage" type="text" value="0" class="small"/>&nbsp;feet
-			<br/>
-			<label>Parcel Area</label>
-			<input class="small" id="area" type="text" value="0" class="small"/>&nbsp;square feet
-			<br/>
-			<a class="btn btn-info" href="#" onclick="calcFront()">Calculate</a>
-			<br/>
-			<br/>
-			<div style="font-weight:bold;font-size:14pt;">
-				Limited to: <span id="freesignarea">__</span> square feet
-			</div>
-			
-			<br/>
-			<br/>
-			
-			<h3>Wall Signs ( outside residential areas )</h3>
-			<label>Length of Wall</label>
-			<input class="small" id="length_wall" type="text" value="0" class="small"/>&nbsp;feet
-			<label>Area of Wall</label>
-			<input class="small" id="area_wall" type="text" value="0" class="small"/>&nbsp;square feet
-			<br/>
-			<a class="btn btn-info" href="#" onclick="calcWall()">Calculate</a>
-			<br/>
-			<br/>
-			<div style="font-weight:bold;font-size:14pt;">
-				Limited to: <span id="wallsignarea">__</span> square feet
-			</div>
+      <h3>Freestanding Signs Over Five Feet High</h3>
+      <label>Frontage of Lot</label>
+      <input class="small" id="frontage" type="text" value="0" class="small"/>&nbsp;feet
+      <br/>
+      <label>Parcel Area</label>
+      <input class="small" id="area" type="text" value="0" class="small"/>&nbsp;square feet
+      <br/>
+      <a class="btn btn-info" href="#" onclick="calcFront()">Calculate</a>
+      <br/>
+      <br/>
+      <div style="font-weight:bold;font-size:14pt;">
+	      Limited to: <span id="freesignarea">__</span> square feet
+      </div>
+      
+      <br/>
+      <br/>
+      
+      <h3>Wall Signs ( outside residential areas )</h3>
+      <label>Length of Wall</label>
+      <input class="small" id="length_wall" type="text" value="0" class="small"/>&nbsp;feet
+      <label>Area of Wall</label>
+      <input class="small" id="area_wall" type="text" value="0" class="small"/>&nbsp;square feet
+      <br/>
+      <a class="btn btn-info" href="#" onclick="calcWall()">Calculate</a>
+      <br/>
+      <br/>
+      <div style="font-weight:bold;font-size:14pt;">
+	      Limited to: <span id="wallsignarea">__</span> square feet
+      </div>
 		</form>
 		<!-- End Sign Calculator -->
 
@@ -337,17 +405,6 @@ SiteMyBiz, zoning map.
           <p>[Sitemybiz]</p>
         </div>
                 
-        <div class="intensity">
-          <h3>Intensity of Use &amp; Traffic Impact Fee</h3>
-          <p>In California, if your business has a more intense use than the previous business in that space, it’s your responsibility to mitigate the impact of that change.</p>
-          <p>You do this via a one-time payment of a Traffic Impact Fee, or TIF.</p>
-          <p>TIF funds help the city of Santa Cruz pay for things like wider lanes and signalized intersections -- which helps the city of Santa Cruz accommodate the increased traffic and public parking burden that your business imposes.</p>
-          <p>Depending on where you site your business, your TIF can be $1000 to $200,000. This is why we recommend picking a location with a similar use to yours.</p>
-          <p>This tool will help you estimate the fee.</p>
-          <iframe src="http://pdfmongotest.herokuapp.com/tif-calculator.html"></iframe>
-          <p>If the space you love has a high Traffic Impact Fee associated with it, don't despair! Contact the Office of Economic Development. They will try to help.</p>
-          <p>NOTE THAT TIF CALCULATIONS FOR DOWNTOWN ARE DIFFERENT THAN TIF CALCULATIONS FOR ELSEWHERE! [Flesh this out]</p>
-        </div>
         
         <div class="parking">
           <h3>Parking</h3>
@@ -535,7 +592,6 @@ SiteMyBiz, zoning map.
       </div>
     </div><!-- /#location -->
     
-    <a name="regulations"></a>
     <div id="regulations" class="frame">
       <div class="content clearfix">
         <h1>Regulations</h1>
@@ -555,7 +611,6 @@ County, State and Federal agencies might have needs too. Please be sure to satis
       </div>
     </div><!-- /#regulations -->
     
-    <a name="summary"></a>
     <div id="summary" class="frame">
 
 Based on everything you've told us, here's the paperwork you need to fill out.
@@ -665,7 +720,7 @@ Will any non-owner be applying for a permit for the business?
         <!-- CONDITION: A non-owner applies for a permit on behalf of business -->
         <!-- End Owner Agent Form -->
 
-Will any construction or renevation be needed on the property?
+Will any construction or renovation be needed on the property?
         <!-- Begin Building Permit -->
         <!-- CONDITION: Construction or renevation is done -->
         <!-- End Building Permit -->
@@ -726,7 +781,6 @@ Here is a nice link for an online IRS EIN application: https://gettaxidnumbers.c
     </div><!-- /#summary -->
     
     
-    <a name="nextsteps"></a>
     <div id="nextsteps" class="frame">
       <div class="content clearfix">
 
@@ -760,7 +814,9 @@ Maybe a checklist?
 <script type="text/javascript">
 
 (function(){
-  $('nav').scrollspy();
+  $('#nav').scrollspy(
+    offset: 100
+  );
 })();
 
 </script>

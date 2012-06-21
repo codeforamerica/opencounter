@@ -469,6 +469,8 @@ header {
   z-index: 9999;
 }
 
+/* --- Branding --- */
+
 header .content .branding {
   float: left;
 }
@@ -481,6 +483,8 @@ header .content .branding p {
   margin: 0;
 }
 
+/* --- Navigation --- */
+
 header .content nav {
   float: right;
 }
@@ -491,6 +495,12 @@ header .content nav li {
   padding: 1.3125em 10px;
 }
 
+header .content nav a.active {
+  color: #F00 !important;
+  background: #0F0 !important;
+}
+
+
 /* --- Footer --- */
 
 
@@ -498,6 +508,10 @@ header .content nav li {
 
 .main {
   margin-top: 97px;
+}
+
+.main .content {
+  
 }
 
 
