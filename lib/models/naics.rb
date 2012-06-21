@@ -7,7 +7,7 @@ class Naics
   include DataMapper::Resource
   property :id, Serial
   property :code, Integer
-  property :description, Text
+  property :description, Text, :lazy => false
 
   def populate
     Naics.auto_migrate!

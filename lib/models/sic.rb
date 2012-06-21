@@ -7,7 +7,7 @@ class Sic
   include DataMapper::Resource
   property :id, Serial
   property :code, Integer
-  property :description, Text
+  property :description, Text, :lazy => false
 
   def populate
     Sic.auto_migrate!
