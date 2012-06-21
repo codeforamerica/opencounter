@@ -9,8 +9,9 @@ class Sic
   property :code, Integer
   property :description, Text, :lazy => false
 
-  def populate
+  def self.populate
     Sic.auto_migrate!
+
     CSV.foreach("data/sic_index.csv") do |row|
       sic = Sic.create(:code => row[0], :description => row[1].upcase)
       sic.save!

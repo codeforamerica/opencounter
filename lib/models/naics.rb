@@ -9,7 +9,7 @@ class Naics
   property :code, Integer
   property :description, Text, :lazy => false
 
-  def populate
+  def self.populate
     Naics.auto_migrate!
 
     CSV.foreach("data/naics_index.csv") do |row|
