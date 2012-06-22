@@ -18,6 +18,14 @@ class Naics < ActiveRecord::Base
       naics.save
     end
   end
+
+  def self.relevant_search(query)
+    first = query
+    first = first.split[0]
+    @search_all = Naics.search_by_description(query)
+    @search_first = Naics.search_by_description(first)
+    @search_first | @search_all
+  end
 end
 
 

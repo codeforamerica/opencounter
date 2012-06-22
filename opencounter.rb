@@ -30,6 +30,6 @@ end
 
 post '/code-search' do
   term = params[:query].downcase
-  @naics = Naics.search_by_description("#{params[:query]}")
+  @naics = Naics.relevant_search("#{params[:query]}")
   erb :codes
 end
