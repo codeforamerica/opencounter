@@ -7,9 +7,13 @@ class Naics < ActiveRecord::Base
   pg_search_scope :search_by_description,
   :against => :description,
   :using => {
-    :tsearch => {:dictionary => 'english',
-      :any_word => 'true'
-    }
+    :tsearch => {:dictionary => 'english', :any_word => true}
+  }
+
+  pg_search_scope :search_all_words,
+  :against => :description,
+  :using => {
+    :tsearch => {:dictionary => 'english'}
   }
 
   def self.populate
@@ -20,9 +24,11 @@ class Naics < ActiveRecord::Base
   end
 
   def self.relevant_search(query)
-    unioned = order_by_first(query)
+    term = query
+    unioned = order_by_first(term)
     coded = order_by_code(unioned)
-    coded.first(50)
+    alled = order_by_all(term, coded)
+    alled.first(50)
   end
 
   private
@@ -31,6 +37,12 @@ class Naics < ActiveRecord::Base
     search_all = Naics.search_by_description(query)
     search_first = Naics.search_by_description(first).limit(50) #as we will limit results to 50
     search_first | search_all
+  end
+
+  private
+  def self.order_by_all(query, current)
+    all = Naics.search_all_words(query)
+    all | current
   end
 
   private

@@ -67,6 +67,13 @@ describe "Code-Search", :type => :request do
     @results = Naics.relevant_search("dance center")
     @results.length.should eq(50)
   end
+
+  it "should return exact or close to exact matches" do
+    @results =Naics.relevant_search("dance studio")
+    code = @results[0].code
+    code.should be > 600000
+    code.should be < 700000
+  end
 end
 
 
