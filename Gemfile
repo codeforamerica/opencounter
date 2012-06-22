@@ -6,7 +6,7 @@ gem 'thin'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'pg'
-
+gem 'pg_search'
 
 group :production do
 end

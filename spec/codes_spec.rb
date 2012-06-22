@@ -31,6 +31,27 @@ describe "Code-Search", :type => :request do
     upper.should eq(lower)
   end
 
+  it "should search phrases" do
+    visit '/code-search'
+    fill_in 'query', :with => 'Dance centers'
+    click_on 'Submit'
+    page.should have_content('713940 | Dance centers, aerobic')
+  end
+
+  it "should match close matches" do
+    visit '/code-search'
+    fill_in 'query', :with => 'Dance center'
+    click_on 'Submit'
+    page.should have_content('713940 | Dance centers, aerobic')
+  end
+
+  it "should match any word" do
+    visit '/code-search'
+    fill_in 'query', :with => 'yoga studio'
+    click_on 'Submit'
+    page.should have_content('611699 | Yoga instruction, camps, or schools')
+  end
+
 end
 
 

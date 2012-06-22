@@ -30,7 +30,6 @@ end
 
 post '/code-search' do
   term = params[:query].downcase
-  @naics = Naics.find :all,
-    :conditions => [ "LOWER(description) LIKE ?", "%#{term}%"]
+  @naics = Naics.search_by_description("#{params[:query]}")
   erb :codes
 end
