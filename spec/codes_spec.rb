@@ -52,13 +52,16 @@ describe "Code-Search", :type => :request do
     page.should have_content('611699 | Yoga instruction, camps, or schools')
   end
 
-  it "should return relavent results" do
+  it "should return relevant results by using the 1st word" do
     @results = Naics.relevant_search("yoga studio")
     @tester = Naics.search_by_description("yoga")
     @results[0].should eq(@tester[0])
- end
+  end
 
-  it "should not return many results"
+  it "should not return many results" do
+    @results = Naics.relevant_search("dance center")
+    @results.length.should eq(50)
+  end
 
 end
 

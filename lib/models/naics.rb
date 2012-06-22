@@ -20,11 +20,11 @@ class Naics < ActiveRecord::Base
   end
 
   def self.relevant_search(query)
-    first = query
-    first = first.split[0]
+    first = query.split[0]
     @search_all = Naics.search_by_description(query)
-    @search_first = Naics.search_by_description(first)
-    @search_first | @search_all
+    @search_first = Naics.search_by_description(first).limit(50)
+    @unioned =  @search_first | @search_all
+    @unioned[0..49]
   end
 end
 
