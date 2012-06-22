@@ -21,7 +21,7 @@ ActiveRecord::Base.establish_connection(
   )
 
 get '/' do
-  File.read(File.join('public', 'index.html'))
+  File.read(File.join('public', 'app.html'))
 end
 
 get '/code-search' do
