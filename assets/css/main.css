@@ -485,17 +485,22 @@ header .content .branding p {
 
 /* --- Navigation --- */
 
-header .content nav {
+header nav {
   float: right;
 }
 
-header .content nav li {
+header nav li {
   display: block;
   float: left;
   padding: 1.3125em 10px;
 }
 
-header .content nav a.active {
+header nav a {
+  text-decoration: none;
+  
+}
+
+header .content nav li.active a {
   color: #F00 !important;
   background: #0F0 !important;
 }
@@ -512,11 +517,18 @@ header .content nav a.active {
 
 /* --- Profile --- */
 
-.profile {
-  position: absolute;
-  right: 0;
-  top: 97px;
+#profile {
+  position: fixed;
+  right: 10px;
+  top: 107px;
   width: 200px;
+  height: 100%;
+  background: #EEE;
+  padding: 0 10px;
+
+  -webkit-box-shadow: #ddd 3px 3px 10px 5px inset;
+  -moz-box-shadow: #ddd 3px 3px 10px 5px inset;
+  box-shadow: #ddd 3px 3px 10px 5px inset;
 }
 
 
