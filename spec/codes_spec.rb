@@ -52,17 +52,21 @@ describe "Code-Search", :type => :request do
     page.should have_content('611699 | Yoga instruction, camps, or schools')
   end
 
-  it "should return relevant results by using the 1st word" do
+  it "should return relevant results by grouping top codes nearer to each other" do
     @results = Naics.relevant_search("yoga studio")
-    @tester = Naics.search_by_description("yoga")
-    @results[0].should eq(@tester[0])
+    first_code = @results[0].code
+    most_recent = -1
+    @results.each do |row|
+      current = (first_code - row.code).abs
+      current.should be >= most_recent
+      most_recent = current
+    end
   end
 
   it "should not return many results" do
     @results = Naics.relevant_search("dance center")
     @results.length.should eq(50)
   end
-
 end
 
 
