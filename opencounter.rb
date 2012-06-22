@@ -1,15 +1,24 @@
 require 'rubygems'
 require 'sinatra'
-require 'data_mapper'
+require 'sinatra/activerecord'
 
-require_relative 'lib/models/naics.rb'
-require_relative 'lib/models/sic.rb'
-DataMapper::Logger.new($stdout, :debug)
-DataMapper.setup(:default, ENV['DATABASE_URL'])
 
+require './lib/models/naics.rb'
 set :root, File.dirname(__FILE__)
 set :public_folder, 'public'
 enable :static
+
+db = URI.parse(ENV['DATABASE_URL'])
+
+ActiveRecord::Base.establish_connection(
+  :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
+  :host     => db.host,
+  :port     => db.port,
+  :username => db.user,
+  :password => db.password,
+  :database => db.path[1..-1],
+  :encoding => 'utf8'
+  )
 
 get '/' do
   File.read(File.join('public', 'index.html'))
@@ -20,8 +29,8 @@ get '/code-search' do
 end
 
 post '/code-search' do
-  @naics = Naics.all(:description.like => "%#{params[:query]}%".upcase)
-  @sic = Sic.all(:description.like => "%#{params[:query]}%".upcase)
+  term = params[:query].downcase
+  @naics = Naics.find :all,
+    :conditions => [ "LOWER(description) LIKE ?", "%#{term}%"]
   erb :codes
 end
-

@@ -3,9 +3,9 @@ source :rubygems
 
 gem 'sinatra'
 gem 'thin'
-gem 'dm-postgres-adapter'
-gem 'data_mapper', '~> 1.2.0'
-gem 'pg', '0.10.0'
+gem 'activerecord'
+gem 'sinatra-activerecord'
+gem 'pg'
 
 
 group :production do
