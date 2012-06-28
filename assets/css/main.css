@@ -493,9 +493,10 @@ header .content nav li.active a {
 
 header .folder {
   position: absolute;
-  bottom: -1px;
+  bottom: -2.5em;
   right: 0;
   width: 200px;
+  z-index: 9999;
 }
 
 header .folder a {
@@ -503,9 +504,9 @@ header .folder a {
   text-align: center;
   background: #F2E7B4;
   border: 1px solid #AFA67F;
-  border-width: 1px 1px 0 1px;
-  -webkit-border-radius: 1em 1em 0 0;
-  border-radius: 1em 1em 0 0;
+  border-width: 0 1px 1px 1px;
+  -webkit-border-radius: 0 0 1em 1em;
+  border-radius: 0 0 1em 1em;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
@@ -514,10 +515,29 @@ header .folder a {
 
 /* --- Profile --- */
 
-#profile {
+header .profile {
   display: none;
   background: #F2E7B4;
-  border-bottom: 1px solid #AFA67F;
+  border-top: 1px solid #AFA67F;
+  position: relative;
+  overflow: auto;
+  clear: both;
+}
+
+header .profile .col {
+  float: left;
+  width: 30%;
+  margin-left: 2.5%;
+  background: #F00;
+}
+
+header .profile .col:first-child {
+  margin-left: 0;
+}
+
+.profile .progress span {
+  display: block;
+  background: #00F;
 }
 
 /* --- Footer --- */

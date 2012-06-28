@@ -36,71 +36,74 @@
         <a href="#profile" id="profile_toggle">Your Summary</a>
       </div>
       
+      <div class="profile">
+        <h1>You've Told Us</h1>
+        
+        <div class="col">
+          <h3>Your Info</h3>
+          <p class="progress"><span style="width:16.5%;">16.5%</span></p>
+          <p class="progress"><span style="width:33.0%;">33%</span></p>
+          <p class="progress"><span style="width:49.5%;">49.5%</span></p>
+          <p class="progress"><span style="width:66.0%;">66%</span></p>
+          <p class="progress"><span style="width:82.5%;">82.5%</span></p>
+          <p class="progress"><span style="width:100%;">100%</span></p>
+          <p class="action"><a href="">Pick up where you left off &rarr;</a></p>
+        </div>
+        
+        <dl class="visuallyhidden">
+          <dt>Name</dt>
+          <dd>Jane Doe</dd>
+          <dt>Email</dt>
+          <dd>jane.doe@test.com</dd>
+          <dt>Phone</dt>
+          <dd>(831) 555-1212</dd>
+          <dt>Business Name</dt>
+          <dd>Yoga Dog</dd>
+          <dt>Business description</dt>
+          <dd>A yoga studio that serves vegan hot dogs (bacon optional).</dd>
+          <dt>Tax Codes</dt>
+          <dd>5812, 005812</dd>
+          <dt>Business Type</dt>
+          <dd>Sole Proprietorship</dd>
+          <dt>Home Occupant?</dt>
+          <dd>No</dd>
+          <dt>Business Address</dt>
+          <dd>123 Anystreet Place #333</dd>
+          <dt>Parcel APN</dt>
+          <dd>008-601-04</dd>
+          <dt>Zoning &amp; Use</dt>
+          <dd>Community Commercial, Retail</dd>
+          <dt>Square Footage</dt>
+          <dd>2000 ft<sup>2</sup></dd>
+          <dt>Property Type</dt>
+          <dd>[office building?]</dd>
+          <dt>Required car parking</dt>
+          <dd>5 spaces</dd>
+          <dt>Required bicycle parking</dt>
+          <dd>Exempt</dd>
+        </dl>
+        
+        <div class="col">
+          <h3>Your Fees</h3>
+          <p>Traffic Impact Fee</p>
+          <p>Business Improvement Assessment</p>
+          <p>Parking Deficiency Fee</p>
+        </div>
+        
+        <div class="col">
+          <h3>Your Forms</h3>
+          <ul>
+            <li><a href="">FBN</a></li>
+            <li><a href="">Zoning Clearance</a></li>
+            <li><a href="">Business License Application</a></li>
+          </ul>
+        </div>
+        
+      </div><!-- /.profile -->
+  
     </div><!-- /.content .clearfix -->
   
   </header>
-  
-  <div id="profile">
-    <h1>You've Told Us</h1>
-    
-    <div class="col span_3 first">
-      <h3>Your Info</h3>
-      <p>[Percentage complete]</p>
-      <p><a href="">See what you've told us so far</a></p>
-      <p><a href="">Answer another question &rarr;</a></p>
-    </div>
-
-    <dl class="visuallyhidden">
-      <dt>Name</dt>
-      <dd>Jane Doe</dd>
-      <dt>Email</dt>
-      <dd>jane.doe@test.com</dd>
-      <dt>Phone</dt>
-      <dd>(831) 555-1212</dd>
-      <dt>Business Name</dt>
-      <dd>Yoga Dog</dd>
-      <dt>Business description</dt>
-      <dd>A yoga studio that serves vegan hot dogs (bacon optional).</dd>
-      <dt>Tax Codes</dt>
-      <dd>5812, 005812</dd>
-      <dt>Business Type</dt>
-      <dd>Sole Proprietorship</dd>
-      <dt>Home Occupant?</dt>
-      <dd>No</dd>
-      <dt>Business Address</dt>
-      <dd>123 Anystreet Place #333</dd>
-      <dt>Parcel APN</dt>
-      <dd>008-601-04</dd>
-      <dt>Zoning &amp; Use</dt>
-      <dd>Community Commercial, Retail</dd>
-      <dt>Square Footage</dt>
-      <dd>2000 ft<sup>2</sup></dd>
-      <dt>Property Type</dt>
-      <dd>[office building?]</dd>
-      <dt>Required car parking</dt>
-      <dd>5 spaces</dd>
-      <dt>Required bicycle parking</dt>
-      <dd>Exempt</dd>
-    </dl>
-    
-    <div class="">
-      <h3>Your Fees</h3>
-      <p>Traffic Impact Fee</p>
-      <p>Business Improvement Assessment</p>
-      <p>Parking Deficiency Fee</p>
-    </div>
-    
-    <div class="">
-      <h3>Your Forms</h3>
-      <ul>
-        <li><a href="">FBN</a></li>
-        <li><a href="">Zoning Clearance</a></li>
-        <li><a href="">Business License Application</a></li>
-      </ul>
-    </div>
-    
-  </div><!-- /#profile -->
-
 
   <div role="main" class="main">
   
@@ -808,7 +811,7 @@
   $('#profile_toggle').click(function(e){
     e.preventDefault();
     e.stopPropagation();
-    $('#profile').slideToggle("slow");
+    $('.profile').slideToggle("slow");
   });
   
 })();
