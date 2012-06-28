@@ -23,11 +23,14 @@
           <li><a href="#business">Business</a></li>
           <li><a href="#location">Location</a></li>
           <li><a href="#regulations">Regulations</a></li>
-          <li><a href="#summary">Summary</a></li>
           <li><a href="#nextsteps">Next Steps</a></li>
         </ul>
-      </nav>
-    
+      </nav><!-- /.nav -->
+      
+      <div class="folder">
+        <a href="#profile" id="profile_toggle">Your Summary</a>
+      </div>
+      
     </div><!-- /.content .clearfix -->
   
   </header>
@@ -35,47 +38,65 @@
   <div id="profile">
     <h1>You've Told Us</h1>
     
-    <h3>Your profile</h3>
-    <h5>Name</h5>
-    <p>Jane Doe</p>
-    <h5>Email address</h5>
-    <p>jane.doe@gmail.com</p>
-    <h5>Phone number</h5>
-    <p>(831) 555-1212</p>
-    <h5>Emergency contact number</h5>
-    <p>(831) 444-1313</p>
+    <div class="col span_3 first">
+      <h3>Your Info</h3>
+      <p>[Percentage complete]</p>
+      <p><a href="">See what you've told us so far</a></p>
+      <p><a href="">Answer another question &rarr;</a></p>
+    </div>
+
+    <dl class="visuallyhidden">
+      <dt>Name</dt>
+      <dd>Jane Doe</dd>
+      <dt>Email</dt>
+      <dd>jane.doe@test.com</dd>
+      <dt>Phone</dt>
+      <dd>(831) 555-1212</dd>
+      <dt>Business Name</dt>
+      <dd>Yoga Dog</dd>
+      <dt>Business description</dt>
+      <dd>A yoga studio that serves vegan hot dogs (bacon optional).</dd>
+      <dt>Tax Codes</dt>
+      <dd>5812, 005812</dd>
+      <dt>Business Type</dt>
+      <dd>Sole Proprietorship</dd>
+      <dt>Home Occupant?</dt>
+      <dd>No</dd>
+      <dt>Business Address</dt>
+      <dd>123 Anystreet Place #333</dd>
+      <dt>Parcel APN</dt>
+      <dd>008-601-04</dd>
+      <dt>Zoning &amp; Use</dt>
+      <dd>Community Commercial, Retail</dd>
+      <dt>Square Footage</dt>
+      <dd>2000 ft<sup>2</sup></dd>
+      <dt>Property Type</dt>
+      <dd>[office building?]</dd>
+      <dt>Required car parking</dt>
+      <dd>5 spaces</dd>
+      <dt>Required bicycle parking</dt>
+      <dd>Exempt</dd>
+    </dl>
     
-    <h3>Your business</h3>
-    Business name
-    Business description
-    SIC Code
-    NAICS '12 Code
-    Type of business (sole prop, corp, etc)
+    <div class="">
+      <h3>Your Fees</h3>
+      <p>Traffic Impact Fee</p>
+      <p>Business Improvement Assessment</p>
+      <p>Parking Deficiency Fee</p>
+    </div>
     
-    <h3>Your location</h3>
-    Home occ?
-    Business address
-    Business APN
-    Zoning
-    Prior Use
-    Square footage
-    Property type
-    Required parking spots
-    
-    <h3>Estimated fees</h3>
-    
-    Traffic Impact Fee
-    Business Improvement Assessment
-    Parking Deficiency Fee
-    
-    <h3>File these:</h3>
-    FBN
-    Zoning Clearance
-    Business License Application
+    <div class="">
+      <h3>Your Forms</h3>
+      <ul>
+        <li><a href="">FBN</a></li>
+        <li><a href="">Zoning Clearance</a></li>
+        <li><a href="">Business License Application</a></li>
+      </ul>
+    </div>
     
   </div><!-- /#profile -->
-  
-  
+
+
   <div role="main" class="main">
   
     <section id="welcome" class="frame">
@@ -129,7 +150,7 @@
             <input type="text" placeholder="">
         
             <label for="name">And your email address? We won&#146;t spam, sell, or share your address.</label>
-            <input type="email" placeholder="">
+            <input type="text" placeholder="">
             
             <input type="submit" name="submit" value="Save this">
           </form>
@@ -588,8 +609,12 @@
       
     </section><!-- /#regulations -->
     
-    <section id="summary" class="frame">
+
     
+    
+    <section id="nextsteps" class="frame">
+      <div class="content clearfix">
+
       <h1>Your Summary</h1>
 
       <p>Based on everything you've told us, here's the paperwork you need to fill out.</p>
@@ -744,12 +769,6 @@
               <!-- CONDITION: Business is a corporation -->
               <!-- End IRS EIN Application (Corporation; S-Corp; etc) -->
 
-    </section><!-- /#summary -->
-    
-    
-    <section id="nextsteps" class="frame">
-      <div class="content clearfix">
-
         <h1>Next Steps</h1>
 
         <p>Information about the process that the planning department goes through.</p>
@@ -777,7 +796,16 @@
 <script type="text/javascript" src="assets/js/plugins.js"></script>
 <script type="text/javascript">
 (function(){
+  // Kick off navigation
   $('nav').scrollspy();
+  
+  // Set up behavior for profile toggle
+  $('#profile_toggle').click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    $('#profile').slideToggle("slow");
+  });
+  
 })();
 </script>
 

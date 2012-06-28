@@ -422,23 +422,9 @@ td {
     vertical-align: top;
 }
 
-
-/* =============================================================================
-   Chrome Frame Prompt
-   ========================================================================== */
-
-.chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-
 /* ==|== primary styles =====================================================
-   Author:
+   Author: RB
    ========================================================================== */
-
 
 header,
 footer,
@@ -461,15 +447,14 @@ footer,
 /* --- Header --- */
 
 header {
-  background: #EEE;
-  border-bottom: 1px solid #CCC;
-  height: 96px;
+  background: #FFF;
+  border-bottom: 1px solid #AFA67F;
   position: fixed;
   top: 0;
   z-index: 9999;
 }
 
-/* --- Branding --- */
+/* Branding */
 
 header .content .branding {
   float: left;
@@ -483,7 +468,7 @@ header .content .branding p {
   margin: 0;
 }
 
-/* --- Navigation --- */
+/* Navigation */
 
 header nav {
   float: right;
@@ -504,35 +489,46 @@ header .content nav li.active a {
   background: #0F0 !important;
 }
 
+/* Folder */
+
+header .folder {
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  width: 200px;
+}
+
+header .folder a {
+  display: block;
+  text-align: center;
+  background: #F2E7B4;
+  border: 1px solid #AFA67F;
+  border-width: 1px 1px 0 1px;
+  -webkit-border-radius: 1em 1em 0 0;
+  border-radius: 1em 1em 0 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0.5em 0;
+}
+
+/* --- Profile --- */
+
+#profile {
+  display: none;
+  background: #F2E7B4;
+  border-bottom: 1px solid #AFA67F;
+}
 
 /* --- Footer --- */
 
 
 /* --- Main --- */
 
-.main section {
-  padding-top: 97px;
+.main {
+  background: #FFF;
+  margin-top: 97px;
 }
-
-/* --- Profile --- */
-
-#profile {
-  position: fixed;
-  right: 10px;
-  top: 107px;
-  width: 200px;
-  height: 100%;
-  background: #EEE;
-  padding: 0 10px;
-
-  -webkit-box-shadow: #ddd 3px 3px 10px 5px inset;
-  -moz-box-shadow: #ddd 3px 3px 10px 5px inset;
-  box-shadow: #ddd 3px 3px 10px 5px inset;
-}
-
-
-
-
 
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
@@ -543,8 +539,6 @@ header .content nav li.active a {
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
 }
-
-
 
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.
