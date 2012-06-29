@@ -586,10 +586,11 @@ header .profile td {
   padding-bottom: 7.875em;
 }
 
-.tools,
+.tool,
 .interactive {
   background: #EEE;
-  border: 1px solid #DEDEDE;
+  border: 5px solid #DEDEDE;
+  padding: 0.5em 10px;
 }
 
 /* Welcome */
