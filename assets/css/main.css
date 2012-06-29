@@ -447,11 +447,11 @@ footer,
 /* --- Header --- */
 
 header {
-  background: #FFF;
-  border-bottom: 1px solid #AFA67F;
+  background: #5FA3DF;
   position: fixed;
   top: 0;
   z-index: 9999;
+  border-bottom: 1px solid #AFA67F;
 }
 
 /* Branding */
@@ -466,6 +466,7 @@ header .content .branding h1 {
 
 header .content .branding p {
   margin: 0;
+  padding-bottom: 1em;
 }
 
 /* Navigation */
@@ -480,20 +481,24 @@ header nav li {
   padding: 1.3125em 10px;
 }
 
-header nav a {
+header nav a:link,
+header nav a:visited,
+header nav a:hover,
+header nav a:active {
   text-decoration: none;
+  color: #deecf8;
 }
 
 header .content nav li.active a {
-  color: #F00 !important;
-  background: #0F0 !important;
+  border-bottom: 5px solid #fbfdfe;
+  color: #fbfdfe;
 }
 
 /* Folder */
 
 header .folder {
   position: absolute;
-  bottom: -2.5em;
+  bottom: -2.45em;
   right: 0;
   width: 200px;
   z-index: 9999;
@@ -518,26 +523,35 @@ header .folder a {
 header .profile {
   display: none;
   background: #F2E7B4;
-  border-top: 1px solid #AFA67F;
+  border: 1px solid #AFA67F;
+  border-bottom: 0;
   position: relative;
   overflow: auto;
   clear: both;
 }
 
+header .profile h1 {
+  display: none;
+}
+
 header .profile .col {
   float: left;
   width: 30%;
-  margin-left: 2.5%;
-  background: #F00;
+  margin: 1em 0 1em 2.5%;
+  background: #FBF5E7;
 }
 
 header .profile .col:first-child {
   margin-left: 0;
 }
 
-.profile .progress span {
+header .profile .progress span {
   display: block;
-  background: #00F;
+  background: #FFF;
+}
+
+header .profile h3 {
+  margin-top: 0;
 }
 
 /* --- Footer --- */
