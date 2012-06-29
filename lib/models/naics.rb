@@ -13,12 +13,6 @@ class Naics < ActiveRecord::Base
     :tsearch => {:dictionary => 'english', :any_word => true}
   }
 
-  pg_search_scope :search_all_words,
-  :against => :description,
-  :using => {
-    :tsearch => {:dictionary => 'english'}
-  }
-
   def self.populate
     CSV.foreach("data/naics_index.csv") do |row|
       the_code = row[0].to_i
