@@ -4,6 +4,9 @@ require 'pg_search'
 
 class Naics < ActiveRecord::Base
   include PgSearch
+
+  @@base_codes = [0,11,21,22,23,31,42,44,48,51,52,53,54,55,56,61,62,71,72,81,92]
+
   pg_search_scope :search_by_description,
   :against => :description,
   :using => {
@@ -18,42 +21,29 @@ class Naics < ActiveRecord::Base
 
   def self.populate
     CSV.foreach("data/naics_index.csv") do |row|
-      naics = Naics.new(:code => row[0], :description => row[1])
+      the_code = row[0].to_i
+      the_short = the_code/10000
+      real_short = 0
+      @@base_codes.each do |base|
+        real_short = base unless base > the_short
+      end
+      the_desc = row[1]
+      naics = Naics.new(:code => the_code, :short_code => real_short, :description => the_desc)
       naics.save
     end
   end
 
-  def self.relevant_search(query)
-    term = query
-    unioned = order_by_first(term)
-    coded = order_by_code(unioned)
-    alled = order_by_all(term, coded)
-    alled.first(50)
-  end
-
-  private
-  def self.order_by_first(query)
-    first = query.split[0]
-    search_all = Naics.search_by_description(query)
-    search_first = Naics.search_by_description(first).limit(50) #as we will limit results to 50
-    search_first | search_all
-  end
-
-  private
-  def self.order_by_all(query, current)
-    all = Naics.search_all_words(query)
-    all | current
-  end
-
-  private
-  def self.order_by_code(arg)
-    total= 0
-    arg.each do |row|
-      total += row.code
+  def self.relevant_search(query, category=0)
+    if (category == 0)
+      return Naics.search_by_description(query)
+    else
+      match_cat = Naics.where(:short_code => category)
+      match_desc = Naics.search_by_description(query)
+      return match_cat & match_desc
     end
-    avg_code = total / 10.to_f
-    arg.sort {|x,y| (x.code - avg_code).abs <=> (y.code - avg_code).abs}
+
   end
+
 end
 
 

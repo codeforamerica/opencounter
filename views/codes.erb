@@ -1,6 +1,30 @@
 
 <form method="post" action="/code-search">
 
+  <label for="category">What Industry are you entering?</label>
+  <select name="category">
+    <option value="0" selected="selected">Any</option>
+    <option value="11">Agriculture, Forestry, Fishing, and Hunting</option>
+    <option value="21">Mining</option>
+    <option value="22">Utilities</option>
+    <option value="23">Construction</option>
+    <option value="31">Manufacturing</option>
+    <option value="42">Wholesale Trade</option>
+    <option value="44">Retail Trade</option>
+    <option value="48">Transportation and Warehousing</option>
+    <option value="51">Information</option>
+    <option value="52">Finance and Insurance</option>
+    <option value="53">Real Estate Rental and Leasing</option>
+    <option value="54">Professional, Scientific, and Technical Services</option>
+    <option value="55">Management of Companies and Enterprises</option>
+    <option value="56">Administrative and Support and Waste Management and Remediation Servises</option>
+    <option value="61">Educational Services</option>
+    <option value="62">Health care and Social Assistance</option>
+    <option value="71">Arts, Entertainment, and Recreation</option>
+    <option value="72">Accomodation and Food Services</option>
+    <option value="81">Other Services (except Public Administration)</option>
+    <option value="92">Public Administration</option>
+  </select>
   <label for="query">What type of business?</label>
   <input type="search" name="query"  placeholder="e.g. yoga studio">
   <input type="submit" value="Submit"/>

@@ -2,6 +2,7 @@ class Createnaicscodes < ActiveRecord::Migration
   def up
     create_table :naics do |t|
       t.integer :code
+      t.integer :short_code
       t.text :description
     end
     add_index :naics, :code
