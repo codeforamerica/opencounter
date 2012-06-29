@@ -42,12 +42,7 @@
         <div class="col">
           <h3>Your Profile</h3>
           <p>Here's what you've told us so far.</p>
-          <p class="progress"><span style="width:16.5%;">16.5%</span></p>
-          <p class="progress"><span style="width:33.0%;">33%</span></p>
-          <p class="progress"><span style="width:49.5%;">49.5%</span></p>
-          <p class="progress"><span style="width:66.0%;">66%</span></p>
-          <p class="progress"><span style="width:82.5%;">82.5%</span></p>
-          <p class="progress"><span style="width:100%;">100%</span></p>
+          <p class="progress"><span>16.5%</span></p>
           <p class="action"><a href="">Pick up where you left off &rarr;</a></p>
         </div>
         
@@ -143,10 +138,15 @@
       
       <div class="content clearfix">
         
-        <h1>Starting a business? We&rsquo;re here to help.</h1>
-        <p><img src="assets/img/open-for-business.png"></p>
-        <p>This website will guide you through the business permitting process in Santa Cruz, CA. You&#146;ll learn about zoning, what regulations and fees apply to you, and we&#146;ll help you get started on&mdash;or, in some cases, complete!&mdash;the paperwork you&#146;ll need to file to open your doors.</p>
-        <p>This guide brought to you by the City of Santa Cruz and Code for America.</p>
+        <div class="col">
+          <p><img src="assets/img/open-for-business.png"></p>
+        </div>
+        
+        <div class="col">
+          <h1>Starting a business? We&rsquo;re here to help.</h1>
+          <p>This website will guide you through the business permitting process in Santa Cruz, CA. You&#146;ll learn about zoning, what regulations and fees apply to you, and we&#146;ll help you get started on&mdash;or, in some cases, complete!&mdash;the paperwork you&#146;ll need to file to open your doors.</p>
+          <p>This guide brought to you by the City of Santa Cruz and Code for America.</p>
+        </div>
         
       </div><!-- /.content .clearfix -->
       
@@ -158,43 +158,47 @@
         
         <h1>Let&#146;s get acquainted.</h1>
         
-        <article class="planning">
-          <h3>Meet the Planning Department.</h3>
-          <p>You are always welcome to visit Santa Cruz&#146;s Planning Department in person.</p>
-          <p>The Planning Department&#146;s public counter is located in room 206 of City Hall, on the second floor in the annex building.</p>
-          <p>The public counter is open Monday through Thursday, 7:30am through 12 noon.</p>
-          <p>Staff are available in the afternoon, from 1pm to 5pm, by phone or appointment only.</p>
-          <p>[Widget that figures out what time it is in Santa Cruz, CA and displays it]</p>
-          <p>Santa Cruz City Hall<br>809 Center Street<br>Room 206<br>Santa Cruz, CA 95060</p>
-          <p><a href="mailto:planningcounter@cityofsantacruz.com">planningcounter@cityofsantacruz.com</a></p>
-          <p>Telephone: (831) 420-5100</p>
-          <p>Fax: (831) 420-5434</p>
-          <p>[Map]</p>
-          <p>[Send us an email now]</p>
-        </article><!-- /.planning -->
+        <div class="col">
         
-        <article class="resources">
-          <h3>Other resources</h3>
-          <ul>
-            <li>The Central Coast <a href="http://centralcoastsbdc.org/" class="external">Small Business Development Center</a> (SBDC).</li>
-            <li>The Santa Cruz Public Library has a reference desk and <a href="http://www.santacruzpl.org/guides/1/" class="external">online guide</a>.</li>
-            <li>The Office of <a href="http://www.cityofsantacruz.com/index.aspx?page=446" class="external">Economic Development</a>.</li>
-            <li>The Secretary of State&#8217;s office has a general <a href="http://www.sos.ca.gov/business/be/starting-a-business.htm" class="external">overview</a> of how to start a business.</li>
-            <li>Your broker, property manager or landlord.</li>
-          </ul>
-        </article><!-- /.resources -->
-        
-        <div class="interactive">
-          <form>
-            <label for="name">What&#146;s your name? First and last, please.</label>
-            <input type="text" placeholder="">
-        
-            <label for="name">And your email address? We won&#146;t spam, sell, or share your address.</label>
-            <input type="text" placeholder="">
-            
-            <input type="submit" name="submit" value="Save this">
-          </form>
-        </div><!-- /.interactive -->
+          <article class="narrative">
+            <h3>Meet the Planning Department.</h3>
+            <p>You are always welcome to visit Santa Cruz&#146;s Planning Department in person.</p>
+            <p>The Planning Department&#146;s public counter is located in room 206 of City Hall, on the second floor in the annex building.</p>
+            <p>The public counter is open Monday through Thursday, 7:30am through 12 noon.</p>
+            <p>Staff are available in the afternoon, from 1pm to 5pm, by phone or appointment only.</p>
+            <p>Santa Cruz City Hall<br>809 Center Street<br>Room 206<br>Santa Cruz, CA 95060</p>
+            <p><a href="mailto:planningcounter@cityofsantacruz.com">planningcounter@cityofsantacruz.com</a></p>
+            <p>Telephone: (831) 420-5100</p>
+            <p>Fax: (831) 420-5434</p>
+            <h3>Other resources</h3>
+            <ul>
+              <li>The Central Coast <a href="http://centralcoastsbdc.org/" class="external">Small Business Development Center</a> (SBDC).</li>
+              <li>The Santa Cruz Public Library has a reference desk and <a href="http://www.santacruzpl.org/guides/1/" class="external">online guide</a>.</li>
+              <li>The Office of <a href="http://www.cityofsantacruz.com/index.aspx?page=446" class="external">Economic Development</a>.</li>
+              <li>The Secretary of State&#8217;s office has a general <a href="http://www.sos.ca.gov/business/be/starting-a-business.htm" class="external">overview</a> of how to start a business.</li>
+              <li>Your broker, property manager or landlord.</li>
+            </ul>
+          </article>
+          
+          <article class="tools">
+            <p>[Widget that figures out what time it is in Santa Cruz, CA and displays it]</p>
+            <p>[Map]</p>
+            <p>[Send us an email now]</p>
+          </article><!-- /.planning -->
+          
+          <div class="interactive">
+            <form>
+              <label for="name">What&#146;s your name? First and last, please.</label>
+              <input type="text" placeholder="">
+              
+              <label for="name">And your email address? We won&#146;t spam, sell, or share your address.</label>
+              <input type="text" placeholder="">
+              
+              <input type="submit" name="submit" value="Save this">
+            </form>
+          </div><!-- /.interactive -->
+
+        </div><!-- /.col -->
       
       </div><!-- /.content .clearfix -->
     
@@ -206,22 +210,25 @@
         
         <h1>State your business.</h1>
         
-        <p>Starting a business requires some paperwork. Exactly <em>which</em> paperwork depends on what your business does, and where it's located. Let's get started.</p>
-        
-        <div class="interactive">
-        
-          <form>
-            <p>What will you be doing?</p>
-            <textarea placeholder="description of your business here"></textarea>
-          </form>
+        <div class="col">
+          <p>Starting a business requires some paperwork. Exactly <em>which</em> paperwork depends on what your business does, and where it's located. Let's get started.</p>
           
-          <form>
-            <p>NAICS/SIC Calculator</p>
-            <input type="text" placeholder="(keywords here)">
-            <p>(results)</p>
-          </form>
+          <div class="interactive">
           
-        </div><!-- /.interactive -->
+            <form>
+              <p>What will you be doing?</p>
+              <textarea placeholder="description of your business here"></textarea>
+            </form>
+            
+            <form>
+              <p>NAICS/SIC Calculator</p>
+              <input type="text" placeholder="(keywords here)">
+              <p>(results)</p>
+            </form>
+            
+          </div><!-- /.interactive -->
+
+        </div><!-- /.col -->
 
       </div><!-- /.content .clearfix -->
       
@@ -232,519 +239,503 @@
       <div class="content clearfix">
 
         <h1>Location</h1>
-        <p>If you're working from home, you get to skip most of this stuff.</p>
-
-        <div class="interactive">
-          <form>
-            <p>Where will you be working from?</p>
-            <a href="#regulations">I'll be working from home</a>
-            <a href="">I'll be working out of a commercial space</a>
-            <p>Do you already have a location for your business picked out?</p>
-            <a href="">Yes</a>
-            <a href="">Not yet</a>
-          </form>
-        </div>
         
-        <article class="zoning">
-          <h3>Zoning</h3>
-          <p>Zoning basically makes sure a rubber factory can’t open next to a preschool.</p>
-          <p>By clustering types of businesses, we can help preserve neighborhoods and share services.</p>
-          <p>The first hurdle to starting a business is finding a location that permits your use.</p>
-          <p>[zoningmap]</p>
-        </article>
-        
-        <article class="use">
-          <h3>Prior Use</h3>
-          <p>A good tip for finding a location that permits your use is to pick a space with a prior use as similar to yours as possible.</p>
-          <p>If you are opening a restaurant try to go into a space that held a restaurant.</p>
-          <p>If you are opening a yoga studio try to go into, say, a karate studio.</p>
-          <p>This will make it more likely that your use will be approved.</p>
-          <p>If the past use matches your use, the zoning will match and parking will likely not be an issue.</p>
-        </article>
+        <div class="col">
+          <p>If you're working from home, you get to skip most of this stuff.</p>
+  
+          <div class="interactive">
+            <form>
+              <p>Where will you be working from?</p>
+              <a href="#regulations">I'll be working from home</a>
+              <a href="">I'll be working out of a commercial space</a>
+              <p>Do you already have a location for your business picked out?</p>
+              <a href="">Yes</a>
+              <a href="">Not yet</a>
+            </form>
+          </div>
+          
+          <article class="zoning">
+            <h3>Zoning</h3>
+            <p>Zoning basically makes sure a rubber factory can’t open next to a preschool.</p>
+            <p>By clustering types of businesses, we can help preserve neighborhoods and share services.</p>
+            <p>The first hurdle to starting a business is finding a location that permits your use.</p>
+            <p>[zoningmap]</p>
+          </article>
+          
+          <article class="use">
+            <h3>Prior Use</h3>
+            <p>A good tip for finding a location that permits your use is to pick a space with a prior use as similar to yours as possible.</p>
+            <p>If you are opening a restaurant try to go into a space that held a restaurant.</p>
+            <p>If you are opening a yoga studio try to go into, say, a karate studio.</p>
+            <p>This will make it more likely that your use will be approved.</p>
+            <p>If the past use matches your use, the zoning will match and parking will likely not be an issue.</p>
+          </article>
+  
+          <article class="permits">
+            <h3>Permits</h3>
+            <p>The type of use permit you need is dependent on the way your zoning district permits your use.</p>
+            <p>If what you do is Principally Permitted all you need is a Zoning Clearance. This is the simplest form of a use permit.</p>
+            <p>If your use is not principally permitted you will need either an Administrative Use Permit or a Special Use Permit ⇣.</p>
+            <p>Admin Use Permit(AUP): This kind of application requires more staff analysis, and more information from the applicant. These permits entail a public hearing before the Zoning Administrator, and can take approximately 6-8 weeks to work their way through to completion.</p>
+            <p>Special Use Permit(SUP): Requires a high level of scrutiny, typically due to the size of the project and its impact on the neighborhood. These applications go to Planning Commission, whose decision is ratified by the City Council. SUPs take 2-3 months.</p>
+            <p>If your use is not permitted, you should probably ⇣ pick another spot. (Changing the Zoning is very difficult, rare and takes years. It is not recommended, but you are welcome to contact the planning department for more information.)</p>
+          </article>
+  
+          <article class="intensity">
+            <h3>Intensity of Use &amp; Traffic Impact Fee</h3>
+            <p>In California, if your business has a more intense use than the previous business in that space, it’s your responsibility to mitigate the impact of that change.</p>
+            <p>You do this via a one-time payment of a Traffic Impact Fee, or TIF.</p>
+            <p>TIF funds help the city of Santa Cruz pay for things like wider lanes and signalized intersections -- which helps the city of Santa Cruz accommodate the increased traffic and public parking burden that your business imposes.</p>
+            <p>Depending on where you site your business, your TIF can be $1000 to $200,000. This is why we recommend picking a location with a similar use to yours.</p>
+  
+            <p>This tool will help you estimate the fee.</p>
+            <iframe src="http://pdfmongotest.herokuapp.com/tif-calculator.html"></iframe>
+            <!-- Begin Traffic Impact Fee Calculator -->
+            <form>
+              <fieldset>
+                <label>1) Where is your business located?</label>
+                <input id="address" class="input" onkeydown="checkForEnter(event)" type="text" name="textfield" />
+                <a class="btn btn-info" href="#" onclick="getZoneFromAddress()" style="vertical-align:top;">Submit</a>
+                <span id="regionOut">Region: </span>
+                <!-- TODO: MAP TOOL -->
+              </fieldset>
+              <fieldset>
+                <label>2) What is the existing property?</label>
+                <select id="proptype_existing">
+                  <option value="APARTMENT">Apartment</option>
+                  <option value="CONDO">Condo/Townhouse</option>
+                  <option value="CONVENIENCE">Convenience Market</option>
+                  <option value="HOTEL">Hotel/Motel</option>
+                  <option value="MEDICAL">Medical Office</option>
+                  <option value="OFFICE">Office</option>
+                  <option value="RESIDENTIAL">Residential</option>
+                  <option value="RESTAURANT">Restaurant</option>
+                  <option value="RETAIL">Retail</option>
+                  <option value="RETAIL_LARGE">Retail (Building Materials/Large Items)</option>
+                  <option value="SENIOR">Senior Housing</option>
+                  <option value="SERVICE">Service Station</option>
+                  <option value="SINGLE">Single Family Residence</option>
+                  <option value="SRO">SRO</option>
+                  <option value="SUPERMARKET">Supermarket</option>
+                </select>
+                <label>Size of Property</label>
+                <input id="size_existing" type="text"/>&nbsp;<label id="units">(units/square feet)</label>
+              </fieldset>
+              
+              <fieldset>
+                <label>3) What is the proposed use?</label>
+                <select id="proptype_proposed">
+                  <option value="APARTMENT">Apartment</option>
+                  <option value="CONDO">Condo/Townhouse</option>
+                  <option value="CONVENIENCE">Convenience Market</option>
+                  <option value="HOTEL">Hotel/Motel</option>
+                  <option value="MEDICAL">Medical Office</option>
+                  <option value="OFFICE">Office</option>
+                  <option value="RESIDENTIAL">Residential</option>
+                  <option value="RESTAURANT">Restaurant</option>
+                  <option value="RETAIL">Retail</option>
+                  <option value="RETAIL_LARGE">Retail (Building Materials/Large Items)</option>
+                  <option value="SENIOR">Senior Housing</option>
+                  <option value="SERVICE">Service Station</option>
+                  <option value="SINGLE">Single Family Residence</option>
+                  <option value="SRO">SRO</option>
+                  <option value="SUPERMARKET">Supermarket</option>
+                </select>
+              </fieldset>
+              
+              <a id="calcBtn" class="btn btn-info" href="#" onclick="calculate()">Calculate</a>
+              Trips: <span id="calculated">Fill out form to calculate</span>
+              Estimated TIF: <span id="fee" style="background-color:#fff;"> </span>
+            </form>
+            <!-- End Traffic Impact Fee Calculator -->
+  
+            <p>If the space you love has a high Traffic Impact Fee associated with it, don't despair! Contact the Office of Economic Development. They will try to help.</p>
+            <p>NOTE THAT TIF CALCULATIONS FOR DOWNTOWN ARE DIFFERENT THAN TIF CALCULATIONS FOR ELSEWHERE! [Flesh this out]</p>
+          </article>
+  
+          <article class="tool">
+            <form>
+              <label for="keyword">Check a site's zoning and prior use</label>
+              <input type="text" placeholder="Enter address">
+            </form>
+          </article>
 
-        <article class="permits">
-          <h3>Permits</h3>
-          <p>The type of use permit you need is dependent on the way your zoning district permits your use.</p>
-          <p>If what you do is Principally Permitted all you need is a Zoning Clearance. This is the simplest form of a use permit.</p>
-          <p>If your use is not principally permitted you will need either an Administrative Use Permit or a Special Use Permit ⇣.</p>
-          <p>Admin Use Permit(AUP): This kind of application requires more staff analysis, and more information from the applicant. These permits entail a public hearing before the Zoning Administrator, and can take approximately 6-8 weeks to work their way through to completion.</p>
-          <p>Special Use Permit(SUP): Requires a high level of scrutiny, typically due to the size of the project and its impact on the neighborhood. These applications go to Planning Commission, whose decision is ratified by the City Council. SUPs take 2-3 months.</p>
-          <p>If your use is not permitted, you should probably ⇣ pick another spot. (Changing the Zoning is very difficult, rare and takes years. It is not recommended, but you are welcome to contact the planning department for more information.)</p>
-        </article>
-
-        <article class="intensity">
-          <h3>Intensity of Use &amp; Traffic Impact Fee</h3>
-          <p>In California, if your business has a more intense use than the previous business in that space, it’s your responsibility to mitigate the impact of that change.</p>
-          <p>You do this via a one-time payment of a Traffic Impact Fee, or TIF.</p>
-          <p>TIF funds help the city of Santa Cruz pay for things like wider lanes and signalized intersections -- which helps the city of Santa Cruz accommodate the increased traffic and public parking burden that your business imposes.</p>
-          <p>Depending on where you site your business, your TIF can be $1000 to $200,000. This is why we recommend picking a location with a similar use to yours.</p>
-
-          <p>This tool will help you estimate the fee.</p>
-          <iframe src="http://pdfmongotest.herokuapp.com/tif-calculator.html"></iframe>
-          <!-- Begin Traffic Impact Fee Calculator -->
-          <form>
-            <fieldset>
-              <label>1) Where is your business located?</label>
-              <input id="address" class="input" onkeydown="checkForEnter(event)" type="text" name="textfield" />
-              <a class="btn btn-info" href="#" onclick="getZoneFromAddress()" style="vertical-align:top;">Submit</a>
-              <span id="regionOut">Region: </span>
-              <!-- TODO: MAP TOOL -->
-            </fieldset>
-            <fieldset>
-              <label>2) What is the existing property?</label>
-              <select id="proptype_existing">
-                <option value="APARTMENT">Apartment</option>
-                <option value="CONDO">Condo/Townhouse</option>
-                <option value="CONVENIENCE">Convenience Market</option>
-                <option value="HOTEL">Hotel/Motel</option>
-                <option value="MEDICAL">Medical Office</option>
-                <option value="OFFICE">Office</option>
-                <option value="RESIDENTIAL">Residential</option>
-                <option value="RESTAURANT">Restaurant</option>
-                <option value="RETAIL">Retail</option>
-                <option value="RETAIL_LARGE">Retail (Building Materials/Large Items)</option>
-                <option value="SENIOR">Senior Housing</option>
-                <option value="SERVICE">Service Station</option>
-                <option value="SINGLE">Single Family Residence</option>
-                <option value="SRO">SRO</option>
-                <option value="SUPERMARKET">Supermarket</option>
-              </select>
-              <label>Size of Property</label>
-              <input id="size_existing" type="text"/>&nbsp;<label id="units">(units/square feet)</label>
-            </fieldset>
-            
-            <fieldset>
-              <label>3) What is the proposed use?</label>
-              <select id="proptype_proposed">
-                <option value="APARTMENT">Apartment</option>
-                <option value="CONDO">Condo/Townhouse</option>
-                <option value="CONVENIENCE">Convenience Market</option>
-                <option value="HOTEL">Hotel/Motel</option>
-                <option value="MEDICAL">Medical Office</option>
-                <option value="OFFICE">Office</option>
-                <option value="RESIDENTIAL">Residential</option>
-                <option value="RESTAURANT">Restaurant</option>
-                <option value="RETAIL">Retail</option>
-                <option value="RETAIL_LARGE">Retail (Building Materials/Large Items)</option>
-                <option value="SENIOR">Senior Housing</option>
-                <option value="SERVICE">Service Station</option>
-                <option value="SINGLE">Single Family Residence</option>
-                <option value="SRO">SRO</option>
-                <option value="SUPERMARKET">Supermarket</option>
-              </select>
-            </fieldset>
-            
-            <a id="calcBtn" class="btn btn-info" href="#" onclick="calculate()">Calculate</a>
-            Trips: <span id="calculated">Fill out form to calculate</span>
-            Estimated TIF: <span id="fee" style="background-color:#fff;"> </span>
-          </form>
-          <!-- End Traffic Impact Fee Calculator -->
-
-          <p>If the space you love has a high Traffic Impact Fee associated with it, don't despair! Contact the Office of Economic Development. They will try to help.</p>
-          <p>NOTE THAT TIF CALCULATIONS FOR DOWNTOWN ARE DIFFERENT THAN TIF CALCULATIONS FOR ELSEWHERE! [Flesh this out]</p>
-        </article>
-
-        <article class="tool">
-          <form>
-            <label for="keyword">Check a site's zoning and prior use</label>
-            <input type="text" placeholder="Enter address">
-          </form>
-        </article>
-
-        Let's calculate out some fees that you will incur at this location.
-        
-        The Traffic Impact Fee is calculated based on the size of the location, as well as its past and proposed use.
-        
-        The Parking Deficiency fee is determined based on the type and size of your business and the number of parking spaces that you have.
-
+          Let's calculate out some fees that you will incur at this location.
+          
+          The Traffic Impact Fee is calculated based on the size of the location, as well as its past and proposed use.
+          
+          The Parking Deficiency fee is determined based on the type and size of your business and the number of parking spaces that you have.
+  
     		<!-- Begin Parking Deficiency Calculator -->
-    		<form class="well form-vertical">
-          <h3>Downtown Parking District only</h3>
-          <label>Business type</label>
-          <select id="proptype_existing" onchange="setUnits(this.value)">
-    	      <option value="APARTMENT">Apartment</option>
-    	      <option value="DOCTOR">Doctor or Dentist</option>
-    	      <option value="MERCANTILE">Mercantile / Professional</option>
-    	      <option value="FURNITURE">Furniture Store</option>
-    	      <option value="SERVICE">Service Area/Warehouse</option>
-          </select>
-          <br/>
-          <label>Size of Property</label>
-          <input id="size_existing" type="text"/>&nbsp;<label id="units">units</label>
-          <br/>
-          <label>Existing Spaces</label>
-          <input id="spaces_existing" type="text" value="0"/>
-          <hr/>
-          <div id="docq" style="display:none">
-    	      <strong>Doctors and Dentists</strong>
-    	      <br/>
-    	      <b>Practitioners:</b><input type="text" id="doctorcount" value="1"/>
-    	      <hr/>
-          </div>
-          <a id="calcBtn" class="btn btn-info" href="#" onclick="calculate()">Calculate</a>
-          <br/><br/>
-          <span id="calculated">Fill out form to calculate</span> required spaces.
-          <br/>
-          Estimated PDF: <span id="fee" style="background-color:#fff;"> </span>
-    		</form>
-    		<!-- End Parking Deficiency Calculator -->
-
-        This form will determine the limitations on any signs you may want to have.
-
-    		<!-- Begin Sign Calculator -->
-    		<form class="well form-vertical">
-          <h3>Freestanding Signs Over Five Feet High</h3>
-          <label>Frontage of Lot</label>
-          <input class="small" id="frontage" type="text" value="0" class="small"/>&nbsp;feet
-          <br/>
-          <label>Parcel Area</label>
-          <input class="small" id="area" type="text" value="0" class="small"/>&nbsp;square feet
-          <br/>
-          <a class="btn btn-info" href="#" onclick="calcFront()">Calculate</a>
-          <br/>
-          <br/>
-          <div style="font-weight:bold;font-size:14pt;">
-    	      Limited to: <span id="freesignarea">__</span> square feet
-          </div>
-          
-          <br/>
-          <br/>
-          
-          <h3>Wall Signs ( outside residential areas )</h3>
-          <label>Length of Wall</label>
-          <input class="small" id="length_wall" type="text" value="0" class="small"/>&nbsp;feet
-          <label>Area of Wall</label>
-          <input class="small" id="area_wall" type="text" value="0" class="small"/>&nbsp;square feet
-          <br/>
-          <a class="btn btn-info" href="#" onclick="calcWall()">Calculate</a>
-          <br/>
-          <br/>
-          <div style="font-weight:bold;font-size:14pt;">
-    	      Limited to: <span id="wallsignarea">__</span> square feet
-          </div>
-    		</form>
-    		<!-- End Sign Calculator -->
-
-    		<!-- Begin Business Improvement Assessment -->
-
-        Business Improvement Assessment goes HERE.
-        The source code for this calc is in PHP. Should we convert it or just copy it over and use PHP?
-
-    		<!-- End Business Improvement Assessment -->
-
-        If N:
-        
-        SiteMyBiz, zoning map.
-        
-        <div class="sitemybiz">
-          <h3>Pick a Space</h3>
-          <p>[Sitemybiz]</p>
-        </div>
-                
-        
-        <div class="parking">
-          <h3>Parking</h3>
-          <p>A business must provide sufficient parking. (If you are downtown, ignore this. You only have to pay the Parking Deficiency Fee above)</p>
-          <p>If you don’t have enough spaces, your customers will use the street, which will block traffic, or use other businesses’ spots, which is not fair.</p>
-          <p>Your use affects the parking spaces required. Example: More people buy food than couches, so a supermarket requires more parking than a furniture store.</p>
-
-          <p>This tool will help you estimate how many parking spaces you are required to provide.</p>
-          <form>
-            <label for="">Use</label>
-            <select>
-              <option>Automobile or machinery sales and service garages</option>
-              <option>Banks without automatic teller machines</option>
-              <option>...</option>
+      		<form class="well form-vertical">
+            <h3>Downtown Parking District only</h3>
+            <label>Business type</label>
+            <select id="proptype_existing" onchange="setUnits(this.value)">
+      	      <option value="APARTMENT">Apartment</option>
+      	      <option value="DOCTOR">Doctor or Dentist</option>
+      	      <option value="MERCANTILE">Mercantile / Professional</option>
+      	      <option value="FURNITURE">Furniture Store</option>
+      	      <option value="SERVICE">Service Area/Warehouse</option>
             </select>
+            <br/>
+            <label>Size of Property</label>
+            <input id="size_existing" type="text"/>&nbsp;<label id="units">units</label>
+            <br/>
+            <label>Existing Spaces</label>
+            <input id="spaces_existing" type="text" value="0"/>
+            <hr/>
+            <div id="docq" style="display:none">
+      	      <strong>Doctors and Dentists</strong>
+      	      <br/>
+      	      <b>Practitioners:</b><input type="text" id="doctorcount" value="1"/>
+      	      <hr/>
+            </div>
+            <a id="calcBtn" class="btn btn-info" href="#" onclick="calculate()">Calculate</a>
+            <br/><br/>
+            <span id="calculated">Fill out form to calculate</span> required spaces.
+            <br/>
+            Estimated PDF: <span id="fee" style="background-color:#fff;"> </span>
+      		</form>
+      		<!-- End Parking Deficiency Calculator -->
+  
+          This form will determine the limitations on any signs you may want to have.
+
+          <!-- Begin Sign Calculator -->
+          <form class="well form-vertical">
+            <h3>Freestanding Signs Over Five Feet High</h3>
+            <label>Frontage of Lot</label>
+            <input class="small" id="frontage" type="text" value="0" class="small"/>&nbsp;feet
+            <br/>
+            <label>Parcel Area</label>
+            <input class="small" id="area" type="text" value="0" class="small"/>&nbsp;square feet
+            <br/>
+            <a class="btn btn-info" href="#" onclick="calcFront()">Calculate</a>
+            <br/>
+            <br/>
+            <div style="font-weight:bold;font-size:14pt;">
+              Limited to: <span id="freesignarea">__</span> square feet
+            </div>
+            
+            <br/>
+            <br/>
+            
+            <h3>Wall Signs ( outside residential areas )</h3>
+            <label>Length of Wall</label>
+            <input class="small" id="length_wall" type="text" value="0" class="small"/>&nbsp;feet
+            <label>Area of Wall</label>
+            <input class="small" id="area_wall" type="text" value="0" class="small"/>&nbsp;square feet
+            <br/>
+            <a class="btn btn-info" href="#" onclick="calcWall()">Calculate</a>
+            <br/>
+            <br/>
+            <div style="font-weight:bold;font-size:14pt;">
+              Limited to: <span id="wallsignarea">__</span> square feet
+            </div>
           </form>
-
-          <table cellspacing="0">
-            <thead>
-              <tr>
-                <th colspan="2">Use</th>
-                <th>Spaces Required</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>a.</td>
-                <td>Automobile or machinery sales and service garages</td>
-                <td>1 for each 400 square feet floor area</td>
-              </tr>
-              <tr>
-                <td>b.</td>
-                <td>Banks without automatic teller machines</td>
-                <td>1 for each 400 square feet floor area</td>
-              </tr>
-              <tr>
-                <td>c.</td>
-                <td>Banks with automatic teller machines</td>
-                <td>1 for each 400 square feet floor area; plus 1.5 for each machine</td>
-              </tr>
-              <tr>
-                <td>d.</td>
-                <td>Business and professional offices, excluding medical and dental offices</td>
-                <td>1 for each 300 square feet floor area</td>
-              </tr>
-              <tr>
-                <td>e.</td>
-                <td>Billiard parlors</td>
-                <td>1.5 for each table</td>
-              </tr>
-              <tr>
-                <td>f.</td>
-                <td>Boarding homes for the aged</td>
-                <td>1 for each 5 beds, plus 1 for each employee</td>
-              </tr>
-              <tr>
-                <td>g.</td>
-                <td>Children&rsquo;s homes</td>
-                <td>1 for each 5 beds, plus 1 for each employee</td>
-              </tr>
-              <tr>
-                <td>h.</td>
-                <td>Houses of worship</td>
-                <td>1 for each 3.5 seats in the sanctuary</td>
-              </tr>
-              <tr>
-                <td>i.</td>
-                <td>Dancehalls and assembly halls without fixed seats, exhibition halls, except church assembly rooms in conjunction with auditoriums</td>
-                <td>1 for each 3 persons of design occupancy load</td>
-              </tr>
-              <tr>
-                <td>j.</td>
-                <td>Family daycare and foster family homes</td>
-                <td>1 for every 5 guests, plus 1 for the resident owner or manager</td>
-              </tr>
-              <tr>
-                <td>k.</td>
-                <td>Funeral homes, mortuaries</td>
-                <td>1 for each 5 seats of the aggregate number of seats provided in all assembly rooms</td>
-              </tr>
-              <tr>
-                <td>l.</td>
-                <td>Furniture and appliance stores, household equipment</td>
-                <td>1 for each 800 square feet of sales floor area</td>
-              </tr>
-              <tr>
-                <td>m.</td>
-                <td>Community care residential facilities</td>
-                <td>1 for each 5 guests, plus 1 for the manager, plus 1 for each employee on the shift with the maximum number of personnel</td>
-              </tr>
-              <tr>
-                <td>n.</td>
-                <td>Hospitals</td>
-                <td>1 for each bed, plus 1 for each employee on the shift with the maximum number of personnel</td>
-              </tr>
-              <tr>
-                <td>o.</td>
-                <td>Hotels, motels</td>
-                <td>1 for each unit intended for separate occupancy, plus 1 for the resident owner or manager</td>
-              </tr>
-              <tr>
-                <td>p.</td>
-                <td>Institutions for the aged</td>
-                <td>1 for every 5 guests, plus 1 for each employee on the shift with the maximum number of personnel</td>
-              </tr>
-              <tr>
-                <td>q.</td>
-                <td>Manufacturing plants, bottling plants, processing plants, packaging plants, furniture repair</td>
-                <td>1 for each 500 square feet of floor area</td>
-              </tr>
-              <tr>
-                <td>r.</td>
-                <td>Medical and dental clinics and offices</td>
-                <td>1 for each 200 square feet of floor area</td>
-              </tr>
-              <tr>
-                <td>s.</td>
-                <td>Medical (or convalescent) hospitals</td>
-                <td>1 for each 5 beds, plus 1 for each employee on the shift with the maximum number of personnel</td>
-              </tr>
-              <tr>
-                <td>t.</td>
-                <td>Nursing homes</td>
-                <td>1 for every 5 guests, plus 1 for the resident manager, plus 1 for each employee on the shift with the maximum number of personnel</td>
-              </tr>
-              <tr>
-                <td>u.</td>
-                <td>Physical fitness facilities</td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>Multi-program:</td>
-                <td>1 space for each 100 square feet of floor area</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>Single-program:</td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&bull; aerobics:</td>
-                <td>1 space for each 50 square feet of floor area</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&bull; basketball; volleyball:</td>
-                <td>1 space for each 3 persons of occupancy</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&bull; lap pool:</td>
-                <td>2 spaces per lane plus 1 space for each 300 square feet of non-pool floor area</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&bull; weightlifting:</td>
-                <td>1 space for each 250 feet of floor area</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>Physical fitness facilities with more than 15,000 square feet of floor area shall provide an additional 10 percent of the total number of required parking spaces</td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td>v.</td>
-                <td>Physical therapy</td>
-                <td>1 space per 200 square feet of floor area. In addition, 1 space per 50 square feet of pool (water) area</td>
-              </tr>
-            </tbody>
-          </table>
+          <!-- End Sign Calculator -->
           
-          <p>If the resulting number of parking spots contains a fraction and that fraction is greater than half you must round up and add a full parking space.</p>
-
-
-
-
-
-        <script src="jquery-1.7.2.min.js"></script>
-        <link rel="stylesheet" href="assets/css/jquery-ui-1.8.css">
-        <script src="jquery-ui-1.7.2.min.js"></script>
-
-        <!-- Begin Parking Calculator -->
-        <form class="well form-vertical">
-
-        <!-- 23 categories, 16 combined-->
-        <label>Please select a category for your business type:</label>
-          <select id="BizType">
-              <option value="DEFAULT">        Choose one...                                         </option><!--Default option-->
-              <option value="AUTO">           Automobiles and machinery           <!--Includes 2-->      </option>
-              <option value="BANKS">          Banks                               <!--Includes 2-->      </option>
-              <option value="SENIORS">        Senior care and facilities          <!--Includes 3-->      </option>
-              <option value="CHILDRENS">      Children and foster care            <!--Includes 2-->      </option>
-              <option value="FITNESSES">      Physical fitness facilities         <!--Includes 2, 4 under 2--></option>
-              <option value="LODGING">        Lodging                             <!--Includes 2-->      </option>
-              <option value="MEDICALS">       Medical facilities and offices      <!--Includes 4-->      </option>
-              <option value="FOOD">           Restaurants, bars, and food service <!--Includes 2-->      </option>
-              <option value="EDUCATION">      Educational facilities              <!--Includes 3-->      </option>
-              <option value="RECYCLE">        Recycling collection facilities     <!--Includes 2-->      </option>
-              <option value="BILLIARD">       Billiard parlors                                      </option>
-              <option value="OFFICE">         Business and professional offices                     </option>
-              <option value="HALL">           Dance and exhibition halls and assembly halls without fixed seats</option>
-              <option value="FUNERAL">        Funeral homes, mortuaries                             </option>
-              <option value="HOUSEHOLD">      Furniture and appliance stores, household equipment   </option>
-              <option value="FURN_REPAIR">    Furniture repair                                      </option>
-              <option value="WORSHIP">        Houses of worship                                     </option>
-              <option value="PLANT">          Manufacturing, bottling, and processing plants        </option>
-              <option value="RESEARCH">       Research and Development                              </option>
-              <option value="RESIDENTIAL">    Residential                                           </option>
-              <option value="RETAIL">         Retail stores, shops, service establishments, and shopping centers</option>
-              <option value="HALLS_FIXED">    Sports arenas, auditoriums, assembly halls, and meeting rooms </option>
-              <option value="THEATERS">       Theaters                                              </option>
-              <option value="WAREHOUSES">     Wholesale establishments, warehouses, service and maintenance center, communications equipment buildings 
-                </option>
-
-
-          </select>
-        </form>
-
-        <!-- JQuery script below -->
-        <script>
-
-        $(document).ready(function(){
-        $('#BizType').change(function(){
-
-            switch($(this).val()){
-
-            case 'AUTO':
-             $("#prompt").show();
-             $("#accordion").show();
-             $("#accordion").accordion( { collapsible: true, active: false } );
-            break;
-            }
-        });
-        });      
-        </script>
-
-
-        <div id="prompt" style="display: none;">
-        <p>Please select your specific business type below</p>
-        </div>
-
-
-        <div id="accordion" style="display: none;">
-          <h3>Section 1</h3>
-          <div>
-            <p>
-            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-            ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-            </p>
-          </div>
-          <h3>Section 2</h3>
-          <div>
-            <p>
-            Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-            purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-            velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-            suscipit faucibus urna.
-            </p>
-          </div>
-          <h3>Section 3</h3>
-          <div>
-            <p>
-            Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-            Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-            ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-            lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-            </p>
-            <ul>
-              <li>List item one</li>
-              <li>List item two</li>
-              <li>List item three</li>
-            </ul>
-          </div>
-          <h3>Section 4</h3>
-          <div>
-            <p>
-            Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-            et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-            faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-            mauris vel est.
-            </p>
-            <p>
-            Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos.
-            </p>
-          </div>
-        </div>
-
-
-          <h3>Located downtown?</h3>
-          <p>If you are located downtown, you don’t need to provide parking, but you must pay for it.</p>
-          <p>Downtown has shared parking with reduced requirements. So if you don’t have off street parking, you can pay into a shared fund that runs the City garages and lots.</p>
-          <p>[BID calculator]</p>
-          <iframe src="http://bidcalc.phpfogapp.com/calc.html" frameborder="0" width="450" height="400"></iframe>
-          <p>[Parking Deficiency Fee calculator]</p>
-          <iframe src="http://pdfmongotest.herokuapp.com/parking-calculator.html" frameborder="0" width="450" height="450"></iframe>
-        </div>
+          <!-- Begin Business Improvement Assessment -->
+          
+          Business Improvement Assessment goes HERE.
+          The source code for this calc is in PHP. Should we convert it or just copy it over and use PHP?
+          
+          <!-- End Business Improvement Assessment -->
+          
+          If N:
+          
+          SiteMyBiz, zoning map.
+          
+          <div class="sitemybiz">
+            <h3>Pick a Space</h3>
+            <p>[Sitemybiz]</p>
+          </div><!-- /.sitemybiz -->
+          
+          <div class="parking">
+            <h3>Parking</h3>
+            <p>A business must provide sufficient parking. (If you are downtown, ignore this. You only have to pay the Parking Deficiency Fee above)</p>
+            <p>If you don’t have enough spaces, your customers will use the street, which will block traffic, or use other businesses’ spots, which is not fair.</p>
+            <p>Your use affects the parking spaces required. Example: More people buy food than couches, so a supermarket requires more parking than a furniture store.</p>
+            <p>This tool will help you estimate how many parking spaces you are required to provide.</p>
+            <form>
+              <label for="">Use</label>
+              <select>
+                <option>Automobile or machinery sales and service garages</option>
+                <option>Banks without automatic teller machines</option>
+                <option>...</option>
+              </select>
+            </form>
+            <table cellspacing="0">
+              <thead>
+                <tr>
+                  <th colspan="2">Use</th>
+                  <th>Spaces Required</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>a.</td>
+                  <td>Automobile or machinery sales and service garages</td>
+                  <td>1 for each 400 square feet floor area</td>
+                </tr>
+                <tr>
+                  <td>b.</td>
+                  <td>Banks without automatic teller machines</td>
+                  <td>1 for each 400 square feet floor area</td>
+                </tr>
+                <tr>
+                  <td>c.</td>
+                  <td>Banks with automatic teller machines</td>
+                  <td>1 for each 400 square feet floor area; plus 1.5 for each machine</td>
+                </tr>
+                <tr>
+                  <td>d.</td>
+                  <td>Business and professional offices, excluding medical and dental offices</td>
+                  <td>1 for each 300 square feet floor area</td>
+                </tr>
+                <tr>
+                  <td>e.</td>
+                  <td>Billiard parlors</td>
+                  <td>1.5 for each table</td>
+                </tr>
+                <tr>
+                  <td>f.</td>
+                  <td>Boarding homes for the aged</td>
+                  <td>1 for each 5 beds, plus 1 for each employee</td>
+                </tr>
+                <tr>
+                  <td>g.</td>
+                  <td>Children&rsquo;s homes</td>
+                  <td>1 for each 5 beds, plus 1 for each employee</td>
+                </tr>
+                <tr>
+                  <td>h.</td>
+                  <td>Houses of worship</td>
+                  <td>1 for each 3.5 seats in the sanctuary</td>
+                </tr>
+                <tr>
+                  <td>i.</td>
+                  <td>Dancehalls and assembly halls without fixed seats, exhibition halls, except church assembly rooms in conjunction with auditoriums</td>
+                  <td>1 for each 3 persons of design occupancy load</td>
+                </tr>
+                <tr>
+                  <td>j.</td>
+                  <td>Family daycare and foster family homes</td>
+                  <td>1 for every 5 guests, plus 1 for the resident owner or manager</td>
+                </tr>
+                <tr>
+                  <td>k.</td>
+                  <td>Funeral homes, mortuaries</td>
+                  <td>1 for each 5 seats of the aggregate number of seats provided in all assembly rooms</td>
+                </tr>
+                <tr>
+                  <td>l.</td>
+                  <td>Furniture and appliance stores, household equipment</td>
+                  <td>1 for each 800 square feet of sales floor area</td>
+                </tr>
+                <tr>
+                  <td>m.</td>
+                  <td>Community care residential facilities</td>
+                  <td>1 for each 5 guests, plus 1 for the manager, plus 1 for each employee on the shift with the maximum number of personnel</td>
+                </tr>
+                <tr>
+                  <td>n.</td>
+                  <td>Hospitals</td>
+                  <td>1 for each bed, plus 1 for each employee on the shift with the maximum number of personnel</td>
+                </tr>
+                <tr>
+                  <td>o.</td>
+                  <td>Hotels, motels</td>
+                  <td>1 for each unit intended for separate occupancy, plus 1 for the resident owner or manager</td>
+                </tr>
+                <tr>
+                  <td>p.</td>
+                  <td>Institutions for the aged</td>
+                  <td>1 for every 5 guests, plus 1 for each employee on the shift with the maximum number of personnel</td>
+                </tr>
+                <tr>
+                  <td>q.</td>
+                  <td>Manufacturing plants, bottling plants, processing plants, packaging plants, furniture repair</td>
+                  <td>1 for each 500 square feet of floor area</td>
+                </tr>
+                <tr>
+                  <td>r.</td>
+                  <td>Medical and dental clinics and offices</td>
+                  <td>1 for each 200 square feet of floor area</td>
+                </tr>
+                <tr>
+                  <td>s.</td>
+                  <td>Medical (or convalescent) hospitals</td>
+                  <td>1 for each 5 beds, plus 1 for each employee on the shift with the maximum number of personnel</td>
+                </tr>
+                <tr>
+                  <td>t.</td>
+                  <td>Nursing homes</td>
+                  <td>1 for every 5 guests, plus 1 for the resident manager, plus 1 for each employee on the shift with the maximum number of personnel</td>
+                </tr>
+                <tr>
+                  <td>u.</td>
+                  <td>Physical fitness facilities</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>Multi-program:</td>
+                  <td>1 space for each 100 square feet of floor area</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>Single-program:</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&bull; aerobics:</td>
+                  <td>1 space for each 50 square feet of floor area</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&bull; basketball; volleyball:</td>
+                  <td>1 space for each 3 persons of occupancy</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&bull; lap pool:</td>
+                  <td>2 spaces per lane plus 1 space for each 300 square feet of non-pool floor area</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&bull; weightlifting:</td>
+                  <td>1 space for each 250 feet of floor area</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>Physical fitness facilities with more than 15,000 square feet of floor area shall provide an additional 10 percent of the total number of required parking spaces</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>v.</td>
+                  <td>Physical therapy</td>
+                  <td>1 space per 200 square feet of floor area. In addition, 1 space per 50 square feet of pool (water) area</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p>If the resulting number of parking spots contains a fraction and that fraction is greater than half you must round up and add a full parking space.</p>
+            
+            <script src="jquery-1.7.2.min.js"></script>
+            <link rel="stylesheet" href="assets/css/jquery-ui-1.8.css">
+            <script src="jquery-ui-1.7.2.min.js"></script>
+            <!-- Begin Parking Calculator -->
+            <form class="well form-vertical">
+              <!-- 23 categories, 16 combined-->
+              <label>Please select a category for your business type:</label>
+              <select id="BizType">
+                <option value="DEFAULT">        Choose one...                                         </option><!--Default option-->
+                <option value="AUTO">           Automobiles and machinery           <!--Includes 2-->      </option>
+                <option value="BANKS">          Banks                               <!--Includes 2-->      </option>
+                <option value="SENIORS">        Senior care and facilities          <!--Includes 3-->      </option>
+                <option value="CHILDRENS">      Children and foster care            <!--Includes 2-->      </option>
+                <option value="FITNESSES">      Physical fitness facilities         <!--Includes 2, 4 under 2--></option>
+                <option value="LODGING">        Lodging                             <!--Includes 2-->      </option>
+                <option value="MEDICALS">       Medical facilities and offices      <!--Includes 4-->      </option>
+                <option value="FOOD">           Restaurants, bars, and food service <!--Includes 2-->      </option>
+                <option value="EDUCATION">      Educational facilities              <!--Includes 3-->      </option>
+                <option value="RECYCLE">        Recycling collection facilities     <!--Includes 2-->      </option>
+                <option value="BILLIARD">       Billiard parlors                                      </option>
+                <option value="OFFICE">         Business and professional offices                     </option>
+                <option value="HALL">           Dance and exhibition halls and assembly halls without fixed seats</option>
+                <option value="FUNERAL">        Funeral homes, mortuaries                             </option>
+                <option value="HOUSEHOLD">      Furniture and appliance stores, household equipment   </option>
+                <option value="FURN_REPAIR">    Furniture repair                                      </option>
+                <option value="WORSHIP">        Houses of worship                                     </option>
+                <option value="PLANT">          Manufacturing, bottling, and processing plants        </option>
+                <option value="RESEARCH">       Research and Development                              </option>
+                <option value="RESIDENTIAL">    Residential                                           </option>
+                <option value="RETAIL">         Retail stores, shops, service establishments, and shopping centers</option>
+                <option value="HALLS_FIXED">    Sports arenas, auditoriums, assembly halls, and meeting rooms </option>
+                <option value="THEATERS">       Theaters                                              </option>
+                <option value="WAREHOUSES">     Wholesale establishments, warehouses, service and maintenance center, communications equipment buildings</option>
+              </select>
+            </form>
+            <script>
+              $(document).ready(function(){
+                $('#BizType').change(function(){
+                  switch($(this).val()){
+                    case 'AUTO':
+                      $("#prompt").show();
+                      $("#accordion").show();
+                      $("#accordion").accordion( { collapsible: true, active: false } );
+                      break;
+                  }
+                });
+              });
+            </script>
+            
+            <div id="prompt" style="display: none;">
+              <p>Please select your specific business type below</p>
+            </div>
+            
+            <div id="accordion" style="display: none;">
+              <h3>Section 1</h3>
+              <div>
+                <p>
+                Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+                odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                </p>
+              </div>
+              <h3>Section 2</h3>
+              <div>
+                <p>
+                Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+                suscipit faucibus urna.
+                </p>
+              </div>
+              <h3>Section 3</h3>
+              <div>
+                <p>
+                Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+                ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+                lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+                </p>
+                <ul>
+                  <li>List item one</li>
+                  <li>List item two</li>
+                  <li>List item three</li>
+                </ul>
+              </div>
+              <h3>Section 4</h3>
+              <div>
+                <p>
+                Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+                mauris vel est.
+                </p>
+                <p>
+                Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                inceptos himenaeos.
+                </p>
+              </div>
+            </div>
+            
+            <h3>Located downtown?</h3>
+            <p>If you are located downtown, you don’t need to provide parking, but you must pay for it.</p>
+            <p>Downtown has shared parking with reduced requirements. So if you don’t have off street parking, you can pay into a shared fund that runs the City garages and lots.</p>
+            <p>[BID calculator]</p>
+            <iframe src="http://bidcalc.phpfogapp.com/calc.html" frameborder="0" width="450" height="400"></iframe>
+            <p>[Parking Deficiency Fee calculator]</p>
+            <iframe src="http://pdfmongotest.herokuapp.com/parking-calculator.html" frameborder="0" width="450" height="450"></iframe>
+          </div><!-- /.parking -->
         
-      </div>
+        </div><!-- /.col -->
+        
+      </div><!-- /.content clearfix -->
     </section><!-- /#location -->
     
     <section id="regulations" class="frame">
@@ -774,173 +765,176 @@
     <section id="nextsteps" class="frame">
       <div class="content clearfix">
 
-      <h1>Your Summary</h1>
-
-      <p>Based on everything you've told us, here's the paperwork you need to fill out.</p>
-      
-      <p>All businesses need to fill out this information first. Let's start there.</p>
-      
-      <p>This information is for your city Zoning Clearance and Business License.</p>
-
-      <form>
-        <label for="">Your phone number:</label>
-        <input type="text">
-        
-        <label for="">Your address:</label>
-        <input type="text">
-    
-        <label for="">Your Social Security Number (If you would rather not enter this here, that's okay):</label>
-        <input type="text">
-    
-        <label for="">Business phone number:</label>
-        <input type="text">  
-    
-        <label for="">An emergency contact phone number:</label>
-        <input type="text">  
-    
-        <label for="">APN (Assessor's Parcel Number):</label>
-        <input type="text">
-    
-        <label for="">What date will you start?</label>
-        <input type="text">
-    
-        <label for="">Total Area (in square feet):</label>
-        <input type="text">
-    
-        <label for="">First Floor Area (in square feet):</label>
-        <input type="text">
-    
-        <label for="">Outdoor Area (in square feet):</label>
-        <input type="text">
-
-       	<label>Will there be only one tenant, or more than one? (Choose one)</label>
-      	<select id="tenants">
-      		<option value="ONE">One</option>
-      		<option value="MULTIPLE">Multiple</option>
-      	</select>
-
-        <label for="">Number of bicycle parking spaces:</label>
-        <input type="text">
-
-       	<label>What is your business' type of ownership? (Choose one)</label>
-      	<select id="ownership">
-      		<option value="SOLE_PROP">Sole Proprietor</option>
-      		<option value="PARTNERSHIP">Partnership</option>
-      		<option value="CORPORATION">Corporation</option>
-      		<option value="TRUST">Trust</option>
-      	</select>
-
-        <!-- NOTE: Conditional fields below -->
-        Tell us about the other owners.
-        <!-- These will include name, title, address, and phone # of other owners -->
-
-        <label for="">Number of rental units:</label>
-        <input type="text">
-    
-        <label for="">Your State ID Number:</label>
-        <input type="text">
-    
-        <label for="">Your State Sales Tax Number:</label>
-        <input type="text">
-    
-        <label for="">Your FIN / EIN:</label>
-        <input type="text">
-    
-        <label for="">Your State Contractor's License:</label>
-        <input type="text">
-    
-        <label for="">How many employees will work at your business?</label>
-        <input type="text">
-    
-      </form>
-
-      [Paperwork]
-      
-      Based on what you've already told us, we've pre-filled out some of the fields.
-      
-      Here's what it will cost you.
-      
-      
-      Remaining Forms:
-      NOTE: Some of these may be able to be auto-excluded based on information already provided.
-      
-      
-      Will any non-owner be applying for a permit for the business?
-              <!-- Begin Owner Agent Form -->
-              <!-- CONDITION: A non-owner applies for a permit on behalf of business -->
-              <!-- End Owner Agent Form -->
-      
-      Will any construction or renovation be needed on the property?
-              <!-- Begin Building Permit -->
-              <!-- CONDITION: Construction or renevation is done -->
-              <!-- End Building Permit -->
-      
-      Use Permit goes HERE. Condition UNKNOWN.
-              <!-- Begin Use Permit (AUP / SUP) -->
-              <!-- CONDITION: UNKNOWN -->
-              <!-- End Use Permit (AUP / SUP) -->
-      
-      Will you be applying for utilities?
-              <!-- Begin Application for Utility Service -->
-              <!-- CONDITION: New utility registration will be done -->
-              <!-- End Application for Utility Service -->
-      
-      Will your business be making a profit under a fictitious business name?
-              <!-- Begin Fictitious Business Name Statement -->
-              <!-- CONDITION: Business is for-profit under a fictitious business name -->
-              <!-- End Fictitious Business Name Statement -->
-      
-      Is your business a food service establishment?
-              <!-- Begin Environmental Health Permit -->
-              <!-- CONDITION: Business is a food service establishment -->
-              <!-- End Environmental Health Permit -->
-      
-      Is your business a retail establishment?
-              <!-- Begin Seller's Permit -->
-              <!-- CONDITION: Business is a retail establishment -->
-              <!-- End Seller's Permit -->
-      
-      Is your business an LLC (Limited Liability Company)?
-              <!-- Begin Sec. State LLC Registration -->
-              <!-- CONDITON: Business is an LLC -->
-              <!-- End Sec. State LLC Registration -->
-      
-      Is your business an LLP (Limited Liability Partnership)
-              <!-- Begin Sec. State LLP Registration -->
-              <!-- CONDITION: Business is an LLP -->
-              <!-- End Sec. State LLP Registration -->
-      
-      Is your business a corporation? 
-              <!-- Begin Sec. State Articles of Incorporation Filing -->
-              <!-- CONDITION: Business is a corporation -->
-              <!-- End Sec. State Articles of Incorporation Filing -->
-      
-      Will your business have a payroll? (more than one employee)
-              <!-- Begin Payroll Tax Registration -->
-              <!-- CONDITION: Business has 2+ employees -->
-      NOTE: I'm still working out the conditions here, and a substitute tax if the person is working alone.
-              <!-- End Payroll Tax Registration -->
-      
-      IRS EIN Application HERE.
-      NOTE: IRS EIN applications may have to be filed by mail, phone or online through their own walkthrough.
-      Here is a nice link for an online IRS EIN application: https://gettaxidnumbers.com/apply-now?gclid=CMecjoqE27ACFYeo4AodSnbM1w
-              <!-- Begin IRS EIN Application (Corporation; S-Corp; etc) -->
-              <!-- CONDITION: Business is a corporation -->
-              <!-- End IRS EIN Application (Corporation; S-Corp; etc) -->
-
         <h1>Next Steps</h1>
+      
+        <div class="col">
+          <p>Based on everything you've told us, here's the paperwork you need to fill out.</p>
+          
+          <p>All businesses need to fill out this information first. Let's start there.</p>
+        
+        <p>This information is for your city Zoning Clearance and Business License.</p>
+  
+        <form>
+          <label for="">Your phone number:</label>
+          <input type="text">
+          
+          <label for="">Your address:</label>
+          <input type="text">
+      
+          <label for="">Your Social Security Number (If you would rather not enter this here, that's okay):</label>
+          <input type="text">
+      
+          <label for="">Business phone number:</label>
+          <input type="text">  
+      
+          <label for="">An emergency contact phone number:</label>
+          <input type="text">  
+      
+          <label for="">APN (Assessor's Parcel Number):</label>
+          <input type="text">
+      
+          <label for="">What date will you start?</label>
+          <input type="text">
+      
+          <label for="">Total Area (in square feet):</label>
+          <input type="text">
+      
+          <label for="">First Floor Area (in square feet):</label>
+          <input type="text">
+      
+          <label for="">Outdoor Area (in square feet):</label>
+          <input type="text">
+  
+         	<label>Will there be only one tenant, or more than one? (Choose one)</label>
+        	<select id="tenants">
+        		<option value="ONE">One</option>
+        		<option value="MULTIPLE">Multiple</option>
+        	</select>
+  
+          <label for="">Number of bicycle parking spaces:</label>
+          <input type="text">
+  
+         	<label>What is your business' type of ownership? (Choose one)</label>
+        	<select id="ownership">
+        		<option value="SOLE_PROP">Sole Proprietor</option>
+        		<option value="PARTNERSHIP">Partnership</option>
+        		<option value="CORPORATION">Corporation</option>
+        		<option value="TRUST">Trust</option>
+        	</select>
+  
+          <!-- NOTE: Conditional fields below -->
+          Tell us about the other owners.
+          <!-- These will include name, title, address, and phone # of other owners -->
+  
+          <label for="">Number of rental units:</label>
+          <input type="text">
+      
+          <label for="">Your State ID Number:</label>
+          <input type="text">
+      
+          <label for="">Your State Sales Tax Number:</label>
+          <input type="text">
+      
+          <label for="">Your FIN / EIN:</label>
+          <input type="text">
+      
+          <label for="">Your State Contractor's License:</label>
+          <input type="text">
+      
+          <label for="">How many employees will work at your business?</label>
+          <input type="text">
+      
+        </form>
+  
+        [Paperwork]
+        
+        Based on what you've already told us, we've pre-filled out some of the fields.
+        
+        Here's what it will cost you.
+        
+        
+        Remaining Forms:
+        NOTE: Some of these may be able to be auto-excluded based on information already provided.
+        
+        
+        Will any non-owner be applying for a permit for the business?
+                <!-- Begin Owner Agent Form -->
+                <!-- CONDITION: A non-owner applies for a permit on behalf of business -->
+                <!-- End Owner Agent Form -->
+        
+        Will any construction or renovation be needed on the property?
+                <!-- Begin Building Permit -->
+                <!-- CONDITION: Construction or renevation is done -->
+                <!-- End Building Permit -->
+        
+        Use Permit goes HERE. Condition UNKNOWN.
+                <!-- Begin Use Permit (AUP / SUP) -->
+                <!-- CONDITION: UNKNOWN -->
+                <!-- End Use Permit (AUP / SUP) -->
+        
+        Will you be applying for utilities?
+                <!-- Begin Application for Utility Service -->
+                <!-- CONDITION: New utility registration will be done -->
+                <!-- End Application for Utility Service -->
+        
+        Will your business be making a profit under a fictitious business name?
+                <!-- Begin Fictitious Business Name Statement -->
+                <!-- CONDITION: Business is for-profit under a fictitious business name -->
+                <!-- End Fictitious Business Name Statement -->
+        
+        Is your business a food service establishment?
+                <!-- Begin Environmental Health Permit -->
+                <!-- CONDITION: Business is a food service establishment -->
+                <!-- End Environmental Health Permit -->
+        
+        Is your business a retail establishment?
+                <!-- Begin Seller's Permit -->
+                <!-- CONDITION: Business is a retail establishment -->
+                <!-- End Seller's Permit -->
+        
+        Is your business an LLC (Limited Liability Company)?
+                <!-- Begin Sec. State LLC Registration -->
+                <!-- CONDITON: Business is an LLC -->
+                <!-- End Sec. State LLC Registration -->
+        
+        Is your business an LLP (Limited Liability Partnership)
+                <!-- Begin Sec. State LLP Registration -->
+                <!-- CONDITION: Business is an LLP -->
+                <!-- End Sec. State LLP Registration -->
+        
+        Is your business a corporation? 
+                <!-- Begin Sec. State Articles of Incorporation Filing -->
+                <!-- CONDITION: Business is a corporation -->
+                <!-- End Sec. State Articles of Incorporation Filing -->
+        
+        Will your business have a payroll? (more than one employee)
+                <!-- Begin Payroll Tax Registration -->
+                <!-- CONDITION: Business has 2+ employees -->
+        NOTE: I'm still working out the conditions here, and a substitute tax if the person is working alone.
+                <!-- End Payroll Tax Registration -->
+        
+        IRS EIN Application HERE.
+        NOTE: IRS EIN applications may have to be filed by mail, phone or online through their own walkthrough.
+        Here is a nice link for an online IRS EIN application: https://gettaxidnumbers.com/apply-now?gclid=CMecjoqE27ACFYeo4AodSnbM1w
+                <!-- Begin IRS EIN Application (Corporation; S-Corp; etc) -->
+                <!-- CONDITION: Business is a corporation -->
+                <!-- End IRS EIN Application (Corporation; S-Corp; etc) -->
+  
+          <h1>Next Steps</h1>
+  
+          <p>Information about the process that the planning department goes through.</p>
+  
+          <p>Notification to Peter / Economic Development</p>
+  
+          <p>Download your confirmation.</p>
+  
+          <p>Notification to Planning (does it go directly into E-trak-it? Is it an email?)</p>
+  
+          <p>Maybe a checklist?</p>
 
-        <p>Information about the process that the planning department goes through.</p>
+        </div><!-- /.col -->
 
-        <p>Notification to Peter / Economic Development</p>
-
-        <p>Download your confirmation.</p>
-
-        <p>Notification to Planning (does it go directly into E-trak-it? Is it an email?)</p>
-
-        <p>Maybe a checklist?</p>
-
-      </div>
+      </div><!-- /.content clearfix -->
     </section><!-- /#nextsteps -->
 
   </div><!-- /.main -->
@@ -956,7 +950,7 @@
 <script type="text/javascript">
 (function(){
   // Kick off navigation
-  $('nav').scrollspy();
+  $('.nav').scrollspy();
   
   // Set up behavior for profile toggle
   $('#profile_toggle').click(function(e){
