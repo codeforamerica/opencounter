@@ -616,6 +616,125 @@
           
           <p>If the resulting number of parking spots contains a fraction and that fraction is greater than half you must round up and add a full parking space.</p>
 
+
+
+
+
+        <script src="jquery-1.7.2.min.js"></script>
+        <link rel="stylesheet" href="assets/css/jquery-ui-1.8.css">
+        <script src="jquery-ui-1.7.2.min.js"></script>
+
+        <!-- Begin Parking Calculator -->
+        <form class="well form-vertical">
+
+        <!-- 23 categories, 16 combined-->
+        <label>Please select a category for your business type:</label>
+          <select id="BizType">
+              <option value="DEFAULT">        Choose one...                                         </option><!--Default option-->
+              <option value="AUTO">           Automobiles and machinery           <!--Includes 2-->      </option>
+              <option value="BANKS">          Banks                               <!--Includes 2-->      </option>
+              <option value="SENIORS">        Senior care and facilities          <!--Includes 3-->      </option>
+              <option value="CHILDRENS">      Children and foster care            <!--Includes 2-->      </option>
+              <option value="FITNESSES">      Physical fitness facilities         <!--Includes 2, 4 under 2--></option>
+              <option value="LODGING">        Lodging                             <!--Includes 2-->      </option>
+              <option value="MEDICALS">       Medical facilities and offices      <!--Includes 4-->      </option>
+              <option value="FOOD">           Restaurants, bars, and food service <!--Includes 2-->      </option>
+              <option value="EDUCATION">      Educational facilities              <!--Includes 3-->      </option>
+              <option value="RECYCLE">        Recycling collection facilities     <!--Includes 2-->      </option>
+              <option value="BILLIARD">       Billiard parlors                                      </option>
+              <option value="OFFICE">         Business and professional offices                     </option>
+              <option value="HALL">           Dance and exhibition halls and assembly halls without fixed seats</option>
+              <option value="FUNERAL">        Funeral homes, mortuaries                             </option>
+              <option value="HOUSEHOLD">      Furniture and appliance stores, household equipment   </option>
+              <option value="FURN_REPAIR">    Furniture repair                                      </option>
+              <option value="WORSHIP">        Houses of worship                                     </option>
+              <option value="PLANT">          Manufacturing, bottling, and processing plants        </option>
+              <option value="RESEARCH">       Research and Development                              </option>
+              <option value="RESIDENTIAL">    Residential                                           </option>
+              <option value="RETAIL">         Retail stores, shops, service establishments, and shopping centers</option>
+              <option value="HALLS_FIXED">    Sports arenas, auditoriums, assembly halls, and meeting rooms </option>
+              <option value="THEATERS">       Theaters                                              </option>
+              <option value="WAREHOUSES">     Wholesale establishments, warehouses, service and maintenance center, communications equipment buildings 
+                </option>
+
+
+          </select>
+        </form>
+
+        <!-- JQuery script below -->
+        <script>
+
+        $(document).ready(function(){
+        $('#BizType').change(function(){
+
+            switch($(this).val()){
+
+            case 'AUTO':
+             $("#prompt").show();
+             $("#accordion").show();
+             $("#accordion").accordion( { collapsible: true, active: false } );
+            break;
+            }
+        });
+        });      
+        </script>
+
+
+        <div id="prompt" style="display: none;">
+        <p>Please select your specific business type below</p>
+        </div>
+
+
+        <div id="accordion" style="display: none;">
+          <h3>Section 1</h3>
+          <div>
+            <p>
+            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+            ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+            </p>
+          </div>
+          <h3>Section 2</h3>
+          <div>
+            <p>
+            Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+            purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+            velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+            suscipit faucibus urna.
+            </p>
+          </div>
+          <h3>Section 3</h3>
+          <div>
+            <p>
+            Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+            Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+            ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+            lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+            </p>
+            <ul>
+              <li>List item one</li>
+              <li>List item two</li>
+              <li>List item three</li>
+            </ul>
+          </div>
+          <h3>Section 4</h3>
+          <div>
+            <p>
+            Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+            et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+            faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+            mauris vel est.
+            </p>
+            <p>
+            Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos.
+            </p>
+          </div>
+        </div>
+
+
           <h3>Located downtown?</h3>
           <p>If you are located downtown, you don’t need to provide parking, but you must pay for it.</p>
           <p>Downtown has shared parking with reduced requirements. So if you don’t have off street parking, you can pay into a shared fund that runs the City garages and lots.</p>
