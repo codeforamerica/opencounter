@@ -8,6 +8,13 @@
   <meta name="description" content="Set up shop in your city.">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="assets/css/main.css">
+
+  <link rel="stylesheet" href="assets/css/jquery-ui-1.8.css">
+  <script src="assets/js/jquery-1.7.2.min.js"></script>
+  <script src="assets/js/jquery-ui-1.7.2.js"></script>
+
+
+
 </head>
 
 <body data-spy="scroll">
@@ -635,22 +642,20 @@
             <p>If the resulting number of parking spots contains a fraction and that fraction is greater than half you must round up and add a full parking space.</p>
             
             <p>This tool will help you estimate how many parking spaces you are required to provide.</p>
-            <div class="tool">
-              <form class="calculator" id="parkingSpacesCalculator">
-                <label for="">Use</label>
-                <select>
-                  <option>Automobile or machinery sales and service garages</option>
-                  <option>Banks without automatic teller machines</option>
-                  <option>...</option>
-                </select>
-              </form>
-            </div>
             
-            <script src="jquery-1.7.2.min.js"></script>
-            <link rel="stylesheet" href="assets/css/jquery-ui-1.8.css">
-            <script src="jquery-ui-1.7.2.min.js"></script>
+            <!-- <script src="assets/js/jquery-1.7.2.min.js"></script> -->
+           
+            <!-- <link rel="stylesheet" href="assets/css/jquery-ui-1.8.css"> -->
+            <!-- <script src="assets/css/jquery-ui-1.8.css" rel="stylesheet" type="text/css"></script> -->
+           
+            <!-- <script src="assets/js/jquery-ui-1.7.2.js"></script> -->
+
+
+
+
             <!-- Begin Parking Calculator -->
-            <form class="well form-vertical">
+            <div class="tool">
+            <form class="calculator" id="parkingSpacesCalculator">
               <!-- 23 categories, 16 combined-->
               <label>Please select a category for your business type:</label>
               <select id="BizType">
@@ -681,6 +686,8 @@
                 <option value="WAREHOUSES">     Wholesale establishments, warehouses, service and maintenance center, communications equipment buildings</option>
               </select>
             </form>
+          </div>
+
             <script>
               $(document).ready(function(){
                 $('#BizType').change(function(){
