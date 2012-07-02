@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="assets/css/main.css">
 
-  <link rel="stylesheet" href="assets/css/jquery-ui-1.8.css">
+  <link rel="new stylesheet" href="assets/css/jquery-ui-1.8.css">
   <script src="assets/js/jquery-1.7.2.min.js"></script>
   <script src="assets/js/jquery-ui-1.7.2.js"></script>
 </head>
@@ -516,16 +516,13 @@
                       <option value="THEATERS">       Theaters                                                                 </option>
                       <option value="WAREHOUSES">     Wholesale, warehouses, and service &amp; maintenance centers             </option>
                 </select>
-              </form>
-          </div>
+            </form>
+            </div>
 
-            <!--JQuery script below-->
             <script>
-
               $(document).ready(function(){
 
               $('#BizType').change(function(){
-                  // Get the value of the selected option in #BizType
 
                   var accordions = ["#auto", "#banks", "#children", "#education", "#fitness", 
                                     "#food", "#halls", "#lodging", "#medical", "#recycle", "#seniors"];
@@ -537,11 +534,10 @@
                   for(var i=0; i<accordions.length; i++)
                     if(accordions[i] == text)
                     {
-                      $("#prompt").show();  //alert("prompt.show called");
+                      $("#prompt").show();
                       $(text).show();
                       $(text).accordion( { collapsible: true, active: false } );
                     }
-
                   $(text).show();
 
                   $('#BizType').change(function() {
@@ -550,18 +546,14 @@
                     {
                       for(var i=0; i<accordions.length; i++)
                         if(accordions[i] == text)
-                          $("#prompt").hide();  //alert("prompt.hide called");
+                          $("#prompt").hide();
 
                       $(text).accordion("destroy");
                       $(text).hide();
                     } // End if statement
-
                   }); // End BizType.change -- INNER
-
                 }); // End BizType.change -- OUTER
-
               }); // End document.ready
-
             </script>
 
 
@@ -571,13 +563,11 @@
 
 
               <div id="auto" style="display: none;">
-                <!--AUTO_SALES-->
                 <h3>Automobile or machinery sales and service garages</h3>
                 <div>
                    <p><b>Rule:</b> 1 space for each 400 square feet floor area</p>
                 </div>
 
-                <!--AUTO_SERVICE-->
                 <h3>Automobile service stations</h3>
                 <div>
                   <p>
@@ -592,7 +582,6 @@
 
 
               <div id="banks" style="display: none;">
-                <!--BANK_ATM-->
                 <h3>Banks <b>with</b> automatic teller machines</h3>
                 <div>
                   <p>
@@ -604,7 +593,6 @@
                   </p>
                 </div>
 
-                <!--BANK-->
                 <h3>Banks <b>without</b> automatic teller machines</h3>
                 <div>
                   <p><b>Rule:</b> 1 space for each 400 square feet floor area</p>
@@ -618,7 +606,6 @@
 
 
               <div id="children" style="display: none;">
-                <!--CHILD_HOME-->
                 <h3>Children&rsquo;s Homes</h3>
                 <div>
                   <p>
@@ -630,7 +617,6 @@
                   </p>
                 </div>
 
-                <!--CHILDCARE-->
                 <h3>Family daycare and foster family homes</h3>
                 <div>
                   <p>
@@ -650,13 +636,11 @@
 
 
               <div id="education" style="display: none;">
-                <!--SCHOOL_LOWER-->
                 <h3>Elementary and junior high schools</h3>
                 <div>
                   <p><b>Rule:</b> 1 space for each employee</p>
                 </div>
 
-                <!--SCHOOL_HIGH-->
                 <h3>High schools</h3>
                 <div>
                   <p>
@@ -668,7 +652,6 @@
                   </p>
                 </div>
 
-                <!--SCHOOL_COLLEGE-->
                 <h3>Colleges and universities</h3>
                 <div>
                   <p>
@@ -682,7 +665,6 @@
               </div>  <!--End education-->
 
 
-              <!--FITNESS-->
               <div id="fitness" style="display: none;">
                 <h3>Multi-program</h3>
                 <div>
@@ -714,13 +696,11 @@
 
 
               <div id="food" style="display: none;">
-                <!--RESTAURANTS-->
                 <h3>Restaurants, bars, other food service establishments, and nightclubs <b>without</b> live entertainment</h3>
                 <div>
                   <p><b>Rule:</b> 1 space for each 120 square feet of floor area</p>
                 </div>
 
-                <!--TAKEOUT-->
                 <h3>Restaurants with counter, take-out, or drive-in service</h3>
                 <div>
                   <p>
@@ -745,13 +725,11 @@
 
 
               <div id="halls" style="display: none;">
-                <!--HALL_FIXED-->
                 <h3>Sports arenas, auditoriums, assembly halls, and meeting rooms (all <b>with</b> fixed seats)</h3>
                 <div>
                   <p><b>Rule:</b> 1 space for each 3.5 seats of maximum seating capacity</p>
                 </div>
 
-                <!--HALL_OPEN-->
                 <h3>Dance and exhibition halls and assembly halls <b>without</b> fixed seats</h3>
                 <div>
                   <p>
@@ -776,7 +754,6 @@
 
 
               <div id="lodging" style="display: none;">
-                <!--RESIDENTIAL-->
                 <h3>Community care residential facilities</h3>
                 <div>
                   <p>
@@ -789,7 +766,6 @@
                   </p>
                 </div>
 
-                <!--HOTEL-->
                 <h3>Hotels and Motels</h3>
                 <div>
                   <p>
@@ -804,7 +780,6 @@
 
 
               <div id="medical" style="display: none;">
-                <!--MED_CONV-->
                 <h3>Convalescent hospitals</h3>
                 <div>
                   <p>
@@ -816,7 +791,6 @@
                   </p>
                 </div>
 
-                <!--HOSPITALS-->
                 <h3>Hospitals</h3>
                 <div>
                   <p>
@@ -828,13 +802,11 @@
                   </p>
                 </div>
 
-                <!--MEDICAL-->
                 <h3>Medical and dental clinics and offices</h3>
                 <div>
                   <p><b>Rule:</b> 1 space for each 200 square feet of floor area</p>
                 </div>
 
-                <!--THERAPY-->
                 <h3>Physical therapy</h3>
                 <div>
                   <p>
@@ -865,13 +837,11 @@
 
 
               <div id="recycle" style="display: none;">
-                <!--RECYCLE_IND-->
                 <h3>Independent recycling collection facilities</h3>
                 <div>
                   <p><b>Total:</b> 2 spaces</p>
                 </div>
 
-                <!--RECYCLE_OTHER-->
                 <h3>Recycling facilities in conjunction with other uses that provide required parking</h3>
                 <div>
                   <p><b>Total:</b> No spaces!</p>
@@ -896,7 +866,6 @@
 
 
               <div id="seniors" style="display: none;">
-                <!--BOARDING-->
                 <h3>Boarding homes for the aged</h3>
                 <div>
                   <p>
@@ -908,7 +877,6 @@
                   </p>
                 </div>
 
-                <!--SENIOR-->
                 <h3>Institutions for the aged</h3>
                 <div>
                   <p>
@@ -920,7 +888,6 @@
                   </p>
                 </div>
 
-                <!--NURSING-->
                 <h3>Nursing homes</h3>
                 <div>
                   <p>
@@ -943,18 +910,19 @@
                   <li>1 space for each 5 additional seats</li>
                 </ul>
                 </p>
-              </div>
+              </div>  <!--End theaters-->
 
 
               <div id="warehouses" style="display: none;">
                 <p><b>Rule:</b> 1 space for each 1,000 square feet of floor area</p>
-              </div>
+              </div>  <!--End warehouses-->
 
 
               <div id="worship" style="display: none;">
                 <p><b>Rule:</b> 1 space for each 3.5 seats in the sanctuary</p>
-              </div>
+              </div>  <!--End worship-->
             
+
             <h3>Located downtown?</h3>
             <p>If you are located downtown, you don’t need to provide parking, but you must pay for it.</p>
             <p>Downtown has shared parking with reduced requirements. So if you don’t have off street parking, you can pay into a shared fund that runs the City garages and lots.</p>
