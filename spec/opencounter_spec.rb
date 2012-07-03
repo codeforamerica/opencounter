@@ -9,6 +9,6 @@ describe "Application", :type => :request do
 
   it "should display the welcome on the home page" do
     get '/'
-    last_response.body.should have_content('Guide!')
+    last_response.body.should have_content('Welcome')
   end
 end

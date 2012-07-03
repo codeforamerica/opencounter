@@ -39,5 +39,3 @@ class Naics < ActiveRecord::Base
   end
 
 end
-
-
