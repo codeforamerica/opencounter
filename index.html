@@ -565,6 +565,10 @@
                 <h3>Automobile or machinery sales and service garages</h3>
                 <div>
                    <p><b>Rule:</b> 1 space for each 400 square feet floor area</p>
+                   <p><label>Floor area:</label>
+                    <input id="auto_area" type="text" placeholder="">
+                    <p><input type="submit" value="Calculate"></p>
+                   </p>  
                 </div>
 
                 <h3>Automobile service stations</h3>
@@ -576,6 +580,14 @@
                     <li>1 space for each employee on the day shift</li>
                   </ul>
                   </p>
+                  <p><label>Service bays:</label>
+                     <input id="auto_bays" type="text">
+                    <br>
+                      <label>Day shift employees:</label>
+                      <input id="auto_emp" type="text">
+                    </br>
+                    <br><input type="submit" value="Calculate"></br>
+                  </p> 
                 </div>
               </div>  <!--End auto-->
 
@@ -590,17 +602,34 @@
                     <li>1.5 spaces for each ATM machine</li>
                   </ul>
                   </p>
+                  <p>
+                  <label>Floor area:</label>
+                  <input id="banks_area" type="text">
+                  <br>
+                    <label>ATM machines:</label>
+                    <input id="banks_ATM" type="text">
+                  </br>
+                  <br><input type="submit" value="Calculate"></br>
+                  </p> 
                 </div>
 
                 <h3>Banks <b>without</b> automatic teller machines</h3>
                 <div>
                   <p><b>Rule:</b> 1 space for each 400 square feet floor area</p>
+                  <p><label>Floor area:</label>
+                     <input id="banks_area" type="text">
+                  <p><input type="submit" value="Calculate"></p>
+                  </p>  
                 </div>
               </div>  <!--End banks-->
 
 
               <div id="billiard" style="display: none;">
                 <p><b>Rule:</b> 1.5 spaces for each table</p>
+                <p><label>Number of tables:</label>
+                   <input id="bill_tables" type="text">
+                <p><input type="submit" value="Calculate"></p>
+                </p> 
               </div>  <!--End billiard-->
 
 
@@ -614,6 +643,15 @@
                     <li>1 space for each employee</li>
                   </ul>
                   </p>
+                  <p>
+                    <label>Number of beds:</label>
+                    <input id="children_beds" type="text">
+                  <br>
+                    <label>Employees:</label>
+                    <input id="children_emp" type="text">
+                  </br>
+                  <br><input type="submit" value="Calculate"></br>
+                  </p>
                 </div>
 
                 <h3>Family daycare and foster family homes</h3>
@@ -625,12 +663,21 @@
                     <li>1 space for the resident owner or manager</li>
                   </ul>
                   </p>
+
+                  <p><label>Number of guests:</label>
+                     <input id="daycare_guests" type="text">
+                  <p><input type="submit" value="Calculate"></p>
+                  </p> 
                 </div>
               </div>  <!--End children-->
 
 
               <div id="communication" style="display: none;">
                 <p><b>Rule:</b> 1 space for each 1,000 square feet of floor area</p>
+                <p><label>Floor area:</label>
+                   <input id="comm_area" type="text">
+                <p><input type="submit" value="Calculate"></p>
+                </p> 
               </div>  <!--End communication-->
 
 
@@ -638,6 +685,10 @@
                 <h3>Elementary and junior high schools</h3>
                 <div>
                   <p><b>Rule:</b> 1 space for each employee</p>
+                  <p><label>Number of employees:</label>
+                     <input id="elem_emp" type="text">
+                  <p><input type="submit" value="Calculate"></p>
+                </p> 
                 </div>
 
                 <h3>High schools</h3>
@@ -649,6 +700,15 @@
                     <li>1 space for each 10 students</li>
                   </ul>
                   </p>
+                  <p>
+                    <label>Number of employees:</label>
+                    <input id="high_emp" type="text">
+                  <br>
+                    <label>Number of students:</label>
+                    <input id="high_students" type="text">
+                  </br>
+                  <br><input type="submit" value="Calculate"></br>
+                  </p>
                 </div>
 
                 <h3>Colleges and universities</h3>
@@ -659,6 +719,15 @@
                     <li>1 space for each employee</li>
                     <li>1 space for each 3 students</li>
                   </ul>
+                  </p>
+                  <p>
+                    <label>Number of employees:</label>
+                    <input id="high_emp" type="text">
+                  <br>
+                    <label>Number of students:</label>
+                    <input id="high_students" type="text">
+                  </br>
+                  <br><input type="submit" value="Calculate"></br>
                   </p>
                 </div>
               </div>  <!--End education-->
@@ -673,6 +742,10 @@
                     <li>1 space for each 100 square feet of floor area</li>
                     <li>If floor space exceeds 15,000 square feet, an additional 10% of parking spaces required</li>
                   </ul>
+                  <p><label>Floor area:</label>
+                     <input id="fitness_area" type="text">
+                  <p><input type="submit" value="Calculate"></p>
+                  </p> 
                   </p>
                 </div>
 
@@ -698,6 +771,10 @@
                 <h3>Restaurants, bars, other food service establishments, and nightclubs <b>without</b> live entertainment</h3>
                 <div>
                   <p><b>Rule:</b> 1 space for each 120 square feet of floor area</p>
+                  <p><label>Floor area:</label>
+                     <input id="food_area" type="text">
+                  <p><input type="submit" value="Calculate"></p>
+                  </p> 
                 </div>
 
                 <h3>Restaurants with counter, take-out, or drive-in service</h3>
@@ -709,17 +786,34 @@
                     <li>1 space for each 50 square feet of floor area devoted to counter/take-out service</li>
                   </ul>
                   </p>
+                  <p>
+                    <label>Total floor area:</label>
+                    <input id="food_area" type="text">
+                  <br>
+                    <label>Floor area devoted to counter/take-out:</label>
+                    <input id="counter_area" type="text">
+                  </br>
+                  <br><input type="submit" value="Calculate"></br>
+                  </p>
                 </div>
               </div>  <!--End food-->
 
 
               <div id="funeral" style="display: none;">
                 <p><b>Rule:</b> 1 space for each 5 seats of the aggregate number of seats provided in all assembly rooms</p>
+                <p><label>Total number of seats provided:</label>
+                   <input id="funeral_seats" type="text">
+                <p><input type="submit" value="Calculate"></p>
+                </p> 
               </div>  <!--End funeral-->
 
 
               <div id="furn_repair" style="display:none;">
                 <p><b>Rule:</b> 1 space for each 500 square feet of floor area</p>
+                <p><label>Floor area:</label>
+                   <input id="furn_area" type="text">
+                <p><input type="submit" value="Calculate"></p>
+                </p> 
               </div>  <!--End furn_repair-->
 
 
@@ -727,6 +821,10 @@
                 <h3>Sports arenas, auditoriums, assembly halls, and meeting rooms (all <b>with</b> fixed seats)</h3>
                 <div>
                   <p><b>Rule:</b> 1 space for each 3.5 seats of maximum seating capacity</p>
+                  <p><label>Maximum seating capacity:</label>
+                     <input id="halls_seats" type="text">
+                  <p><input type="submit" value="Calculate"></p>
+                  </p> 
                 </div>
 
                 <h3>Dance and exhibition halls and assembly halls <b>without</b> fixed seats</h3>
@@ -738,17 +836,29 @@
                     <li><b>Excludes</b> church assembly rooms in conjunction with auditoriums</li>
                   </ul>
                 </p>
+                <p><label>Design occupancy load:</label>
+                   <input id="halls_occupancy" type="text">
+                <p><input type="submit" value="Calculate"></p>
+                </p> 
                 </div>
               </div>  <!--End halls-->
 
 
               <div id="household" style="display: none;">
                 <p><b>Rule:</b> 1 space for each 800 square feet of sales floor area</p>
+                <p><label>Sales floor area:</label>
+                   <input id="house_sales_area" type="text">
+                <p><input type="submit" value="Calculate"></p>
+                </p> 
               </div>  <!--End household-->
 
 
               <div id="laundry" style="display: none;">
                 <p><b>Rule:</b> 1 space for each 200 square feet of floor area</p>
+                <p><label>Floor area:</label>
+                   <input id="laundry_area" type="text">
+                <p><input type="submit" value="Calculate"></p>
+                </p> 
               </div>  <!--End laundry-->
 
 
@@ -763,6 +873,15 @@
                     <li>1 space for each employee on the shift with the maximum number of personnel</li>
                   </ul>
                   </p>
+                  <p>
+                    <label>Number of guests:</label>
+                    <input id="lodging_guests" type="text">
+                  <br>
+                    <label>Number of employees on busiest shift:</label>
+                    <input id="lodging_emp" type="text">
+                  </br>
+                  <br><input type="submit" value="Calculate"></br>
+                  </p>
                 </div>
 
                 <h3>Hotels and Motels</h3>
@@ -774,6 +893,10 @@
                     <li>1 space for the resident owner or manager</li>
                   </ul>
                   </p>
+                  <p><label>Number of units:</label>
+                     <input id="hotel_units" type="text">
+                  <p><input type="submit" value="Calculate"></p>
+                  </p> 
                 </div>
               </div>  <!--End lodging-->
 
@@ -788,6 +911,15 @@
                     <li>1 space for each employee on the shift with the maximum number of personnel</li>
                   </ul>
                   </p>
+                  <p>
+                    <label>Number of beds:</label>
+                    <input id="medical_beds" type="text">
+                  <br>
+                    <label>Number of employees on busiest shift:</label>
+                    <input id="medical_emp" type="text">
+                  </br>
+                  <br><input type="submit" value="Calculate"></br>
+                  </p>
                 </div>
 
                 <h3>Hospitals</h3>
@@ -799,11 +931,24 @@
                     <li>1 space for each employee on the shift with the maximum number of personnel</li>
                   </ul>
                   </p>
+                  <p>
+                    <label>Number of beds:</label>
+                    <input id="hospital_beds" type="text">
+                  <br>
+                    <label>Number of employees on busiest shift:</label>
+                    <input id="hospital_emp" type="text">
+                  </br>
+                  <br><input type="submit" value="Calculate"></br>
+                  </p>
                 </div>
 
                 <h3>Medical and dental clinics and offices</h3>
                 <div>
                   <p><b>Rule:</b> 1 space for each 200 square feet of floor area</p>
+                  <p><label>Floor area:</label>
+                     <input id="medical_office_area" type="text">
+                  <p><input type="submit" value="Calculate"></p>
+                  </p>
                 </div>
 
                 <h3>Physical therapy</h3>
@@ -814,6 +959,15 @@
                     <li>1 space per 200 square feet of floor area</li>
                     <li>1 space per 50 square feet of pool (water) area</li>
                   </ul>
+                  </p>
+                  <p>
+                    <label>Floor area:</label>
+                    <input id="therapy_area" type="text">
+                  <br>
+                    <label>Pool (water) area:</label>
+                    <input id="therapy_pool_area" type="text">
+                  </br>
+                  <br><input type="submit" value="Calculate"></br>
                   </p>
                 </div>
               </div>  <!--End medical-->
@@ -827,11 +981,19 @@
                   <li><b>Excludes</b> medical and dental offices</li>
                 </ul>
                 </p>
+                <p><label>Floor area:</label>
+                   <input id="office_area" type="text">
+                <p><input type="submit" value="Calculate"></p>
+                </p>
               </div>  <!--End office-->
 
 
               <div id="plants" style="display:none;">
                 <p><b>Rule:</b> 1 space for each 500 square feet of floor area</p>
+                <p><label>Floor area:</label>
+                   <input id="plant_area" type="text">
+                <p><input type="submit" value="Calculate"></p>
+                </p>
               </div>  <!--End plants-->
 
 
@@ -856,11 +1018,24 @@
                   <li><b>or</b>1 space for every 2 employees (maximum shift), whichever is greater</li>
                 </ul>
                 </p>
+                <p>
+                  <label>Floor area:</label>
+                  <input id="research_area" type="text">
+                <br>
+                  <label>Number of employees on busiest shift:</label>
+                  <input id="therapy_pool_area" type="text">
+                </br>
+                <br><input type="submit" value="Calculate"></br>
+                </p>
               </div>  <!--End research-->
 
 
               <div id="retail" style="display: none;">
                 <p><b>Rule:</b> 1 space for each 250 square feet of floor area</p>
+                <p><label>Floor area:</label>
+                   <input id="retail_area" type="text">
+                <p><input type="submit" value="Calculate"></p>
+                </p>
               </div> <!--End retail-->
 
 
@@ -874,6 +1049,15 @@
                     <li>1 space for each employee</li>
                   </ul>
                   </p>
+                <p>
+                  <label>Number of beds:</label>
+                  <input id="boarding_beds" type="text">
+                <br>
+                  <label>Number of employees:</label>
+                  <input id="boarding_emp" type="text">
+                </br>
+                <br><input type="submit" value="Calculate"></br>
+                </p>
                 </div>
 
                 <h3>Institutions for the aged</h3>
@@ -885,6 +1069,15 @@
                     <li>1 space for each employee on the shift with the maximum number of personnel</li>
                   </ul>
                   </p>
+                <p>
+                  <label>Number of guests:</label>
+                  <input id="institution_guests" type="text">
+                <br>
+                  <label>Number of employees on busiest shift:</label>
+                  <input id="institution_emp" type="text">
+                </br>
+                <br><input type="submit" value="Calculate"></br>
+                </p>
                 </div>
 
                 <h3>Nursing homes</h3>
@@ -897,6 +1090,15 @@
                     <li>1 space for each employee on the shift with the maximum number of personnel</li>
                   </ul>
                   </p>
+                <p>
+                  <label>Number of guests:</label>
+                  <input id="nursing_guests" type="text">
+                <br>
+                  <label>Number of employees on busiest shift:</label>
+                  <input id="nursing_emp" type="text">
+                </br>
+                <br><input type="submit" value="Calculate"></br>
+                </p>
                 </div>
               </div>  <!--End seniors-->
 
@@ -909,16 +1111,28 @@
                   <li>1 space for each 5 additional seats</li>
                 </ul>
                 </p>
+                <p><label>Number of seats:</label>
+                   <input id="theater_seats" type="text">
+                <p><input type="submit" value="Calculate"></p>
+                </p>
               </div>  <!--End theaters-->
 
 
               <div id="warehouses" style="display: none;">
                 <p><b>Rule:</b> 1 space for each 1,000 square feet of floor area</p>
+                <p><label>Floor area:</label>
+                   <input id="warehouse_area" type="text">
+                <p><input type="submit" value="Calculate"></p>
+                </p>
               </div>  <!--End warehouses-->
 
 
               <div id="worship" style="display: none;">
                 <p><b>Rule:</b> 1 space for each 3.5 seats in the sanctuary</p>
+                <p><label>Number of seats:</label>
+                   <input id="worship_seats" type="text">
+                <p><input type="submit" value="Calculate"></p>
+                </p>
               </div>  <!--End worship-->
             
 
