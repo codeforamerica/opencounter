@@ -538,16 +538,15 @@
                       $(text).show();
                       $(text).accordion( { collapsible: true, active: false } );
                     }
+
                   $(text).show();
-
                   $('#BizType').change(function() {
-
                     if( ! ($(this).val() == choice) )
                     {
                       for(var i=0; i<accordions.length; i++)
                         if(accordions[i] == text)
                           $("#prompt").hide();
-
+                        
                       $(text).accordion("destroy");
                       $(text).hide();
                     } // End if statement
