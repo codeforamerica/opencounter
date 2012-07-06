@@ -422,23 +422,9 @@ td {
     vertical-align: top;
 }
 
-
-/* =============================================================================
-   Chrome Frame Prompt
-   ========================================================================== */
-
-.chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-
 /* ==|== primary styles =====================================================
-   Author:
+   Author: RB
    ========================================================================== */
-
 
 header,
 footer,
@@ -461,16 +447,18 @@ footer,
 /* --- Header --- */
 
 header {
-  background: #EEE;
-  border-bottom: 1px solid #CCC;
-  height: 96px;
+  background: #5FA3DF;
   position: fixed;
   top: 0;
   z-index: 9999;
+  border-bottom: 1px solid #AFA67F;
 }
+
+/* Branding */
 
 header .content .branding {
   float: left;
+  color: #FFF;
 }
 
 header .content .branding h1 {
@@ -479,16 +467,107 @@ header .content .branding h1 {
 
 header .content .branding p {
   margin: 0;
+  padding-bottom: 1em;
 }
 
-header .content nav {
+header .content .branding .city {
+  font-weight: bold;
+}
+
+/* Navigation */
+
+header nav {
   float: right;
 }
 
-header .content nav li {
+header nav li {
   display: block;
   float: left;
   padding: 1.3125em 10px;
+}
+
+header nav a:link,
+header nav a:visited,
+header nav a:hover,
+header nav a:active {
+  text-decoration: none;
+  color: #deecf8;
+}
+
+header .content nav li.active a {
+  border-bottom: 5px solid #fbfdfe;
+  color: #fbfdfe;
+}
+
+/* Folder */
+
+header .folder {
+  position: absolute;
+  bottom: -2.45em;
+  right: 0;
+  width: 200px;
+  z-index: 9999;
+}
+
+header .folder a {
+  display: block;
+  text-align: center;
+  background: #F2E7B4;
+  border: 1px solid #AFA67F;
+  border-width: 0 1px 1px 1px;
+  -webkit-border-radius: 0 0 1em 1em;
+  border-radius: 0 0 1em 1em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0.5em 0;
+}
+
+/* Profile */
+
+header .profile {
+  display: none;
+  background: #F2E7B4;
+  border: 1px solid #AFA67F;
+  border-bottom: 0;
+  position: relative;
+  overflow: auto;
+  clear: both;
+}
+
+header .profile h1 {
+  display: none;
+}
+
+header .profile .col {
+  float: left;
+  width: 272px;
+  margin: 1em 0 1em 20px;
+  background: #FBF5E7;
+  border-radius: 0.5em;
+  padding: 0.5em 10px;
+}
+
+header .profile .col:first-child {
+  margin-left: 0;
+}
+
+header .profile .progress span {
+  display: block;
+  background: #FFF;
+  width:16.5%;
+}
+
+header .profile h3 {
+  margin-top: 0;
+}
+
+header .profile th {
+  text-align: left;
+}
+
+header .profile td {
+  border-bottom: 1px solid #000;
 }
 
 /* --- Footer --- */
@@ -497,12 +576,69 @@ header .content nav li {
 /* --- Main --- */
 
 .main {
-  margin-top: 97px;
+  background: #FFF;
+  margin-top: 7.875em;
 }
 
+.frame {
+  position: relative;
+  overflow: auto;
+  padding-bottom: 7.875em;
+}
 
+.tool,
+.interactive {
+  background: #EEE;
+  border: 5px solid #DEDEDE;
+  padding: 0.5em 10px;
+}
 
+/* Welcome */
 
+#welcome .col {
+  float: left;
+  width: 45%;
+}
+
+#welcome .col:last-child {
+  margin: 4em 0 4em 5%;
+}
+
+/* People */
+
+#people,
+#business,
+#location,
+#regulations,
+#nextsteps {
+  padding-top: 6.5625em;
+}
+
+#people h1,
+#business h1,
+#location h1,
+#regulations h1,
+#nextsteps h1 {
+  float: left;
+  width: 33%;
+}
+
+#people .col,
+#business .col,
+#location .col,
+#regulations .col,
+#nextsteps .col {
+  float: left;
+  width: 60%;
+}
+
+/* Business */
+
+/* Location */
+
+/* Regulations */
+
+/* Next Steps */
 
 
 
@@ -515,8 +651,6 @@ header .content nav li {
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
 }
-
-
 
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.

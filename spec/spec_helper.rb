@@ -11,8 +11,8 @@ require File.join(File.dirname(__FILE__), '..', 'opencounter')
 Capybara.app = Sinatra::Application
 
 RSpec.configure do |config|
-  config.default_path = 'lib'
-  config.include Capybara::DSL
+    config.default_path = 'lib'
+      config.include Capybara::DSL
 end
 
 set :environment, :test
