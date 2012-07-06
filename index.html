@@ -482,6 +482,7 @@
             <p>Your use affects the parking spaces required. Example: More people buy food than couches, so a supermarket requires more parking than a furniture store.</p>
             <p>If the resulting number of parking spots contains a fraction and that fraction is greater than half you must round up and add a full parking space.</p>
             <p>This tool will help you estimate how many parking spaces you are required to provide.</p>
+            <p>Don't see your specific business type? Contact the planning department.</p>
 
             <!-- Begin Parking Calculator -->
             <div class="tool">
@@ -524,6 +525,7 @@
 
               $('#BizType').change(function(){
 
+                  // These are the 11 large categories of business types
                   var accordions = ["#auto", "#banks", "#children", "#education", "#fitness", 
                                     "#food", "#halls", "#lodging", "#medical", "#recycle", "#seniors"];
 
@@ -566,9 +568,9 @@
                 <div>
                    <p><b>Rule:</b> 1 space for each 400 square feet floor area</p>
                    <p><label>Floor area:</label>
-                    <input id="auto_area" type="text" placeholder="">
+                    <input id="auto_area" type="text">
                     <p><input type="submit" value="Calculate"></p>
-                   </p>  
+                   </p>
                 </div>
 
                 <h3>Automobile service stations</h3>
