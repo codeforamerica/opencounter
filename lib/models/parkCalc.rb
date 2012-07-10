@@ -17,5 +17,4 @@ class ParkingCalc < ActiveRecord::Base
       biz.save
     end
   end
-
 end
