@@ -428,6 +428,7 @@ td {
 
 header,
 footer,
+nav,
 .main {
   width: 100%;
 }
@@ -448,98 +449,91 @@ footer,
 
 header {
   background: #5FA3DF;
+  border-top: 0.25em solid #358bd7;
+  color: #FFF;
   position: fixed;
   top: 0;
   z-index: 9999;
-  border-bottom: 1px solid #AFA67F;
 }
 
-/* Branding */
+/* --- Branding --- */
 
-header .content .branding {
-  float: left;
-  color: #FFF;
+.branding {
 }
 
-header .content .branding h1 {
-  margin-bottom: 0;
-}
-
-header .content .branding p {
+.branding h1 {
   margin: 0;
-  padding-bottom: 1em;
+  font-weight: normal;
+  padding: 0.35em 0;
+
 }
 
-header .content .branding .city {
+.branding .divider {
+  font-style: italic;
+}
+
+.branding .city {
   font-weight: bold;
 }
 
-/* Navigation */
+/* --- Profile Toggle --- */
 
-header nav {
-  float: right;
-}
-
-header nav li {
-  display: block;
-  float: left;
-  padding: 1.3125em 10px;
-}
-
-header nav a:link,
-header nav a:visited,
-header nav a:hover,
-header nav a:active {
-  text-decoration: none;
-  color: #deecf8;
-}
-
-header .content nav li.active a {
-  border-bottom: 5px solid #fbfdfe;
-  color: #fbfdfe;
-}
-
-/* Folder */
-
-header .folder {
+.profile-toggle {
   position: absolute;
-  bottom: -2.45em;
-  right: 0;
-  width: 200px;
+  top: 0.75em;
   z-index: 9999;
+  width: 100%;
 }
 
-header .folder a {
+/*   border-bottom: 1em solid #AFA67F; */
+
+.profile-toggle a {
   display: block;
+  position: absolute;
+  top: 1em;
+  right: 40px;
   text-align: center;
   background: #F2E7B4;
-  border: 1px solid #AFA67F;
-  border-width: 0 1px 1px 1px;
-  -webkit-border-radius: 0 0 1em 1em;
-  border-radius: 0 0 1em 1em;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  padding: 0.5em 0;
+  -webkit-border-radius: 1em 1em 0 0;
+  border-radius: 1em 1em 0 0;
+  padding: 0.5em 40px;
+  
+  text-transform: uppercase;
+  color: #AFA67F;
+  text-decoration: none;
+
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
 }
+
+.profile-toggle a:before {
+}
+
+.profile-toggle a:after {
+}
+
 
 /* Profile */
 
-header .profile {
+.profile {
   display: none;
   background: #F2E7B4;
-  border: 1px solid #AFA67F;
-  border-bottom: 0;
+
+  -webkit-border-radius: 1em 1em 0 0;
+  border-radius: 1em 1em 0 0;
+
+/*  border: 1px solid #AFA67F;
+  border-bottom: 0; */
   position: relative;
   overflow: auto;
   clear: both;
+  margin-bottom: 1em;
 }
 
-header .profile h1 {
+.profile h1 {
   display: none;
 }
 
-header .profile .col {
+.profile .col {
   float: left;
   width: 272px;
   margin: 1em 0 1em 20px;
@@ -548,42 +542,79 @@ header .profile .col {
   padding: 0.5em 10px;
 }
 
-header .profile .col:first-child {
+.profile .col:first-child {
   margin-left: 0;
 }
 
-header .profile .progress span {
+.profile .progress span {
   display: block;
   background: #FFF;
   width:16.5%;
 }
 
-header .profile h3 {
+.profile h3 {
   margin-top: 0;
 }
 
-header .profile th {
+.profile th {
   text-align: left;
 }
 
-header .profile td {
+.profile td {
   border-bottom: 1px solid #000;
 }
 
 /* --- Footer --- */
 
+/* --- Navigation --- */
+
+nav {
+  height: 100%;
+  min-width: 100px;
+  overflow: hidden;
+  position: fixed;
+  width: 10%;
+  z-index: 9999;
+}
+
+nav ul {
+  padding-top: 4.4375em;
+}
+
+nav li {
+  display: block;
+  margin: 0 10px;
+}
+
+nav li a {
+  border-bottom: 1px solid #deecf8;
+  display: block;
+  padding: 1em 10px;
+  text-decoration: none;
+}
+
+nav a:link,
+nav a:visited,
+nav a:hover,
+nav a:active {
+  color: #deecf8;
+}
+
+nav li.active a {
+  background: #fbfdfe;
+  color: #999;
+}
 
 /* --- Main --- */
 
 .main {
   background: #FFF;
-  margin-top: 7.875em;
 }
 
 .frame {
   position: relative;
   overflow: auto;
-  padding-bottom: 7.875em;
+  padding-top: 6.5625em;
 }
 
 .tool,
@@ -605,14 +636,6 @@ header .profile td {
 }
 
 /* People */
-
-#people,
-#business,
-#location,
-#regulations,
-#nextsteps {
-  padding-top: 6.5625em;
-}
 
 #people h1,
 #business h1,

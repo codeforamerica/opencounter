@@ -19,26 +19,14 @@
     <div class="content clearfix">
       
       <div class="branding">
-        <h1>OpenCounter</h1>
-        <p>Set up shop in <span class="city">Santa Cruz, CA</span>.</p>
+        <h1>OpenCounter <span class="divider">in</span> <span class="city">Santa Cruz, CA</span></h1>
       </div><!-- /.branding -->
       
-      <nav class="nav">
-        <ul>
-          <li><a href="#welcome">Welcome</a></li>
-          <li><a href="#people">People</a></li>
-          <li><a href="#business">Business</a></li>
-          <li><a href="#location">Location</a></li>
-          <li><a href="#regulations">Regulations</a></li>
-          <li><a href="#nextsteps">Next Steps</a></li>
-        </ul>
-      </nav><!-- /.nav -->
-      
-      <div class="folder">
+      <div class="profile-toggle">
         <a href="#profile" id="profile_toggle">Your Summary</a>
-      </div>
+      </div><!-- /.profile-toggle -->
       
-      <div class="profile">
+      <div class="profile" id="profile">
         <h1>You've Told Us</h1>
         
         <div class="col">
@@ -129,13 +117,24 @@
         </div>
         
       </div><!-- /.profile -->
-  
+      
     </div><!-- /.content .clearfix -->
   
   </header>
 
+  <nav class="nav">
+    <ul>
+      <li><a href="#welcome">Welcome</a></li>
+      <li><a href="#people">People</a></li>
+      <li><a href="#business">Business</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#regulations">Regulations</a></li>
+      <li><a href="#nextsteps">Next Steps</a></li>
+    </ul>
+  </nav><!-- /.nav -->
+
   <div role="main" class="main">
-  
+    
     <section id="welcome" class="frame">
       
       <div class="content clearfix">
@@ -1593,7 +1592,7 @@
   $('#profile_toggle').click(function(e){
     e.preventDefault();
     e.stopPropagation();
-    $('.profile').slideToggle("slow");
+    $('#profile').toggle();
   });
   
 })();
