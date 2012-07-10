@@ -1470,16 +1470,16 @@
           <input for="">Business email:</label>
           <input type="text">
 
-          <input for="">License number:</label>
+          <input for="">City business license number:</label>
           <input type="text">
 
-          <input for="">License expiration date:</label>
+          <input for="">City business license expiration date:</label>
           <input type="text">
 
-          <input for="">Date to begin service:</label>
+          <input for="">What date will service begin? This excludes fridays, weekends and holidays.</label>
           <input type="text">
 
-          <input for="">Container (1 yard, 2 yard, 4 yard, etc.):</label> <!--NOTE-->
+          <input for="">Container (1, 2, 4, or 5 yard):</label><!--NOTE-->
           <input type="text">
 
           <input for="">1 pickup?</label><!--NOTE-->
@@ -1509,17 +1509,49 @@
 
           <label>What is your business' type of ownership? (Choose one)</label>
           <select id="ownership">
-            <option value="SOLE_PROP">Sole Proprietor</option>
-            <option value="PARTNERSHIP">Partnership</option>
-            <option value="CORPORATION">Corporation</option>
-            <option value="TRUST">Trust</option>
+            <option value="SOLE_PROP">  Sole Proprietor</option>
+            <option value="PARTNERSHIP">Partnership    </option>
+            <option value="CORPORATION">Corporation    </option>
+            <option value="TRUST">      Trust          </option>
           </select>
                 <!-- End Fictitious Business Name Statement -->
         
         Is your business a food service establishment?
                 <!-- Begin Environmental Health Permit -->
                 <!-- CONDITION: Business is a food service establishment -->
-          <input for="">Type of application (new, renewal, etc):</label>
+          <label>Type of application (new, renewal, etc):</label>
+          <select id="application_type">
+            <option value="new">             New application    </option>
+            <option value="renewal">         renewal            </option>
+            <option value="change_ownership">Change in ownership</option>
+            <option value="change_category"> Change in category </option>
+          </select>
+
+          <label>What type of food service is your business? Please choose one.</label>
+
+
+          <input for="">Applicant name:</label>
+          <input type="text">
+
+          <input for="">Business name:</label>
+          <input type="text">
+
+          <input for="">Business address:</label>
+          <input type="text">
+
+          <input for="">Mailing address:</label>
+          <input type="text">
+
+          <input for="">Applicant email:</label>
+          <input type="text">
+
+          <input for="">Business phone number:</label>
+          <input type="text">
+
+          <input for="">Other phone number:</label>
+          <input type="text">
+
+          <input for="">Previous business name:</label>
           <input type="text">
                 <!-- End Environmental Health Permit -->
         
