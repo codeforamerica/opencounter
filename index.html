@@ -1194,52 +1194,67 @@
         <p>This information is for your city Zoning Clearance and Business License.</p>
   
         <form>
-          <label for="">Your phone number:</label>
+          <label for="">Your address:</label>
           <input type="text">
           
-          <label for="">Your address:</label>
+          <label for="">Your phone number:</label>
           <input type="text">
       
           <label for="">Your Social Security Number (If you would rather not enter this here, that's okay):</label>
           <input type="text">
+
+          <label for="">Business name:</label>
+          <input type="text"> 
+
+          <label for="">Business address:</label>
+          <input type="text"> 
       
           <label for="">Business phone number:</label>
           <input type="text">  
       
-          <label for="">An emergency contact phone number:</label>
+          <label for="">An emergency contact number:</label>
           <input type="text">  
       
           <label for="">APN (Assessor's Parcel Number):</label>
           <input type="text">
+
+          <label for=""></label>
+          <input type="text">
+
+          <form>
+              Please describe the previous use of the property:
+              <textarea></textarea>
+          </form>
       
-          <label for="">What date will you start?</label>
+          <label for="">Date of occupancy:</label>
           <input type="text">
       
-          <label for="">Total Area (in square feet):</label>
+          <label for="">Total area (in square feet):</label>
           <input type="text">
       
-          <label for="">First Floor Area (in square feet):</label>
+          <label for="">First floor area (in square feet):</label>
           <input type="text">
       
-          <label for="">Outdoor Area (in square feet):</label>
+          <label for="">Outdoor area (in square feet):</label>
           <input type="text">
   
-         	<label>Will there be only one tenant, or more than one? (Choose one)</label>
-        	<select id="tenants">
-        		<option value="ONE">One</option>
-        		<option value="MULTIPLE">Multiple</option>
-        	</select>
+         	<label>Will there be only one tenant, or more than one?</label>
+        	<input type="radio"> One
+        	<input type="radio"> Multiple
   
+          <label for="">Number of auto parking spaces:</label>
+          <input type="text"> 
+
           <label for="">Number of bicycle parking spaces:</label>
           <input type="text">
   
-         	<label>What is your business' type of ownership? (Choose one)</label>
-        	<select id="ownership">
-        		<option value="SOLE_PROP">Sole Proprietor</option>
-        		<option value="PARTNERSHIP">Partnership</option>
-        		<option value="CORPORATION">Corporation</option>
-        		<option value="TRUST">Trust</option>
-        	</select>
+         	<label>
+            <span>What is your business' type of ownership?</span>
+            <input type="radio"> Sole Proprietor
+            <input type="radio"> Partnership or LLC
+            <input type="radio"> Corporation
+            <input type="radio"> Trust
+          </label>
   
           <!-- NOTE: Conditional fields below -->
           Tell us about the other owners.
@@ -1248,16 +1263,16 @@
           <label for="">Number of rental units:</label>
           <input type="text">
       
-          <label for="">Your State ID Number:</label>
+          <label for="">State ID Number:</label>
           <input type="text">
       
-          <label for="">Your State Sales Tax Number:</label>
+          <label for="">State Sales Tax Number:</label>
           <input type="text">
       
-          <label for="">Your FIN / EIN:</label>
+          <label for="">Federal tax ID (FIN / EIN):</label>
           <input type="text">
       
-          <label for="">Your State Contractor's License:</label>
+          <label for="">State Contractor's License:</label>
           <input type="text">
       
           <label for="">How many employees will work at your business?</label>
