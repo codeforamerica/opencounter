@@ -45,7 +45,37 @@
       color: #666;
       font-style: italic;
     }
-  
+    
+    /* Drop shadow tastic */
+    .screen {
+      position: relative;
+      padding: 1em;
+      margin: 3em 0;
+      background: #fff;
+      -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+         -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+              box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+    
+    .screen:before,
+    .screen:after {
+      content:"";
+      position:absolute;
+      z-index:-2;
+    }
+    
+    .screen:before {
+      top: 50%;
+      bottom: 0;
+      left: 10px;
+      right: 10px;
+      -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      -moz-box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      -moz-border-radius: 100px / 10px;
+      border-radius: 100px / 10px;
+    }
+
   </style>
 </head>
 
@@ -54,357 +84,403 @@
 
 <hr><!-- ================================================================================ -->
 
-<h1 id="welcome">Welcome</h1>
-
-<p>Starting a business? We&rsquo;re here to help.</p>
-
-<p>This website will guide you through the business permitting process
-in Santa Cruz, CA.</p.
-
-<p>You&rsquo;ll learn what regulations and fees apply to your business, and we&rsquo;ll help
-you get started on &mdash; or, in some cases, complete! &mdash; the paperwork
-you’ll need to file to open your doors.</p>
-
-<p class="next">Let's get started. <a href="#theBigPicture">Next &rarr;</a></p>
-
-<hr><!-- ================================================================================ -->
-
-<h1 id="theBigPicture">The Big Picture</h1>
-
-<p>Here's how to start a business in Santa Cruz:</p>
-
-<p>First, research and satisfy any county, regional, state, or federal regulations that may apply to your business. <a href="#nonCityRegulations">Skip to this</a></p>
-
-<p>Then, get a use permit from the City of Santa Cruz Planning Department. <a href="#usePermit">Skip to this</a></p>
-
-<p>If you're doing any renovations or tenant improvements, get approval from the City of Santa Cruz Building Department. <a href="#building">Skip to this</a></p>
-
-<p>Finally, obtain a business license from the City of Santa Cruz Finance Department. <a href="#">Skip to this</a></p>
-
-<p class="next">Let's walk through these steps. <a href="#hereToHelp">Next &rarr;</a></p>
-
-<hr><!-- ================================================================================ -->
-
-<h1 id="hereToHelp">We're Here To Help</h1>
-
-<p>When starting a business, it's helpful to have someone to talk to. The following people &amp; organizations are here to help.</p>
-
-<h3>The Santa Cruz Planning Department</h3>
-
-<p>The Planning Department will be your business&rsquo;s main point of contact within city government.</p>
-
-<p><img src="assets/img/planning-department.png" alt="City of Santa Cruz Planning Department" width="450" height="302"></p>
-
-<div class="tool status">
-  <p>The planning department's public counter is currently <span class="status">OPEN</span>. Come on by!</p>
-  <p>The planning department's public counter is currently <span class="status">CLOSED</span>. <a href="mailto:planningcounter@cityofsantacruz.com">Email us &rarr;</a></p>
+<div class="screen">
+  <h1 id="welcome">Welcome</h1>
+  
+  <p>Starting a business? We&rsquo;re here to help.</p>
+  
+  <p>This website will guide you through the business permitting process
+  in Santa Cruz, CA.</p.
+  
+  <p>You&rsquo;ll learn what regulations and fees apply to your business, and we&rsquo;ll help
+  you get started on &mdash; or, in some cases, complete! &mdash; the paperwork
+  you&rsquo;ll need to file to open your doors.</p>
+  
+  <p class="next">Let's get started. <a href="#theBigPicture">Next &rarr;</a></p>
 </div>
 
-<p>You are always welcome to visit the Planning Department in person.</p>
-
-<p>The Planning Department&#146;s public counter is located in City Hall, on the annex building's second floor, in room 206.</p>
-
-<p><img src="assets/img/planning-department-map.jpg" alt="Map to Planning Department" width="425" height="258"></p>
-<p>Santa Cruz City Hall<br>809 Center Street<br>Room 206<br>Santa Cruz, CA 95060</p>
-<p>Telephone: (831) 420-5100</p>
-<p>Fax: (831) 420-5434</p>
-<p>Email: <a href="mailto:planningcounter@cityofsantacruz.com">planningcounter@cityofsantacruz.com</a></p>
-
-<p>The public counter is open Monday &ndash; Thursday, 7am &ndash; 12pm.</p>
-
-<p>Staff are available by phone or appointment only, Monday &ndash; Thursday, 1pm &ndash; 5pm.</p>
-
-<h3>The Central Coast Small Business Development Center (SBDC)</h3>
-<p>The Central Coast Small Business Development Center at Cabrillo College offers a wide variety of services for present and potential small business owners. All counseling services are confidential and free of charge. The SBDC is unable to provide counseling for tax or legal issues, but they can provide referrals in your area.</p>
-
-<p>Visit the <a href="http://centralcoastsbdc.org/" class="external">Central Coast Small Business Development Center (SBDC)</a>.</p>
-
-<h3>Santa Cruz Public Libraries</h3>
-<p>The Santa Cruz Public Libraries have a reference desk and an <a href="http://www.santacruzpl.org/guides/1/" class="external">online guide to starting a business</a>.</p>
-<p>Visit the <a href="http://www.santacruzpl.org/">Santa Cruz Public Libraries</a>.</p>
-
-<h3>The Office of Economic Development</h3>
-<p>Boilerplate text about Peter Koht here.</p>
-<p>Visit the <a href="http://www.cityofsantacruz.com/index.aspx?page=446" class="external">Office of Economic Development</a>.</p>
-
-<h3>California Secretary of State</h3>
-<p>The Secretary of State&#8217;s office has a general <a href="http://www.sos.ca.gov/business/be/starting-a-business.htm" class="external">overview</a> of how to start a business.</li>
-<p>Visit the <a href="#">California Secretary of State</a>.</p>
-
-<h3>Your broker, property manager, or landlord.</h3>
-<p>These folks have probably been through this process before and can offer helpful pointers.</p>
-
-<p class="next">Next up, <a href="#aFewQuestions">a few questions &rarr;</a></p>
-
 <hr><!-- ================================================================================ -->
 
-<h1 id="aFewQuestions">A Few Questions</h1>
+<div class="screen" id="theBigPicture">
 
-<p>The rest of this guide is tailored to you and your business.</p>
-
-<form>
-  <h3>Who are you?</h3>
-
-  <label for="name">
-    <span>Your Name</span>
-    <input type="text" id="fname" placeholder="First name">
-    <input type="text" id="lname" placeholder="Last name">
-  </label>
-
-  <label for="email">
-    <span>Your Email Address</span>
-    <input type="text" id="email" placeholder="you@domain.com">
-  </label>
+  <h1>The Big Picture</h1>
   
-  <h3>Where do you plan to work?</h3>
-
-  <label for="ishomeocc" class="next">
-    <span><a href="#workingFromHome">I&rsquo;ll be working from home &rarr;</a></span>
-    <span><a href="">My business will be in a space other than my home &rarr;</a></span>
-  </label>
-
-</form>
-
-<hr><!-- ================================================================================ -->
-
-<h1 id="workingFromHome">Working From Home</h1>
-
-<p>Work-from-home businesses &mdash; known as "home occupations" &mdash; need to follow the rules outlined in section <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.160">24.10.160</a> of the city of Santa Cruz's Municipal Code.</p>
-
-<p>In plain English, you can work from home as long as you're not negatively impacting the neighborhood by increasing visitors or traffic, creating a lot of noise, or working with hazardous materials. You also can't have a sign on your home advertising the business.</p>
-
-<p>Read the actual text of the Municipal Code:</p>
-<blockquote>
-  <ol>
-    <li>Intent. The discretionary approval of a home occupation is intended to allow for home enterprises, which are clearly incidental and secondary to the use of the dwelling unit and compatible with surrounding residential uses. A home occupation allows for the gainful employment in the home by any occupant of a dwelling so long as the enterprise does not require frequent customer access or have associated characteristics which would reduce the surrounding residents’ enjoyment of their neighborhood.</li>
-    <li>General. A home occupation shall be operated and maintained only by a resident of the dwelling unit in which it occurs; shall not employ any help other than the members of the resident family or household; shall not change the residential character of the dwelling units; shall not generate a vehicular traffic increase of more than six trip ends (three round trips) per day including deliveries and clients.</li>
-    <li>Restrictions. A home occupation shall not involve:
-      <ol>
-        <li>The use of an area greater than four hundred feet;</li>
-        <li>The use of any required front or exterior side yard area or setback area, nor the use of any required covered or uncovered on-site parking space;</li>
-        <li>Any activity or use which involves:
-          <ol>
-            <li>A significant increase in vehicular trips to the residence;</li>
-            <li>Storage or use of hazardous or unsanitary materials;</li>
-            <li>Creation of noise levels exceeding the standards of this title and/or other nuisance factors inconsistent with Chapter 24.14, Part 2: Performance Standards;</li>
-            <li>Auto/truck/motorcycle/motor boat repair.</li>
-          </ol>
-        </li>
-        <li>The placement of a sign advertising the business.</li>
-      </ol>
-    </li>
-    <li>Permits Required. A zoning clearance and business license shall be required, except for small family day care which is exempt from local regulations.</li>
-  </ol>
-</blockquote>
-
-<p class="next">
-  <a href="#yourBusinessName">Yep, my work-from-home business complies with all those rules &rarr;</a>
-</p>
-<p class="next">
-  <a href="#contactPlanning">I want to work from home, but it sounds like I might not be able to. Help! &rarr;</a>
-</p>
-
-<hr><!-- ================================================================================ -->
-
-<h1 id="contactPlanning">Contact Us</h1>
-
-<p>Send the Planning Department your question here, and we'll respond within 4 business days.</p>
-
-<p>If you need to speak with someone sooner than that, <a href="hereToHelp">here's how to contact the Planning Department</a>.</p>
-
-<form>
-
-  <label for="name">
-    <span>Your Name</span>
-    <input type="text" id="fname" placeholder="First name">
-    <input type="text" id="lname" placeholder="Last name">
-  </label>
-
-  <label for="email">
-    <span>Your Email Address</span>
-    <input type="text" id="email" placeholder="you@domain.com">
-  </label>
-
-  <label for="subject">
-    <span>I have a question about</span>
-    <select>
-      <option>Starting a home-based business</option>
-      <option>Starting a non-home-based business</option>
-      <option>Something else</option>
-    </select>
-  </label>
+  <p>Here's how to start a business in Santa Cruz:</p>
   
-  <label for="comments">
-    <span>My question is</span>
-    <textarea></textarea>
-  </label>
-
-</form>
-
-<p class="next"><a href="contactPlanningThanks">Send this to the Planning Department &rarr;</a></p>
-
-<hr><!-- ================================================================================ -->
-
-<h1 id="contactPlanningThanks">Thanks!</h1>
-
-<p>Thanks for contacting the Planning Department! We will get in touch with you within 4 business days.</p>
-
-<p>If you need to speak with someone sooner than that, <a href="hereToHelp">here's how to contact the Planning Department</a>.</p>
-
-<p class="next">How'd we do? <a href="#feedback">Give us some feedback &rarr;</a></p>
-
-<hr><!-- ================================================================================ -->
-
-<h1 id="feedback">Give us some feedback</h1>
-
-<p>If you have a moment, we would love to get your thoughts on this site.</p>
-
-<form>
-
-  <label>
-    <span>How well did we do at answering your questions?</span>
-    <ul>
-      <li><a href="">&#9786;</a></li>
-      <li><a href="">(Neutralface)</a></li>
-      <li><a href="">&#9785;</a></li>
-    </ul>
-  </label>
-
-  <label>
-    <span>What could we have done better?</span>
-    <textarea></textarea>
-  </label>
-
-  <label>
-    <span>Would you like us to follow up with you?</span>
-    <ul>
-      <li>Yes, email me at: <input type="text"></li>
-      <li>Yes, call me at: <input type="text"></li>
-    </ul>
-  </label>
-
-  <p class="next"><button>Submit</button></p>
+  <p>First, research and satisfy any county, regional, state, or federal regulations that may apply to your business. <a href="#nonCityRegulations">Skip to this</a></p>
   
-</form>
-
-<hr><!-- ================================================================================ -->
-
-<h1 id="feedbackThanks">Thanks for sharing!</h1>
-
-<p>Thanks, we've received your feedback.</p>
-
-<p>(If they gave an email or phone) We'll follow up with you within one workday.</p>
-
-<p>Thanks for helping us improve OpenCounter!</p>
-
-<p class="next"><a href="#welcome">OpenCounter Home</a></p>
-
-<hr><!-- ================================================================================ -->
-
-<h1 id="yourBusinessName">What&rsquo;s in a name?</h1>
-
-<form>
-  <label>
-    <span>What's your business's name?</span>
-    <input type="text">
-  </label>
-</form>
-
-<h3>Fictitious Business Name</h3>
-
-<p>If the name of your business does not contain your last name, you will need to apply to <a href="http://www.sccoclerk.com/fbngen.htm">Santa Cruz County</a> for a Fictitious Business Name (FBN).</p>
-
-<p>For example, if your last name is Smith and your business is called "Smith&rsquo;s Tanning," you won't need an FBN. But if your business is called "Eastside Tanning," you will need an FBN.</p>
-
-<p class="next"><a href="">I'll need a FBN. Get one &rarr;</a></p>
-<p class="next"><a href="#incorporation">I don't need a FBN. Next: Incorporation &rarr;</a></p>
-
-<hr><!-- ================================================================================ -->
-
-<h1 id="incorporation">Incorporation</h1>
-
-<p>You don't need to incorporate to start a business in Santa Cruz, but it should be something you think about.</p>
-
-<form>
+  <p>Then, get a use permit from the City of Santa Cruz Planning Department. <a href="#usePermit">Skip to this</a></p>
   
-  <label>
-    <span>Are you incorporated?</span>
-    <input type="radio"> Sole Proprietor
-    <input type="radio"> Partnership or LLC
-    <input type="radio"> Corporation
-    <input type="radio"> Trust
-  </label>
+  <p>If you're doing any renovations or tenant improvements, get approval from the City of Santa Cruz Building Department. <a href="#building">Skip to this</a></p>
   
-  <label>
-    <span>Do you have any co-owners or corporate officers?</span>
-    <div>
-      <input type="radio"> I am the sole owner of this business.
+  <p>Finally, obtain a business license from the City of Santa Cruz Finance Department. <a href="#">Skip to this</a></p>
+  
+  <p class="next">Let's walk through these steps. <a href="#hereToHelp">Next &rarr;</a></p>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="hereToHelp">
+
+  <h1>We're Here To Help</h1>
+  
+  <p>When starting a business, it's helpful to have someone to talk to. The following people &amp; organizations are here to help.</p>
+  
+  <h3 class="toggle">The Santa Cruz Planning Department</h3>
+  <div class="drawer">
+    <p>The Planning Department will be your business&rsquo;s main point of contact within city government.</p>
+    <p><img src="assets/img/planning-department.png" alt="City of Santa Cruz Planning Department" width="450" height="302"></p>
+    <div class="tool status">
+      <p>The planning department's public counter is currently <span class="status">OPEN</span>. Come on by!</p>
+      <p>The planning department's public counter is currently <span class="status">CLOSED</span>. <a href="mailto:planningcounter@cityofsantacruz.com">Email us &rarr;</a></p>
     </div>
-    <div>
-      <input type="radio"> There are other owners:
-      <table cellspacing="0">
-        <tr>
-          <th>+</th>
-          <th>Position or Title</th>
-          <th>Name</th>
-          <th>Physical Address</th>
-        </tr>
-        <tr>
-          <td><a href="#">+</a></td>
-          <td><input type="text" placeholder="Co-Owner"></td>
-          <td><input type="text" placeholder="Carolyn Cutting"></td>
-          <td><input type="text" placeholder="123 Coop Terrace, Santa Cruz, CA 12345"></td>
-        </tr>
-      </table>
-    </div>
-  </label>
-</form>
+    <p>You are always welcome to visit the Planning Department in person.</p>
+    <p>The Planning Department&#146;s public counter is located in City Hall, on the annex building's second floor, in room 206.</p>
+    <p><img src="assets/img/planning-department-map.jpg" alt="Map to Planning Department" width="425" height="258"></p>
+    <p>Santa Cruz City Hall<br>809 Center Street<br>Room 206<br>Santa Cruz, CA 95060</p>
+    <p>Telephone: (831) 420-5100</p>
+    <p>Fax: (831) 420-5434</p>
+    <p>Email: <a href="mailto:planningcounter@cityofsantacruz.com">planningcounter@cityofsantacruz.com</a></p>
+    <p>The public counter is open Monday &ndash; Thursday, 7am &ndash; 12pm.</p>
+    <p>Staff are available by phone or appointment only, Monday &ndash; Thursday, 1pm &ndash; 5pm.</p>
+  </div>
+  
+  <h3 class="toggle">The Central Coast Small Business Development Center (SBDC)</h3>
+  <div class="drawer">
+    <p>The Central Coast Small Business Development Center at Cabrillo College offers a wide variety of services for present and potential small business owners. All counseling services are confidential and free of charge. The SBDC is unable to provide counseling for tax or legal issues, but they can provide referrals in your area.</p>
+    <p>Visit the <a href="http://centralcoastsbdc.org/" class="external">Central Coast Small Business Development Center (SBDC)</a>.</p>
+  </div>
 
-<p>For more information on incorporation, speak with an accountant or visit <a href="http://www.sos.ca.gov/business/">The California Business Portal</a>.</p>
-
-<p class="next"><a href="#nonCityRegulations">All set. Next, non-city regulations &rarr;</a></p>
-<p class="next"><a href="#contactPlanning">I'm not sure / I have questions about this. &rarr;</a></p>
-
-
-
-<hr><!-- ================================================================================ -->
-
-<h1 id="nonCityRegulations">County, State, and Federal Regulations</h1>
-
-<p>In addition to satisfying City of Santa Cruz regulations, your business may also need to comply with county, regional, state, and federal regulations.</p>
-
-<p>The state of California maintains <a href="http://www.calgold.ca.gov/"><abbr title="California Government: On-Line to Desktops">CalGOLD</abbr></a>, a catalog of permits that apply to different types of businesses.</p>
-
-<form>
-  <label>
-    <span>What type of business is this?</span>
-    <input type="" placeholder="[SIC CALCULATOR]">
-  </label>
-</form>
-
-<iframe src="http://pdfmongotest.herokuapp.com/calgold?kywd=search" frameborder="0" width="450" height="750"></iframe>
-
-<p>Based on what you've told us so far, your business is of type [SIC CODE], and here are the county, state, and federal permits you MAY be required to fill out.</p>
-
-<ul>
-  <li>Date</li>
-  <li>From</li>
-  <li>SIC</li>
-  <li>Calculator</li>
-  <li>Here?</li>
-</ul>
-
-<p>Not sure of your business type? Not finding your business type listed? Simply enter the words "General Business Information" above, or select it from the list.</p>
-
-<p class="next"><a href="">All set! Next: Zoning Clearance &rarr;</a></p>
+  <h3 class="toggle">Santa Cruz Public Libraries</h3>
+  <div class="drawer">
+    <p>The Santa Cruz Public Libraries have a reference desk and an <a href="http://www.santacruzpl.org/guides/1/" class="external">online guide to starting a business</a>.</p>
+    <p>Visit the <a href="http://www.santacruzpl.org/">Santa Cruz Public Libraries</a>.</p>
+  </div>
+  
+  <h3 class="toggle">The Office of Economic Development</h3>
+  <div class="drawer">
+    <p>Boilerplate text about Peter Koht here.</p>
+    <p>Visit the <a href="http://www.cityofsantacruz.com/index.aspx?page=446" class="external">Office of Economic Development</a>.</p>
+  </div>
+  
+  <h3 class="toggle">California Secretary of State</h3>
+  <div class="drawer">
+    <p>The Secretary of State&#8217;s office has a general <a href="http://www.sos.ca.gov/business/be/starting-a-business.htm" class="external">overview</a> of how to start a business.</li>
+    <p>Visit the <a href="#">California Secretary of State</a>.</p>
+  </div>
+  
+  <h3 class="toggle">Your broker, property manager, or landlord.</h3>
+  <div class="drawer">
+    <p>These folks have probably been through this process before and can offer helpful pointers.</p>
+  </div>
+  
+  <p class="next">Next up, <a href="#aFewQuestions">a few questions &rarr;</a></p>
+</div>
 
 <hr><!-- ================================================================================ -->
 
-<h1 id="homeOccPaperwork">Home Occ Paperwork</h1>
+<div class="screen" id="aFewQuestions">
+
+  <h1>A Few Questions</h1>
+  
+  <p>The rest of this guide is tailored to you and your business.</p>
+  
+  <form>
+    <h3>Who are you?</h3>
+  
+    <label for="name">
+      <span>Your Name</span>
+      <input type="text" id="fname" placeholder="First name">
+      <input type="text" id="lname" placeholder="Last name">
+    </label>
+  
+    <label for="email">
+      <span>Your Email Address</span>
+      <input type="text" id="email" placeholder="you@domain.com">
+    </label>
+    
+    <h3>Where do you plan to work?</h3>
+  
+    <label for="ishomeocc" class="next">
+      <span><a href="#workingFromHome">I&rsquo;ll be working from home &rarr;</a></span>
+      <span><a href="">My business will be in a space other than my home &rarr;</a></span>
+    </label>
+  
+  </form>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="workingFromHome">
+
+  <h1>Working From Home</h1>
+  
+  <p>You can work from home as long as you're not negatively impacting the neighborhood by increasing visitors or traffic, creating a lot of noise, or working with hazardous materials. You also can't have a sign on your home advertising the business.</p>
+  
+  <p>More precisely: work-from-home businesses &mdash; known as "home occupations" &mdash; need to follow the rules outlined in section <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.160">24.10.160</a> of the city of Santa Cruz's Municipal Code.</p>
+  
+  <h3 class="toggle">Santa Cruz Municipal Code 24.10.160</h3>
+  <blockquote class="drawer">
+    <ol>
+      <li>Intent. The discretionary approval of a home occupation is intended to allow for home enterprises, which are clearly incidental and secondary to the use of the dwelling unit and compatible with surrounding residential uses. A home occupation allows for the gainful employment in the home by any occupant of a dwelling so long as the enterprise does not require frequent customer access or have associated characteristics which would reduce the surrounding residents’ enjoyment of their neighborhood.</li>
+      <li>General. A home occupation shall be operated and maintained only by a resident of the dwelling unit in which it occurs; shall not employ any help other than the members of the resident family or household; shall not change the residential character of the dwelling units; shall not generate a vehicular traffic increase of more than six trip ends (three round trips) per day including deliveries and clients.</li>
+      <li>Restrictions. A home occupation shall not involve:
+        <ol>
+          <li>The use of an area greater than four hundred feet;</li>
+          <li>The use of any required front or exterior side yard area or setback area, nor the use of any required covered or uncovered on-site parking space;</li>
+          <li>Any activity or use which involves:
+            <ol>
+              <li>A significant increase in vehicular trips to the residence;</li>
+              <li>Storage or use of hazardous or unsanitary materials;</li>
+              <li>Creation of noise levels exceeding the standards of this title and/or other nuisance factors inconsistent with Chapter 24.14, Part 2: Performance Standards;</li>
+              <li>Auto/truck/motorcycle/motor boat repair.</li>
+            </ol>
+          </li>
+          <li>The placement of a sign advertising the business.</li>
+        </ol>
+      </li>
+      <li>Permits Required. A zoning clearance and business license shall be required, except for small family day care which is exempt from local regulations.</li>
+    </ol>
+  </blockquote>
+  
+  <p class="next">
+    <a href="#yourBusinessName">Yep, my work-from-home business complies with all those rules &rarr;</a>
+  </p>
+  <p class="next">
+    <a href="#contactPlanning">I want to work from home, but it sounds like I might not be able to. Help! &rarr;</a>
+  </p>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="contactPlanning">
+
+  <h1>Contact Us</h1>
+  
+  <p>Send the Planning Department your question here, and we'll respond within 4 business days.</p>
+  
+  <p>If you need to speak with someone sooner than that, <a href="hereToHelp">here's how to contact the Planning Department</a>.</p>
+  
+  <form>
+  
+    <label for="name">
+      <span>Your Name</span>
+      <input type="text" id="fname" placeholder="First name">
+      <input type="text" id="lname" placeholder="Last name">
+    </label>
+  
+    <label for="email">
+      <span>Your Email Address</span>
+      <input type="text" id="email" placeholder="you@domain.com">
+    </label>
+  
+    <label for="subject">
+      <span>I have a question about</span>
+      <select>
+        <option>Starting a home-based business</option>
+        <option>Starting a non-home-based business</option>
+        <option>Something else</option>
+      </select>
+    </label>
+    
+    <label for="comments">
+      <span>My question is</span>
+      <textarea></textarea>
+    </label>
+  
+  </form>
+  
+  <p class="next"><a href="contactPlanningThanks">Send this to the Planning Department &rarr;</a></p>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="contactPlanningThanks">
+
+  <h1>Thanks!</h1>
+  
+  <p>Thanks for contacting the Planning Department! We will get in touch with you within 4 business days.</p>
+  
+  <p>If you need to speak with someone sooner than that, <a href="hereToHelp">here's how to contact the Planning Department</a>.</p>
+  
+  <p class="next">How'd we do? <a href="#feedback">Give us some feedback &rarr;</a></p>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="feedback">
+
+  <h1>Give us some feedback</h1>
+
+  <p>If you have a moment, we would love to get your thoughts on this site.</p>
+  
+  <form>
+  
+    <label>
+      <span>How well did we do at answering your questions?</span>
+      <ul>
+        <li><a href="">&#9786;</a></li>
+        <li><a href="">(Neutralface)</a></li>
+        <li><a href="">&#9785;</a></li>
+      </ul>
+    </label>
+  
+    <label>
+      <span>What could we have done better?</span>
+      <textarea></textarea>
+    </label>
+  
+    <label>
+      <span>Would you like us to follow up with you?</span>
+      <ul>
+        <li>Yes, email me at: <input type="text"></li>
+        <li>Yes, call me at: <input type="text"></li>
+      </ul>
+    </label>
+  
+    <p class="next"><button>Submit</button></p>
+    
+  </form>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="feedbackThanks">
+
+  <h1>Thanks for sharing!</h1>
+  
+  <p>Thanks, we've received your feedback.</p>
+  
+  <p>(If they gave an email or phone) We'll follow up with you within one workday.</p>
+  
+  <p>Thanks for helping us improve OpenCounter!</p>
+  
+  <p class="next"><a href="#welcome">OpenCounter Home</a></p>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="yourBusinessName">
+
+  <h1>What&rsquo;s in a name?</h1>
+  
+  <p>If the name of your business does not contain your last name, you will need to apply to Santa Cruz County for a Fictitious Business Name (FBN).</p>
+  
+  <p>For example, if your last name is Smith and your business is called "Smith&rsquo;s Tanning," you won't need an FBN. But if your business is called "Eastside Tanning," you will need an FBN.</p>
+  
+  <form>
+    <label>
+      <span>What's your business's name?</span>
+      <input type="text">
+    </label>
+  </form>
+  
+  <p class="next">My business will need a FBN. <a href="http://www.sccoclerk.com/fbngen.htm" class="external">Get one &rarr;</a></p>
+  <p class="next">My business doesn't need a FBN. <a href="#incorporation">Next: Incorporation &rarr;</a></p>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="incorporation">
+
+  <h1>Incorporation</h1>
+  
+  <p>You don't need to incorporate to start a business in Santa Cruz, but it should be something you think about.</p>
+  
+  <p>For more information on incorporation, speak with an accountant or visit <a href="http://www.sos.ca.gov/business/">The California Business Portal</a>.</p>
+  
+  <form>
+    
+    <label>
+      <span>Are you incorporated?</span>
+      <input type="radio"> Sole Proprietor
+      <input type="radio"> Partnership or LLC
+      <input type="radio"> Corporation
+      <input type="radio"> Trust
+    </label>
+    
+    <label>
+      <span>Do you have any co-owners or corporate officers?</span>
+      <div>
+        <input type="radio"> I am the sole owner of this business.
+      </div>
+      <div>
+        <input type="radio"> There are other owners:
+        <table cellspacing="0">
+          <tr>
+            <th>+</th>
+            <th>Position or Title</th>
+            <th>Name</th>
+            <th>Physical Address</th>
+          </tr>
+          <tr>
+            <td><a href="#">+</a></td>
+            <td><input type="text" placeholder="Co-Owner"></td>
+            <td><input type="text" placeholder="Carolyn Cutting"></td>
+            <td><input type="text" placeholder="123 Coop Terrace, Santa Cruz, CA 12345"></td>
+          </tr>
+        </table>
+      </div>
+    </label>
+  </form>
+  
+  <p class="next"><a href="#nonCityRegulations">All set. Next, non-city regulations &rarr;</a></p>
+  <p class="next"><a href="#contactPlanning">I'm not sure / I have questions about this. &rarr;</a></p>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="nonCityRegulations">
+
+  <h1>County, State, and Federal Regulations</h1>
+  
+  <p>In addition to satisfying City of Santa Cruz regulations, your business may also need to comply with county, regional, state, and federal regulations.</p>
+  
+  <p>The state of California maintains <a href="http://www.calgold.ca.gov/"><abbr title="California Government: On-Line to Desktops">CalGOLD</abbr></a>, a catalog of permits that apply to different types of businesses.</p>
+  
+  <form>
+    <label>
+      <span>What type of business is this?</span>
+      <input type="" placeholder="[SIC CALCULATOR]">
+    </label>
+  </form>
+  
+  <iframe src="http://pdfmongotest.herokuapp.com/calgold?kywd=search" frameborder="0" width="450" height="750"></iframe>
+  
+  <p>Based on what you've told us so far, your business is of type [SIC CODE], and here are the county, state, and federal permits you MAY be required to fill out.</p>
+  
+  <ul>
+    <li>Date</li>
+    <li>From</li>
+    <li>SIC</li>
+    <li>Calculator</li>
+    <li>Here?</li>
+  </ul>
+  
+  <p>Not sure of your business type? Not finding your business type listed? Simply enter the words "General Business Information" above, or select it from the list.</p>
+  
+  <p class="next"><a href="homeOccSummary">All set! Next: Zoning Clearance &rarr;</a></p>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="homeOccSummary">
+
+<h1>Home Occ Paperwork</h1>
 
 <p>Here's what you've told us so far:</p>
 
-Your Name
+<p>Your Name
   Annie Oakley
 
 Your Email Address
@@ -428,111 +504,108 @@ Business Type
 Other forms you'll need to fill out:
   [From CalGOLD]
 
-
-
-
-
-<hr><!-- ================================================================================ -->
-
-<h1 id="credits">Credits</h1>
-
-<p>A collaboration between the <a href="#">City of Santa Cruz, CA</a> and <a href="#">Code for America</a>.</p>
-
-<hr><!-- ================================================================================ -->
-
-# What's Your Business Type?
-
-For the purposes of regulations, we can think of businesses as falling into one of these buckets:
-
-1. Selling Things
-(Retail)
-
-2. Providing Services
-(Gyms, Offices)
-
-3. Making Things
-(Industrial)
-
-4. Selling/Serving Food or Drinks
-(Restaurants, Cafes, Bars, Convenience Stores)
-
-
-<hr><!-- ================================================================================ -->
-
-# Business Improvement Assessments
-
-<h2>City of Santa Cruz<br />
-Business Improvement Assessments (BIA) Calculator</h2>
 </div>
 
-<div id="what">
-<h3>What are Business Improvement Assessments?</h3>
-<p>Your Business Improvement Assessments are spent exclusively on promoting and improving the
-downtown area.  The Assessments are collected by the City of Santa Cruz and forwarded directly
-to the Downtown Association of Santa Cruz. <a href="#">Learn more about the Downtown Association
-of Santa Cruz</a>.</p>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="credits">
+  <h1>Credits</h1>
+  <p>A collaboration between the <a href="#">City of Santa Cruz, CA</a> and <a href="#">Code for America</a>.</p>
 </div>
 
-<form action="biacalc.php" method="post">
-
-<p>BIAs are based on several factors, including the size of your business.
-Enter your business's square footage, e.g., 1000</p>
-<input type="text" name="biz_area" value="" />
-
-<p>BIAs are also based on the type of business you operate.
-Select one of the following business categories:</p>
-
-<select name="biz_type">
-	<option value="1">Retail & Food</option>
-	<option value="2">Financial, Bars, and Theaters</option>
-	<option value="3">Wholesale Trade, Services, Professions, and Auto Dealers</option>
-</select>
-
-<p>BIAs are also based on the location of your business.  Enter your street address</p>
-<input type="text" name="street_num_and_name" value="" />
-<input type="submit" value="Calculate!" />
-
-</form>
 
 <hr><!-- ================================================================================ -->
 
-# Waste Water Discharge
+<div class="screen" id="yourBusinessType">
 
-If you have anything to do with food, or industrial uses you may need to obtain a waste water discharge permit or questionnaire.
+  <h1>What's Your Business Type?</h1>
 
-Waste water regulation helps the department of Public Works prevent grease and other pollutants from clogging their water treatment facility and the bay. More information and an application can be found <a href="http://www.cityofsantacruz.com/index.aspx?page=177" target="_blank">here</a>.
+  <p>For the purposes of regulations, we can think of businesses as falling into one of these buckets:</p>
 
-This permit is not required of most retail and service uses.
+  <ol>
+    <li>Selling Things (Retail)</li>
+    <li>Providing Services (Gyms, Offices)</li>
+    <li>Making Things (Industrial)</li>
+    <li>Selling/Serving Food or Drinks (Restaurants, Cafes, Bars, Convenience Stores)</li>
+  </ol>
 
-<hr><!-- ================================================================================ -->
-
-# Use
-
-<section>
-<p class="b">A good tip for finding a location that permits your use is to pick a space with a prior use as similar to yours as possible.</p>
-<p class="s">If you are opening a restaurant try to go into a space that held a restaurant.</p>
-<p class="s">If you are opening a yoga studio try to go into, say, a karate studio.</p>
-<p class="b">This will make it more likely that your use will be approved.</p>
-<p class="s">If the past use matches your use, the zoning will match and parking will likely not be an issue.</p>
-<p class="s"><a href="http://codeforamerica.github.com/sitemybiz/" target="_blank">SiteMyBiz</a> is a helpful tool to find available space in Santa Cruz.</p>
-
-</section>
+</div>
 
 <hr><!-- ================================================================================ -->
 
-# Zoning 
+<div class="screen" id="businessImprovementAssessment">
 
-<section>
-<p class="b">Zoning basically makes sure a rubber factory can't open next to a preschool.</p>
-<p class="s">By clustering types of businesses, we can help preserve neighborhoods and share services.
+  <h1>Business Improvement Assessments</h1>
 
-<p class="b">The first hurdle to starting a business is finding a location that permits your use.</p>
+  <p>If your business is located in downtown Santa Cruz, you will be required to pay a
+  Business Improvement Assessment. These funds are spent exclusively on promoting and
+  improving the downtown area. These funds are collected by the City of Santa Cruz and
+  forwarded directly to the Downtown Association of Santa Cruz. <a href="#">Learn more
+  about the Downtown Association.</a></p>
+  
+  <p>BIAs are based on the size of your business, the type of business you operate,
+  and your business's location.</p>
+  
+  <form action="biacalc.php" method="post">
+  
+    <h3>Estimate your business's BIA.</h3>
+    <label>
+      <span>Enter your business's square footage, e.g., 1000</span>
+      <input type="text" name="biz_area" value="" />
+    </label>
+    <label>
+      <span>What type of business do you operate?</span>
+      <select name="biz_type">
+        <option value="1">Retail & Food</option>
+        <option value="2">Financial, Bars, and Theaters</option>
+        <option value="3">Wholesale Trade, Services, Professions, and Auto Dealers</option>
+      </select>
+    </label>
+    <label>
+      <span>What's your business's street address?</span>
+      <input type="text" name="street_num_and_name" value="" />
+    </label>
+    <input type="submit" value="Calculate!" />
+  </form>
 
-</section>
+</div>
 
 <hr><!-- ================================================================================ -->
 
-# Zoning Map
+<div class="screen" id="wasteWater">
+  <h1>Waste Water Discharge</h1>
+  <p>If you have anything to do with food, or industrial uses you may need to obtain a waste water discharge permit or questionnaire.</p>
+  <p>Waste water regulation helps the department of Public Works prevent grease and other pollutants from clogging their water treatment facility and the bay. More information and an application can be found <a href="http://www.cityofsantacruz.com/index.aspx?page=177" target="_blank">here</a>.</p>
+  <p>This permit is not required of most retail and service uses.</p>
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="use">
+  <h1>Use</h1>
+  <p class="b">A good tip for finding a location that permits your use is to pick a space with a prior use as similar to yours as possible.</p>
+  <p class="s">If you are opening a restaurant try to go into a space that held a restaurant.</p>
+  <p class="s">If you are opening a yoga studio try to go into, say, a karate studio.</p>
+  <p class="b">This will make it more likely that your use will be approved.</p>
+  <p class="s">If the past use matches your use, the zoning will match and parking will likely not be an issue.</p>
+  <p class="s"><a href="http://codeforamerica.github.com/sitemybiz/" target="_blank">SiteMyBiz</a> is a helpful tool to find available space in Santa Cruz.</p>
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="zoning">
+  <h1>Zoning</h1>
+  <p>Zoning basically makes sure a rubber factory can't open next to a preschool.</p>
+  <p>By clustering types of businesses, we can help preserve neighborhoods and share services.
+  <p>The first hurdle to starting a business is finding a location that permits your use.</p>
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="zoningMap">
+
+  <h1>Zoning Map</h1>
 
 <p class="s">You can check a site's zoning and prior use by entering the address here:
 <label for="textfield"></label></p>
@@ -641,52 +714,67 @@ Set up to help bridge the downtown to the beach area, this district encourages m
 <p class="b">Please note how the prior use of your chosen site compares to your intended use.<p> 
 <p class="s">If you read the full definition of your site's zoning district, try to understand if and how your intended use is permitted.</p>
 
+</div>
+
+
 
 <hr><!-- ================================================================================ -->
 
-# Use Permits
+<div class="screen" id="usePermits">
 
-<p>The type of use permit you need is dependent on the way your zoning district permits your use.</p>
+  <h1>Use Permits</h1>
+  
+  <p>The type of use permit you need is dependent on the way your zoning district permits your use.</p>
+  
+  <p class="s">If what you do is Principally Permitted all you need is a [linklabel label="Zoning Clearance"]. This is the simplest form of a use permit.</p>
+  [accordion label="Zoning Clearance"]
+  <p class="s">Zoning Clearance: the simplest form of use permit. It is typically issued same day with minimal review.</p>
+  [/accordion]
+  <p class="s">If your use is not principally permitted you will need either an [linklabel label="Administrative Use Permit or a Special Use Permit"].</p>
+  [accordion label="Administrative Use Permit or a Special Use Permit"]
+  <p class="s">Admin Use Permit(AUP): This kind of application requires more staff analysis, and more information from the applicant. These permits entail a public hearing before the Zoning Administrator, and can take approximately 6-8 weeks to work their way through to completion.</p>
+  <p class="s">Special Use Permit(SUP): Requires a high level of scrutiny, typically due to the size of the project and its impact on the neighborhood. These applications go to Planning Commission, whose decision is ratified by the City Council. SUPs take 2-3 months.</p>
+  [/accordion]
+  <p class="s">If your use is not permitted, you should [linklabel label="probably"]pick another spot.</p>
+  [accordion label="probably"]
+  <p class="s">Changing the Zoning is very difficult, rare and takes years. It is not recommended, but you are welcome to contact the planning department for more information.</p>
+  [/accordion]
 
-<p class="s">If what you do is Principally Permitted all you need is a [linklabel label="Zoning Clearance"]. This is the simplest form of a use permit.</p>
-[accordion label="Zoning Clearance"]
-<p class="s">Zoning Clearance: the simplest form of use permit. It is typically issued same day with minimal review.</p>
-[/accordion]
-<p class="s">If your use is not principally permitted you will need either an [linklabel label="Administrative Use Permit or a Special Use Permit"].</p>
-[accordion label="Administrative Use Permit or a Special Use Permit"]
-<p class="s">Admin Use Permit(AUP): This kind of application requires more staff analysis, and more information from the applicant. These permits entail a public hearing before the Zoning Administrator, and can take approximately 6-8 weeks to work their way through to completion.</p>
-<p class="s">Special Use Permit(SUP): Requires a high level of scrutiny, typically due to the size of the project and its impact on the neighborhood. These applications go to Planning Commission, whose decision is ratified by the City Council. SUPs take 2-3 months.</p>
-[/accordion]
-<p class="s">If your use is not permitted, you should [linklabel label="probably"]pick another spot.</p>
-[accordion label="probably"]
-<p class="s">Changing the Zoning is very difficult, rare and takes years. It is not recommended, but you are welcome to contact the planning department for more information.</p>
-[/accordion]
-
-<hr><!-- ================================================================================ -->
-
-# Intensity of Use
-
-<p class="b">A gym has a more "intense use" than a warehouse. This means more parking is needed and means more cars on the road.</p>
-<p class="s">If the prior use of your site is [linklabel label="similar or more intense"] than what you do, this doesn't affect you. Move along!</p>
-[accordion label="similar or more intense"]
-<p class="s">Here are some businesses listed from light to intense use: Warehouse &lt; Shoe store &lt; Restaurant</p>
-<p class="s">More information coming soon.</p>
-[/accordion]
-<p class="s">But, if you need to change a space to a more "intense use" you must pay for the impacts you'll be causing. Please [linklabel label="read more about it"].</p>
-[accordion label="read more about it"]
-<p class="mini">This is a complicated concept. In California, it’s our responsibility to mitigate the impact of changes of use if the “intensity” of use increases. This means accounting for more traffic, parking and people using the space.</p>
-<p class="s">It costs a lot to keep the traffic of Santa Cruz flowing.</p>
-<p class="mini">If your business has a higher traffic need than your space allows it is your responsibility to pay into a fund that helps traffic improvements. This is done by a one time charge called Traffic Impact Fee (TIF). TIF helps pay for things like wider lanes and signalized intersections.</p>
-<p class="s">TIF can be $1000 to $200,000. This is why we reccomend picking a location with a similar use to yours.</p>
-<p class="mini">The fee is based on the number of trips your use switch causes. Here is a tool that helps estimate the fee: <iframe src="http://pdfmongotest.herokuapp.com/tif-calculator.html" frameborder="0" width="450" height="550"></iframe></p>
-[/accordion]
-<p class="s">If you love a space with a serious TIF you should talk to the <a href="http://www.cityofsantacruz.com/index.aspx?page=446" target="_blank">Office of Economic Development</a>. They will try to help.</p>
+</div>
 
 <hr><!-- ================================================================================ -->
 
-# Parking
+<div class="screen" id="useIntensity">
 
-<section>
+  <h1>Intensity of Use</h1>
+  
+  <p>In California, we our responsibility to mitigate the impact of changes of use if the “intensity” of use increases. This means accounting for more traffic, parking and people using the space.</p>
+
+  <p>A gym has a more "intense use" than a warehouse. This means more parking is needed and means more cars on the road.</p>
+  
+  <p>If the prior use of your site is similar or more intense than what you do, this doesn't affect you. Move along!</p>
+  [accordion label="similar or more intense"]
+  <p>Here are some businesses listed from light to intense use: Warehouse &lt; Shoe store &lt; Restaurant</p>
+  <p>More information coming soon.</p>
+  [/accordion]
+  <p class="s">But, if you need to change a space to a more "intense use" you must pay for the impacts you'll be causing. Please [linklabel label="read more about it"].</p>
+  [accordion label="read more about it"]
+  <p class="mini">This is a complicated concept.</p>
+  <p class="s">It costs a lot to keep the traffic of Santa Cruz flowing.</p>
+  <p class="mini">If your business has a higher traffic need than your space allows it is your responsibility to pay into a fund that helps traffic improvements. This is done by a one time charge called Traffic Impact Fee (TIF). TIF helps pay for things like wider lanes and signalized intersections.</p>
+  <p class="s">TIF can be $1000 to $200,000. This is why we reccomend picking a location with a similar use to yours.</p>
+  <p class="mini">The fee is based on the number of trips your use switch causes. Here is a tool that helps estimate the fee: <iframe src="http://pdfmongotest.herokuapp.com/tif-calculator.html" frameborder="0" width="450" height="550"></iframe></p>
+  [/accordion]
+  <p class="s">If you love a space with a serious TIF you should talk to the <a href="http://www.cityofsantacruz.com/index.aspx?page=446" target="_blank">Office of Economic Development</a>. They will try to help.</p>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="parking">
+
+  <h1>Parking</h1>
+
 <p class="s">A business must provide sufficient parking.</p>
 <p class="b">If you don't have enough spaces, your customers will use the street, which will block traffic, or use other businesses' spots, which is not fair.</p>
 <p class="s">Your use affects the parking [linklabel label="spaces required"]. More people buy food than couches, so a super market requires more parking than a furniture store.</p>
@@ -707,65 +795,72 @@ Set up to help bridge the downtown to the beach area, this district encourages m
 <p class="s">Downtown has shared parking with reduced requirements. So if you don't have off street parking, you can pay into a shared fund that runs the City garages and lots.</p>
 [/accordion]
 
-</section>
+</div>
 
 <hr><!-- ================================================================================ -->
 
-<h1 id="buildingPermits">Building Permits</h1>
+<div class="screen" id="buildingPermits">
 
-<p class="summary">Painting a wall is fine. Moving a wall needs a building permit.</p>
+  <h1>Building Permits</h1>
+  
+  <p class="summary">Painting a wall is fine. Moving a wall needs a building permit.</p>
+  
+  <p>When making improvements to your space, it is important to talk to the Building Department &mdash; even if all you're doing is installing a sign. The city's job is to ensure public safety, and the public will use your business.</p>
+  
+  <h3>Installing a sign?</h3>
+  
+  <p>A building permit is needed for most signs. Here is a calculator that will tell you how big your sign can be.</p>
+  <iframe src="http://pdfmongotest.herokuapp.com/sign-calculator.html" width="450" height="550" frameborder="0"></iframe>
+  
+  <h3>Doing substantial renovations?</h3>
+  
+  <p>If you are doing substantial renovations, you must hire a professional architect or engineer.</p>
 
-<p>When making improvements to your space, it is important to talk to the Building Department &mdash; even if all you're doing is installing a sign. The city's job is to ensure public safety, and the public will use your business.</p>
-
-<h3>Installing a sign?</h3>
-
-<p>A building permit is needed for most signs. Here is a calculator that will tell you how big your sign can be.</p>
-<iframe src="http://pdfmongotest.herokuapp.com/sign-calculator.html" width="450" height="550" frameborder="0"></iframe>
-
-<h3>Doing substantial renovations?</h3>
-
-<p>If you are doing substantial renovations, you must hire a professional architect or engineer.</p>
+</div>
 
 <hr><!-- ================================================================================ -->
 
-# Business License
+<div class="screen" id="businessLicense">
 
-<section>
+<h1>Business License</h1>
+
 <p class="s">Once you have your use permit and any tenant improvements approved, you'll need a business license from the Finance Department.</p>
 <p class="b">Getting a business license is a breeze.</p>
 <p class="s">Business licenses help the city categorize employers and keep track of its employment base. This is important information that guides city services. Your business license needs to be renewed each year.</p>
 <p class="b">It is more of a tax than a license.</p>
-</section>
+
+</div>
 
 <hr><!-- ================================================================================ -->
 
-# Guide Thanks
+<div class="screen" id="guideThanks">
 
-<section>
+<h1>Guide Thanks</h1>
+
 <p class="b">Thanks for reading this guide.</p>
 <p class="s">If you are ready to start your business, you can use the form below to receive a personal check list of what you need to do to comply with permitting for your chosen location and business.</p>
 
 [gravityform id="1" name="Request a check list from planning"]
 
-</section>
+</div>
 
 <hr><!-- ================================================================================ -->
 
-# Businesses Located Downtown
+<div class="screen" id="parkingDowntown">
 
-Downtown has shared parking with reduced requirements. So if you don't have
-off-street parking, you can pay into a shared fund that runs the City garages
-and lots.
+  <h1>Businesses Located Downtown</h1>
+  
+  <p>Downtown has shared parking with reduced requirements. So if you don't have off-street parking, you can pay into a shared fund that runs the City garages and lots.</p>
+  
+  <iframe src="http://bidcalc.phpfogapp.com/calc.html" frameborder="0" width="450" height="550"></iframe>
+  
+  <iframe src="http://pdfmongotest.herokuapp.com/parking-calculator.html" frameborder="0" width="450" height="550"></iframe>
 
-
-<iframe src="http://bidcalc.phpfogapp.com/calc.html" frameborder="0" width="450" height="550"></iframe>
-
-<iframe src="http://pdfmongotest.herokuapp.com/parking-calculator.html" frameborder="0" width="450" height="550"></iframe>
-
-
-
+</div>
 
 <hr><!-- ================================================================================ -->
+
+<div class="screen">
 
 # Ask: Business License
 
@@ -833,7 +928,11 @@ I have set forth in this application is true and accurate to the best of my
 knowledge and that I agree to operate the above described business in strict
 compliance with city zoning regulations governing same.
 
+</div>
+
 <hr><!-- ================================================================================ -->
+
+<div class="screen">
 
 # Ask: Zoning Clearance
 
@@ -876,7 +975,12 @@ $221.00
 <label for="">Auto Parking Spaces</label>
 <label for="">Bicycle Parking Spaces</label>
 
+</div>
+
 <hr><!-- ================================================================================ -->
+
+<div class="screen">
+
 
 # Ask: Planning Check List Request Form
 
@@ -908,8 +1012,11 @@ Would you like to add any floor plans or images?
 Anything else we should know?
 [textarea]
 
+</div>
+
 <hr><!-- ================================================================================ -->
 
+<div class="screen">
 
 SCENARIO: User wants to start a home occ.
 
@@ -958,11 +1065,23 @@ SCENARIO: User wants to start a restaurant
 SCENARIO: User wants to start a retail biz
 SCENARIO: User wants to start a retail biz and doesn't know where to put it.
 
-
+</div>
 
 
 
   </div>
+<script type="text/javascript" src="assets/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+(function(){
+  $('.drawer').hide();
+  $('.toggle').click(function(){
+      $(this)
+        .next('.drawer')
+        .slideToggle();
+  });
+})();
+</script>
+
 </body>
 
 </html>
