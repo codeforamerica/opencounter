@@ -1297,12 +1297,6 @@
           <label for="">Application Number:</label>
           <input type="text">
 
-          <label for="">APN (Assessor's Parcel Number):</label>
-          <input type="text">
-
-          <label for="">Business address:</label>
-          <input type="text">
-
           <label for="">Agent's name:</label>
           <input type="text">
 
@@ -1321,17 +1315,17 @@
           <label for="">Current Date:</label>
           <input type="text">
 
-          <label for="">Owner's name:</label>
-          <input type="text">
+          <!--<label for="">Owner's name:</label>
+          <input type="text">--><!--Duplicate field-->
 
-          <label for="">Owner's address:</label>
-          <input type="text">
+          <!--<label for="">Owner's address:</label>
+          <input type="text">--><!--Duplicate field-->
 
-          <label for="">Owner's ZIP:</label>
-          <input type="text">
+          <!--<label for="">Owner's ZIP:</label>
+          <input type="text">--><!--Duplicate field-->
 
-          <label for="">Owner's phone number:</label>
-          <input type="text">
+          <!--<label for="">Owner's phone number:</label>
+          <input type="text">--><!--Duplicate field-->
                 <!-- End Owner Agent Form -->
                         
         Will any construction or renovation be needed on the property?
@@ -1346,28 +1340,10 @@
           <label for="">Expansion plan check due date:</label>
           <input type="text">
 
-          <label for="">Business address:</label>
-          <input type="text">
-
-          <label for="">APN (Assessor's Parcel Number):</label>
-          <input type="text">
-
           <label for="">Area of addition or changes (sq. ft.):</label>
           <input type="text">
 
           <label for="">Role of applicant:</label><!--NOTE-->
-          <input type="text">
-
-          <label for="">Applicant name:</label>
-          <input type="text">
-
-          <label for="">Applicant address:</label><!--NOTE-->
-          <input type="text">
-
-          <label for="">Applicant phone number:</label>
-          <input type="text">
-
-          <label for="">Applicant email:</label>
           <input type="text">
 
           <label for="">Role of professional:</label><!--NOTE-->
@@ -1407,13 +1383,10 @@
           <input type="text">          
                 <!-- End Building Permit -->
         
-        Use Permit goes HERE. Condition UNKNOWN.
+        This is an application for a use permit. This is ONLY needed if the use of your business is not "principally permitted" at your location. 
                 <!-- Begin Use Permit (AUP / SUP) -->
-                <!-- CONDITION: UNKNOWN -->
+                <!-- CONDITION: The user's business is not principally permitted.  -->
           <input for="">Lot size (sq.ft):</label>
-          <input type="text">
-
-          <input for="">Total land area (sq.ft):</label>
           <input type="text">
 
           <input for="">Proposed floor area (sq.ft):</label>
@@ -1435,12 +1408,6 @@
           <input type="text">
 
           <input for="">Accessory building height (stories):</label>
-          <input type="text">
-
-          <input for="">Auto parking spots:</label>
-          <input type="text">
-
-          <input for="">Bicycle parking spots:</label>
           <input type="text">
 
           <!--All sign info goes here. Will this be auto-filled?-->
@@ -1467,22 +1434,11 @@
         Will you be applying for utilities?
                 <!-- Begin Application for Utility Service -->
                 <!-- CONDITION: New utility registration will be done -->
-          <input for="">Business name:</label>
-          <input type="text">
-
-          <input for="">Business address:</label>
-          <input type="text">
 
           <input for="">Previous service address, if within 2 years of service:</label>
           <input type="text">
 
-          <input for="">Business phone number:</label>
-          <input type="text">
-
           <input for="">Business fax number:</label>
-          <input type="text">
-
-          <input for="">Business email:</label>
           <input type="text">
 
           <input for="">City business license number:</label>
@@ -1507,28 +1463,10 @@
         Will your business be making a profit under a fictitious business name?
                 <!-- Begin Fictitious Business Name Statement -->
                 <!-- CONDITION: Business is for-profit under a fictitious business name -->
-          <input for="">Business name:</label>
-          <input type="text">
-
-          <input for="">Business address:</label>
-          <input type="text">
-
-          <input for="">Applicant name:</label>
-          <input type="text">
-
-          <input for="">Applicant address:</label>
-          <input type="text">
 
           <input for="">Start date:</label>
           <input type="text">
 
-          <label>What is your business' type of ownership? (Choose one)</label>
-          <select id="ownership">
-            <option value="SOLE_PROP">  Sole Proprietor</option>
-            <option value="PARTNERSHIP">Partnership    </option>
-            <option value="CORPORATION">Corporation    </option>
-            <option value="TRUST">      Trust          </option>
-          </select>
                 <!-- End Fictitious Business Name Statement -->
         
         Is your business a food service establishment?
@@ -1542,25 +1480,9 @@
             <option value="change_category"> Change in category </option>
           </select>
 
-          <label>What type of food service is your business? Please choose one.</label>
-
-
-          <input for="">Applicant name:</label>
-          <input type="text">
-
-          <input for="">Business name:</label>
-          <input type="text">
-
-          <input for="">Business address:</label>
-          <input type="text">
+          <label>What type of food service is your business? Please choose one.</label><!--NOTE-->
 
           <input for="">Mailing address:</label>
-          <input type="text">
-
-          <input for="">Applicant email:</label>
-          <input type="text">
-
-          <input for="">Business phone number:</label>
           <input type="text">
 
           <input for="">Other phone number:</label>
@@ -1572,6 +1494,26 @@
         
         Is your business a retail establishment?
                 <!-- Begin Seller's Permit -->
+
+          <label>Is this a regular application or a temporary one?</label>
+          <input type="radio"> Regular
+          <input type="radio"> Temporary
+
+          <input for="">Owner name:</label>
+          <input type="text">
+
+          <input for="">State of incorporation or organization:</label>
+          <input type="text">
+
+          <input for="">Business trade name:</label>
+          <input type="text">
+
+          <input for="">Start date:</label>
+          <input type="text">
+
+          <input for="">Corporate, LLC, LLP, or LP number:</label>
+          <input type="text">
+
                 <!-- CONDITION: Business is a retail establishment -->
                 <!-- End Seller's Permit -->
         
