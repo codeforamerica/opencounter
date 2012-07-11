@@ -1257,7 +1257,7 @@
           </label>
   
           <!-- NOTE: Conditional fields below -->
-          Tell us about the other owners.
+          Tell us about the other owners. If business is a limited partnership, please indicate the General Partner.
           <!-- These will include name, title, address, and phone # of other owners -->
   
           <label for="">Number of rental units:</label>
@@ -1497,7 +1497,7 @@
         
 
         Is your business a retail establishment?
-        NOTE: The seller's permit can NO LONGER be filed by mail or e-mail. It can only be filed through their online system (which is a train wreck).
+        NOTE: The seller's permit can NO LONGER be filed by mail or e-mail. It can only be filed through their online system, which is a train wreck and requires special registration.
                 <!-- Begin Seller's Permit -->
                 <!-- CONDITION: Business is a retail establishment -->
                 <!-- End Seller's Permit -->
@@ -1558,26 +1558,108 @@
           <input for="">Business mailing address phone number (if different from primary):</label>
           <input type="text">
 
-          <input for="">1st quarter and year wages exceeding $100:</label>
+          <form>
+            If your business has multiple CA physical locations, enter them (except primary location) here, separated by commas:
+              <textarea></textarea>
+          </form>
+
+          <label>Indicate the first quarter &amp; year that wages exceeded $100:</label>
+          Quarter:
+          <select id="quarters">
+          <option value="Q1">January-March   </option>
+          <option value="Q2">April-June      </option>
+          <option value="Q3">July-September  </option>
+          <option value="Q4">October-December</option>
+          </select>
+
+          <input for="">Year:</label>
           <input type="text">
 
-          <label>Have you ever been a principal in a business registered with EED?</label>
+          <input for="">First payroll date:</label>
+          <input type="text">
+
+          <label>Have you ever owned or been a principal owner in a business registered with EED?</label>
           <input type="radio"> Yes
           <input type="radio"> No
+          <!--NOTE: Conditional fields below-->
+          <!--- These fields will appear if the user selects yes-->
 
           <input for="">Former EED account number:</label>
           <input type="text">
 
-          <!-- NOTE: Field: This is a (ARRAY New Business; Hired Employees; Purchased Business) -->
-
-          <input for="">Number of CA employees:</label>
+          <input for="">Business name:</label>
           <input type="text">
+
+          <input for="">Business address:</label>
+          <input type="text">
+          <!--End conditional fields-->
+
+          <label>This is an application for a...</label>
+          <select id="application_type">
+          <option value="new">New business</option>
+          <option value="hired">Business that has hired employees for the first time</option>
+          <option value="purchased">Purchased business</option>
+          </select>
+
+          <!--NOTE: Conditional fields below-->
+          <!--If "purchased business" is selected, display these fields-->
+          <input type="radio"> I purchased all of the business
+          <input type="radio"> I purchased part of the business
+
+          <input for="">Previous owner name:</label>
+          <input type="text">
+
+          <input for="">Previous business name:</label>
+          <input type="text">
+
+          <input for="">Previous EED account number:</label>
+          <input type="text">
+
+          <input for="">Purchase price:</label>
+          <input type="text">
+
+          <input for="">Date of transfer:</label>
+          <input type="text">
+          <!--End conditional fields-->
+
+          <input for="">Number of California employees:</label>
+          <input type="text">
+
+          <input for="">Is any employee one of the below? Select all that apply.</label>
+          <input type="checkbox" name="spouse" value="Spouse"> Employer's spouse
+          <input type="checkbox" name="child" value="Child"> Employer's minor child (under 18)
+          <input type="checkbox" name="parent" value="Parent"> Employer's parent 
+
+          <!--<input for="">Taxpayer type:</label>-->
+          <!--NOTE: I think this is just the incorporation status. Can you confirm?-->
+
+          <input for="">Employer type:</label>
+          <select id="employer_type">
+          <option value="commercial">commercial</option>
+          <option value="maritime">Pacific maritime</option>
+          <option value="fishing">Fishing boat</option>
+          </select>
+
+          <input for="">Select the category that represents the greatest portion of your sales or revenue:</label>
+          <!--NOTE: This may be able to be auto-filled based on the NAICS code category selected earlier-->
+          <select id="industry_type">
+          <option value="commercial">Services</option>
+          <option value="maritime">Retail</option>
+          <option value="wholesale">Wholesale</option>
+          <option value="manu">Manufacturing</option>
+          <option value="prof">Professional employer organization</option>
+          <option value="temp">Temp services</option>
+          <option value="leasing">Leasing employer</option>
+          <option value="other">Other</option>
+          </select>
+
+          <!--NOTE: conditional field below. If other, specify details by text box-->
+          <input for="">Please specify:</label>
+          <input type="text">
+          <!--End conditional field-->
           
-          <!--NOTE: Other fields: Employee is (ARRAY Spouse; Minor Child; Parent)
-            Taypayer Type (Sole Proprietorship; CoWoener; General Partnership, etc)
-            Employer Type (ARRAY Commercial; Pacific Maritime; Boat)
-            Industry Activity (ARRAY Services; Retail; Wholesale; Manufacturing, etc)
-            Agent For Process of Service Name
+          <!--NOTE: Other fields:
+\           Agent For Process of Service Name
             Agent For Process of Services Address (including City + ZIP) -->
           
           <!-- NOTE: I'm still working out a substitute tax if the person is working alone -->
