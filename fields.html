@@ -13,6 +13,10 @@
       margin: 0 auto;
     }
     
+    h1 {
+      line-height: 1.2em;
+    }
+    
     hr {
       display: block;
       height: 1px;
@@ -85,21 +89,113 @@
       right: 0;
       top: 0;
       height: 100%;
-      overflow: hidden;
+      overflow: auto;
       font-size: 82.5%;
-      width: 20%;
+      width: 200px;
       background: #9CF;
     }
+    
+    /* Scenarios */
+    .scenario p a {
+      display: block;
+    }
+    
+    .scenario p a:after {
+      content:"\21b5";
+      padding-left: 10px;
+      position: relative;
+      top: 0.5em;
+    }
+    
+    .scenario p a:last-child:after {
+      content:"";
+    }
+    
+    
 
   </style>
 </head>
 
 <body>
   <div class="profile">
-    <h3>Your Name</h3>
-    <p><span>FirstName</span> <span>LastName</span></p>
-    <h3>Your Contact Information</h3>
-    <p>you@email.com</p>
+
+<div class="scenario">
+  <h3>SCENARIO: Feedback</h3>
+  <p>
+    <a href="">Feedback</a>
+    <a href="">Feedback Thanks</a>
+    <a href="">Welcome</a>
+  </p>
+</div>
+
+<div class="scenario">
+  <h3>SCENARIO: Get Help</h3>
+  <p>
+    <a href="">Contact Planning</a>
+    <a href="">Contact Planning Thanks</a>
+    <a href="">We're Here To Help</a>
+  </p>
+</div>
+
+<div class="scenario">
+  <h3>SCENARIO: Home Occupancy</h3>
+  <p>
+    <a href="#intro_welcome">Welcome</a>
+    <a href="#intro_big_picture">The Big Picture</a>
+    <a href="#intro_here_to_help">We're Here To Help</a>
+    <a href="#intro_few_questions">A Few Questions</a>
+    
+    <a href="#location_working_from_home">Working From Home</a>
+    
+    <a href="#info_business_type">What type of business are you?</a>
+    <a href="#info_business_name">Your Business Name</a>
+    <a href="#info_incorporation">Incorporation</a>
+    
+    <a href="#helper_fbn">FBN Helper</a> 
+    <a href="#helper_use_permit">Use Permit Helper</a>
+    <a href="#helper_business_license">Business License Helper</a>
+
+    <a href="#non_city_regulations">Non-City Regulations (CalGOLD)</a>
+
+    <a href="#summary">Summary &amp; Downloads</a>
+  </p>
+</div>
+
+<div class="scenario">
+  <h3>SCENARIO: Non-Home Occupancy</h3>
+  <p>
+    <a href="#intro_welcome">Welcome</a>
+    <a href="#intro_big_picture">The Big Picture</a>
+    <a href="#intro_here_to_help">We're Here To Help</a>
+    <a href="#intro_few_questions">A Few Questions</a>
+    
+    <a href="#location_siting_your_business">Siting Your Business</a>
+    
+    <a href="#info_business_type">What type of business are you?</a>
+    <a href="#info_business_name">Your Business Name</a>
+    <a href="#info_incorporation">Incorporation</a>
+    
+    <a href="#location_zoning">Zoning</a>
+    <a href="#location_uses">Uses - What's Allowed?</a>
+    <a href="#location_zoning_map">Explore Santa Cruz Zoning (Map)</a>
+    <a href="#location_find_a_site">SiteMy.Biz</a>
+    <a href="#location_parking">Parking</a>
+    <a href="#location_utilities">Utilities</a>
+    <a href="#location_restaurants">Restaurants</a>
+    <a href="#location_industrial">Industrial</a>
+    <a href="#location_downtown">Downtown</a>
+    
+    <a href="#helper_fbn">FBN Helper</a>
+    <a href="#helper_use_permit">Use Permit Helper</a>
+    <a href="#helper_business_license">Business License Helper</a>
+    
+    <a href="#non_city_regulations">Non-City Regulations (CalGOLD)</a>
+    
+    <a href="#summary">Summary &amp; Downloads</a>
+  </p>
+</div>
+
+
   </div>
 
   <div class="main">
@@ -178,7 +274,7 @@
   
   <h3 class="toggle">The Office of Economic Development</h3>
   <div class="drawer">
-    <p>Boilerplate text about Peter Koht here.</p>
+    <p>The Economic Development Department helps develop tools (like OpenCounter!) and policies that make it easier to start, sustain and grow businesses on the Central Coast. Staff collect and maintains market data, act as a concierge for City services, and are on call to help you through the process of setting up shop in Santa Cruz.</p>
     <p>Visit the <a href="http://www.cityofsantacruz.com/index.aspx?page=446" class="external">Office of Economic Development</a>.</p>
   </div>
   
@@ -204,10 +300,10 @@
   
   <p>The rest of this guide is tailored to you and your business.</p>
   
-  <form>
+  <form method="post" action="">
     <h3>Who are you?</h3>
   
-    <label for="name">
+    <label for="fname">
       <span>Your Name</span>
       <input type="text" id="fname" placeholder="First name">
       <input type="text" id="lname" placeholder="Last name">
@@ -261,6 +357,16 @@
     </ol>
   </blockquote>
   
+  <form method="post" action="">
+    <label for="business_address">
+      <span>What&lsquo;s your home address?</span>
+      <input type="text" name="business_address_street" id="business_address_street">
+      <input type="text" name="business_address_city" id="business_address_city" placeholder="City">,
+      <input type="text" name="business_address_state" id="business_address_state" placeholder="State">
+      <input type="text" name="business_address_zip" id="business_address_zip" placeholder="Zip">
+    </label>
+  </form>
+  
   <p class="next">
     <a href="#yourBusinessName">Yep, my work-from-home business complies with all those rules &rarr;</a>
   </p>
@@ -280,7 +386,7 @@
   
   <p>If you need to speak with someone sooner than that, <a href="hereToHelp">here's how to contact the Planning Department</a>.</p>
   
-  <form>
+  <form method="post" action="">
   
     <label for="name">
       <span>Your Name</span>
@@ -295,7 +401,7 @@
   
     <label for="subject">
       <span>I have a question about</span>
-      <select>
+      <select name="subject" id="subject">
         <option>Starting a home-based business</option>
         <option>Starting a non-home-based business</option>
         <option>Something else</option>
@@ -304,7 +410,7 @@
     
     <label for="comments">
       <span>My question is</span>
-      <textarea></textarea>
+      <textarea name="comments" id="comments"></textarea>
     </label>
   
   </form>
@@ -335,27 +441,27 @@
 
   <p>If you have a moment, we would love to get your thoughts on this site.</p>
   
-  <form>
+  <form method="post" action="">
   
-    <label>
+    <label for="mood">
       <span>How well did we do at answering your questions?</span>
       <ul>
-        <li><a href="">&#9786;</a></li>
-        <li><a href="">(Neutralface)</a></li>
-        <li><a href="">&#9785;</a></li>
+        <li><input type="radio" name="mood" value="happy"> &#9786;</li>
+        <li><input type="radio" name="mood" value="neutral"> (Neutralface)</li>
+        <li><input type="radio" name="mood" value="unhappy"> &#9785;</li>
       </ul>
     </label>
   
-    <label>
+    <label for="suggestions">
       <span>What could we have done better?</span>
-      <textarea></textarea>
+      <textarea name="suggestions" id="suggestions"></textarea>
     </label>
   
-    <label>
+    <label for="followup">
       <span>Would you like us to follow up with you?</span>
       <ul>
-        <li>Yes, email me at: <input type="text"></li>
-        <li>Yes, call me at: <input type="text"></li>
+        <li>Yes, email me at: <input type="text" name="email" id="email" placeholder="you@email.com"></li>
+        <li>Yes, call me at: <input type="text" name="phone" id="phone" placeholder="(831) 555-1212"></li>
       </ul>
     </label>
   
@@ -391,10 +497,10 @@
   
   <p>For example, if your last name is Smith and your business is called "Smith&rsquo;s Tanning," you won't need an FBN. But if your business is called "Eastside Tanning," you will need an FBN.</p>
   
-  <form>
-    <label>
+  <form method="post" action="">
+    <label for="business_name">
       <span>What's your business's name?</span>
-      <input type="text">
+      <input type="text" name="business_name" id="business_name" placeholder="Your Business Name Here">
     </label>
   </form>
   
@@ -449,6 +555,8 @@
     </select>
     
   </table>
+  
+  <a href="">Generate PDF with this info.</a>
 
   <p class="next"><a href="http://www.sccoclerk.com/fbngen.htm">Go to the County's website &rarr;</a></p>
   <p class="next"><a href="#incorporation">Do this later &rarr;</a></p>
@@ -464,14 +572,14 @@
   
   <p>For more information on incorporation, speak with an accountant or visit <a href="http://www.sos.ca.gov/business/">The California Business Portal</a>.</p>
   
-  <form>
+  <form method="post" action="">
     
-    <label>
+    <label for="business_legal_structure">
       <span>Are you incorporated?</span>
-      <input type="radio"> Sole Proprietor
-      <input type="radio"> Partnership or LLC
-      <input type="radio"> Corporation
-      <input type="radio"> Trust
+      <input type="radio" name="sole_prop"> Sole Proprietor
+      <input type="radio" name="partnership_or_llc"> Partnership or LLC
+      <input type="radio" name="corp"> Corporation
+      <input type="radio" name="trust"> Trust
     </label>
     
     <label>
@@ -499,7 +607,7 @@
     </label>
   </form>
   
-  <p class="next"><a href="#nonCityRegulations">All set. Next, non-city regulations &rarr;</a></p>
+  <p class="next"><a href="#homeOccSummary">All set. Next, summary &rarr;</a></p>
   <p class="next"><a href="#contactPlanning">I'm not sure / I have questions about this. &rarr;</a></p>
 
 </div>
@@ -514,14 +622,14 @@
   
   <p>The state of California maintains <a href="http://www.calgold.ca.gov/"><abbr title="California Government: On-Line to Desktops">CalGOLD</abbr></a>, a catalog of permits that apply to different types of businesses.</p>
   
-  <form>
+  <form method="post" action="">
     <label>
       <span>What type of business is this?</span>
       <input type="" placeholder="[SIC CALCULATOR]">
     </label>
   </form>
   
-  <iframe src="http://pdfmongotest.herokuapp.com/calgold?kywd=search" frameborder="0" width="450" height="750"></iframe>
+  <iframe src="http://pdfmongotest.herokuapp.com/calgold?kywd=search" frameborder="0" width="450" height="300"></iframe>
   
   <p>Based on what you've told us so far, your business is of type [SIC CODE], and here are the county, state, and federal permits you MAY be required to fill out.</p>
   
@@ -569,10 +677,39 @@ Business Type
   Firearm sales
 
 Other forms you'll need to fill out:
-  [From CalGOLD]
+  [From CalGOLD]</p>
+
+<p>Based on what you've told us, we think you'll need to fill out these forms:</p>
+
+<ul>
+  <li><a href="">Zoning Clearance</a></li>
+  <li><a href="">Business License</a></li>
+</ul>
 
 </div>
 
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="zoning">
+  <h1>Siting Your Business</h1>
+  
+  <p>If you're not working out of your home, you will need to pick a location that is <em>zoned</em> to allow businesses like yours to operate.</p>
+  
+  <h3>Zoning</h3>
+  <p>Zoning laws limit the types of businesses that can operate within a particular area.</p>
+  <p>Why? By clustering types of businesses, we can help preserve neighborhoods and share services.</p>
+  <p>Think of it this way: zoning makes sure a rubber factory can't open next to a preschool.</p>
+  <p>In Santa Cruz, all zones are defined by title 24 of the City&rsquo;s <a href="http://www.codepublishing.com/CA/SantaCruz/">municipal code</a>.</p>
+  
+  <h3>Use &amp; Use Permits</h3>
+  <p>Sometimes it's very clear that </p>
+  <p>Within any zone, your use may be principally permitted, </p>
+  
+  <h3>Do you already know where your business will be?</h3>
+  <p class="next">Yep, I already have a location picked out. <a href="#zoningMap">Check the zoning &rarr;</a></p>
+  <p class="next">No, I don't have a location picked out yet. <a href="#sitemybiz">Help me site my business &rarr;</a></p>
+  
+</div>
 
 <hr><!-- ================================================================================ -->
 
@@ -691,152 +828,141 @@ Other forms you'll need to fill out:
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="zoning">
-  <h1>Zoning</h1>
-  <p>Zoning basically makes sure a rubber factory can't open next to a preschool.</p>
-  <p>By clustering types of businesses, we can help preserve neighborhoods and share services.
-  <p>The first hurdle to starting a business is finding a location that permits your use.</p>
-</div>
-
-<hr><!-- ================================================================================ -->
-
-<div class="screen" id="zoningMap">
-
-  <h1>Zoning Map</h1>
-
-<p class="s">You can check a site's zoning and prior use by entering the address here:
-<label for="textfield"></label></p>
-<input id="address" class="input" onkeydown="checkForEnter(event)" type="text" name="textfield" /> <input id="button" class="button" onclick="codeAddress()" type="submit" name="button" value="Submit" />
-<p class="micro"><em>Example: 1367 Pacific Avenue</em></p>
-<div id="map-div" style="height: 400px;"></div>
-<div id="zoning-div" style="position: absolute; left: 400px; top: 0;"></div>
-<p class="micro">All zones are defined by title 24 of the <a href="http://www.codepublishing.com/CA/SantaCruz/" target="_blank">Municipal code</a>.</P> 
-<div id="tlegend" class="my-legend">
-<div class="scale">
-<ul class="labels">
-		<li><span style='background:#00652E;'></span>CBD <a class="aj-collapse" rel="cbd">Central Business District&nbsp;⇣</a></li>
-    <li><span style='background:#859A3B;'></span>CBD-E <a class="aj-collapse" rel="cbde">Subdistrict Lower Pacific Ave&nbsp;⇣</a></li>
-    <li><span style='background:#2DA197;'></span>CC <a class="aj-collapse" rel="cc">Community Commercial&nbsp;⇣</a></li>
-    <li><span style='background:#2E8ACA;'></span>CN <a class="aj-collapse" rel="cn">Neighborhood Commercial&nbsp;⇣</a></li>
-    <li><span style='background:#2E3191;'></span>CT <a class="aj-collapse" rel="ct">Thoroughfare Commercial&nbsp;⇣</a></li>
-<li><span style='background:#F37920;'></span>PA <a class="aj-collapse" rel="pa">Professional and Administrative Office&nbsp;⇣</a></li>
-<li><span style='background:#D43783;'></span>CB <a class="aj-collapse" rel="cb">Beach Commercial&nbsp;⇣</a></li>
-    <li><span style='background:#B4892D;'></span>IG <a class="aj-collapse" rel="ig">General Industrial&nbsp;⇣</a></li>
-</ul>
-</div>
-</div>
-
-<div id="cbd" class="aj-hidden">
-<p class="closebtn"><a class="aj-collapse" rel="cbd">x</a></p>
-<p class="mini">CBD Central Business District</p>
-<p class="micro">Only found in Downtown Santa Cruz, this zoning allows most retail and food uses. Developed in the aftermath of the Loma Prieta earthquake, this district also includes a shared parking and marketing resources and has lower development impact fees.</p>
-<p class="micro">Ex. of principally permitted uses include: restaurants, shoes, boutiques, ice cream parlors, cafes and bike shops
-<p class="micro">Ex. of uses that will require more staff review: barber shops, laundries and cleaning establishments, business and technical schools</p>
-<p class="micro">Ex. of uses that are not allowed include: Tattoo parlor, Heavy manufacturing, and ground floor professional and administrative uses along Pacific Avenue. </p>
-
-<p class="micro">Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.2300" target="_blank">Municipal Code</a> & the <a href="http://www.cityofsantacruz.com/Modules/ShowDocument.aspx?documentid=8911" target="_blank">downtown recovery plan</a for a complete definition.</p>
-
-</div>
-
-<div id="cbde" class="aj-hidden">
-<p class="closebtn"><a class="aj-collapse" rel="cbde">x</a></p>
-<p class="mini">CBD-E Subdistrict Lower Pacific Ave</p>
-<p class="micro">
-Set up to help bridge the downtown to the beach area, this district encourages mixed uses that include commercial and recreational businesses. </p>
-<p class="micro">Ex. of principally permitted uses include: art galleries, restaurants, boutiques, cafes and dance studios </p>
-<p class="micro">Ex. of uses that will require more staff review: bars, meeting halls, off street parking facilities, convenience stores. </p>
-<p class="micro">Ex. of uses that are not allowed include: mortuaries, manufacturing</p>
-<p class="micro">Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.2360" target="_blank">Municipal Code</a> for a complete definition.
-</p>
-</div>
-
-<div id="cc" class="aj-hidden">
-<p class="closebtn"><a class="aj-collapse" rel="cc">x</a></p>
-<p class="mini">CC Community Commercial</p>
-<p class="micro">Primary zoning for most major commercial corridors, this district is set up to permit many different types of uses.</p>
-<p class="micro">Ex. of principally permitted uses include: Apparel stores, auto supply, restaurants, home furnishings, medical office</p>
-<p class="micro">Ex. of uses that will require more staff review: fast food, educational uses, bars &amp; brewpubs</p>
-<p class="micro">Ex. of uses that are not allowed include: no new drive-through businesses, no new industrial or manufacturing uses, no new ground floor residential uses</p>
-
-<p class="micro">Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.700" target="_blank">Municipal Code</a> for a complete definition.</p>
-</div>
-<div id="cn" class="aj-hidden">
-<p class="closebtn"><a class="aj-collapse" rel="cn">x</a></p>
-<p class="mini">CN Neighborhood Commercial</p>
-<p class="micro">A low density commercial district where the customers will primarily access shops and services on foot or via alternative transportation.</p>
-<p class="micro">Ex. of principally permitted uses include: Financial, insurance, real estate offices, Low Volume food uses and cafes</p>
-<p class="micro">Ex. of uses that will require more staff review: Convenience stores, athletic facilities, drug and department stores</p>
-<p class="micro">Ex. of uses that are not allowed include: Manufacturing</p>
-
-<p class="micro">Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.1000" target="_blank">Municipal Code</a> for a complete definition.</p>
-</div>
-<div id="ct" class="aj-hidden">
-<p class="closebtn"><a class="aj-collapse" rel="ct">x</a></p>
-<p class="mini">CT Thoroughfare Commercial</p>
-<p class="micro">This zone is only found close to state highways or other high traffic corridors and is set up to encourage high volume businesses.</p>
-<p class="micro">Ex. of principally permitted uses include: banks, clothing and soft goods, hotels, nurseries, smaller professional and administrative uses</p>
-<p class="micro">Ex. of uses that will require more staff review: Business and technical schools, cemeteries, recreation facilities, community care facilities, drive ins and drive thrus, social clubs</p>
-<p class="micro">Ex. of uses that are not allowed include: Heavy industry</p>
-
-<p class="micro">Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.900" target="_blank">Municipal Code</a> for a complete definition.</p>
-</div>
-<div id="pa" class="aj-hidden">
-<p class="closebtn"><a class="aj-collapse" rel="pa">x</a></p>
-<p class="mini">PA Professional and Administrative Office</p>
-<p class="micro">A buffer between a major thoroughfare and a low density residential neighborhood, this district is set up to encourage daytime, low volume professional uses.</p>
-<p class="micro">Ex. of principally permitted uses include: Most financial, insurance and real estate office, galleries and medical office (except vets / kennels)</p>
-<p class="micro">Ex. of uses that will require more staff review: Vets, Medical Clinics, Schools and Churches</p>
-<p class="micro">Ex. of uses that are not allowed include: Heavy Industry</p>
-
-<p class="micro">Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.1200" target="_blank">Municipal Code</a> for a complete definition.</p>
-</div>
-<div id="ig" class="aj-hidden">
-<p class="closebtn"><a class="aj-collapse" rel="ig">x</a></p>
-<p class="mini">IG General Industrial</p>
-<p class="micro">The primary place for making and assembling items for distribution and wholesale. Only found in Harvey West and the far Westside.</p>
-<p class="micro">Ex. of principally permitted uses include: Fabrication, Laborotories, Repairs, Alterations, Assembly and R&amp;D</p>
-<p class="micro">Ex. of uses that will require more staff review: Retail Uses, Chemical and Paper production, Rubber and Metal fabrication, Medical Marijuana Dispensaries</p>
-<p class="micro">Ex. of uses that are not allowed include: Any manufacturing use involving the primary production of products from new materials found to be incompatible with the neighborhood or the city as a whole based on noise, odor, air quality or other adverse environmental impact shall be prohibited.</p>
-<p class="micro">Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.1500" target="_blank">Municipal Code</a> for a complete definition.</p>
-</div>
-<div id="cb" class="aj-hidden">
-<p class="closebtn"><a class="aj-collapse" rel="cb">x</a></p>
-<p class="mini">CB Beach Commercial</p>
-<p class="micro">Uses that primarily serve visitors near the beach.</p>
-<p class="micro">Ex. of principally permitted uses include: Ice cream parlor, Surf shop, and bike rental.</p>
-<p class="micro">Ex. of uses that are not allowed include:Tattoo parlor, Heavy manufacturing, and Medical Marijuana clinic.</p>
-<p class="micro">Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.1100" target="_blank">Municipal Code</a> for a complete definition.</p>
-</div>
-
-<p class="b">Please note how the prior use of your chosen site compares to your intended use.<p> 
-<p class="s">If you read the full definition of your site's zoning district, try to understand if and how your intended use is permitted.</p>
-
-</div>
-
-
-
-<hr><!-- ================================================================================ -->
-
 <div class="screen" id="usePermits">
 
   <h1>Use Permits</h1>
   
   <p>The type of use permit you need is dependent on the way your zoning district permits your use.</p>
   
-  <p class="s">If what you do is Principally Permitted all you need is a [linklabel label="Zoning Clearance"]. This is the simplest form of a use permit.</p>
-  [accordion label="Zoning Clearance"]
-  <p class="s">Zoning Clearance: the simplest form of use permit. It is typically issued same day with minimal review.</p>
-  [/accordion]
-  <p class="s">If your use is not principally permitted you will need either an [linklabel label="Administrative Use Permit or a Special Use Permit"].</p>
-  [accordion label="Administrative Use Permit or a Special Use Permit"]
-  <p class="s">Admin Use Permit(AUP): This kind of application requires more staff analysis, and more information from the applicant. These permits entail a public hearing before the Zoning Administrator, and can take approximately 6-8 weeks to work their way through to completion.</p>
-  <p class="s">Special Use Permit(SUP): Requires a high level of scrutiny, typically due to the size of the project and its impact on the neighborhood. These applications go to Planning Commission, whose decision is ratified by the City Council. SUPs take 2-3 months.</p>
-  [/accordion]
-  <p class="s">If your use is not permitted, you should [linklabel label="probably"]pick another spot.</p>
-  [accordion label="probably"]
-  <p class="s">Changing the Zoning is very difficult, rare and takes years. It is not recommended, but you are welcome to contact the planning department for more information.</p>
-  [/accordion]
+  <h3>Principally Permitted Use -> Zoning Clearance</h3>
+  <p>If what you do is Principally Permitted, all you need is a Zoning Clearance. This is the simplest form of a use permit, and is typically issued the same day, with minimal review.</p>
 
+  <h3>Not Principally Permitted, but not specifically Not Prohibited -> AUP or SUP</h3>
+  <p>If your use is not principally permitted you will need either an Administrative Use Permit or a Special Use Permit.</p>
+  <p>Admin Use Permit(AUP): This kind of application requires more staff analysis, and more information from the applicant. These permits entail a public hearing before the Zoning Administrator, and can take approximately 6-8 weeks to work their way through to completion.</p>
+  <p>Special Use Permit(SUP): Requires a high level of scrutiny, typically due to the size of the project and its impact on the neighborhood. These applications go to Planning Commission, whose decision is ratified by the City Council. SUPs take 2-3 months.</p>
+
+  <h3>Not Permitted</h3>
+  <p>If your use is explicitly not permitted, you should probably choose a different site for your business.</p>
+  <p>The alternative, changing the zoning for that property, is very difficult, rare, and can take years. It is not recommended, but you are welcome to <a href="">contact the Planning Department</a> for more information.</p>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="zoningMap">
+
+  <h3>Zoning Map</h3>
+  <p>You can check a site's zoning and prior use by entering the address here:</p>
+
+  <form>
+    <label for="textfield">
+      <span>Enter the address here</span>
+      <input id="address" class="input" onkeydown="checkForEnter(event)" type="text" name="textfield" placeholder="1367 Pacific Avenue">
+      <input id="button" class="button" onclick="codeAddress()" type="submit" name="button" value="Submit">
+    </label>
+  </form>
+
+  <!-- Zoning Map -->
+  <div id="map-div" style="height: 400px;"></div>
+  <div id="zoning-div" style="position: absolute; left: 400px; top: 0;"></div>
+  
+  <p>All zones are defined by title 24 of the City of Santa Cruz&rsquo;s <a href="http://www.codepublishing.com/CA/SantaCruz/">municipal code</a>.</p>
+
+  <div id="tlegend" class="my-legend">
+    <div class="scale">
+      <ul class="labels">
+        <li><span style='background:#00652E;'></span>CBD <a rel="cbd">Central Business District&nbsp;⇣</a></li>
+        <li><span style='background:#859A3B;'></span>CBD-E <a rel="cbde">Subdistrict Lower Pacific Ave&nbsp;⇣</a></li>
+        <li><span style='background:#2DA197;'></span>CC <a rel="cc">Community Commercial&nbsp;⇣</a></li>
+        <li><span style='background:#2E8ACA;'></span>CN <a rel="cn">Neighborhood Commercial&nbsp;⇣</a></li>
+        <li><span style='background:#2E3191;'></span>CT <a rel="ct">Thoroughfare Commercial&nbsp;⇣</a></li>
+        <li><span style='background:#F37920;'></span>PA <a rel="pa">Professional and Administrative Office&nbsp;⇣</a></li>
+        <li><span style='background:#D43783;'></span>CB <a rel="cb">Beach Commercial&nbsp;⇣</a></li>
+        <li><span style='background:#B4892D;'></span>IG <a rel="ig">General Industrial&nbsp;⇣</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="cbd" class="aj-hidden">
+    <h5>CBD Central Business District</h5>
+    <p>Only found in Downtown Santa Cruz, this zoning allows most retail and food uses. Developed in the aftermath of the 1989 Loma Prieta earthquake, this district includes shared parking and marketing resources, and has lower development impact fees.</p>
+    <p>Examples of principally permitted uses: restaurants, clothing stores, ice cream parlors, caf&eacute;s, bicycle shops</p>
+    <p>Examples of uses that require more staff review: barber shops, laundries and cleaning establishments, business and technical schools</p>
+    <p>Examples of uses that are not allowed: tattoo parlors, heavy manufacturing, ground floor professional and administrative uses along Pacific Avenue</p>
+    <p>Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.2300" target="_blank">Municipal Code</a> & the <a href="http://www.cityofsantacruz.com/Modules/ShowDocument.aspx?documentid=8911" target="_blank">downtown recovery plan</a for a complete definition.</p>
+  </div>
+
+  <div id="cbde" class="aj-hidden">
+    <h5>CBD-E Subdistrict Lower Pacific Ave</h5>
+    <p>Set up to help bridge the downtown to the beach area, this district encourages mixed uses that include commercial and recreational businesses. </p>
+    <p>Ex. of principally permitted uses include: art galleries, restaurants, boutiques, cafes and dance studios </p>
+    <p>Ex. of uses that will require more staff review: bars, meeting halls, off street parking facilities, convenience stores. </p>
+    <p>Ex. of uses that are not allowed include: mortuaries, manufacturing</p>
+    <p>Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.2360" target="_blank">Municipal Code</a> for a complete definition.</p>
+  </div>
+
+  <div id="cc" class="aj-hidden">
+    <h5>CC Community Commercial</h5>
+    <p>Primary zoning for most major commercial corridors, this district is set up to permit many different types of uses.</p>
+    <p>Ex. of principally permitted uses include: Apparel stores, auto supply, restaurants, home furnishings, medical office</p>
+    <p>Ex. of uses that will require more staff review: fast food, educational uses, bars &amp; brewpubs</p>
+    <p>Ex. of uses that are not allowed include: no new drive-through businesses, no new industrial or manufacturing uses, no new ground floor residential uses</p>
+    <p>Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.700" target="_blank">Municipal Code</a> for a complete definition.</p>
+</div>
+<div id="cn" class="aj-hidden">
+<p class="closebtn"><a class="aj-collapse" rel="cn">x</a></p>
+<p class="mini">CN Neighborhood Commercial</p>
+<p>A low density commercial district where the customers will primarily access shops and services on foot or via alternative transportation.</p>
+<p>Ex. of principally permitted uses include: Financial, insurance, real estate offices, Low Volume food uses and cafes</p>
+<p>Ex. of uses that will require more staff review: Convenience stores, athletic facilities, drug and department stores</p>
+<p>Ex. of uses that are not allowed include: Manufacturing</p>
+
+<p>Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.1000" target="_blank">Municipal Code</a> for a complete definition.</p>
+</div>
+<div id="ct" class="aj-hidden">
+<p class="closebtn"><a class="aj-collapse" rel="ct">x</a></p>
+<p class="mini">CT Thoroughfare Commercial</p>
+<p>This zone is only found close to state highways or other high traffic corridors and is set up to encourage high volume businesses.</p>
+<p>Ex. of principally permitted uses include: banks, clothing and soft goods, hotels, nurseries, smaller professional and administrative uses</p>
+<p>Ex. of uses that will require more staff review: Business and technical schools, cemeteries, recreation facilities, community care facilities, drive ins and drive thrus, social clubs</p>
+<p>Ex. of uses that are not allowed include: Heavy industry</p>
+
+<p>Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.900" target="_blank">Municipal Code</a> for a complete definition.</p>
+</div>
+<div id="pa" class="aj-hidden">
+<p class="closebtn"><a class="aj-collapse" rel="pa">x</a></p>
+<p class="mini">PA Professional and Administrative Office</p>
+<p>A buffer between a major thoroughfare and a low density residential neighborhood, this district is set up to encourage daytime, low volume professional uses.</p>
+<p>Ex. of principally permitted uses include: Most financial, insurance and real estate office, galleries and medical office (except vets / kennels)</p>
+<p>Ex. of uses that will require more staff review: Vets, Medical Clinics, Schools and Churches</p>
+<p>Ex. of uses that are not allowed include: Heavy Industry</p>
+
+<p>Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.1200" target="_blank">Municipal Code</a> for a complete definition.</p>
+</div>
+<div id="ig" class="aj-hidden">
+<p class="closebtn"><a class="aj-collapse" rel="ig">x</a></p>
+<p class="mini">IG General Industrial</p>
+<p>The primary place for making and assembling items for distribution and wholesale. Only found in Harvey West and the far Westside.</p>
+<p>Ex. of principally permitted uses include: fabrication, laboratories, repairs, alterations, assembly and R&amp;D</p>
+<p>Ex. of uses that will require more staff review: retail uses, chemical and paper production, rubber and metal fabrication, medical marijuana dispensaries</p>
+<p>Ex. of uses that are not allowed include: Any manufacturing use involving the primary production of products from new materials found to be incompatible with the neighborhood or the city as a whole based on noise, odor, air quality or other adverse environmental impact shall be prohibited.</p>
+<p>Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.1500" target="_blank">Municipal Code</a> for a complete definition.</p>
+</div>
+<div id="cb" class="aj-hidden">
+<p class="closebtn"><a class="aj-collapse" rel="cb">x</a></p>
+<p class="mini">CB Beach Commercial</p>
+<p>Uses that primarily serve visitors near the beach.</p>
+<p>Ex. of principally permitted uses include: Ice cream parlor, Surf shop, and bike rental.</p>
+<p>Ex. of uses that are not allowed include:Tattoo parlor, Heavy manufacturing, and Medical Marijuana clinic.</p>
+<p>Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.1100" target="_blank">Municipal Code</a> for a complete definition.</p>
+</div>
+
+<p class="b">Please note how the prior use of your chosen site compares to your intended use.<p> 
+<p class="s">If you read the full definition of your site's zoning district, try to understand if and how your intended use is permitted.</p>
+
+  
+  <p class="next"><a href="use">Learn about use &rarr;</a></p>
 </div>
 
 <hr><!-- ================================================================================ -->
@@ -1169,7 +1295,7 @@ SCENARIO: User wants to start a retail biz and doesn't know where to put it.
   </div>
 <script type="text/javascript" src="assets/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
-(function(){
+(function() {
   $('.drawer').hide();
   $('.toggle').click(function(){
       $(this)
