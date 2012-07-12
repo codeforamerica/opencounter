@@ -1203,7 +1203,7 @@
           <label for="">Your Social Security Number (If you would rather not enter this here, that's okay):</label>
           <input type="text">
 
-          <label for="">Business name:</label>
+          <label for="">What's the name of your business? If it is a partnership or corporation, make sure 'LLC', 'LLP', 'LP', or 'Inc' is in the name:</label>
           <input type="text"> 
 
           <label for="">Business address:</label>
@@ -1380,7 +1380,7 @@
           <label for="">Quimby fee?</label><!--NOTE-->
           <input type="text">
 
-          <label for="">Is this a TIF (Traffic Impact Fee) project?</label><!--NOTE-->
+          <label for="">Is this a project related to a TIF (Traffic Impact Fee)?</label><!--NOTE-->
           <input type="text">          
                 <!-- End Building Permit -->
         
@@ -1506,18 +1506,76 @@
         Is your business an LLC (Limited Liability Company)?
                 <!-- Begin Sec. State LLC Registration -->
                 <!-- CONDITON: Business is an LLC -->
+          <input for="">Name of Agent for process of service:</label>
+          <input type="text">
+
+          <input for="">Address of Agent for process of service:</label>
+          <input type="text">
+
+          <input for="">How many people will manage your LLC?</label>
+          <input type="text">
+
+          <select id="managers">
+            <option value="one">One manager</option>
+            <option value="multiple">More than one manager</option>
+            <option value="all">All LLC members</option>
+          </select>
                 <!-- End Sec. State LLC Registration -->
         
 
-        Is your business an LLP (Limited Liability Partnership)
+        Is your business an LLP (Limited Liability Partnership)?
                 <!-- Begin Sec. State LLP Registration -->
                 <!-- CONDITION: Business is an LLP -->
+          <input for="">Name of Agent for process of service:</label>
+          <input type="text">
+
+          <input for="">Address of Agent for process of service:</label>
+          <input type="text">
+
+          <select id="biztype">
+            <option value="architecture">Architecture</option>
+            <option value="law">Law</option>
+            <option value="engineering">Engineering</option>
+            <option value="accounting">Public Accountancy</option>
+            <option value="surveying">Land Surveying</option>
+            <option value="other">Other</option>
+          </select>
+
+          <!--NOTE: conditional field below. If "other", specify related LLP-->
+          <input for="">Please give the full name of a related LLP. A related LLP is a CA registered LLP that practices public accountancy or law, or is a foreign LLP.</label>
+          <input type="text">
+          <!--End conditional field-->
                 <!-- End Sec. State LLP Registration -->
+
+
+        Is your business an LP (Limited Partnership)?
+                <!-- Begin Sec. State LP Registration -->
+                <!-- CONDITION: Business is an LLP -->
+          <input for="">Address of California initial designated office:</label>
+          <input type="text">
+
+          <input for="">Name of Agent for process of service:</label>
+          <input type="text">
+
+          <input for="">Address of Agent for process of service:</label>
+          <input type="text">
+
+          <!--Names and addresses of all general partners. Can this be autofilled?-->
+                <!-- End Sec. State LP Registration -->
         
 
         Is your business a corporation? 
                 <!-- Begin Sec. State Articles of Incorporation Filing -->
                 <!-- CONDITION: Business is a corporation -->
+
+          <input for="">Name of Agent for process of service:</label>
+          <input type="text">
+
+          <input for="">Address of Agent for process of service:</label>
+          <input type="text">
+
+          <input for="">Number of shares your business is authorized to issue:</label>
+          <input type="text">
                 <!-- End Sec. State Articles of Incorporation Filing -->
         
 
@@ -1587,10 +1645,10 @@
           <input for="">Former EED account number:</label>
           <input type="text">
 
-          <input for="">Business name:</label>
+          <input for="">Former business name:</label>
           <input type="text">
 
-          <input for="">Business address:</label>
+          <input for="">Former business address:</label>
           <input type="text">
           <!--End conditional fields-->
 
@@ -1630,7 +1688,7 @@
           <input type="checkbox" name="child" value="Child"> Employer's minor child (under 18)
           <input type="checkbox" name="parent" value="Parent"> Employer's parent 
 
-          <!--<input for="">Taxpayer type:</label>-->
+          <!--<input for="">Taxpayer type:</label>--><!--NOTE-->
           <!--NOTE: I think this is just the incorporation status. Can you confirm?-->
 
           <input for="">Employer type:</label>
@@ -1646,22 +1704,30 @@
           <option value="commercial">Services</option>
           <option value="maritime">Retail</option>
           <option value="wholesale">Wholesale</option>
-          <option value="manu">Manufacturing</option>
+          <option value="manufacture">Manufacturing</option>
           <option value="prof">Professional employer organization</option>
           <option value="temp">Temp services</option>
           <option value="leasing">Leasing employer</option>
           <option value="other">Other</option>
           </select>
 
-          <!--NOTE: conditional field below. If other, specify details by text box-->
+          <!--NOTE: conditional field below. If "other", specify details by text box-->
           <input for="">Please specify:</label>
           <input type="text">
           <!--End conditional field-->
           
-          <!--NOTE: Other fields:
-\           Agent For Process of Service Name
-            Agent For Process of Services Address (including City + ZIP) -->
-          
+          <input for="">Name of contact person for business:</label><!--NOTE-->
+          <input type="text">
+
+          <input for="">Address of contact person for business:</label>
+          <input type="text">
+
+          <input for="">Phone number of contact person for business:</label>
+          <input type="text">
+
+          <input for="">Email of contact person for business:</label>
+          <input type="text">
+  
           <!-- NOTE: I'm still working out a substitute tax if the person is working alone -->
                 <!-- End Payroll Tax Registration -->
         
@@ -1670,6 +1736,8 @@
         NOTE: IRS EIN applications may have to be filed by mail, phone or online through their own walkthrough.
                 <!-- Begin IRS EIN Application (Corporation; S-Corp; etc) -->
                 <!-- CONDITION: Business is a corporation -->
+
+                
                 <!-- End IRS EIN Application (Corporation; S-Corp; etc) -->
   
           <h1>Next Steps</h1>
