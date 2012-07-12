@@ -91,28 +91,33 @@
       height: 100%;
       overflow: auto;
       font-size: 82.5%;
-      width: 200px;
+      width: 300px;
       background: #9CF;
     }
     
     /* Scenarios */
+    .scenario {
+      padding-left: 10px;
+    }
+    
     .scenario p a {
       display: block;
-    }
-    
-    .scenario p a:after {
-      content:"\21b5";
-      padding-left: 10px;
+      padding-bottom: 0.5em;
       position: relative;
-      top: 0.5em;
+      text-align: center;
     }
     
-    .scenario p a:last-child:after {
+    .scenario p a:before {
+      content:"\21E3";
+      display: block;
+      text-align: center;
+    }
+    
+    .scenario p a:first-child:before {
       content:"";
+      padding: 0;
     }
     
-    
-
   </style>
 </head>
 
