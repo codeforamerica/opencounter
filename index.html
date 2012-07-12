@@ -1203,7 +1203,7 @@
           <label for="">Your Social Security Number (If you would rather not enter this here, that's okay):</label>
           <input type="text">
 
-          <label for="">Business name:</label>
+          <label for="">What's the name of your business? If it is a partnership or corporation, make sure 'LLC', 'LLP', 'LP', or 'Inc' is in the name:</label>
           <input type="text"> 
 
           <label for="">Business address:</label>
@@ -1315,6 +1315,7 @@
           <label for="">Current Date:</label>
           <input type="text">
 
+          <!--NOTE-->
           <!--<label for="">Owner's name:</label>
           <input type="text">--><!--Duplicate field-->
 
@@ -1380,7 +1381,7 @@
           <label for="">Quimby fee?</label><!--NOTE-->
           <input type="text">
 
-          <label for="">Is this a TIF (Traffic Impact Fee) project?</label><!--NOTE-->
+          <label for="">Is this a project related to a TIF (Traffic Impact Fee)?</label><!--NOTE-->
           <input type="text">          
                 <!-- End Building Permit -->
         
@@ -1483,7 +1484,84 @@
             <option value="change_category"> Change in category </option>
           </select>
 
-          <label>What type of food service is your business? Please choose one.</label><!--NOTE-->
+          <label>What type of food service is your business? Please choose a category.</label>
+          <!--NOTE: Many conditional fields ahead-->
+          <!--Maybe the big category can be auto-selected from NAICS code?-->
+
+          <select id="food_type">
+            <option value="normal">Traditional food service</option>
+            <option value="bakery">Bakery</option>
+            <option value="processing">Food processing</option>
+            <option value="vending">Food vending</option>
+            <option value="commissary">Commissary</option>
+            <option value="kitchen">Food central est. kitchen</option>
+            <option value="other">Other</option>
+          </select>       
+
+          <!--If "food service" selected, display this drop-down-->
+          <select id="food_service_sub">
+            <option value="seats_1">0-25 seats</option>
+            <option value="seats_2">26-50 seats</option>
+            <option value="seats_3">51-75 seats</option>
+            <option value="seats_4">76-100 seats</option>
+            <option value="seats_more">More than 100 seats</option>
+            <option value="bed_breakfast">Bed &amp; breakfast</option>
+            <option value="theater">Theater snack bars</option>
+            <option value="bars">Bars, on sale with no food</option>
+            <option value="caterer">Caterer</option>
+          </select>  
+          <!--End food service drop-down-->
+
+          <!--If "Bakery" selected, display this drop-down-->
+          <select id="bakery_sub">
+            <option value="area_1k">Less than 2,000 sq. ft</option>
+            <option value="area_2k">2,001 - 2,999 sq. ft</option>
+            <option value="area_3k">More than 3,000 sq. ft</option>
+          </select>
+          <!--End bakery drop-down-->
+
+          <!--If "Food processing" selected, display these-->
+          <label>Is the area of your business more than 1,000 square feet?</label>
+          <input type="radio"> Yes
+          <input type="radio"> No
+          <!--End food processing choice-->
+
+          <!--If "Food vending" selected, display these-->
+          <select id="vending_sub">
+            <option value="area_1k">Less than 2,000 sq. ft</option>
+            <option value="area_2k_5k">2,001 - 5,999 sq. ft</option>
+            <option value="area_over">More than 6,000 sq. ft</option>
+            <option value="area_over">Swampmeet pre-packaged</option>
+            <option value="area_over">Limited food sales</option>
+            <option value="area_over">Produce stand</option>
+            <option value="area_over">Certified farmer's market</option>
+          </select>
+
+          <!--If any of the area fields are selected, display these-->
+          <label>How many Food Prep./Proc?</label>
+          <input type="radio"> +1
+          <input type="radio"> +2
+          <input type="radio"> +3
+          <!--End area choice-->
+
+          <!--If "Swampmeet pre-packaged" selected, display this text field-->
+          <input for="">Type of food:</label>
+          <input type="text">
+          <!--End swampmeet choice-->
+          <!--End food vending choice-->
+
+          <!--If "commissary" selected, display these-->
+          <label>Is your storage area more than 1,000 square feet?</label>
+          <input type="radio"> Yes
+          <input type="radio"> No
+          <!--End commissary choice-->
+
+          <!--If "Food central est. kitchen" selected, display these-->
+          <label>Do your preparation and storage areas equal more than 1,000 square feet?</label>
+          <input type="radio"> Yes
+          <input type="radio"> No
+          <!--End kitchen choice-->
+          <!--End ALL food service type fields-->
 
           <input for="">Mailing address:</label>
           <input type="text">
@@ -1498,27 +1576,59 @@
 
         Is your business a retail establishment?
         NOTE: The seller's permit can NO LONGER be filed by mail or e-mail. It can only be filed through their online system, which is a train wreck and requires special registration.
+                <!-- I don't know what to do with this right now-->
                 <!-- Begin Seller's Permit -->
                 <!-- CONDITION: Business is a retail establishment -->
                 <!-- End Seller's Permit -->
         
 
-        Is your business an LLC (Limited Liability Company)?
-                <!-- Begin Sec. State LLC Registration -->
-                <!-- CONDITON: Business is an LLC -->
-                <!-- End Sec. State LLC Registration -->
-        
+        This is your business' registration with the Secretary of State. It needs to be done!
+                <!-- Begin Sec. State registration -->
+          <!--These fields are universal for all business types-->
+          <input for="">Name of Agent for process of service:</label>
+          <input type="text">
 
-        Is your business an LLP (Limited Liability Partnership)
-                <!-- Begin Sec. State LLP Registration -->
-                <!-- CONDITION: Business is an LLP -->
-                <!-- End Sec. State LLP Registration -->
-        
+          <input for="">Address of Agent for process of service:</label>
+          <input type="text">
+          <!--End universal fields-->
 
-        Is your business a corporation? 
-                <!-- Begin Sec. State Articles of Incorporation Filing -->
-                <!-- CONDITION: Business is a corporation -->
-                <!-- End Sec. State Articles of Incorporation Filing -->
+          <!--This field apply to Corporations-->
+          <input for="">Number of shares your business is authorized to issue:</label>
+          <input type="text">
+          <!--End corporation field-->
+
+          <!--These fields applies to LLCs-->
+          <input for="">How many people will manage your LLC?</label>
+          <input type="text">
+
+          <select id="managers">
+            <option value="one">One manager</option>
+            <option value="multiple">More than one manager</option>
+            <option value="all">All LLC members</option>
+          </select>
+          <!--End LLC fields-->
+        
+          <!--These fields applies to LLPs-->
+          <select id="biztype">
+            <option value="architecture">Architecture</option>
+            <option value="law">Law</option>
+            <option value="engineering">Engineering</option>
+            <option value="accounting">Public Accountancy</option>
+            <option value="surveying">Land Surveying</option>
+            <option value="other">Other</option>
+          </select>
+
+          <!--NOTE: Conditional field below. If "other", specify related LLP-->
+          <input for="">Please give the full name of a related LLP. A related LLP is a CA registered LLP that practices public accountancy or law, or is a foreign LLP.</label>
+          <input type="text">
+          <!--End conditional field-->
+          <!--End LLP fields-->
+
+          <!--This field applies to LPs-->
+          <input for="">Address of California initial designated office:</label>
+          <input type="text">
+          <!--End LP field-->
+                <!-- End Sec. State registration -->
         
 
         Will your business have a payroll? (more than one employee)
@@ -1581,16 +1691,16 @@
           <label>Have you ever owned or been a principal owner in a business registered with EED?</label>
           <input type="radio"> Yes
           <input type="radio"> No
+
           <!--NOTE: Conditional fields below-->
           <!--- These fields will appear if the user selects yes-->
-
           <input for="">Former EED account number:</label>
           <input type="text">
 
-          <input for="">Business name:</label>
+          <input for="">Former business name:</label>
           <input type="text">
 
-          <input for="">Business address:</label>
+          <input for="">Former business address:</label>
           <input type="text">
           <!--End conditional fields-->
 
@@ -1630,7 +1740,7 @@
           <input type="checkbox" name="child" value="Child"> Employer's minor child (under 18)
           <input type="checkbox" name="parent" value="Parent"> Employer's parent 
 
-          <!--<input for="">Taxpayer type:</label>-->
+          <!--<input for="">Taxpayer type:</label>--><!--NOTE-->
           <!--NOTE: I think this is just the incorporation status. Can you confirm?-->
 
           <input for="">Employer type:</label>
@@ -1646,31 +1756,123 @@
           <option value="commercial">Services</option>
           <option value="maritime">Retail</option>
           <option value="wholesale">Wholesale</option>
-          <option value="manu">Manufacturing</option>
+          <option value="manufacture">Manufacturing</option>
           <option value="prof">Professional employer organization</option>
           <option value="temp">Temp services</option>
           <option value="leasing">Leasing employer</option>
           <option value="other">Other</option>
           </select>
 
-          <!--NOTE: conditional field below. If other, specify details by text box-->
+          <!--NOTE: conditional field below. If "other", specify details by text box-->
           <input for="">Please specify:</label>
           <input type="text">
           <!--End conditional field-->
           
-          <!--NOTE: Other fields:
-\           Agent For Process of Service Name
-            Agent For Process of Services Address (including City + ZIP) -->
-          
+          <input for="">Name of contact person for business:</label><!--NOTE-->
+          <input type="text">
+
+          <input for="">Address of contact person for business:</label>
+          <input type="text">
+
+          <input for="">Phone number of contact person for business:</label>
+          <input type="text">
+
+          <input for="">Email of contact person for business:</label>
+          <input type="text">
+  
           <!-- NOTE: I'm still working out a substitute tax if the person is working alone -->
                 <!-- End Payroll Tax Registration -->
         
         
-        Do you need to file for a new IRS EIN?
-        NOTE: IRS EIN applications may have to be filed by mail, phone or online through their own walkthrough.
-                <!-- Begin IRS EIN Application (Corporation; S-Corp; etc) -->
-                <!-- CONDITION: Business is a corporation -->
-                <!-- End IRS EIN Application (Corporation; S-Corp; etc) -->
+        Do you need to file for a new IRS EIN? You probably do. Just in case, check <a href="http://www.irs.gov/businesses/small/article/0,,id=97872,00.html">here</a> to see if you need one or not.
+                <!-- Begin IRS EIN Application -->
+                <!-- CONDITION: Business is anything but what is outlined in the above link -->
+
+          <!-- These fields are for all ownership types -->
+          <input for="">Trade name of business (if different from primary):</label>
+          <input type="text">
+
+          <input for="">Business start date:</label>
+          <input type="text">
+
+          <label>Does your business own a highway motor vehicle with a taxable gross weight of 55,000 pounds or more?</label>
+          <input type="radio"> Yes
+          <input type="radio"> No
+
+          <label>Is there any gambling or wagering involved in your business?</label>
+          <input type="radio"> Yes
+          <input type="radio"> No
+
+          <label>Does your business need to file Form 720 (Quarterly Federal Excise Tax Return)?</label>
+          <input type="radio"> Yes
+          <input type="radio"> No
+
+          <label>Will your business sell or manufacture alcohol, tobacco, or firearms?</label><!--NOTE-->
+          <input type="radio"> Yes
+          <input type="radio"> No
+
+          <label>Do you, or will you have any employees who will receive W-2 forms in the next 12 months?</label>
+          <input type="radio"> Yes
+          <input type="radio"> No
+          <!-- End universal fields -->
+
+          <!-- NOTE: Conditional fields below -->
+          <!--These fields apply specifically to Corporations-->
+          <label>Are you the President, CEO, or other corporate officer who can legally bind the corporation?</label>
+          <input type="radio"> Yes, I am
+          <input type="radio"> No, I am a third party agent
+
+          <input for="">If mail should be directed to a specific person or department within your business, enter it here. (This is commonly referred to as the “Care Of” name)</label>
+          <input type="text">
+          
+          <input for="">Closing month of the accounting year:</label>
+          <input type="text">
+
+          <input for="">What is the first date wages or annuities were or will be paid?</label>
+          <input type="text">
+
+          <input for="">What is the highest number of employees expected in the next 12 months?</label>
+          <input type="text">
+
+          <input for="">Number of agricultural employees:</label>
+          <input type="text">
+          
+          <input for="">Number of other employees:</label>
+          <input type="text">
+
+          <label>Do you expect your employment tax liability to be $1,000 or less in a full calendar year?</label>
+          <input type="radio"> Yes
+          <input type="radio"> No
+          <!--End corporation fields-->
+
+          <!--These fields apply to LLCs-->
+          <input for="">How many member(s) are in the LLC?</label>
+          <input type="text">
+
+          <input for="">Name of responsible party:</label>
+          <input type="text">
+          
+          <label>Are you one of the owners, members, or the managing member of this LLC?</label>
+          <input type="radio"> Yes, I am
+          <input type="radio"> No, I am a third party agent
+
+          <input for="">What is the first date wages or annuities were or will be paid?</label>
+          <input type="text">
+
+          <input for="">What is the highest number of employees expected in the next 12 months?</label>
+          <input type="text">
+
+          <input for="">Number of agricultural employees:</label>
+          <input type="text">
+          
+          <input for="">Number of other employees:</label>
+          <input type="text">
+
+          <label>Do you expect your employment tax liability to be $1,000 or less in a full calendar year?</label>
+          <input type="radio"> Yes
+          <input type="radio"> No
+          <!--End LLC fields-->
+                <!-- End IRS EIN Application -->
   
           <h1>Next Steps</h1>
   
