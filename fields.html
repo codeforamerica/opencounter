@@ -98,14 +98,16 @@
   <div class="profile">
     <h3>Your Name</h3>
     <p><span>FirstName</span> <span>LastName</span></p>
+    <h3>Your Contact Information</h3>
+    <p>you@email.com</p>
   </div>
 
   <div class="main">
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen">
-  <h1 id="welcome">Welcome</h1>
+<div class="screen" id="welcome">
+  <h1>Welcome</h1>
   
   <p>Starting a business? We&rsquo;re here to help.</p>
   
@@ -218,10 +220,8 @@
     
     <h3>Where do you plan to work?</h3>
   
-    <label for="ishomeocc" class="next">
-      <span><a href="#workingFromHome">I&rsquo;ll be working from home &rarr;</a></span>
-      <span><a href="">My business will be in a space other than my home &rarr;</a></span>
-    </label>
+    <p class="next"><a href="#workingFromHome">I&rsquo;ll be working from home &rarr;</a></p>
+    <p class="next"><a href="#zoning">My business will be in a space other than my home &rarr;</a></p>
   
   </form>
 
@@ -319,7 +319,7 @@
 
   <h1>Thanks!</h1>
   
-  <p>Thanks for contacting the Planning Department! We will get in touch with you within 4 business days.</p>
+  <p>Thanks for contacting us. We will get in touch with you within 4 business days.</p>
   
   <p>If you need to speak with someone sooner than that, <a href="hereToHelp">here's how to contact the Planning Department</a>.</p>
   
@@ -398,9 +398,60 @@
     </label>
   </form>
   
-  <p class="next">My business will need a FBN. <a href="http://www.sccoclerk.com/fbngen.htm" class="external">Get one &rarr;</a></p>
+  <p class="next">My business will need a FBN. <a href="#FBN">Get one &rarr;</a></p>
   <p class="next">My business doesn't need a FBN. <a href="#incorporation">Next: Incorporation &rarr;</a></p>
 
+</div>
+
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="FBN">
+
+  <h1>Fictitious Business Name</h1>
+  
+  <p>To get a <abbr title="Fictitious Business Name">FBN</abbr> from the County of Santa Cruz, you'll need the following information:</p>
+  
+  <table cellspacing="0">
+    Fictitious Business Name
+    Street Address of Principal Place of Business
+    City, State, ZIP
+    
+    Mailing Address if Different
+    
+    
+    Registered Owner(s):
+    <table>
+      <tr>
+        <th>Full Name</th>
+        <th>Residence Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>ZIP</th>
+        <th>If corporation or LLC, state of incorporation/organization</th>
+      </tr>
+    </table>
+    
+    Business is conducted by:
+    <select>
+      <option>an Individual</option>
+      <option>a General Partnership</option>
+      <option>a Limited Partnership</option>
+      <option>a Limited Liability Company (LLC)</option>
+      <option>an Unincorporated Association other than a Partnership</option>
+      <option>a Corporation</option>
+      <option>a Trust</option>
+      <option>Copartners</option>
+      <option>Husband and Wife</option>
+      <option>a Joint Venture</option>
+      <option>State or Local Registered Domestic Partners</option>
+      <option>a Limited Liability Partnership (LLP)</option>
+    </select>
+    
+  </table>
+
+  <p class="next"><a href="http://www.sccoclerk.com/fbngen.htm">Go to the County's website &rarr;</a></p>
+  <p class="next"><a href="#incorporation">Do this later &rarr;</a></p>
 </div>
 
 <hr><!-- ================================================================================ -->
@@ -617,6 +668,13 @@ Other forms you'll need to fill out:
   <p>Waste water regulation helps the Santa Cruz Department of Public Works prevent grease and other pollutants from clogging their water treatment facility and Monterey Bay.</p>
   <p>As a restaurant, you may need to obtain a waste water discharge permit.</p>
   <p class="next">Find more information and an application <a href="http://www.cityofsantacruz.com/index.aspx?page=177">here &rarr;</a></p>
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="utilities">
+  <h1>Utility Services</h1>
+  <p>Placeholder for a signup page for water, refuse, and wastewater services.</p>
 </div>
 
 <hr><!-- ================================================================================ -->
