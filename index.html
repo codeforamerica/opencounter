@@ -1315,6 +1315,7 @@
           <label for="">Current Date:</label>
           <input type="text">
 
+          <!--NOTE-->
           <!--<label for="">Owner's name:</label>
           <input type="text">--><!--Duplicate field-->
 
@@ -1498,20 +1499,28 @@
 
         Is your business a retail establishment?
         NOTE: The seller's permit can NO LONGER be filed by mail or e-mail. It can only be filed through their online system, which is a train wreck and requires special registration.
+                <!-- I don't know what to do with this right now-->
                 <!-- Begin Seller's Permit -->
                 <!-- CONDITION: Business is a retail establishment -->
                 <!-- End Seller's Permit -->
         
 
-        Is your business an LLC (Limited Liability Company)?
-                <!-- Begin Sec. State LLC Registration -->
-                <!-- CONDITON: Business is an LLC -->
+        This is your business' registration with the Secretary of State. It needs to be done!
+                <!-- Begin Sec. State registration -->
+          <!--These fields are universal for all business types-->
           <input for="">Name of Agent for process of service:</label>
           <input type="text">
 
           <input for="">Address of Agent for process of service:</label>
           <input type="text">
+          <!--End universal fields-->
 
+          <!--This field apply to Corporations-->
+          <input for="">Number of shares your business is authorized to issue:</label>
+          <input type="text">
+          <!--End corporation field-->
+
+          <!--These fields applies to LLCs-->
           <input for="">How many people will manage your LLC?</label>
           <input type="text">
 
@@ -1520,18 +1529,9 @@
             <option value="multiple">More than one manager</option>
             <option value="all">All LLC members</option>
           </select>
-                <!-- End Sec. State LLC Registration -->
+          <!--End LLC fields-->
         
-
-        Is your business an LLP (Limited Liability Partnership)?
-                <!-- Begin Sec. State LLP Registration -->
-                <!-- CONDITION: Business is an LLP -->
-          <input for="">Name of Agent for process of service:</label>
-          <input type="text">
-
-          <input for="">Address of Agent for process of service:</label>
-          <input type="text">
-
+          <!--These fields applies to LLPs-->
           <select id="biztype">
             <option value="architecture">Architecture</option>
             <option value="law">Law</option>
@@ -1541,42 +1541,17 @@
             <option value="other">Other</option>
           </select>
 
-          <!--NOTE: conditional field below. If "other", specify related LLP-->
+          <!--NOTE: Conditional field below. If "other", specify related LLP-->
           <input for="">Please give the full name of a related LLP. A related LLP is a CA registered LLP that practices public accountancy or law, or is a foreign LLP.</label>
           <input type="text">
           <!--End conditional field-->
-                <!-- End Sec. State LLP Registration -->
+          <!--End LLP fields-->
 
-
-        Is your business an LP (Limited Partnership)?
-                <!-- Begin Sec. State LP Registration -->
-                <!-- CONDITION: Business is an LLP -->
+          <!--This field applies to LPs-->
           <input for="">Address of California initial designated office:</label>
           <input type="text">
-
-          <input for="">Name of Agent for process of service:</label>
-          <input type="text">
-
-          <input for="">Address of Agent for process of service:</label>
-          <input type="text">
-
-          <!--Names and addresses of all general partners. Can this be autofilled?-->
-                <!-- End Sec. State LP Registration -->
-        
-
-        Is your business a corporation? 
-                <!-- Begin Sec. State Articles of Incorporation Filing -->
-                <!-- CONDITION: Business is a corporation -->
-
-          <input for="">Name of Agent for process of service:</label>
-          <input type="text">
-
-          <input for="">Address of Agent for process of service:</label>
-          <input type="text">
-
-          <input for="">Number of shares your business is authorized to issue:</label>
-          <input type="text">
-                <!-- End Sec. State Articles of Incorporation Filing -->
+          <!--End LP field-->
+                <!-- End Sec. State registration -->
         
 
         Will your business have a payroll? (more than one employee)
@@ -1639,9 +1614,9 @@
           <label>Have you ever owned or been a principal owner in a business registered with EED?</label>
           <input type="radio"> Yes
           <input type="radio"> No
+
           <!--NOTE: Conditional fields below-->
           <!--- These fields will appear if the user selects yes-->
-
           <input for="">Former EED account number:</label>
           <input type="text">
 
