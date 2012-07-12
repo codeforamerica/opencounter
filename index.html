@@ -1732,13 +1732,95 @@
                 <!-- End Payroll Tax Registration -->
         
         
-        Do you need to file for a new IRS EIN?
-        NOTE: IRS EIN applications may have to be filed by mail, phone or online through their own walkthrough.
-                <!-- Begin IRS EIN Application (Corporation; S-Corp; etc) -->
-                <!-- CONDITION: Business is a corporation -->
+        Do you need to file for a new IRS EIN? You probably do. Just in case, check <a href="http://www.irs.gov/businesses/small/article/0,,id=97872,00.html">here</a> to see if you need one or not.
+                <!-- Begin IRS EIN Application -->
+                <!-- CONDITION: Business is anything but what is outlined in the above link -->
 
-                
-                <!-- End IRS EIN Application (Corporation; S-Corp; etc) -->
+          <!-- These fields are for all ownership types -->
+          <input for="">Trade name of business (if different from primary):</label>
+          <input type="text">
+
+          <input for="">Business start date:</label>
+          <input type="text">
+
+          <label>Does your business own a highway motor vehicle with a taxable gross weight of 55,000 pounds or more?</label>
+          <input type="radio"> Yes
+          <input type="radio"> No
+
+          <label>Is there any gambling or wagering involved in your business?</label>
+          <input type="radio"> Yes
+          <input type="radio"> No
+
+          <label>Does your business need to file Form 720 (Quarterly Federal Excise Tax Return)?</label>
+          <input type="radio"> Yes
+          <input type="radio"> No
+
+          <label>Will your business sell or manufacture alcohol, tobacco, or firearms?</label><!--NOTE-->
+          <input type="radio"> Yes
+          <input type="radio"> No
+
+          <label>Do you, or will you have any employees who will receive W-2 forms in the next 12 months?</label>
+          <input type="radio"> Yes
+          <input type="radio"> No
+          <!-- End universal fields -->
+
+          <!-- NOTE: Conditional fields below -->
+          <!--These fields apply specifically to Corporations-->
+          <label>Are you the President, CEO, or other corporate officer who can legally bind the corporation?</label>
+          <input type="radio"> Yes, I am
+          <input type="radio"> No, I am a third party agent
+
+          <input for="">If mail should be directed to a specific person or department within your business, enter it here. (This is commonly referred to as the “Care Of” name)</label>
+          <input type="text">
+          
+          <input for="">Closing month of the accounting year:</label>
+          <input type="text">
+
+          <input for="">What is the first date wages or annuities were or will be paid?</label>
+          <input type="text">
+
+          <input for="">What is the highest number of employees expected in the next 12 months?</label>
+          <input type="text">
+
+          <input for="">Number of agricultural employees:</label>
+          <input type="text">
+          
+          <input for="">Number of other employees:</label>
+          <input type="text">
+
+          <label>Do you expect your employment tax liability to be $1,000 or less in a full calendar year?</label>
+          <input type="radio"> Yes
+          <input type="radio"> No
+          <!--End corporation fields-->
+
+          <!--These fields apply to LLCs-->
+          <input for="">How many member(s) are in the LLC?</label>
+          <input type="text">
+
+          <input for="">Name of responsible party:</label>
+          <input type="text">
+          
+          <label>Are you one of the owners, members, or the managing member of this LLC?</label>
+          <input type="radio"> Yes, I am
+          <input type="radio"> No, I am a third party agent
+
+          <input for="">What is the first date wages or annuities were or will be paid?</label>
+          <input type="text">
+
+          <input for="">What is the highest number of employees expected in the next 12 months?</label>
+          <input type="text">
+
+          <input for="">Number of agricultural employees:</label>
+          <input type="text">
+          
+          <input for="">Number of other employees:</label>
+          <input type="text">
+
+          <label>Do you expect your employment tax liability to be $1,000 or less in a full calendar year?</label>
+          <input type="radio"> Yes
+          <input type="radio"> No
+          <!--End LLC fields-->
+                <!-- End IRS EIN Application -->
   
           <h1>Next Steps</h1>
   
