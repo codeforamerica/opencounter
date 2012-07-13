@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  field_id: 1
+  user_id: 1
+  answer: MyText
+
+two:
+  field_id: 1
+  user_id: 1
+  answer: MyText
