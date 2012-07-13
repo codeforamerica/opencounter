@@ -7,16 +7,18 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(first_name => params[:firstname], last_name => params[:lastname], email => params[:email])
 
     if @user.save
       respond_with @user
     else
+      respond_with {status => "failed"}
       #something went wrong
     end
   end
 
   def edit
-
+    @user = User.update(params[:id], params)
+    respond_with @user
   end
 end
