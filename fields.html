@@ -43,9 +43,10 @@
     
     .next {
       background:#DDEEFF;
-      padding: 0.5em 10px;
       border: 1px solid #CCC;
+      display: block;
       font-weight: bold;
+      padding: 0.5em 10px;
     }
     
     blockquote {
@@ -125,6 +126,54 @@
   <div class="profile">
 
 <div class="scenario">
+  <h3>SCENARIO: Home Occupancy</h3>
+  <p>
+    <a href="#intro_welcome">Welcome</a>
+    <a href="#intro_big_picture">The Big Picture</a>
+    <a href="#intro_here_to_help">We're Here To Help</a>
+    <a href="#info_applicant">Tell Us About Yourself</a>
+    <a href="#info_business">Tell Us About Your Business</a>
+    <a href="#location_home_occ">Working From Home</a>
+    <a href="#helper_use_permit">Use Permit Helper</a>
+    <a href="#helper_business_license">Business License Helper</a>
+    <a href="#non_city_regulations">Non-City Regulations</a>
+    <a href="#summary">Summary &amp; Downloads</a>
+  </p>
+</div>
+
+<div class="scenario">
+  <h3>SCENARIO: Non-Home Occupancy</h3>
+  <p>
+    <a href="#intro_welcome">Welcome</a>
+    <a href="#intro_big_picture">The Big Picture</a>
+    <a href="#intro_here_to_help">We're Here To Help</a>
+    
+    <a href="#info_who_are_you">Tell Us About Yourself</a>
+    <a href="#info_business">Tell Us About Your Business</a>
+    
+    <a href="#location_non_home_occ">Siting Your Business</a>
+    
+    <a href="#location_zoning">Zoning</a>
+    <a href="#location_uses">Uses - What's Allowed?</a>
+    <a href="#location_zoning_map">Explore Santa Cruz Zoning (Map)</a>
+    <a href="#location_find_a_site">SiteMy.Biz</a>
+    <a href="#location_parking">Parking</a>
+    <a href="#location_utilities">Utilities</a>
+    <a href="#location_restaurants">Restaurants</a>
+    <a href="#location_industrial">Industrial</a>
+    <a href="#location_downtown">Downtown</a>
+    
+    <a href="#helper_fbn">FBN Helper</a>
+    <a href="#helper_use_permit">Use Permit Helper</a>
+    <a href="#helper_business_license">Business License Helper</a>
+    
+    <a href="#non_city_regulations">Non-City Regulations</a>
+    
+    <a href="#summary">Summary &amp; Downloads</a>
+  </p>
+</div>
+
+<div class="scenario">
   <h3>SCENARIO: Feedback</h3>
   <p>
     <a href="">Feedback</a>
@@ -142,72 +191,13 @@
   </p>
 </div>
 
-<div class="scenario">
-  <h3>SCENARIO: Home Occupancy</h3>
-  <p>
-    <a href="#intro_welcome">Welcome</a>
-    <a href="#intro_big_picture">The Big Picture</a>
-    <a href="#intro_here_to_help">We're Here To Help</a>
-    <a href="#intro_few_questions">A Few Questions</a>
-    
-    <a href="#location_working_from_home">Working From Home</a>
-    
-    <a href="#info_business_type">What type of business are you?</a>
-    <a href="#info_business_name">Your Business Name</a>
-    <a href="#info_incorporation">Incorporation</a>
-    
-    <a href="#helper_fbn">FBN Helper</a> 
-    <a href="#helper_use_permit">Use Permit Helper</a>
-    <a href="#helper_business_license">Business License Helper</a>
-
-    <a href="#non_city_regulations">Non-City Regulations (CalGOLD)</a>
-
-    <a href="#summary">Summary &amp; Downloads</a>
-  </p>
-</div>
-
-<div class="scenario">
-  <h3>SCENARIO: Non-Home Occupancy</h3>
-  <p>
-    <a href="#intro_welcome">Welcome</a>
-    <a href="#intro_big_picture">The Big Picture</a>
-    <a href="#intro_here_to_help">We're Here To Help</a>
-    <a href="#intro_few_questions">A Few Questions</a>
-    
-    <a href="#location_siting_your_business">Siting Your Business</a>
-    
-    <a href="#info_business_type">What type of business are you?</a>
-    <a href="#info_business_name">Your Business Name</a>
-    <a href="#info_incorporation">Incorporation</a>
-    
-    <a href="#location_zoning">Zoning</a>
-    <a href="#location_uses">Uses - What's Allowed?</a>
-    <a href="#location_zoning_map">Explore Santa Cruz Zoning (Map)</a>
-    <a href="#location_find_a_site">SiteMy.Biz</a>
-    <a href="#location_parking">Parking</a>
-    <a href="#location_utilities">Utilities</a>
-    <a href="#location_restaurants">Restaurants</a>
-    <a href="#location_industrial">Industrial</a>
-    <a href="#location_downtown">Downtown</a>
-    
-    <a href="#helper_fbn">FBN Helper</a>
-    <a href="#helper_use_permit">Use Permit Helper</a>
-    <a href="#helper_business_license">Business License Helper</a>
-    
-    <a href="#non_city_regulations">Non-City Regulations (CalGOLD)</a>
-    
-    <a href="#summary">Summary &amp; Downloads</a>
-  </p>
-</div>
-
-
   </div>
 
   <div class="main">
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="welcome">
+<div class="screen" id="intro_welcome">
   <h1>Welcome</h1>
   
   <p>Starting a business? We&rsquo;re here to help.</p>
@@ -219,32 +209,32 @@
   you get started on &mdash; or, in some cases, complete! &mdash; the paperwork
   you&rsquo;ll need to file to open your doors.</p>
   
-  <p class="next">Let's get started. <a href="#theBigPicture">Next &rarr;</a></p>
+  <p class="next"><a href="#intro_big_picture">Let&rsquo;s get started &rarr;</a></p>
 </div>
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="theBigPicture">
+<div class="screen" id="intro_big_picture">
 
   <h1>The Big Picture</h1>
   
-  <p>Here's how to start a business in the City of Santa Cruz:</p>
-  <p><span class="dropcap">1.</span> If you&rsquo;re starting a business, the City has to approve that use in your location. This is done by securing a <em>zoning clearance</em> or a <em>use permit</em> from the City&rsquo;s Planning Department. <a href="#zoningClearance">Learn about use and zoning &rarr;</a></p>
-  <p><span class="dropcap">2.</span> Next, if you&rsquo;re doing any renovations or tenant improvements, you&rsquo;ll need to get approval from the City of Santa Cruz Building Department. <a href="#buildingPermits">Learn about building permits &rarr;</a>
-  <p><span class="dropcap">3.</span> Finally, obtain a <em>business license</em> from the City of Santa Cruz Finance Department. <a href="#businessLicense">Learn about business licenses &rarr;</a></p>
-  <p>While that covers most City processes, there are also county, regional, state, and federal regulations that may apply to your business. We&rsquo;ve got tools built into this guide to help you research and fulfill their requirements, too. <a href="#nonCityRegulations">Learn about non-city regulations &rarr;</a>
+  <p>Here's how to start a business in the City of Santa Cruz.</p>
+  <p><span class="dropcap">1.</span> First, secure a <em>use permit</em> from the City&rsquo;s Planning Department. If you&rsquo;re starting a business, even if you're working from home, the City has to approve that use in your location.</p>
+  <p><span class="dropcap">2.</span> Next, if you&rsquo;re doing any renovations or tenant improvements, get approval from the City of Santa Cruz Building Department.</p>
+  <p><span class="dropcap">3.</span> Finally, obtain a <em>business license</em> from the City of Santa Cruz Finance Department.</p>
+  <p>While that covers most City processes, there are also county, regional, state, and federal regulations that may apply to your business. We&rsquo;ve included tools to help you research and fulfill those requirements, too.</p>
   
-  <p class="next">Let's walk through these steps. <a href="#hereToHelp">Next &rarr;</a></p>
+  <p class="next">Let&rsquo;s walk through these steps. But first, <a href="#intro_here_to_help">who are we? &rarr;</a></p>
 
 </div>
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="hereToHelp">
+<div class="screen" id="intro_here_to_help">
 
-  <h1>We're Here To Help</h1>
+  <h1>We&rsquo;re Here To Help</h1>
   
-  <p>When starting a business, it's helpful to have someone to talk to. The following people &amp; organizations are here to help.</p>
+  <p>When starting a business, it&rsquo;s helpful to have someone to talk to. The following people &amp; organizations are here to help.</p>
   
   <h3 class="toggle">The Santa Cruz Planning Department</h3>
   <div class="drawer">
@@ -294,35 +284,88 @@
     <p>These folks have probably been through this process before and can offer helpful pointers.</p>
   </div>
   
-  <p class="next">Next up, <a href="#aFewQuestions">a few questions &rarr;</a></p>
+  <p class="next">Now that we've introduced ourselves, <a href="#info_applicant">let&rsquo;s get acquainted &rarr;</a></p>
 </div>
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="aFewQuestions">
+<div class="screen" id="info_applicant">
 
-  <h1>A Few Questions</h1>
+  <h1>Tell us about yourself.</h1>
   
   <p>The rest of this guide is tailored to you and your business.</p>
+  
+  <hr>
   
   <form method="post" action="">
     <h3>Who are you?</h3>
   
     <label for="fname">
       <span>Your Name</span>
-      <input type="text" id="fname" placeholder="First name">
-      <input type="text" id="lname" placeholder="Last name">
+      <input type="text" name="fname" id="fname" placeholder="Annie">
+      <input type="text" name="lname" id="lname" placeholder="Oakley">
     </label>
     
     <label for="email">
       <span>Your Email Address</span>
-      <input type="text" id="email" placeholder="you@domain.com">
+      <input type="text" name="email" id="email" placeholder="annie.oakley@anniegetyourgun.com">
     </label>
     
-    <h3>Where do you plan to work?</h3>
+    <label for="is_applicant">
+      <input type="checkbox" name="is_applicant" value="y" checked="checked"> I'm the only business owner
+    </label>
+  </form>
   
-    <p class="next"><a href="#workingFromHome">I&rsquo;ll be working from home &rarr;</a></p>
-    <p class="next"><a href="#zoning">My business will be in a space other than my home &rarr;</a></p>
+  <p class="next">Nice to meet you, <strong>Annie</strong>! Next, <a href="#info_business">tell us about your business &rarr;</a></p>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="info_business">
+
+  <h1>Tell us about your business.</h1>
+  
+  <p>All of these are optional, but will help us get you the right information.</p>
+  
+  <hr>
+  
+  <form method="post" action="">
+  
+    <label for="business_name">
+      <span>What will it be called?</span>
+      <input type="text" name="business_name" id="business_name">
+    </label>
+    
+    <label for="business_type">
+      <span>What will your business do?</span>
+      <input type="text" placeholder="SIC/NAICS tool here, with freeform entry">
+    </label>
+    
+    <label for="business_structure">
+      <span>What is your business's legal structure?</span>
+      <select>
+        <option value="">I'm not sure / don't know / haven't decided yet</option>
+        <option value="">an Individual (Sole Proprietorship)</option>
+        <option value="">a General Partnership</option>
+        <option value="">a Limited Partnership</option>
+        <option value="">a Limited Liability Company (LLC)</option>
+        <option value="">an Unincorporated Association other than a Partnership</option>
+        <option value="">a Corporation</option>
+        <option value="">a Trust</option>
+        <option value="">Copartners</option>
+        <option value="">Husband and Wife</option>
+        <option value="">a Joint Venture</option>
+        <option value="">State or Local Registered Domestic Partners</option>
+        <option value="">a Limited Liability Partnership (LLP)</option>
+      </select>
+    </label>
+    
+    <label>
+      <span>Where will you be working from?</span>
+      <a class="next" href="#location_home_occ">I'll be working from home &rarr;</a>
+      <a class="next" href="#location_non_home_occ">My business will be in a space other than my home &rarr;</a>
+    </label>
   
   </form>
 
@@ -330,7 +373,7 @@
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="workingFromHome">
+<div class="screen" id="location_home_occ">
 
   <h1>Working From Home</h1>
   
@@ -338,7 +381,7 @@
   
   <p>More precisely: work-from-home businesses &mdash; known as "home occupations" &mdash; need to follow the rules outlined in section <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.160">24.10.160</a> of the city of Santa Cruz's Municipal Code.</p>
   
-  <h3 class="toggle">Santa Cruz Municipal Code 24.10.160</h3>
+  <p class="toggle"><a href="#">Read Santa Cruz Municipal Code 24.10.160. It won't take long! We'll wait.<a/></p>
   <blockquote class="drawer">
     <ol>
       <li>Intent. The discretionary approval of a home occupation is intended to allow for home enterprises, which are clearly incidental and secondary to the use of the dwelling unit and compatible with surrounding residential uses. A home occupation allows for the gainful employment in the home by any occupant of a dwelling so long as the enterprise does not require frequent customer access or have associated characteristics which would reduce the surrounding residents’ enjoyment of their neighborhood.</li>
@@ -362,258 +405,34 @@
     </ol>
   </blockquote>
   
+  <hr>
+  
+  <p>You've told us that you're <strong>working from home</strong>.</p>
+  
+  <hr>
+  
+  <h3>Where do you live?</h3>
+  
   <form method="post" action="">
     <label for="business_address">
-      <span>What&lsquo;s your home address?</span>
-      <input type="text" name="business_address_street" id="business_address_street">
+      <span>What&lsquo;s your business's physical address? (This should be your home address.)</span>
+      <input type="text" name="business_address_street" id="business_address_street" placeholder="Street Address">
       <input type="text" name="business_address_city" id="business_address_city" placeholder="City">,
       <input type="text" name="business_address_state" id="business_address_state" placeholder="State">
       <input type="text" name="business_address_zip" id="business_address_zip" placeholder="Zip">
     </label>
+    
+    <label for="mailing_address">
+      <input type="checkbox" checked="checked"> My business's mailing address is the same.
+    </label>
   </form>
   
   <p class="next">
-    <a href="#yourBusinessName">Yep, my work-from-home business complies with all those rules &rarr;</a>
+    <a href="#helper_fbn">Yep, my work-from-home business complies with all these rules &rarr;</a>
   </p>
   <p class="next">
-    <a href="#contactPlanning">I want to work from home, but it sounds like I might not be able to. Help! &rarr;</a>
+    <a href="#contact">Uh-oh. Sounds like I might not be able to operate this business from home. Help! &rarr;</a>
   </p>
-
-</div>
-
-<hr><!-- ================================================================================ -->
-
-<div class="screen" id="contactPlanning">
-
-  <h1>Contact Us</h1>
-  
-  <p>Send the Planning Department your question here, and we'll respond within 4 business days.</p>
-  
-  <p>If you need to speak with someone sooner than that, <a href="hereToHelp">here's how to contact the Planning Department</a>.</p>
-  
-  <form method="post" action="">
-  
-    <label for="name">
-      <span>Your Name</span>
-      <input type="text" id="fname" placeholder="First name">
-      <input type="text" id="lname" placeholder="Last name">
-    </label>
-  
-    <label for="email">
-      <span>Your Email Address</span>
-      <input type="text" id="email" placeholder="you@domain.com">
-    </label>
-  
-    <label for="subject">
-      <span>I have a question about</span>
-      <select name="subject" id="subject">
-        <option>Starting a home-based business</option>
-        <option>Starting a non-home-based business</option>
-        <option>Something else</option>
-      </select>
-    </label>
-    
-    <label for="comments">
-      <span>My question is</span>
-      <textarea name="comments" id="comments"></textarea>
-    </label>
-  
-  </form>
-  
-  <p class="next"><a href="contactPlanningThanks">Send this to the Planning Department &rarr;</a></p>
-
-</div>
-
-<hr><!-- ================================================================================ -->
-
-<div class="screen" id="contactPlanningThanks">
-
-  <h1>Thanks!</h1>
-  
-  <p>Thanks for contacting us. We will get in touch with you within 4 business days.</p>
-  
-  <p>If you need to speak with someone sooner than that, <a href="hereToHelp">here's how to contact the Planning Department</a>.</p>
-  
-  <p class="next">How'd we do? <a href="#feedback">Give us some feedback &rarr;</a></p>
-
-</div>
-
-<hr><!-- ================================================================================ -->
-
-<div class="screen" id="feedback">
-
-  <h1>Give us some feedback</h1>
-
-  <p>If you have a moment, we would love to get your thoughts on this site.</p>
-  
-  <form method="post" action="">
-  
-    <label for="mood">
-      <span>How well did we do at answering your questions?</span>
-      <ul>
-        <li><input type="radio" name="mood" value="happy"> &#9786;</li>
-        <li><input type="radio" name="mood" value="neutral"> (Neutralface)</li>
-        <li><input type="radio" name="mood" value="unhappy"> &#9785;</li>
-      </ul>
-    </label>
-  
-    <label for="suggestions">
-      <span>What could we have done better?</span>
-      <textarea name="suggestions" id="suggestions"></textarea>
-    </label>
-  
-    <label for="followup">
-      <span>Would you like us to follow up with you?</span>
-      <ul>
-        <li>Yes, email me at: <input type="text" name="email" id="email" placeholder="you@email.com"></li>
-        <li>Yes, call me at: <input type="text" name="phone" id="phone" placeholder="(831) 555-1212"></li>
-      </ul>
-    </label>
-  
-    <p class="next"><button>Submit</button></p>
-    
-  </form>
-
-</div>
-
-<hr><!-- ================================================================================ -->
-
-<div class="screen" id="feedbackThanks">
-
-  <h1>Thanks for sharing!</h1>
-  
-  <p>Thanks, we've received your feedback.</p>
-  
-  <p>(If they gave an email or phone) We'll follow up with you within one workday.</p>
-  
-  <p>Thanks for helping us improve OpenCounter!</p>
-  
-  <p class="next"><a href="#welcome">OpenCounter Home</a></p>
-
-</div>
-
-<hr><!-- ================================================================================ -->
-
-<div class="screen" id="yourBusinessName">
-
-  <h1>What&rsquo;s in a name?</h1>
-  
-  <p>If the name of your business does not contain your last name, you will need to apply to Santa Cruz County for a Fictitious Business Name (FBN).</p>
-  
-  <p>For example, if your last name is Smith and your business is called "Smith&rsquo;s Tanning," you won't need an FBN. But if your business is called "Eastside Tanning," you will need an FBN.</p>
-  
-  <form method="post" action="">
-    <label for="business_name">
-      <span>What's your business's name?</span>
-      <input type="text" name="business_name" id="business_name" placeholder="Your Business Name Here">
-    </label>
-  </form>
-  
-  <p class="next">My business will need a FBN. <a href="#FBN">Get one &rarr;</a></p>
-  <p class="next">My business doesn't need a FBN. <a href="#incorporation">Next: Incorporation &rarr;</a></p>
-
-</div>
-
-
-<hr><!-- ================================================================================ -->
-
-<div class="screen" id="FBN">
-
-  <h1>Fictitious Business Name</h1>
-  
-  <p>To get a <abbr title="Fictitious Business Name">FBN</abbr> from the County of Santa Cruz, you'll need the following information:</p>
-  
-  <table cellspacing="0">
-    Fictitious Business Name
-    Street Address of Principal Place of Business
-    City, State, ZIP
-    
-    Mailing Address if Different
-    
-    
-    Registered Owner(s):
-    <table>
-      <tr>
-        <th>Full Name</th>
-        <th>Residence Address</th>
-        <th>City</th>
-        <th>State</th>
-        <th>ZIP</th>
-        <th>If corporation or LLC, state of incorporation/organization</th>
-      </tr>
-    </table>
-    
-    Business is conducted by:
-    <select>
-      <option>an Individual</option>
-      <option>a General Partnership</option>
-      <option>a Limited Partnership</option>
-      <option>a Limited Liability Company (LLC)</option>
-      <option>an Unincorporated Association other than a Partnership</option>
-      <option>a Corporation</option>
-      <option>a Trust</option>
-      <option>Copartners</option>
-      <option>Husband and Wife</option>
-      <option>a Joint Venture</option>
-      <option>State or Local Registered Domestic Partners</option>
-      <option>a Limited Liability Partnership (LLP)</option>
-    </select>
-    
-  </table>
-  
-  <a href="">Generate PDF with this info.</a>
-
-  <p class="next"><a href="http://www.sccoclerk.com/fbngen.htm">Go to the County's website &rarr;</a></p>
-  <p class="next"><a href="#incorporation">Do this later &rarr;</a></p>
-</div>
-
-<hr><!-- ================================================================================ -->
-
-<div class="screen" id="incorporation">
-
-  <h1>Incorporation</h1>
-  
-  <p>You don't need to incorporate to start a business in Santa Cruz, but it should be something you think about.</p>
-  
-  <p>For more information on incorporation, speak with an accountant or visit <a href="http://www.sos.ca.gov/business/">The California Business Portal</a>.</p>
-  
-  <form method="post" action="">
-    
-    <label for="business_legal_structure">
-      <span>Are you incorporated?</span>
-      <input type="radio" name="sole_prop"> Sole Proprietor
-      <input type="radio" name="partnership_or_llc"> Partnership or LLC
-      <input type="radio" name="corp"> Corporation
-      <input type="radio" name="trust"> Trust
-    </label>
-    
-    <label>
-      <span>Do you have any co-owners or corporate officers?</span>
-      <div>
-        <input type="radio"> I am the sole owner of this business.
-      </div>
-      <div>
-        <input type="radio"> There are other owners:
-        <table cellspacing="0">
-          <tr>
-            <th>+</th>
-            <th>Position or Title</th>
-            <th>Name</th>
-            <th>Physical Address</th>
-          </tr>
-          <tr>
-            <td><a href="#">+</a></td>
-            <td><input type="text" placeholder="Co-Owner"></td>
-            <td><input type="text" placeholder="Carolyn Cutting"></td>
-            <td><input type="text" placeholder="123 Coop Terrace, Santa Cruz, CA 12345"></td>
-          </tr>
-        </table>
-      </div>
-    </label>
-  </form>
-  
-  <p class="next"><a href="#homeOccSummary">All set. Next, summary &rarr;</a></p>
-  <p class="next"><a href="#contactPlanning">I'm not sure / I have questions about this. &rarr;</a></p>
 
 </div>
 
@@ -1294,6 +1113,243 @@ SCENARIO: User wants to start a retail biz
 SCENARIO: User wants to start a retail biz and doesn't know where to put it.
 
 </div>
+
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="contactPlanning">
+
+  <h1>Contact Us</h1>
+  
+  <p>Send the Planning Department your question here, and we'll respond within 4 business days.</p>
+  
+  <p>If you need to speak with someone sooner than that, <a href="hereToHelp">here's how to contact the Planning Department</a>.</p>
+  
+  <form method="post" action="">
+  
+    <label for="name">
+      <span>Your Name</span>
+      <input type="text" id="fname" placeholder="First name">
+      <input type="text" id="lname" placeholder="Last name">
+    </label>
+  
+    <label for="email">
+      <span>Your Email Address</span>
+      <input type="text" id="email" placeholder="you@domain.com">
+    </label>
+  
+    <label for="subject">
+      <span>I have a question about</span>
+      <select name="subject" id="subject">
+        <option value="">Starting a home-based business</option>
+        <option value="">Starting a non-home-based business</option>
+        <option value="">Something else</option>
+      </select>
+    </label>
+    
+    <label for="comments">
+      <span>My question is</span>
+      <textarea name="comments" id="comments"></textarea>
+    </label>
+  
+  </form>
+  
+  <p class="next"><a href="contactPlanningThanks">Send this to the Planning Department &rarr;</a></p>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="contactPlanningThanks">
+
+  <h1>Thanks!</h1>
+  
+  <p>Thanks for contacting us. We will get in touch with you within 4 business days.</p>
+  
+  <p>If you need to speak with someone sooner than that, <a href="hereToHelp">here's how to contact the Planning Department</a>.</p>
+  
+  <p class="next">How'd we do? <a href="#feedback">Give us some feedback &rarr;</a></p>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="feedback">
+
+  <h1>Give us some feedback</h1>
+
+  <p>If you have a moment, we would love to get your thoughts on this site.</p>
+  
+  <form method="post" action="">
+  
+    <label for="mood">
+      <span>How well did we do at answering your questions?</span>
+      <ul>
+        <li><input type="radio" name="mood" value="happy"> &#9786;</li>
+        <li><input type="radio" name="mood" value="neutral"> (Neutralface)</li>
+        <li><input type="radio" name="mood" value="unhappy"> &#9785;</li>
+      </ul>
+    </label>
+  
+    <label for="suggestions">
+      <span>What could we have done better?</span>
+      <textarea name="suggestions" id="suggestions"></textarea>
+    </label>
+  
+    <label for="followup">
+      <span>Would you like us to follow up with you?</span>
+      <ul>
+        <li>Yes, email me at: <input type="text" name="email" id="email" placeholder="you@email.com"></li>
+        <li>Yes, call me at: <input type="text" name="phone" id="phone" placeholder="(831) 555-1212"></li>
+      </ul>
+    </label>
+  
+    <p class="next"><button>Submit</button></p>
+    
+  </form>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="feedbackThanks">
+
+  <h1>Thanks for sharing!</h1>
+  
+  <p>Thanks, we've received your feedback.</p>
+  
+  <p>(If they gave an email or phone) We'll follow up with you within one workday.</p>
+  
+  <p>Thanks for helping us improve OpenCounter!</p>
+  
+  <p class="next"><a href="#welcome">OpenCounter Home</a></p>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="helper_fbn">
+
+  <h1>Fictitious Business Names (or, what&rsquo;s in a name?)</h1>
+  
+  <p>If the name of your business does not contain your last name, you will need to apply to Santa Cruz County for a Fictitious Business Name (FBN).</p>
+  
+  <p>For example, if your last name is Smith and your business is called "Smith&rsquo;s Tanning," you won't need an FBN. But if your business is called "Eastside Tanning," you will need an FBN.</p>
+  
+  <hr>
+  
+  <p>You've told us that your name is <strong>Annie Oakley</strong> and your business's name is <strong>Oakley Get Your Gun, Inc.</strong></p>
+  
+  <hr>
+  
+  <p class="next">This means you <strong>won't</strong> need an FBN. <a href="#helper_incorporation">Next &rarr;</a></p>
+  
+  <hr>
+  
+  <p>This means you <strong>will</strong> need an FBN. <a href=""></a></p>
+  
+  <p>To get a <abbr title="Fictitious Business Name">FBN</abbr> from the County of Santa Cruz, you'll need the following information:</p>
+  
+  <table cellspacing="0">
+    Fictitious Business Name
+    Street Address of Principal Place of Business
+    City, State, ZIP
+    <input type="text" name="business_address_street" placeholder="">
+    <input type="text" name="business_address_city">
+    <input type="text" name="business_address_state">
+    <input type="text" name="business_address_zip">
+    
+    Mailing Address if Different
+    
+    
+    Registered Owner(s):
+    <table>
+      <tr>
+        <th>Full Name</th>
+        <th>Residence Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>ZIP</th>
+        <th>If corporation or LLC, state of incorporation/organization</th>
+      </tr>
+    </table>
+    
+    Business is conducted by:
+    <select>
+      <option>an Individual</option>
+      <option>a General Partnership</option>
+      <option>a Limited Partnership</option>
+      <option>a Limited Liability Company (LLC)</option>
+      <option>an Unincorporated Association other than a Partnership</option>
+      <option>a Corporation</option>
+      <option>a Trust</option>
+      <option>Copartners</option>
+      <option>Husband and Wife</option>
+      <option>a Joint Venture</option>
+      <option>State or Local Registered Domestic Partners</option>
+      <option>a Limited Liability Partnership (LLP)</option>
+    </select>
+    
+  </table>
+  
+  <a href="">Generate PDF with this info.</a>
+
+  <p class="next"><a href="http://www.sccoclerk.com/fbngen.htm">Go to the County's website &rarr;</a></p>
+  <p class="next"><a href="#helper_incorporation">Do this later &rarr;</a></p>  
+  
+</div>
+
+<hr><!-- ================================================================================ -->
+
+<div class="screen" id="incorporation">
+
+  <h1>Incorporation</h1>
+  
+  <p>You don't need to incorporate to start a business in Santa Cruz, but it should be something you think about.</p>
+  
+  <p>For more information on incorporation, speak with an accountant or visit <a href="http://www.sos.ca.gov/business/">The California Business Portal</a>.</p>
+  
+  <form method="post" action="">
+    
+    <label for="business_legal_structure">
+      <span>Are you incorporated?</span>
+      <input type="radio" name="sole_prop"> Sole Proprietor
+      <input type="radio" name="partnership_or_llc"> Partnership or LLC
+      <input type="radio" name="corp"> Corporation
+      <input type="radio" name="trust"> Trust
+    </label>
+    
+    <label>
+      <span>Do you have any co-owners or corporate officers?</span>
+      <div>
+        <input type="radio"> I am the sole owner of this business.
+      </div>
+      <div>
+        <input type="radio"> There are other owners:
+        <table cellspacing="0">
+          <tr>
+            <th>+</th>
+            <th>Position or Title</th>
+            <th>Name</th>
+            <th>Physical Address</th>
+          </tr>
+          <tr>
+            <td><a href="#">+</a></td>
+            <td><input type="text" placeholder="Co-Owner"></td>
+            <td><input type="text" placeholder="Carolyn Cutting"></td>
+            <td><input type="text" placeholder="123 Coop Terrace, Santa Cruz, CA 12345"></td>
+          </tr>
+        </table>
+      </div>
+    </label>
+  </form>
+  
+  <p class="next"><a href="#homeOccSummary">All set. Next, summary &rarr;</a></p>
+  <p class="next"><a href="#contactPlanning">I'm not sure / I have questions about this. &rarr;</a></p>
+
+</div>
+
+
 
 
 
