@@ -1,0 +1,2 @@
+class FieldAnswersController < ApplicationController
+end
