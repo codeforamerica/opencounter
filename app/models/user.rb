@@ -1,3 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :firstName, :lastName, :lastState, :token
+  attr_accessible :first_name, :last_name, :last_state, :token
+
+  has_many :field_answers
 end
