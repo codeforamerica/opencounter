@@ -1218,9 +1218,6 @@
           <label for="">APN (Assessor's Parcel Number):</label>
           <input type="text">
 
-          <label for=""></label>
-          <input type="text">
-
           <form>
               Please describe the previous use of the property:
               <textarea></textarea>
@@ -1303,30 +1300,20 @@
           <label for="">Agent address:</label>
           <input type="text">
 
-          <label for="">Agent's city:</label>
-          <input type="text">
-
-          <label for="">Agent's State/ZIP:</label>
-          <input type="text">
-
           <label for="">Agent's phone number:</label>
           <input type="text">
 
           <label for="">Current Date:</label>
           <input type="text">
 
-          <!--NOTE-->
-          <!--<label for="">Owner's name:</label>
-          <input type="text">--><!--Duplicate field-->
+          <label for="">Owner's name:</label><!--NOTE-->
+          <input type="text">
 
-          <!--<label for="">Owner's address:</label>
-          <input type="text">--><!--Duplicate field-->
+          <label for="">Owner's address:</label>
+          <input type="text">
 
-          <!--<label for="">Owner's ZIP:</label>
-          <input type="text">--><!--Duplicate field-->
-
-          <!--<label for="">Owner's phone number:</label>
-          <input type="text">--><!--Duplicate field-->
+          <label for="">Owner's phone number:</label>
+          <input type="text">
                 <!-- End Owner Agent Form -->
                         
 
@@ -1348,7 +1335,7 @@
           <label for="">Role of applicant:</label><!--NOTE-->
           <input type="text">
 
-          <label for="">Role of professional:</label><!--NOTE-->
+          <label for="">Role of professional:</label>
           <input type="text">
 
           <label for="">Professional's name:</label>
@@ -1363,7 +1350,7 @@
           <label for="">Professional's email:</label>
           <input type="text">
 
-          <label for="">Occupancy Cliass:</label>
+          <label for="">Occupancy Class:</label>
           <input type="text">
 
           <label for="">Type of construction:</label>
@@ -1381,7 +1368,7 @@
           <label for="">Quimby fee?</label><!--NOTE-->
           <input type="text">
 
-          <label for="">Is this a project related to a TIF (Traffic Impact Fee)?</label><!--NOTE-->
+          <label for="">Is this a project related to a TIF (Traffic Impact Fee)?</label>
           <input type="text">          
                 <!-- End Building Permit -->
         
@@ -1457,11 +1444,9 @@
           <input for="">Container (1, 2, 4, or 5 yard):</label><!--NOTE-->
           <input type="text">
 
-          <input for="">1 pickup?</label><!--NOTE-->
-          <input type="text">
-
-          <input for="">Multiple pickups?</label><!--NOTE-->
-          <input type="text">
+          <label>Multiple pickups or just one?</label><!--NOTE-->
+          <input type="radio"> One
+          <input type="radio"> Multiple
                 <!-- End Application for Utility Service -->
         
 
@@ -1479,7 +1464,7 @@
           <label>Type of application (new, renewal, etc):</label>
           <select id="application_type">
             <option value="new">             New application    </option>
-            <option value="renewal">         renewal            </option>
+            <option value="renewal">         Renewal            </option>
             <option value="change_ownership">Change in ownership</option>
             <option value="change_category"> Change in category </option>
           </select>
@@ -1531,10 +1516,10 @@
             <option value="area_1k">Less than 2,000 sq. ft</option>
             <option value="area_2k_5k">2,001 - 5,999 sq. ft</option>
             <option value="area_over">More than 6,000 sq. ft</option>
-            <option value="area_over">Swampmeet pre-packaged</option>
-            <option value="area_over">Limited food sales</option>
-            <option value="area_over">Produce stand</option>
-            <option value="area_over">Certified farmer's market</option>
+            <option value="swampmeet">Swampmeet pre-packaged</option>
+            <option value="limited_sales">Limited food sales</option>
+            <option value="produce">Produce stand</option>
+            <option value="farmers">Certified farmer's market</option>
           </select>
 
           <!--If any of the area fields are selected, display these-->
@@ -1598,9 +1583,7 @@
           <!--End corporation field-->
 
           <!--These fields applies to LLCs-->
-          <input for="">How many people will manage your LLC?</label>
-          <input type="text">
-
+          <label>How many people will manage your LLC?</label>
           <select id="managers">
             <option value="one">One manager</option>
             <option value="multiple">More than one manager</option>
@@ -1635,10 +1618,10 @@
                 <!-- Begin Payroll Tax Registration -->
                 <!-- CONDITION: Business has 2+ employees -->
 
-          <input for="">Owner name 1:</label>
+          <input for="">Owner 1 name:</label>
           <input type="text">
 
-          <input for="">Owner name 2:</label>
+          <input for="">Owner 2 name:</label>
           <input type="text">
 
           <input for="">Owner 1 Social Security:</label>
@@ -1654,9 +1637,6 @@
           <input type="text">
 
           <input for="">Ownership start date:</label>
-          <input type="text">
-
-          <input for="">Corporation / LLC / LP Name:</label>
           <input type="text">
 
           <input for="">Secretary of State Corp / LLC / LP ID number:</label>
@@ -1745,7 +1725,7 @@
 
           <input for="">Employer type:</label>
           <select id="employer_type">
-          <option value="commercial">commercial</option>
+          <option value="commercial">Commercial</option>
           <option value="maritime">Pacific maritime</option>
           <option value="fishing">Fishing boat</option>
           </select>
@@ -1779,7 +1759,6 @@
 
           <input for="">Email of contact person for business:</label>
           <input type="text">
-  
           <!-- NOTE: I'm still working out a substitute tax if the person is working alone -->
                 <!-- End Payroll Tax Registration -->
         
