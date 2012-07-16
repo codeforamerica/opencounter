@@ -29,7 +29,6 @@ get '/code-search' do
 end
 
 post '/code-search' do
-
   @naics = Naics.relevant_search("#{params[:query]}", "#{params[:category]}".to_i)
   erb :codes
 end
