@@ -1,11 +1,17 @@
 <html>
 
 <head>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
   <style type="text/css">
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'PT Sans', sans-serif;
       line-height: 1.5em;
+      background: #DDD;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Open Sans Condensed', sans-serif;
     }
     
     .main {
@@ -84,115 +90,192 @@
       border-radius: 100px / 10px;
     }
     
-    /* Profile */
-    .profile {
+    /* Navigation */
+    .nav {
       position: fixed;
-      right: 0;
-      top: 0;
+      left: 5%;
+      top: 60px;
       height: 100%;
       overflow: auto;
       font-size: 82.5%;
       width: 300px;
-      background: #9CF;
+      text-transform: uppercase;
     }
     
-    /* Scenarios */
-    .scenario {
-      padding-left: 10px;
+    .nav ul {
+      color: #999;
+      border-left: 0.5em solid #FFF;
+      list-style: none;
+      margin-left: 1em;
+      padding: 1em;
     }
     
-    .scenario p a {
+    .nav li {
       display: block;
-      padding-bottom: 0.5em;
+      color: #CCC;
+      padding: 1em 0;
+    }
+    
+    .nav li.current {
+      color: rgb(51,182,230);
+    }
+    
+    .nav li.incomplete {
+      color: #FCF;
+    }
+    
+    .nav a {
+      display: block;
+      color: #444;
+      text-decoration: none;
+    }
+    
+    /* Header */
+    .header {
+      background: #111;
+      color: rgb(51,182,230);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+    }
+    
+    .branding {
+      background: rgb(51,182,230);
+      color: #FFF;
+      float: left;
+      width: 200px;
+      margin: 0 0 -10px 5%;
+      text-align: center;
+      padding: 0.2em 0;
+    }
+    
+    /* Utility nav */
+    .utilities {
+      list-style: none;
       position: relative;
-      text-align: center;
-    }
-    
-    .scenario p a:before {
-      content:"\21E3";
-      display: block;
-      text-align: center;
-    }
-    
-    .scenario p a:first-child:before {
-      content:"";
+      overflow: auto;
+      margin: 0;
       padding: 0;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+    }
+    
+    .utilities li {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      position: relative;
+      overflow: auto;
+    }
+    
+    .utilities a {
+      display: block;
+      color: rgb(51,182,230);
+      text-transform: uppercase;
+      white-space: nowrap;
+      padding: 0.5em 10px;
+      text-decoration: none;
+    }
+    
+    .utilities a:hover {
+      background: rgb(51,182,230);
+      color: #FFF;
+    }
+    
+    /* Utility */
+    .utility {
+      background: rgb(51,182,230);
+      color: #FFF;
+      display: none;
     }
     
   </style>
 </head>
 
 <body>
-  <div class="profile">
 
-<div class="scenario">
-  <h3>SCENARIO: Home Occupancy</h3>
-  <p>
-    <a href="#intro_welcome">Welcome</a>
-    <a href="#intro_big_picture">The Big Picture</a>
-    <a href="#intro_here_to_help">We're Here To Help</a>
+  <div class="header">
+  
+    <h1 class="branding">OpenCounter</h1>
     
-    <a href="#info_applicant">Tell Us About Yourself</a>
-    <a href="#info_business">Tell Us About Your Business</a>
+    <ul class="utilities">
+      <li><a class="profile-link"  href="#profile">Your Saved Info &darr;</a></li>
+      <li><a class="contact-link"  href="#contact">Contact Us</a></li>
+      <li><a class="feedback-link" href="#feedback">Feedback</a></li>
+      <li><a class="credits-link"  href="#credits">Credits</a></li>
+    </ul>
     
-    <a href="#location_home_occ">Working From Home</a>
+    <div class="utility" id="profile">
+      
+    </div>
     
-    <a href="#helper_use_permit">Use Permit Helper</a>
-    <a href="#helper_business_license">Business License Helper</a>
+    <div class="utility" id="contact">
+      
+    </div>
     
-    <a href="#non_city_regulations">Non-City Regulations</a>
+    <div class="utility" id="feedback">
+      <h3>Give us some feedback</h3>
+      <p>If you have a moment, we would love to get your thoughts on this site.</p>
+      <form method="post" action="">
+        <label for="mood">
+          <span>How well did we do at answering your questions?</span>
+          <ul>
+            <li><input type="radio" name="mood" value="happy"> &#9786;</li>
+            <li><input type="radio" name="mood" value="neutral"> (Neutralface)</li>
+            <li><input type="radio" name="mood" value="unhappy"> &#9785;</li>
+          </ul>
+        </label>
+        <label for="suggestions">
+          <span>What could we have done better?</span>
+          <textarea name="suggestions" id="suggestions"></textarea>
+        </label>
+        <label for="followup">
+          <span>Would you like us to follow up with you?</span>
+          <ul>
+            <li>Yes, email me at: <input type="text" name="email" id="email" placeholder="you@email.com"></li>
+            <li>Yes, call me at: <input type="text" name="phone" id="phone" placeholder="(831) 555-1212"></li>
+          </ul>
+        </label>
+        <p class="next"><button>Submit</button></p>
+      </form>
+    </div>
     
-    <a href="#summary">Summary &amp; Downloads</a>
-  </p>
-</div>
+    <div class="utility" id="credits">
+      <h3>Credits</h3>
+      <p>A collaboration between the <a href="#">City of Santa Cruz, CA</a> and <a href="#">Code for America</a>.</p>
+    </div>
+  </div>
 
-<div class="scenario">
-  <h3>SCENARIO: Non-Home Occupancy</h3>
-  <p>
-    <a href="#intro_welcome">Welcome</a>
-    <a href="#intro_big_picture">The Big Picture</a>
-    <a href="#intro_here_to_help">We're Here To Help</a>
-    
-    <a href="#info_applicant">Tell Us About Yourself</a>
-    <a href="#info_business">Tell Us About Your Business</a>
-    
-    <a href="#location_non_home_occ">Siting Your Business</a>
-    <a href="#location_zoning_map">-- Explore Santa Cruz Zoning (Map)</a>
-    <a href="#location_find_a_site">-- SiteMy.Biz</a>
-    <a href="#location_parking">-- Parking</a>
-    <a href="#location_utilities">-- Utilities</a>
-    <a href="#location_restaurants">-- Restaurants</a>
-    <a href="#location_industrial">-- Industrial</a>
-    <a href="#location_downtown">-- Downtown</a>
-    
-    <a href="#helper_use_permit">Use Permit Helper</a>
-    <a href="#helper_building_permit">Building Permit Helper</a>
-    <a href="#helper_business_license">Business License Helper</a>
-    
-    <a href="#non_city_regulations">Non-City Regulations</a>
-    
-    <a href="#summary">Summary &amp; Downloads</a>
-  </p>
-</div>
-
-<div class="scenario">
-  <h3>SCENARIO: Feedback</h3>
-  <p>
-    <a href="">Feedback</a>
-    <a href="">Feedback Thanks</a>
-    <a href="">Welcome</a>
-  </p>
-</div>
-
-<div class="scenario">
-  <h3>SCENARIO: Get Help</h3>
-  <p>
-    <a href="">Contact Planning</a>
-    <a href="">Contact Planning Thanks</a>
-    <a href="">We're Here To Help</a>
-  </p>
-</div>
-
+  <div class="nav">
+    <ul>
+      <li class="current"><a href="#intro_welcome">Welcome</a></li>
+      <li class="incomplete"><a href="#intro_big_picture">The Big Picture</a></li>
+      <li class="complete"><a href="#intro_here_to_help">We're Here To Help</a></li>
+      <li><a href="#info_applicant">Tell Us About Yourself</a></li>
+      <li><a href="#info_business">Tell Us About Your Business</a></li>
+      <li>
+        <a href="#location_home_occ">Location</a>
+        <!--
+        <a href="#location_non_home_occ">Siting Your Business</a>
+        <a href="#location_zoning_map">-- Explore Santa Cruz Zoning (Map)</a>
+        <a href="#location_find_a_site">-- SiteMy.Biz</a>
+        <a href="#location_parking">-- Parking</a>
+        <a href="#location_utilities">-- Utilities</a>
+        <a href="#location_restaurants">-- Restaurants</a>
+        <a href="#location_industrial">-- Industrial</a>
+        <a href="#location_downtown">-- Downtown</a>
+        -->
+      </li>
+      <li><a href="#helper_use_permit">Use Permit Helper</a></li>
+      <li><a href="#helper_building_permit">Building Permit Helper</a></li>
+      <li><a href="#helper_business_license">Business License Helper</a></li>
+      <li><a href="#non_city_regulations">Non-City Regulations</a></li>
+      <li><a href="#summary">Summary &amp; Downloads</a></li>
+    </ul>
   </div>
 
   <div class="main">
@@ -340,6 +423,8 @@
     <label for="business_type">
       <span>What will your business do?</span>
       <input type="text" placeholder="SIC/NAICS tool here, with freeform entry">
+      <iframe src="http://pdfmongotest.herokuapp.com/calgold?kywd=search" frameborder="0" width="450" height="200"></iframe>
+      <p>(Not sure of your business type? Not finding your business type listed? Simply enter the words "General Business Information" above, or select it from the list.)</p>
     </label>
     
     <label for="business_structure">
@@ -470,7 +555,7 @@
   <hr>
   
   <p>You've told us that you're <strong>working from home</strong>, and you've confirmed that your business complies with Santa Cruz Municipal Code 24.10.160.</p>
-  <p>The use permit you need is a <em>Zoning Clearance</em>. You'll need to submit it to the Planning Department, and the fee is $XXX.</p>
+  <p>The use permit you need is a <em>Zoning Clearance</em>. You'll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
   <p>[Generate PDF] Download your Zoning Clearance</p>
   
   <p class="next">Next: <a href="#helper_business_license">Get your business license &rarr;</a></p>
@@ -479,7 +564,7 @@
   
   <p>You've told us that you're <strong>working from 123 Anystreet Place, Santa Cruz, CA 91234</strong>, and your business is of type <strong>[business type here]</strong>.</p>
   <p>This use is <strong>principally permitted</strong> at this location.</p>
-  <p>The use permit you need is a <em>Zoning Clearance</em>. You'll need to submit it to the Planning Department, and the fee is $XXX.</p>
+  <p>The use permit you need is a <em>Zoning Clearance</em>. You'll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
   <p>[Generate PDF] Download your Zoning Clearance</p>
   
   <p class="next">Next: <a href="#helper_business_license">Get your business license &rarr;</a></p>
@@ -506,14 +591,87 @@
 
 <hr><!-- ================================================================================ -->
 
+<div class="screen" id="helper_building_permit">
+
+  <h1>Building Permits</h1>
+
+  <p>Are you doing any renovations or tenant improvements?</p>
+
+  <p class="next">Next: <a href="#helper_business_license">Get your business license &rarr;</a></p>
+
+</div>
+
+<hr><!-- ================================================================================ -->
+
 <div class="screen" id="helper_business_license">
 
   <h1>Business License</h1>
 
   <p>Once you have your use permit and any tenant improvements approved, you'll need a business license from the Finance Department.</p>
-  <p>Getting a business license is a breeze.</p>
-  <p>Business licenses help the city categorize employers and keep track of its employment base. This is important information that guides city services. Your business license needs to be renewed each year.</p>
-  <p>It is more of a tax than a license.</p>
+  
+  <p>Your business license, also known as a business tax registration, helps the city categorize employers and keep track of its employment base. This is important information that guides city services.</p>
+  <p>Your business license needs to be renewed each year.</p>
+  
+  <p>In Santa Cruz, business licenses cost $145.15 a year, plus $4 for each additional employee.</p>
+  <p>The $145.15 fee goes toward the general fund that pays for city staff.</p>
+
+  <p>[Download PDF] to take to the Finance Department.</p>
+
+<pre class="formatted_data">
+Name
+[First] [Last]
+
+Email
+[email]
+
+Home Phone
+[phone]
+
+Emergency Phone
+[phone]
+
+Your Home Address (Must be a physical address, not a P.O. box.)
+[Street] [City] [State] [Zip]
+
+Your Mailing Address
+* Same as home address
+* [Street] [City] [State] [Zip]
+
+Type of ownership
+* Sole Proprietorship
+* Partnership or LLC
+* Corporation
+* Trust
+
+(If not a sole proprietorship) Are there any co-owners or corporate officers?
++ [Position/Title] [First] [Last] [Physical Address]
+
+Type of Business
+[business type]
+
+Business Phone
+[phone]
+
+State ID #
+[text]
+
+State Sales Tax #
+[text]
+
+Federal Tax ID #
+[text]
+
+State Contractor's License #
+[text]
+
+Declaration
+[checkbox] I declare under penalty of perjury, that the above information which
+I have set forth in this application is true and accurate to the best of my
+knowledge and that I agree to operate the above described business in strict
+compliance with city zoning regulations governing same.
+</pre>
+
+  <p class="next">Last thing: <a href="">Check if there are non-city regulations that apply to you &rarr;</a></p>
 
 </div>
 
@@ -527,14 +685,7 @@
   
   <p>The state of California maintains <a href="http://www.calgold.ca.gov/"><abbr title="California Government: On-Line to Desktops">CalGOLD</abbr></a>, a catalog of permits that apply to different types of businesses.</p>
   
-  <form method="post" action="">
-    <label>
-      <span>What type of business is this?</span>
-      <input type="" placeholder="[SIC CALCULATOR]">
-    </label>
-  </form>
-  
-  <iframe src="http://pdfmongotest.herokuapp.com/calgold?kywd=search" frameborder="0" width="450" height="300"></iframe>
+  <hr>
   
   <p>Based on what you've told us so far, your business is of type [SIC CODE], and here are the county, state, and federal permits you MAY be required to fill out.</p>
   
@@ -546,9 +697,7 @@
     <li>Here?</li>
   </ul>
   
-  <p>Not sure of your business type? Not finding your business type listed? Simply enter the words "General Business Information" above, or select it from the list.</p>
-  
-  <p class="next"><a href="homeOccSummary">All set! Next: Zoning Clearance &rarr;</a></p>
+  <p class="next">All set? <a href="#summary">Summary &amp; Downloads &rarr;</a></p>
 
 </div>
 
@@ -557,6 +706,12 @@
 <div class="screen" id="summary">
 
   <h1>Summary &amp; Downloads</h1>
+  
+  <p>We've collected everything you've told us, listed all of the forms we think you'll need to complete, and estimated the fees you'll need to pay to start your business.</p>
+  
+  <h3>Your Information</h3>
+  <h3>Forms</h3>
+  <h3>Fees</h3>
   
 </div>
 
@@ -582,14 +737,6 @@
   <p class="next">No, I don't have a location picked out yet. <a href="#sitemybiz">Help me site my business &rarr;</a></p>
   
 </div>
-
-<hr><!-- ================================================================================ -->
-
-<div class="screen" id="credits">
-  <h1>Credits</h1>
-  <p>A collaboration between the <a href="#">City of Santa Cruz, CA</a> and <a href="#">Code for America</a>.</p>
-</div>
-
 
 <hr><!-- ================================================================================ -->
 
@@ -941,81 +1088,8 @@
 
 <div class="screen">
 
-# Ask: Business License
-
-Business License (Business Tax Registration):
-Any person or entity carrying on a trade or business must obtain a business
-license, use and occupancy permit or business tax certificate including those
-that are located outside the city limits but perform services for customers
-inside the city limits.
-
-In Santa Cruz, business licenses cost $145.15 a year, plus $4 for each additional employee.
-
-Business Licenses help the city categorize employers and keep track of its employment base. This is important information that guides city services. Your business License needs to be renewed each year.
-
-The $145.15 fee goes toward the general fund that pays for city staff.
-
-Name
-[First] [Last]
-
-Email
-[email]
-
-Home Phone
-[phone]
-
-Emergency Phone
-[phone]
-
-Your Home Address (Must be a physical address, not a P.O. box.)
-[Street] [City] [State] [Zip]
-
-Your Mailing Address
-* Same as home address
-* [Street] [City] [State] [Zip]
-
-Type of ownership
-* Sole Proprietorship
-* Partnership or LLC
-* Corporation
-* Trust
-
-(If not a sole proprietorship) Are there any co-owners or corporate officers?
-+ [Position/Title] [First] [Last] [Physical Address]
-
-Type of Business
-[business type]
-
-Business Phone
-[phone]
-
-State ID #
-[text]
-
-State Sales Tax #
-[text]
-
-Federal Tax ID #
-[text]
-
-State Contractor's License #
-[text]
-
-Declaration
-[checkbox] I declare under penalty of perjury, that the above information which
-I have set forth in this application is true and accurate to the best of my
-knowledge and that I agree to operate the above described business in strict
-compliance with city zoning regulations governing same.
-
-</div>
-
-<hr><!-- ================================================================================ -->
-
-<div class="screen">
-
 # Ask: Zoning Clearance
 
-$221.00
 
 
 <div class="field-pair">
