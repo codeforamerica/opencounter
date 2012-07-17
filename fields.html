@@ -15,8 +15,8 @@
     }
     
     .main {
-      width: 600px;
-      margin: 0 auto;
+      width: 60%;
+      margin: 0 10% 0 30%;
     }
     
     h1 {
@@ -90,47 +90,8 @@
       border-radius: 100px / 10px;
     }
     
-    /* Navigation */
-    .nav {
-      position: fixed;
-      left: 5%;
-      top: 60px;
-      height: 100%;
-      overflow: auto;
-      font-size: 82.5%;
-      width: 300px;
-      text-transform: uppercase;
-    }
+    /* === Header ============================= */
     
-    .nav ul {
-      color: #999;
-      border-left: 0.5em solid #FFF;
-      list-style: none;
-      margin-left: 1em;
-      padding: 1em;
-    }
-    
-    .nav li {
-      display: block;
-      color: #CCC;
-      padding: 1em 0;
-    }
-    
-    .nav li.current {
-      color: rgb(51,182,230);
-    }
-    
-    .nav li.incomplete {
-      color: #FCF;
-    }
-    
-    .nav a {
-      display: block;
-      color: #444;
-      text-decoration: none;
-    }
-    
-    /* Header */
     .header {
       background: #111;
       color: rgb(51,182,230);
@@ -193,6 +154,86 @@
       display: none;
     }
     
+    /* === Navigation ========================= */
+    
+    .progress-nav {
+      display: block;
+      position: absolute;
+      left: 5%;
+      top: 50px;
+      height: 100%;
+    }
+    
+    .progress-nav ul {
+      list-style: none;
+      overflow: auto;
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .progress-nav li {
+      display: block;
+      clear: both;
+      position: relative;
+      overflow: auto;
+      padding: 0;
+    }
+    
+    .progress-nav a:before,
+    .progress-nav a:after {
+      border-radius: 50%;
+      content: "";
+      display: block;
+      float: left;
+    }
+    
+    .progress-nav a:before {
+      background: #FFF;
+      margin-left: -3.25em;
+      margin-top: -0.5em;
+      height: 2em;
+      width: 2em;
+    }
+    
+    .progress-nav a:after {
+      height: 1em;
+      margin-left: -2.75em;
+      width: 1em;
+    }
+    
+    .progress-nav a {
+      border-left: 0.5em solid #FFF;
+      color: #666;
+      display: block;
+      margin-left: 1em;
+      padding: 0.5em 0 1em 2em;
+      text-decoration: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    
+    /* Default: gray */
+    .progress-nav a:after {
+      background: #999;
+    }
+    
+    /* Current and hover: white */
+    .progress-nav a:hover:after,
+    .progress-nav a.current:after {
+      background: #FFF;
+    }
+    
+    /* Incomplete: yellow */
+    .progress-nav a.incomplete:after {
+      background: #FF0;
+    }
+    
+    /* Complete: green */
+    .progress-nav a.complete:after {
+      background: #0F0;
+    }​
+    
   </style>
 </head>
 
@@ -250,15 +291,15 @@
     </div>
   </div>
 
-  <div class="nav">
+  <div class="progress-nav">
     <ul>
-      <li class="current"><a href="#intro_welcome">Welcome</a></li>
-      <li class="incomplete"><a href="#intro_big_picture">The Big Picture</a></li>
-      <li class="complete"><a href="#intro_here_to_help">We're Here To Help</a></li>
-      <li><a href="#info_applicant">Tell Us About Yourself</a></li>
-      <li><a href="#info_business">Tell Us About Your Business</a></li>
+      <li><a href="#intro_welcome">Welcome</a></li>
+      <li><a href="#intro_big_picture">The Big Picture</a></li>
+      <li><a class="current" href="#intro_here_to_help">We're Here To Help</a></li>
+      <li><a class="incomplete" href="#info_applicant">About You</a></li>
+      <li><a class="complete" href="#info_business">About Your Business</a></li>
       <li>
-        <a href="#location_home_occ">Location</a>
+        <a href="#location_home_occ">Your Location</a>
         <!--
         <a href="#location_non_home_occ">Siting Your Business</a>
         <a href="#location_zoning_map">-- Explore Santa Cruz Zoning (Map)</a>
@@ -270,9 +311,9 @@
         <a href="#location_downtown">-- Downtown</a>
         -->
       </li>
-      <li><a href="#helper_use_permit">Use Permit Helper</a></li>
-      <li><a href="#helper_building_permit">Building Permit Helper</a></li>
-      <li><a href="#helper_business_license">Business License Helper</a></li>
+      <li><a href="#helper_use_permit">Your Use Permit</a></li>
+      <li><a href="#helper_building_permit">Your Building Permit</a></li>
+      <li><a href="#helper_business_license">Your Business License</a></li>
       <li><a href="#non_city_regulations">Non-City Regulations</a></li>
       <li><a href="#summary">Summary &amp; Downloads</a></li>
     </ul>
