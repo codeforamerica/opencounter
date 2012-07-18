@@ -1481,37 +1481,39 @@ SCENARIO: User wants to start a retail biz and doesn't know where to put it.
   
   <form method="post" action="#">
     
-    <label for="business_legal_structure">
-      <span>Are you incorporated?</span>
-      <input type="radio" name="sole_prop"> Sole Proprietor
-      <input type="radio" name="partnership_or_llc"> Partnership or LLC
-      <input type="radio" name="corp"> Corporation
-      <input type="radio" name="trust"> Trust
+    <label>
+      Are you incorporated?
+      <select name="business_legal_structure">
+        <option value="sole_prop">Sole Proprietor</option>
+        <option value="partnership_or_llc">Partnership or LLC</option>
+        <option value="corp">Corporation</option>
+        <option value="trust">Trust</option>
+      </select>
     </label>
     
     <label>
-      <span>Do you have any co-owners or corporate officers?</span>
-      <div>
-        <input type="radio"> I am the sole owner of this business.
-      </div>
-      <div>
-        <input type="radio"> There are other owners:
-        <table cellspacing="0">
-          <tr>
-            <th>+</th>
-            <th>Position or Title</th>
-            <th>Name</th>
-            <th>Physical Address</th>
-          </tr>
-          <tr>
-            <td><a href="#">+</a></td>
-            <td><input type="text" placeholder="Co-Owner"></td>
-            <td><input type="text" placeholder="Carolyn Cutting"></td>
-            <td><input type="text" placeholder="123 Coop Terrace, Santa Cruz, CA 12345"></td>
-          </tr>
-        </table>
-      </div>
+      Do you have any co-owners or corporate officers?
+      <select>
+        <option value="solo">I am the sole owner of this business.</option>
+        <option value="multiple">There are other owners.</option>
+      </select>
     </label>
+
+    <table cellspacing="0">
+      <tr>
+        <th>+</th>
+        <th>Position or Title</th>
+        <th>Name</th>
+        <th>Physical Address</th>
+      </tr>
+      <tr>
+        <td><a href="#">+</a></td>
+        <td><input type="text" placeholder="Co-Owner"></td>
+        <td><input type="text" placeholder="Carolyn Cutting"></td>
+        <td><input type="text" placeholder="123 Coop Terrace, Santa Cruz, CA 12345"></td>
+      </tr>
+    </table>
+
   </form>
   
   <p class="next"><a href="#homeOccSummary">All set. Next, summary &rarr;</a></p>
