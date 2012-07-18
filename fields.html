@@ -367,7 +367,7 @@
   <h1>Welcome</h1>
   
   <p>Starting a business? We&rsquo;re here to help.</p>
-  <p>This website will guide you through the business permitting process in Santa Cruz, CA.</p.
+  <p>This website will guide you through the business permitting process in Santa Cruz, CA.</p>
   <p>You&rsquo;ll learn what regulations and fees apply to your business, and we&rsquo;ll help you get started on &mdash; or, in some cases, complete! &mdash; the paperwork you&rsquo;ll need to file to open your doors.</p>
   
   <p class="next">Let&rsquo;s get started by learning about <a href="#intro_big_picture">the big picture &rarr;</a></p>
@@ -406,7 +406,7 @@
       <p>The planning department's public counter is currently <span class="status">CLOSED</span>. <a href="mailto:planningcounter@cityofsantacruz.com">Email us &rarr;</a></p>
     </div>
     <p>You are always welcome to visit the Planning Department in person.</p>
-    <p>The Planning Department&#146;s public counter is located in City Hall, on the annex building's second floor, in room 206.</p>
+    <p>The Planning Department&rsquo;s public counter is located in City Hall, on the annex building&rsquo;s second floor, in room 206.</p>
     <p><img src="assets/img/planning-department-map.jpg" alt="Map to Planning Department" width="425" height="258"></p>
     <p>Santa Cruz City Hall<br>809 Center Street<br>Room 206<br>Santa Cruz, CA 95060</p>
     <p>Telephone: (831) 420-5100</p>
@@ -436,7 +436,7 @@
   
   <h3 class="toggle">California Secretary of State</h3>
   <div class="drawer">
-    <p>The Secretary of State&#8217;s office has a general <a href="http://www.sos.ca.gov/business/be/starting-a-business.htm" class="external">overview</a> of how to start a business.</li>
+    <p>The Secretary of State&#8217;s office has a general <a href="http://www.sos.ca.gov/business/be/starting-a-business.htm" class="external">overview</a> of how to start a business.</p>
     <p>Visit the <a href="#">California Secretary of State</a>.</p>
   </div>
   
@@ -518,7 +518,7 @@
       What will your business do?
       <input type="text" name="business_type" placeholder="SIC/NAICS tool here, with freeform entry">
     </label>
-    <iframe src="http://pdfmongotest.herokuapp.com/calgold?kywd=search" frameborder="0" width="450" height="200"></iframe>
+    <iframe src="http://pdfmongotest.herokuapp.com/calgold?kywd=search" width="450" height="200"></iframe>
     <p>(Not sure of your business type? Not finding your business type listed? Simply enter the words "General Business Information" above, or select it from the list.)</p>
     
     <label>
@@ -597,16 +597,26 @@
   <h3>Where do you live?</h3>
   
   <form method="post" action="#">
-    <label for="business_address">
-      <span>What&lsquo;s your business's physical address? (This should be your home address.)</span>
-      <input type="text" name="business_address_street" id="business_address_street" placeholder="Street Address">
-      <input type="text" name="business_address_city" id="business_address_city" placeholder="City">,
-      <input type="text" name="business_address_state" id="business_address_state" placeholder="State">
-      <input type="text" name="business_address_zip" id="business_address_zip" placeholder="Zip">
+    <p>What&lsquo;s your business's physical address? (This should be your home address.)</p>
+    <label>
+      Street
+      <input type="text" name="business_address_street" placeholder="Street Address">
+    </label>
+    <label>
+      City
+      <input type="text" name="business_address_city" placeholder="City">,
+    </label>
+    <label>
+      State
+      <input type="text" name="business_address_state" placeholder="State">
+    </label>
+    <label>
+      ZIP Code
+      <input type="text" name="business_address_zip" placeholder="Zip">
     </label>
     
-    <label for="mailing_address">
-      <input type="checkbox" checked="checked"> My business's mailing address is the same.
+    <label>
+      <input type="checkbox" name="does_mailing_address_match_business_address" checked="checked"> My business's mailing address is the same.
     </label>
   </form>
   
@@ -868,11 +878,11 @@ compliance with city zoning regulations governing same.
   
     <h3>Estimate your business's BIA.</h3>
     <label>
-      <span>Enter your business's square footage, e.g., 1000</span>
-      <input type="text" name="biz_area" value="" />
+      Enter your business's square footage
+      <input type="text" name="biz_area" value="" placeholder="e.g. 1000">
     </label>
     <label>
-      <span>What type of business do you operate?</span>
+      What type of business do you operate?
       <select name="biz_type">
         <option value="1">Retail & Food</option>
         <option value="2">Financial, Bars, and Theaters</option>
@@ -880,10 +890,10 @@ compliance with city zoning regulations governing same.
       </select>
     </label>
     <label>
-      <span>What's your business's street address?</span>
-      <input type="text" name="street_num_and_name" value="" />
+      What's your business's street address?
+      <input type="text" name="business_address" value="" placeholder="">
     </label>
-    <input type="submit" value="Calculate!" />
+    <input type="submit" value="Calculate!">
   </form>
 
 </div>
@@ -968,12 +978,14 @@ compliance with city zoning regulations governing same.
   <h3>Zoning Map</h3>
   <p>You can check a site's zoning and prior use by entering the address here:</p>
 
-  <form>
-    <label for="textfield">
-      <span>Enter the address here</span>
+  <form method="post" action="#">
+    <label>
+      Enter the address
       <input id="address" class="input" onkeydown="checkForEnter(event)" type="text" name="textfield" placeholder="1367 Pacific Avenue">
-      <input id="button" class="button" onclick="codeAddress()" type="submit" name="button" value="Submit">
     </label>
+
+    <input id="button" class="button" onclick="codeAddress()" type="submit" name="button" value="Submit">
+
   </form>
 
   <!-- Zoning Map -->
@@ -1184,43 +1196,43 @@ compliance with city zoning regulations governing same.
 
 # Ask: Zoning Clearance
 
-
-
 <div class="field-pair">
-  <label for="">Applicant Name</label>
-  <input type="text" name="" class="zoning-clearance business-license">
+  <label>
+    Applicant Name
+    <input type="text" name="" class="zoning-clearance business-license">
+  </label>
 </div>
 
 <div class="field-pair">
-  <label for="">Applicant Phone #</label>
-  <label for="">Applicant Address</label>
+  <label>Applicant Phone #</label>
+  <label>Applicant Address</label>
 </div>
 
 <div class="field-pair">
-  <label for="">Business Name</label>
+  <label>Business Name</label>
 </div>
 
-<label for="">Where will this business be located?</label>
+<label>Where will this business be located?</label>
 <input type="radio"><label class="label-radio">I'll be working from home</label>
 <input type="radio"><label class="label-radio">This business is in a commercial space</label>
 
 
-<label for="">Business Address</label>
-<label for="">Business Phone #</label>
-<label for="">APN</label>
-<label for="">Zoning District</label>
-<label for="">Intended Property Use</label>
-<label for="">Previous Property Use</label>
-<label for="">Date of Occupancy</label>
-<label for="">Total Area (sq. ft)</label>
-<label for="">First Floor Area</label>
-<label for="">Outdoor Area</label>
+<label>Business Address</label>
+<label>Business Phone #</label>
+<label>APN</label>
+<label>Zoning District</label>
+<label>Intended Property Use</label>
+<label>Previous Property Use</label>
+<label>Date of Occupancy</label>
+<label>Total Area (sq. ft)</label>
+<label>First Floor Area</label>
+<label>Outdoor Area</label>
 
-<label for="">Single Tenant</label>
-<label for="">Multi Tenant</label>
+<label>Single Tenant</label>
+<label>Multi Tenant</label>
 
-<label for="">Auto Parking Spaces</label>
-<label for="">Bicycle Parking Spaces</label>
+<label>Auto Parking Spaces</label>
+<label>Bicycle Parking Spaces</label>
 
 </div>
 
@@ -1327,19 +1339,18 @@ SCENARIO: User wants to start a retail biz and doesn't know where to put it.
   
   <form method="post" action="#">
   
-    <label for="name">
-      <span>Your Name</span>
-      <input type="text" id="fname" placeholder="First name">
-      <input type="text" id="lname" placeholder="Last name">
+    <label>
+      Your Name
+      <input type="text" id="name" placeholder="First Last">
     </label>
   
-    <label for="email">
-      <span>Your Email Address</span>
+    <label>
+      Your Email Address
       <input type="text" id="email" placeholder="you@domain.com">
     </label>
   
     <label for="subject">
-      <span>I have a question about</span>
+      I have a question about
       <select name="subject" id="subject">
         <option value="">Starting a home-based business</option>
         <option value="">Starting a non-home-based business</option>
@@ -1348,7 +1359,7 @@ SCENARIO: User wants to start a retail biz and doesn't know where to put it.
     </label>
     
     <label for="comments">
-      <span>My question is</span>
+      My question is
       <textarea name="comments" id="comments"></textarea>
     </label>
   
