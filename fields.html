@@ -266,17 +266,17 @@
     }
     
     /* Inner ring status colors */
-    .progress-nav .incomplete a:after {
-      background-color: #F00;
-    }
-    
     .progress-nav .current a:after {
       background-color: #33B6E6;
     }
     
     .progress-nav .complete a:after {
       background-color: #0F0;
-    }​
+    }
+    
+    .progress-nav .incomplete a:after {
+      background-color: #F00;
+    }
   </style>
 </head>
 
@@ -304,25 +304,22 @@
     <div class="utility" id="feedback">
       <h3>Give us some feedback</h3>
       <p>If you have a moment, we would love to get your thoughts on this site.</p>
-      <form method="post" action="">
-        <label for="mood">
-          <span>How well did we do at answering your questions?</span>
-          <ul>
-            <li><input type="radio" name="mood" value="happy"> &#9786;</li>
-            <li><input type="radio" name="mood" value="neutral"> (Neutralface)</li>
-            <li><input type="radio" name="mood" value="unhappy"> &#9785;</li>
-          </ul>
+      <form method="post" action="#">
+        <label>
+          How well did we do at answering your questions?
+          <select name="mood">
+            <option value="happy">Happy &#9786;</option>
+            <option value="neutral">Neutral</option>
+            <option value="unhappy">Unhappy &#9785;</option>
+          </select>
         </label>
-        <label for="suggestions">
-          <span>What could we have done better?</span>
-          <textarea name="suggestions" id="suggestions"></textarea>
+        <label>
+          What could we have done better?
+          <textarea name="suggestions"></textarea>
         </label>
-        <label for="followup">
-          <span>Would you like us to follow up with you?</span>
-          <ul>
-            <li>Yes, email me at: <input type="text" name="email" id="email" placeholder="you@email.com"></li>
-            <li>Yes, call me at: <input type="text" name="phone" id="phone" placeholder="(831) 555-1212"></li>
-          </ul>
+        <label>
+          Want us to follow up with you? Enter your email address here:
+          <input type="text" name="email" placeholder="you@email.com">
         </label>
         <p class="next"><button>Submit</button></p>
       </form>
@@ -461,21 +458,25 @@
   
   <hr>
   
-  <form method="post" action="">
+  <form method="post" action="#">
     <h3>Who are you?</h3>
   
-    <label for="fname">
-      <span>Your Name</span>
-      <input type="text" name="fname" id="fname" placeholder="Annie">
-      <input type="text" name="lname" id="lname" placeholder="Oakley">
+    <label>
+      Your First Name
+      <input type="text" name="fname" placeholder="Annie">
     </label>
     
-    <label for="email">
-      <span>Your Email Address</span>
-      <input type="text" name="email" id="email" placeholder="annie.oakley@anniegetyourgun.com">
+    <label>
+      Your Last Name
+      <input type="text" name="lname" placeholder="Oakley">
+    </label>
+
+    <label>
+      Your Email Address
+      <input type="text" name="email" placeholder="annie.oakley@anniegetyourgun.com">
     </label>
     
-    <label for="is_applicant">
+    <label>
       <input type="checkbox" name="is_applicant" value="y" checked="checked"> I'm the only business owner
     </label>
     
@@ -506,41 +507,41 @@
   
   <hr>
   
-  <form method="post" action="">
+  <form method="post" action="#">
   
-    <label for="business_name">
-      <span>What will it be called?</span>
-      <input type="text" name="business_name" id="business_name">
+    <label>
+      What will your business be called?
+      <input type="text" name="business_name" placeholder="Acme, Inc.">
     </label>
     
-    <label for="business_type">
-      <span>What will your business do?</span>
-      <input type="text" placeholder="SIC/NAICS tool here, with freeform entry">
-      <iframe src="http://pdfmongotest.herokuapp.com/calgold?kywd=search" frameborder="0" width="450" height="200"></iframe>
-      <p>(Not sure of your business type? Not finding your business type listed? Simply enter the words "General Business Information" above, or select it from the list.)</p>
+    <label>
+      What will your business do?
+      <input type="text" name="business_type" placeholder="SIC/NAICS tool here, with freeform entry">
     </label>
+    <iframe src="http://pdfmongotest.herokuapp.com/calgold?kywd=search" frameborder="0" width="450" height="200"></iframe>
+    <p>(Not sure of your business type? Not finding your business type listed? Simply enter the words "General Business Information" above, or select it from the list.)</p>
     
-    <label for="business_structure">
-      <span>What is your business's legal structure?</span>
-      <select>
-        <option value="">I'm not sure / don't know / haven't decided yet</option>
-        <option value="">an Individual (Sole Proprietorship)</option>
-        <option value="">a General Partnership</option>
-        <option value="">a Limited Partnership</option>
-        <option value="">a Limited Liability Company (LLC)</option>
-        <option value="">an Unincorporated Association other than a Partnership</option>
-        <option value="">a Corporation</option>
-        <option value="">a Trust</option>
-        <option value="">Copartners</option>
-        <option value="">Husband and Wife</option>
-        <option value="">a Joint Venture</option>
-        <option value="">State or Local Registered Domestic Partners</option>
-        <option value="">a Limited Liability Partnership (LLP)</option>
+    <label>
+      What is your business's legal structure?
+      <select name="business_structure">
+        <option value="unknown">I'm not sure / don't know / haven't decided yet</option>
+        <option value="individual">an Individual (Sole Proprietorship)</option>
+        <option value="gp">a General Partnership</option>
+        <option value="limited-partnership">a Limited Partnership</option>
+        <option value="llc">a Limited Liability Company (LLC)</option>
+        <option value="association">an Unincorporated Association other than a Partnership</option>
+        <option value="corp">a Corporation</option>
+        <option value="trust">a Trust</option>
+        <option value="copartner">Copartners</option>
+        <option value="married">Husband and Wife</option>
+        <option value="joint-venture">a Joint Venture</option>
+        <option value="domestic-partners">State or Local Registered Domestic Partners</option>
+        <option value="llp">a Limited Liability Partnership (LLP)</option>
       </select>
     </label>
     
     <label>
-      <span>Where will you be working from?</span>
+      Where will you be working from?
       <a class="next" href="#location_home_occ">I'll be working from home &rarr;</a>
       <a class="next" href="#location_non_home_occ">My business will be in a space other than my home &rarr;</a>
     </label>
@@ -566,7 +567,7 @@
   <p class="toggle">Read Santa Cruz Municipal Code 24.10.160. It won't take long! We'll wait.</p>
   <blockquote class="drawer">
     <ol>
-      <li>Intent. The discretionary approval of a home occupation is intended to allow for home enterprises, which are clearly incidental and secondary to the use of the dwelling unit and compatible with surrounding residential uses. A home occupation allows for the gainful employment in the home by any occupant of a dwelling so long as the enterprise does not require frequent customer access or have associated characteristics which would reduce the surrounding residents’ enjoyment of their neighborhood.</li>
+      <li>Intent. The discretionary approval of a home occupation is intended to allow for home enterprises, which are clearly incidental and secondary to the use of the dwelling unit and compatible with surrounding residential uses. A home occupation allows for the gainful employment in the home by any occupant of a dwelling so long as the enterprise does not require frequent customer access or have associated characteristics which would reduce the surrounding residents? enjoyment of their neighborhood.</li>
       <li>General. A home occupation shall be operated and maintained only by a resident of the dwelling unit in which it occurs; shall not employ any help other than the members of the resident family or household; shall not change the residential character of the dwelling units; shall not generate a vehicular traffic increase of more than six trip ends (three round trips) per day including deliveries and clients.</li>
       <li>Restrictions. A home occupation shall not involve:
         <ol>
@@ -595,7 +596,7 @@
   
   <h3>Where do you live?</h3>
   
-  <form method="post" action="">
+  <form method="post" action="#">
     <label for="business_address">
       <span>What&lsquo;s your business's physical address? (This should be your home address.)</span>
       <input type="text" name="business_address_street" id="business_address_street" placeholder="Street Address">
@@ -935,7 +936,7 @@ compliance with city zoning regulations governing same.
   <p class="s">If you are opening a yoga studio try to go into, say, a karate studio.</p>
   <p class="b">This will make it more likely that your use will be approved.</p>
   <p class="s">If the past use matches your use, the zoning will match and parking will likely not be an issue.</p>
-  <p class="s"><a href="http://codeforamerica.github.com/sitemybiz/" target="_blank">SiteMyBiz</a> is a helpful tool to find available space in Santa Cruz.</p>
+  <p class="s"><a href="http://codeforamerica.github.com/sitemybiz/" target="_blank">SiteMyBiz</a> is a helpful tool to find available space in Santa Cruz.</p>
 </div>
 
 <hr><!-- ================================================================================ -->
@@ -984,14 +985,14 @@ compliance with city zoning regulations governing same.
   <div id="tlegend" class="my-legend">
     <div class="scale">
       <ul class="labels">
-        <li><span style='background:#00652E;'></span>CBD <a rel="cbd">Central Business District&nbsp;⇣</a></li>
-        <li><span style='background:#859A3B;'></span>CBD-E <a rel="cbde">Subdistrict Lower Pacific Ave&nbsp;⇣</a></li>
-        <li><span style='background:#2DA197;'></span>CC <a rel="cc">Community Commercial&nbsp;⇣</a></li>
-        <li><span style='background:#2E8ACA;'></span>CN <a rel="cn">Neighborhood Commercial&nbsp;⇣</a></li>
-        <li><span style='background:#2E3191;'></span>CT <a rel="ct">Thoroughfare Commercial&nbsp;⇣</a></li>
-        <li><span style='background:#F37920;'></span>PA <a rel="pa">Professional and Administrative Office&nbsp;⇣</a></li>
-        <li><span style='background:#D43783;'></span>CB <a rel="cb">Beach Commercial&nbsp;⇣</a></li>
-        <li><span style='background:#B4892D;'></span>IG <a rel="ig">General Industrial&nbsp;⇣</a></li>
+        <li><span style='background:#00652E;'></span>CBD <a rel="cbd">Central Business District&nbsp;?</a></li>
+        <li><span style='background:#859A3B;'></span>CBD-E <a rel="cbde">Subdistrict Lower Pacific Ave&nbsp;?</a></li>
+        <li><span style='background:#2DA197;'></span>CC <a rel="cc">Community Commercial&nbsp;?</a></li>
+        <li><span style='background:#2E8ACA;'></span>CN <a rel="cn">Neighborhood Commercial&nbsp;?</a></li>
+        <li><span style='background:#2E3191;'></span>CT <a rel="ct">Thoroughfare Commercial&nbsp;?</a></li>
+        <li><span style='background:#F37920;'></span>PA <a rel="pa">Professional and Administrative Office&nbsp;?</a></li>
+        <li><span style='background:#D43783;'></span>CB <a rel="cb">Beach Commercial&nbsp;?</a></li>
+        <li><span style='background:#B4892D;'></span>IG <a rel="ig">General Industrial&nbsp;?</a></li>
       </ul>
     </div>
   </div>
@@ -1080,7 +1081,7 @@ compliance with city zoning regulations governing same.
 
   <h1>Intensity of Use</h1>
   
-  <p>In California, we our responsibility to mitigate the impact of changes of use if the “intensity” of use increases. This means accounting for more traffic, parking and people using the space.</p>
+  <p>In California, we our responsibility to mitigate the impact of changes of use if the ?intensity? of use increases. This means accounting for more traffic, parking and people using the space.</p>
 
   <p>A gym has a more "intense use" than a warehouse. This means more parking is needed and means more cars on the road.</p>
   
@@ -1324,7 +1325,7 @@ SCENARIO: User wants to start a retail biz and doesn't know where to put it.
   
   <p>If you need to speak with someone sooner than that, <a href="hereToHelp">here's how to contact the Planning Department</a>.</p>
   
-  <form method="post" action="">
+  <form method="post" action="#">
   
     <label for="name">
       <span>Your Name</span>
@@ -1379,7 +1380,7 @@ SCENARIO: User wants to start a retail biz and doesn't know where to put it.
 
   <p>If you have a moment, we would love to get your thoughts on this site.</p>
   
-  <form method="post" action="">
+  <form method="post" action="#">
   
     <label for="mood">
       <span>How well did we do at answering your questions?</span>
@@ -1508,7 +1509,7 @@ SCENARIO: User wants to start a retail biz and doesn't know where to put it.
   
   <p>For more information on incorporation, speak with an accountant or visit <a href="http://www.sos.ca.gov/business/">The California Business Portal</a>.</p>
   
-  <form method="post" action="">
+  <form method="post" action="#">
     
     <label for="business_legal_structure">
       <span>Are you incorporated?</span>
