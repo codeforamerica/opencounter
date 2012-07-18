@@ -3,24 +3,15 @@
 <head>
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+  <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css">
   <style type="text/css">
     body {
       font-family: 'PT Sans', sans-serif;
-      line-height: 1.5em;
       background: #DDD;
     }
     
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Open Sans Condensed', sans-serif;
-    }
-    
-    .main {
-      width: 60%;
-      margin: 0 10% 0 30%;
-    }
-    
-    h1 {
-      line-height: 1.2em;
     }
     
     hr {
@@ -30,6 +21,120 @@
       border-top: 1px solid #ccc;
       margin: 1em 0;
       padding: 0;
+    }
+    
+    /* === Header ============================= */
+    
+    .header {
+      background: #111;
+      color: rgb(51,182,230);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+    }
+    
+    .branding {
+      background: rgb(51,182,230);
+      color: #FFF;
+      float: left;
+      width: 15%;
+      min-width: 240px;
+      margin: 0 0 -16px 5%;
+      text-align: center;
+      padding: 0 0 8px 0;
+    }
+    
+    /* Utility nav */
+    .utilities {
+      list-style: none;
+      position: relative;
+      overflow: auto;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      bottom: 0;
+      left: 35%;
+      width: 50%;
+    }
+    
+    .utilities ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      overflow: auto;
+    }
+    
+    .utilities li {
+      margin: 0;
+      padding: 0;
+      display: block;
+      float: left;
+      position: relative;
+      overflow: auto;
+    }
+    
+    .utilities a {
+      display: block;
+      float: left;
+      color: rgb(51,182,230);
+      text-transform: uppercase;
+      white-space: nowrap;
+      padding: 0.5em 10px;
+      text-decoration: none;
+    }
+    
+    .utilities a:hover {
+      background: rgb(51,182,230);
+      color: #FFF;
+    }
+    
+    /* Utility */
+    .utility {
+      background: rgb(51,182,230);
+      color: #FFF;
+      display: none;
+    }
+    
+    /* === Main Content Area ================== */
+    
+    .main {
+      position: absolute;
+      width: 50%;
+      left: 35%;
+      top: 2em;
+    }
+    
+    /* Panel */
+    .panel {
+      position: relative;
+      padding: 1em;
+      margin: 3em 0;
+      background: #fff;
+      -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+         -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+              box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+    
+    .panel:before,
+    .panel:after {
+      content:"";
+      position:absolute;
+      z-index:-2;
+    }
+    
+    .panel:before {
+      top: 50%;
+      bottom: 0;
+      left: 10px;
+      right: 10px;
+      -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      -moz-box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      -moz-border-radius: 100px / 10px;
+      border-radius: 100px / 10px;
     }
     
     label {
@@ -60,180 +165,114 @@
       font-style: italic;
     }
     
-    /* Drop shadow tastic */
-    .screen {
-      position: relative;
-      padding: 1em;
-      margin: 3em 0;
-      background: #fff;
-      -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-         -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-              box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    }
-    
-    .screen:before,
-    .screen:after {
-      content:"";
-      position:absolute;
-      z-index:-2;
-    }
-    
-    .screen:before {
-      top: 50%;
-      bottom: 0;
-      left: 10px;
-      right: 10px;
-      -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.6);
-      -moz-box-shadow: 0 0 15px rgba(0,0,0,0.6);
-      box-shadow: 0 0 15px rgba(0,0,0,0.6);
-      -moz-border-radius: 100px / 10px;
-      border-radius: 100px / 10px;
-    }
-    
-    /* === Header ============================= */
-    
-    .header {
-      background: #111;
-      color: rgb(51,182,230);
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 10;
-    }
-    
-    .branding {
-      background: rgb(51,182,230);
-      color: #FFF;
-      float: left;
-      width: 200px;
-      margin: 0 0 -10px 5%;
-      text-align: center;
-      padding: 0.2em 0;
-    }
-    
-    /* Utility nav */
-    .utilities {
-      list-style: none;
-      position: relative;
-      overflow: auto;
-      margin: 0;
-      padding: 0;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 50%;
-    }
-    
-    .utilities li {
-      margin: 0;
-      padding: 0;
-      display: inline-block;
-      position: relative;
-      overflow: auto;
-    }
-    
-    .utilities a {
-      display: block;
-      color: rgb(51,182,230);
-      text-transform: uppercase;
-      white-space: nowrap;
-      padding: 0.5em 10px;
-      text-decoration: none;
-    }
-    
-    .utilities a:hover {
-      background: rgb(51,182,230);
-      color: #FFF;
-    }
-    
-    /* Utility */
-    .utility {
-      background: rgb(51,182,230);
-      color: #FFF;
-      display: none;
-    }
-    
     /* === Navigation ========================= */
     
     .progress-nav {
       display: block;
-      position: absolute;
-      left: 5%;
-      top: 50px;
+      min-width: 240px;
+      position: fixed;
       height: 100%;
+      left: 5%;
+      top: 72px;
+      width: 15%;
     }
     
     .progress-nav ul {
       list-style: none;
       overflow: auto;
-      position: relative;
       margin: 0;
       padding: 0;
+      position: relative;
     }
     
     .progress-nav li {
-      display: block;
       clear: both;
-      position: relative;
+      display: block;
       overflow: auto;
       padding: 0;
+      position: relative;
     }
     
-    .progress-nav a:before,
-    .progress-nav a:after {
-      border-radius: 50%;
-      content: "";
-      display: block;
-      float: left;
-    }
-    
-    .progress-nav a:before {
-      background: #FFF;
-      margin-left: -3.25em;
-      margin-top: -0.5em;
-      height: 2em;
-      width: 2em;
-    }
-    
-    .progress-nav a:after {
-      height: 1em;
-      margin-left: -2.75em;
-      width: 1em;
-    }
-    
+    /* Link and connecting line */
     .progress-nav a {
       border-left: 0.5em solid #FFF;
       color: #666;
       display: block;
       margin-left: 1em;
-      padding: 0.5em 0 1em 2em;
+      padding: 0.75em 0 0.75em 2em;
       text-decoration: none;
       text-transform: uppercase;
-      white-space: nowrap;
     }
     
-    /* Default: gray */
+    /* Final link has no connecting line */
+    .progress-nav > ul > li:last-child > a {
+      border-left: 0;
+      padding-left: 2.5em;
+    }
+    
+    /* Rings */
+    .progress-nav a:before,
     .progress-nav a:after {
-      background: #999;
+      border-width: 0.5em;
+      border-radius: 50%;
+      content: "";
+      display: block;
+      float: left;
+      -moz-background-clip: padding;
+      -webkit-background-clip: padding-box;
+      background-clip: padding-box;
     }
     
-    /* Current and hover: white */
-    .progress-nav a:hover:after,
-    .progress-nav a.current:after {
+    /* Outer ring positioning & dimensions */
+    .progress-nav a:before {
+      height: 2em;
+      left: 0.25em;
+      margin-top: -1em;
+      position: absolute;
+      top: 50%;
+      width: 2em;
+    }
+    
+    /* Inner ring positioning & dimensions */
+    .progress-nav a:after {
+      height: 1em;
+      left: 0.75em;
+      margin-top: -0.5em;
+      position: absolute;
+      top: 50%;
+      width: 1em;
+    }
+    
+    /* Hover state */
+    .progress-nav a:hover:after {
+      background-color: rgb(51,182,230);
+    }
+    
+    /* Outer ring color */
+    .progress-nav a:before {
       background: #FFF;
     }
-    
-    /* Incomplete: yellow */
-    .progress-nav a.incomplete:after {
-      background: #FF0;
+    .progress-nav ul ul a:before {
+      background: transparent;
     }
     
-    /* Complete: green */
-    .progress-nav a.complete:after {
-      background: #0F0;
-    }​
+    /* Inner ring color */
+    .progress-nav a:after {
+      background-color: #999;
+    }
     
+    /* Inner ring status colors */
+    .progress-nav .incomplete a:after {
+      background-color: #F00;
+    }
+    
+    .progress-nav .current a:after {
+      background-color: #33B6E6;
+    }
+    
+    .progress-nav .complete a:after {
+      background-color: #0F0;
+    }​
   </style>
 </head>
 
@@ -293,52 +332,49 @@
 
   <div class="progress-nav">
     <ul>
-      <li><a href="#intro_welcome">Welcome</a></li>
-      <li><a href="#intro_big_picture">The Big Picture</a></li>
-      <li><a class="current" href="#intro_here_to_help">We're Here To Help</a></li>
-      <li><a class="incomplete" href="#info_applicant">About You</a></li>
-      <li><a class="complete" href="#info_business">About Your Business</a></li>
+      <li class="incomplete"><a href="#intro">Welcome</a></li>
+      <li class="complete"><a href="#intro_big_picture">The Big Picture</a></li>
+      <li class="complete"><a href="#intro_here_to_help">We're Here To Help</a></li>
+      <li class="current"><a href="#info_applicant">About You</a></li>
+      <li><a href="#info_business">About Your Business</a></li>
+      <li class="incomplete"><a href="#location">Location</a></li>
       <li>
-        <a href="#location_home_occ">Your Location</a>
-        <!--
-        <a href="#location_non_home_occ">Siting Your Business</a>
-        <a href="#location_zoning_map">-- Explore Santa Cruz Zoning (Map)</a>
-        <a href="#location_find_a_site">-- SiteMy.Biz</a>
-        <a href="#location_parking">-- Parking</a>
-        <a href="#location_utilities">-- Utilities</a>
-        <a href="#location_restaurants">-- Restaurants</a>
-        <a href="#location_industrial">-- Industrial</a>
-        <a href="#location_downtown">-- Downtown</a>
-        -->
+        <ul>
+          <li><a href="#location_home_occ">Work From Home</a></li>
+          <li><a href="#location_non_home_occ">Choose a Site</a></li>
+          <li><a href="#location_reqs_business_type">Special Requirements For Your Business Type</a></li>
+          <li><a href="#location_reqs_location">Requirements At Your Location</a></li>
+        </ul>
       </li>
-      <li><a href="#helper_use_permit">Your Use Permit</a></li>
-      <li><a href="#helper_building_permit">Your Building Permit</a></li>
-      <li><a href="#helper_business_license">Your Business License</a></li>
-      <li><a href="#non_city_regulations">Non-City Regulations</a></li>
+      <li><a href="#helpers">Permits</a></li>
+      <li>
+        <ul>
+          <li><a href="#helper_use_permit">Use Permit</a></li>
+          <li><a href="#helper_building_permit">Building Permit</a></li>
+          <li><a href="#helper_business_license">Business License</a></li>
+          <li><a href="#helper_resellers_license">Reseller's License</a></li>
+          <li><a href="#non_city_regulations">Non-City-Issued Permits &amp; Licenses</a></li>
+        </ul>
+      </li>
       <li><a href="#summary">Summary &amp; Downloads</a></li>
     </ul>
   </div>
 
   <div class="main">
 
-<div class="screen" id="intro_welcome">
+<div class="panel" id="intro">
   <h1>Welcome</h1>
   
   <p>Starting a business? We&rsquo;re here to help.</p>
+  <p>This website will guide you through the business permitting process in Santa Cruz, CA.</p.
+  <p>You&rsquo;ll learn what regulations and fees apply to your business, and we&rsquo;ll help you get started on &mdash; or, in some cases, complete! &mdash; the paperwork you&rsquo;ll need to file to open your doors.</p>
   
-  <p>This website will guide you through the business permitting process
-  in Santa Cruz, CA.</p.
-  
-  <p>You&rsquo;ll learn what regulations and fees apply to your business, and we&rsquo;ll help
-  you get started on &mdash; or, in some cases, complete! &mdash; the paperwork
-  you&rsquo;ll need to file to open your doors.</p>
-  
-  <p class="next"><a href="#intro_big_picture">Let&rsquo;s get started &rarr;</a></p>
+  <p class="next">Let&rsquo;s get started by learning about <a href="#intro_big_picture">the big picture &rarr;</a></p>
 </div>
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="intro_big_picture">
+<div class="panel" id="intro_big_picture">
 
   <h1>The Big Picture</h1>
   
@@ -348,13 +384,13 @@
   <p><span class="dropcap">3.</span> Finally, obtain a <em>business license</em> from the City of Santa Cruz Finance Department.</p>
   <p>While that covers most City processes, there are also county, regional, state, and federal regulations that may apply to your business. We&rsquo;ve included tools to help you research and fulfill those requirements, too.</p>
   
-  <p class="next">Let&rsquo;s walk through these steps. But first, <a href="#intro_here_to_help">who are we? &rarr;</a></p>
+  <p class="next">Let&rsquo;s walk through these steps. But first, you should know that <a href="#intro_here_to_help">we&rsquo;re here to help &rarr;</a></p>
 
 </div>
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="intro_here_to_help">
+<div class="panel" id="intro_here_to_help">
 
   <h1>We&rsquo;re Here To Help</h1>
   
@@ -408,12 +444,12 @@
     <p>These folks have probably been through this process before and can offer helpful pointers.</p>
   </div>
   
-  <p class="next">Now that we've introduced ourselves, <a href="#info_applicant">let&rsquo;s get acquainted &rarr;</a></p>
+  <p class="next">That&rsquo;s us. Next, <a href="#info_applicant">tell us about yourself &rarr;</a></p>
 </div>
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="info_applicant">
+<div class="panel" id="info_applicant">
 
   <h1>Tell us about yourself.</h1>
   
@@ -438,6 +474,18 @@
     <label for="is_applicant">
       <input type="checkbox" name="is_applicant" value="y" checked="checked"> I'm the only business owner
     </label>
+    
+    <table>
+      <tr>
+        <th>Title/Role</th>
+        <th>First &amp; Last Name</th>
+      </tr>
+      <tr>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+      </tr>
+    </table>
+    
   </form>
   
   <p class="next">Nice to meet you, <strong>Annie</strong>! Next, <a href="#info_business">tell us about your business &rarr;</a></p>
@@ -446,11 +494,11 @@
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="info_business">
+<div class="panel" id="info_business">
 
   <h1>Tell us about your business.</h1>
   
-  <p>All of these are optional, but will help us get you the right information.</p>
+  <p>The more information you share, the better we'll be able to get you the right information.</p>
   
   <hr>
   
@@ -503,7 +551,7 @@
 <!-- WORKING FROM HOME -->
 <!-- ================================================================================ -->
 
-<div class="screen" id="location_home_occ">
+<div class="panel" id="location_home_occ">
 
   <h1>Working From Home</h1>
   
@@ -568,7 +616,7 @@
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="helper_use_permit">
+<div class="panel" id="helper_use_permit">
   
   <h1>Use Permit</h1>
   
@@ -632,7 +680,7 @@
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="helper_building_permit">
+<div class="panel" id="helper_building_permit">
 
   <h1>Building Permits</h1>
 
@@ -644,7 +692,7 @@
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="helper_business_license">
+<div class="panel" id="helper_business_license">
 
   <h1>Business License</h1>
 
@@ -718,7 +766,7 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="non_city_regulations">
+<div class="panel" id="non_city_regulations">
 
   <h1>County, State, and Federal Regulations</h1>
   
@@ -744,7 +792,7 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="summary">
+<div class="panel" id="summary">
 
   <h1>Summary &amp; Downloads</h1>
   
@@ -758,7 +806,7 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="location_non_home_occ">
+<div class="panel" id="location_non_home_occ">
   <h1>Siting Your Business</h1>
   
   <p>If you're not working out of your home, you will need to pick a location that is <em>zoned</em> to allow businesses like yours to operate.</p>
@@ -781,7 +829,7 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="yourBusinessType">
+<div class="panel" id="yourBusinessType">
 
   <h1>What's Your Business Type?</h1>
 
@@ -798,7 +846,7 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="businessImprovementAssessment">
+<div class="panel" id="businessImprovementAssessment">
 
   <h1>Business Improvement Assessments</h1>
 
@@ -837,7 +885,7 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="restaurants">
+<div class="panel" id="restaurants">
   <h1>Restaurants</h1>
   
   <p>If your business serves food or drinks to the public, there are additional regulations that will apply to you.</p>
@@ -858,7 +906,7 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="industry">
+<div class="panel" id="industry">
   <h1>Industrial Businesses</h1>
   
   <h3>Waste Water Discharge</h3>
@@ -869,14 +917,14 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="utilities">
+<div class="panel" id="utilities">
   <h1>Utility Services</h1>
   <p>Placeholder for a signup page for water, refuse, and wastewater services.</p>
 </div>
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="use">
+<div class="panel" id="use">
   <h1>Use</h1>
   <p class="b">A good tip for finding a location that permits your use is to pick a space with a prior use as similar to yours as possible.</p>
   <p class="s">If you are opening a restaurant try to go into a space that held a restaurant.</p>
@@ -888,7 +936,7 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="usePermits">
+<div class="panel" id="usePermits">
 
   <h1>Use Permits</h1>
   
@@ -910,7 +958,7 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="zoningMap">
+<div class="panel" id="zoningMap">
 
   <h3>Zoning Map</h3>
   <p>You can check a site's zoning and prior use by entering the address here:</p>
@@ -1024,7 +1072,7 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="useIntensity">
+<div class="panel" id="useIntensity">
 
   <h1>Intensity of Use</h1>
   
@@ -1051,7 +1099,7 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="parking">
+<div class="panel" id="parking">
 
   <h1>Parking</h1>
 
@@ -1079,7 +1127,7 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="buildingPermits">
+<div class="panel" id="buildingPermits">
 
   <h1>Building Permits</h1>
   
@@ -1100,7 +1148,7 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="guideThanks">
+<div class="panel" id="guideThanks">
 
 <h1>Guide Thanks</h1>
 
@@ -1113,7 +1161,7 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="parkingDowntown">
+<div class="panel" id="parkingDowntown">
 
   <h1>Businesses Located Downtown</h1>
   
@@ -1127,7 +1175,7 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen">
+<div class="panel">
 
 # Ask: Zoning Clearance
 
@@ -1173,7 +1221,7 @@ compliance with city zoning regulations governing same.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen">
+<div class="panel">
 
 
 # Ask: Planning Check List Request Form
@@ -1210,7 +1258,7 @@ Anything else we should know?
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen">
+<div class="panel">
 
 SCENARIO: User wants to start a home occ.
 
@@ -1264,7 +1312,7 @@ SCENARIO: User wants to start a retail biz and doesn't know where to put it.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="contactPlanning">
+<div class="panel" id="contactPlanning">
 
   <h1>Contact Us</h1>
   
@@ -1307,7 +1355,7 @@ SCENARIO: User wants to start a retail biz and doesn't know where to put it.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="contactPlanningThanks">
+<div class="panel" id="contactPlanningThanks">
 
   <h1>Thanks!</h1>
   
@@ -1321,7 +1369,7 @@ SCENARIO: User wants to start a retail biz and doesn't know where to put it.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="feedback">
+<div class="panel" id="feedback">
 
   <h1>Give us some feedback</h1>
 
@@ -1359,7 +1407,7 @@ SCENARIO: User wants to start a retail biz and doesn't know where to put it.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="feedbackThanks">
+<div class="panel" id="feedbackThanks">
 
   <h1>Thanks for sharing!</h1>
   
@@ -1375,7 +1423,7 @@ SCENARIO: User wants to start a retail biz and doesn't know where to put it.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="helper_fbn">
+<div class="panel" id="helper_fbn">
 
   <h1>Fictitious Business Names (or, what&rsquo;s in a name?)</h1>
   
@@ -1448,7 +1496,7 @@ SCENARIO: User wants to start a retail biz and doesn't know where to put it.
 
 <hr><!-- ================================================================================ -->
 
-<div class="screen" id="incorporation">
+<div class="panel" id="incorporation">
 
   <h1>Incorporation</h1>
   
