@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 development: &DEVELOPMENT
   adapter: postgresql
-  database: openblight_dev
+  database: opencounter_dev
   encoding: utf8
   user: postgres
   pool: 5
@@ -16,7 +16,7 @@ development: &DEVELOPMENT
 # Do not set this db to the same as development or production.
 test:
   <<: *DEVELOPMENT
-  database: openblight_test
+  database: opencounter_test
 
 production:
   adapter: sqlite3
