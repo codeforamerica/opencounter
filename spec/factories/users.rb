@@ -6,5 +6,9 @@ FactoryGirl.define do
     last_name Faker::Name.last_name
     email Faker::Internet.email
     token Random.rand(0-10000)
+
+    factory :invalid_user do
+      email nil
+    end
   end
 end
