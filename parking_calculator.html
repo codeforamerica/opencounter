@@ -6,6 +6,13 @@
   <title>Parking Calculator</title>
   <meta charset="utf-8">
   <style type="text/css">
+    .tool {
+      background: #EEE;
+    }
+    .tool > div {
+      background: #DDD;
+    }
+
     .business-type-rule {
       display: none;
     }
@@ -721,55 +728,30 @@
 <script src="assets/js/jquery-1.7.2.min.js"></script>
 
 <script type="text/javascript">
+
 (function(){
 
+    // Add class="business-type-rule" to every large category
     $('.tool > div').addClass('business-type-rule');
 
-    $('#business_type').change(function(){
+    // When the applicant selects an option,
+    $('#business_type').change(function() {
 
-        // 11 large categories of business types
-        var accordions = ['#business_type_auto',
-                          '#business_type_banks',
-                          '#business_type_children',
-                          '#business_type_education',
-                          '#business_type_fitness',
-                          '#business_type_food',
-                          '#business_type_halls',
-                          '#business_type_lodging',
-                          '#business_type_medical',
-                          '#business_type_recycle',
-                          '#business_type_seniors'
-                         ],
-            choice = $(this).val(),
-            text = '#business_type_',
-            div_to_show = text + choice;
-            
-        for (var i = 0; i < accordions.length; i++) {
-            if (accordions[i] == text) {
-                $('#prompt').show();
-                $(text)
-                    .show()
-                    .accordion( { collapsible: true, active: false } );
-            }
-        }
+        // Get the selection
+        selected_option = '#business_type_' + $(this).val() || '';
 
-        $(text).show();
+        // Hide all <div class="business-type-rules">'s
+        $('.business-type-rule').hide();
 
-        $('#business_type').change(function() {
-            if ( !($(this).val() == choice) ) {
-                for (var i = 0; i < accordions.length; i++) {
-                    if (accordions[i] == text) {
-                        $('#prompt').hide();
-                    }
-                }
-                $(text).accordion('destroy');
-                $(text).hide();
-            } // End if statement
-        }); // End BizType.change -- INNER
-    }); // End BizType.change -- OUTER
+        // Show the selected <div class="business-type-rules">
+        $(selected_option).show();
+
+    });
 
 })();
+
 </script>
+
 
 </body>
 
