@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :field_answer do
-    answer "MyText"
-    user_id 1
-    form_id 1
+    answer Faker::Lorem.words
+    user
+    field
   end
 end

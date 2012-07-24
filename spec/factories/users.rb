@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :user do
-    first_name "MyString"
-    last_name "MyString"
-    last_state "MyString"
-    token "MyString"
+    first_name Faker::Name.first_name
+    last_name Faker::Name.last_name
+    email Faker::Internet.email
+    token Random.rand(0-10000)
   end
 end

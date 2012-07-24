@@ -2,6 +2,8 @@
 
 FactoryGirl.define do
   factory :form do
-    title "MyString"
+    sequence :title do |n|
+      "form-#{n}"
+    end
   end
 end

@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :field do
-    form_id 1
-    format "MyString"
-    prompt "MyText"
+    format "string"
+    prompt Faker::Lorem.sentence
+    form
   end
 end
