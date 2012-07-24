@@ -90,7 +90,8 @@
       text-decoration: none;
     }
     
-    .utilities a:hover {
+    .utilities a:hover,
+    .utilities a.on {
       background: rgb(51,182,230);
       color: #FFF;
     }
@@ -99,6 +100,17 @@
     .utility {
       background: rgb(51,182,230);
       color: #FFF;
+      position: absolute;
+      top: 2.2em;
+      left: 35%;
+      width: 50%;
+      
+    }
+    
+    #profile div {
+    }
+
+    .utility {
       display: none;
     }
     
@@ -156,6 +168,13 @@
       padding: 1em 20px;
     }
     
+    /* Widgets */
+    .toggle:before {
+      display: block;
+      content: "\2192";
+      float: left;
+    }
+    
     .next {
       background:#DDEEFF;
       border: 1px solid #CCC;
@@ -167,6 +186,14 @@
     blockquote {
       color: #666;
       font-style: italic;
+    }
+    
+    ol li {
+      padding-bottom: 1em;
+    }
+    
+    ol li:last-child {
+      padding-bottom: 0;
     }
     
     /* === Navigation ========================= */
@@ -192,7 +219,7 @@
     .progress-nav li {
       clear: both;
       display: block;
-      overflow: auto;
+      overflow: hidden;
       padding: 0;
       position: relative;
     }
@@ -203,16 +230,12 @@
       color: #666;
       display: block;
       margin-left: 1em;
-      padding: 0.75em 0 0.75em 2em;
+      padding: 0.5em 0 0.5em 2em;
       text-decoration: none;
       text-transform: uppercase;
     }
     
-    /* Final link has no connecting line */
-    .progress-nav > ul > li:last-child > a {
-      border-left: 0;
-      padding-left: 2.5em;
-    }
+
     
     /* Rings */
     .progress-nav a:before,
@@ -256,9 +279,6 @@
     .progress-nav a:before {
       background: #FFF;
     }
-    .progress-nav ul ul a:before {
-      background: transparent;
-    }
     
     /* Inner ring color */
     .progress-nav a:after {
@@ -275,9 +295,33 @@
     }
     
     .progress-nav .incomplete a:after {
-      background-color: #F00;
+      background-color: #FF0;
     }
+    
+    /* Sub nav */
+    .progress-nav ul ul a:before {
+      background: transparent;
+    }
+    
+    /* Utility */
+    
   </style>
+  <!-- KISSMetrics Tracking Code -->
+  <script type="text/javascript">/*
+    var _kmq = _kmq || [];
+    var _kmk = _kmk || 'b51678933486d599c97ce18f3792fbd282107461';
+    function _kms(u){
+      setTimeout(function(){
+        var d = document, f = d.getElementsByTagName('script')[0],
+        s = d.createElement('script');
+        s.type = 'text/javascript'; s.async = true; s.src = u;
+        f.parentNode.insertBefore(s, f);
+      }, 1);
+    }
+    _kms('//i.kissmetrics.com/i.js');
+    _kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js'); */
+  </script>
+  
 </head>
 
 <body>
@@ -294,7 +338,208 @@
     </ul>
     
     <div class="utility" id="profile">
-      
+      <div>
+        <h3>Your Saved Info</h3>
+        <p>Here's what you've told us so far.</p>
+        <dl class="complete">
+          <dt>Your Name</dt>
+          <dd>[applicant_fname] [applicant_lname] <a href="#">Change this &rarr;</a></dd>
+        </dl>
+        <dl class="partial">
+          <dt>Your Name</dt>
+          <dd>Your first name is [applicant_fname]. <a href="#">Tell us your last name &rarr;</a></dd>
+          <dd>Your last name is [applicant_lname]. <a href="#">Tell us your first name &rarr;</a></dd>
+        </dl>
+        <dl class="empty">
+          <dt>Your Name</dt>
+          <dd>You haven't told us your name yet. <a href="#">Fill this out &rarr;</a></dd>
+        </dl>
+        
+        <dl class="complete">
+          <dt>Your Email</dt>
+          <dd class="complete">[applicant_email] <a href="#">Change this &rarr;</a></dd>
+        </dl>
+        <dl class="empty">
+          <dt>Your Email</dt>
+          <dd class="empty">You haven't told us your email address yet. <a href="#">Fill this out &rarr;</a></dd>
+        </dl>
+
+        <dl class="complete">
+          <dt>Ownership</dt>
+          <dd>You are the sole owner of this business. <a href="#">Change this &rarr;</a></dd>
+        </dl>
+        <dl class="complete">
+          <dt>Ownership</dt>
+          <dd>Apart from you, the following people are involved in this business:
+            [coowner_#_fname] [coowner_#_lname] ([coowner_#_role]),
+            [coowner_#_fname] [coowner_#_lname] ([coowner_#_role]) <a href="#">Change this &rarr;</a>
+          </dd>
+        </dl>
+        <dl class="partial">
+          <dt>Ownership</dt>
+          <dd>You've told us you have co-owners, but haven't told us who they are. <a href="#">Fill this out &rarr;</a></dd>
+        </dl>
+        <dl class="empty">
+          <dt>Ownership</dt>
+          <dd>You haven't told us whether you have co-owners. <a href="#">Fill this out &rarr;</a></dd>
+        </dl>
+
+        <dl class="complete">
+          <dt>Your Home Address</dt>
+          <dd>[applicant_home_address_street], [applicant_home_address_details], [applicant_home_address_city], [applicant_home_address_state] [applicant_home_address_zip] <a href="#">Change this &rarr;</a></dd>
+        </dl>
+        <dl class="complete">
+          <dt>Your Home Address</dt>
+          <dd>[applicant_home_address_street], [applicant_home_address_city], [applicant_home_address_state] [applicant_home_address_zip] <a href="#">Change this &rarr;</a></dd>
+        </dl>
+        <dl class="partial">
+          <dt>Your Home Address</dt>
+          <dd>[applicant_home_address_street] <a href="#">Complete this &rarr;</a></dd>
+        </dl>
+        <dl class="empty">
+          <dt>Your Home Address</dt>
+          <dd>You haven't told us your home address yet. <a href="#">Fill this out &rarr;</a></dd>
+        </dl>
+
+        <dl class="complete">
+          <dt>Business Name</dt>
+          <dd>[business_name] <a href="#">Change this &rarr;</a></dd>
+        </dl>
+        <dl class="empty">
+          <dt>Business Name</dt>
+          <dd>You haven't told us your business name yet. <a href="#">Fill this out &rarr;</a></dd>
+        </dl>
+
+        <dl class="complete">
+          <dt>Business Type</dt>
+          <dd>[business_type] <a href="#">Change this &rarr;</a></dd>
+        </dl>
+        <dl class="empty">
+          <dt>Business</dt>
+          <dd></dd>
+        </dl>
+
+        <dl class="complete">
+          <dt></dt>
+          <dd></dd>
+        </dl>
+        <dl class="partial">
+          <dt></dt>
+          <dd></dd>
+        </dl>
+        <dl class="empty">
+          <dt></dt>
+          <dd></dd>
+        </dl>
+
+        <dl class="complete">
+          <dt></dt>
+          <dd></dd>
+        </dl>
+        <dl class="partial">
+          <dt></dt>
+          <dd></dd>
+        </dl>
+        <dl class="empty">
+          <dt></dt>
+          <dd></dd>
+        </dl>
+
+        <dl class="complete">
+          <dt></dt>
+          <dd></dd>
+        </dl>
+        <dl class="partial">
+          <dt></dt>
+          <dd></dd>
+        </dl>
+        <dl class="empty">
+          <dt></dt>
+          <dd></dd>
+        </dl>
+
+        <dl class="complete">
+          <dt></dt>
+          <dd></dd>
+        </dl>
+        <dl class="partial">
+          <dt></dt>
+          <dd></dd>
+        </dl>
+        <dl class="empty">
+          <dt></dt>
+          <dd></dd>
+        </dl>
+
+        <dl class="complete">
+          <dt></dt>
+          <dd></dd>
+        </dl>
+        <dl class="partial">
+          <dt></dt>
+          <dd></dd>
+        </dl>
+        <dl class="empty">
+          <dt></dt>
+          <dd></dd>
+        </dl>
+
+
+    
+    <label>
+      What will your business do?
+      <input type="text" name="business_type" placeholder="SIC/NAICS tool here, with freeform entry">
+    </label>
+    <iframe src="http://pdfmongotest.herokuapp.com/calgold?kywd=search" width="450" height="200"></iframe>
+    <p>(Not sure of your business type? Not finding your business type listed? Simply enter the words "General Business Information" above, or select it from the list.)</p>
+    
+    <label>
+      What is your business's legal structure?
+      <select name="business_structure">
+        <option value="unknown">I'm not sure / don't know / haven't decided yet</option>
+        <option value="individual">an Individual (Sole Proprietorship)</option>
+        <option value="gp">a General Partnership</option>
+        <option value="limited-partnership">a Limited Partnership</option>
+        <option value="llc">a Limited Liability Company (LLC)</option>
+        <option value="association">an Unincorporated Association other than a Partnership</option>
+        <option value="corp">a Corporation</option>
+        <option value="trust">a Trust</option>
+        <option value="copartner">Copartners</option>
+        <option value="married">Husband and Wife</option>
+        <option value="joint-venture">a Joint Venture</option>
+        <option value="domestic-partners">State or Local Registered Domestic Partners</option>
+        <option value="llp">a Limited Liability Partnership (LLP)</option>
+      </select>
+    </label>
+    
+    <label>
+      Where will you be working from?
+      <a class="next" href="#location_home_occ">I'll be working from home &rarr;</a>
+      <a class="next" href="#location_non_home_occ">My business will be in a space other than my home &rarr;</a>
+    </label>
+
+
+      </div>
+      <div>
+        <h3>Forms &amp; Fees</h3>
+        <p>Based on what you've told us so far, we estimate that starting your business will cost <span>$13,543.54</span> (see breakdown)</p>
+        <p>Based on what you've told us so far, we think you'll need to complete and submit the following forms:</p>
+        <ul>
+          <li><a href="">Form 1</a></li>
+          <li><a href="">Form 2</a></li>
+          <li><a href="">Form 3</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Next Steps</h3>
+        <ol>
+          <li>Download, complete, and submit Form 1.</li>
+          <li>Download, complete, and submit Form 2.</li>
+          <li>Make an appointment with the Planning Department.</li>
+          <li>...</li>
+          <li>Profit.</li>
+        </ol>
+      </div>
     </div>
     
     <div class="utility" id="contact">
@@ -333,18 +578,27 @@
 
   <div class="progress-nav">
     <ul>
-      <li class="incomplete"><a href="#intro">Welcome</a></li>
-      <li class="complete"><a href="#intro_big_picture">The Big Picture</a></li>
-      <li class="complete"><a href="#intro_here_to_help">We're Here To Help</a></li>
-      <li class="current"><a href="#info_applicant">About You</a></li>
-      <li><a href="#info_business">About Your Business</a></li>
-      <li class="incomplete"><a href="#location">Location</a></li>
+      <li><a href="#intro">Welcome</a></li>
+      <li>
+        <ul>
+          <li><a href="#intro_big_picture">The Big Picture</a></li>
+          <li><a href="#intro_here_to_help">We're Here To Help</a></li>
+        </ul>
+      </li>
+      <li><a href="#info">You &amp; Your Business</a></li>
+      <li>
+        <ul>
+          <li><a href="#info_applicant">About You</a></li></li>
+          <li><a href="#info_business">About Your Business</a></li>
+        </ul>
+      </li>
+      <li><a href="#location">Location</a></li>
       <li>
         <ul>
           <li><a href="#location_home_occ">Work From Home</a></li>
           <li><a href="#location_non_home_occ">Choose a Site</a></li>
-          <li><a href="#location_reqs_business_type">Special Requirements For Your Business Type</a></li>
-          <li><a href="#location_reqs_location">Requirements At Your Location</a></li>
+          <li><a href="#location_reqs_business_type">Requirements based on your business type</a></li>
+          <li><a href="#location_reqs_location">Requirements based on your location</a></li>
         </ul>
       </li>
       <li><a href="#helpers">Permits</a></li>
@@ -370,7 +624,7 @@
   <p>This website will guide you through the business permitting process in Santa Cruz, CA.</p>
   <p>You&rsquo;ll learn what regulations and fees apply to your business, and we&rsquo;ll help you get started on &mdash; or, in some cases, complete! &mdash; the paperwork you&rsquo;ll need to file to open your doors.</p>
   
-  <p class="next">Let&rsquo;s get started by learning about <a href="#intro_big_picture">the big picture &rarr;</a></p>
+  <p class="next">Let&rsquo;e begin by learning about <a href="#intro_big_picture">the big picture &rarr;</a></p>
 </div>
 
 <hr><!-- ================================================================================ -->
@@ -380,12 +634,14 @@
   <h1>The Big Picture</h1>
   
   <p>Here's how to start a business in the City of Santa Cruz.</p>
-  <p><span class="dropcap">1.</span> First, secure a <em>use permit</em> from the City&rsquo;s Planning Department. If you&rsquo;re starting a business, even if you're working from home, the City has to approve that use in your location.</p>
-  <p><span class="dropcap">2.</span> Next, if you&rsquo;re doing any renovations or tenant improvements, get approval from the City of Santa Cruz Building Department.</p>
-  <p><span class="dropcap">3.</span> Finally, obtain a <em>business license</em> from the City of Santa Cruz Finance Department.</p>
+  <ol>
+    <li>First, secure a <strong>use permit</strong> from the City&rsquo;s Planning Department. If you&rsquo;re starting a business, even if you're working from home, the City has to approve that use in your location. <a href="#helper_use_permit">Skip to use permit helper &rarr;</a></li>
+    <li>Next, if you&rsquo;re doing any renovations or tenant improvements, get approval from the City of Santa Cruz Building Department. <a href="#helper_building_permit">Skip to building permit helper &rarr;</a></li>
+    <li>Finally, obtain a <strong>business license</strong> from the City of Santa Cruz Finance Department. <a href="#helper_business_license">Skip to business license &rarr;</a></li>
+  </ol>
   <p>While that covers most City processes, there are also county, regional, state, and federal regulations that may apply to your business. We&rsquo;ve included tools to help you research and fulfill those requirements, too.</p>
   
-  <p class="next">Let&rsquo;s walk through these steps. But first, you should know that <a href="#intro_here_to_help">we&rsquo;re here to help &rarr;</a></p>
+  <p class="next">Before we walk through these steps, know that <a href="#intro_here_to_help">we&rsquo;re here to help &rarr;</a></p>
 
 </div>
 
@@ -1529,12 +1785,22 @@ SCENARIO: User wants to start a retail biz and doesn't know where to put it.
 <script type="text/javascript" src="assets/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
 (function() {
+  // Drawer toggle
   $('.drawer').hide();
   $('.toggle').click(function(){
       $(this)
         .next('.drawer')
         .slideToggle();
   });
+  
+  // Toggle profile
+  $('.profile-link').click(function(e){
+//    $(this).class('on');
+    e.stopPropagation();
+    e.preventDefault();
+    $('#profile').toggle();
+  });
+
 })();
 </script>
 
