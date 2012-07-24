@@ -1,6 +1,9 @@
 Opencounter::Application.routes.draw do
   resources :users, :except => :index
-  match '' => 'home#index'
+  resources :field_answers
+
+  root :to => 'home#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
