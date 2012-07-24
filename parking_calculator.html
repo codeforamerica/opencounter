@@ -21,6 +21,9 @@
 
 <body>
 
+
+<h1>Parking</h1>
+
 <div class="tool">
 
   <form class="calculator" id="parkingSpacesCalculator">
@@ -65,9 +68,14 @@
   <div id="business_type_auto">
 
     <h3>Automobile or machinery sales and service garages</h3>
-    <ul class="rules">
-      <li>1 parking space for each 400 square feet of floor area</li>
-    </ul>
+
+    <div class="rules">
+      <h5>Rules</h5>
+      <ul>
+        <li>1 parking space for each 400 square feet of floor area</li>
+      </ul>
+    </div>
+
     <form method="post" action="">
       <label>
         Floor area:
@@ -725,6 +733,9 @@
 
 </div>
 
+<!--
+<p>You've told us that your business is located at <strong>1234 Anystreet Way, Santa Cruz, CA 94050</strong>, which is downtown.</p>
+
 <h3>Located downtown?</h3>
 <p>If you are located downtown&#8218; you don’t need to provide parking&#8218; but you must pay for it.</p>
 <p>Downtown has shared parking with reduced requirements. So if you don’t have off street parking&#8218; you can pay into a shared fund that runs the City garages and lots.</p>
@@ -737,12 +748,11 @@
   <p>[Parking Deficiency Fee calculator]</p>
   <iframe src="http://pdfmongotest.herokuapp.com/parking-calculator.html" frameborder="0" width="450" height="450"></iframe>
 </form>
-
+-->
 
 <script src="assets/js/jquery-1.7.2.min.js"></script>
 
 <script type="text/javascript">
-
 (function(){
 
     // Add class="business-type-rule" to every large category
@@ -763,7 +773,6 @@
     });
 
 })();
-
 </script>
 
 
