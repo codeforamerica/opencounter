@@ -259,11 +259,11 @@
     <h3>Single-program fitness facilities</h3>
     This one is a little complicated. Look at each rule&#8218; and see if it applies to you. Each &#34;Calculate&#34; button will add to the total number of spaces at the bottom. Click &#34;Clear&#34; to reset the total.
     <ul class="rules">
-      <li><b>Aerobics:</b> 1 space for each 50 square feet of floor area</li>
-      <li><b>Basketball &#38; volleyball:</b> 1 space for each 3 persons of occupancy</li>
-      <li><b>Lap pool:</b> 2 spaces per lane</li>
-      <li><b>Lap pool:</b> 1 space for each 300 square feet of non-pool floor area (area that is not water)</li>
-      <li><b>Weightlifting:</b> 1 space for each 250 feet of floor area</li>
+      <li>Aerobics: 1 space for each 50 square feet of floor area</li>
+      <li>Basketball &#38; volleyball: 1 space for each 3 persons of occupancy</li>
+      <li>Lap pool: 2 spaces per lane</li>
+      <li>Lap pool: 1 space for each 300 square feet of non-pool floor area (area that is not water)</li>
+      <li>Weightlifting: 1 space for each 250 feet of floor area</li>
       <li>If total floor space exceeds 15&#8218;000 square feet&#8218; an additional 10% of parking spaces required</li>
     </ul>
     <form method="post" action="">
@@ -548,6 +548,7 @@
 
 
   <div id="business_type_plants" style="display:none;">
+  
     <ul class="rules">
       <li>1 space for each 500 square feet of floor area</li>
     </ul>
@@ -561,145 +562,158 @@
 
   </div>  <!-- /#business_type_plants-->
 
-<!-- ==================================================== -->
-<!-- STEPHEN START HERE -->
 
   <div id="business_type_recycle">
+  
     <h3>Independent recycling collection facilities</h3>
-    <div>
-      <p><b>Total:</b> 2 spaces</p>
-    </div>
+    Total: 2 spaces
 
     <h3>Recycling facilities in conjunction with other uses that provide required parking</h3>
-    <div>
-      <p><b>Total:</b> No spaces!</p>
-    </div>
+    Total: No spaces!
+
   </div>  <!-- /#business_type_recycle -->
 
 
   <div id="business_type_research">
-    <p>
-      <p><b>Rules:</b></p>
+  
     <ul class="rules">
       <li>1 space for each 325 square feet of floor area</li>
-      <li><b>or</b>1 space for every 2 employees (maximum shift)&#8218; whichever is greater</li>
+      <li>or 1 space for every 2 employees (maximum shift)&#8218; whichever is greater</li>
     </ul>
-    </p>
-    <p>
-      <label>Floor area:</label>
-      <input id="research_area" type="text">
-    <br>
-      <label>Number of employees on busiest shift:</label>
-      <input id="therapy_pool_area" type="text">
-    </br>
-    <br><input type="submit" value="Calculate"></br>
-    </p>
+    <form method="post" action="">
+      <label>
+        Floor area:
+        <input id="research_area" type="text">
+      </label>
+      <label>
+        Number of employees on busiest shift:
+        <input id="therapy_pool_area" type="text">
+      </label>
+      <input type="submit" value="Calculate">
+    </form>
+    
   </div>  <!-- /#business_type_research -->
 
 
   <div id="business_type_retail">
-    <p><b>Rule:</b> 1 space for each 250 square feet of floor area</p>
-    <p><label>Floor area:</label>
-       <input id="retail_area" type="text">
-    <p><input type="submit" value="Calculate"></p>
-    </p>
+  
+    <ul class="rules">
+      <li>1 space for each 250 square feet of floor area</li>
+    </ul>
+    <form method="post" action="">
+      <label>
+        Floor area:
+        <input id="retail_area" type="text">
+      </label>
+      <input type="submit" value="Calculate">
+    </form>
+    
   </div> <!-- /#business_type_retail -->
 
 
   <div id="business_type_seniors">
+  
     <h3>Boarding homes for the aged</h3>
-    <div>
-      <p>
-      <p><b>Rules:</b></p>
-      <ul class="rules">
-        <li>1 space for each 5 beds</li>
-        <li>1 space for each employee</li>
-      </ul>
-      </p>
-    <p>
-      <label>Number of beds:</label>
-      <input id="boarding_beds" type="text">
-    <br>
-      <label>Number of employees:</label>
-      <input id="boarding_emp" type="text">
-    </br>
-    <br><input type="submit" value="Calculate"></br>
-    </p>
-    </div>
+    <ul class="rules">
+      <li>1 space for each 5 beds</li>
+      <li>1 space for each employee</li>
+    </ul>
+    <form method="post" action="">
+      <label>
+        Number of beds:
+        <input id="boarding_beds" type="text">
+      </label>
+      <label>
+        Number of employees:
+        <input id="boarding_emp" type="text">
+      </label>
+      <input type="submit" value="Calculate">
+    </form>
 
     <h3>Institutions for the aged</h3>
-    <div>
-      <p>
-      <p><b>Rules:</b></p>
-      <ul class="rules">
-        <li>1 space for every 5 guests</li>
-        <li>1 space for each employee on the shift with the maximum number of personnel</li>
-      </ul>
-      </p>
-    <p>
-      <label>Number of guests:</label>
-      <input id="institution_guests" type="text">
-    <br>
-      <label>Number of employees on busiest shift:</label>
-      <input id="institution_emp" type="text">
-    </br>
-    <br><input type="submit" value="Calculate"></br>
-    </p>
-    </div>
+    <ul class="rules">
+      <li>1 space for every 5 guests</li>
+      <li>1 space for each employee on the shift with the maximum number of personnel</li>
+    </ul>
+    <form method="post" action="">
+      <label>
+        Number of guests:
+        <input id="institution_guests" type="text">
+      </label>
+      <label>
+        Number of employees on busiest shift:
+        <input id="institution_emp" type="text">
+      </label>
+      <input type="submit" value="Calculate">
+    </form>
 
     <h3>Nursing homes</h3>
-    <div>
-      <p>
-        <p><b>Rules:</b></p>
-      <ul class="rules">
-        <li>1 space for every 5 guests</li>
-        <li>1 space for the resident manager</li>
-        <li>1 space for each employee on the shift with the maximum number of personnel</li>
-      </ul>
-      </p>
-    <p>
-      <label>Number of guests:</label>
-      <input id="nursing_guests" type="text">
-    <br>
-      <label>Number of employees on busiest shift:</label>
-      <input id="nursing_emp" type="text">
-    </br>
-    <br><input type="submit" value="Calculate"></br>
-    </p>
-    </div>
+    <ul class="rules">
+      <li>1 space for every 5 guests</li>
+      <li>1 space for the resident manager</li>
+      <li>1 space for each employee on the shift with the maximum number of personnel</li>
+    </ul>
+    <form method="post" action="">
+      <label>
+        Number of guests:
+        <input id="nursing_guests" type="text">
+      </label>
+      <label>
+        Number of employees on busiest shift:
+        <input id="nursing_emp" type="text">
+      </label>
+      <input type="submit" value="Calculate">
+    </form>
+    
   </div>  <!-- /#business_type_seniors -->
 
 
   <div id="business_type_theaters">
-    <p>
-      <p><b>Rules:</b></p>
+  
     <ul class="rules">
       <li>1 space for each 3.5 seats for the first 350 seats</li>
       <li>1 space for each 5 additional seats</li>
     </ul>
-    </p>
-    <p><label>Number of seats:</label>
-       <input id="theater_seats" type="text">
-    <p><input type="submit" value="Calculate"></p>
-    </p>
+    <form method="post" action="">
+      <label>
+        Number of seats:
+        <input id="theater_seats" type="text">
+      </label>
+      <input type="submit" value="Calculate">
+    </form>
+    
   </div>  <!-- /#business_type_theaters -->
 
 
   <div id="business_type_warehouses">
-    <p><b>Rule:</b> 1 space for each 1&#8218;000 square feet of floor area</p>
-    <p><label>Floor area:</label>
-       <input id="warehouse_area" type="text">
-    <p><input type="submit" value="Calculate"></p>
-    </p>
+  
+    <ul class="rules">
+      <li>1 space for each 1&#8218;000 square feet of floor area</li>
+    </ul>
+    <form method="post" action="">
+      <label>
+        Floor area:
+        <input id="warehouse_area" type="text">
+      </label>
+      <input type="submit" value="Calculate">
+    </form>
+    
   </div>  <!-- /#business_type_warehouses -->
 
 
   <div id="business_type_worship">
-    <p><b>Rule:</b> 1 space for each 3.5 seats in the sanctuary</p>
-    <p><label>Number of seats in sanctuary:</label>
-       <input id="worship_seats" type="text">
-    <p><input type="submit" value="Calculate"></p>
-    </p>
+  
+    <ul class="rules">
+      <li>1 space for each 3.5 seats in the sanctuary</li>
+    </ul>
+    <form method="post" action="">
+      <label>
+      Number of seats in sanctuary:
+      <input id="worship_seats" type="text">
+      </label>
+      <input type="submit" value="Calculate"></p>
+    </form>
+    
   </div>  <!-- /#business_type_worship -->
 
 </div>
