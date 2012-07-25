@@ -958,11 +958,14 @@
         selected_option = '#business_type_' + $(this).val() || '';
 
         // Hide all <div class="business-type-rules">'s
-        $('.business-type-rule').hide();
+        $('.business-type-rule')
+                            .hide()
+                            .slideUp('slow');
 
         // Show the selected <div class="business-type-rules">
-        $(selected_option).show();
-
+        $(selected_option)
+                      .show()
+                      .slideDown('slow');
     });
 
 })();
