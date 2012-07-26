@@ -1,0 +1,81 @@
+<label>
+  Name
+  <input type="text" name="applicant_name" value="[applicant_fname] [applicant_lname]">
+</label>
+
+<label>
+  Email
+  <input type="text" name="applicant_email" value="[applicant_email]">
+</label>
+
+<label>
+  Home Phone
+  <input type="text" name="applicant_home_phone" value="[applicant_home_phone]">
+</label>
+
+<label>
+  Emergency Phone
+  <input type="text" name="applicant_emergency_phone" value="[applicant_emergency_phone]">
+</label>
+
+<label>
+  Your Home Address (Must be a physical address, not a P.O. box.)
+[Street] [City] [State] [Zip]
+</label>
+
+<label>
+  Your Mailing Address
+  * Same as home address
+  * [Street] [City] [State] [Zip]
+</label>
+
+<label>
+  Type of ownership
+  <select name="business_structure">
+    <option value="sole-proprietorship">Sole Proprietorship</option>
+    <option value="partnership-or-llc">Partnership or LLC</option>
+    <option value="corporation">Corporation</option>
+    <option value="trust">Trust</option>
+  </select>
+</label>
+
+<!-- @condition If business_structure not a sole proprietorship -->
+<label>
+  (If not a sole proprietorship) Are there any co-owners or corporate officers?
++ [Position/Title] [First] [Last] [Physical Address]
+</label>
+
+<label>
+  Type of Business
+  <input type="text" value="[business type]">
+</label>
+
+<label>
+  Business Phone
+  <input type="text">
+</label>
+
+<label>
+  State ID #
+  <input type="text">
+</label>
+
+<label>
+  State Sales Tax #
+  <input type="text">
+</label>
+
+<label>
+  Federal Tax ID #
+  <input type="text">
+</label>
+
+<label>
+  State Contractor's License #
+  <input type="text">
+</label>
+
+<label>
+  Declaration
+  <input type="checkbox" name="declaration" value="declared"> I declare under penalty of perjury, that the above information which I have set forth in this application is true and accurate to the best of my knowledge and that I agree to operate the above described business in strict compliance with city zoning regulations governing same.
+</label>
