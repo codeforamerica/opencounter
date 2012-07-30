@@ -44,3 +44,6 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+# To use Formtastic, a Rails form builder plugin
+gem 'formtastic'
