@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120730221215) do
+ActiveRecord::Schema.define(:version => 20120730234147) do
 
   create_table "field_answers", :force => true do |t|
     t.text     "answer"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(:version => 20120730221215) do
     t.string   "token"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "phone"
+    t.string   "role"
   end
 
 end
