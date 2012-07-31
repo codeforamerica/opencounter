@@ -21,6 +21,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
+hr {
+  display: none !important;
+}
+
 /* === Container ============================== */
 
 hr {
@@ -43,16 +47,44 @@ header {
   top: 0;
   width: 25%;
   min-width: 240px;
-  background: #F00;
 }
 
-header h1 {
+header .inner {
+  border-right: 5px solid #000;
+  height: 100%;
+}
+
+/* --- Masthead --- */
+
+header .masthead {
+  padding: 1em 15px;
+}
+
+header .masthead h1 {
+  display: block;
+  background: transparent url(<%= asset_path 'opencounter_logo.png' %>) no-repeat 0 0;
+  height: 38px;
+  margin: 0;
+  text-indent: -9999px;
+  width: 210px;
+}
+
+header .masthead p {
   margin: 0;
 }
 
+header .masthead p .city {
+  display: inline-block;
+  border-bottom: 2px solid #000;
+}
+
+
 /* === Main Navigation ======================== */
+
 .nav-main {
-  padding: 0 15px;
+  margin: 0 15px;
+  padding: 1em 0;
+  border-top: 5px solid #000;
 }
 
 .nav-main ul {
@@ -73,7 +105,7 @@ header h1 {
 
 /* Link and connecting line */
 .nav-main a {
-  border-left: 0.5em solid #FFF;
+  border-left: 0.5em solid #DDD;
   color: #666;
   display: block;
   margin-left: 1em;
@@ -122,12 +154,12 @@ header h1 {
 
 /* Outer ring color */
 .nav-main a:before {
-  background: #FFF;
+  background: #DDD;
 }
 
 /* Inner ring color */
 .nav-main a:after {
-  background-color: #999;
+  background-color: #FFF;
 }
 
 /* Inner ring status colors */
@@ -148,12 +180,13 @@ header h1 {
   background: transparent;
 }
 
-/*.nav-main ul ul {
+.nav-main ul ul {
   display: none;
-}*/
+}
 
 
 /* === Utility Navigation ===================== */
+
 .nav-utility {
   background: #0F0;
   position: fixed;
@@ -161,6 +194,14 @@ header h1 {
   left: 0;
   width: 25%;
   min-width: 240px;
+  border-top: 5px solid #000;
+}
+
+.nav-utility ul {
+  border-right: 5px solid #000;
+}
+
+.nav-utility li {
 }
 
 /* === Applicant Profile ====================== */
@@ -190,6 +231,23 @@ header h1 {
   width: 75%;
   min-width: 720px;
   overflow-y: auto;
+}
+
+/* --- Content --- */
+
+.panel .content {
+  padding: 0 15px 1em 15px;
+}
+
+.panel label {
+  display: block;
+  padding: 1em 15px 1em 0;
+}
+
+.panel label input,
+.panel label select,
+.panel label button {
+  display: block;
 }
 
 /* === Media Queries ========================== */
