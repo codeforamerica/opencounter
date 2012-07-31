@@ -1,6 +1,12 @@
 class Business < ActiveRecord::Base
   has_and_belongs_to_many :users
-  has_one :naics, :utility_application, :use_permit, :environmental_health_permit, :sec_state_registration, :payroll_tax, :irs_ein_application
+  has_one :naics 
+  has_one :utility_application 
+  has_one :use_permit 
+  has_one :environmental_health_permit 
+  has_one :sec_state_registration 
+  has_one :payroll_tax 
+  has_one :irs_ein_application
   attr_accessible :description, 
                   :is_home_occ, 
                   :is_sole_owner, 
