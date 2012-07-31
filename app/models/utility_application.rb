@@ -1,4 +1,5 @@
 class UtilityApplication < ActiveRecord::Base
+  belongs_to :business
   attr_accessible :previous_street,
                   :previous_detail,
                   :previous_state,
