@@ -15,204 +15,47 @@
 
 body {
   font-family: 'PT Sans', sans-serif;
-  background: #DDD;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
+/* === Container ============================== */
+
 hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-/* === Header ============================= */
-
-.header {
-  background: #111;
-  color: rgb(51,182,230);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-}
-
-.branding {
-  background: rgb(51,182,230);
-  color: #FFF;
-  float: left;
-  width: 15%;
-  min-width: 240px;
-  margin: 0 0 -16px 5%;
-  text-align: center;
-  padding: 0 0 8px 0;
-}
-
-/* Utility nav */
-.utilities {
-  list-style: none;
-  position: relative;
-  overflow: auto;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  bottom: 0;
-  left: 35%;
-  width: 50%;
-}
-
-.utilities ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  overflow: auto;
-}
-
-.utilities li {
-  margin: 0;
-  padding: 0;
-  display: block;
-  float: left;
-  position: relative;
-  overflow: auto;
-}
-
-.utilities a {
-  display: block;
-  float: left;
-  color: rgb(51,182,230);
-  text-transform: uppercase;
-  white-space: nowrap;
-  padding: 0.5em 10px;
-  text-decoration: none;
-}
-
-.utilities a:hover,
-.utilities a.on {
-  background: rgb(51,182,230);
-  color: #FFF;
-}
-
-/* Utility */
-.utility {
-  background: rgb(51,182,230);
-  color: #FFF;
-  position: absolute;
-  top: 2.2em;
-  left: 35%;
-  width: 50%;
-  
-}
-
-#profile div {
-}
-
-.utility {
   display: none;
 }
 
-/* === Main Content Area ================== */
-
-.main {
-  position: absolute;
-  width: 50%;
-  left: 35%;
-  top: 2em;
-}
-
-/* Panel */
-.panel {
-  position: relative;
-  padding: 1em;
-  margin: 3em 0;
-  background: #fff;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-}
-
-.panel:before,
-.panel:after {
-  content:"";
-  position:absolute;
-  z-index:-2;
-}
-
-.panel:before {
-  top: 50%;
-  bottom: 0;
-  left: 10px;
-  right: 10px;
-  -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.6);
-  -moz-box-shadow: 0 0 15px rgba(0,0,0,0.6);
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
-  -moz-border-radius: 100px / 10px;
-  border-radius: 100px / 10px;
-}
-
-label {
-  display: block;
-  margin: 1em 0;
-}
-
-label span {
-  display: block;
-}
-
-.tool {
-  background: #EEE;
-  border: 5px solid #DDD;
-  padding: 1em 20px;
-}
-
-/* Widgets */
-.toggle:before {
-  display: block;
-  content: "\2192";
-  float: left;
-}
-
-.next {
-  background:#DDEEFF;
-  border: 1px solid #CCC;
-  display: block;
-  font-weight: bold;
-  padding: 0.5em 10px;
-}
-
-blockquote {
-  color: #666;
-  font-style: italic;
-}
-
-ol li {
-  padding-bottom: 1em;
-}
-
-ol li:last-child {
-  padding-bottom: 0;
-}
-
-/* === Navigation ========================= */
-
-.progress-nav {
-  display: block;
-  min-width: 240px;
-  position: fixed;
+.container {
   height: 100%;
-  left: 5%;
-  top: 72px;
-  width: 15%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
-.progress-nav ul {
+/* === Header ================================= */
+
+header {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 25%;
+  min-width: 240px;
+  background: #F00;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* === Main Navigation ======================== */
+.nav-main {
+  padding: 0 15px;
+}
+
+.nav-main ul {
   list-style: none;
   overflow: auto;
   margin: 0;
@@ -220,7 +63,7 @@ ol li:last-child {
   position: relative;
 }
 
-.progress-nav li {
+.nav-main li {
   clear: both;
   display: block;
   overflow: hidden;
@@ -229,21 +72,19 @@ ol li:last-child {
 }
 
 /* Link and connecting line */
-.progress-nav a {
+.nav-main a {
   border-left: 0.5em solid #FFF;
   color: #666;
   display: block;
   margin-left: 1em;
-  padding: 0.5em 0 0.5em 2em;
+  padding: 0.6em 0 0.6em 2em;
   text-decoration: none;
   text-transform: uppercase;
 }
 
-
-
 /* Rings */
-.progress-nav a:before,
-.progress-nav a:after {
+.nav-main a:before,
+.nav-main a:after {
   border-width: 0.5em;
   border-radius: 50%;
   content: "";
@@ -255,7 +96,7 @@ ol li:last-child {
 }
 
 /* Outer ring positioning & dimensions */
-.progress-nav a:before {
+.nav-main a:before {
   height: 2em;
   left: 0.25em;
   margin-top: -1em;
@@ -265,7 +106,7 @@ ol li:last-child {
 }
 
 /* Inner ring positioning & dimensions */
-.progress-nav a:after {
+.nav-main a:after {
   height: 1em;
   left: 0.75em;
   margin-top: -0.5em;
@@ -275,36 +116,95 @@ ol li:last-child {
 }
 
 /* Hover state */
-.progress-nav a:hover:after {
+.nav-main a:hover:after {
   background-color: rgb(51,182,230);
 }
 
 /* Outer ring color */
-.progress-nav a:before {
+.nav-main a:before {
   background: #FFF;
 }
 
 /* Inner ring color */
-.progress-nav a:after {
+.nav-main a:after {
   background-color: #999;
 }
 
 /* Inner ring status colors */
-.progress-nav .current a:after {
+.nav-main .current a:after {
   background-color: #33B6E6;
 }
 
-.progress-nav .complete a:after {
+.nav-main .complete a:after {
   background-color: #0F0;
 }
 
-.progress-nav .incomplete a:after {
+.nav-main .incomplete a:after {
   background-color: #FF0;
 }
 
 /* Sub nav */
-.progress-nav ul ul a:before {
+.nav-main ul ul a:before {
   background: transparent;
 }
 
-/* Utility */
+/*.nav-main ul ul {
+  display: none;
+}*/
+
+
+/* === Utility Navigation ===================== */
+.nav-utility {
+  background: #0F0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 25%;
+  min-width: 240px;
+}
+
+/* === Applicant Profile ====================== */
+.profile {
+  background: #00F;
+}
+
+.profile h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+.profile h1:after {
+  display: block;
+  content: "&/uarr;";
+}
+
+/* === Panel ================================== */
+
+.panel {
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 75%;
+  min-width: 720px;
+  overflow-y: auto;
+}
+
+/* === Media Queries ========================== */
+
+
+@media only screen and (max-width: 959px) {
+
+    /* Linearize */
+    .masthead,
+    .nav-utility,
+    .panel {
+      position: relative;
+      right: auto;
+      left: auto;
+      top: auto;
+      width: 100%;
+    }
+}
