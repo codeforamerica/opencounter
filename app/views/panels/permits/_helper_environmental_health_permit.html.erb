@@ -1,0 +1,119 @@
+<p>Is your business a food service establishment?</p>
+
+<!-- Begin Environmental Health Permit -->
+<!-- CONDITION: Business is a food service establishment -->
+<label>
+  Type of application (new, renewal, etc):
+  <select id="application_type">
+    <option value="new">             New application    </option>
+    <option value="renewal">         Renewal            </option>
+    <option value="change_ownership">Change in ownership</option>
+    <option value="change_category"> Change in category </option>
+  </select>
+</label>
+
+<label>What type of food service is your business? Please choose a category.</label>
+<!--NOTE: Many conditional fields ahead-->
+<!--Maybe the big category can be auto-selected from NAICS code?-->
+
+<select id="food_type">
+  <option value="normal">Traditional food service</option>
+  <option value="bakery">Bakery</option>
+  <option value="processing">Food processing</option>
+  <option value="vending">Food vending</option>
+  <option value="commissary">Commissary</option>
+  <option value="kitchen">Food central est. kitchen</option>
+  <option value="other">Other</option>
+</select>
+
+<!--If "food service" selected, display this drop-down-->
+<select id="food_service_sub">
+  <option value="seats_1">0-25 seats</option>
+  <option value="seats_2">26-50 seats</option>
+  <option value="seats_3">51-75 seats</option>
+  <option value="seats_4">76-100 seats</option>
+  <option value="seats_more">More than 100 seats</option>
+  <option value="bed_breakfast">Bed &amp; breakfast</option>
+  <option value="theater">Theater snack bars</option>
+  <option value="bars">Bars, on sale with no food</option>
+  <option value="caterer">Caterer</option>
+</select>  
+<!--End food service drop-down-->
+
+<!--If "Bakery" selected, display this drop-down-->
+<select id="bakery_sub">
+  <option value="area_1k">Less than 2,000 sq. ft</option>
+  <option value="area_2k">2,001 - 2,999 sq. ft</option>
+  <option value="area_3k">More than 3,000 sq. ft</option>
+</select>
+<!--End bakery drop-down-->
+
+<!--If "Food processing" selected, display these-->
+<label>
+  Is the area of your business more than 1,000 square feet?
+  <input type="radio"> Yes
+  <input type="radio"> No
+</label>
+<!--End food processing choice-->
+
+<!--If "Food vending" selected, display these-->
+<select id="vending_sub">
+  <option value="area_1k">Less than 2,000 sq. ft</option>
+  <option value="area_2k_5k">2,001 - 5,999 sq. ft</option>
+  <option value="area_over">More than 6,000 sq. ft</option>
+  <option value="swampmeet">Swampmeet pre-packaged</option>
+  <option value="limited_sales">Limited food sales</option>
+  <option value="produce">Produce stand</option>
+  <option value="farmers">Certified farmer's market</option>
+</select>
+
+<!--If any of the area fields are selected, display these-->
+<label>
+  How many Food Prep./Proc?
+  <input type="radio"> +1
+  <input type="radio"> +2
+  <input type="radio"> +3
+</label>
+<!--End area choice-->
+
+<!--If "Swampmeet pre-packaged" selected, display this text field-->
+<label>
+  Type of food:
+  <input type="text">
+</label>
+<!--End swampmeet choice-->
+<!--End food vending choice-->
+
+<!--If "commissary" selected, display these-->
+<label>
+  Is your storage area more than 1,000 square feet?
+  <input type="radio"> Yes
+  <input type="radio"> No
+</label>
+<!--End commissary choice-->
+
+<!--If "Food central est. kitchen" selected, display these-->
+<label>
+  Do your preparation and storage areas equal more than 1,000 square feet?
+  <input type="radio"> Yes
+  <input type="radio"> No
+</label>
+
+<!--End kitchen choice-->
+<!--End ALL food service type fields-->
+
+<label>
+  Mailing address:
+  <input type="text">
+</label>
+
+<label>
+  Other phone number:
+  <input type="text">
+</label>
+
+<label>
+  Previous business name:
+  <input type="text">
+</label>
+<!-- End Environmental Health Permit -->
