@@ -14,5 +14,6 @@ class User < ActiveRecord::Base
   validates_presence_of :phone
   validates_format_of :phone, 
                       :message => "must be a valid telephone number.", 
-                      :with => /^[\(\)0-9\- \+\.]{10,20}$/
+                      :with => /^[\(\)0-9\- \+\.]{10,20}$/i
+
 end
