@@ -40,5 +40,14 @@ class Business < ActiveRecord::Base
                       :message => "must be a valid telephone number.", 
                       :with => /^[\(\)0-9\- \+\.]{10,20}$/i
   #TODO Address validation
+  
+  def self.inherited(child)
+    child.instance_eval do
+      def model_name
+        Business.model_name
+      end
+    end
+    super
+  end
 
 end

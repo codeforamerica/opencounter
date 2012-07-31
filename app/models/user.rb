@@ -16,4 +16,13 @@ class User < ActiveRecord::Base
                       :message => "must be a valid telephone number.", 
                       :with => /^[\(\)0-9\- \+\.]{10,20}$/i
 
+
+  def self.inherited(child)
+    child.instance_eval do
+      def model_name
+        User.model_name
+      end
+    end
+    super
+  end
 end
