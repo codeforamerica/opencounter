@@ -798,14 +798,14 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="boarding" method="post" action="" onsubmit="calculate('boarding');">
       <label>
         Number of beds:
-        <input id="boarding_beds" type="text">
+        <input id="beds" type="text">
       </label>
       <label>
         Number of employees:
-        <input id="boarding_emp" type="text">
+        <input id="employees" type="text">
       </label>
       <input type="submit" value="Calculate">
     </form>
@@ -820,14 +820,14 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="institutions" method="post" action="" onsubmit="calculate(institutions);">
       <label>
         Number of guests:
-        <input id="institution_guests" type="text">
+        <input id="guests" type="text">
       </label>
       <label>
         Number of employees on busiest shift:
-        <input id="institution_emp" type="text">
+        <input id="employees" type="text">
       </label>
       <input type="submit" value="Calculate">
     </form>
@@ -843,14 +843,14 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="nursing" method="post" action="" onsubmit="calculate(nursing);">
       <label>
         Number of guests:
-        <input id="nursing_guests" type="text">
+        <input id="guests" type="text">
       </label>
       <label>
         Number of employees on busiest shift:
-        <input id="nursing_emp" type="text">
+        <input id="employees" type="text">
       </label>
       <input type="submit" value="Calculate">
     </form>
@@ -919,10 +919,12 @@
       Number of seats in sanctuary:
       <input id="worship_seats" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" id="calculate" value="Calculate">
     </form>
     
   </div>  <!-- /#business_type_worship -->
+
+  <span id="parking_spots"></span>
 
 </div>
 
@@ -962,13 +964,58 @@
                             .hide()
                             .slideUp('slow');
 
+        $('parking_spots').hide()
+
         // Show the selected <div class="business-type-rules">
         $(selected_option)
                       .show()
                       .slideDown('slow');
+
+
+
+
+
+
+
+
     });
 
+    
+
 })();
+
+function calculate(form_name) {
+
+    alert("In calculate()");
+    var result = document.getElementById('parking_spots');
+    alert(result);
+    var form = document.forms[form_name];
+    alert(form_name);
+
+  switch(form_name) {
+    case 'boarding':
+      result.innerHTML = String(floor(form["beds"].value / 5) + form["employees"].value);
+      alert("Inside switch");
+      break;
+
+    case 'institutions':
+      document.getElementById('parking_spots').innerHTML = floor(document.forms[form_name]["guests"].value / 5) + document.forms[form_name]["employees"].value;
+      break;
+
+    case 'nursing':
+      document.getElementById('parking_spots').innerHTML = floor(document.forms[form_name]["guests"].value / 5) + document.forms[form_name]["employees"].value + 1;
+      break;
+
+    default:
+      alert("Error");
+      break;
+      
+  }
+
+  alert("Outside switch");
+  result.show();
+  alert("After .show()");
+}
 </script>
 
 
