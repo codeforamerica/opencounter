@@ -22,8 +22,8 @@ class Business < ActiveRecord::Base
                   :physical_address_state, 
                   :physical_address_street, 
                   :physical_address_zip, 
+                  :type
                   :structure 
-  #:type I assume this is covered by the naics code
   
   validates_presence_of :description,
                         :is_home_occ, 

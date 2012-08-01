@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :phone, :role, :last_state, :token, :email
+  attr_accessible :first_name, :last_name, :phone, :role, :last_state, :token, :email, :type
 
   has_many :field_answers
   has_and_belongs_to_many :businesses
