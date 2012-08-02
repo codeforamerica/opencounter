@@ -76,12 +76,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="auto" method="post" action="">
       <label>
         Floor area:
-        <input id="auto_area" type="text">
+        <input id="square_feet" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('auto');" value="Calculate">
     </form>
 
     <h3>Automobile service stations</h3>
@@ -94,16 +94,16 @@
       </ul>
     </div>
     
-    <form method="post" action="">
+    <form name="service_stations" method="post" action="">
       <label>
         Service bays:
-        <input id="auto_bays" type="text">
+        <input id="service_bays" type="text">
       </label>
       <label>
         Day shift employees:
-        <input id="auto_emp" type="text">
+        <input id="employees" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('service_stations');" value="Calculate">
     </form>
 
   </div><!-- /#business_type_auto -->
@@ -121,16 +121,16 @@
       </ul>
     </div>
     
-    <form method="post" action="">
+    <form name="banks_with_atms" method="post" action="">
       <label>
         Floor area:
-        <input id="banks_area" type="text">
+        <input id="square_feet" type="text">
       </label>
       <label>
         ATM machines:
-        <input id="banks_ATM" type="text">
+        <input id="ATMs" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('banks_with_atms');" value="Calculate">
     </form>
 
     <h3>Banks without automatic teller machines</h3>
@@ -142,12 +142,12 @@
       </ul>
     </div>
     
-    <form method="post" action="">
+    <form name="banks_no_atms" method="post" action="">
       <label>
         Floor area:
-        <input id="banks_area" type="text">
+        <input id="square_feet" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('banks_no_atms');" value="Calculate">
     </form>
 
   </div><!-- /#business_type_banks -->
@@ -164,12 +164,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="billiard" method="post" action="">
       <label>
         Number of tables:
-        <input id="bill_tables" type="text">
+        <input id="tables" type="text">
       </label>
-      <input type="submit" value="Calculate"> 
+      <input type="button" onclick="calculate('billiard');" value="Calculate">
     </form>
 
   </div>  <!-- /#business_type_billiard -->
@@ -187,16 +187,16 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="child_homes" method="post" action="">
       <label>
         Number of beds:
-        <input id="children_beds" type="text">
+        <input id="beds" type="text">
       </label>
       <label>
         Number of employees:
-        <input id="children_emp" type="text">
+        <input id="employees" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('child_homes');" value="Calculate">
     </form>
 
     <h3>Family daycare and foster family homes</h3>
@@ -209,12 +209,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="daycare_foster" method="post" action="">
       <label>
         Number of guests:
-        <input id="daycare_guests" type="text">
+        <input id="guests" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('daycare_foster');" value="Calculate">
     </form>
 
   </div>  <!-- /#business_type_children -->
@@ -231,12 +231,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="communications" method="post" action="">
       <label>
         Floor area:
-        <input id="comm_area" type="text">
+        <input id="square_feet" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('communications');" value="Calculate">
     </form>
 
   </div>  <!-- /#business_type_communication -->
@@ -253,12 +253,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="lower_schools" method="post" action="">
       <label>
         Number of employees:
-        <input id="elem_emp" type="text">
+        <input id="employees" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('lower_schools');" value="Calculate">
     </form>
 
     <h3>High schools</h3>
@@ -271,16 +271,16 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="high_schools" method="post" action="">
       <label>
         Number of employees:
-        <input id="high_emp" type="text">
+        <input id="employees" type="text">
       </label>
       <label>
         Number of students:
-        <input id="high_students" type="text">
+        <input id="students" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('lower_schools');" value="Calculate">
     </form>
 
     <h3>Colleges and universities</h3>
@@ -293,16 +293,16 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="colleges" method="post" action="">
       <label>
         Number of employees:
-        <input id="high_emp" type="text">
+        <input id="employees" type="text">
       </label>
       <label>
         Number of students:
-        <input id="high_students" type="text">
+        <input id="students" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('auto');" value="Calculate">
     </form>
 
   </div>  <!-- /#business_type_education -->
@@ -320,16 +320,16 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="multi_program_fitness" method="post" action="">
       <label>
         Floor area:
-        <input id="multi_fitness_area" type="text">
+        <input id="square_feet" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('multi_program_fitness');" value="Calculate">
     </form>
 
     <h3>Single-program fitness facilities</h3>
-    This one is a little complicated. Look at each rule&#8218; and see if it applies to you. Each &#34;Calculate&#34; button will add to the total number of spaces at the bottom. Click &#34;Clear&#34; to reset the total.
+    This one is a little complicated. Look at each rule&#8218; and see if it applies to you. Each &#34;Calculate&#34; button will add to the total number of spaces at the bottom. Leave any field blank that doesn't apply to you.
 
     <div class="rules">
     <h5>Rules:</h5>
@@ -343,14 +343,14 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="single_program_fitness" method="post" action="">
       <label>
         Aerobics floor area:
         <input id="aerobics_area" type="text">
       </label>
       <label>
         Occupancy for both basketball &#38; volleyball areas:
-        <input id="basket_volley_occupancy" type="text">
+        <input id="basketball_volleyball_occupancy" type="text">
       </label>
       <label>
         Number of lanes in lap pools:
@@ -358,7 +358,7 @@
       </label>
       <label>
         Lap pool floor area that is not water:
-        <input id="pool_area" type="text">
+        <input id="pool_non_water_area" type="text">
       </label>
       <label>
         Weightlifting floor area:
@@ -366,10 +366,9 @@
       </label>
       <label>
         Total floor area:
-        <input id="single_fitness_area" type="text">
+        <input id="square_feet" type="text">
       </label>
-      <input type="submit" value="Calculate">
-      <input type="submit" value="Clear">
+      <input type="button" onclick="calculate('single_program_fitness');" value="Calculate">
     </form>
 
   </div>  <!-- /#business_type_fitness -->
@@ -386,12 +385,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="food" method="post" action="">
       <label>
         Floor area:
-        <input id="food_area" type="text">
+        <input id="square_feet" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('food');" value="Calculate">
     </form>
 
     <h3>Restaurants with counter&#8218; take-out&#8218; or drive-in service</h3>
@@ -404,16 +403,16 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="take_out" method="post" action="">
       <label>
         Total floor area:
-        <input id="food_area" type="text">
+        <input id="square_feet" type="text">
       </label>
       <label>
         Floor area devoted to counter/take-out:
-        <input id="counter_area" type="text">
+        <input id="take_out_area" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('take_out');" value="Calculate">
     </form>
 
   </div>  <!-- /#business_type_food -->
@@ -430,12 +429,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="funeral" method="post" action="">
       <label>
         Total number of seats provided:
-        <input id="funeral_seats" type="text">
+        <input id="seats" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('funeral');" value="Calculate">
     </form>
 
   </div>  <!-- /#business_type_funeral -->
@@ -452,12 +451,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="furniture_repair" method="post" action="">
       <label>
         Floor area:
-        <input id="furn_area" type="text">
+        <input id="square_feet" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('furniture_repair');" value="Calculate">
     </form>
 
   </div>  <!-- /#business_type_furn_repair -->
@@ -474,12 +473,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="halls_with_seats" method="post" action="">
       <label>
         Maximum seating capacity:
-        <input id="halls_seats" type="text">
+        <input id="seats" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('halls_with_seats');" value="Calculate">
     </form>
 
     <h3>Dance and exhibition halls and assembly halls without fixed seats</h3>
@@ -492,12 +491,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="halls_no_seats" method="post" action="">
       <label>
         Design occupancy load:
-        <input id="halls_occupancy" type="text">
+        <input id="max_occupancy_load" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('halls_no_seats');" value="Calculate">
     </form>
 
   </div>  <!-- /#business_type_halls -->
@@ -514,12 +513,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="household" method="post" action="">
       <label>
         Sales floor area:
-        <input id="house_sales_area" type="text">
+        <input id="sales_area" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('household');" value="Calculate">
     </form>
 
   </div>  <!-- /#business_type_household -->
@@ -536,12 +535,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="laundry" method="post" action="">
       <label>
         Floor area:
-        <input id="laundry_area" type="text">
+        <input id="square_feet" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('laundry');" value="Calculate">
     </form>
 
   </div>  <!-- /#business_type_laundry -->
@@ -560,16 +559,16 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="community_care" method="post" action="">
       <label>
         Number of guests:
-        <input id="lodging_guests" type="text">
+        <input id="guests" type="text">
       </label>
       <label>
         Number of employees on busiest shift:
-        <input id="lodging_emp" type="text">
+        <input id="employees" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('community_care');" value="Calculate">
     </form>
 
     <h3>Hotels and Motels</h3>
@@ -582,12 +581,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="hotels" method="post" action="">
       <label>
         Number of units:
         <input id="hotel_units" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('hotels');" value="Calculate">
     </form>
 
   </div>  <!-- /#business_type_lodging -->
@@ -605,16 +604,16 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="convalescent" method="post" action="">
       <label>
         Number of beds:
-        <input id="medical_beds" type="text">
+        <input id="beds" type="text">
       </label>
       <label>
         Number of employees on busiest shift
-        <input id="medical_emp" type="text">
+        <input id="employees" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('convalescent');" value="Calculate">
     </form>
 
     <h3>Hospitals</h3>
@@ -627,16 +626,16 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="hospitals" method="post" action="">
       <label>
         Number of beds:
-        <input id="hospital_beds" type="text">
+        <input id="beds" type="text">
       </label>
       <label>
         Number of employees on busiest shift:
-        <input id="hospital_emp" type="text">
+        <input id="employees" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('hospitals');" value="Calculate">
     </form>
 
     <h3>Medical and dental clinics and offices</h3>
@@ -648,12 +647,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="medical_offices" method="post" action="">
       <label>
         Floor area:
-        <input id="medical_office_area" type="text">
+        <input id="square_feet" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('medical_offices');" value="Calculate">
     </form>
 
     <h3>Physical therapy</h3>
@@ -666,16 +665,16 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="physical_therapy" method="post" action="">
       <label>
         Floor area:
-        <input id="therapy_area" type="text">
+        <input id="square_feet" type="text">
       </label>
       <label>
         Pool (water) area:
-        <input id="therapy_pool_area" type="text">
+        <input id="pool_water_area" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('physical_therapy');" value="Calculate">
     </form>
 
   </div>  <!-- /#business_type_medical -->
@@ -693,12 +692,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="business_offices" method="post" action="">
       <label>
         Floor area:
-        <input id="office_area" type="text">
+        <input id="square_feet" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('business_offices');" value="Calculate">
     </form>
 
   </div>  <!-- /#business_type_office -->
@@ -715,12 +714,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="plants" method="post" action="">
       <label>
         Floor area:
-        <input id="plant_area" type="text">
+        <input id="square_feet" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('plants');" value="Calculate">
     </form>
 
   </div>  <!-- /#business_type_plants-->
@@ -749,16 +748,16 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="research_development" method="post" action="">
       <label>
         Floor area:
-        <input id="research_area" type="text">
+        <input id="square_feet" type="text">
       </label>
       <label>
         Number of employees on busiest shift:
-        <input id="therapy_pool_area" type="text">
+        <input id="employees" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('research_development');" value="Calculate">
     </form>
     
   </div>  <!-- /#business_type_research -->
@@ -775,12 +774,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="retail" method="post" action="">
       <label>
         Floor area:
-        <input id="retail_area" type="text">
+        <input id="square_feet" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('retail');" value="Calculate">
     </form>
     
   </div> <!-- /#business_type_retail -->
@@ -798,7 +797,8 @@
       </ul>
     </div>
 
-    <form name="boarding" method="post" action="" onsubmit="calculate('boarding');">
+    <!--<form name="boarding" method="post" action="" onsubmit="calculate('boarding');">-->
+    <form name="boarding" mehod="post" action="">
       <label>
         Number of beds:
         <input id="beds" type="text">
@@ -807,7 +807,8 @@
         Number of employees:
         <input id="employees" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <!--<input type="submit" value="Calculate">-->
+      <input type="button" onclick="calculate('boarding');" value="Calculate">
     </form>
 
     <h3>Institutions for the aged</h3>
@@ -820,7 +821,7 @@
       </ul>
     </div>
 
-    <form name="institutions" method="post" action="" onsubmit="calculate(institutions);">
+    <form name="institutions" method="post" action="">
       <label>
         Number of guests:
         <input id="guests" type="text">
@@ -829,7 +830,7 @@
         Number of employees on busiest shift:
         <input id="employees" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('institutions');" value="Calculate">
     </form>
 
     <h3>Nursing homes</h3>
@@ -843,7 +844,7 @@
       </ul>
     </div>
 
-    <form name="nursing" method="post" action="" onsubmit="calculate(nursing);">
+    <form name="nursing" method="post" action="">
       <label>
         Number of guests:
         <input id="guests" type="text">
@@ -852,7 +853,7 @@
         Number of employees on busiest shift:
         <input id="employees" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('nursing');" value="Calculate">
     </form>
     
   </div>  <!-- /#business_type_seniors -->
@@ -870,12 +871,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="theaters" method="post" action="">
       <label>
         Number of seats:
-        <input id="theater_seats" type="text">
+        <input id="seats" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('theaters');" value="Calculate">
     </form>
     
   </div>  <!-- /#business_type_theaters -->
@@ -892,12 +893,12 @@
       </ul>
     </div>
 
-    <form method="post" action="">
+    <form name="warehouses" method="post" action="">
       <label>
         Floor area:
-        <input id="warehouse_area" type="text">
+        <input id="square_feet" type="text">
       </label>
-      <input type="submit" value="Calculate">
+      <input type="button" onclick="calculate('warehouses');" value="Calculate">
     </form>
     
   </div>  <!-- /#business_type_warehouses -->
@@ -914,17 +915,17 @@
       </ul>
     </div>
     
-    <form method="post" action="">
+    <form name="worship" method="post" action="">
       <label>
       Number of seats in sanctuary:
-      <input id="worship_seats" type="text">
+      <input id="seats" type="text">
       </label>
-      <input type="button" id="calculate" value="Calculate">
+      <input type="button" onclick="calculate('worship');" value="Calculate">
     </form>
     
   </div>  <!-- /#business_type_worship -->
 
-  <span id="parking_spots"></span>
+  <span id="parking_spots">Parking Spaces: </span>
 
 </div>
 
@@ -964,7 +965,7 @@
                             .hide()
                             .slideUp('slow');
 
-        $('parking_spots').hide()
+        //$('parking_spots').hide()
 
         // Show the selected <div class="business-type-rules">
         $(selected_option)
@@ -985,36 +986,196 @@
 })();
 
 function calculate(form_name) {
-
-    alert("In calculate()");
     var result = document.getElementById('parking_spots');
-    alert(result);
     var form = document.forms[form_name];
-    alert(form_name);
+    result.innerHTML = "Parking Spaces: ";
 
   switch(form_name) {
+
+    case 'auto':
+      result.innerHTML += Math.round(form["square_feet"].value / 400);
+      break;
+
+    case 'service_stations':
+      result.innerHTML += Math.round(form["service_bays"].value * 3) + parseInt(form["employees"].value);
+      break;
+
+    case 'banks_with_atms':
+      result.innerHTML += Math.round( parseInt(form["square_feet"].value) / parseInt(400) 
+                                    + parseInt(form["ATMs"].value) * parseFloat(1.5) );
+      break;
+
+    case 'banks_no_atms':
+      result.innerHTML += Math.round(form["square_feet"].value / 400);
+      break;
+
+    case 'billiard':
+      result.innerHTML += Math.round(form["tables"].value * 1.5);
+      break;
+
+    case 'child_homes':
+      result.innerHTML += Math.round(form["beds"].value / 5) + parseInt(form["employees"].value);
+      break;
+
+    case 'daycare_foster':
+      result.innerHTML += Math.round(form["guests"].value / 5) + parseInt(1);
+      break;
+
+    case 'communications':
+      result.innerHTML += Math.round(form["square_feet"].value / 1000);
+      break;
+
+    case 'lower_schools':
+      result.innerHTML += form["employees"].value;
+      break;
+
+    case 'high_schools':
+      result.innerHTML += Math.round(form["students"].value / 10) + parseInt(form["employees"].value);
+      break;
+
+    case 'colleges':
+      result.innerHTML += Math.round(form["students"].value / 3) + parseInt(form["employees"].value);
+      break;
+
+    case 'multi_program_fitness':
+      result.innerHTML = Math.round(form["square_feet"].value / 100);
+
+      if(form["square_feet"].value > 15000) {
+        result.innerHTML = Math.round( parseInt(result.innerHTML) * parseFloat(1.1) );
+      }
+
+      result.innerHTML = "Parking Spaces: " + parseInt(result.innerHTML);
+      break;
+
+    case 'single_program_fitness':
+      result.innerHTML = Math.round( parseInt(form["aerobics_area"].value) / parseInt(50)
+                                   + parseInt(form["basketball_volleyball_occupancy"].value) / parseInt(3)
+                                   + parseInt(form["pool_lanes"].value) * parseInt(2)
+                                   + parseInt(form["pool_non_water_area"].value) / parseInt(300)
+                                   + parseInt(form["weights_area"].value) / parseInt(250) );
+
+      if(form["square_feet"].value > 15000) {
+        result.innerHTML = Math.round( parseInt(result.innerHTML) * parseFloat(1.1) );
+      }
+
+      result.innerHTML = "Parking Spaces: " + parseInt(result.innerHTML);
+      break;
+
+    case 'food':
+      result.innerHTML += Math.round(form["square_feet"].value / 120);
+      break;
+
+    case 'take_out':
+      result.innerHTML += Math.round( parseInt(form["square_feet"].value) / parseInt(120)
+                                    + parseInt(form["take_out_area"].value) / parseInt(50) );
+      break;
+
+    case 'funeral':
+      result.innerHTML += Math.round(form["seats"].value / 5);
+      break;
+
+    case 'furniture_repair':
+      result.innerHTML += Math.round(form["square_feet"].value / 500);
+      break;
+
+    case 'halls_with_seats':
+      result.innerHTML += Math.round(form["seats"].value / 3.5);
+      break;
+
+    case 'halls_no_seats':
+      result.innerHTML += Math.round(form["max_occupancy_load"].value / 3);
+      break;
+
+    case 'household':
+      result.innerHTML += Math.round(form["sales_area"].value / 800);
+      break;
+
+    case 'laundry':
+      result.innerHTML += Math.round(form["square_feet"].value / 200);
+      break;
+
+    case 'community_care':
+      result.innerHTML += Math.round(form["guests"].value / 5) + parseInt(form["employees"].value) + parseInt(1);
+      break;
+
+    case 'hotels':
+      result.innerHTML += parseInt(form["hotel_units"].value) + parseInt(1);
+      break;
+
+    case 'convalescent':
+      result.innerHTML += Math.round(form["beds"].value / 5) + parseInt(form["employees"].value);
+      break;
+
+    case 'hospitals':
+      result.innerHTML += Math.round(form["beds"].value / 5) + parseInt(form["employees"].value);
+      break;
+
+    case 'medical_offices':
+      result.innerHTML += Math.round(form["square_feet"].value / 200);
+      break;
+
+    case 'physical_therapy':
+      result.innerHTML += Math.round( parseInt(form["square_feet"].value) / parseInt(200)
+                                    + parseInt(form["pool_water_area"].value) / parseInt(50) );
+      break;
+
+    case 'business_offices':
+      result.innerHTML += Math.round(form["square_feet"].value / 300);
+      break;
+
+    case 'plants':
+      result.innerHTML += Math.round(form["square_feet"].value / 500);
+      break;
+
+    case 'research_development':
+      if( Math.round(form["square_feet"].value / 325) >= Math.round(form["employees"].value / 2) ) {
+          result.innerHTML += Math.round(form["square_feet"].value / 325);
+      } else {
+          result.innerHTML += Math.round(form["employees"].value / 2);
+      }
+      break;
+
+    case 'retail':
+      result.innerHTML += Math.round(form["square_feet"].value / 250);
+      break;
+
     case 'boarding':
-      result.innerHTML = String(floor(form["beds"].value / 5) + form["employees"].value);
-      alert("Inside switch");
+      result.innerHTML += Math.round(form["beds"].value / 5) + parseInt(form["employees"].value);
       break;
 
     case 'institutions':
-      document.getElementById('parking_spots').innerHTML = floor(document.forms[form_name]["guests"].value / 5) + document.forms[form_name]["employees"].value;
+      result.innerHTML += Math.round(form["guests"].value / 5) + parseInt(form["employees"].value);
       break;
 
     case 'nursing':
-      document.getElementById('parking_spots').innerHTML = floor(document.forms[form_name]["guests"].value / 5) + document.forms[form_name]["employees"].value + 1;
+      result.innerHTML += Math.round(form["guests"].value / 5) + parseInt(form["employees"].value) + parseInt(1);
+      break;
+
+    case 'theaters':
+      if( (form["seats"].value - parseInt(350)) >= 0 ) {
+        result.innerHTML += Math.round( (parseInt(form["seats"].value) - parseInt(350)) / 5 ) + parseInt(100);
+      } else {
+        result.innerHTML += Math.round( (parseInt(form["seats"].value) - parseInt(350)) / 3.5 );
+      }
+      break;
+
+    case 'warehouses':
+      result.innerHTML += Math.round(form["square_feet"].value / 1000);
+      break;
+
+    case 'worship':
+      result.innerHTML += Math.round(form["seats"].value / 3.5);
       break;
 
     default:
-      alert("Error");
+      alert("Error. Selection not found.");
       break;
       
   }
 
   alert("Outside switch");
-  result.show();
-  alert("After .show()");
+  //result.show();
+  //alert("After .show()");
 }
 </script>
 
