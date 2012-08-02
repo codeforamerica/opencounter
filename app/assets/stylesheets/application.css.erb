@@ -25,6 +25,13 @@ hr {
   display: none !important;
 }
 
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #33B6E6;
+}
+
 /* === Container ============================== */
 
 hr {
@@ -82,9 +89,7 @@ header .masthead p .city {
 /* === Main Navigation ======================== */
 
 .nav-main {
-  margin: 0 15px;
-  padding: 1em 0;
-  border-top: 5px solid #000;
+  margin: 1em 15px;
 }
 
 .nav-main ul {
@@ -104,14 +109,27 @@ header .masthead p .city {
 }
 
 /* Link and connecting line */
+
 .nav-main a {
-  border-left: 0.5em solid #DDD;
-  color: #666;
   display: block;
   margin-left: 1em;
   padding: 0.6em 0 0.6em 2em;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.nav-main a:link,
+.nav-main a:visited {
+  color: #666;
+}
+
+.nav-main a:hover,
+.nav-main a:active {
+  color: #FFF;
+}
+
+.nav-main li:hover {
+  background-color: #33B6E6;
 }
 
 /* Rings */
@@ -148,23 +166,27 @@ header .masthead p .city {
 }
 
 /* Hover state */
+
 .nav-main a:hover:after {
-  background-color: rgb(51,182,230);
+  background-color: #33B6E6;
 }
 
 /* Outer ring color */
+
 .nav-main a:before {
   background: #DDD;
 }
 
 /* Inner ring color */
+
 .nav-main a:after {
   background-color: #FFF;
 }
 
-/* Inner ring status colors */
+/* Status colors */
+
 .nav-main .current a:after {
-  background-color: #33B6E6;
+  color: #33B6E6;
 }
 
 .nav-main .complete a:after {
@@ -180,28 +202,32 @@ header .masthead p .city {
   background: transparent;
 }
 
-.nav-main ul ul {
-  display: none;
+.nav-main ul ul a:after {
+  background-color: #DDD;
 }
 
 
 /* === Utility Navigation ===================== */
 
 .nav-utility {
-  background: #0F0;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 25%;
   min-width: 240px;
-  border-top: 5px solid #000;
+  background: #FFF;
 }
 
 .nav-utility ul {
+  padding: 1em 15px;
   border-right: 5px solid #000;
 }
 
-.nav-utility li {
+.nav-utility a {
+  display: block;
+  padding-left: 3.5em;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 /* === Applicant Profile ====================== */
