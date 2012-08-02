@@ -4,13 +4,8 @@ Opencounter::Application.routes.draw do
 
   root :to => 'home#index'
 
-  match 'intro' => 'panels#intro', :as => :intro
-  match 'info' => 'panels#info', :as => :info
-  match 'location' => 'panels#location', :as => :location
-  match 'requirements' => 'panels#requirements', :as => :requirements
-  match 'summary' => 'panels#summary', :as => :summary
-  match 'help' => 'panels#help', :as => :help
-  match 'feedback' => 'panels#feedback', :as => 'feedback'
+  match ':action' => 'panels#:action'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
