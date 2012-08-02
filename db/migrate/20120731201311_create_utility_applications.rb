@@ -1,7 +1,7 @@
 class CreateUtilityApplications < ActiveRecord::Migration
   def change
     create_table :utility_applications do |t|
-      t.reference :business
+      t.integer :business
       t.string :previous_city
       t.string :previous_detail
       t.string :previous_state

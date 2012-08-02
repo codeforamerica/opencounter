@@ -1,6 +1,6 @@
 class Business < ActiveRecord::Base
   has_and_belongs_to_many :users
-  has_one :naics 
+  #has_one :naics 
   has_one :utility_application 
   has_one :use_permit 
   has_one :environmental_health_permit 

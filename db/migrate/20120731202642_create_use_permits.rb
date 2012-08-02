@@ -1,7 +1,7 @@
 class CreateUsePermits < ActiveRecord::Migration
   def change
     create_table :use_permits do |t|
-      t.reference :business
+      t.integer :business
       t.integer :lot_size
       t.integer :proposed_sqft
       t.integer :existing_sqft
