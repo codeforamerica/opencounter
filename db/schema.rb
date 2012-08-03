@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120730234147) do
+ActiveRecord::Schema.define(:version => 20120803224303) do
 
   create_table "field_answers", :force => true do |t|
     t.text     "answer"
@@ -26,13 +26,13 @@ ActiveRecord::Schema.define(:version => 20120730234147) do
     t.text     "prompt"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.string   "key"
   end
 
   create_table "fields_forms", :id => false, :force => true do |t|
-    t.integer  "field_id"
-    t.integer  "form_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer "field_id"
+    t.integer "form_id"
   end
 
   create_table "forms", :force => true do |t|
