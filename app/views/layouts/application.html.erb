@@ -3,7 +3,7 @@
 <html>
 
 <head>
-  <title>OpenCounter</title>
+  <title>OpenCounter - Start your business in Santa Cruz, CA</title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
@@ -11,34 +11,110 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
-  <div class="header">
+  <div class="container">
+
+    <header><div class="inner">
+      
+      <div class="masthead">
+        <h1>OpenCounter</h1>
+        <p>Start your business in <span class="city">Santa Cruz, CA</span>.</p>
+      </div>
+      
+      <hr>
+      
+      <nav class="nav-main">
+        <%= render '/layouts/nav' %>
+      </nav><!-- /.nav-main -->
+    
+    </div></header><!-- /.inner -->
+    
+    <hr>
+    
+    <section class="panel">
   
-    <h1 class="branding">OpenCounter</h1>
-    
-    <ul class="utilities">
-      <li><a class="profile-link"  href="#profile">Your Saved Info &darr;</a></li>
-      <li><a class="contact-link"  href="#contact">Contact Us</a></li>
-      <li><a class="feedback-link" href="#feedback">Feedback</a></li>
-      <li><a class="credits-link"  href="#credits">Credits</a></li>
-    </ul>
-    
-    <!-- ##CONTACT (views/utilities/_contact.html.erb and views/utilities/_contact_thanks.html.erb) -->
-    
-    <!-- ##FEEDBACK (views/utilities/_feedback.html.erb and views/utilities/_feedback_thanks.html.erb) -->
-    
-    <!-- ##CREDITS (views/utilities/_credits.html.erb) -->
+      <section class="profile">
+        <h1>Your Profile</h1>
+        <div class="progress">
+          <h3>% Complete</h3>
+        </div>
+        <div class="forms-and-fees">
+          <h3>Forms &amp; Fees</h3>
+        </div>
+      </section><!-- /.profile -->
 
-  </div><!-- /.header -->
+      <hr>
 
-  <!-- ##NAV (views/layouts/_nav.html.erb) -->
+      <section class="content">
+        <h1>Page Title</h1>
+        <p>This is some dummy content to see whether this application UI will work for OpenCounter. When starting a business, it&rsquo;s helpful to have someone to talk to. The following people &amp; organizations are here to help.</p>
+        <p>The more information you share, the better we'll be able to get you the right information.</p>
+        <p>You can work from home as long as you're not negatively impacting the neighborhood by increasing visitors or traffic, creating a lot of noise, or working with hazardous materials. You also can't have a sign on your home advertising the business.</p>
+        <form>
+          <label>
+            This is a label
+            <input type="text" placeholder="This is a text field">
+          </label>
+          <label>
+            This is a label
+            <input type="text" placeholder="This is a text field">
+          </label>
+          <label>
+            This is a label
+            <select>
+              <option>This is an option</option>
+              <option>This is another option</option>
+              <option>This is a third option</option>
+            </select>
+          </label>
+          <div class="form-controls">
+            <button>This is a submit button</button>
+          </div>
+        </form>
+      </section><!-- /.content -->
+      
+      <hr>
+      <%= yield %>
+      
+      <nav class="nav-content">
+        <a href="#" class="prev">
+          <b>Previous</b>
+          [Previous Page Title]
+        </a>
+        <div class="place-dots">
+          <span class="place-dot"></span>
+          <span class="place-dot"></span>
+          <span class="place-dot"></span>
+          <span class="place-dot"></span>
+        </div>
+        <a href="#" class="next">
+          <b>Next</b>
+          [Next Page Title]
+        </a>
+      </nav><!-- /.nav-content -->
+  
+    </section><!-- /.panel -->
+  
+    <hr>
+  
+    <nav class="nav-utility">
+      <ul>
+        <li><a href="#help">Get Help</a></li>
+        <li><a href="#feedback">Give Feedback</a></li>
+        <li><a href="#credits">About OpenCounter</a></li>
+      </ul>
+    </nav><!-- /.nav-utility -->
 
-  <div class="main">
+  </div><!-- /.container -->
 
-<%= yield %>
+  <script type="text/javascript" src="assets/js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript">
+(function(){
 
-  </div><!-- /.main -->
+})();
+  </script>
 
 </body>
 

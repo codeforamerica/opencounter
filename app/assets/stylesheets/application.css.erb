@@ -1,0 +1,297 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+hr {
+  display: none !important;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #33B6E6;
+}
+
+/* === Container ============================== */
+
+hr {
+  display: none;
+}
+
+.container {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* === Header ================================= */
+
+header {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 25%;
+  min-width: 240px;
+}
+
+header .inner {
+  border-right: 5px solid #000;
+  height: 100%;
+}
+
+/* --- Masthead --- */
+
+header .masthead {
+  padding: 1em 15px;
+}
+
+header .masthead h1 {
+  display: block;
+  background: transparent url(<%= asset_path 'opencounter_logo.png' %>) no-repeat 0 0;
+  height: 38px;
+  margin: 0;
+  text-indent: -9999px;
+  width: 210px;
+}
+
+header .masthead p {
+  margin: 0;
+}
+
+header .masthead p .city {
+  display: inline-block;
+  border-bottom: 2px solid #000;
+}
+
+
+/* === Main Navigation ======================== */
+
+.nav-main {
+  margin: 1em 15px;
+}
+
+.nav-main ul {
+  list-style: none;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.nav-main li {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+/* Link and connecting line */
+
+.nav-main a {
+  display: block;
+  margin-left: 1em;
+  padding: 0.6em 0 0.6em 2em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-main a:link,
+.nav-main a:visited {
+  color: #666;
+}
+
+.nav-main a:hover,
+.nav-main a:active {
+  color: #FFF;
+}
+
+.nav-main li:hover {
+  background-color: #33B6E6;
+}
+
+/* Rings */
+.nav-main a:before,
+.nav-main a:after {
+  border-width: 0.5em;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  float: left;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* Outer ring positioning & dimensions */
+.nav-main a:before {
+  height: 2em;
+  left: 0.25em;
+  margin-top: -1em;
+  position: absolute;
+  top: 50%;
+  width: 2em;
+}
+
+/* Inner ring positioning & dimensions */
+.nav-main a:after {
+  height: 1em;
+  left: 0.75em;
+  margin-top: -0.5em;
+  position: absolute;
+  top: 50%;
+  width: 1em;
+}
+
+/* Hover state */
+
+.nav-main a:hover:after {
+  background-color: #33B6E6;
+}
+
+/* Outer ring color */
+
+.nav-main a:before {
+  background: #DDD;
+}
+
+/* Inner ring color */
+
+.nav-main a:after {
+  background-color: #FFF;
+}
+
+/* Status colors */
+
+.nav-main .current a:after {
+  color: #33B6E6;
+}
+
+.nav-main .complete a:after {
+  background-color: #0F0;
+}
+
+.nav-main .incomplete a:after {
+  background-color: #FF0;
+}
+
+/* Sub nav */
+.nav-main ul ul a:before {
+  background: transparent;
+}
+
+.nav-main ul ul a:after {
+  background-color: #DDD;
+}
+
+
+/* === Utility Navigation ===================== */
+
+.nav-utility {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 25%;
+  min-width: 240px;
+  background: #FFF;
+}
+
+.nav-utility ul {
+  padding: 1em 15px;
+  border-right: 5px solid #000;
+}
+
+.nav-utility a {
+  display: block;
+  padding-left: 3.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* === Applicant Profile ====================== */
+
+.profile {
+  border-bottom: 5px solid #000;
+}
+
+.profile h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 1em;
+  text-transform: uppercase;
+  background: #CCC;
+}
+
+.profile h1:after {
+  display: block;
+  content: "\2191";
+  float: right;
+}
+
+/* === Panel ================================== */
+
+.panel {
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 75%;
+  min-width: 720px;
+  overflow-y: auto;
+}
+
+/* --- Content --- */
+
+.panel .content {
+  padding: 0 15px 1em 15px;
+}
+
+.panel label {
+  display: block;
+  padding: 1em 15px 1em 0;
+}
+
+.panel label input,
+.panel label select,
+.panel label button {
+  display: block;
+}
+
+/* === Media Queries ========================== */
+
+
+@media only screen and (max-width: 959px) {
+
+    /* Linearize */
+    .masthead,
+    .nav-utility,
+    .panel {
+      position: relative;
+      right: auto;
+      left: auto;
+      top: auto;
+      width: 100%;
+    }
+}
