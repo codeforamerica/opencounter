@@ -1,8 +1,10 @@
-== Welcome to OpenCounter
-OpenCounter helps entrepreneurs navigate the business permitting process. OpenCounter answers three questions for new and prospective business owners: "To open my business's doors here in Santa Cruz, (1) which forms do I need to file, (2) how long will it take, and (3) how much will it cost me?"
+== OpenCounter helps entrepreneurs navigate the business permitting process.
+OpenCounter answers three questions for new and prospective business owners: "To open my business's doors here in Santa Cruz, (1) which forms do I need to file, (2) how long will it take, and (3) how much will it cost me?"
 
 
 == Getting Started
+
+Note that the front-end is on the gh-pages branch.
 
 1. You'll need a recent version of Ruby and Postgres -- you'll probably also want rvm.
 
@@ -23,5 +25,4 @@ OpenCounter helps entrepreneurs navigate the business permitting process. OpenCo
       user$ rails server
 
 5. Go to http://localhost:3000/ and you'll see the OpenCounter start page
-
 
