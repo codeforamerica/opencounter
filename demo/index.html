@@ -51,15 +51,12 @@
           <li><a href="/requirements">Requirements</a></li>
           <li>
             <ul>
-              <li><a href="/requirement_use_permit">Use Permits</a></li>
-              <li><a href="/requirement_parking">Parking</a></li>
+              <li><a href="/requirement_use_permit">Use Permit</a></li>
               <li><a href="/requirement_building_permit">Building Permit</a></li>
+              <li><a href="/requirement_parking">Parking Requirement</a></li>
               <li><a href="/requirement_business_license">Business License</a></li>
-              <li><a href="/requirement_tif">Traffic Impact Fee</a></li>
-              <li><a href="/requirement_bia">Business Improvement District Assessment</a></li>
-              <li><a href="/requirement_ehs">Environmental Health &amp; Safety</a></li>
-              <li><a href="/requirement_wwd">Waste Water Discharge</a></li>
-              <li><a href="/requirement_utility_services">Utility Services</a></li>
+              <li><a href="/requirement_local">Other Local Requirements</a></li>
+              <li><a href="/requirement_non_local">City, State, and Federal Requirements</a></li>
             </ul>
           </li>
           <li><a href="/summary">Summary &amp; Next Steps</a></li>
@@ -169,23 +166,27 @@
 
         <div id="info_applicant">
           <h1>About you</h1>
-          <form method="post" action="#">
+          <form method="post" action="#" id="form_info_applicant">
             <label>
               Your First Name
-              <input type="text" name="fname" placeholder="Annie">
+              <input type="text" name="applicant_first_name" placeholder="Annie">
             </label>
             <label>
               Your Last Name
-              <input type="text" name="lname" placeholder="Oakley">
+              <input type="text" name="applicant_last_name" placeholder="Oakley">
             </label>
             <label>
               Your Email Address
-              <input type="text" name="email" placeholder="annie.oakley@anniegetyourgun.com">
+              <input type="text" name="applicant_email" placeholder="annie.oakley@anniegetyourgun.com">
+            </label>
+            <label>
+              Your Phone Number
+              <input type="text" name="applicant_phone" placeholder="(123) 456-7890">
             </label>
             <label>
               Are you the owner of this business, or are you filling this out for the owner?</label>
-              <input id="user_role_i_own_this_business" name="user[role]" type="radio" value="I own this business" />I own this business
-              <input id="user_role_im_filling_this_out_on_behalf_of_the_owner" name="user[role]" type="radio" value="I'm filling this out on behalf of the owner" />I'm filling this out on behalf of the owner
+              <input id="applicant_is_business_owner" name="applicant_is_business_owner" type="radio" value="y" />I own this business
+              <input id="applicant_is_business_owner" name="applicant_is_business_owner" type="radio" value="n" />I'm filling this out on behalf of the owner
             </label>
           </form>
           <p class="next">Nice to meet you, <strong>Annie</strong>! Next, <a href="#info_business">tell us about your business &rarr;</a></p>
@@ -194,7 +195,7 @@
         <div id="info_business">
           <h1>About your business</h1>
 
-          <form method="post" action="#">
+          <form method="post" action="#" id="form_info_business">
             <label>
               What will your business be called?
               <input type="text" name="business_name" placeholder="Acme, Inc.">
@@ -212,23 +213,23 @@
               <select name="business_structure">
                 <option value="unknown">I'm not sure / don't know / haven't decided yet</option>
                 <option value="individual">an Individual (Sole Proprietorship)</option>
-                <option value="general-partnership">a General Partnership (GP)</option>
-                <option value="limited-partnership">a Limited Partnership (LP)</option>
-                <option value="limited-liability-company">a Limited Liability Company (LLC)</option>
-                <option value="limited-liability-partnership">a Limited Liability Partnership (LLP)</option>
+                <option value="general_partnership">a General Partnership (GP)</option>
+                <option value="limited_partnership">a Limited Partnership (LP)</option>
+                <option value="limited_liability_company">a Limited Liability Company (LLC)</option>
+                <option value="limited_liability_partnership">a Limited Liability Partnership (LLP)</option>
                 <option value="association">an Unincorporated Association other than a Partnership</option>
                 <option value="corporation">a Corporation</option>
                 <option value="trust">a Trust</option>
                 <option value="copartner">Copartners</option>
                 <option value="married">Husband and Wife</option>
-                <option value="joint-venture">a Joint Venture</option>
-                <option value="domestic-partners">State or Local Registered Domestic Partners</option>
+                <option value="joint_venture">a Joint Venture</option>
+                <option value="domestic_partners">State or Local Registered Domestic Partners</option>
               </select>
             </label>
   
             <label>
               Are you the sole owner of this business?
-              <input type="checkbox" name="is_sole_owner" value="y" checked="checked"> I'm the only business owner
+              <input type="checkbox" name="applicant_is_sole_owner" value="y" checked="checked"> I'm the only business owner
             </label>
   
             <!-- @condition Not the sole owner -->
@@ -246,13 +247,13 @@
             
           </form>
           
-          <p class="next">Thanks! That's enough to get us started. <a href="">Next: Location &rarr;</a></p>
+          <p class="next">Thanks! That's enough to get us started. <a href="#location">Next: Location &rarr;</a></p>
 
         </div><!-- /#info_business -->
 
         <div id="location">
           <h1>Your business's location</h1>
-          <form method="post" action="#">
+          <form method="post" action="#" id="form_location">
             <label>
               Where will you be working from?
               <input type="radio">
@@ -294,10 +295,8 @@
           
           <p>You've told us that you're <strong>working from home</strong>.</p>
           
-          <hr>
-          
           <h3>Where do you live?</h3>
-          <form method="post" action="#">
+          <form method="post" action="#" id="form_home_occ">
             <p>What&lsquo;s your business's physical address? (This should be your home address.)</p>
             <label>
               Street
@@ -383,7 +382,7 @@
           <h1>Check Your Business's Zoning</h1>
           <p>You've told us that your business is of type <strong>[business type]</strong>.</p>
           <h3>What is your business's physical address?</h3>
-          <form method="post" action="#">
+          <form method="post" action="#" id="form_location_non_home_occ_check_site">
             <label>
               Street
               <input type="text" name="business_physical_address_street" placeholder="Street">
@@ -409,6 +408,474 @@
           
           <p class="text"><a href="#requirements">Next: Requirements &rarr;</a></p>
         </div><!-- /#location_non_home_occ_check_site -->
+
+        <div id="requirements">
+        
+        </div><!-- /#requirements -->
+
+        <div id="requirement_use_permit">
+          <h1>Use Permit</h1>
+          
+          <p>The type of use permit your business needs depends on whether and how your zoning district permits your use.</p>
+          
+          <h3 class="toggle">Principally Permitted Uses</h3>
+          <div class="drawer">
+            <p>If the zoning code specifically allows your type of business to operate at the site you chose, great!</p>
+            <p>All you need is a Zoning Clearance. This is the simplest form of a use permit, and is typically issued the same day, with minimal review.</p>
+          </div>
+          
+          <h3 class="toggle">Non-Principally Permitted Uses</h3>
+          <div class="drawer">
+            <p>If your use is not principally permitted, you will need either an Administrative Use Permit or a Special Use Permit.</p>
+            <p>Administrative Use Permit (<abbr title="Administrative Use Permit">AUP</abbr>): This kind of application requires more staff analysis, and more information from the applicant. These permits entail a public hearing before the Zoning Administrator, and can take approximately 6-8 weeks to work their way through to completion.</p>
+            <p>Special Use Permit (<abbr title="Special Use Permit">SUP</abbr>): Requires a high level of scrutiny, typically due to the size of the project and its impact on the neighborhood. These applications go to Planning Commission, whose decision is ratified by the City Council. SUPs take 2-3 months.</p>
+          </div>
+          
+          <h3 class="toggle">Prohibited Uses</h3>
+          <div class="drawer">
+            <p>If your use is explicitly prohibited, you should probably choose a different site for your business.</p>
+            <p>The alternative, changing the zoning for that property, is very difficult, rare, and can take years. It is not recommended, but you are welcome to <a href="#">contact the Planning Department</a> for more information.</p>
+          </div>
+          
+          <hr>
+          
+          <!-- @condition HOME OCC - PRINCIPALLY PERMITTED -->
+          <p>You've told us that you're <strong>working from home</strong>, and you've confirmed that your business complies with Santa Cruz Municipal Code 24.10.160.</p>
+          <p>The use permit you need is a <em>Zoning Clearance</em>. You'll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
+          <p>Fill in as much as you can below.</p>
+          <form method="post" action="#" id="form_zoning_clearance">
+            <label>
+              Your First Name
+              <input type="text" name="applicant_first_name" placeholder="">
+            </label>
+            <label>
+              Your Last Name
+              <input type="text" name="applicant_last_name" placeholder="">
+            </label>
+            <label>
+              Your Phone Number
+              <input type="text" name="applicant_phone" placeholder="(123) 456-7890">
+            </label>
+            <label>
+              Your Street Address
+              <input type="text" name="applicant_physical_address_street" placeholder="Street Address">
+            </label>
+            <label>
+              Your Street Address (Detail)
+              <input type="text" name="applicant_physical_address_detail" placeholder="Detail">
+            </label>
+            <label>
+              Your City
+              <input type="text" name="applicant_physical_address_city" placeholder="City">,
+            </label>
+            <label>
+              Your State
+              <input type="text" name="applicant_physical_address_state" placeholder="State">
+            </label>
+            <label>
+              Your ZIP Code
+              <input type="text" name="applicant_physical_address_zip" placeholder="ZIP">
+            </label>
+            <label>
+              Your Business's Name
+              <input type="text" name="business_name" placeholder="Acme, Inc.">
+            </label>
+            <label>
+              Your Business's Phone Number
+              <input type="text" name="business_phone" placeholder="">
+            </label>
+          </form>
+          <p class="next">Next: <a href="#requirement_building_permit">Get your business license &rarr;</a></p>
+          <!-- /@condition HOME OCC - PRINCIPALLY PERMITTED -->
+          <hr>
+
+          <!-- @condition NON HOME OCC - PRINCIPALLY PERMITTED -->
+          <p>You've told us that you're <strong>working from 123 Anystreet Place, Santa Cruz, CA 91234</strong>, and your business is of type <strong>[business type here]</strong>.</p>
+          <p>This use is <strong>principally permitted</strong> at this location.</p>
+          <p>The use permit you need is a <em>Zoning Clearance</em>. You'll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
+          <p>Fill in as much as you can below.</p>
+          <form method="post" action="#" id="form_zoning_clearance">
+            <label>
+              Your First Name
+              <input type="text" name="applicant_first_name" placeholder="">
+            </label>
+            <label>
+              Your Last Name
+              <input type="text" name="applicant_last_name" placeholder="">
+            </label>
+            <label>
+              Your Phone Number
+              <input type="text" name="applicant_phone" placeholder="(123) 456-7890">
+            </label>
+            <label>
+              Your Street Address
+              <input type="text" name="applicant_physical_address_street" placeholder="Street Address">
+            </label>
+            <label>
+              Your Street Address (Detail)
+              <input type="text" name="applicant_physical_address_detail" placeholder="Detail">
+            </label>
+            <label>
+              Your City
+              <input type="text" name="applicant_physical_address_city" placeholder="City">,
+            </label>
+            <label>
+              Your State
+              <input type="text" name="applicant_physical_address_state" placeholder="State">
+            </label>
+            <label>
+              Your ZIP Code
+              <input type="text" name="applicant_physical_address_zip" placeholder="ZIP">
+            </label>
+            <label>
+              Your Business's Name
+              <input type="text" name="business_name" placeholder="Acme, Inc.">
+            </label>
+            <label>
+              Your Business's Phone Number
+              <input type="text" name="business_phone" placeholder="">
+            </label>
+            <label>
+              Your Business's Street Address
+              <input type="text" name="business_physical_address_street" placeholder="Street">
+            </label>
+            <label>
+              Your Business's Street Address (Detail)
+              <input type="text" name="business_physical_address_detail" placeholder="Detail (optional)">
+            </label>
+            <label>
+              Your Business's City
+              <input type="text" name="business_physical_address_city" placeholder="City">
+            </label>
+            <label>
+              Your Business's State
+              <input type="text" name="business_physical_address_state" placeholder="State">
+            </label>
+            <label>
+              Your Business's ZIP
+              <input type="text" name="business_physical_address_zip" placeholder="ZIP">
+            </label>
+            <label>
+              APN
+              <input type="text" name="apn" placeholder="">
+            </label>
+            <label>
+              Zoning District
+              <input type="text" name="zoning_district" placeholder="">
+            </label>
+            <label>
+              Intended Property Use
+              <input type="text" name="intended_use" placeholder="">
+            </label>
+            <label>
+              Previous Property Use
+              <input type="text" name="prior_use" placeholder="">
+            </label>
+            <label>
+              Date of Occupancy
+              <input type="text" name="date_of_occupancy" placeholder="">
+            </label>
+            <label>
+              Total Area (sq. ft)
+              <input type="text" name="total_area" placeholder="">
+            </label>
+            <label>
+              First Floor Area
+              <input type="text" name="first_floor_area" placeholder="">
+            </label>
+            <label>
+              Outdoor Area
+              <input type="text" name="outdoor_area" placeholder="">
+            </label>
+            <label>
+              Is this property single-tenant or multi-tenant?
+              <input type="radio" name="single_or_multi_tenant" value="single"> Single-tenant
+              <input type="radio" name="single_or_multi_tenant" value="multi"> Multi-tenant
+            </label>
+            <label>
+              Auto Parking Spaces
+              <input type="text" name="automobile_parking_spaces" placeholder="">
+            </label>
+            <label>
+              Bicycle Parking Spaces
+              <input type="text" name="bicycle_parking_spaces" placeholder="">
+            </label>
+          </form>
+          <p class="next">Next: <a href="#requirement_building_permit">Get your business license &rarr;</a></p>
+          <!-- /@condition NON HOME OCC - PRINCIPALLY PERMITTED -->
+          
+          <hr>
+          
+          <!-- /@condition NON HOME OCC - NOT PRINCIPALLY PERMITTED -->
+          <p>You've told us that you&lsquo;re <strong>working from 123 Anystreet Place, Santa Cruz, CA 91234</strong>, and your business is of type <strong>[business type here]</strong>.</p>
+          <p>This use is <strong>not principally permitted</strong> at this location.</p>
+          <p>You will need either an <abbr title="Administrative Use Permit">AUP</abbr> or a <abbr title="Special Use Permit">SUP</abbr> to site your business here.</p>
+          <p>Contact the Planning Department for next steps.</p>
+          <p class="next"><a href="#help">Contact the Planning Department &rarr;</a></p>
+          <!-- /@condition NON HOME OCC - NOT PRINCIPALLY PERMITTED -->
+          
+          <hr>
+          
+          <p>You've told us that you're <strong>working from 123 Anystreet Place, Santa Cruz, CA 91234</strong>, and your business is of type <strong>[business type here]</strong>.</p>
+          <p>This use is <strong>prohibited</strong> at this location.</p>
+          <p>Siting your business here will require changing the City of Santa Cruz's zoning; this is a difficult process and can take years.</p>
+          <p>Contact the Planning Department for next steps.</p>
+          <p class="next"><a href="#help">Contact the Planning Department &rarr;</a></p>
+        </div><!-- /#requirement_use_permit -->
+        
+        <div id="requirement_building_permit">
+          <h1>Building Permit</h1>
+          <p>Will you be doing tenant improvements or construction?</p>
+          
+          <!-- @condition YES CONSTRUCTION -->
+          <p>Fill in as much as you can below.</p>
+          <form method="post" action="#" id="form_building_permit">
+            <label>
+              Permit ID
+              <input type="text" name="permit_id" placeholder="">
+            </label>
+            <label>
+              Date
+              <input type="text" name="date" placeholder="">
+            </label>
+            <label>
+              Expansion plan check due date
+              <input type="text" name="expansion_plan_check_due_date" placeholder="">
+            </label>
+            <label>
+              Business Street Address
+              <input type="text" name="business_physical_address_street" placeholder="">
+            </label>
+            <label>
+              Business Street Address (Detail)
+              <input type="text" name="business_physical_address_detail" placeholder="">
+            </label>
+            <label>
+              Business City
+              <input type="text" name="business_physical_address_city" placeholder="">
+            </label>
+            <label>
+              Business State
+              <input type="text" name="business_physical_address_state" placeholder="">
+            </label>
+            <label>
+              Business ZIP Code
+              <input type="text" name="business_physical_address_zip" placeholder="">
+            </label>
+            <label>
+              APN
+              <input type="text" name="apn" placeholder="">
+            </label>
+            <label>
+              New Square Footage
+              <input type="text" name="square_footage_new" placeholder="">
+            </label>
+            <label>
+              Role of Applicant
+              <input type="text" name="role_of_applicant" placeholder="">
+            </label>
+            <label>
+              Applicant First Name
+              <input type="text" name="applicant_first_name" placeholder="">
+            </label>
+            <label>
+              Applicant Last Name
+              <input type="text" name="applicant_last_name" placeholder="">
+            </label>
+            <label>
+              Applicant Street Address
+              <input type="text" name="applicant_address_street" placeholder="">
+            </label>
+            <label>
+              Applicant Street Address (Detail)
+              <input type="text" name="applicant_address_detail" placeholder="">
+            </label>
+            <label>
+              Applicant City
+              <input type="text" name="applicant_address_city" placeholder="">
+            </label>
+            <label>
+              Applicant State
+              <input type="text" name="applicant_address_state" placeholder="">
+            </label>
+            <label>
+              Applicant Zip Code
+              <input type="text" name="applicant_address_zip" placeholder="">
+            </label>
+            <label>
+              Applicant Phone Number
+              <input type="text" name="applicant_phone" placeholder="">
+            </label>
+            <label>
+              Applicant Email Address
+              <input type="text" name="applicant_email" placeholder="">
+            </label>
+            <label>
+              Role of Professional
+              <input type="text" name="role_of_professional" placeholder="">
+            </label>
+            <label>
+              Professional's Name
+              <input type="text" name="professional_name" placeholder="">
+            </label>
+            <label>
+              Professional's Address
+              <input type="text" name="professional_address" placeholder="">
+            </label>
+            <label>
+              Professional's Phone Number
+              <input type="text" name="professional_phone" placeholder="">
+            </label>
+            <label>
+              Professional's Email Address
+              <input type="text" name="professional_email" placeholder="">
+            </label>
+            <label>
+              Contractor License Number
+              <input type="text" name="contractor_license_num" placeholder="">
+            </label>
+            <label>
+              Occupancy Class
+              <input type="text" name="occupancy_class" placeholder="">
+            </label>
+            <label>
+              Type of Construction
+              <input type="text" name="type_of_construction" placeholder="">
+            </label>
+            <label>
+              Building Height (feet)
+              <input type="text" name="building_height_feet" placeholder="">
+            </label>
+            <label>
+              Building Height (stories)
+              <input type="text" name="building_height_stories" placeholder="">
+            </label>
+            <label>
+              Sprinklers?
+              <input type="checkbox" name="has_sprinklers"  checked="">
+            </label>
+            <label>
+              Is Quimby Fee?
+              <input type="checkbox" name="has_quimby_fee" checked="">
+            </label>
+            <label>
+              Is TIF Project?
+              <input type="checkbox" name="has_tif_project" checked="">
+            </label>
+          </form>
+
+          <!-- @condition NO CONSTRUCTION -->
+          <p class="next"><a href="requirement_contextual">Other Requirements</a></p>
+          <!-- @condition /NO CONSTRUCTION -->
+          
+        </div><!-- /#requirement_building_permit -->
+
+        <div id="requirement_parking">
+          <h1>Parking</h1>
+          
+          
+        </div><!-- /#requirement_parking -->
+
+        <div id="requirement_local">
+          <h1>Other Local Requirements</h1>
+          <p>TBD.</p>
+          <ul>
+            <li>Traffic Impact Fee</li>
+            <li>Business Improvement District Assessment</li>
+            <li>Environmental Health &amp; Safety</li>
+            <li>Waste Water Discharge</li>
+            <li>Utility Services</li>
+          </ul>
+        </div><!-- /#requirement_local -->
+        
+        <div id="requirement_non_local">
+          <h1>City, State, and Federal Regulations</h1>
+
+          <h3>Fictitious Business Names (or, what&rsquo;s in a name?)</h3>
+          <p>If the name of your business does not contain your last name, you will need to apply to Santa Cruz County for a Fictitious Business Name (FBN).</p>
+          <p>For example, if your last name is Smith and your business is called "Smith&rsquo;s Tanning," you won't need an FBN. But if your business is called "Eastside Tanning," you will need an FBN.</p>
+          
+          <hr>
+          
+          <p>You've told us that your name is <strong>Annie Oakley</strong> and your business's name is <strong>Oakley Get Your Gun, Inc.</strong></p>
+          
+          <hr>
+          
+          <p class="next">This means you <strong>won't</strong> need an FBN. <a href="#helper_incorporation">Next &rarr;</a></p>
+          
+          <hr>
+          
+          <p>This means you <strong>will</strong> need an FBN. <a href="#"></a></p>
+          
+          <p>To get a <abbr title="Fictitious Business Name">FBN</abbr> from the County of Santa Cruz, you'll need the following information:</p>
+          
+          Fictitious Business Name
+          Street Address of Principal Place of Business
+          City, State, ZIP
+          <input type="text" name="business_address_street" placeholder="">
+          <input type="text" name="business_address_city">
+          <input type="text" name="business_address_state">
+          <input type="text" name="business_address_zip">
+          
+          Mailing Address if Different
+          
+          Registered Owner(s):
+          <table>
+            <tr>
+              <th>Full Name</th>
+              <th>Residence Address</th>
+              <th>City</th>
+              <th>State</th>
+              <th>ZIP</th>
+              <th>If corporation or LLC, state of incorporation/organization</th>
+            </tr>
+          </table>
+          
+          Business is conducted by:
+          <select>
+            <option>an Individual</option>
+            <option>a General Partnership</option>
+            <option>a Limited Partnership</option>
+            <option>a Limited Liability Company (LLC)</option>
+            <option>an Unincorporated Association other than a Partnership</option>
+            <option>a Corporation</option>
+            <option>a Trust</option>
+            <option>Copartners</option>
+            <option>Husband and Wife</option>
+            <option>a Joint Venture</option>
+            <option>State or Local Registered Domestic Partners</option>
+            <option>a Limited Liability Partnership (LLP)</option>
+          </select>
+          
+          <a href="#">Generate PDF with this info.</a>
+        
+          <p class="next"><a href="http://www.sccoclerk.com/fbngen.htm">Go to the County's website &rarr;</a></p>
+          <p class="next"><a href="#helper_incorporation">Do this later &rarr;</a></p>  
+
+          <h3>Incorporation</h3>
+          <p>You don't need to incorporate to start a business in Santa Cruz, but it should be something you think about.</p>
+          <p>For more information on incorporation, speak with an accountant or visit <a href="http://www.sos.ca.gov/business/">The California Business Portal</a>.</p>
+          <ul>
+            <li>Seller's Permit</li>
+            <li>Limited Liability Partnership Registration</li>
+            <li>Limited Partnership Registration</li>
+            <li>Articles of Incorporation Filing</li>
+            <li>Registration with EDD (Payroll Tax form)</li>
+            <li>IRS EIN Application (Sole Proprietor)</li>
+            <li>IRS EIN Application (Corporation; S-Corp; etc)</li>
+            <li>IRS EIN Application (LLC)</li>
+          </ul>
+        </div><!-- /#requirement_non_local -->
+
+        <div id="requirement_business_license">
+          <h1>Business License</h1>
+          <p>TBD.</p>
+        </div><!-- /#requirement_business_license -->
+
+        <div id="summary">
+          <h1>Summary &amp; Next Steps</h1>
+          <p>TBD.</p>
+        </div>
 
       </section><!-- /.content -->
       
