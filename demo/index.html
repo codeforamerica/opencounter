@@ -92,13 +92,6 @@
 
       <section class="content">
 
-        <div class="panel" id="requirement_use_permit">
-          use permit
-        </div>
-        <div class="panel" id="requirement_parking">
-          parking
-        </div>
-
         <div id="intro">
           <h1>Welcome</h1>
           <p>Starting a business? We&rsquo;re here to help.</p>
@@ -203,8 +196,8 @@
               <input id="applicant_is_business_owner" name="applicant_is_business_owner" type="radio" value="y" />I own this business
               <input id="applicant_is_business_owner" name="applicant_is_business_owner" type="radio" value="n" />I'm filling this out on behalf of the owner
             </label>
+            <p class="next">Nice to meet you, <strong>Annie</strong>! Next, <a class="submit" href="#info_business">tell us about your business &rarr;</a></p>
           </form>
-          <p class="next">Nice to meet you, <strong>Annie</strong>! Next, <a href="#info_business">tell us about your business &rarr;</a></p>
         </div><!-- /#info_applicant -->
 
         <div id="info_business">
@@ -260,9 +253,8 @@
             </table>
             <!-- /@condition -->
             
+            <p class="next">Thanks! That's enough to get us started. <a class="submit" href="#location">Next: Location &rarr;</a></p>
           </form>
-          
-          <p class="next">Thanks! That's enough to get us started. <a href="#location">Next: Location &rarr;</a></p>
 
         </div><!-- /#info_business -->
 
@@ -274,8 +266,8 @@
               <input type="radio">
               <input type="radio">
             </label>
+            <p class="next"><a class="submit" href="#location_home_occ">Next &rarr;</a></p>
           </form>
-          <p class="next"><a href="">Next &rarr;</a></p>
         </div><!-- /#location -->
         
         <div id="location_home_occ">
@@ -360,11 +352,11 @@
               <input type="text" name="business_mailing_address_zip" placeholder="Zip">
             </label>
             <!-- /@condition -->
+            
+            <p>Does your business comply with section 24.10.160 of the city of Santa Cruz Municipal Code?</p>
+            <p class="next"><a class="submit" href="#requirements">Yep, my work-from-home business complies with all these rules &rarr;</a></p>
+            <p class="next"><a class="submit" href="#help">Uh-oh. Sounds like I might not be able to operate this business from home. Help! &rarr;</a></p>
           </form>
-          <hr>
-          <p>Does your business comply with section 24.10.160 of the city of Santa Cruz Municipal Code?</p>
-          <p class="next"><a href="#requirements">Yep, my work-from-home business complies with all these rules &rarr;</a></p>
-          <p class="next"><a href="#help">Uh-oh. Sounds like I might not be able to operate this business from home. Help! &rarr;</a></p>
         </div><!-- /#location_home_occ -->
 
         <div id="location_non_home_occ">
@@ -419,13 +411,15 @@
               <input type="text" name="business_physical_address_zip" placeholder="ZIP">
             </label>
             <input type="submit" value="Check Zoning">
+            <p class="text"><a class="submit" href="#requirements">Next: Requirements &rarr;</a></p>
           </form>
-          
-          <p class="text"><a href="#requirements">Next: Requirements &rarr;</a></p>
+        
         </div><!-- /#location_non_home_occ_check_site -->
 
         <div id="requirements">
-        
+          <h1>Requirements</h1>
+          <p>Based on what you've told us about your business, let's walk through all of the requirements.</p>
+          <p class="text"><a class="submit" href="#requirement_use_permit">First, Use Permits &rarr;</a></p>
         </div><!-- /#requirements -->
 
         <div id="requirement_use_permit">
@@ -502,6 +496,7 @@
           </form>
           <p class="next">Next: <a href="#requirement_building_permit">Get your business license &rarr;</a></p>
           <!-- /@condition HOME OCC - PRINCIPALLY PERMITTED -->
+
           <hr>
 
           <!-- @condition NON HOME OCC - PRINCIPALLY PERMITTED -->
@@ -780,7 +775,7 @@
           </form>
 
           <!-- @condition NO CONSTRUCTION -->
-          <p class="next"><a href="requirement_contextual">Other Requirements</a></p>
+          <p class="next"><a class="submit" href="requirement_contextual">Other Requirements</a></p>
           <!-- @condition /NO CONSTRUCTION -->
           
         </div><!-- /#requirement_building_permit -->
