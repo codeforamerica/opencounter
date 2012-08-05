@@ -27,17 +27,20 @@ OC.forms.recallFields = function() {
 
     var key = OC.forms.key(name);
     var value = OC.util.getData(key);
+    var type = $(this).attr('type');
   
     console.log("Checking if we have data for " + name);
     if(value) { console.log(value); }
     
-    if ($(this).attr('type') == 'radio') {
+    if (type === 'radio') {
       if($(this).attr('value') == value) {
         $(this).prop("checked", true);
       }
+    }else if(type === 'checkbox') {
+      $(this).prop("checked", true);
     }else {
       $(this).val(value);
-    };
+    }
     
   });
 };
@@ -61,7 +64,7 @@ OC.forms.sumbit = function(event) {
   console.log(data);
   $.each(data, function(key, value){
     var localStorageKey = OC.forms.key(key);
-    console.log("Key: " + key + " value: " + value)
+    console.log("Key: " + key + " value: " + value);
     OC.util.storeData(localStorageKey, value);
   });
 };
