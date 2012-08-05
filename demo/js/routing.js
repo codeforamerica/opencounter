@@ -26,7 +26,7 @@ OC.routing.init = function(){
     window.onpopstate = function(event){
         if(window.location.hash == ""){
             // we are home. show welcome
-            OC.routing.showPanel("welcome");
+            OC.routing.showPanel("intro");
         }else{
             var hash = window.location.hash.replace(/^\#/, "");
             OC.routing.showPanel(hash);
@@ -35,7 +35,7 @@ OC.routing.init = function(){
 }
 
 OC.routing.showPanel = function(panelId){
-    $("div.panel").hide();
+    $("section.content > div").hide();
     $("div#"+panelId).show();
 }
 OC.routing.navigate = function(hash, addToHistory){
