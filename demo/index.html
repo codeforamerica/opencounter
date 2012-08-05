@@ -776,6 +776,115 @@
         <div id="requirement_parking">
           <h1>Parking</h1>
 
+          <h3>Downtown Businesses</h3>
+          <p>If your business is downtown, you don't need to provide any parking spaces, but you will need to pay a Parking Deficiency Fee.</p>
+
+<script type="text/javascript">
+var factor = 4;
+var hasCalculated = false;
+function setUnits(proptype){
+	var unit;
+	if(proptype == "DOCTOR"){
+		$("#docq").show();
+	}
+	else{
+		$("#docq").hide();
+	}
+	switch( proptype ){
+		case "APARTMENT":
+			unit = "units";
+			factor = 4;
+			break;
+		case "DOCTOR":
+			unit = "square feet";
+			factor = 200;
+			break;
+		case "MERCANTILE":
+			unit = "square feet";
+			factor = 400;
+			break;
+		case "FURNITURE":
+			unit = "square feet";
+			factor = 800;
+			break;
+		case "SERVICE":
+			unit = "square feet";
+			factor = 1000;
+			break;
+	}
+	$("#units").html(unit);
+}
+function calculate(){
+	var max = -1;
+	if( $("#proptype_existing").val() == "DOCTOR" ){
+		if(( $("#doctorcount").val() * 1 == 1 ) && ( $("#size_existing").val() * 1 < 1200 )){
+			factor = 400;
+		}
+		else{
+			max = 5 * $("#doctorcount").val();
+			factor = 200;
+		}
+	}
+	var spaces_needed = $("#size_existing").val() / factor;
+	spaces_needed = Math.ceil( spaces_needed );
+	if(max != -1){
+		spaces_needed = Math.min( max, spaces_needed );
+	}
+	$("#calculated").html( $("#spaces_existing").val() + " out of " + spaces_needed );
+	var fee = spaces_needed - $("#spaces_existing").val() * 1;
+	fee *= 106.25;
+	fee = Math.max( 0, fee );
+	$("#fee").html( "$" + dollarFormat(fee, 2, ".", ",") );
+}
+function dollarFormat(n, c, d, t){
+   var c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+   return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+}
+function checkForEnter(e){
+	if(e.keyCode == 13){
+		getZoneFromAddress();
+	}
+}
+		</script>
+
+		<form class="well form-vertical">
+			<h3>Downtown Parking District only</h3>
+			<label>Business type</label>
+			<select id="proptype_existing" onchange="setUnits(this.value)">
+				<option value="APARTMENT">Apartment</option>
+				<option value="DOCTOR">Doctor or Dentist</option>
+				<option value="MERCANTILE">Mercantile / Professional</option>
+				<option value="FURNITURE">Furniture Store</option>
+				<option value="SERVICE">Service Area/Warehouse</option>
+			</select>
+			<br/>
+			<label>Size of Property</label>
+			<input id="size_existing" type="text"/>&nbsp;<label id="units">units</label>
+			<br/>
+			<label>Existing Spaces</label>
+			<input id="spaces_existing" type="text" value="0"/>
+			<hr/>
+			<div id="docq" style="display:none">
+				<strong>Doctors and Dentists</strong>
+				<br/>
+				<b>Practitioners:</b><input type="text" id="doctorcount" value="1"/>
+				<hr/>
+			</div>
+			<a id="calcBtn" class="btn btn-info" href="#" onclick="calculate()">Calculate</a>
+			<br/><br/>
+			<span id="calculated">Fill out form to calculate</span> required spaces.
+			<br/>
+			Estimated PDF: <span id="fee" style="background-color:#fff;"> </span>
+		</form>
+		<div>
+			Built for the City of Santa Cruz by <a href="http://codeforamerica.org">Code for America</a>.
+		</div>
+
+          <hr>
+
+          <h3>Non-Downtown Businesses</h3>
+          <p>Your business needs to provide parking spaces.</p>
+
           <style type="text/css">
             .business-type-rule {
               display: none;
@@ -906,7 +1015,6 @@
             </form>
         
           </div><!-- /#business_type_banks -->
-        
         
           <div id="business_type_billiard">
         
