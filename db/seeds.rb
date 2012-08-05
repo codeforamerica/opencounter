@@ -51,7 +51,7 @@ agent_phone                     = Field.create(:name => "agent_phone",          
 current_date                    = Field.create(:name => "current_date",                     :prompt => "Current Date",                                        :format => "text")
 owner_name                      = Field.create(:name => "owner_name",                       :prompt => "Owner Name*",                                         :format => "text")
 owner_address                   = Field.create(:name => "owner_address",                    :prompt => "Owner Address*",                                      :format => "text")
-owner_phone_number              = Field.create(:name => "owner_phone_number",               :prompt => "Owner Phone #*",                                      :format => "text")
+owner_phone                     = Field.create(:name => "owner_phone",                      :prompt => "Owner Phone #*",                                      :format => "text")
 permit_id                       = Field.create(:name => "permit_id",                        :prompt => "Permit #",                                            :format => "text")
 date                            = Field.create(:name => "date",                             :prompt => "Date",                                                :format => "text")
 expansion_plan_check_due_date   = Field.create(:name => "expansion_plan_check_due_date",    :prompt => "Expansion Plan Check Due Date",                       :format => "text")
