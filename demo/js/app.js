@@ -7,59 +7,65 @@ var OC = {
   
   init: function() {
     console.log("Initializing");
+    console.log(localStorage);
       
     $('.submit').bind({
       click: OC.forms.sumbit
     });
         
-    this.recall();
-  },
-  
-  recall: function() {
-    // Remember who the user is and what they've done. 
-    // We'll do this with cookies for the time being.
-    
-    $('form').each(function(index){
-      OC.forms.recall(this);
-    });
-    
-    // If we do, update the form
+    // Check to see if we have stored data about any forms
+    OC.forms.recallFields();
   }
-  
 };
 
-OC.forms.recall = function(form) {
-  // Get form ID
-  var id = $(form).attr('id');
-  
-  // See if we have something stored for this form.
-  
+/** 
+ * Fill in any fields with saved data
+ */
+OC.forms.recallFields = function() {
+ $('input').each(function(index){
+   console.log("Checking if we have data for " + $(this).attr('name'));
+   var key = OC.forms.key($(this).attr('name'));
+   var value = OC.util.getData(key);
+   $(this).val(value);
+ });
+};
+ 
+OC.forms.key = function(name) {
+  return OC.prefix + 'field-' + name;
 };
 
 OC.forms.sumbit = function(event) {
   event.preventDefault();
   var form = $(this).closest('form');
   
-  // Save the data from the form as a cookie
-  var cookieName = OC.prefix + $(form).attr('id');
+  // Save the data from the form in localStorage
   var data = $(form).serializeObject();
-  OC.util.setJSONCookie(cookieName, data);
+  $.each(data, function(key, value){
+    var key = OC.forms.key(key);
+    OC.util.storeData(key, value);
+  });
 };
 
-/*
- * 
+/** .........................................................................
+ *  Utilities
  */
-OC.util.getJSONFromCookie = function(name) {
-  return JSON.parse($.cookie(name));
+ 
+OC.util.getData = function(key) {
+  return JSON.parse(localStorage.getItem(key));
 };
 
-OC.util.setJSONCookie = function(name, data) {
-  $.cookie(name, JSON.stringify(data));  
+OC.util.storeData = function(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+  console.log("Stored:");
+  console.log(localStorage.getItem(key));
 };
 
-// Utility to serialize complex things. Like forms.
-// http://stackoverflow.com/a/1186309/117014  
-// usage: $('form').serializeObject();
+
+/** 
+ * Utility to serialize complex things. Like forms.
+ * http://stackoverflow.com/a/1186309/117014  
+ * usage: $('form').serializeObject();
+ */
 $.fn.serializeObject = function()
 {
     var o = {};
@@ -75,5 +81,23 @@ $.fn.serializeObject = function()
         }
     });
     return o;
+};
+
+
+/// OLD =======
+/**
+ * Fill in any form fields with saved data 
+ */
+OC.forms.recall = function() {
+  $('form').each(function(index){
+    console.log($(this).attr('id'));
+    
+    // Retrieve the data
+    var key = OC.util.key($(this).attr('id'));
+    var data = OC.util.getData(key);
+    
+    // Fill in the form
+    console.log(data);
+  });
 };
 
