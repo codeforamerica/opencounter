@@ -8,7 +8,7 @@ var OC = {
   init: function() {
     console.log("Initializing");
     console.log(localStorage);
-      
+    OC.routing.init();
     $('.submit').bind({
       click: OC.forms.sumbit
     });
@@ -116,4 +116,5 @@ OC.forms.recall = function() {
     console.log(data);
   });
 };
+
 
