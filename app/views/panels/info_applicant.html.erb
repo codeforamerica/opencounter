@@ -1,28 +1,14 @@
-<h3>Who are you?</h3>
+<h1>About you</h1>
 
-<%= form_tag do %>
-  Form contents
+<%= semantic_form_for User.new do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :first_name,  :as => :string,   :label => "Your First Name",      :placeholder => "John" %>
+    <%= f.input :last_name,   :as => :string,   :label => "Your Last Name",       :placeholder => "Smith" %>
+    <%= f.input :email,       :as => :email,    :label => "Your Email Address",   :placeholder => "you@domain.com" %>
+    <%= f.input :phone,       :as => :phone,    :label => "Your Phone Number",    :placeholder => "(123) 456-7890" %>
+    <%= f.input :role,        :as => :radio,    :label => "Are you the owner of this business, or are you filling this out for the owner?",   :collection => ["I own this business", "I'm filling this out on behalf of the owner"] %>
+  <% end %>
+  <%= f.actions do %>
+    <%= f.action :submit,     :as => :button,   :label => "Next, about your business." %>
+  <% end %>
 <% end %>
-
-<hr>
-
-<label>
-  Your First Name
-  <input type="text" name="applicant_fname" placeholder="Annie">
-</label>
-
-<label>
-  Your Last Name
-  <input type="text" name="applicant_lname" placeholder="Oakley">
-</label>
-
-<label>
-  Your Email Address
-  <input type="text" name="applicant_email" placeholder="annie.oakley@anniegetyourgun.com">
-</label>
-
-<label>
-  Are you the owner of this business, or are you filling this out for the owner?
-  <input type="radio"> I own this business
-  <input type="radio"> I'm filling this out on behalf of the owner
-</label>
