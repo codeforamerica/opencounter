@@ -2,7 +2,7 @@ Opencounter::Application.routes.draw do
   resources :users, :except => :index
   resources :field_answers
 
-  root :to => 'home#index'
+  root :to => 'panels#intro'
   
   match ':action' => 'panels#:action'
 

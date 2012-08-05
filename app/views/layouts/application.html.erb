@@ -48,53 +48,11 @@
       <hr>
 
       <section class="content">
-        <h1>Page Title</h1>
-        <p>This is some dummy content to see whether this application UI will work for OpenCounter. When starting a business, it&rsquo;s helpful to have someone to talk to. The following people &amp; organizations are here to help.</p>
-        <p>The more information you share, the better we'll be able to get you the right information.</p>
-        <p>You can work from home as long as you're not negatively impacting the neighborhood by increasing visitors or traffic, creating a lot of noise, or working with hazardous materials. You also can't have a sign on your home advertising the business.</p>
-        <form>
-          <label>
-            This is a label
-            <input type="text" placeholder="This is a text field">
-          </label>
-          <label>
-            This is a label
-            <input type="text" placeholder="This is a text field">
-          </label>
-          <label>
-            This is a label
-            <select>
-              <option>This is an option</option>
-              <option>This is another option</option>
-              <option>This is a third option</option>
-            </select>
-          </label>
-          <div class="form-controls">
-            <button>This is a submit button</button>
-          </div>
-        </form>
+
+        <%= yield %>
+
       </section><!-- /.content -->
       
-      <hr>
-      <%= yield %>
-      
-      <nav class="nav-content">
-        <a href="#" class="prev">
-          <b>Previous</b>
-          [Previous Page Title]
-        </a>
-        <div class="place-dots">
-          <span class="place-dot"></span>
-          <span class="place-dot"></span>
-          <span class="place-dot"></span>
-          <span class="place-dot"></span>
-        </div>
-        <a href="#" class="next">
-          <b>Next</b>
-          [Next Page Title]
-        </a>
-      </nav><!-- /.nav-content -->
-  
     </section><!-- /.panel -->
   
     <hr>
