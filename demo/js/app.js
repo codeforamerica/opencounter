@@ -22,18 +22,27 @@ var OC = {
  * Fill in any fields with saved data
  */
 OC.forms.recallFields = function() {
- $('input').each(function(index){
-   var name = $(this).attr('name');
-   console.log("Checking if we have data for " + name);
-   var key = OC.forms.key(name);
-   var value = OC.util.getData(key);
+  $('input').each(function(index){
+    var name = $(this).attr('name');
 
-   //if ($(this).attr('type') == 'radio') {
-   //  $('input[name=' + + ']').
-   //};
-   
-   $(this).val(value);
- });
+    var key = OC.forms.key(name);
+    var value = OC.util.getData(key);
+    var type = $(this).attr('type');
+  
+    console.log("Checking if we have data for " + name);
+    if(value) { console.log(value); }
+    
+    if (type === 'radio') {
+      if($(this).attr('value') == value) {
+        $(this).prop("checked", true);
+      }
+    }else if(type === 'checkbox') {
+      $(this).prop("checked", true);
+    }else {
+      $(this).val(value);
+    }
+    
+  });
 };
 
 /** 
@@ -55,6 +64,7 @@ OC.forms.sumbit = function(event) {
   console.log(data);
   $.each(data, function(key, value){
     var localStorageKey = OC.forms.key(key);
+    console.log("Key: " + key + " value: " + value);
     OC.util.storeData(localStorageKey, value);
   });
 };
@@ -80,12 +90,9 @@ OC.util.storeData = function(key, data) {
  * http://stackoverflow.com/a/1186309/117014  
  * usage: $('form').serializeObject();
  */
-$.fn.serializeObject = function()
-{
-    
+$.fn.serializeObject = function() {
     var o = {};
-    var a = $(this).find(":input").serializeArray();
-    
+    var a = this.serializeArray();
     $.each(a, function() {
         if (o[this.name] !== undefined) {
             if (!o[this.name].push) {
@@ -98,23 +105,3 @@ $.fn.serializeObject = function()
     });
     return o;
 };
-
-
-/// OLD =======
-/**
- * Fill in any form fields with saved data 
- */
-OC.forms.recall = function() {
-  $('form').each(function(index){
-    console.log($(this).attr('id'));
-    
-    // Retrieve the data
-    var key = OC.util.key($(this).attr('id'));
-    var data = OC.util.getData(key);
-    
-    // Fill in the form
-    console.log(data);
-  });
-};
-
-
