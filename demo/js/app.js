@@ -23,28 +23,42 @@ var OC = {
  */
 OC.forms.recallFields = function() {
  $('input').each(function(index){
-   console.log("Checking if we have data for " + $(this).attr('name'));
-   var key = OC.forms.key($(this).attr('name'));
+   var name = $(this).attr('name');
+   console.log("Checking if we have data for " + name);
+   var key = OC.forms.key(name);
    var value = OC.util.getData(key);
+
+   //if ($(this).attr('type') == 'radio') {
+   //  $('input[name=' + + ']').
+   //};
+   
    $(this).val(value);
  });
 };
- 
+
+/** 
+ * Generate a key for localStorage based on the name of a form field
+ */ 
 OC.forms.key = function(name) {
   return OC.prefix + 'field-' + name;
 };
 
+/**
+ * Handle form submissions our way
+ */
 OC.forms.sumbit = function(event) {
   event.preventDefault();
   var form = $(this).closest('form');
   
   // Save the data from the form in localStorage
   var data = $(form).serializeObject();
+  console.log(data);
   $.each(data, function(key, value){
-    var key = OC.forms.key(key);
-    OC.util.storeData(key, value);
+    var localStorageKey = OC.forms.key(key);
+    OC.util.storeData(localStorageKey, value);
   });
 };
+
 
 /** .........................................................................
  *  Utilities
@@ -68,8 +82,10 @@ OC.util.storeData = function(key, data) {
  */
 $.fn.serializeObject = function()
 {
+    
     var o = {};
-    var a = this.serializeArray();
+    var a = $(this).find(":input").serializeArray();
+    
     $.each(a, function() {
         if (o[this.name] !== undefined) {
             if (!o[this.name].push) {
