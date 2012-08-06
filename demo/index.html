@@ -254,15 +254,17 @@
         <div id="location">
           <h1>Your business's location</h1>
           <h3>Where will you be working from?</h3>
-          <form method="post" action="#" id="form_location">
-            <label>
-              <a href="#location_home_occ" data-occupancy="home">Home</a>
-              <a href="#location_non_home_occ" data-occupancy="non-home">Commercial space</a>
-              <input type="radio" name="is_business_home_occ" value="y"> I'll be working from home
-              <input type="radio" name="is_business_home_occ" value="n"> I'll be working out of a commercial space
+
+
+              <a href="#location_home_occ" data-occupancy="home" data-zoning-status="home">I'll be working from home</a>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#location_non_home_occ" data-occupancy="non-home" data-zoning-status="">I'll be working out of a commercial space</a>
+              <!--<form method="post" action="#" id="form_location">
+              <label>
+              <input type="radio" name="is_business_home_occ" value="y"> 
+              <input type="radio" name="is_business_home_occ" value="n"> 
             </label>
             <p class="next"><a class="submit" href="#location_home_occ">Next &rarr;</a></p>
-          </form>
+          </form> -->
         </div><!-- /#location -->
         
         <div id="location_home_occ">
@@ -442,190 +444,200 @@
           </div>
           
           <hr class="visuallyhidden">
-          
+
           <!-- @condition HOME OCC - PRINCIPALLY PERMITTED -->
-          <p>You've told us that you're <strong>working from home</strong>, and you've confirmed that your business complies with Santa Cruz Municipal Code 24.10.160.</p>
-          <p>The use permit you need is a <em>Zoning Clearance</em>. You'll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
-          <p>Fill in as much as you can below.</p>
-          <form method="post" action="#" id="form_zoning_clearance">
-            <label>
-              Your First Name
-              <input type="text" name="applicant_first_name" placeholder="">
-            </label>
-            <label>
-              Your Last Name
-              <input type="text" name="applicant_last_name" placeholder="">
-            </label>
-            <label>
-              Your Phone Number
-              <input type="text" name="applicant_phone" placeholder="(123) 456-7890">
-            </label>
-            <label>
-              Your Street Address
-              <input type="text" name="applicant_physical_address_street" placeholder="Street Address">
-            </label>
-            <label>
-              Your Street Address (Detail)
-              <input type="text" name="applicant_physical_address_detail" placeholder="Detail">
-            </label>
-            <label>
-              Your City
-              <input type="text" name="applicant_physical_address_city" placeholder="City">,
-            </label>
-            <label>
-              Your State
-              <input type="text" name="applicant_physical_address_state" placeholder="State">
-            </label>
-            <label>
-              Your ZIP Code
-              <input type="text" name="applicant_physical_address_zip" placeholder="ZIP">
-            </label>
-            <label>
-              Your Business's Name
-              <input type="text" name="business_name" placeholder="Acme, Inc.">
-            </label>
-            <label>
-              Your Business's Phone Number
-              <input type="text" name="business_phone" placeholder="">
-            </label>
-          </form>
-          <p class="next">Next: <a href="#requirement_building_permit">Get your business license &rarr;</a></p>
+          <div data-occupancy="home">
+            <p>You've told us that you're <strong>working from home</strong>, and you've confirmed that your business complies with Santa Cruz Municipal Code 24.10.160.</p>
+            <p>The use permit you need is a <em>Zoning Clearance</em>. You'll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
+            <p>Fill in as much as you can below.</p>
+            <form method="post" action="#" id="form_zoning_clearance">
+              <label>
+                Your First Name
+                <input type="text" name="applicant_first_name" placeholder="">
+              </label>
+              <label>
+                Your Last Name
+                <input type="text" name="applicant_last_name" placeholder="">
+              </label>
+              <label>
+                Your Phone Number
+                <input type="text" name="applicant_phone" placeholder="(123) 456-7890">
+              </label>
+              <label>
+                Your Street Address
+                <input type="text" name="applicant_physical_address_street" placeholder="Street Address">
+              </label>
+              <label>
+                Your Street Address (Detail)
+                <input type="text" name="applicant_physical_address_detail" placeholder="Detail">
+              </label>
+              <label>
+                Your City
+                <input type="text" name="applicant_physical_address_city" placeholder="City">,
+              </label>
+              <label>
+                Your State
+                <input type="text" name="applicant_physical_address_state" placeholder="State">
+              </label>
+              <label>
+                Your ZIP Code
+                <input type="text" name="applicant_physical_address_zip" placeholder="ZIP">
+              </label>
+              <label>
+                Your Business's Name
+                <input type="text" name="business_name" placeholder="Acme, Inc.">
+              </label>
+              <label>
+                Your Business's Phone Number
+                <input type="text" name="business_phone" placeholder="">
+              </label>
+            </form>
+            <p class="next">Next: <a href="#requirement_building_permit">Get your business license &rarr;</a></p>
+          </div>
           <!-- /@condition HOME OCC - PRINCIPALLY PERMITTED -->
 
           <hr class="visuallyhidden">
 
           <!-- @condition NON HOME OCC - PRINCIPALLY PERMITTED -->
-          <p>You've told us that you're <strong>working from 123 Anystreet Place, Santa Cruz, CA 91234</strong>, and your business is of type <strong>[business type here]</strong>.</p>
-          <p>This use is <strong>principally permitted</strong> at this location.</p>
-          <p>The use permit you need is a <em>Zoning Clearance</em>. You'll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
-          <p>Fill in as much as you can below.</p>
-          <form method="post" action="#" id="form_zoning_clearance">
-            <label>
-              Your First Name
-              <input type="text" name="applicant_first_name" placeholder="">
-            </label>
-            <label>
-              Your Last Name
-              <input type="text" name="applicant_last_name" placeholder="">
-            </label>
-            <label>
-              Your Phone Number
-              <input type="text" name="applicant_phone" placeholder="(123) 456-7890">
-            </label>
-            <label>
-              Your Street Address
-              <input type="text" name="applicant_physical_address_street" placeholder="Street Address">
-            </label>
-            <label>
-              Your Street Address (Detail)
-              <input type="text" name="applicant_physical_address_detail" placeholder="Detail">
-            </label>
-            <label>
-              Your City
-              <input type="text" name="applicant_physical_address_city" placeholder="City">,
-            </label>
-            <label>
-              Your State
-              <input type="text" name="applicant_physical_address_state" placeholder="State">
-            </label>
-            <label>
-              Your ZIP Code
-              <input type="text" name="applicant_physical_address_zip" placeholder="ZIP">
-            </label>
-            <label>
-              Your Business's Name
-              <input type="text" name="business_name" placeholder="Acme, Inc.">
-            </label>
-            <label>
-              Your Business's Phone Number
-              <input type="text" name="business_phone" placeholder="">
-            </label>
-            <label>
-              Your Business's Street Address
-              <input type="text" name="business_physical_address_street" placeholder="Street">
-            </label>
-            <label>
-              Your Business's Street Address (Detail)
-              <input type="text" name="business_physical_address_detail" placeholder="Detail (optional)">
-            </label>
-            <label>
-              Your Business's City
-              <input type="text" name="business_physical_address_city" placeholder="City">
-            </label>
-            <label>
-              Your Business's State
-              <input type="text" name="business_physical_address_state" placeholder="State">
-            </label>
-            <label>
-              Your Business's ZIP
-              <input type="text" name="business_physical_address_zip" placeholder="ZIP">
-            </label>
-            <label>
-              APN
-              <input type="text" name="apn" placeholder="">
-            </label>
-            <label>
-              Zoning District
-              <input type="text" name="zoning_district" placeholder="">
-            </label>
-            <label>
-              Intended Property Use
-              <input type="text" name="intended_use" placeholder="">
-            </label>
-            <label>
-              Previous Property Use
-              <input type="text" name="prior_use" placeholder="">
-            </label>
-            <label>
-              Date of Occupancy
-              <input type="text" name="date_of_occupancy" placeholder="">
-            </label>
-            <label>
-              Total Area (sq. ft)
-              <input type="text" name="total_area" placeholder="">
-            </label>
-            <label>
-              First Floor Area
-              <input type="text" name="first_floor_area" placeholder="">
-            </label>
-            <label>
-              Outdoor Area
-              <input type="text" name="outdoor_area" placeholder="">
-            </label>
-            <label>
-              Is this property single-tenant or multi-tenant?
-              <input type="radio" name="single_or_multi_tenant" value="single"> Single-tenant
-              <input type="radio" name="single_or_multi_tenant" value="multi"> Multi-tenant
-            </label>
-            <label>
-              Auto Parking Spaces
-              <input type="text" name="automobile_parking_spaces" placeholder="">
-            </label>
-            <label>
-              Bicycle Parking Spaces
-              <input type="text" name="bicycle_parking_spaces" placeholder="">
-            </label>
-          </form>
-          <p class="next">Next: <a href="#requirement_building_permit">Get your business license &rarr;</a></p>
+          <div data-zoning-status="principally-permitted">
+            <p>You've told us that you're <strong>working from 123 Anystreet Place, Santa Cruz, CA 91234</strong>, and your business is of type <strong>[business type here]</strong>.</p>
+            <p>This use is <strong>principally permitted</strong> at this location.</p>
+            <p>The use permit you need is a <em>Zoning Clearance</em>. You'll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
+            <p>Fill in as much as you can below.</p>
+            <form method="post" action="#" id="form_zoning_clearance">
+              <label>
+                Your First Name
+                <input type="text" name="applicant_first_name" placeholder="">
+              </label>
+              <label>
+                Your Last Name
+                <input type="text" name="applicant_last_name" placeholder="">
+              </label>
+              <label>
+                Your Phone Number
+                <input type="text" name="applicant_phone" placeholder="(123) 456-7890">
+              </label>
+              <label>
+                Your Street Address
+                <input type="text" name="applicant_physical_address_street" placeholder="Street Address">
+              </label>
+              <label>
+                Your Street Address (Detail)
+                <input type="text" name="applicant_physical_address_detail" placeholder="Detail">
+              </label>
+              <label>
+                Your City
+                <input type="text" name="applicant_physical_address_city" placeholder="City">,
+              </label>
+              <label>
+                Your State
+                <input type="text" name="applicant_physical_address_state" placeholder="State">
+              </label>
+              <label>
+                Your ZIP Code
+                <input type="text" name="applicant_physical_address_zip" placeholder="ZIP">
+              </label>
+              <label>
+                Your Business's Name
+                <input type="text" name="business_name" placeholder="Acme, Inc.">
+              </label>
+              <label>
+                Your Business's Phone Number
+                <input type="text" name="business_phone" placeholder="">
+              </label>
+              <label>
+                Your Business's Street Address
+                <input type="text" name="business_physical_address_street" placeholder="Street">
+              </label>
+              <label>
+                Your Business's Street Address (Detail)
+                <input type="text" name="business_physical_address_detail" placeholder="Detail (optional)">
+              </label>
+              <label>
+                Your Business's City
+                <input type="text" name="business_physical_address_city" placeholder="City">
+              </label>
+              <label>
+                Your Business's State
+                <input type="text" name="business_physical_address_state" placeholder="State">
+              </label>
+              <label>
+                Your Business's ZIP
+                <input type="text" name="business_physical_address_zip" placeholder="ZIP">
+              </label>
+              <label>
+                APN
+                <input type="text" name="apn" placeholder="">
+              </label>
+              <label>
+                Zoning District
+                <input type="text" name="zoning_district" placeholder="">
+              </label>
+              <label>
+                Intended Property Use
+                <input type="text" name="intended_use" placeholder="">
+              </label>
+              <label>
+                Previous Property Use
+                <input type="text" name="prior_use" placeholder="">
+              </label>
+              <label>
+                Date of Occupancy
+                <input type="text" name="date_of_occupancy" placeholder="">
+              </label>
+              <label>
+                Total Area (sq. ft)
+                <input type="text" name="total_area" placeholder="">
+              </label>
+              <label>
+                First Floor Area
+                <input type="text" name="first_floor_area" placeholder="">
+              </label>
+              <label>
+                Outdoor Area
+                <input type="text" name="outdoor_area" placeholder="">
+              </label>
+              <label>
+                Is this property single-tenant or multi-tenant?
+                <input type="radio" name="single_or_multi_tenant" value="single"> Single-tenant
+                <input type="radio" name="single_or_multi_tenant" value="multi"> Multi-tenant
+              </label>
+              <label>
+                Auto Parking Spaces
+                <input type="text" name="automobile_parking_spaces" placeholder="">
+              </label>
+              <label>
+                Bicycle Parking Spaces
+                <input type="text" name="bicycle_parking_spaces" placeholder="">
+              </label>
+            </form>
+            <p class="next">Next: <a href="#requirement_building_permit">Get your business license &rarr;</a></p>
+          </div>
           <!-- /@condition NON HOME OCC - PRINCIPALLY PERMITTED -->
           
           <hr class="visuallyhidden">
           
           <!-- /@condition NON HOME OCC - NOT PRINCIPALLY PERMITTED -->
-          <p>You've told us that you&lsquo;re <strong>working from 123 Anystreet Place, Santa Cruz, CA 91234</strong>, and your business is of type <strong>[business type here]</strong>.</p>
-          <p>This use is <strong>not principally permitted</strong> at this location.</p>
-          <p>You will need either an <abbr title="Administrative Use Permit">AUP</abbr> or a <abbr title="Special Use Permit">SUP</abbr> to site your business here.</p>
-          <p>Contact the Planning Department for next steps.</p>
-          <p class="next"><a href="#help">Contact the Planning Department &rarr;</a></p>
+          <div data-zoning-status="non-principally-permitted">
+            <p>You've told us that you&lsquo;re <strong>working from 123 Anystreet Place, Santa Cruz, CA 91234</strong>, and your business is of type <strong>[business type here]</strong>.</p>
+            <p>This use is <strong>not principally permitted</strong> at this location.</p>
+            <p>You will need either an <abbr title="Administrative Use Permit">AUP</abbr> or a <abbr title="Special Use Permit">SUP</abbr> to site your business here.</p>
+            <p>Contact the Planning Department for next steps.</p>
+            <p class="next"><a href="#help">Contact the Planning Department &rarr;</a></p>
+          </div>
           <!-- /@condition NON HOME OCC - NOT PRINCIPALLY PERMITTED -->
           
           <hr class="visuallyhidden">
+          <!-- /@condition NON HOME OCC - Prohibited -->
+          <div data-zoning-status="non-principally-permitted">
+            <p>You've told us that you're <strong>working from 123 Anystreet Place, Santa Cruz, CA 91234</strong>, and your business is of type <strong>[business type here]</strong>.</p>
+            <p>This use is <strong>prohibited</strong> at this location.</p>
+            <p>Siting your business here will require changing the City of Santa Cruz's zoning; this is a difficult process and can take years.</p>
+            <p>Contact the Planning Department for next steps.</p>
+            <p class="next"><a href="#help">Contact the Planning Department &rarr;</a></p>
+          </div>
+          <!-- /@condition NON HOME OCC - Prohibited -->
           
-          <p>You've told us that you're <strong>working from 123 Anystreet Place, Santa Cruz, CA 91234</strong>, and your business is of type <strong>[business type here]</strong>.</p>
-          <p>This use is <strong>prohibited</strong> at this location.</p>
-          <p>Siting your business here will require changing the City of Santa Cruz's zoning; this is a difficult process and can take years.</p>
-          <p>Contact the Planning Department for next steps.</p>
-          <p class="next"><a href="#help">Contact the Planning Department &rarr;</a></p>
         </div><!-- /#requirement_use_permit -->
         
         <div id="requirement_building_permit">
