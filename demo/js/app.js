@@ -40,9 +40,9 @@ OC.forms.recallFields = function() {
       }
     }else if(type === 'checkbox') {
       $(this).prop("checked", true);
-    }else {
+    }else if(type !='submit'){
       $(this).val(value);
-    }
+    };
     
   });
 };
