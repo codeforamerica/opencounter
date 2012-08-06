@@ -87,7 +87,7 @@
           <p>Starting a business? We&rsquo;re here to help.</p>
           <p>This website will guide you through the business permitting process in Santa Cruz, CA.</p>
           <p>You&rsquo;ll learn what regulations and fees apply to your business, and we&rsquo;ll help you get started on &mdash; or, in some cases, complete! &mdash; the paperwork you&rsquo;ll need to file to open your doors.</p>
-          <p class="next">Let&rsquo;e begin by learning about <a href="#intro_big_picture">the big picture &rarr;</a></p>
+          <p class="next">Let&rsquo;s begin by learning about <a href="#intro_big_picture">the big picture &rarr;</a></p>
         </div><!-- /#intro -->
         
         <div id="intro_big_picture">
@@ -109,14 +109,14 @@
           <h3 class="toggle">The Santa Cruz Planning Department</h3>
           <div class="drawer">
             <p>The Planning Department will be your business&rsquo;s main point of contact within city government.</p>
-            <p><img src="assets/img/planning-department.png" alt="City of Santa Cruz Planning Department" width="450" height="302"></p>
+            <p><img src="img/planning-department.png" alt="City of Santa Cruz Planning Department" width="450" height="302"></p>
             <div class="tool status">
               <p>The planning department's public counter is currently <span class="status">OPEN</span>. Come on by!</p>
               <p>The planning department's public counter is currently <span class="status">CLOSED</span>. <a href="mailto:planningcounter@cityofsantacruz.com">Email us &rarr;</a></p>
             </div>
             <p>You are always welcome to visit the Planning Department in person.</p>
             <p>The Planning Department&rsquo;s public counter is located in City Hall, on the annex building&rsquo;s second floor, in room 206.</p>
-            <p><img src="assets/img/planning-department-map.jpg" alt="Map to Planning Department" width="425" height="258"></p>
+            <p><img src="img/planning-department-map.jpg" alt="Map to Planning Department" width="425" height="258"></p>
             <p>Santa Cruz City Hall<br>809 Center Street<br>Room 206<br>Santa Cruz, CA 95060</p>
             <p>Telephone: (831) 420-5100</p>
             <p>Fax: (831) 420-5434</p>
@@ -204,11 +204,14 @@
   
             <label>
               What will your business do?
-              <input type="text" id="business_type" name="business_type" placeholder="SIC/NAICS tool here, with freeform entry">
+              <input type="text" id="business_code" name="business_code" placeholder="e.g. Auto Parts">
+              <div id="business-type-container" style="position:absolute; width: 500px;"></div>
             </label>
+            
 <!--
             <iframe src="http://pdfmongotest.herokuapp.com/calgold?kywd=search" width="450" height="200"></iframe>
 -->
+
             <p>(Not sure of your business type? Not finding your business type listed? Simply enter the words "General Business Information" above, or select it from the list.)</p>
   
             <label>
@@ -256,8 +259,8 @@
         <div id="location">
           <h1>Your business's location</h1>
           <h3>Where will you be working from?</h3>
-          <p class="next"><a href="#location_home_occ" data-occupancy="home" data-zoning-status="home">I'll be working from home</a></p>
-          <p class="next"><a href="#location_non_home_occ" data-occupancy="non-home" data-zoning-status="">I'll be working out of a commercial space</a></p>
+          <p class="next"><a href="#location_home_occ" data-occupancy="home" data-zoning-status="home">I'll be working from home &rarr;</a></p>
+          <p class="next"><a href="#location_non_home_occ" data-occupancy="non-home" data-zoning-status="">I'll be working out of a commercial space &rarr;</a></p>
 
         </div><!-- /#location -->
         
@@ -401,7 +404,7 @@
               ZIP
               <input type="text" name="business_physical_address_zip" placeholder="ZIP">
             </label>
-            <input type="submit" value="Check Zoning">
+            <a class="submit">Check Zoning</a>
             <p class="text"><a class="submit" href="#requirements">Next: Requirements &rarr;</a></p>
           </form>
         
@@ -410,7 +413,7 @@
         <div id="requirements">
           <h1>Requirements</h1>
           <p>Based on what you've told us about your business, let's walk through all of the requirements.</p>
-          <p class="text"><a class="submit" href="#requirement_use_permit">First, Use Permits &rarr;</a></p>
+          <p class="next"><a class="submit" href="#requirement_use_permit">First, Use Permits &rarr;</a></p>
         </div><!-- /#requirements -->
 
         <div id="requirement_use_permit">
@@ -486,7 +489,7 @@
                 <input type="text" name="business_phone" placeholder="">
               </label>
             </form>
-            <p class="next">Next: <a href="#requirement_building_permit">Get your business license &rarr;</a></p>
+            <p class="next">Next: <a href="#requirement_building_permit">Building Permit &rarr;</a></p>
           </div>
           <!-- /@condition HOME OCC - PRINCIPALLY PERMITTED -->
 
@@ -605,7 +608,7 @@
                 <input type="text" name="bicycle_parking_spaces" placeholder="">
               </label>
             </form>
-            <p class="next">Next: <a href="#requirement_building_permit">Get your business license &rarr;</a></p>
+            <p class="next">Next: <a href="#requirement_building_permit">Building Permit &rarr;</a></p>
           </div>
           <!-- /@condition NON HOME OCC - PRINCIPALLY PERMITTED -->
           
@@ -776,7 +779,7 @@
           </form>
 
           <!-- @condition NO CONSTRUCTION -->
-          <p class="next"><a class="submit" href="requirement_contextual">Other Requirements</a></p>
+          <p class="next">Next: <a class="submit" href="requirement_parking">Parking &rarr;</a></p>
           <!-- @condition /NO CONSTRUCTION -->
           
         </div><!-- /#requirement_building_permit -->
@@ -805,13 +808,12 @@
       		  <input id="spaces_existing" name="spaces_existing" type="text" value="0"/>
 		
       		  <hr/>
-      		  <div id="docq" style="display:none">
+      		  <div id="docq" style="display:none;">
       			<strong>Doctors and Dentists</strong>
       			<br/>
       			<b>Practitioners:</b><input type="text" id="doctorcount" value="1"/>
       			<hr/>
       		  </div>
-		
       		  <a class="submit" data-bypass onclick="OC.calculator.parking.downtown.calculate()">Calculate</a>
 		
       		  <p><span id="calculated">Fill out form to calculate</span> required spaces.</p>
@@ -1855,8 +1857,12 @@
   </div><!-- /.container -->
 
   <script type="text/javascript" src="js/lib/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="js/lib/jquery-ui-1.8.22.custom.min.js"></script>
+
   <script type="text/javascript" src="js/app.js"></script>
   <script type="text/javascript" src="js/calculator.parking.js"></script>
+  <script type="text/javascript" src="js/data.nacis.js"></script>
+  
   <script type="text/javascript" src="js/routing.js"></script>
   <script type="text/javascript" src="js/location.js"></script>
   

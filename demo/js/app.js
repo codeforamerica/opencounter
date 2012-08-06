@@ -6,6 +6,7 @@ var OC = {
   util: {},
   state: {},
   calculator: {},
+  data: {},
   
   init: function() {
     console.log("Initializing");
@@ -26,12 +27,39 @@ var OC = {
         
     // Check to see if we have stored data about any forms
     OC.forms.recallFields();
+
+    // Autocomplete business types
+    $('#business_code').autocomplete({
+      source: OC.data.calgoldBusinessTypes,
+      appendTo: '#business-type-container',
+      select: function(event, ui) {       
+        // Save the selected option (doesn't happen naturally the way we want)
+        key = OC.forms.key('nacis');
+        OC.util.storeData(key, ui);
+      }
+    });
     
     // Set up we're-here-to-help toggles
     $('.drawer').hide();
     $('.toggle').click(function(e){
       e.PreventDefault;
       $(this).next('.drawer').toggle();
+    });
+    
+    // Set up Profile pulldown
+    $('.profile-contents').hide();
+    $('.profile-toggle').click(function(e){
+        // Draw .profile-contents
+        $('.profile-contents').toggle();
+        
+        // Calculate the height of profile-contents
+        var contents_height = $('.profile-contents').height();
+        
+        // Scoot branding down by that amount
+        $('.branding').animate({
+          top: contents_height + "px"
+        }, 1500);
+        
     });
     
   }
@@ -64,6 +92,14 @@ OC.forms.recallFields = function() {
   });
 };
 
+OC.forms.businessTypeAutocomplete = function(event) {
+  var value = $(this).attr('value');
+  console.log(value);
+  
+  // Autocomplete stuff
+  // #businessTypeInput
+};
+
 /** 
  * Generate a key for localStorage based on the name of a form field
  */ 
@@ -74,12 +110,11 @@ OC.forms.key = function(name) {
 /**
  * Handle the sumbit link being clicked
  */
- 
 OC.forms.submitLink = function(event) {
   event.preventDefault();
   var form = $(this).closest('form');
   OC.forms.sumbit(form);
-}
+};
 
 /**
  * Handle form submissions our way
@@ -128,14 +163,12 @@ OC.util.getData = function(key) {
 
 OC.util.storeData = function(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
-
 };
 
 OC.util.isPlanningOpen = function() {
   // Todo: tell if planning is actually open.
   return "closed";
 };
-
 
 /** 
  * Utility to serialize complex things. Like forms.
