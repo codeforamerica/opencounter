@@ -9,11 +9,19 @@ var OC = {
   
   init: function() {
     console.log("Initializing");
+    
+    console.log("Here is everything in localStorage:");
     console.log(localStorage);
+    
     OC.routing.init();
+    OC.calculator.parking.general.init();
     $('.submit').bind({
-      click: OC.forms.sumbit
+      click: OC.forms.submitLink
     });
+    
+    OC.util.isPlanningOpen();
+    
+    // Update first name when you hit business-info'. 'first-name' 
         
     // Check to see if we have stored data about any forms
     OC.forms.recallFields();
@@ -40,9 +48,9 @@ OC.forms.recallFields = function() {
       }
     }else if(type === 'checkbox') {
       $(this).prop("checked", true);
-    }else {
+    }else if(type !='submit'){
       $(this).val(value);
-    }
+    };
     
   });
 };
@@ -55,15 +63,23 @@ OC.forms.key = function(name) {
 };
 
 /**
- * Handle form submissions our way
+ * Handle the sumbit link being clicked
  */
-OC.forms.sumbit = function(event) {
+ 
+OC.forms.submitLink = function(event) {
   event.preventDefault();
   var form = $(this).closest('form');
-  
+  OC.forms.sumbit(form);
+}
+
+/**
+ * Handle form submissions our way
+ */
+OC.forms.sumbit = function(form) {  
   // Save the data from the form in localStorage
   var data = $(form).serializeObject();
-  console.log(data);
+  console.log(form);
+  
   $.each(data, function(key, value){
     var localStorageKey = OC.forms.key(key);
     console.log("Key: " + key + " value: " + value);
@@ -82,7 +98,8 @@ OC.state.set = function(key, val){
     }
     data[key] = val;
     OC.util.storeData("OC-state", data);
-}
+};
+
 OC.state.get = function(key){
 
     var data = OC.util.getData("OC-state");
@@ -94,7 +111,7 @@ OC.state.get = function(key){
     }else{
         return data[key];
     }
-}
+};
  
 OC.util.getData = function(key) {
     return JSON.parse(localStorage.getItem(key));
@@ -103,6 +120,11 @@ OC.util.getData = function(key) {
 OC.util.storeData = function(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 
+};
+
+OC.util.isPlanningOpen = function() {
+  // Todo: tell if planning is actually open.
+  return "closed";
 };
 
 

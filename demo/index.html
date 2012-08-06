@@ -94,9 +94,9 @@
           <h1>The Big Picture</h1>
           <p>Here's how to start a business in the City of Santa Cruz.</p>
           <ol>
-            <li>First, secure a <strong>use permit</strong> from the City&rsquo;s Planning Department. If you&rsquo;re starting a business, even if you're working from home, the City has to approve that use in your location. <a href="#">Skip to use permit helper &rarr;</a></li>
-            <li>Next, if you&rsquo;re doing any renovations or tenant improvements, get approval from the City of Santa Cruz Building Department. <a href="#">Skip to building permit helper &rarr;</a></li>
-            <li>Finally, obtain a <strong>business license</strong> from the City of Santa Cruz Finance Department. <a href="#">Skip to business license &rarr;</a></li>
+            <li>First, secure a <strong>use permit</strong> from the City&rsquo;s Planning Department. If you&rsquo;re starting a business, even if you're working from home, the City has to approve that use in your location.</li>
+            <li>Next, if you&rsquo;re doing any renovations or tenant improvements, get a <strong>building permit</strong> from the City of Santa Cruz Building Department.</li>
+            <li>Finally, obtain a <strong>business license</strong> from the City of Santa Cruz Finance Department.</li>
           </ol>
           <p>While that covers most City processes, there are also county, regional, state, and federal regulations that may apply to your business. We&rsquo;ve included tools to help you research and fulfill those requirements, too.</p>
           <p class="next">Before we walk through these steps, know that <a href="#intro_here_to_help">we&rsquo;re here to help &rarr;</a></p>
@@ -204,9 +204,11 @@
   
             <label>
               What will your business do?
-              <input type="text" name="business_type" placeholder="SIC/NAICS tool here, with freeform entry">
+              <input type="text" id="business_type" name="business_type" placeholder="SIC/NAICS tool here, with freeform entry">
             </label>
+<!--
             <iframe src="http://pdfmongotest.herokuapp.com/calgold?kywd=search" width="450" height="200"></iframe>
+-->
             <p>(Not sure of your business type? Not finding your business type listed? Simply enter the words "General Business Information" above, or select it from the list.)</p>
   
             <label>
@@ -793,7 +795,7 @@
           <h3>Downtown Businesses</h3>
           <p>If your business is downtown, you don't need to provide any parking spaces, but you will need to pay a Parking Deficiency Fee.</p>
 
-      		<form class="well form-vertical">
+      		<form class="well form-vertical" id="parking-deficiency-form">
       			<label>Business type</label>
       			<select id="proptype_existing" onchange="OC.calculator.parking.downtown.setUnits(this.value)">
       				<option value="APARTMENT">Apartment</option>
@@ -804,10 +806,10 @@
       			</select>
 
       			<label>Size of Property</label>
-      			<input id="size_existing" type="text"/>&nbsp;<label id="units">units</label>
+      			<input id="size_existing" name="num_units" type="text"/>&nbsp;<label id="units">units</label>
 
       			<label>Existing Spaces</label>
-      			<input id="spaces_existing" type="text" value="0"/>
+      			<input id="spaces_existing" name="spaces_existing" type="text" value="0"/>
 		
       			<hr/>
       			<div id="docq" style="display:none">
@@ -873,7 +875,7 @@
             <p>Please select your specific business type below</p>
           </div><!-- /#prompt -->
         
-          <div id="business_type_auto">
+          <div id="business_type_auto" class="business-type-rule">
         
             <h3>Automobile or machinery sales and service garages</h3>
         
@@ -917,7 +919,7 @@
           </div><!-- /#business_type_auto -->
         
         
-          <div id="business_type_banks">
+          <div id="business_type_banks" class="business-type-rule">
         
             <h3>Banks with automatic teller machines</h3>
             
@@ -960,7 +962,7 @@
         
           </div><!-- /#business_type_banks -->
         
-          <div id="business_type_billiard">
+          <div id="business_type_billiard" class="business-type-rule">
         
             <h3>Billiard parlors</h3>
         
@@ -982,7 +984,7 @@
           </div>  <!-- /#business_type_billiard -->
         
         
-          <div id="business_type_children">
+          <div id="business_type_children" class="business-type-rule">
         
             <h3>Children&#8217;s Homes</h3>
         
@@ -1027,7 +1029,7 @@
           </div>  <!-- /#business_type_children -->
         
         
-          <div id="business_type_communication">
+          <div id="business_type_communication" class="business-type-rule">
         
             <h3>Communications equipment buildings</h3>
         
@@ -1049,7 +1051,7 @@
           </div>  <!-- /#business_type_communication -->
         
         
-          <div id="business_type_education">
+          <div id="business_type_education" class="business-type-rule">
         
             <h3>Elementary and junior high schools</h3>
         
@@ -1115,7 +1117,7 @@
           </div>  <!-- /#business_type_education -->
         
         
-          <div id="business_type_fitness">
+          <div id="business_type_fitness" class="business-type-rule">
         
             <h3>Multi-program fitness facilities</h3>
         
@@ -1181,7 +1183,7 @@
           </div>  <!-- /#business_type_fitness -->
         
         
-          <div id="business_type_food">
+          <div id="business_type_food" class="business-type-rule">
         
             <h3>Restaurants&#8218; bars&#8218; other food service establishments&#8218; and nightclubs without live entertainment</h3>
         
@@ -1225,7 +1227,7 @@
           </div>  <!-- /#business_type_food -->
         
         
-          <div id="business_type_funeral">
+          <div id="business_type_funeral" class="business-type-rule">
         
             <h3>Funeral homes &#38; mortuaries</h3>
         
@@ -1247,7 +1249,7 @@
           </div>  <!-- /#business_type_funeral -->
         
         
-          <div id="business_type_furn_repair" style="display:none;">
+          <div id="business_type_furn_repair" class="business-type-rule">
         
             <h3>Furniture repair</h3>
         
@@ -1269,7 +1271,7 @@
           </div>  <!-- /#business_type_furn_repair -->
         
         
-          <div id="business_type_halls">
+          <div id="business_type_halls" class="business-type-rule">
         
             <h3>Sports arenas&#8218; auditoriums&#8218; assembly halls&#8218; and meeting rooms (all with fixed seats)</h3>
         
@@ -1309,7 +1311,7 @@
           </div>  <!-- /#business_type_halls -->
         
         
-          <div id="business_type_household">
+          <div id="business_type_household" class="business-type-rule">
         
             <h3>Furniture &#38; appliance stores and household equipment</h3>
         
@@ -1331,7 +1333,7 @@
           </div>  <!-- /#business_type_household -->
         
         
-          <div id="business_type_laundry">
+          <div id="business_type_laundry" class="business-type-rule">
         
             <h3>Self-service laundry and dry cleaning establishments</h3>
         
@@ -1353,7 +1355,7 @@
           </div>  <!-- /#business_type_laundry -->
         
         
-          <div id="business_type_lodging">
+          <div id="business_type_lodging" class="business-type-rule">
         
             <h3>Community care residential facilities</h3>
         
@@ -1399,7 +1401,7 @@
           </div>  <!-- /#business_type_lodging -->
         
         
-          <div id="business_type_medical">
+          <div id="business_type_medical" class="business-type-rule">
         
             <h3>Convalescent hospitals</h3>
         
@@ -1487,7 +1489,7 @@
           </div>  <!-- /#business_type_medical -->
         
         
-          <div id="business_type_office">
+          <div id="business_type_office" class="business-type-rule">
         
             <h3>Business and professional offices</h3>
         
@@ -1510,7 +1512,7 @@
           </div>  <!-- /#business_type_office -->
         
         
-          <div id="business_type_plants" style="display:none;">
+          <div id="business_type_plants" class="business-type-rule">
           
             <h3>Manufacturing, bottling, and processing plants</h3>
         
@@ -1532,7 +1534,7 @@
           </div>  <!-- /#business_type_plants-->
         
         
-          <div id="business_type_recycle">
+          <div id="business_type_recycle" class="business-type-rule">
           
             <h3>Independent recycling collection facilities</h3>
             <div class="rules">
@@ -1550,7 +1552,7 @@
         
           </div>  <!-- /#business_type_recycle -->
         
-          <div id="business_type_research">
+          <div id="business_type_research" class="business-type-rule">
           
             <h3>Research &#38; development</h3>
         
@@ -1577,7 +1579,7 @@
           </div>  <!-- /#business_type_research -->
         
         
-          <div id="business_type_retail">
+          <div id="business_type_retail" class="business-type-rule">
           
             <h3>Retail stores, shops, service establishments, &#38; shopping centers</h3>
         
@@ -1599,7 +1601,7 @@
           </div> <!-- /#business_type_retail -->
         
         
-          <div id="business_type_seniors">
+          <div id="business_type_seniors" class="business-type-rule">
           
             <h3>Boarding homes for the aged</h3>
         
@@ -1671,7 +1673,7 @@
           </div>  <!-- /#business_type_seniors -->
         
         
-          <div id="business_type_theaters">
+          <div id="business_type_theaters" class="business-type-rule">
           
             <h3>Theaters</h3>
         
@@ -1694,7 +1696,7 @@
           </div>  <!-- /#business_type_theaters -->
         
         
-          <div id="business_type_warehouses">
+          <div id="business_type_warehouses" class="business-type-rule">
           
             <h3>Wholesale, warehouses, and service &#38; maintenance centers</h3>
         
@@ -1716,7 +1718,7 @@
           </div>  <!-- /#business_type_warehouses -->
         
         
-          <div id="business_type_worship">
+          <div id="business_type_worship" class="business-type-rule">
           
             <h3>Houses of worship</h3>
         
