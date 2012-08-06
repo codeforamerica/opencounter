@@ -1844,7 +1844,80 @@
         <div id="summary">
           <h1>Summary &amp; Next Steps</h1>
           <p>TBD.</p>
-        </div>
+        </div><!-- /#summary -->
+        
+        <div id="help">
+          <h1>Contact Us</h1>
+          <p>Send the Planning Department your question here, and we'll respond within 4 business days.</p>
+          <p>If you need to speak with someone sooner than that, <a href="#intro_here_to_help">here's how to contact the Planning Department</a>.</p>
+          <form method="post" action="#">
+            <label>
+              Your Name
+              <input type="text" id="name" placeholder="First Last">
+            </label>
+            
+            <label>
+              Your Email Address
+              <input type="text" id="email" placeholder="you@domain.com">
+            </label>
+            
+            <label for="subject">
+              I have a question about
+              <select name="subject" id="subject">
+                <option value="home_occ">Starting a home-based business</option>
+                <option value="non_home_occ">Starting a non-home-based business</option>
+                <option value="other">Something else</option>
+              </select>
+            </label>
+            
+            <label for="comments">
+              My question is
+              <textarea name="comments" id="comments"></textarea>
+            </label>
+          
+          </form>
+          
+          <p class="next"><a class="submit" href="#help_thanks">Send this to the Planning Department &rarr;</a></p>
+        </div><!-- /#help -->
+
+        <div id="help_thanks">
+          <h1>Thanks!</h1>
+          <p>Thanks for contacting us. We will get in touch with you within 4 business days.</p>
+          <p>If you need to speak with someone sooner than that, <a href="#intro_here_to_help">here's how to contact the Planning Department</a>.</p>
+          <p class="next">How'd we do? <a href="#feedback">Give us some feedback &rarr;</a></p>
+        </div><!-- /#help-thanks -->
+        
+        <div id="feedback">
+          <h1>Give us some feedback</h1>
+          <p>If you have a moment, we would love to get your thoughts on this site.</p>
+          <form method="post" action="#">
+            <label>
+              How well did we do at answering your questions?
+              <select name="mood">
+                <option value="happy">Happy &#9786;</option>
+                <option value="neutral">Neutral</option>
+                <option value="unhappy">Unhappy &#9785;</option>
+              </select>
+            </label>
+            <label>
+              What could we have done better?
+              <textarea name="suggestions"></textarea>
+            </label>
+            <label>
+              Want us to follow up with you? Enter your email address here:
+              <input type="text" name="email" placeholder="you@email.com">
+            </label>
+            <p class="next"><a class="submit" href="#feedback_thanks">Submit</a></p>
+          </form>
+        </div><!-- /#feedback -->
+        
+        <div id="feedback_thanks">
+          <h1>Thanks for sharing!</h1>
+          <p>Thanks, we've received your feedback.</p>
+          <p>(If they gave an email or phone) We'll follow up with you within one workday.</p>
+          <p>Thanks for helping us improve OpenCounter!</p>
+          <p class="next"><a href="#intro">OpenCounter Home</a></p>
+        </div><!-- /#feedback_thanks -->
 
       </section><!-- /.content -->
       
