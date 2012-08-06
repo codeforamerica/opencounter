@@ -7,21 +7,19 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
-  <link href="style.css" media="all" rel="stylesheet" type="text/css">
+  <link href="css/style.css" media="all" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
   <div class="container">
 
-    <header><div class="inner">
-      
-      <div class="masthead">
-        <h1>OpenCounter</h1>
-        <p>Start your business in <span class="city">Santa Cruz, CA</span>.</p>
-      </div>
-      
-      <hr>
+    <div class="branding">
+      <h1>OpenCounter</h1>
+      <p>Start your business in <span class="city">Santa Cruz, CA</span>.</p>
+    </div>
+    
+    <hr class="visuallyhidden">
       
       <nav class="nav-main">
         <ul>
@@ -64,23 +62,23 @@
 
       </nav><!-- /.nav-main -->
     
-    </div></header><!-- /.inner -->
-    
-    <hr>
+    <hr class="visuallyhidden">
     
     <section class="panel">
   
       <section class="profile">
-        <h1>Your Profile</h1>
-        <div class="progress">
-          <h3>% Complete</h3>
-        </div>
-        <div class="forms-and-fees">
-          <h3>Forms &amp; Fees</h3>
+        <h1 class="profile-toggle">Your Profile</h1>
+        <div class="profile-contents">
+          <div class="progress">
+            <h3>% Complete</h3>
+          </div>
+          <div class="forms-and-fees">
+            <h3>Forms &amp; Fees</h3>
+          </div>
         </div>
       </section><!-- /.profile -->
 
-      <hr>
+      <hr class="visuallyhidden">
 
       <section class="content">
 
@@ -293,7 +291,7 @@
             </ol>
           </blockquote>
           
-          <hr>
+          <hr class="visuallyhidden">
           
           <p>You've told us that you're <strong>working from home</strong>.</p>
           
@@ -368,7 +366,7 @@
           <p>If the past use matches your use, the zoning will match and parking will likely not be an issue.</p>
           <p>For example, if you are opening a restaurant, try to go into a space that previously held a restaurant.</p>
           
-          <hr>
+          <hr class="visuallyhidden">
           
           <p>Have you already picked out a space for your business?</p>
           <p class="next">Not yet. <a href="#location_non_home_occ_choose_site">Help me choose a site &rarr;</a></p>
@@ -441,7 +439,7 @@
             <p>The alternative, changing the zoning for that property, is very difficult, rare, and can take years. It is not recommended, but you are welcome to <a href="#">contact the Planning Department</a> for more information.</p>
           </div>
           
-          <hr>
+          <hr class="visuallyhidden">
           
           <!-- @condition HOME OCC - PRINCIPALLY PERMITTED -->
           <p>You've told us that you're <strong>working from home</strong>, and you've confirmed that your business complies with Santa Cruz Municipal Code 24.10.160.</p>
@@ -492,7 +490,7 @@
           <p class="next">Next: <a href="#requirement_building_permit">Get your business license &rarr;</a></p>
           <!-- /@condition HOME OCC - PRINCIPALLY PERMITTED -->
 
-          <hr>
+          <hr class="visuallyhidden">
 
           <!-- @condition NON HOME OCC - PRINCIPALLY PERMITTED -->
           <p>You've told us that you're <strong>working from 123 Anystreet Place, Santa Cruz, CA 91234</strong>, and your business is of type <strong>[business type here]</strong>.</p>
@@ -609,7 +607,7 @@
           <p class="next">Next: <a href="#requirement_building_permit">Get your business license &rarr;</a></p>
           <!-- /@condition NON HOME OCC - PRINCIPALLY PERMITTED -->
           
-          <hr>
+          <hr class="visuallyhidden">
           
           <!-- /@condition NON HOME OCC - NOT PRINCIPALLY PERMITTED -->
           <p>You've told us that you&lsquo;re <strong>working from 123 Anystreet Place, Santa Cruz, CA 91234</strong>, and your business is of type <strong>[business type here]</strong>.</p>
@@ -619,7 +617,7 @@
           <p class="next"><a href="#help">Contact the Planning Department &rarr;</a></p>
           <!-- /@condition NON HOME OCC - NOT PRINCIPALLY PERMITTED -->
           
-          <hr>
+          <hr class="visuallyhidden">
           
           <p>You've told us that you're <strong>working from 123 Anystreet Place, Santa Cruz, CA 91234</strong>, and your business is of type <strong>[business type here]</strong>.</p>
           <p>This use is <strong>prohibited</strong> at this location.</p>
@@ -778,6 +776,45 @@
         <div id="requirement_parking">
           <h1>Parking</h1>
 
+          <h3>Downtown Businesses</h3>
+          <p>If your business is downtown, you don't need to provide any parking spaces, but you will need to pay a Parking Deficiency Fee.</p>
+
+      		<form class="well form-vertical">
+      			<label>Business type</label>
+      			<select id="proptype_existing" onchange="OC.calculator.parking.downtown.setUnits(this.value)">
+      				<option value="APARTMENT">Apartment</option>
+      				<option value="DOCTOR">Doctor or Dentist</option>
+      				<option value="MERCANTILE">Mercantile / Professional</option>
+      				<option value="FURNITURE">Furniture Store</option>
+      				<option value="SERVICE">Service Area/Warehouse</option>
+      			</select>
+
+      			<label>Size of Property</label>
+      			<input id="size_existing" type="text"/>&nbsp;<label id="units">units</label>
+
+      			<label>Existing Spaces</label>
+      			<input id="spaces_existing" type="text" value="0"/>
+		
+      			<hr/>
+      			<div id="docq" style="display:none">
+      				<strong>Doctors and Dentists</strong>
+      				<br/>
+      				<b>Practitioners:</b><input type="text" id="doctorcount" value="1"/>
+      				<hr/>
+      			</div>
+		
+      			<a class="submit" data-bypass onclick="OC.calculator.parking.downtown.calculate()">Calculate</a>
+		
+      			<p><span id="calculated">Fill out form to calculate</span> required spaces.</p>
+      			<p>Estimated parking deficiency fee: <span id="fee" style="background-color:#fff;"></span></p>
+		
+      		</form>
+
+          <hr class="visuallyhidden">
+
+          <h3>Non-Downtown Businesses</h3>
+          <p>Your business needs to provide parking spaces.</p>
+
           <style type="text/css">
             .business-type-rule {
               display: none;
@@ -908,7 +945,6 @@
             </form>
         
           </div><!-- /#business_type_banks -->
-        
         
           <div id="business_type_billiard">
         
@@ -1690,327 +1726,327 @@
           <div id="parking_spaces"></div>
         
         <script type="text/javascript">
-        (function(){
-        
-            // Add class="business-type-rule" to every large category
-            $('.tool > div').addClass('business-type-rule');
-        
-            // When the applicant selects an option,
-            $('#business_type').change(function() {
-        
-                // Get the selection
-                selected_option = '#business_type_' + $(this).val() || '';
-        
-                // Hide all <div class="business-type-rules">'s
-                $('.business-type-rule')
-                    .hide()
-                    .slideUp('slow');
-        
-                // Hide the parking spot counter
-                $('#parking_spaces').hide();
-        
-                // Show the selected <div class="business-type-rules">
-                $(selected_option)
-                    .show()
-                    .slideDown('slow');
-            });
-            
-            // When the applicant submits a form,
-            $('.parking-calculator').submit(function(e){
-                
-                // Prevent default behavior of firing the action URL
-                e.preventDefault();
-                
-                // Grab form data
-                var form    = $(this),                 // the submitted form
-                    form_id = form.attr('id'),         // the form's ID
-                    inputs = $(this).serializeArray(); // the form data
-                
-                // Calculate number of required car parking spaces
-                var spaces = calculateSpaces(form_id, inputs);
-                
-                // Build the display text
-                var display_text = "<p>You must provide "
-                                    + spaces
-                                    + " car parking space"
-                                    + ((spaces !== 1) ? "s" : "")
-                                    + ".</p>";
-                
-                // Show the display text
-                $("#parking_spaces")
-                  .html(display_text)
-                  .show();
-                
-            });
-            
-            function calculateSpaces(form_id, inputs) {
-                
-                var field_1 = (typeof inputs[0] === "undefined") ? 0 : inputs[0]['value'],
-                    field_2 = (typeof inputs[1] === "undefined") ? 0 : inputs[1]['value'],
-                    field_3 = (typeof inputs[2] === "undefined") ? 0 : inputs[2]['value'],
-                    field_4 = (typeof inputs[3] === "undefined") ? 0 : inputs[3]['value'],
-                    field_5 = (typeof inputs[4] === "undefined") ? 0 : inputs[4]['value'],
-                    field_6 = (typeof inputs[5] === "undefined") ? 0 : inputs[5]['value'],
-                    spaces;
-                
-                switch (form_id) {
-                    
-                    case 'parking_auto':
-                        var square_feet = field_1,
-                            spaces      = Math.round(square_feet / 400);
-                        return spaces;
-                        break;
-                    
-                    case 'parking_service_stations':
-                        var service_bays = field_1,
-                            employees    = field_2,
-                            spaces = Math.round(service_bays * 3) + employees;
-                        return spaces;
-                        break;
-                    
-                    case 'parking_banks_with_atms':
-                        var square_feet = field_1,
-                            atms        = field_2,
-                            spaces      = Math.round( (square_feet / 400) + (atms * 1.5) );
-                        return spaces;
-                        break;
-                    
-                    case 'parking_banks_no_atms':
-                        var square_feet = field_1,
-                            spaces      = Math.round(square_feet / 400);
-                        return spaces;
-                        break;
-                    
-                    case 'parking_billiard':
-                        var tables    = field_1,
-                            spaces    = Math.round(tables * 1.5);
-                        return spaces;
-                        break;
-                    
-                    case 'parking_child_homes':
-                        var beds      = field_1,
-                            employees = field_2,
-                            spaces    = Math.round(beds / 5) + employees;
-                        return spaces;
-                        break;
-                    
-                    case 'parking_daycare_foster':
-                        var guests = field_1,
-                            spaces = Math.round(guests / 5) + 1;
-                        return spaces;
-                        break;
-                    
-                    case 'parking_communications':
-                        var square_feet = field_1,
-                            spaces      = Math.round(field_1 / 1000);
-                        return spaces;
-                        break;
-                    
-                    case 'parking_lower_schools':
-                        var employees = field_1,
-                            spaces    = employees;
-                        return spaces;
-                        break;
-                    
-                    case 'parking_high_schools':
-                        var students  = field_1,
-                            employees = field_2,
-                            spaces    = Math.round(students / 10) + employees;
-                        return spaces;
-                        break;
-                    
-                    case 'parking_colleges':
-                        var students  = field_1,
-                            employees = field_2,
-                            spaces    = Math.round(students / 3) + employees;
-                        return spaces;
-                        break;
-                    
-                    case 'parking_multi_program_fitness':
-                        var square_feet = field_1,
-                            spaces      = (square_feet / 100),
-                            spaces      = (square_feet > 15000) ? Math.round(spaces * 1.1) : Math.round(spaces);
-                        return spaces;
-                        break;
-                    
-                    case 'parking_single_program_fitness':
-                        var aerobics_area                   = field_1,
-                            basketball_volleyball_occupancy = field_2,
-                            pool_lanes                      = field_3,
-                            pool_non_water_area             = field_4,
-                            weights_area                    = field_5,
-                            square_feet                     = field_6,
-                            spaces                          = (aerobics_area / 50) + (basketball_volleyball_occupancy / 3) + (pool_lanes * 2) + (pool_non_water_area / 300) + (weights_area / 250),
-                            spaces                          = (square_feet > 15000) ? Math.round(spaces * 1.1) : Math.round(spaces);
-                        return spaces;
-                        break;
-                    
-                    case 'parking_food':
-                        var square_feet = field_1,
-                            spaces      = Math.round( square_feet / 120 );
-                        return spaces;
-                        break;
-                    
-                    case 'parking_take_out':
-                        var square_feet   = field_1,
-                            take_out_area = field_2,
-                            spaces        = Math.round( (square_feet / 120) + (take_out_area / 50) );
-                        return spaces;
-                        break;
-                    
-                    case 'parking_funeral':
-                        var seats  = field_1,
-                            spaces = Math.round( seats / 5 );
-                        return spaces;
-                        break;
-                    
-                    case 'parking_furniture_repair':
-                        var square_feet = field_1,
-                            spaces      = Math.round( square_feet / 500 );
-                        return spaces;
-                        break;
-                    
-                    case 'parking_halls_with_seats':
-                        var seats  = field_1,
-                            spaces = Math.round( seats / 3.5 );
-                        return spaces;
-                        break;
-                    
-                    case 'parking_halls_no_seats':
-                        var max_occupancy_load = field_1,
-                            spaces             = Math.round( max_occupancy_load / 3 );
-                        return spaces;
-                        break;
-                    
-                    case 'parking_household':
-                        var sales_area = field_1,
-                            spaces     = Math.round( sales_area / 800 );
-                        return spaces;
-                        break;
-                    
-                    case 'parking_laundry':
-                        var square_feet = field_1,
-                            spaces      = Math.round( square_feet / 200 );
-                        return spaces;
-                        break;
-                    
-                    case 'parking_community_care':
-                        var guests    = field_1,
-                            employees = field_2,
-                            spaces    = Math.round( (guests / 5) + 1 + employees );
-                        return spaces;
-                        break;
-                    
-                    case 'parking_hotels':
-                        var hotel_units = field_1,
-                            spaces      = hotel_units + 1;
-                        return spaces;
-                        break;
-                    
-                    case 'parking_convalescent':
-                        var beds      = field_1,
-                            employees = field_2,
-                            spaces    = Math.round( (beds / 5) + employees );
-                        return spaces;
-                        break;
-                    
-                    case 'parking_hospitals':
-                        var beds      = field_1,
-                            employees = field_2,
-                            spaces    = Math.round( (beds / 5) + employees );
-                        return spaces;
-                        break;
-                    
-                    case 'parking_medical_offices':
-                        var square_feet = field_1,
-                            spaces      = Math.round(square_feet / 200);
-                        return spaces;
-                        break;
-                    
-                    case 'parking_physical_therapy':
-                        var square_feet     = field_1,
-                            pool_water_area = field_2,
-                            spaces          = Math.round( (square_feet / 200) + (pool_water_area / 50) );
-                        return spaces;
-                        break;
-                    
-                    case 'parking_business_offices':
-                        var square_feet = field_1,
-                            spaces      = Math.round(square_feet / 300);
-                        return spaces;
-                        break;
-                    
-                    case 'parking_plants':
-                        var square_feet = field_1,
-                            spaces      = Math.round(square_feet / 500);
-                        return spaces;
-                        break;
-                    
-                    case 'parking_research_development':
-                        var square_feet               = field_1,
-                            employees                 = field_2,
-                            spaces_by_square_footage  = Math.round(square_feet / 325),
-                            spaces_by_employees       = Math.round(employees / 2);
-                        return ( spaces_by_square_footage >= spaces_by_employees ) ? spaces_by_square_footage : spaces_by_employees;
-                        break;
-                    
-                    case 'parking_retail':
-                        var square_feet = field_1,
-                            spaces      = Math.round(square_feet / 250);
-                        return spaces;
-                        break;
-                    
-                    case 'parking_boarding':
-                        var beds      = field_1,
-                            employees = field_2,
-                            spaces    = Math.round( (beds / 5) + employees );
-                        return spaces;
-                        break;
-                    
-                    case 'parking_institutions':
-                        var guests    = field_1,
-                            employees = field_2,
-                            spaces    = Math.round( (guests / 5) + employees );
-                        return spaces;
-                        break;
-                    
-                    case 'parking_nursing':
-                        var guests    = field_1,
-                            employees = field_2,
-                            spaces    = Math.round( (guests / 5) + employees + 1 );
-                        return spaces;
-                        break;
-                    
-                    case 'parking_theaters':
-                        var seats = field_1;
-                        if ((seats - 350) > 0) {
-                            // if 351+ seats
-                            spaces = Math.round(350 / 3.5) + Math.round( (seats - 350) / 5 );
-                        } else {
-                            // if 0-350 seats
-                            spaces = Math.round(seats / 3.5);
-                        }
-                        return spaces;
-                        break;
-                    
-                    case 'parking_warehouses':
-                        var square_feet = field_1,
-                            spaces      = Math.round(square_feet / 1000);
-                        return spaces;
-                        break;
-                    
-                    case 'parking_worship':
-                        var seats   = field_1,
-                            spaces  = Math.round(seats / 3.5);
-                        return spaces;
-                        break;
-                    
-                    default:
-                        return "Unable to calculate.";
-                        break;
-                }
-            }
-        })();
+       // (function(){
+       // 
+       //     // Add class="business-type-rule" to every large category
+       //     $('.tool > div').addClass('business-type-rule');
+       // 
+       //     // When the applicant selects an option,
+       //     $('#business_type').change(function() {
+       // 
+       //         // Get the selection
+       //         selected_option = '#business_type_' + $(this).val() || '';
+       // 
+       //         // Hide all <div class="business-type-rules">'s
+       //         $('.business-type-rule')
+       //             .hide()
+       //             .slideUp('slow');
+       // 
+       //         // Hide the parking spot counter
+       //         $('#parking_spaces').hide();
+       // 
+       //         // Show the selected <div class="business-type-rules">
+       //         $(selected_option)
+       //             .show()
+       //             .slideDown('slow');
+       //     });
+       //     
+       //     // When the applicant submits a form,
+       //     $('.parking-calculator').submit(function(e){
+       //         
+       //         // Prevent default behavior of firing the action URL
+       //         e.preventDefault();
+       //         
+       //         // Grab form data
+       //         var form    = $(this),                 // the submitted form
+       //             form_id = form.attr('id'),         // the form's ID
+       //             inputs = $(this).serializeArray(); // the form data
+       //         
+       //         // Calculate number of required car parking spaces
+       //         var spaces = calculateSpaces(form_id, inputs);
+       //         
+       //         // Build the display text
+       //         var display_text = "<p>You must provide "
+       //                             + spaces
+       //                             + " car parking space"
+       //                             + ((spaces !== 1) ? "s" : "")
+       //                             + ".</p>";
+       //         
+       //         // Show the display text
+       //         $("#parking_spaces")
+       //           .html(display_text)
+       //           .show();
+       //         
+       //     });
+       //     
+       //     function calculateSpaces(form_id, inputs) {
+       //         
+       //         var field_1 = (typeof inputs[0] === "undefined") ? 0 : inputs[0]['value'],
+       //             field_2 = (typeof inputs[1] === "undefined") ? 0 : inputs[1]['value'],
+       //             field_3 = (typeof inputs[2] === "undefined") ? 0 : inputs[2]['value'],
+       //             field_4 = (typeof inputs[3] === "undefined") ? 0 : inputs[3]['value'],
+       //             field_5 = (typeof inputs[4] === "undefined") ? 0 : inputs[4]['value'],
+       //             field_6 = (typeof inputs[5] === "undefined") ? 0 : inputs[5]['value'],
+       //             spaces;
+       //         
+       //         switch (form_id) {
+       //             
+       //             case 'parking_auto':
+       //                 var square_feet = field_1,
+       //                     spaces      = Math.round(square_feet / 400);
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_service_stations':
+       //                 var service_bays = field_1,
+       //                     employees    = field_2,
+       //                     spaces = Math.round(service_bays * 3) + employees;
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_banks_with_atms':
+       //                 var square_feet = field_1,
+       //                     atms        = field_2,
+       //                     spaces      = Math.round( (square_feet / 400) + (atms * 1.5) );
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_banks_no_atms':
+       //                 var square_feet = field_1,
+       //                     spaces      = Math.round(square_feet / 400);
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_billiard':
+       //                 var tables    = field_1,
+       //                     spaces    = Math.round(tables * 1.5);
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_child_homes':
+       //                 var beds      = field_1,
+       //                     employees = field_2,
+       //                     spaces    = Math.round(beds / 5) + employees;
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_daycare_foster':
+       //                 var guests = field_1,
+       //                     spaces = Math.round(guests / 5) + 1;
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_communications':
+       //                 var square_feet = field_1,
+       //                     spaces      = Math.round(field_1 / 1000);
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_lower_schools':
+       //                 var employees = field_1,
+       //                     spaces    = employees;
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_high_schools':
+       //                 var students  = field_1,
+       //                     employees = field_2,
+       //                     spaces    = Math.round(students / 10) + employees;
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_colleges':
+       //                 var students  = field_1,
+       //                     employees = field_2,
+       //                     spaces    = Math.round(students / 3) + employees;
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_multi_program_fitness':
+       //                 var square_feet = field_1,
+       //                     spaces      = (square_feet / 100),
+       //                     spaces      = (square_feet > 15000) ? Math.round(spaces * 1.1) : Math.round(spaces);
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_single_program_fitness':
+       //                 var aerobics_area                   = field_1,
+       //                     basketball_volleyball_occupancy = field_2,
+       //                     pool_lanes                      = field_3,
+       //                     pool_non_water_area             = field_4,
+       //                     weights_area                    = field_5,
+       //                     square_feet                     = field_6,
+       //                     spaces                          = (aerobics_area / 50) + (basketball_volleyball_occupancy / 3) + (pool_lanes * 2) + (pool_non_water_area / 300) + (weights_area / 250),
+       //                     spaces                          = (square_feet > 15000) ? Math.round(spaces * 1.1) : Math.round(spaces);
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_food':
+       //                 var square_feet = field_1,
+       //                     spaces      = Math.round( square_feet / 120 );
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_take_out':
+       //                 var square_feet   = field_1,
+       //                     take_out_area = field_2,
+       //                     spaces        = Math.round( (square_feet / 120) + (take_out_area / 50) );
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_funeral':
+       //                 var seats  = field_1,
+       //                     spaces = Math.round( seats / 5 );
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_furniture_repair':
+       //                 var square_feet = field_1,
+       //                     spaces      = Math.round( square_feet / 500 );
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_halls_with_seats':
+       //                 var seats  = field_1,
+       //                     spaces = Math.round( seats / 3.5 );
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_halls_no_seats':
+       //                 var max_occupancy_load = field_1,
+       //                     spaces             = Math.round( max_occupancy_load / 3 );
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_household':
+       //                 var sales_area = field_1,
+       //                     spaces     = Math.round( sales_area / 800 );
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_laundry':
+       //                 var square_feet = field_1,
+       //                     spaces      = Math.round( square_feet / 200 );
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_community_care':
+       //                 var guests    = field_1,
+       //                     employees = field_2,
+       //                     spaces    = Math.round( (guests / 5) + 1 + employees );
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_hotels':
+       //                 var hotel_units = field_1,
+       //                     spaces      = hotel_units + 1;
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_convalescent':
+       //                 var beds      = field_1,
+       //                     employees = field_2,
+       //                     spaces    = Math.round( (beds / 5) + employees );
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_hospitals':
+       //                 var beds      = field_1,
+       //                     employees = field_2,
+       //                     spaces    = Math.round( (beds / 5) + employees );
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_medical_offices':
+       //                 var square_feet = field_1,
+       //                     spaces      = Math.round(square_feet / 200);
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_physical_therapy':
+       //                 var square_feet     = field_1,
+       //                     pool_water_area = field_2,
+       //                     spaces          = Math.round( (square_feet / 200) + (pool_water_area / 50) );
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_business_offices':
+       //                 var square_feet = field_1,
+       //                     spaces      = Math.round(square_feet / 300);
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_plants':
+       //                 var square_feet = field_1,
+       //                     spaces      = Math.round(square_feet / 500);
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_research_development':
+       //                 var square_feet               = field_1,
+       //                     employees                 = field_2,
+       //                     spaces_by_square_footage  = Math.round(square_feet / 325),
+       //                     spaces_by_employees       = Math.round(employees / 2);
+       //                 return ( spaces_by_square_footage >= spaces_by_employees ) ? spaces_by_square_footage : spaces_by_employees;
+       //                 break;
+       //             
+       //             case 'parking_retail':
+       //                 var square_feet = field_1,
+       //                     spaces      = Math.round(square_feet / 250);
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_boarding':
+       //                 var beds      = field_1,
+       //                     employees = field_2,
+       //                     spaces    = Math.round( (beds / 5) + employees );
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_institutions':
+       //                 var guests    = field_1,
+       //                     employees = field_2,
+       //                     spaces    = Math.round( (guests / 5) + employees );
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_nursing':
+       //                 var guests    = field_1,
+       //                     employees = field_2,
+       //                     spaces    = Math.round( (guests / 5) + employees + 1 );
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_theaters':
+       //                 var seats = field_1;
+       //                 if ((seats - 350) > 0) {
+       //                     // if 351+ seats
+       //                     spaces = Math.round(350 / 3.5) + Math.round( (seats - 350) / 5 );
+       //                 } else {
+       //                     // if 0-350 seats
+       //                     spaces = Math.round(seats / 3.5);
+       //                 }
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_warehouses':
+       //                 var square_feet = field_1,
+       //                     spaces      = Math.round(square_feet / 1000);
+       //                 return spaces;
+       //                 break;
+       //             
+       //             case 'parking_worship':
+       //                 var seats   = field_1,
+       //                     spaces  = Math.round(seats / 3.5);
+       //                 return spaces;
+       //                 break;
+       //             
+       //             default:
+       //                 return "Unable to calculate.";
+       //                 break;
+       //         }
+       //     }
+       // })();
         </script>
 
 
@@ -2036,15 +2072,15 @@
           <p>If the name of your business does not contain your last name, you will need to apply to Santa Cruz County for a Fictitious Business Name (FBN).</p>
           <p>For example, if your last name is Smith and your business is called "Smith&rsquo;s Tanning," you won't need an FBN. But if your business is called "Eastside Tanning," you will need an FBN.</p>
           
-          <hr>
+          <hr class="visuallyhidden">
           
           <p>You've told us that your name is <strong>Annie Oakley</strong> and your business's name is <strong>Oakley Get Your Gun, Inc.</strong></p>
           
-          <hr>
+          <hr class="visuallyhidden">
           
           <p class="next">This means you <strong>won't</strong> need an FBN. <a href="#helper_incorporation">Next &rarr;</a></p>
           
-          <hr>
+          <hr class="visuallyhidden">
           
           <p>This means you <strong>will</strong> need an FBN. <a href="#"></a></p>
           
@@ -2122,7 +2158,7 @@
       
     </section><!-- /.panel -->
   
-    <hr>
+    <hr class="visuallyhidden">
   
     <nav class="nav-utility">
       <ul>
@@ -2136,6 +2172,7 @@
 
   <script type="text/javascript" src="js/lib/jquery-1.7.2.min.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/calculator.parking.js"></script>
   <script type="text/javascript" src="js/routing.js"></script>
   
   <script type="text/javascript">
