@@ -74,7 +74,7 @@ OC.routing.setDataAttrState = function(attr, val){
 }
 
 
-OC.routing.stateDefaults = {"data-zoning-status":"", "data-parking-district":"", "data-section":"intro"}
+OC.routing.stateDefaults = {"data-zoning-status":"", "data-parking-district":"", "data-section":"intro"};
 
 OC.routing.reloadState = function(){
     var state = OC.state.get();
@@ -94,10 +94,12 @@ OC.routing.updatePanel = function(panel) {
 };
 
 OC.routing.showPanel = function(panelId){
+    console.log("Panel " + panelId);
     $("section.content > div").hide();
     $("div#"+panelId).show();
-    OC.routing.updatePanel($("div#"+panelId));
+    $.publish("updatePanel-" + panelId, [ panelId ]);
     
+    // OC.routing.updatePanel($("div#"+panelId));
 };
 
 OC.routing.navigate = function(hash, addToHistory){
