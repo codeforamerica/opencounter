@@ -533,6 +533,10 @@ body {
   z-index: 10;
 }
 
+.nav-utility ul {
+  padding: 1em 0;
+}
+
 .nav-utility a {
   margin-left: 3em;
 }
@@ -584,10 +588,23 @@ body {
 label {
   display: block;
   border-left: 5px solid #EEE;
-  padding-left: 1em;
+  padding: 0.5em 0 0.5em 1em;
+  margin: 1em 0;
 }
 
+label input,
+label select {
+  display: block;
+}
 
+/* --- Next --- */
+
+.next {
+  background: #e9f7fc;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  font-size: 1.25em;
+}
 
 
 
