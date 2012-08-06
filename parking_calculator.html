@@ -931,6 +931,8 @@
 
   <div id="parking_spaces"></div>
 
+  <div id="test_spaces"></div>
+
 </div>
 
 <script src="assets/js/jquery-1.7.2.min.js"></script>
@@ -1010,7 +1012,7 @@
             case 'parking_service_stations':
                 var service_bays = field_1,
                     employees    = field_2,
-                    spaces = Math.round(service_bays * 3) + employees;
+                    spaces = Math.round(service_bays * 3) + parseInt(employees);
                 return spaces;
                 break;
             
@@ -1036,7 +1038,7 @@
             case 'parking_child_homes':
                 var beds      = field_1,
                     employees = field_2,
-                    spaces    = Math.round(beds / 5) + employees;
+                    spaces    = Math.round(beds / 5) + parseInt(employees);
                 return spaces;
                 break;
             
@@ -1061,14 +1063,14 @@
             case 'parking_high_schools':
                 var students  = field_1,
                     employees = field_2,
-                    spaces    = Math.round(students / 10) + employees;
+                    spaces    = Math.round(students / 10) + parseInt(employees);
                 return spaces;
                 break;
             
             case 'parking_colleges':
                 var students  = field_1,
                     employees = field_2,
-                    spaces    = Math.round(students / 3) + employees;
+                    spaces    = Math.round(students / 3) + parseInt(employees);
                 return spaces;
                 break;
             
@@ -1143,27 +1145,27 @@
             case 'parking_community_care':
                 var guests    = field_1,
                     employees = field_2,
-                    spaces    = Math.round( (guests / 5) + 1 + employees );
+                    spaces    = Math.round(guests / 5) + 1 + parseInt(employees);
                 return spaces;
                 break;
             
             case 'parking_hotels':
                 var hotel_units = field_1,
-                    spaces      = hotel_units + 1;
+                    spaces      = parseInt(hotel_units) + 1;
                 return spaces;
                 break;
             
             case 'parking_convalescent':
                 var beds      = field_1,
                     employees = field_2,
-                    spaces    = Math.round( (beds / 5) + employees );
+                    spaces    = Math.round(beds / 5) + parseInt(employees);
                 return spaces;
                 break;
             
             case 'parking_hospitals':
                 var beds      = field_1,
                     employees = field_2,
-                    spaces    = Math.round( (beds / 5) + employees );
+                    spaces    = Math.round(beds / 5) + parseInt(employees);
                 return spaces;
                 break;
             
@@ -1209,21 +1211,21 @@
             case 'parking_boarding':
                 var beds      = field_1,
                     employees = field_2,
-                    spaces    = Math.round( (beds / 5) + employees );
+                    spaces    = Math.round(beds / 5) + parseInt(employees);
                 return spaces;
                 break;
             
             case 'parking_institutions':
                 var guests    = field_1,
                     employees = field_2,
-                    spaces    = Math.round( (guests / 5) + employees );
+                    spaces    = Math.round(guests / 5) + parseInt(employees);
                 return spaces;
                 break;
             
             case 'parking_nursing':
                 var guests    = field_1,
                     employees = field_2,
-                    spaces    = Math.round( (guests / 5) + employees + 1 );
+                    spaces    = Math.round(guests / 5) + parseInt(employees) + 1;
                 return spaces;
                 break;
             
@@ -1256,7 +1258,17 @@
                 break;
         }
     }
+
+    function testAccuracy(form_id, inputs) {
+
+
+
+    }
+
+
 })();
+
+
 </script>
 
 
