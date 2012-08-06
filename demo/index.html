@@ -168,31 +168,33 @@
           <form method="post" action="#" id="form_info_applicant">
             <label>
               Your First Name
-              <input type="text" name="applicant_first_name" placeholder="Annie">
+              <input type="text" name="applicant_first_name" placeholder="">
             </label>
             <label>
               Your Last Name
-              <input type="text" name="applicant_last_name" placeholder="Oakley">
+              <input type="text" name="applicant_last_name" placeholder="">
             </label>
             <label>
               Your Email Address
-              <input type="text" name="applicant_email" placeholder="annie.oakley@anniegetyourgun.com">
+              <input type="text" name="applicant_email" placeholder="">
             </label>
             <label>
               Your Phone Number
-              <input type="text" name="applicant_phone" placeholder="(123) 456-7890">
+              <input type="text" name="applicant_phone" placeholder="(###) ###-####">
             </label>
             <label>
               Are you the owner of this business, or are you filling this out for the owner?</label>
               <input id="applicant_is_business_owner" name="applicant_is_business_owner" type="radio" value="y" />I own this business
               <input id="applicant_is_business_owner" name="applicant_is_business_owner" type="radio" value="n" />I'm filling this out on behalf of the owner
             </label>
-            <p class="next">Nice to meet you, <strong>Annie</strong>! Next, <a class="submit" href="#info_business">tell us about your business &rarr;</a></p>
+            <p class="next">Next, <a class="submit" href="#info_business">tell us about your business &rarr;</a></p>
           </form>
         </div><!-- /#info_applicant -->
 
         <div id="info_business">
           <h1>About your business</h1>
+
+          <p>Nice to meet you, <strong class="first-name"></strong>!</p>
 
           <form method="post" action="#" id="form_info_business">
             <label>
