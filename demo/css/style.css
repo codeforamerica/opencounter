@@ -616,6 +616,9 @@ label input.radio {
   padding: 0.5em 1em;
 }
 
+.business-type-rule {
+  display: none;
+}
 
 
 
@@ -789,3 +792,4 @@ label input.radio {
         page-break-after: avoid;
     }
 }
+

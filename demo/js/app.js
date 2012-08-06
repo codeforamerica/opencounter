@@ -14,6 +14,7 @@ var OC = {
     console.log(localStorage);
     
     OC.routing.init();
+    OC.location.init();
     OC.calculator.parking.general.init();
     $('.submit').bind({
       click: OC.forms.submitLink
