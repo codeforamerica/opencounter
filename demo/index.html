@@ -20,47 +20,47 @@
     </div>
     
     <hr class="visuallyhidden">
-    
-    <nav class="nav-main">
-      <ul>
-        <li><a href="/intro">Welcome</a></li>
-        <li>
-          <ul>
-            <li><a href="/intro_big_picture">The Big Picture</a></li>
-            <li><a href="/intro_here_to_help">We're Here To Help</a></li>
-          </ul>
-        </li>
-        <li><a href="/info">You &amp; Your Business</a></li>
-        <li>
-          <ul>
-            <li><a href="/info_applicant">About You</a></li></li>
-            <li><a href="/info_business">About Your Business</a></li>
-          </ul>
-        </li>
-        <li><a href="/location">Location</a></li>
-        <li>
-          <ul>
-            <li><a href="/location_home_occ">Work From Home</a></li>
-            <li><a href="/location_non_home_occ">Work From A Commercial Space</a></li>
-            <li><a href="/location_non_home_occ_choose_site">Choose Your Site</a></li>
-            <li><a href="/location_non_home_occ_check_site">Check Your Site</a></li>
-          </ul>
-        </li>
-        <li><a href="/requirements">Requirements</a></li>
-        <li>
-          <ul>
-            <li><a href="/requirement_use_permit">Use Permit</a></li>
-            <li><a href="/requirement_building_permit">Building Permit</a></li>
-            <li><a href="/requirement_parking">Parking Requirement</a></li>
-            <li><a href="/requirement_business_license">Business License</a></li>
-            <li><a href="/requirement_local">Other Local Requirements</a></li>
-            <li><a href="/requirement_non_local">City, State, and Federal Requirements</a></li>
-          </ul>
-        </li>
-        <li><a href="/summary">Summary &amp; Next Steps</a></li>
-      </ul>
+      
+      <nav class="nav-main">
+        <ul>
+          <li><a href="/intro" class="section_heading">Welcome</a></li>
+          <li data-section="intro">
+            <ul>
+              <li><a href="/intro_big_picture">The Big Picture</a></li>
+              <li><a href="/intro_here_to_help">We're Here To Help</a></li>
+            </ul>
+          </li>
+          <li><a href="/info" class="section_heading">You &amp; Your Business</a></li>
+          <li data-section="info">
+            <ul>
+              <li><a href="/info_applicant">About You</a></li></li>
+              <li><a href="/info_business">About Your Business</a></li>
+            </ul>
+          </li>
+          <li><a href="/location" class="section_heading">Location</a></li>
+          <li data-section="location">
+            <ul>
+              <li data-occupancy="home"><a href="/location_home_occ">Work From Home</a></li>
+              <li data-occupancy="non-home"><a href="/location_non_home_occ">Work From A Commercial Space</a></li>
+              <li data-occupancy="non-home"><a href="/location_non_home_occ_choose_site">Choose Your Site</a></li>
+              <li data-occupancy="non-home"><a href="/location_non_home_occ_check_site">Check Your Site</a></li>
+            </ul>
+          </li>
+          <li><a href="/requirements" class="section_heading">Requirements</a></li>
+          <li data-section="requirements"> 
+            <ul>
+              <li><a href="/requirement_use_permit">Use Permit</a></li>
+              <li><a href="/requirement_building_permit">Building Permit</a></li>
+              <li data-occupancy="non-home"><a href="/requirement_parking">Parking Requirement</a></li>
+              <li><a href="/requirement_business_license">Business License</a></li>
+              <li><a href="/requirement_local">Other Local Requirements</a></li>
+              <li><a href="/requirement_non_local">City, State, and Federal Requirements</a></li>
+            </ul>
+          </li>
+          <li><a href="/summary" class="section_heading">Summary &amp; Next Steps</a></li>
+        </ul>
 
-    </nav><!-- /.nav-main -->
+      </nav><!-- /.nav-main -->
     
     <hr class="visuallyhidden">
     
@@ -254,6 +254,8 @@
           <h3>Where will you be working from?</h3>
           <form method="post" action="#" id="form_location">
             <label>
+              <a href="#location_home_occ" data-occupancy="home">Home</a>
+              <a href="#location_non_home_occ" data-occupancy="non-home">Commercial space</a>
               <input type="radio" name="is_business_home_occ" value="y"> I'll be working from home
               <input type="radio" name="is_business_home_occ" value="n"> I'll be working out of a commercial space
             </label>

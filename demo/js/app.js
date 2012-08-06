@@ -4,6 +4,7 @@ var OC = {
   
   forms: {},
   util: {},
+  state: {},
   calculator: {},
   
   init: function() {
@@ -34,8 +35,8 @@ OC.forms.recallFields = function() {
     var value = OC.util.getData(key);
     var type = $(this).attr('type');
   
-    // console.log("Checking if we have data for " + name);
-    // if(value) { console.log(value); }
+
+    //if(value) { console.log(value); }
     
     if (type === 'radio') {
       if($(this).attr('value') == value) {
@@ -82,19 +83,38 @@ OC.forms.sumbit = function(form) {
   });
 };
 
-
 /** .........................................................................
  *  Utilities
  */
+
+OC.state.set = function(key, val){
+    var data = OC.util.getData("OC-state");
+    if(data === null){
+        data = {};
+    }
+    data[key] = val;
+    OC.util.storeData("OC-state", data);
+}
+OC.state.get = function(key){
+
+    var data = OC.util.getData("OC-state");
+    if(data === null){
+        data = {};
+    }
+    if(key === undefined){
+        return data;
+    }else{
+        return data[key];
+    }
+}
  
 OC.util.getData = function(key) {
-  return JSON.parse(localStorage.getItem(key));
+    return JSON.parse(localStorage.getItem(key));
 };
 
 OC.util.storeData = function(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
-  console.log("Stored:");
-  console.log(localStorage.getItem(key));
+
 };
 
 
