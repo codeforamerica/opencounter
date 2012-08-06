@@ -41,12 +41,13 @@ OC.routing.findPlaceInNav = function(hash){
     $("nav.nav-main a").each(function(c, el){
         if($(el).attr("href") && $(el).attr("href").substr(1) == hash){
             if($(el).is(".section_heading")){
-                $("li[data-section="+$(el).attr("href").substr(1)+"]").show();
+                var dataSection = $(el).attr("href").substr(1);
             }else{
-                $("li[data-section="+$(el).parents("nav>ul>li").prev().find("a").attr("href").substr(1)+"]").show();
+                var dataSection = $(el).parents("nav>ul>li").prev().find("a").attr("href").substr(1);
             }
+            $("li[data-section="+dataSection+"]").show();
+            OC.state.set("section", dataSection);
         }
-
     });
 }
 
@@ -65,7 +66,9 @@ OC.routing.handleLinkData = function(el){
 }
 OC.routing.reloadState = function(){
     var state = OC.state.get();
-    console.log("state:", state);
+    if(state.section === undefined){
+        state.section = "intro";
+    }
     for(s in state){
         $("[data-"+s+"]:not([data-"+s+"="+state[s]+"]):not(a)").hide();
         $("[data-"+s+"="+state[s]+"]").show();
