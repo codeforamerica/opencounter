@@ -377,7 +377,7 @@ body {
 
 .profile {
   position: fixed;
-  background: #FFF;
+  background: #1791be;
   width: 100%;
   top: 0;
   left: 0;
@@ -396,7 +396,7 @@ body {
 }
 
 .profile .profile-toggle:hover {
-  background: #FFF;
+  color: #FFF;
   cursor: pointer;
 }
 
@@ -411,6 +411,7 @@ body {
   float: left;
   width: 50%;
   border-top: 5px solid #1791be;
+  text-align: center;
 }
 
 

@@ -70,16 +70,7 @@ var OC = {
     $('.profile-contents').hide();
     $('.profile-toggle').click(function(e){
         // Draw .profile-contents
-        $('.profile-contents').toggle();
-        
-        // Calculate the height of profile-contents
-        var contents_height = $('.profile-contents').height();
-        
-        // Scoot branding down by that amount
-        $('.branding').animate({
-          top: contents_height + "px"
-        }, 1500);
-        
+        $('.profile-contents').slideToggle();
     });
     
     // Set up conditional mailing address on Working From Home panel
@@ -101,6 +92,8 @@ var OC = {
             $(this).parent().next('.conditional').hide();
         }
     });
+    
+    // Set up conditional fields on Building Permit panel
 
 
   }
