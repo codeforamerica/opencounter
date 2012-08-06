@@ -8,8 +8,9 @@ var OC = {
   
   init: function() {
     console.log("Initializing");
-    console.log(localStorage);
+    
     OC.routing.init();
+    OC.calculator.parking.general.init();
     $('.submit').bind({
       click: OC.forms.sumbit
     });
