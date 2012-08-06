@@ -784,7 +784,8 @@
           </form>
 
           <!-- @condition NO CONSTRUCTION -->
-          <p class="next">Next: <a class="submit" href="requirement_parking">Parking &rarr;</a></p>
+          <p class="next" data-occupancy="non-home">Next: <a class="submit" href="requirement_parking">Parking &rarr;</a></p>
+          <p class="next" data-occupancy="home">Next: <a class="submit" href="requirement_business_license">Business License &rarr;</a></p>
           <!-- @condition /NO CONSTRUCTION -->
           
         </div><!-- /#requirement_building_permit -->
@@ -1863,6 +1864,7 @@
 
   <script type="text/javascript" src="js/lib/jquery-1.7.2.min.js"></script>
   <script type="text/javascript" src="js/lib/jquery-ui-1.8.22.custom.min.js"></script>
+  <script type="text/javascript" src="js/lib/jquery.tinypubsub.js"></script>
 
   <script type="text/javascript" src="js/app.js"></script>
   <script type="text/javascript" src="js/calculator.parking.js"></script>
