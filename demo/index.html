@@ -204,11 +204,14 @@
   
             <label>
               What will your business do?
-              <input type="text" id="business_type" name="business_type" placeholder="SIC/NAICS tool here, with freeform entry">
+              <input type="text" id="business_type" name="business_type" placeholder="SIC/NAICS tool">
+              <div id="business-type-container" style="position:absolute; width: 500px;"></div>
             </label>
+            
 <!--
             <iframe src="http://pdfmongotest.herokuapp.com/calgold?kywd=search" width="450" height="200"></iframe>
 -->
+
             <p>(Not sure of your business type? Not finding your business type listed? Simply enter the words "General Business Information" above, or select it from the list.)</p>
   
             <label>
@@ -407,7 +410,7 @@
               ZIP
               <input type="text" name="business_physical_address_zip" placeholder="ZIP">
             </label>
-            <input type="submit" value="Check Zoning">
+            <a class="submit">Check Zoning</a>
             <p class="text"><a class="submit" href="#requirements">Next: Requirements &rarr;</a></p>
           </form>
         
@@ -2175,8 +2178,12 @@
   </div><!-- /.container -->
 
   <script type="text/javascript" src="js/lib/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="js/lib/jquery-ui-1.8.22.custom.min.js"></script>
+
   <script type="text/javascript" src="js/app.js"></script>
   <script type="text/javascript" src="js/calculator.parking.js"></script>
+  <script type="text/javascript" src="js/data.nacis.js"></script>
+  
   <script type="text/javascript" src="js/routing.js"></script>
   
   <script type="text/javascript">

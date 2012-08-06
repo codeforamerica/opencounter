@@ -606,10 +606,14 @@ label select {
   font-size: 1.25em;
 }
 
+/* --- JQuery UI Autocomplete --- */
 
-
-
-
+.ui-autocomplete {
+  background: #fff;
+  width:auto!important;
+  border:3px solid #ddd;
+  
+}
 
 
 /* ==========================================================================
