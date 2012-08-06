@@ -29,6 +29,7 @@ OC.routing.init = function(){
         if(window.location.hash == ""){
             // we are home. show welcome
             OC.routing.showPanel("intro");
+            OC.routing.findPlaceInNav("intro");
         }else{
             var hash = window.location.hash.replace(/^\#/, "");
             OC.routing.showPanel(hash);
