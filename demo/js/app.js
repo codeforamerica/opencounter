@@ -17,6 +17,14 @@ var OC = {
         
     // Check to see if we have stored data about any forms
     OC.forms.recallFields();
+    
+    // Set up we're-here-to-help toggles
+    $('.drawer').hide();
+    $('.toggle').click(function(e){
+      e.PreventDefault;
+      $(this).next('.drawer').toggle();
+    });
+    
   }
 };
 
