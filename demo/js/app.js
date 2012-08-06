@@ -32,7 +32,7 @@ var OC = {
     $('#business_code').autocomplete({
       source: OC.data.calgoldBusinessTypes,
       appendTo: '#business-type-container',
-      select: function(event, ui) {       
+      select: function(event, ui) {
         // Save the selected option (doesn't happen naturally the way we want)
         key = OC.forms.key('naics');
         OC.util.storeData(key, ui);

@@ -403,6 +403,8 @@ body {
 .profile .profile-contents {
   position: relative;
   overflow: auto;
+  padding: 0;
+  margin: 0;
 }
 
 .profile-contents .forms-and-fees,
@@ -412,8 +414,23 @@ body {
   width: 50%;
   border-top: 5px solid #1791be;
   text-align: center;
+  height: 130px;
 }
 
+.profile-contents .forms-and-fees div,
+.profile-contents .progress div {
+  background: #33B6E6;
+  border-radius: 0.25em;
+  padding: 0 20px 1em;
+}
+
+.profile-contents .forms-and-fees div {
+  margin: 1em 10% 1em 5%;
+}
+
+.profile-contents .progress div {
+  margin: 1em 5% 1em 10%;
+}
 
 /* --- Branding --- */
 
