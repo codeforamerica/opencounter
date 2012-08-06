@@ -72,6 +72,27 @@ var OC = {
         
     });
     
+    // Set up conditional mailing address on Working From Home panel
+    $('input[name="does_mailing_address_match_business_address"]').parent().next('.conditional').hide();
+    $('input[name="does_mailing_address_match_business_address"]').live("click", function(){
+        if (!($(this).is(':checked'))) {
+            $(this).parent().next('.conditional').show();
+        } else {
+            $(this).parent().next('.conditional').hide();
+        }
+    });
+    
+    // Set up conditional fields on About Your Business panel
+    $('input[name="applicant_is_sole_owner"]').parent().next('.conditional').hide();
+    $('input[name="applicant_is_sole_owner"]').live("click", function(){
+        if (!($(this).is(':checked'))) {
+            $(this).parent().next('.conditional').show();
+        } else {
+            $(this).parent().next('.conditional').hide();
+        }
+    });
+
+
   }
 };
 
