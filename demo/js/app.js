@@ -51,6 +51,16 @@ var OC = {
       $('.first-name').html(OC.util.getData('OC-field-applicant_first_name'));
     });
     
+    $.subscribe("updatePanel-location_non_home_occ_check_site", function(event){
+      var businessCode = OC.util.getData('OC-field-naics');
+      console.log(businessCode);
+      
+      $('.business-type').html(businessCode.item.value);
+      $('.business-naics-code').html(businessCode.item.name);
+    });
+    
+    
+    
     $.subscribe("updatePanel-location_non_home_occ_choose_site", function(event){
       OC.calculator.zoning.init();
     });
