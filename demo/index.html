@@ -204,7 +204,7 @@
   
             <label>
               What will your business do?
-              <input type="text" id="business_code" name="business_code" placeholder="SIC/NAICS tool">
+              <input type="text" id="business_code" name="business_code" placeholder="e.g. Auto Parts">
               <div id="business-type-container" style="position:absolute; width: 500px;"></div>
             </label>
             
@@ -259,8 +259,8 @@
         <div id="location">
           <h1>Your business's location</h1>
           <h3>Where will you be working from?</h3>
-          <p class="next"><a href="#location_home_occ" data-occupancy="home" data-zoning-status="home">I'll be working from home</a></p>
-          <p class="next"><a href="#location_non_home_occ" data-occupancy="non-home" data-zoning-status="">I'll be working out of a commercial space</a></p>
+          <p class="next"><a href="#location_home_occ" data-occupancy="home" data-zoning-status="home">I'll be working from home &rarr;</a></p>
+          <p class="next"><a href="#location_non_home_occ" data-occupancy="non-home" data-zoning-status="">I'll be working out of a commercial space &rarr;</a></p>
 
         </div><!-- /#location -->
         
@@ -413,7 +413,7 @@
         <div id="requirements">
           <h1>Requirements</h1>
           <p>Based on what you've told us about your business, let's walk through all of the requirements.</p>
-          <p class="text"><a class="submit" href="#requirement_use_permit">First, Use Permits &rarr;</a></p>
+          <p class="next"><a class="submit" href="#requirement_use_permit">First, Use Permits &rarr;</a></p>
         </div><!-- /#requirements -->
 
         <div id="requirement_use_permit">
@@ -489,7 +489,7 @@
                 <input type="text" name="business_phone" placeholder="">
               </label>
             </form>
-            <p class="next">Next: <a href="#requirement_building_permit">Get your business license &rarr;</a></p>
+            <p class="next">Next: <a href="#requirement_building_permit">Building Permit &rarr;</a></p>
           </div>
           <!-- /@condition HOME OCC - PRINCIPALLY PERMITTED -->
 
@@ -608,7 +608,7 @@
                 <input type="text" name="bicycle_parking_spaces" placeholder="">
               </label>
             </form>
-            <p class="next">Next: <a href="#requirement_building_permit">Get your business license &rarr;</a></p>
+            <p class="next">Next: <a href="#requirement_building_permit">Building Permit &rarr;</a></p>
           </div>
           <!-- /@condition NON HOME OCC - PRINCIPALLY PERMITTED -->
           
@@ -779,1289 +779,964 @@
           </form>
 
           <!-- @condition NO CONSTRUCTION -->
-          <p class="next"><a class="submit" href="requirement_contextual">Other Requirements</a></p>
+          <p class="next">Next: <a class="submit" href="requirement_parking">Parking &rarr;</a></p>
           <!-- @condition /NO CONSTRUCTION -->
           
         </div><!-- /#requirement_building_permit -->
 
         <div id="requirement_parking">
           <h1>Parking</h1>
-
-          <h3>Downtown Businesses</h3>
-          <p>If your business is downtown, you don't need to provide any parking spaces, but you will need to pay a Parking Deficiency Fee.</p>
+          <!-- @condition parking downtown -->
+          <div data-parking-district="downtown">
+            <h3>Downtown Businesses</h3>
+            <p>If your business is downtown, you don't need to provide any parking spaces, but you will need to pay a Parking Deficiency Fee.</p>
 
       		<form class="well form-vertical" id="parking-deficiency-form">
-      			<label>Business type</label>
-      			<select id="proptype_existing" onchange="OC.calculator.parking.downtown.setUnits(this.value)">
-      				<option value="APARTMENT">Apartment</option>
-      				<option value="DOCTOR">Doctor or Dentist</option>
-      				<option value="MERCANTILE">Mercantile / Professional</option>
-      				<option value="FURNITURE">Furniture Store</option>
-      				<option value="SERVICE">Service Area/Warehouse</option>
-      			</select>
+      		  <label>Business type</label>
+      		  <select id="proptype_existing" onchange="OC.calculator.parking.downtown.setUnits(this.value)">
+      			<option value="APARTMENT">Apartment</option>
+      			<option value="DOCTOR">Doctor or Dentist</option>
+      			<option value="MERCANTILE">Mercantile / Professional</option>
+      			<option value="FURNITURE">Furniture Store</option>
+      			<option value="SERVICE">Service Area/Warehouse</option>
+      		  </select>
 
-      			<label>Size of Property</label>
-      			<input id="size_existing" name="num_units" type="text"/>&nbsp;<label id="units">units</label>
+      		  <label>Size of Property</label>
+      		  <input id="size_existing" name="num_units" type="text"/>&nbsp;<label id="units">units</label>
 
-      			<label>Existing Spaces</label>
-      			<input id="spaces_existing" name="spaces_existing" type="text" value="0"/>
+      		  <label>Existing Spaces</label>
+      		  <input id="spaces_existing" name="spaces_existing" type="text" value="0"/>
 		
+      		  <hr/>
+      		  <div id="docq" style="display:none;">
+      			<strong>Doctors and Dentists</strong>
+      			<br/>
+      			<b>Practitioners:</b><input type="text" id="doctorcount" value="1"/>
       			<hr/>
-      			<div id="docq" style="display:none">
-      				<strong>Doctors and Dentists</strong>
-      				<br/>
-      				<b>Practitioners:</b><input type="text" id="doctorcount" value="1"/>
-      				<hr/>
-      			</div>
+      		  </div>
+      		  <a class="submit" data-bypass onclick="OC.calculator.parking.downtown.calculate()">Calculate</a>
 		
-      			<a class="submit" data-bypass onclick="OC.calculator.parking.downtown.calculate()">Calculate</a>
-		
-      			<p><span id="calculated">Fill out form to calculate</span> required spaces.</p>
-      			<p>Estimated parking deficiency fee: <span id="fee" style="background-color:#fff;"></span></p>
+      		  <p><span id="calculated">Fill out form to calculate</span> required spaces.</p>
+      		  <p>Estimated parking deficiency fee: <span id="fee" style="background-color:#fff;"></span></p>
 		
       		</form>
-
+          </div>
+          <!-- @condition /parking downtown -->
           <hr class="visuallyhidden">
+          
+          <!-- @condition /NO CONSTRUCTION -->
+          <div data-parking-district="non-downtown">
+            <h3>Non-Downtown Businesses</h3>
+            <p>Your business needs to provide parking spaces.</p>
+        
+            <form class="calculator" id="parkingSpacesCalculator">
+              <!-- 38 business types according to the SC Municipal Code, 25 when combined, 11 large categories -->
+              <label>
+                Please select a category for your business type:
+                <select id="business_type" name="business_type">
+                  <option value="default">Choose one...</option>
+                  <option value="auto">Automobiles and machinery</option>
+                  <option value="halls">Arenas, auditoriums, halls, and meeting facilities</option>
+                  <option value="banks">Banks</option>
+                  <option value="billiard">Billiard parlors</option>
+                  <option value="office">Business and professional offices</option>
+                  <option value="communication">Communications equipment buildings</option>
+                  <option value="funeral">Funeral homes, mortuaries</option>
+                  <option value="furn_repair">Furniture repair</option>
+                  <option value="household">Furniture &#38; appliance stores and household equipment</option>
+                  <option value="worship">Houses of worship</option>
+                  <option value="seniors">Senior care and facilities</option>
+                  <option value="children">Child and foster care</option>
+                  <option value="fitness">Physical fitness facilities</option>
+                  <option value="lodging">Lodging</option>
+                  <option value="plants">Manufacturing, bottling, and processing plants</option>
+                  <option value="medical">Medical facilities and offices</option>
+                  <option value="research">Research and Development</option>
+                  <option value="food">Restaurants, bars, and food service</option>
+                  <option value="retail">Retail stores, shops, service establishments, &#38; shopping centers</option>
+                  <option value="education">Educational facilities</option>
+                  <option value="recycle">Recycling collection facilities</option>
+                  <option value="laundry">Self-service laundry and dry cleaning establishments</option>
+                  <option value="theaters">Theaters</option>
+                  <option value="warehouses">Wholesale, warehouses, and service &#38; maintenance centers</option>
+                </select>
+              </label>
+            </form>
+        
+            <div id="prompt">
+              <p>Please select your specific business type below</p>
+            </div><!-- /#prompt -->
+        
+            <div id="business_type_auto" class="business-type-rule">
+        
+              <h3>Automobile or machinery sales and service garages</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 parking space for each 400 square feet of floor area</li>
+                </ul>
+              </div>
+              
+              <form id="parking_auto" class="parking-calculator" method="post" action="#">
+                <label>
+                  Floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+              <h3>Automobile service stations</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>3 spaces for each lubrication or service bay</li>
+                  <li>1 space for each employee on the day shift</li>
+                </ul>
+              </div>
+              
+              <form id="parking_service_stations" class="parking-calculator" method="post" action="#">
+                <label>
+                  Service bays:
+                  <input id="service_bays" name="service_bays" type="text">
+                </label>
+                <label>
+                  Day shift employees:
+                  <input id="employees" name="employees" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div><!-- /#business_type_auto -->
+            
+            
+            <div id="business_type_banks" class="business-type-rule">
+              
+              <h3>Banks with automatic teller machines</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 400 square feet floor area</li>
+                  <li>1.5 spaces for each ATM machine</li>
+                </ul>
+              </div>
+              
+              <form id="parking_banks_with_atms" class="parking-calculator" method="post" action="#">
+                <label>
+                  Floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <label>
+                  ATM machines:
+                  <input id="ATMs" name="ATMs" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+              <h3>Banks without automatic teller machines</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 400 square feet floor area</li>
+                </ul>
+              </div>
+              
+              <form id="parking_banks_no_atms" class="parking-calculator" method="post" action="#">
+                <label>
+                  Floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div><!-- /#business_type_banks -->
+            
+            <div id="business_type_billiard" class="business-type-rule">
+              
+              <h3>Billiard parlors</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1.5 spaces for each table</li>
+                </ul>
+              </div>
+              
+              <form id="parking_billiard" class="parking-calculator" method="post" action="#">
+                <label>
+                  Number of tables:
+                  <input id="tables" name="tables" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_billiard -->
+            
+            
+            <div id="business_type_children" class="business-type-rule">
+              
+              <h3>Children&#8217;s Homes</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 5 beds</li>
+                  <li>1 space for each employee</li>
+                </ul>
+              </div>
+              
+              <form id="parking_child_homes" class="parking-calculator" method="post" action="#">
+                <label>
+                  Number of beds:
+                  <input id="beds" name="beds" type="text">
+                </label>
+                <label>
+                  Number of employees:
+                  <input id="employees" name="employees" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+              <h3>Family daycare and foster family homes</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for every 5 guests</li>
+                  <li>1 space for the resident owner or manager</li>
+                </ul>
+              </div>
+              
+              <form id="parking_daycare_foster" class="parking-calculator" method="post" action="#">
+                <label>
+                  Number of guests:
+                  <input id="guests" name="guests" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_children -->
+            
+            
+            <div id="business_type_communication" class="business-type-rule">
+              
+              <h3>Communications equipment buildings</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 1&#8218;000 square feet of floor area</li>
+                </ul>
+              </div>
+              
+              <form id="parking_communications" class="parking-calculator" method="post" action="#">
+                <label>
+                  Floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_communication -->
+            
+            
+            <div id="business_type_education" class="business-type-rule">
+              
+              <h3>Elementary and junior high schools</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each employee</li>
+                </ul>
+              </div>
+              
+              <form id="parking_lower_schools" class="parking-calculator" method="post" action="#">
+                <label>
+                  Number of employees:
+                  <input id="employees" name="employees" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+              <h3>High schools</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each employee</li>
+                  <li>1 space for each 10 students</li>
+                </ul>
+              </div>
+              
+              <form id="parking_high_schools" class="parking-calculator" method="post" action="#">
+                <label>
+                  Number of employees:
+                  <input id="employees" name="employees" type="text">
+                </label>
+                <label>
+                  Number of students:
+                  <input id="students" name="students" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+              <h3>Colleges and universities</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each employee</li>
+                  <li>1 space for each 3 students</li>
+                </ul>
+              </div>
+              
+              <form id="parking_colleges" class="parking-calculator" method="post" action="#">
+                <label>
+                  Number of employees:
+                  <input id="employees" name="employees" type="text">
+                </label>
+                <label>
+                  Number of students:
+                  <input id="students" name="students" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_education -->
+            
+            
+            <div id="business_type_fitness" class="business-type-rule">
+              
+              <h3>Multi-program fitness facilities</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 100 square feet of floor area</li>
+                  <li>If floor space exceeds 15&#8218;000 square feet&#8218; an additional 10% of parking spaces required</li>
+                </ul>
+              </div>
+              
+              <form id="parking_multi_program_fitness" class="parking-calculator" method="post" action="#">
+                <label>
+                  Floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+              <h3>Single-program fitness facilities</h3>
+              This one is a little complicated. Look at each rule&#8218; and see if it applies to you. Each &#34;Calculate&#34; button will add to the total number of spaces at the bottom. Leave any field blank that doesn't apply to you.
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>Aerobics: 1 space for each 50 square feet of floor area</li>
+                  <li>Basketball &#38; volleyball: 1 space for each 3 persons of occupancy</li>
+                  <li>Lap pool: 2 spaces per lane</li>
+                  <li>Lap pool: 1 space for each 300 square feet of non-pool floor area (area that is not water)</li>
+                  <li>Weightlifting: 1 space for each 250 feet of floor area</li>
+                  <li>If total floor space exceeds 15&#8218;000 square feet&#8218; an additional 10% of parking spaces required</li>
+                </ul>
+              </div>
+              
+              <form id="parking_single_program_fitness" class="parking-calculator" method="post" action="#">
+                <label>
+                  Aerobics floor area:
+                  <input id="aerobics_area" name="aerobics_area" type="text">
+                </label>
+                <label>
+                  Occupancy for both basketball &#38; volleyball areas:
+                  <input id="basketball_volleyball_occupancy" name="basketball_volleyball_occupancy" type="text">
+                </label>
+                <label>
+                  Number of lanes in lap pools:
+                  <input id="pool_lanes" name="pool_lanes" type="text">
+                </label>
+                <label>
+                  Lap pool floor area that is not water:
+                  <input id="pool_non_water_area" name="pool_non_water_area" type="text">
+                </label>
+                <label>
+                  Weightlifting floor area:
+                  <input id="weights_area" name="weights_area" type="text">
+                </label>
+                <label>
+                  Total floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_fitness -->
+            
+            
+            <div id="business_type_food" class="business-type-rule">
+              
+              <h3>Restaurants&#8218; bars&#8218; other food service establishments&#8218; and nightclubs without live entertainment</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 120 square feet of floor area</li>
+                </ul>
+              </div>
+              
+              <form id="parking_food" class="parking-calculator" method="post" action="#">
+                <label>
+                  Floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+              <h3>Restaurants with counter&#8218; take-out&#8218; or drive-in service</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 120 square feet of floor area</li>
+                  <li>1 space for each 50 square feet of floor area devoted to counter/take-out service</li>
+                </ul>
+              </div>
+              
+              <form id="parking_take_out" class="parking-calculator" method="post" action="#">
+                <label>
+                  Total floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <label>
+                  Floor area devoted to counter/take-out:
+                  <input id="take_out_area" name="take_out_area" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_food -->
+            
+            
+            <div id="business_type_funeral" class="business-type-rule">
+              
+              <h3>Funeral homes &#38; mortuaries</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 5 seats of the aggregate number of seats provided in all assembly rooms</li>
+                </ul>
+              </div>
+              
+              <form id="parking_funeral" class="parking-calculator" method="post" action="#">
+                <label>
+                  Total number of seats provided:
+                  <input id="seats" name="seats" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_funeral -->
+            
+            
+            <div id="business_type_furn_repair" class="business-type-rule">
+              
+              <h3>Furniture repair</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 500 square feet of floor area</li>
+                </ul>
+              </div>
+              
+              <form id="parking_furniture_repair" class="parking-calculator" method="post" action="#">
+                <label>
+                  Floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_furn_repair -->
+            
+            
+            <div id="business_type_halls" class="business-type-rule">
+              
+              <h3>Sports arenas&#8218; auditoriums&#8218; assembly halls&#8218; and meeting rooms (all with fixed seats)</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 3.5 seats of maximum seating capacity</li>
+                </ul>
+              </div>
+              
+              <form id="parking_halls_with_seats" class="parking-calculator" method="post" action="#">
+                <label>
+                  Maximum seating capacity:
+                  <input id="seats" name="seats" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+              <h3>Dance and exhibition halls and assembly halls without fixed seats</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 3 persons of design occupancy load</li>
+                  <li>Excludes church assembly rooms in conjunction with auditoriums</li>
+                </ul>
+              </div>
+              
+              <form id="parking_halls_no_seats" class="parking-calculator" method="post" action="#">
+                <label>
+                  Design occupancy load:
+                  <input id="max_occupancy_load" name="max_occupancy_load" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_halls -->
+            
+            
+            <div id="business_type_household" class="business-type-rule">
+              
+              <h3>Furniture &#38; appliance stores and household equipment</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 800 square feet of sales floor area</li>
+                </ul>
+              </div>
+              
+              <form id="parking_household" class="parking-calculator" method="post" action="#">
+                <label>
+                  Sales floor area:
+                  <input id="sales_area" name="sales_area" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_household -->
+            
+            
+            <div id="business_type_laundry" class="business-type-rule">
+              
+              <h3>Self-service laundry and dry cleaning establishments</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 200 square feet of floor area</li>
+                </ul>
+              </div>
+              
+              <form id="parking_laundry" class="parking-calculator" method="post" action="#">
+                <label>
+                  Floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_laundry -->
+            
+            
+            <div id="business_type_lodging" class="business-type-rule">
+              
+              <h3>Community care residential facilities</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 5 guests</li>
+                  <li>1 space for the manager</li>
+                  <li>1 space for each employee on the shift with the maximum number of personnel</li>
+                </ul>
+              </div>
+              
+              <form id="parking_community_care" class="parking-calculator" method="post" action="#">
+                <label>
+                  Number of guests:
+                  <input id="guests" name="guests" type="text">
+                </label>
+                <label>
+                  Number of employees on busiest shift:
+                  <input id="employees" name="employees" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+              <h3>Hotels and Motels</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each unit intended for separate occupancy</li>
+                  <li>1 space for the resident owner or manager</li>
+                </ul>
+              </div>
+              
+              <form id="parking_hotels" class="parking-calculator" method="post" action="#">
+                <label>
+                  Number of units:
+                  <input id="hotel_units" name="hotel_units" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_lodging -->
+            
+            
+            <div id="business_type_medical" class="business-type-rule">
+              
+              <h3>Convalescent hospitals</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 5 beds</li>
+                  <li>1 space for each employee on the shift with the maximum number of personnel</li>
+                </ul>
+              </div>
+              
+              <form id="parking_convalescent" class="parking-calculator" method="post" action="#">
+                <label>
+                  Number of beds:
+                  <input id="beds" name="beds" type="text">
+                </label>
+                <label>
+                  Number of employees on busiest shift
+                  <input id="employees" name="employees" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+              <h3>Hospitals</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each bed</li>
+                  <li>1 space for each employee on the shift with the maximum number of personnel</li>
+                </ul>
+              </div>
+              
+              <form id="parking_hospitals" class="parking-calculator" method="post" action="#">
+                <label>
+                  Number of beds:
+                  <input id="beds" name="beds" type="text">
+                </label>
+                <label>
+                  Number of employees on busiest shift:
+                  <input id="employees" name="employees" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+              <h3>Medical and dental clinics and offices</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 200 square feet of floor area</li>
+                </ul>
+              </div>
+              
+              <form id="parking_medical_offices" class="parking-calculator" method="post" action="#">
+                <label>
+                  Floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+              <h3>Physical therapy</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space per 200 square feet of floor area</li>
+                  <li>1 space per 50 square feet of pool (water) area</li>
+                </ul>
+              </div>
+              
+              <form id="parking_physical_therapy" class="parking-calculator" method="post" action="#">
+                <label>
+                  Floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <label>
+                  Pool (water) area:
+                  <input id="pool_water_area" name="pool_water_area" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_medical -->
+            
+            
+            <div id="business_type_office" class="business-type-rule">
+              
+              <h3>Business and professional offices</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 300 square feet floor area</li>
+                  <li>Excludes medical and dental offices</li>
+                </ul>
+              </div>
+              
+              <form id="parking_business_offices" class="parking-calculator" method="post" action="#">
+                <label>
+                  Floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_office -->
+            
+            
+            <div id="business_type_plants" class="business-type-rule">
+              
+              <h3>Manufacturing, bottling, and processing plants</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 500 square feet of floor area</li>
+                </ul>
+              </div>
+              
+              <form id="parking_plants" class="parking-calculator" method="post" action="#">
+                <label>
+                  Floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_plants-->
+            
+            
+            <div id="business_type_recycle" class="business-type-rule">
+              
+              <h3>Independent recycling collection facilities</h3>
+              <div class="rules">
+                <ul>
+                  <li>Total: 2 spaces</li>
+                </ul>
+              </div>
+              
+              <h3>Recycling facilities in conjunction with other uses that provide required parking</h3>
+              <div class="rules">
+                <ul>
+                  <li>Total: No spaces!</li>
+                </ul>
+              </div>
+              
+            </div>  <!-- /#business_type_recycle -->
+            
+            <div id="business_type_research" class="business-type-rule">
+              
+              <h3>Research &#38; development</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 325 square feet of floor area</li>
+                  <li>or 1 space for every 2 employees (maximum shift)&#8218; whichever is greater</li>
+                </ul>
+              </div>
+              
+              <form id="parking_research_development" class="parking-calculator" method="post" action="#">
+                <label>
+                  Floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <label>
+                  Number of employees on busiest shift:
+                  <input id="employees" name="employees" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_research -->
+            
+            
+            <div id="business_type_retail" class="business-type-rule">
+              
+              <h3>Retail stores, shops, service establishments, &#38; shopping centers</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 250 square feet of floor area</li>
+                </ul>
+              </div>
+              
+              <form id="parking_retail" class="parking-calculator" method="post" action="#">
+                <label>
+                  Floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div> <!-- /#business_type_retail -->
+            
+            
+            <div id="business_type_seniors" class="business-type-rule">
+              
+              <h3>Boarding homes for the aged</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 5 beds</li>
+                  <li>1 space for each employee</li>
+                </ul>
+              </div>
+              
+              <form id="parking_boarding" class="parking-calculator" method="post" action="#">
+                <label>
+                  Number of beds:
+                  <input id="beds" name="beds" type="text">
+                </label>
+                <label>
+                  Number of employees:
+                  <input id="employees" name="employees" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+              <h3>Institutions for the aged</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for every 5 guests</li>
+                  <li>1 space for each employee on the shift with the maximum number of personnel</li>
+                </ul>
+              </div>
+              
+              <form id="parking_institutions" class="parking-calculator" method="post" action="#">
+                <label>
+                  Number of guests:
+                  <input id="guests" name="guests" type="text">
+                </label>
+                <label>
+                  Number of employees on busiest shift:
+                  <input id="employees" name="employees" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+              <h3>Nursing homes</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for every 5 guests</li>
+                  <li>1 space for the resident manager</li>
+                  <li>1 space for each employee on the shift with the maximum number of personnel</li>
+                </ul>
+              </div>
+              
+              <form id="parking_nursing" class="parking-calculator" method="post" action="#">
+                <label>
+                  Number of guests:
+                  <input id="guests" name="guests" type="text">
+                </label>
+                <label>
+                  Number of employees on busiest shift:
+                  <input id="employees" name="employees" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_seniors -->
+            
+            
+            <div id="business_type_theaters" class="business-type-rule">
+              
+              <h3>Theaters</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 3.5 seats for the first 350 seats</li>
+                  <li>1 space for each 5 additional seats</li>
+                </ul>
+              </div>
+              
+              <form id="parking_theaters" class="parking-calculator" method="post" action="#">
+                <label>
+                  Number of seats:
+                  <input id="seats" name="seats" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_theaters -->
+            
+            
+            <div id="business_type_warehouses" class="business-type-rule">
+              
+              <h3>Wholesale, warehouses, and service &#38; maintenance centers</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 1&#8218;000 square feet of floor area</li>
+                </ul>
+              </div>
+              
+              <form id="parking_warehouses" class="parking-calculator" method="post" action="#">
+                <label>
+                  Floor area:
+                  <input id="square_feet" name="square_feet" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_warehouses -->
+            
+            
+            <div id="business_type_worship" class="business-type-rule">
+              
+              <h3>Houses of worship</h3>
+              
+              <div class="rules">
+                <h5>Rules:</h5>
+                <ul>
+                  <li>1 space for each 3.5 seats in the sanctuary</li>
+                </ul>
+              </div>
+              
+              <form id="parking_houses_of_worship" class="parking-calculator" method="post" action="#">
+                <label>
+                  Number of seats in sanctuary:
+                  <input id="seats" name="seats" type="text">
+                </label>
+                <input type="submit" value="Calculate">
+              </form>
+              
+            </div>  <!-- /#business_type_worship -->
+            
+            <div id="parking_spaces"></div>
 
-          <h3>Non-Downtown Businesses</h3>
-          <p>Your business needs to provide parking spaces.</p>
-
-          <style type="text/css">
-            .business-type-rule {
-              display: none;
-            }
-          </style>
-        
-          <form class="calculator" id="parkingSpacesCalculator">
-            <!-- 38 business types according to the SC Municipal Code, 25 when combined, 11 large categories -->
-            <label>
-              Please select a category for your business type:
-              <select id="business_type" name="business_type">
-                <option value="default">Choose one...</option>
-                <option value="auto">Automobiles and machinery</option>
-                <option value="halls">Arenas, auditoriums, halls, and meeting facilities</option>
-                <option value="banks">Banks</option>
-                <option value="billiard">Billiard parlors</option>
-                <option value="office">Business and professional offices</option>
-                <option value="communication">Communications equipment buildings</option>
-                <option value="funeral">Funeral homes, mortuaries</option>
-                <option value="furn_repair">Furniture repair</option>
-                <option value="household">Furniture &#38; appliance stores and household equipment</option>
-                <option value="worship">Houses of worship</option>
-                <option value="seniors">Senior care and facilities</option>
-                <option value="children">Child and foster care</option>
-                <option value="fitness">Physical fitness facilities</option>
-                <option value="lodging">Lodging</option>
-                <option value="plants">Manufacturing, bottling, and processing plants</option>
-                <option value="medical">Medical facilities and offices</option>
-                <option value="research">Research and Development</option>
-                <option value="food">Restaurants, bars, and food service</option>
-                <option value="retail">Retail stores, shops, service establishments, &#38; shopping centers</option>
-                <option value="education">Educational facilities</option>
-                <option value="recycle">Recycling collection facilities</option>
-                <option value="laundry">Self-service laundry and dry cleaning establishments</option>
-                <option value="theaters">Theaters</option>
-                <option value="warehouses">Wholesale, warehouses, and service &#38; maintenance centers</option>
-              </select>
-            </label>
-          </form>
-        
-          <div id="prompt">
-            <p>Please select your specific business type below</p>
-          </div><!-- /#prompt -->
-        
-          <div id="business_type_auto" class="business-type-rule">
-        
-            <h3>Automobile or machinery sales and service garages</h3>
-        
-            <div class="rules">
-              <h5>Rules:</h5>
-              <ul>
-                <li>1 parking space for each 400 square feet of floor area</li>
-              </ul>
-            </div>
-        
-            <form id="parking_auto" class="parking-calculator" method="post" action="#">
-              <label>
-                Floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-            <h3>Automobile service stations</h3>
-            
-            <div class="rules">
-              <h5>Rules:</h5>
-              <ul>
-                <li>3 spaces for each lubrication or service bay</li>
-                <li>1 space for each employee on the day shift</li>
-              </ul>
-            </div>
-            
-            <form id="parking_service_stations" class="parking-calculator" method="post" action="#">
-              <label>
-                Service bays:
-                <input id="service_bays" name="service_bays" type="text">
-              </label>
-              <label>
-                Day shift employees:
-                <input id="employees" name="employees" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div><!-- /#business_type_auto -->
-        
-        
-          <div id="business_type_banks" class="business-type-rule">
-        
-            <h3>Banks with automatic teller machines</h3>
-            
-            <div class="rules">
-              <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 400 square feet floor area</li>
-                <li>1.5 spaces for each ATM machine</li>
-              </ul>
-            </div>
-            
-            <form id="parking_banks_with_atms" class="parking-calculator" method="post" action="#">
-              <label>
-                Floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <label>
-                ATM machines:
-                <input id="ATMs" name="ATMs" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-            <h3>Banks without automatic teller machines</h3>
-            
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 400 square feet floor area</li>
-              </ul>
-            </div>
-            
-            <form id="parking_banks_no_atms" class="parking-calculator" method="post" action="#">
-              <label>
-                Floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div><!-- /#business_type_banks -->
-        
-          <div id="business_type_billiard" class="business-type-rule">
-        
-            <h3>Billiard parlors</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1.5 spaces for each table</li>
-              </ul>
-            </div>
-        
-            <form id="parking_billiard" class="parking-calculator" method="post" action="#">
-              <label>
-                Number of tables:
-                <input id="tables" name="tables" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div>  <!-- /#business_type_billiard -->
-        
-        
-          <div id="business_type_children" class="business-type-rule">
-        
-            <h3>Children&#8217;s Homes</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 5 beds</li>
-                <li>1 space for each employee</li>
-              </ul>
-            </div>
-        
-            <form id="parking_child_homes" class="parking-calculator" method="post" action="#">
-              <label>
-                Number of beds:
-                <input id="beds" name="beds" type="text">
-              </label>
-              <label>
-                Number of employees:
-                <input id="employees" name="employees" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-            <h3>Family daycare and foster family homes</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for every 5 guests</li>
-                <li>1 space for the resident owner or manager</li>
-              </ul>
-            </div>
-        
-            <form id="parking_daycare_foster" class="parking-calculator" method="post" action="#">
-              <label>
-                Number of guests:
-                <input id="guests" name="guests" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div>  <!-- /#business_type_children -->
-        
-        
-          <div id="business_type_communication" class="business-type-rule">
-        
-            <h3>Communications equipment buildings</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 1&#8218;000 square feet of floor area</li>
-              </ul>
-            </div>
-        
-            <form id="parking_communications" class="parking-calculator" method="post" action="#">
-              <label>
-                Floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div>  <!-- /#business_type_communication -->
-        
-        
-          <div id="business_type_education" class="business-type-rule">
-        
-            <h3>Elementary and junior high schools</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each employee</li>
-              </ul>
-            </div>
-        
-            <form id="parking_lower_schools" class="parking-calculator" method="post" action="#">
-              <label>
-                Number of employees:
-                <input id="employees" name="employees" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-            <h3>High schools</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each employee</li>
-                <li>1 space for each 10 students</li>
-              </ul>
-            </div>
-        
-            <form id="parking_high_schools" class="parking-calculator" method="post" action="#">
-              <label>
-                Number of employees:
-                <input id="employees" name="employees" type="text">
-              </label>
-              <label>
-                Number of students:
-                <input id="students" name="students" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-            <h3>Colleges and universities</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each employee</li>
-                <li>1 space for each 3 students</li>
-              </ul>
-            </div>
-        
-            <form id="parking_colleges" class="parking-calculator" method="post" action="#">
-              <label>
-                Number of employees:
-                <input id="employees" name="employees" type="text">
-              </label>
-              <label>
-                Number of students:
-                <input id="students" name="students" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div>  <!-- /#business_type_education -->
-        
-        
-          <div id="business_type_fitness" class="business-type-rule">
-        
-            <h3>Multi-program fitness facilities</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 100 square feet of floor area</li>
-                <li>If floor space exceeds 15&#8218;000 square feet&#8218; an additional 10% of parking spaces required</li>
-              </ul>
-            </div>
-        
-            <form id="parking_multi_program_fitness" class="parking-calculator" method="post" action="#">
-              <label>
-                Floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-            <h3>Single-program fitness facilities</h3>
-            This one is a little complicated. Look at each rule&#8218; and see if it applies to you. Each &#34;Calculate&#34; button will add to the total number of spaces at the bottom. Leave any field blank that doesn't apply to you.
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>Aerobics: 1 space for each 50 square feet of floor area</li>
-                <li>Basketball &#38; volleyball: 1 space for each 3 persons of occupancy</li>
-                <li>Lap pool: 2 spaces per lane</li>
-                <li>Lap pool: 1 space for each 300 square feet of non-pool floor area (area that is not water)</li>
-                <li>Weightlifting: 1 space for each 250 feet of floor area</li>
-                <li>If total floor space exceeds 15&#8218;000 square feet&#8218; an additional 10% of parking spaces required</li>
-              </ul>
-            </div>
-        
-            <form id="parking_single_program_fitness" class="parking-calculator" method="post" action="#">
-              <label>
-                Aerobics floor area:
-                <input id="aerobics_area" name="aerobics_area" type="text">
-              </label>
-              <label>
-                Occupancy for both basketball &#38; volleyball areas:
-                <input id="basketball_volleyball_occupancy" name="basketball_volleyball_occupancy" type="text">
-              </label>
-              <label>
-                Number of lanes in lap pools:
-                <input id="pool_lanes" name="pool_lanes" type="text">
-              </label>
-              <label>
-                Lap pool floor area that is not water:
-                <input id="pool_non_water_area" name="pool_non_water_area" type="text">
-              </label>
-              <label>
-                Weightlifting floor area:
-                <input id="weights_area" name="weights_area" type="text">
-              </label>
-              <label>
-                Total floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div>  <!-- /#business_type_fitness -->
-        
-        
-          <div id="business_type_food" class="business-type-rule">
-        
-            <h3>Restaurants&#8218; bars&#8218; other food service establishments&#8218; and nightclubs without live entertainment</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 120 square feet of floor area</li>
-              </ul>
-            </div>
-        
-            <form id="parking_food" class="parking-calculator" method="post" action="#">
-              <label>
-                Floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-            <h3>Restaurants with counter&#8218; take-out&#8218; or drive-in service</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 120 square feet of floor area</li>
-                <li>1 space for each 50 square feet of floor area devoted to counter/take-out service</li>
-              </ul>
-            </div>
-        
-            <form id="parking_take_out" class="parking-calculator" method="post" action="#">
-              <label>
-                Total floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <label>
-                Floor area devoted to counter/take-out:
-                <input id="take_out_area" name="take_out_area" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div>  <!-- /#business_type_food -->
-        
-        
-          <div id="business_type_funeral" class="business-type-rule">
-        
-            <h3>Funeral homes &#38; mortuaries</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 5 seats of the aggregate number of seats provided in all assembly rooms</li>
-              </ul>
-            </div>
-        
-            <form id="parking_funeral" class="parking-calculator" method="post" action="#">
-              <label>
-                Total number of seats provided:
-                <input id="seats" name="seats" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div>  <!-- /#business_type_funeral -->
-        
-        
-          <div id="business_type_furn_repair" class="business-type-rule">
-        
-            <h3>Furniture repair</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 500 square feet of floor area</li>
-              </ul>
-            </div>
-        
-            <form id="parking_furniture_repair" class="parking-calculator" method="post" action="#">
-              <label>
-                Floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div>  <!-- /#business_type_furn_repair -->
-        
-        
-          <div id="business_type_halls" class="business-type-rule">
-        
-            <h3>Sports arenas&#8218; auditoriums&#8218; assembly halls&#8218; and meeting rooms (all with fixed seats)</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 3.5 seats of maximum seating capacity</li>
-              </ul>
-            </div>
-        
-            <form id="parking_halls_with_seats" class="parking-calculator" method="post" action="#">
-              <label>
-                Maximum seating capacity:
-                <input id="seats" name="seats" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-            <h3>Dance and exhibition halls and assembly halls without fixed seats</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 3 persons of design occupancy load</li>
-                <li>Excludes church assembly rooms in conjunction with auditoriums</li>
-              </ul>
-            </div>
-        
-            <form id="parking_halls_no_seats" class="parking-calculator" method="post" action="#">
-              <label>
-                Design occupancy load:
-                <input id="max_occupancy_load" name="max_occupancy_load" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div>  <!-- /#business_type_halls -->
-        
-        
-          <div id="business_type_household" class="business-type-rule">
-        
-            <h3>Furniture &#38; appliance stores and household equipment</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 800 square feet of sales floor area</li>
-              </ul>
-            </div>
-        
-            <form id="parking_household" class="parking-calculator" method="post" action="#">
-              <label>
-                Sales floor area:
-                <input id="sales_area" name="sales_area" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div>  <!-- /#business_type_household -->
-        
-        
-          <div id="business_type_laundry" class="business-type-rule">
-        
-            <h3>Self-service laundry and dry cleaning establishments</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 200 square feet of floor area</li>
-              </ul>
-            </div>
-        
-            <form id="parking_laundry" class="parking-calculator" method="post" action="#">
-              <label>
-                Floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div>  <!-- /#business_type_laundry -->
-        
-        
-          <div id="business_type_lodging" class="business-type-rule">
-        
-            <h3>Community care residential facilities</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 5 guests</li>
-                <li>1 space for the manager</li>
-                <li>1 space for each employee on the shift with the maximum number of personnel</li>
-              </ul>
-            </div>
-        
-            <form id="parking_community_care" class="parking-calculator" method="post" action="#">
-              <label>
-                Number of guests:
-                <input id="guests" name="guests" type="text">
-              </label>
-              <label>
-                Number of employees on busiest shift:
-                <input id="employees" name="employees" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-            <h3>Hotels and Motels</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each unit intended for separate occupancy</li>
-                <li>1 space for the resident owner or manager</li>
-              </ul>
-            </div>
-        
-            <form id="parking_hotels" class="parking-calculator" method="post" action="#">
-              <label>
-                Number of units:
-                <input id="hotel_units" name="hotel_units" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div>  <!-- /#business_type_lodging -->
-        
-        
-          <div id="business_type_medical" class="business-type-rule">
-        
-            <h3>Convalescent hospitals</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 5 beds</li>
-                <li>1 space for each employee on the shift with the maximum number of personnel</li>
-              </ul>
-            </div>
-        
-            <form id="parking_convalescent" class="parking-calculator" method="post" action="#">
-              <label>
-                Number of beds:
-                <input id="beds" name="beds" type="text">
-              </label>
-              <label>
-                Number of employees on busiest shift
-                <input id="employees" name="employees" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-            <h3>Hospitals</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each bed</li>
-                <li>1 space for each employee on the shift with the maximum number of personnel</li>
-              </ul>
-            </div>
-        
-            <form id="parking_hospitals" class="parking-calculator" method="post" action="#">
-              <label>
-                Number of beds:
-                <input id="beds" name="beds" type="text">
-              </label>
-              <label>
-                Number of employees on busiest shift:
-                <input id="employees" name="employees" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-            <h3>Medical and dental clinics and offices</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 200 square feet of floor area</li>
-              </ul>
-            </div>
-        
-            <form id="parking_medical_offices" class="parking-calculator" method="post" action="#">
-              <label>
-                Floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-            <h3>Physical therapy</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space per 200 square feet of floor area</li>
-                <li>1 space per 50 square feet of pool (water) area</li>
-              </ul>
-            </div>
-        
-            <form id="parking_physical_therapy" class="parking-calculator" method="post" action="#">
-              <label>
-                Floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <label>
-                Pool (water) area:
-                <input id="pool_water_area" name="pool_water_area" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div>  <!-- /#business_type_medical -->
-        
-        
-          <div id="business_type_office" class="business-type-rule">
-        
-            <h3>Business and professional offices</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 300 square feet floor area</li>
-                <li>Excludes medical and dental offices</li>
-              </ul>
-            </div>
-        
-            <form id="parking_business_offices" class="parking-calculator" method="post" action="#">
-              <label>
-                Floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div>  <!-- /#business_type_office -->
-        
-        
-          <div id="business_type_plants" class="business-type-rule">
+           
+          </div>
+          <!-- @condition parking non-downtown -->
           
-            <h3>Manufacturing, bottling, and processing plants</h3>
-        
-            <div class="rules">
-              <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 500 square feet of floor area</li>
-              </ul>
-            </div>
-        
-            <form id="parking_plants" class="parking-calculator" method="post" action="#">
-              <label>
-                Floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-          </div>  <!-- /#business_type_plants-->
-        
-        
-          <div id="business_type_recycle" class="business-type-rule">
-          
-            <h3>Independent recycling collection facilities</h3>
-            <div class="rules">
-              <ul>
-                <li>Total: 2 spaces</li>
-              </ul>
-            </div>
-        
-            <h3>Recycling facilities in conjunction with other uses that provide required parking</h3>
-            <div class="rules">
-              <ul>
-                <li>Total: No spaces!</li>
-              </ul>
-            </div>
-        
-          </div>  <!-- /#business_type_recycle -->
-        
-          <div id="business_type_research" class="business-type-rule">
-          
-            <h3>Research &#38; development</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 325 square feet of floor area</li>
-                <li>or 1 space for every 2 employees (maximum shift)&#8218; whichever is greater</li>
-              </ul>
-            </div>
-        
-            <form id="parking_research_development" class="parking-calculator" method="post" action="#">
-              <label>
-                Floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <label>
-                Number of employees on busiest shift:
-                <input id="employees" name="employees" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-            
-          </div>  <!-- /#business_type_research -->
-        
-        
-          <div id="business_type_retail" class="business-type-rule">
-          
-            <h3>Retail stores, shops, service establishments, &#38; shopping centers</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 250 square feet of floor area</li>
-              </ul>
-            </div>
-        
-            <form id="parking_retail" class="parking-calculator" method="post" action="#">
-              <label>
-                Floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-            
-          </div> <!-- /#business_type_retail -->
-        
-        
-          <div id="business_type_seniors" class="business-type-rule">
-          
-            <h3>Boarding homes for the aged</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 5 beds</li>
-                <li>1 space for each employee</li>
-              </ul>
-            </div>
-        
-            <form id="parking_boarding" class="parking-calculator" method="post" action="#">
-              <label>
-                Number of beds:
-                <input id="beds" name="beds" type="text">
-              </label>
-              <label>
-                Number of employees:
-                <input id="employees" name="employees" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-            <h3>Institutions for the aged</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for every 5 guests</li>
-                <li>1 space for each employee on the shift with the maximum number of personnel</li>
-              </ul>
-            </div>
-        
-            <form id="parking_institutions" class="parking-calculator" method="post" action="#">
-              <label>
-                Number of guests:
-                <input id="guests" name="guests" type="text">
-              </label>
-              <label>
-                Number of employees on busiest shift:
-                <input id="employees" name="employees" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-        
-            <h3>Nursing homes</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for every 5 guests</li>
-                <li>1 space for the resident manager</li>
-                <li>1 space for each employee on the shift with the maximum number of personnel</li>
-              </ul>
-            </div>
-        
-            <form id="parking_nursing" class="parking-calculator" method="post" action="#">
-              <label>
-                Number of guests:
-                <input id="guests" name="guests" type="text">
-              </label>
-              <label>
-                Number of employees on busiest shift:
-                <input id="employees" name="employees" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-            
-          </div>  <!-- /#business_type_seniors -->
-        
-        
-          <div id="business_type_theaters" class="business-type-rule">
-          
-            <h3>Theaters</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 3.5 seats for the first 350 seats</li>
-                <li>1 space for each 5 additional seats</li>
-              </ul>
-            </div>
-        
-            <form id="parking_theaters" class="parking-calculator" method="post" action="#">
-              <label>
-                Number of seats:
-                <input id="seats" name="seats" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-            
-          </div>  <!-- /#business_type_theaters -->
-        
-        
-          <div id="business_type_warehouses" class="business-type-rule">
-          
-            <h3>Wholesale, warehouses, and service &#38; maintenance centers</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 1&#8218;000 square feet of floor area</li>
-              </ul>
-            </div>
-        
-            <form id="parking_warehouses" class="parking-calculator" method="post" action="#">
-              <label>
-                Floor area:
-                <input id="square_feet" name="square_feet" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-            
-          </div>  <!-- /#business_type_warehouses -->
-        
-        
-          <div id="business_type_worship" class="business-type-rule">
-          
-            <h3>Houses of worship</h3>
-        
-            <div class="rules">
-            <h5>Rules:</h5>
-              <ul>
-                <li>1 space for each 3.5 seats in the sanctuary</li>
-              </ul>
-            </div>
-            
-            <form id="parking_houses_of_worship" class="parking-calculator" method="post" action="#">
-              <label>
-                Number of seats in sanctuary:
-                <input id="seats" name="seats" type="text">
-              </label>
-              <input type="submit" value="Calculate">
-            </form>
-            
-          </div>  <!-- /#business_type_worship -->
-        
-          <div id="parking_spaces"></div>
-        
-        <script type="text/javascript">
-       // (function(){
-       // 
-       //     // Add class="business-type-rule" to every large category
-       //     $('.tool > div').addClass('business-type-rule');
-       // 
-       //     // When the applicant selects an option,
-       //     $('#business_type').change(function() {
-       // 
-       //         // Get the selection
-       //         selected_option = '#business_type_' + $(this).val() || '';
-       // 
-       //         // Hide all <div class="business-type-rules">'s
-       //         $('.business-type-rule')
-       //             .hide()
-       //             .slideUp('slow');
-       // 
-       //         // Hide the parking spot counter
-       //         $('#parking_spaces').hide();
-       // 
-       //         // Show the selected <div class="business-type-rules">
-       //         $(selected_option)
-       //             .show()
-       //             .slideDown('slow');
-       //     });
-       //     
-       //     // When the applicant submits a form,
-       //     $('.parking-calculator').submit(function(e){
-       //         
-       //         // Prevent default behavior of firing the action URL
-       //         e.preventDefault();
-       //         
-       //         // Grab form data
-       //         var form    = $(this),                 // the submitted form
-       //             form_id = form.attr('id'),         // the form's ID
-       //             inputs = $(this).serializeArray(); // the form data
-       //         
-       //         // Calculate number of required car parking spaces
-       //         var spaces = calculateSpaces(form_id, inputs);
-       //         
-       //         // Build the display text
-       //         var display_text = "<p>You must provide "
-       //                             + spaces
-       //                             + " car parking space"
-       //                             + ((spaces !== 1) ? "s" : "")
-       //                             + ".</p>";
-       //         
-       //         // Show the display text
-       //         $("#parking_spaces")
-       //           .html(display_text)
-       //           .show();
-       //         
-       //     });
-       //     
-       //     function calculateSpaces(form_id, inputs) {
-       //         
-       //         var field_1 = (typeof inputs[0] === "undefined") ? 0 : inputs[0]['value'],
-       //             field_2 = (typeof inputs[1] === "undefined") ? 0 : inputs[1]['value'],
-       //             field_3 = (typeof inputs[2] === "undefined") ? 0 : inputs[2]['value'],
-       //             field_4 = (typeof inputs[3] === "undefined") ? 0 : inputs[3]['value'],
-       //             field_5 = (typeof inputs[4] === "undefined") ? 0 : inputs[4]['value'],
-       //             field_6 = (typeof inputs[5] === "undefined") ? 0 : inputs[5]['value'],
-       //             spaces;
-       //         
-       //         switch (form_id) {
-       //             
-       //             case 'parking_auto':
-       //                 var square_feet = field_1,
-       //                     spaces      = Math.round(square_feet / 400);
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_service_stations':
-       //                 var service_bays = field_1,
-       //                     employees    = field_2,
-       //                     spaces = Math.round(service_bays * 3) + employees;
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_banks_with_atms':
-       //                 var square_feet = field_1,
-       //                     atms        = field_2,
-       //                     spaces      = Math.round( (square_feet / 400) + (atms * 1.5) );
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_banks_no_atms':
-       //                 var square_feet = field_1,
-       //                     spaces      = Math.round(square_feet / 400);
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_billiard':
-       //                 var tables    = field_1,
-       //                     spaces    = Math.round(tables * 1.5);
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_child_homes':
-       //                 var beds      = field_1,
-       //                     employees = field_2,
-       //                     spaces    = Math.round(beds / 5) + employees;
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_daycare_foster':
-       //                 var guests = field_1,
-       //                     spaces = Math.round(guests / 5) + 1;
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_communications':
-       //                 var square_feet = field_1,
-       //                     spaces      = Math.round(field_1 / 1000);
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_lower_schools':
-       //                 var employees = field_1,
-       //                     spaces    = employees;
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_high_schools':
-       //                 var students  = field_1,
-       //                     employees = field_2,
-       //                     spaces    = Math.round(students / 10) + employees;
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_colleges':
-       //                 var students  = field_1,
-       //                     employees = field_2,
-       //                     spaces    = Math.round(students / 3) + employees;
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_multi_program_fitness':
-       //                 var square_feet = field_1,
-       //                     spaces      = (square_feet / 100),
-       //                     spaces      = (square_feet > 15000) ? Math.round(spaces * 1.1) : Math.round(spaces);
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_single_program_fitness':
-       //                 var aerobics_area                   = field_1,
-       //                     basketball_volleyball_occupancy = field_2,
-       //                     pool_lanes                      = field_3,
-       //                     pool_non_water_area             = field_4,
-       //                     weights_area                    = field_5,
-       //                     square_feet                     = field_6,
-       //                     spaces                          = (aerobics_area / 50) + (basketball_volleyball_occupancy / 3) + (pool_lanes * 2) + (pool_non_water_area / 300) + (weights_area / 250),
-       //                     spaces                          = (square_feet > 15000) ? Math.round(spaces * 1.1) : Math.round(spaces);
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_food':
-       //                 var square_feet = field_1,
-       //                     spaces      = Math.round( square_feet / 120 );
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_take_out':
-       //                 var square_feet   = field_1,
-       //                     take_out_area = field_2,
-       //                     spaces        = Math.round( (square_feet / 120) + (take_out_area / 50) );
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_funeral':
-       //                 var seats  = field_1,
-       //                     spaces = Math.round( seats / 5 );
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_furniture_repair':
-       //                 var square_feet = field_1,
-       //                     spaces      = Math.round( square_feet / 500 );
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_halls_with_seats':
-       //                 var seats  = field_1,
-       //                     spaces = Math.round( seats / 3.5 );
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_halls_no_seats':
-       //                 var max_occupancy_load = field_1,
-       //                     spaces             = Math.round( max_occupancy_load / 3 );
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_household':
-       //                 var sales_area = field_1,
-       //                     spaces     = Math.round( sales_area / 800 );
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_laundry':
-       //                 var square_feet = field_1,
-       //                     spaces      = Math.round( square_feet / 200 );
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_community_care':
-       //                 var guests    = field_1,
-       //                     employees = field_2,
-       //                     spaces    = Math.round( (guests / 5) + 1 + employees );
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_hotels':
-       //                 var hotel_units = field_1,
-       //                     spaces      = hotel_units + 1;
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_convalescent':
-       //                 var beds      = field_1,
-       //                     employees = field_2,
-       //                     spaces    = Math.round( (beds / 5) + employees );
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_hospitals':
-       //                 var beds      = field_1,
-       //                     employees = field_2,
-       //                     spaces    = Math.round( (beds / 5) + employees );
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_medical_offices':
-       //                 var square_feet = field_1,
-       //                     spaces      = Math.round(square_feet / 200);
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_physical_therapy':
-       //                 var square_feet     = field_1,
-       //                     pool_water_area = field_2,
-       //                     spaces          = Math.round( (square_feet / 200) + (pool_water_area / 50) );
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_business_offices':
-       //                 var square_feet = field_1,
-       //                     spaces      = Math.round(square_feet / 300);
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_plants':
-       //                 var square_feet = field_1,
-       //                     spaces      = Math.round(square_feet / 500);
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_research_development':
-       //                 var square_feet               = field_1,
-       //                     employees                 = field_2,
-       //                     spaces_by_square_footage  = Math.round(square_feet / 325),
-       //                     spaces_by_employees       = Math.round(employees / 2);
-       //                 return ( spaces_by_square_footage >= spaces_by_employees ) ? spaces_by_square_footage : spaces_by_employees;
-       //                 break;
-       //             
-       //             case 'parking_retail':
-       //                 var square_feet = field_1,
-       //                     spaces      = Math.round(square_feet / 250);
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_boarding':
-       //                 var beds      = field_1,
-       //                     employees = field_2,
-       //                     spaces    = Math.round( (beds / 5) + employees );
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_institutions':
-       //                 var guests    = field_1,
-       //                     employees = field_2,
-       //                     spaces    = Math.round( (guests / 5) + employees );
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_nursing':
-       //                 var guests    = field_1,
-       //                     employees = field_2,
-       //                     spaces    = Math.round( (guests / 5) + employees + 1 );
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_theaters':
-       //                 var seats = field_1;
-       //                 if ((seats - 350) > 0) {
-       //                     // if 351+ seats
-       //                     spaces = Math.round(350 / 3.5) + Math.round( (seats - 350) / 5 );
-       //                 } else {
-       //                     // if 0-350 seats
-       //                     spaces = Math.round(seats / 3.5);
-       //                 }
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_warehouses':
-       //                 var square_feet = field_1,
-       //                     spaces      = Math.round(square_feet / 1000);
-       //                 return spaces;
-       //                 break;
-       //             
-       //             case 'parking_worship':
-       //                 var seats   = field_1,
-       //                     spaces  = Math.round(seats / 3.5);
-       //                 return spaces;
-       //                 break;
-       //             
-       //             default:
-       //                 return "Unable to calculate.";
-       //                 break;
-       //         }
-       //     }
-       // })();
-        </script>
-
-
-
         </div><!-- /#requirement_parking -->
 
         <div id="requirement_local">
@@ -2190,6 +1865,7 @@
   <script type="text/javascript" src="js/data.nacis.js"></script>
   
   <script type="text/javascript" src="js/routing.js"></script>
+  <script type="text/javascript" src="js/location.js"></script>
   
   <script type="text/javascript">
     $(document).ready(function(){ 

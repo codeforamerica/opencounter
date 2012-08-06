@@ -61,12 +61,16 @@ OC.routing.handleLinkData = function(el){
         var attr = OC.routing.dataAttrs[d];
         if($(el).is("["+attr+"]")){
             var val = $(el).attr(attr);
-            OC.state.set(attr.substr(5), $(el).attr(attr));
-            $("["+attr+"]:not(["+attr+"="+val+"]):not(a)").hide();
-            $("["+attr+"="+val+"]").show();
+            OC.routing.setDataAttrState(attr, val);
         }
     };
 };
+OC.routing.setDataAttrState = function(attr, val){
+    OC.state.set(attr.substr(5), val);
+    $("["+attr+"]:not(["+attr+"="+val+"]):not(a)").hide();
+    $("["+attr+"="+val+"]").show();
+}
+
 
 OC.routing.stateDefaults = {"data-zoning-status":"", "data-parking-district":"", "data-section":"intro"};
 

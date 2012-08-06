@@ -15,6 +15,7 @@ var OC = {
     console.log(localStorage);
     
     OC.routing.init();
+    OC.location.init();
     OC.calculator.parking.general.init();
     $('.submit').bind({
       click: OC.forms.submitLink
@@ -45,10 +46,25 @@ var OC = {
       $(this).next('.drawer').toggle();
     });
     
-    
     // Listen and be ready to update some panels
     $.subscribe("updatePanel-info_business", function(event){
       $('.first-name').html(OC.util.getData('OC-field-applicant_first_name'));
+    });
+    
+    // Set up Profile pulldown
+    $('.profile-contents').hide();
+    $('.profile-toggle').click(function(e){
+        // Draw .profile-contents
+        $('.profile-contents').toggle();
+        
+        // Calculate the height of profile-contents
+        var contents_height = $('.profile-contents').height();
+        
+        // Scoot branding down by that amount
+        $('.branding').animate({
+          top: contents_height + "px"
+        }, 1500);
+        
     });
     
   }

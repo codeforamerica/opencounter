@@ -375,24 +375,24 @@ body {
 
 /* --- Profile --- */
 
-.profile .profile-toggle {
-  background: #0F0;
+.profile {
   position: fixed;
-  right: 10%;
+  background: #FFF;
+  width: 100%;
   top: 0;
-  z-index: 50000;
-  margin: 0;
+  left: 0;
+  z-index: 4325;
+}
+
+.profile .profile-toggle {
+  position: absolute;
+  right: 10%;
+  top: 100%;
   background: #1791be;
+  margin: 0;
   padding: 0.1em 10px;
   border-radius: 0 0 0.25em 0.25em;
   font-size: 1.5em;
-}
-
-.profile .profile-toggle:before {
-  content: "";
-  display: block;
-  border-radius: 50%;
-  border-color: #FFF;
 }
 
 .profile .profile-toggle:hover {
@@ -401,8 +401,18 @@ body {
 }
 
 .profile .profile-contents {
-  display: none;
+  position: relative;
+  overflow: auto;
 }
+
+.profile-contents .forms-and-fees,
+.profile-contents .progress {
+  display: block;
+  float: left;
+  width: 50%;
+  border-top: 5px solid #1791be;
+}
+
 
 /* --- Branding --- */
 
@@ -614,12 +624,22 @@ label input.radio {
   font-size: 1.25em;
 }
 
+.next + .next {
+  margin-top: 1em;
+}
+
 .drawer {
   border-left: 10px solid #EEE;
   padding: 0.5em 1em;
 }
 
+
+.business-type-rule {
+  display: none;
+}
+
 /* --- JQuery UI Autocomplete --- */
+
 
 .ui-autocomplete {
   background: #fff;
@@ -795,3 +815,4 @@ label input.radio {
         page-break-after: avoid;
     }
 }
+
