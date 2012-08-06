@@ -45,6 +45,12 @@ var OC = {
       $(this).next('.drawer').toggle();
     });
     
+    
+    // Listen and be ready to update some panels
+    $.subscribe("updatePanel-info_business", function(event){
+      $('.first-name').html(OC.util.getData('OC-field-applicant_first_name'));
+    });
+    
   }
 };
 
