@@ -80,7 +80,7 @@ OC.routing.reloadState = function(){
 };
 
 OC.routing.updatePanel = function(panel) {
-  $(panel).find('.first-name').html(OC.state.get('first-name'));
+  $(panel).find('.first-name').html(OC.util.getData('OC-field-applicant_first_name'));
 };
 
 OC.routing.showPanel = function(panelId){
@@ -89,8 +89,8 @@ OC.routing.showPanel = function(panelId){
     OC.routing.updatePanel($("div#"+panelId));
     
 };
-OC.routing
-.navigate = function(hash, addToHistory){
+
+OC.routing.navigate = function(hash, addToHistory){
     OC.routing.showPanel(hash);
     // add to history
     history.pushState({"page":hash}, hash, "#"+hash);

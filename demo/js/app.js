@@ -98,7 +98,8 @@ OC.state.set = function(key, val){
     }
     data[key] = val;
     OC.util.storeData("OC-state", data);
-}
+};
+
 OC.state.get = function(key){
 
     var data = OC.util.getData("OC-state");
@@ -110,7 +111,7 @@ OC.state.get = function(key){
     }else{
         return data[key];
     }
-}
+};
  
 OC.util.getData = function(key) {
     return JSON.parse(localStorage.getItem(key));
@@ -122,8 +123,9 @@ OC.util.storeData = function(key, data) {
 };
 
 OC.util.isPlanningOpen = function() {
-  
-}
+  // Todo: tell if planning is actually open.
+  return "closed";
+};
 
 
 /** 
