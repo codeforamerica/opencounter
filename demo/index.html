@@ -184,8 +184,8 @@
             </label>
             <label>
               Are you the owner of this business, or are you filling this out for the owner?</label>
-              <input id="applicant_is_business_owner" name="applicant_is_business_owner" type="radio" value="y" />I own this business
-              <input id="applicant_is_business_owner" name="applicant_is_business_owner" type="radio" value="n" />I'm filling this out on behalf of the owner
+              <input id="applicant_is_business_owner" name="applicant_is_business_owner" type="radio" class="radio" value="y" />I own this business
+              <input id="applicant_is_business_owner" name="applicant_is_business_owner" type="radio" class="radio" value="n" />I'm filling this out on behalf of the owner
             </label>
             <p class="next">Next, <a class="submit" href="#info_business">tell us about your business &rarr;</a></p>
           </form>
@@ -256,17 +256,9 @@
         <div id="location">
           <h1>Your business's location</h1>
           <h3>Where will you be working from?</h3>
+          <p class="next"><a href="#location_home_occ" data-occupancy="home" data-zoning-status="home">I'll be working from home</a></p>
+          <p class="next"><a href="#location_non_home_occ" data-occupancy="non-home" data-zoning-status="">I'll be working out of a commercial space</a></p>
 
-
-              <a href="#location_home_occ" data-occupancy="home" data-zoning-status="home">I'll be working from home</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="#location_non_home_occ" data-occupancy="non-home" data-zoning-status="">I'll be working out of a commercial space</a>
-              <!--<form method="post" action="#" id="form_location">
-              <label>
-              <input type="radio" name="is_business_home_occ" value="y"> 
-              <input type="radio" name="is_business_home_occ" value="n"> 
-            </label>
-            <p class="next"><a class="submit" href="#location_home_occ">Next &rarr;</a></p>
-          </form> -->
         </div><!-- /#location -->
         
         <div id="location_home_occ">

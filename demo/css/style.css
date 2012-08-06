@@ -365,6 +365,7 @@ td {
 
 body {
   background: #DDD;
+  overflow: scroll;
 }
 
 .container {
@@ -597,6 +598,10 @@ label select {
   display: block;
 }
 
+label input.radio {
+  display: inline-block;
+}
+
 /* --- Next --- */
 
 .next {
@@ -604,6 +609,11 @@ label select {
   padding: 0.5em 1em;
   font-weight: bold;
   font-size: 1.25em;
+}
+
+.drawer {
+  border-left: 10px solid #EEE;
+  padding: 0.5em 1em;
 }
 
 
