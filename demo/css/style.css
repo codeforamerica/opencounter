@@ -539,6 +539,9 @@ body {
 }
 
 .nav-utility a {
+  color: #daf2fa;
+  text-decoration:none;
+  border-bottom:1px solid #daf2fa;
   margin-left: 3em;
 }
 
