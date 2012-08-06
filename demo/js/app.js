@@ -28,7 +28,7 @@ var OC = {
     OC.forms.recallFields();
 
     // Autocomplete business types
-    $('#business_type').autocomplete({
+    $('#business_code').autocomplete({
       source: OC.data.calgoldBusinessTypes,
       appendTo: '#business-type-container',
       select: function(event, ui) {       
