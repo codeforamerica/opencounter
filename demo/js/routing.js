@@ -13,14 +13,14 @@ OC.routing.handleClick = function(){
             href.indexOf("javascript:") !== 0  &&
             href.indexOf("mailto:") !== 0) {
 
-            hash = href.replace(/^[#|\/]/, "")
+            hash = href.replace(/^[#|\/]/, "");
             evt.preventDefault();
             OC.routing.handleLinkData(this);
             OC.routing.findPlaceInNav(hash);
             OC.routing.navigate(hash, true);
-        }
+        };
     });
-}
+};
 
 OC.routing.init = function(){
     OC.routing.reloadState();
@@ -32,9 +32,9 @@ OC.routing.init = function(){
         }else{
             var hash = window.location.hash.replace(/^\#/, "");
             OC.routing.showPanel(hash);
-        }
-    }
-}
+        };
+    };
+};
 
 OC.routing.findPlaceInNav = function(hash){
     $("nav.nav-main li[data-section]").hide();
@@ -49,7 +49,7 @@ OC.routing.findPlaceInNav = function(hash){
             OC.state.set("section", dataSection);
         }
     });
-}
+};
 
 OC.routing.dataAttrs = ["data-occupancy", "data-zoning-status", "data-parking-district", "data-section"];
 
@@ -62,8 +62,9 @@ OC.routing.handleLinkData = function(el){
             $("["+attr+"]:not(["+attr+"="+val+"]):not(a)").hide();
             $("["+attr+"="+val+"]").show();
         }
-    }
-}
+    };
+};
+
 OC.routing.reloadState = function(){
     var state = OC.state.get();
     if(state.section === undefined){
@@ -73,16 +74,21 @@ OC.routing.reloadState = function(){
         $("[data-"+s+"]:not([data-"+s+"="+state[s]+"]):not(a)").hide();
         $("[data-"+s+"="+state[s]+"]").show();
     }
-}
+};
 
-
+OC.routing.updatePanel = function(panel) {
+  $(panel).find('.first-name').html(OC.state.get('first-name'));
+};
 
 OC.routing.showPanel = function(panelId){
     $("section.content > div").hide();
     $("div#"+panelId).show();
-}
-OC.routing.navigate = function(hash, addToHistory){
+    OC.routing.updatePanel($("div#"+panelId));
+    
+};
+OC.routing
+.navigate = function(hash, addToHistory){
     OC.routing.showPanel(hash);
     // add to history
     history.pushState({"page":hash}, hash, "#"+hash);
-}
+};

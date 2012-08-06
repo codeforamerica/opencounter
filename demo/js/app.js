@@ -18,6 +18,10 @@ var OC = {
     $('.submit').bind({
       click: OC.forms.submitLink
     });
+    
+    OC.util.isPlanningOpen();
+    
+    // Update first name when you hit business-info'. 'first-name' 
         
     // Check to see if we have stored data about any forms
     OC.forms.recallFields();
@@ -116,6 +120,10 @@ OC.util.storeData = function(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 
 };
+
+OC.util.isPlanningOpen = function() {
+  
+}
 
 
 /** 
