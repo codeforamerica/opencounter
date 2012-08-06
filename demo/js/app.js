@@ -4,6 +4,7 @@ var OC = {
   
   forms: {},
   util: {},
+  calculator: {},
   
   init: function() {
     console.log("Initializing");
@@ -29,8 +30,8 @@ OC.forms.recallFields = function() {
     var value = OC.util.getData(key);
     var type = $(this).attr('type');
   
-    console.log("Checking if we have data for " + name);
-    if(value) { console.log(value); }
+    // console.log("Checking if we have data for " + name);
+    // if(value) { console.log(value); }
     
     if (type === 'radio') {
       if($(this).attr('value') == value) {
