@@ -87,7 +87,7 @@
           <p>Starting a business? We&rsquo;re here to help.</p>
           <p>This website will guide you through the business permitting process in Santa Cruz, CA.</p>
           <p>You&rsquo;ll learn what regulations and fees apply to your business, and we&rsquo;ll help you get started on &mdash; or, in some cases, complete! &mdash; the paperwork you&rsquo;ll need to file to open your doors.</p>
-          <p class="next">Let&rsquo;e begin by learning about <a href="#intro_big_picture">the big picture &rarr;</a></p>
+          <p class="next">Let&rsquo;s begin by learning about <a href="#intro_big_picture">the big picture &rarr;</a></p>
         </div><!-- /#intro -->
         
         <div id="intro_big_picture">
@@ -109,14 +109,14 @@
           <h3 class="toggle">The Santa Cruz Planning Department</h3>
           <div class="drawer">
             <p>The Planning Department will be your business&rsquo;s main point of contact within city government.</p>
-            <p><img src="assets/img/planning-department.png" alt="City of Santa Cruz Planning Department" width="450" height="302"></p>
+            <p><img src="img/planning-department.png" alt="City of Santa Cruz Planning Department" width="450" height="302"></p>
             <div class="tool status">
               <p>The planning department's public counter is currently <span class="status">OPEN</span>. Come on by!</p>
               <p>The planning department's public counter is currently <span class="status">CLOSED</span>. <a href="mailto:planningcounter@cityofsantacruz.com">Email us &rarr;</a></p>
             </div>
             <p>You are always welcome to visit the Planning Department in person.</p>
             <p>The Planning Department&rsquo;s public counter is located in City Hall, on the annex building&rsquo;s second floor, in room 206.</p>
-            <p><img src="assets/img/planning-department-map.jpg" alt="Map to Planning Department" width="425" height="258"></p>
+            <p><img src="img/planning-department-map.jpg" alt="Map to Planning Department" width="425" height="258"></p>
             <p>Santa Cruz City Hall<br>809 Center Street<br>Room 206<br>Santa Cruz, CA 95060</p>
             <p>Telephone: (831) 420-5100</p>
             <p>Fax: (831) 420-5434</p>
@@ -204,11 +204,14 @@
   
             <label>
               What will your business do?
-              <input type="text" id="business_type" name="business_type" placeholder="SIC/NAICS tool here, with freeform entry">
+              <input type="text" id="business_code" name="business_code" placeholder="SIC/NAICS tool">
+              <div id="business-type-container" style="position:absolute; width: 500px;"></div>
             </label>
+            
 <!--
             <iframe src="http://pdfmongotest.herokuapp.com/calgold?kywd=search" width="450" height="200"></iframe>
 -->
+
             <p>(Not sure of your business type? Not finding your business type listed? Simply enter the words "General Business Information" above, or select it from the list.)</p>
   
             <label>
@@ -401,7 +404,7 @@
               ZIP
               <input type="text" name="business_physical_address_zip" placeholder="ZIP">
             </label>
-            <input type="submit" value="Check Zoning">
+            <a class="submit">Check Zoning</a>
             <p class="text"><a class="submit" href="#requirements">Next: Requirements &rarr;</a></p>
           </form>
         
@@ -2179,8 +2182,12 @@
   </div><!-- /.container -->
 
   <script type="text/javascript" src="js/lib/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="js/lib/jquery-ui-1.8.22.custom.min.js"></script>
+
   <script type="text/javascript" src="js/app.js"></script>
   <script type="text/javascript" src="js/calculator.parking.js"></script>
+  <script type="text/javascript" src="js/data.nacis.js"></script>
+  
   <script type="text/javascript" src="js/routing.js"></script>
   
   <script type="text/javascript">

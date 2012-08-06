@@ -549,6 +549,9 @@ body {
 }
 
 .nav-utility a {
+  color: #daf2fa;
+  text-decoration:none;
+  border-bottom:1px solid #daf2fa;
   margin-left: 3em;
 }
 
@@ -630,10 +633,14 @@ label input.radio {
   padding: 0.5em 1em;
 }
 
+/* --- JQuery UI Autocomplete --- */
 
-
-
-
+.ui-autocomplete {
+  background: #fff;
+  width:auto!important;
+  border:3px solid #ddd;
+  
+}
 
 
 /* ==========================================================================
