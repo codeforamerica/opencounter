@@ -204,7 +204,7 @@
   
             <label>
               What will your business do?
-              <input type="text" id="business_code" name="business_code" placeholder="SIC/NAICS tool">
+              <input type="text" id="business_code" name="business_code" placeholder="e.g. Auto Parts">
               <div id="business-type-container" style="position:absolute; width: 500px;"></div>
             </label>
             
@@ -259,8 +259,8 @@
         <div id="location">
           <h1>Your business's location</h1>
           <h3>Where will you be working from?</h3>
-          <p class="next"><a href="#location_home_occ" data-occupancy="home" data-zoning-status="home">I'll be working from home</a></p>
-          <p class="next"><a href="#location_non_home_occ" data-occupancy="non-home" data-zoning-status="">I'll be working out of a commercial space</a></p>
+          <p class="next"><a href="#location_home_occ" data-occupancy="home" data-zoning-status="home">I'll be working from home &rarr;</a></p>
+          <p class="next"><a href="#location_non_home_occ" data-occupancy="non-home" data-zoning-status="">I'll be working out of a commercial space &rarr;</a></p>
 
         </div><!-- /#location -->
         
@@ -413,7 +413,7 @@
         <div id="requirements">
           <h1>Requirements</h1>
           <p>Based on what you've told us about your business, let's walk through all of the requirements.</p>
-          <p class="text"><a class="submit" href="#requirement_use_permit">First, Use Permits &rarr;</a></p>
+          <p class="next"><a class="submit" href="#requirement_use_permit">First, Use Permits &rarr;</a></p>
         </div><!-- /#requirements -->
 
         <div id="requirement_use_permit">
@@ -489,7 +489,7 @@
                 <input type="text" name="business_phone" placeholder="">
               </label>
             </form>
-            <p class="next">Next: <a href="#requirement_building_permit">Get your business license &rarr;</a></p>
+            <p class="next">Next: <a href="#requirement_building_permit">Building Permit &rarr;</a></p>
           </div>
           <!-- /@condition HOME OCC - PRINCIPALLY PERMITTED -->
 
@@ -608,7 +608,7 @@
                 <input type="text" name="bicycle_parking_spaces" placeholder="">
               </label>
             </form>
-            <p class="next">Next: <a href="#requirement_building_permit">Get your business license &rarr;</a></p>
+            <p class="next">Next: <a href="#requirement_building_permit">Building Permit &rarr;</a></p>
           </div>
           <!-- /@condition NON HOME OCC - PRINCIPALLY PERMITTED -->
           
@@ -779,7 +779,7 @@
           </form>
 
           <!-- @condition NO CONSTRUCTION -->
-          <p class="next"><a class="submit" href="requirement_contextual">Other Requirements</a></p>
+          <p class="next">Next: <a class="submit" href="requirement_parking">Parking &rarr;</a></p>
           <!-- @condition /NO CONSTRUCTION -->
           
         </div><!-- /#requirement_building_permit -->
@@ -807,7 +807,7 @@
       			<input id="spaces_existing" name="spaces_existing" type="text" value="0"/>
 		
       			<hr/>
-      			<div id="docq" style="display:none">
+      			<div id="docq" style="display:none;">
       				<strong>Doctors and Dentists</strong>
       				<br/>
       				<b>Practitioners:</b><input type="text" id="doctorcount" value="1"/>
