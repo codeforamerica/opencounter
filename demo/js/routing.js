@@ -74,7 +74,7 @@ OC.routing.setDataAttrState = function(attr, val){
 }
 
 
-OC.routing.stateDefaults = {"data-zoning-status":"", "data-parking-district":"", "data-section":"intro"};
+OC.routing.stateDefaults = {"zoning-status":"none", "parking-district":"", "section":"intro"};
 
 OC.routing.reloadState = function(){
     var state = OC.state.get();
