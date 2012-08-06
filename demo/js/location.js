@@ -64,17 +64,23 @@ OC.location = {
 		    var latlng = [results.features[0].geometry.y, results.features[0].geometry.x];
 		    if( OC.location.in_sola(latlng) ){
 			    myRegion = 2;
-                console.log("Region: Beach/SOLA");
                 OC.routing.setDataAttrState("data-parking-district", "non-downtown")
 		    }else if( OC.location.in_downtown(latlng) ){
 			    myRegion = 1;
-			    console.log("Region: Downtown");
                 OC.routing.setDataAttrState("data-parking-district", "downtown")
 		    }else{
 			    myRegion = 0;
-			    console.log("Region: Citywide");
                 OC.routing.setDataAttrState("data-parking-district", "non-downtown")
 		    }
+            
+
+            //* hack to set some stuff for now
+            var apn = results.features[0].attributes.APN;
+            var zoning = results.features[0].attributes.Zoning1;
+            $("input[name=apn]").val(apn);
+            $("input[name=zoning_district]").val(zoning);
+            OC.util.storeData(OC.forms.key("apn"), apn);
+            OC.util.storeData(OC.forms.key("zoning_district"), zoning);
 	    }
     },
     sola: [

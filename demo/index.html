@@ -404,7 +404,7 @@
               ZIP
               <input type="text" name="business_physical_address_zip" placeholder="ZIP">
             </label>
-            <a class="submit">Check Zoning</a>
+            <input type="submit" value="Check Zoning" />
             <p class="text"><a class="submit" href="#requirements">Next: Requirements &rarr;</a></p>
           </form>
         
@@ -797,6 +797,10 @@
 
         <div id="requirement_parking">
           <h1>Parking</h1>
+          <div data-parking-district="none">
+            <p class="next">First you need to <a href="#location_non_home_occ_check_site">Check your site</a></p>
+          </div>
+          
           <!-- @condition parking downtown -->
           <div data-parking-district="downtown">
             <h3>Downtown Businesses</h3>
