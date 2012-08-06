@@ -33,6 +33,22 @@ var OC = {
       $(this).next('.drawer').toggle();
     });
     
+    // Set up Profile pulldown
+    $('.profile-contents').hide();
+    $('.profile-toggle').click(function(e){
+        // Draw .profile-contents
+        $('.profile-contents').toggle();
+        
+        // Calculate the height of profile-contents
+        var contents_height = $('.profile-contents').height();
+        
+        // Scoot branding down by that amount
+        $('.branding').animate({
+          top: contents_height + "px"
+        }, 1500);
+        
+    });
+    
   }
 };
 
