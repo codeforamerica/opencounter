@@ -29,6 +29,7 @@ OC.routing.init = function(){
         if(window.location.hash == ""){
             // we are home. show welcome
             OC.routing.showPanel("intro");
+            OC.routing.findPlaceInNav("intro");
         }else{
             var hash = window.location.hash.replace(/^\#/, "");
             OC.routing.showPanel(hash);
@@ -39,7 +40,9 @@ OC.routing.init = function(){
 OC.routing.findPlaceInNav = function(hash){
     $("nav.nav-main li[data-section]").hide();
     $("nav.nav-main a").each(function(c, el){
+        $(el).parent().removeClass("current");
         if($(el).attr("href") && $(el).attr("href").substr(1) == hash){
+            $(el).parent().addClass("current");
             if($(el).is(".section_heading")){
                 var dataSection = $(el).attr("href").substr(1);
             }else{

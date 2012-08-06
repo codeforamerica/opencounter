@@ -64,8 +64,6 @@ h3,
 h4,
 h5,
 h6 {
-    letter-spacing: 0.05em;
-/*    font-family: 'Open Sans Condensed', sans-serif; */
 }
 
 body {
@@ -374,20 +372,6 @@ body {
   overflow: auto;
 }
 
-.nav-main {
-  position: fixed;
-  width: 20%;
-  left: 5%;
-  top: 15%;
-  height: 100%;
-  z-index:1;
-}
-
-.panel {
-  margin-left: 30%;
-  margin-right: 5%;
-}
-
 /* --- Profile --- */
 
 .profile .profile-toggle {
@@ -400,6 +384,7 @@ body {
   background: #1791be;
   padding: 0.1em 10px;
   border-radius: 0 0 0.25em 0.25em;
+  font-size: 1.5em;
 }
 
 .profile .profile-toggle:before {
@@ -452,6 +437,15 @@ body {
 
 /* --- Main Navigation --- */
 
+.nav-main {
+  position: fixed;
+  width: 20%;
+  left: 5%;
+  top: 15%;
+  height: 100%;
+  z-index:1;
+}
+
 .nav-main ul {
   overflow: auto;
   position: relative;
@@ -489,8 +483,9 @@ body {
   background-clip: padding-box;
 }
 
-/* Outer ring positioning & dimensions */
+/* Outer ring */
 .nav-main a:before {
+  background: #FFF;
   height: 2em;
   left: 0.25em;
   margin-top: -1em;
@@ -499,8 +494,9 @@ body {
   width: 2em;
 }
 
-/* Inner ring positioning & dimensions */
+/* Inner ring */
 .nav-main a:after {
+  background-color: #999;
   height: 1em;
   left: 0.75em;
   margin-top: -0.5em;
@@ -509,40 +505,20 @@ body {
   width: 1em;
 }
 
-/* Hover state */
+/* On hover, change inner ring color */
 .nav-main a:hover:after {
-  background-color: rgb(51,182,230);
-}
-
-/* Outer ring color */
-.nav-main a:before {
-  background: #FFF;
-}
-
-/* Inner ring color */
-.nav-main a:after {
-  background-color: #999;
-}
-
-/* Inner ring status colors */
-.nav-main .current a:after {
   background-color: #33B6E6;
 }
 
-.nav-main .complete a:after {
-  background-color: #0F0;
-}
-
-.nav-main .incomplete a:after {
-  background-color: #FF0;
-}
-
-/* Sub nav */
+/* Sub nav rings */
 .nav-main ul ul a:before {
   background: transparent;
 }
 
-
+/* Current status */
+.nav-main .current a:after {
+  background-color: #33B6E6;
+}
 
 /* --- Utility Navigation --- */
 
@@ -562,24 +538,31 @@ body {
 }
 
 /* --- Panels --- */
-.content > div {
+
+.panel {
+  margin-left: 30%;
+  margin-right: 5%;
+}
+
+.panel .content > div {
+  font-size: 1.2em;
   position: relative;
   padding: 1em;
-  margin: 15% 0 0 0;
+  margin: 15% 0 5% 0;
   background: #fff;
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
      -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
           box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
-.content > div:before,
-.content > div:after {
+.panel .content > div:before,
+.panel .content > div:after {
   content:"";
   position:absolute;
   z-index:-2;
 }
 
-.content > div:before {
+.panel .content > div:before {
   top: 50%;
   bottom: 0;
   left: 10px;
@@ -591,7 +574,18 @@ body {
   border-radius: 100px / 10px;
 }
 
+.panel .content > div h1 {
+  font-size: 3em;
+  margin: 0;
+}
 
+/* --- Forms --- */
+
+label {
+  display: block;
+  border-left: 5px solid #EEE;
+  padding-left: 1em;
+}
 
 
 
