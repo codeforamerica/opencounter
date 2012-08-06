@@ -103,14 +103,17 @@ OC.calculator.parking.general = {
 
     // When the applicant submits a form,
     $('.parking-calculator').submit(function(e){
-      
-      // Prevent default behavior of firing the action URL
-      e.preventDefault();
+          
+      // Prevent default behavior of firing the action URL.
+      e.preventDefault();      
       
       // Grab form data
       var form    = $(this),                 // the submitted form
       form_id = form.attr('id'),         // the form's ID
       inputs = $(this).serializeArray(); // the form data
+      
+      // Save the data for later.
+      OC.forms.sumbit(form);
       
       // Calculate number of required car parking spaces
       var spaces = OC.calculator.parking.general.calculateSpaces(form_id, inputs);

@@ -12,7 +12,7 @@ var OC = {
     OC.routing.init();
     OC.calculator.parking.general.init();
     $('.submit').bind({
-      click: OC.forms.sumbit
+      click: OC.forms.submitLink
     });
         
     // Check to see if we have stored data about any forms
@@ -55,12 +55,19 @@ OC.forms.key = function(name) {
 };
 
 /**
- * Handle form submissions our way
+ * Handle the sumbit link being clicked
  */
-OC.forms.sumbit = function(event) {
+ 
+OC.forms.submitLink = function(event) {
   event.preventDefault();
   var form = $(this).closest('form');
-  
+  OC.forms.submit(form);
+}
+
+/**
+ * Handle form submissions our way
+ */
+OC.forms.sumbit = function(form) {  
   // Save the data from the form in localStorage
   var data = $(form).serializeObject();
   console.log(data);
