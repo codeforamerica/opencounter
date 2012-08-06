@@ -117,6 +117,7 @@
       <ul>
         <li>1 space for each 400 square feet floor area</li>
         <li>1.5 spaces for each ATM machine</li>
+        <li>If there are no ATMs, just enter 0</li>
       </ul>
     </div>
     
@@ -956,6 +957,7 @@
 
         // Hide the parking spot counter
         $('#parking_spaces').hide();
+        $('#test_spaces').hide();
 
         // Show the selected <div class="business-type-rules">
         $(selected_option)
@@ -976,6 +978,7 @@
         
         // Calculate number of required car parking spaces
         var spaces = calculateSpaces(form_id, inputs);
+        var test_spaces = testAccuracy(form_id, inputs);
         
         // Build the display text
         var display_text = "<p>You must provide "
@@ -983,10 +986,16 @@
                             + " car parking space"
                             + ((spaces !== 1) ? "s" : "")
                             + ".</p>";
+
+        var test_text = "Spaces should be: " + test_spaces + "<br>Test values are: 0, 1, and 1012.</br>";
         
         // Show the display text
         $("#parking_spaces")
           .html(display_text)
+          .show();
+
+        $("#test_spaces")
+          .html(test_text)
           .show();
         
     });
@@ -1256,6 +1265,134 @@
             default:
                 return "Unable to calculate.";
                 break;
+        }
+    }
+
+
+    function testAccuracy(form_id, inputs) {
+        
+        var field_1 = (typeof inputs[0] === "undefined") ? 0 : inputs[0]['value'],
+            field_2 = (typeof inputs[1] === "undefined") ? 0 : inputs[1]['value'],
+            field_3 = (typeof inputs[2] === "undefined") ? 0 : inputs[2]['value'],
+            field_4 = (typeof inputs[3] === "undefined") ? 0 : inputs[3]['value'],
+            field_5 = (typeof inputs[4] === "undefined") ? 0 : inputs[4]['value'],
+            field_6 = (typeof inputs[5] === "undefined") ? 0 : inputs[5]['value'],
+            test_spaces = "N/A. Test value not entered.";
+        
+        switch (form_id) {
+            case 'parking_auto':
+                var square_feet = field_1;
+
+                switch (square_feet) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '1012':
+                    test_spaces = 3;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_service_stations':
+                var service_bays = field_1,
+                    employees    = field_2;
+
+                switch (service_bays) {
+                  case '0':
+                    if(employees == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '1012') {
+                      test_spaces = 1012;
+                    }
+                    break;
+                  case '1':
+                    if(employees == '0') {
+                      test_spaces = 3;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 4;
+                    }
+                    else if(employees == '1012') {
+                      test_spaces = 1015;
+                    }
+                    break;
+                  case '1012':
+                    if(employees == '0') {
+                      test_spaces = 3036;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 3037;
+                    }
+                    else if(employees == '1012') {
+                      test_spaces = 4048;
+                    }
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+    
+            case 'parking_banks_with_atms':
+                var square_feet = field_1,
+                    atms        = field_2;
+
+                switch(square_feet) {
+                  case '0':
+                    if(atms == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(atms == '1') {
+                      test_spaces = 2;
+                    }
+                    else if(atms == '1012') {
+                      test_spaces = 1518;
+                    }
+                    break;
+                  case '1':
+                    if(atms == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(atms == '1') {
+                      test_spaces = 2;
+                    }
+                    else if(atms = '1012') {
+                      test_spaces = 1518;
+                    }
+                    break;
+                  case '1012':
+                    if(atms == '0') {
+                      test_spaces = 3;
+                    }
+                    else if(atms == '1') {
+                      test_spaces = 4;
+                    }
+                    else if(atms = '1012') {
+                      test_spaces = 1521;
+                    }
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+
+            default:
+              return test_spaces;
+              break;
         }
     }
 
