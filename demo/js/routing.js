@@ -48,7 +48,9 @@ OC.routing.findPlaceInNav = function(hash){
             }else{
                 var dataSection = $(el).parents("nav>ul>li").prev().find("a").attr("href").substr(1);
             }
-            $("li[data-section="+dataSection+"]").show();
+            if(dataSection !== "location" || OC.state.get("occupancy") !== undefined){
+                $("li[data-section="+dataSection+"]").show();
+            }
             OC.state.set("section", dataSection);
         }
     });
