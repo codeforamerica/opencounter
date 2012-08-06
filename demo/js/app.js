@@ -34,7 +34,7 @@ var OC = {
       appendTo: '#business-type-container',
       select: function(event, ui) {       
         // Save the selected option (doesn't happen naturally the way we want)
-        key = OC.forms.key('nacis');
+        key = OC.forms.key('naics');
         OC.util.storeData(key, ui);
       }
     });
@@ -50,6 +50,11 @@ var OC = {
     $.subscribe("updatePanel-info_business", function(event){
       $('.first-name').html(OC.util.getData('OC-field-applicant_first_name'));
     });
+    
+    $.subscribe("updatePanel-location_non_home_occ_choose_site", function(event){
+      OC.calculator.zoning.init();
+    });
+    
     
     // Set up Profile pulldown
     $('.profile-contents').hide();
@@ -67,6 +72,27 @@ var OC = {
         
     });
     
+    // Set up conditional mailing address on Working From Home panel
+    $('input[name="does_mailing_address_match_business_address"]').parent().next('.conditional').hide();
+    $('input[name="does_mailing_address_match_business_address"]').live("click", function(){
+        if (!($(this).is(':checked'))) {
+            $(this).parent().next('.conditional').show();
+        } else {
+            $(this).parent().next('.conditional').hide();
+        }
+    });
+    
+    // Set up conditional fields on About Your Business panel
+    $('input[name="applicant_is_sole_owner"]').parent().next('.conditional').hide();
+    $('input[name="applicant_is_sole_owner"]').live("click", function(){
+        if (!($(this).is(':checked'))) {
+            $(this).parent().next('.conditional').show();
+        } else {
+            $(this).parent().next('.conditional').hide();
+        }
+    });
+
+
   }
 };
 

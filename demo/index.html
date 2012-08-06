@@ -239,16 +239,18 @@
             </label>
   
             <!-- @condition Not the sole owner -->
-            <table>
-              <tr>
-                <th>Title/Role</th>
-                <th>First &amp; Last Name</th>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-            </table>
+            <div class="conditional">
+              <table>
+                <tr>
+                  <th>Title/Role</th>
+                  <th>First &amp; Last Name</th>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+              </table>
+            </div>
             <!-- /@condition -->
             
             <p class="next">Thanks! That's enough to get us started. <a class="submit" href="#location">Next: Location &rarr;</a></p>
@@ -325,26 +327,28 @@
             </label>
             
             <!-- @condition If mailing address does not match business address (if box above is unchecked) -->
-            <label>
-              Street
-              <input type="text" name="business_mailing_address_street" placeholder="Street Address">
-            </label>
-            <label>
-              Detail
-              <input type="text" name="business_mailing_address_detail" placeholder="Detail">
-            </label>
-            <label>
-              City
-              <input type="text" name="business_mailing_address_city" placeholder="City">,
-            </label>
-            <label>
-              State
-              <input type="text" name="business_mailing_address_state" placeholder="State">
-            </label>
-            <label>
-              ZIP Code
-              <input type="text" name="business_mailing_address_zip" placeholder="Zip">
-            </label>
+            <div class="conditional">
+              <label>
+                Street
+                <input type="text" name="business_mailing_address_street" placeholder="Street Address">
+              </label>
+              <label>
+                Detail
+                <input type="text" name="business_mailing_address_detail" placeholder="Detail">
+              </label>
+              <label>
+                City
+                <input type="text" name="business_mailing_address_city" placeholder="City">,
+              </label>
+              <label>
+                State
+                <input type="text" name="business_mailing_address_state" placeholder="State">
+              </label>
+              <label>
+                ZIP Code
+                <input type="text" name="business_mailing_address_zip" placeholder="Zip">
+              </label>
+            </div>
             <!-- /@condition -->
             
             <p>Does your business comply with section 24.10.160 of the city of Santa Cruz Municipal Code?</p>
@@ -367,9 +371,9 @@
           <p>If the past use matches your use, the zoning will match and parking will likely not be an issue.</p>
           <p>For example, if you are opening a restaurant, try to go into a space that previously held a restaurant.</p>
           
-          <hr class="visuallyhidden">
+          <hr>
           
-          <p>Have you already picked out a space for your business?</p>
+          <h3>Have you already picked out a space for your business?</h3>
           <p class="next">Not yet. <a href="#location_non_home_occ_choose_site">Help me choose a site &rarr;</a></p>
           <p class="next">Yes. <a href="#location_non_home_occ_check_site">Check my site's zoning and prior use &rarr;</a></p>
         </div><!-- /#location_non_home_occ -->
@@ -377,10 +381,110 @@
         <div id="location_non_home_occ_choose_site">
           <h1>Find a site for your business</h1>
           <p><a href="http://www.SiteMy.Biz">SiteMy.Biz</a> is a helpful tool to find available commercial space in Santa Cruz.</p>
+          
+          <label for="site-search-address">You can check a site&#8217;s zoning and prior use by entering the address here:</label>
+          <input id="site-search-address" class="input" type="text" name="site-search-address" />
+          <input id="site-search-submit" class="button" type="submit" name="button" value="Submit" />
+          <p class="micro"><em>Example: 1367 Pacific Avenue</em></p>
+          <div id="map-div" style="height: 400px;"></div>
+          
+          <!--
+          <p class="micro">All zones are defined by title 24 of the <a href="http://www.codepublishing.com/CA/SantaCruz/" target="_blank">Municipal code</a>.</p>
+          <div id="tlegend" class="my-legend">
+          <div class="scale">
+          <ul class="labels">
+          <li><span style='background:#00652E;'></span>CBD <a class="aj-collapse" rel="cbd">Central Business District&nbsp;⇣</a></li>
+          <li><span style='background:#859A3B;'></span>CBD-E <a class="aj-collapse" rel="cbde">Subdistrict Lower Pacific Ave&nbsp;⇣</a></li>
+          <li><span style='background:#2DA197;'></span>CC <a class="aj-collapse" rel="cc">Community Commercial&nbsp;⇣</a></li>
+          <li><span style='background:#2E8ACA;'></span>CN <a class="aj-collapse" rel="cn">Neighborhood Commercial&nbsp;⇣</a></li>
+          <li><span style='background:#2E3191;'></span>CT <a class="aj-collapse" rel="ct">Thoroughfare Commercial&nbsp;⇣</a></li>
+          <li><span style='background:#F37920;'></span>PA <a class="aj-collapse" rel="pa">Professional and Administrative Office&nbsp;⇣</a></li>
+          <li><span style='background:#D43783;'></span>CB <a class="aj-collapse" rel="cb">Beach Commercial&nbsp;⇣</a></li>
+          <li><span style='background:#B4892D;'></span>IG <a class="aj-collapse" rel="ig">General Industrial&nbsp;⇣</a></li>
+          </ul>
+          </div>
+          </div>
+          <div id="cbd" class="aj-hidden">
+          <p class="closebtn"><a class="aj-collapse" rel="cbd">x</a></p>
+          <p class="mini">CBD Central Business District</p>
+          <p class="micro">Only found in Downtown Santa Cruz, this zoning allows most retail and food uses. Developed in the aftermath of the Loma Prieta earthquake, this district also includes a shared parking and marketing resources and has lower development impact fees.</p>
+          <p class="micro">Ex. of principally permitted uses include: restaurants, shoes, boutiques, ice cream parlors, cafes and bike shops</p>
+          <p class="micro">Ex. of uses that will require more staff review: barber shops, laundries and cleaning establishments, business and technical schools</p>
+          <p class="micro">Ex. of uses that are not allowed include: Tattoo parlor, Heavy manufacturing, and ground floor professional and administrative uses along Pacific Avenue. </p>
+          <p class="micro">Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.2300" target="_blank">Municipal Code</a> &#038; the <a href="http://www.cityofsantacruz.com/Modules/ShowDocument.aspx?documentid=8911" target="_blank">downtown recovery plan</a for a complete definition.</p>
+          </div>
+          <div id="cbde" class="aj-hidden">
+          <p class="closebtn"><a class="aj-collapse" rel="cbde">x</a></p>
+          <p class="mini">CBD-E Subdistrict Lower Pacific Ave</p>
+          <p class="micro">
+          Set up to help bridge the downtown to the beach area, this district encourages mixed uses that include commercial and recreational businesses. </p>
+          <p class="micro">Ex. of principally permitted uses include: art galleries, restaurants, boutiques, cafes and dance studios </p>
+          <p class="micro">Ex. of uses that will require more staff review: bars, meeting halls, off street parking facilities, convenience stores. </p>
+          <p class="micro">Ex. of uses that are not allowed include: mortuaries, manufacturing</p>
+          <p class="micro">Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.2360" target="_blank">Municipal Code</a> for a complete definition.
+          </p>
+          </div>
+          <div id="cc" class="aj-hidden">
+          <p class="closebtn"><a class="aj-collapse" rel="cc">x</a></p>
+          <p class="mini">CC Community Commercial</p>
+          <p class="micro">Primary zoning for most major commercial corridors, this district is set up to permit many different types of uses.</p>
+          <p class="micro">Ex. of principally permitted uses include: Apparel stores, auto supply, restaurants, home furnishings, medical office</p>
+          <p class="micro">Ex. of uses that will require more staff review: fast food, educational uses, bars &amp; brewpubs</p>
+          <p class="micro">Ex. of uses that are not allowed include: no new drive-through businesses, no new industrial or manufacturing uses, no new ground floor residential uses</p>
+          <p class="micro">Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.700" target="_blank">Municipal Code</a> for a complete definition.</p>
+          </div>
+          <div id="cn" class="aj-hidden">
+          <p class="closebtn"><a class="aj-collapse" rel="cn">x</a></p>
+          <p class="mini">CN Neighborhood Commercial</p>
+          <p class="micro">A low density commercial district where the customers will primarily access shops and services on foot or via alternative transportation.</p>
+          <p class="micro">Ex. of principally permitted uses include: Financial, insurance, real estate offices, Low Volume food uses and cafes</p>
+          <p class="micro">Ex. of uses that will require more staff review: Convenience stores, athletic facilities, drug and department stores</p>
+          <p class="micro">Ex. of uses that are not allowed include: Manufacturing</p>
+          <p class="micro">Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.1000" target="_blank">Municipal Code</a> for a complete definition.</p>
+          </div>
+          <div id="ct" class="aj-hidden">
+          <p class="closebtn"><a class="aj-collapse" rel="ct">x</a></p>
+          <p class="mini">CT Thoroughfare Commercial</p>
+          <p class="micro">This zone is only found close to state highways or other high traffic corridors and is set up to encourage high volume businesses.</p>
+          <p class="micro">Ex. of principally permitted uses include: banks, clothing and soft goods, hotels, nurseries, smaller professional and administrative uses</p>
+          <p class="micro">Ex. of uses that will require more staff review: Business and technical schools, cemeteries, recreation facilities, community care facilities, drive ins and drive thrus, social clubs</p>
+          <p class="micro">Ex. of uses that are not allowed include: Heavy industry</p>
+          <p class="micro">Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.900" target="_blank">Municipal Code</a> for a complete definition.</p>
+          </div>
+          <div id="pa" class="aj-hidden">
+          <p class="closebtn"><a class="aj-collapse" rel="pa">x</a></p>
+          <p class="mini">PA Professional and Administrative Office</p>
+          <p class="micro">A buffer between a major thoroughfare and a low density residential neighborhood, this district is set up to encourage daytime, low volume professional uses.</p>
+          <p class="micro">Ex. of principally permitted uses include: Most financial, insurance and real estate office, galleries and medical office (except vets / kennels)</p>
+          <p class="micro">Ex. of uses that will require more staff review: Vets, Medical Clinics, Schools and Churches</p>
+          <p class="micro">Ex. of uses that are not allowed include: Heavy Industry</p>
+          <p class="micro">Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.1200" target="_blank">Municipal Code</a> for a complete definition.</p>
+          </div>
+          <div id="ig" class="aj-hidden">
+          <p class="closebtn"><a class="aj-collapse" rel="ig">x</a></p>
+          <p class="mini">IG General Industrial</p>
+          <p class="micro">The primary place for making and assembling items for distribution and wholesale. Only found in Harvey West and the far Westside.</p>
+          <p class="micro">Ex. of principally permitted uses include: Fabrication, Laborotories, Repairs, Alterations, Assembly and R&amp;D</p>
+          <p class="micro">Ex. of uses that will require more staff review: Retail Uses, Chemical and Paper production, Rubber and Metal fabrication, Medical Marijuana Dispensaries</p>
+          <p class="micro">Ex. of uses that are not allowed include: Any manufacturing use involving the primary production of products from new materials found to be incompatible with the neighborhood or the city as a whole based on noise, odor, air quality or other adverse environmental impact shall be prohibited.</p>
+          <p class="micro">Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.1500" target="_blank">Municipal Code</a> for a complete definition.</p>
+          </div>
+          <div id="cb" class="aj-hidden">
+          <p class="closebtn"><a class="aj-collapse" rel="cb">x</a></p>
+          <p class="mini">CB Beach Commercial</p>
+          <p class="micro">Uses that primarily serve visitors near the beach.</p>
+          <p class="micro">Ex. of principally permitted uses include: Ice cream parlor, Surf shop, and bike rental.</p>
+          <p class="micro">Ex. of uses that are not allowed include:Tattoo parlor, Heavy manufacturing, and Medical Marijuana clinic.</p>
+          <p class="micro">Please read the <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.1100" target="_blank">Municipal Code</a> for a complete definition.</p>
+          </div>
+          <p class="b">Please note how the prior use of your chosen site compares to your intended use.
+          <p class="s">If you read the full definition of your site&#8217;s zoning district, try to understand if and how your intended use is permitted.</p>
+          -->
+          
         </div><!-- /#location_non_home_occ_choose_site -->
 
         <div id="location_non_home_occ_check_site">
-          <h1>Check Your Business's Zoning</h1>
+          <h1>Check Your Business&rsquo;s Zoning</h1>
           <p>You've told us that your business is of type <strong>[business type]</strong>.</p>
           <h3>What is your business's physical address?</h3>
           <form method="post" action="#" id="form_location_non_home_occ_check_site">
@@ -1853,7 +1957,80 @@
         <div id="summary">
           <h1>Summary &amp; Next Steps</h1>
           <p>TBD.</p>
-        </div>
+        </div><!-- /#summary -->
+        
+        <div id="help">
+          <h1>Contact Us</h1>
+          <p>Send the Planning Department your question here, and we'll respond within 4 business days.</p>
+          <p>If you need to speak with someone sooner than that, <a href="#intro_here_to_help">here's how to contact the Planning Department</a>.</p>
+          <form method="post" action="#">
+            <label>
+              Your Name
+              <input type="text" id="name" placeholder="First Last">
+            </label>
+            
+            <label>
+              Your Email Address
+              <input type="text" id="email" placeholder="you@domain.com">
+            </label>
+            
+            <label for="subject">
+              I have a question about
+              <select name="subject" id="subject">
+                <option value="home_occ">Starting a home-based business</option>
+                <option value="non_home_occ">Starting a non-home-based business</option>
+                <option value="other">Something else</option>
+              </select>
+            </label>
+            
+            <label for="comments">
+              My question is
+              <textarea name="comments" id="comments"></textarea>
+            </label>
+          
+          </form>
+          
+          <p class="next"><a class="submit" href="#help_thanks">Send this to the Planning Department &rarr;</a></p>
+        </div><!-- /#help -->
+
+        <div id="help_thanks">
+          <h1>Thanks!</h1>
+          <p>Thanks for contacting us. We will get in touch with you within 4 business days.</p>
+          <p>If you need to speak with someone sooner than that, <a href="#intro_here_to_help">here's how to contact the Planning Department</a>.</p>
+          <p class="next">How'd we do? <a href="#feedback">Give us some feedback &rarr;</a></p>
+        </div><!-- /#help-thanks -->
+        
+        <div id="feedback">
+          <h1>Give us some feedback</h1>
+          <p>If you have a moment, we would love to get your thoughts on this site.</p>
+          <form method="post" action="#">
+            <label>
+              How well did we do at answering your questions?
+              <select name="mood">
+                <option value="happy">Happy &#9786;</option>
+                <option value="neutral">Neutral</option>
+                <option value="unhappy">Unhappy &#9785;</option>
+              </select>
+            </label>
+            <label>
+              What could we have done better?
+              <textarea name="suggestions"></textarea>
+            </label>
+            <label>
+              Want us to follow up with you? Enter your email address here:
+              <input type="text" name="email" placeholder="you@email.com">
+            </label>
+            <p class="next"><a class="submit" href="#feedback_thanks">Submit</a></p>
+          </form>
+        </div><!-- /#feedback -->
+        
+        <div id="feedback_thanks">
+          <h1>Thanks for sharing!</h1>
+          <p>Thanks, we've received your feedback.</p>
+          <p>(If they gave an email or phone) We'll follow up with you within one workday.</p>
+          <p>Thanks for helping us improve OpenCounter!</p>
+          <p class="next"><a href="#intro">OpenCounter Home</a></p>
+        </div><!-- /#feedback_thanks -->
 
       </section><!-- /.content -->
       
@@ -1874,10 +2051,15 @@
   <script type="text/javascript" src="js/lib/jquery-1.7.2.min.js"></script>
   <script type="text/javascript" src="js/lib/jquery-ui-1.8.22.custom.min.js"></script>
   <script type="text/javascript" src="js/lib/jquery.tinypubsub.js"></script>
+  
+  <script src='http://mapbox.com/wax/externals/leaflet/leaflet.js' type='text/javascript'></script>
+  <script src='http://mapbox.com/wax/dist/wax.leaf.min.js' type='text/javascript'></script>
+  <link href='http://mapbox.com/wax/externals/leaflet/leaflet.css' rel='stylesheet' type='text/css' />
 
   <script type="text/javascript" src="js/app.js"></script>
   <script type="text/javascript" src="js/calculator.parking.js"></script>
-  <script type="text/javascript" src="js/data.nacis.js"></script>
+  <script type="text/javascript" src="js/calculator.zoning.js"></script>
+  <script type="text/javascript" src="js/data.naics.js"></script>
   
   <script type="text/javascript" src="js/routing.js"></script>
   <script type="text/javascript" src="js/location.js"></script>
