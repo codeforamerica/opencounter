@@ -68,10 +68,14 @@ OC.routing.handleLinkData = function(el){
     };
 };
 
+OC.routing.stateDefaults = {"data-zoning-status":"", "data-parking-district":"", "data-section":"intro"}
+
 OC.routing.reloadState = function(){
     var state = OC.state.get();
-    if(state.section === undefined){
-        state.section = "intro";
+    for(d in OC.routing.stateDefaults){
+        if(state[d] === undefined){
+            state[d] =  OC.routing.stateDefaults[d];
+        }
     }
     for(s in state){
         $("[data-"+s+"]:not([data-"+s+"="+state[s]+"]):not(a)").hide();
