@@ -239,16 +239,18 @@
             </label>
   
             <!-- @condition Not the sole owner -->
-            <table>
-              <tr>
-                <th>Title/Role</th>
-                <th>First &amp; Last Name</th>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-            </table>
+            <div class="conditional">
+              <table>
+                <tr>
+                  <th>Title/Role</th>
+                  <th>First &amp; Last Name</th>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="text"></td>
+                </tr>
+              </table>
+            </div>
             <!-- /@condition -->
             
             <p class="next">Thanks! That's enough to get us started. <a class="submit" href="#location">Next: Location &rarr;</a></p>
@@ -325,26 +327,28 @@
             </label>
             
             <!-- @condition If mailing address does not match business address (if box above is unchecked) -->
-            <label>
-              Street
-              <input type="text" name="business_mailing_address_street" placeholder="Street Address">
-            </label>
-            <label>
-              Detail
-              <input type="text" name="business_mailing_address_detail" placeholder="Detail">
-            </label>
-            <label>
-              City
-              <input type="text" name="business_mailing_address_city" placeholder="City">,
-            </label>
-            <label>
-              State
-              <input type="text" name="business_mailing_address_state" placeholder="State">
-            </label>
-            <label>
-              ZIP Code
-              <input type="text" name="business_mailing_address_zip" placeholder="Zip">
-            </label>
+            <div class="conditional">
+              <label>
+                Street
+                <input type="text" name="business_mailing_address_street" placeholder="Street Address">
+              </label>
+              <label>
+                Detail
+                <input type="text" name="business_mailing_address_detail" placeholder="Detail">
+              </label>
+              <label>
+                City
+                <input type="text" name="business_mailing_address_city" placeholder="City">,
+              </label>
+              <label>
+                State
+                <input type="text" name="business_mailing_address_state" placeholder="State">
+              </label>
+              <label>
+                ZIP Code
+                <input type="text" name="business_mailing_address_zip" placeholder="Zip">
+              </label>
+            </div>
             <!-- /@condition -->
             
             <p>Does your business comply with section 24.10.160 of the city of Santa Cruz Municipal Code?</p>
@@ -367,9 +371,9 @@
           <p>If the past use matches your use, the zoning will match and parking will likely not be an issue.</p>
           <p>For example, if you are opening a restaurant, try to go into a space that previously held a restaurant.</p>
           
-          <hr class="visuallyhidden">
+          <hr>
           
-          <p>Have you already picked out a space for your business?</p>
+          <h3>Have you already picked out a space for your business?</h3>
           <p class="next">Not yet. <a href="#location_non_home_occ_choose_site">Help me choose a site &rarr;</a></p>
           <p class="next">Yes. <a href="#location_non_home_occ_check_site">Check my site's zoning and prior use &rarr;</a></p>
         </div><!-- /#location_non_home_occ -->
@@ -377,10 +381,11 @@
         <div id="location_non_home_occ_choose_site">
           <h1>Find a site for your business</h1>
           <p><a href="http://www.SiteMy.Biz">SiteMy.Biz</a> is a helpful tool to find available commercial space in Santa Cruz.</p>
+          <p></p>
         </div><!-- /#location_non_home_occ_choose_site -->
 
         <div id="location_non_home_occ_check_site">
-          <h1>Check Your Business's Zoning</h1>
+          <h1>Check Your Business&rsquo;s Zoning</h1>
           <p>You've told us that your business is of type <strong>[business type]</strong>.</p>
           <h3>What is your business's physical address?</h3>
           <form method="post" action="#" id="form_location_non_home_occ_check_site">
