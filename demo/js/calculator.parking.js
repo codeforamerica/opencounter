@@ -41,6 +41,9 @@ OC.calculator.parking.downtown = {
   calculate: function(){
     console.log("Calculating parking");
     
+    // Save the data for later.
+    // OC.forms.sumbit($('#parking-deficiency-form'));
+    
   	var max = -1;
   	if( $("#proptype_existing").val() == "DOCTOR" ){
   		if(( $("#doctorcount").val() * 1 == 1 ) && ( $("#size_existing").val() * 1 < 1200 )){

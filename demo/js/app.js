@@ -9,6 +9,9 @@ var OC = {
   init: function() {
     console.log("Initializing");
     
+    console.log("Here is everything in localStorage:");
+    console.log(localStorage);
+    
     OC.routing.init();
     OC.calculator.parking.general.init();
     $('.submit').bind({
@@ -61,7 +64,7 @@ OC.forms.key = function(name) {
 OC.forms.submitLink = function(event) {
   event.preventDefault();
   var form = $(this).closest('form');
-  OC.forms.submit(form);
+  OC.forms.sumbit(form);
 }
 
 /**
@@ -70,7 +73,8 @@ OC.forms.submitLink = function(event) {
 OC.forms.sumbit = function(form) {  
   // Save the data from the form in localStorage
   var data = $(form).serializeObject();
-  console.log(data);
+  console.log(form);
+  
   $.each(data, function(key, value){
     var localStorageKey = OC.forms.key(key);
     console.log("Key: " + key + " value: " + value);

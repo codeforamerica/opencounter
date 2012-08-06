@@ -779,7 +779,7 @@
           <h3>Downtown Businesses</h3>
           <p>If your business is downtown, you don't need to provide any parking spaces, but you will need to pay a Parking Deficiency Fee.</p>
 
-      		<form class="well form-vertical">
+      		<form class="well form-vertical" id="parking-deficiency-form">
       			<label>Business type</label>
       			<select id="proptype_existing" onchange="OC.calculator.parking.downtown.setUnits(this.value)">
       				<option value="APARTMENT">Apartment</option>
@@ -790,10 +790,10 @@
       			</select>
 
       			<label>Size of Property</label>
-      			<input id="size_existing" type="text"/>&nbsp;<label id="units">units</label>
+      			<input id="size_existing" name="num_units" type="text"/>&nbsp;<label id="units">units</label>
 
       			<label>Existing Spaces</label>
-      			<input id="spaces_existing" type="text" value="0"/>
+      			<input id="spaces_existing" name="spaces_existing" type="text" value="0"/>
 		
       			<hr/>
       			<div id="docq" style="display:none">
