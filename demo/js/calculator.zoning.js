@@ -1,4 +1,6 @@
 OC.calculator.zoning = { 
+  map: null,
+  
   executeQuery: function(address){
   	var result;
   	while(address.indexOf("  ") > -1){
@@ -48,17 +50,17 @@ OC.calculator.zoning = {
 	
   	var s = document.createElement("script");
   	s.type = "text/javascript";
-  	s.src = "http://gis.cityofsantacruz.com/ArcGIS/rest/services/AddressSeach/MapServer/0/query?f=json&where=ADD_%20LIKE%20upper%20('%25" + escape(address) + "%25')&returnGeometry=true&spatialRel=esriSpatialRelIntersects&outFields=*&callback=mapAddress";
+  	s.src = "http://gis.cityofsantacruz.com/ArcGIS/rest/services/AddressSeach/MapServer/0/query?f=json&where=ADD_%20LIKE%20upper%20('%25" + escape(address) + "%25')&returnGeometry=true&spatialRel=esriSpatialRelIntersects&outFields=*&callback=OC.calculator.zoning.mapAddress";
   	document.body.appendChild(s);
   },
 
   mapAddress: function(results){
           if(results.features.length == 0){
           	// if address lookup fails, turn text box red
-  		document.getElementById("address").style.backgroundColor = "#f44";
+  		document.getElementById("site-search-address").style.backgroundColor = "#f44";
   	}
   	else{
-  		document.getElementById("address").style.backgroundColor = "#fff";
+  		document.getElementById("site-search-address").style.backgroundColor = "#fff";
   		var zone = results.features[0].attributes['Zoning1'];
   		var street = results.features[0].attributes['ADD_'];
   		var usecode = results.features[0].attributes['USECDDESC'];
@@ -67,44 +69,47 @@ OC.calculator.zoning = {
   		//console.log(latlng);
 			
   		var marker = new L.Marker(latlng);
-  		map.addLayer(marker);
+  		this.map.addLayer(marker);
   		marker.bindPopup(street + "<br/>Zone: " + zone + "<br/>Current Use (Prior Use): " + usecode).openPopup();
 			
   		// test: store zone and use code as a cookie
   		//setCookie("zone_and_use", zone + "|" + usecode, 21);
-  		Cookies.defaults = {
-  			path: '/',
-  			expires: 60 * 60 * 24 * 21,
-  			secure: false
-  		}
-  		Cookies.set('address', document.getElementById("address").value );
-  		Cookies.set('zone_and_use', zone + "|" + usecode);
+  		// Cookies.defaults = {
+  		// 	path: '/',
+  		// 	expires: 60 * 60 * 24 * 21,
+  		// 	secure: false
+  		// };
+  		// Cookies.set('address', document.getElementById("address").value );
+  		// Cookies.set('zone_and_use', zone + "|" + usecode);
   	}
   },
   
-  map: null,
 
   init: function() {
-    // var _tilejson;
-    wax.tilejson('http://a.tiles.mapbox.com/v3/tamaracfa.map-lhp1bb4f.jsonp',
-    	function(tilejson) {
-    		// _tilejson = tilejson;
-    		this.map = new L.Map('map-div', { scrollWheelZoom: false, maxZoom: 17 })
+    wax.tilejson('http://a.tiles.mapbox.com/v3/tamaracfa.map-lhp1bb4f.jsonp', 
+      function(tilejson) {
+        console.log("Initialize the map");
+        console.log(OC.calculator.zoning.map);
+    		OC.calculator.zoning.map = new L.Map('map-div', { scrollWheelZoom: false, maxZoom: 17 })
         		.addLayer(new wax.leaf.connector(tilejson))
         		.setView(new L.LatLng(36.9749, -122.0263), 13);
 
     		wax.leaf.interaction()
-    			.map(this.map)
+    			.map(OC.calculator.zoning.map)
     			.tilejson(tilejson)
-    			.on(wax.tooltip().animate(false).parent(map._container).events())
+    			.on(wax.tooltip().animate(false).parent(OC.calculator.zoning.map._container).events());
     	}
     );
+    
+    $('#site-search-submit').bind({
+      click: this.codeAddress
+    });
     
   },
 
   codeAddress: function() {
-  	var address = document.getElementById("address").value;
-  	this.executeQuery(address);
+  	var address = $("#site-search-address").attr('value');
+  	OC.calculator.zoning.executeQuery(address);
   }
 
   // checkForEnter: function(e){
@@ -112,4 +117,4 @@ OC.calculator.zoning = {
   // 		codeAddress();
   // 	}
   // }
-}
+};
