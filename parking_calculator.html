@@ -329,7 +329,7 @@
     </form>
 
     <h3>Single-program fitness facilities</h3>
-    This one is a little complicated. Look at each rule&#8218; and see if it applies to you. Each &#34;Calculate&#34; button will add to the total number of spaces at the bottom. Leave any field blank that doesn't apply to you.
+    Look at each rule&#8218; and see if it applies to you. Leave all fields blank that do not apply.
 
     <div class="rules">
     <h5>Rules:</h5>
@@ -920,7 +920,7 @@
       </ul>
     </div>
     
-    <form id="parking_houses_of_worship" class="parking-calculator" method="post" action="#">
+    <form id="parking_worship" class="parking-calculator" method="post" action="#">
       <label>
         Number of seats in sanctuary:
         <input id="seats" name="seats" type="text">
@@ -987,7 +987,7 @@
                             + ((spaces !== 1) ? "s" : "")
                             + ".</p>";
 
-        var test_text = "Spaces should be: " + test_spaces + "<br>Test values are: 0, 1, and 1012.</br>";
+        var test_text = "Spaces should be: " + test_spaces + "<br>Test values are: 0, 1, and 513. For fitness, 15001 is also included.</br>";
         
         // Show the display text
         $("#parking_spaces")
@@ -1174,7 +1174,7 @@
             case 'parking_hospitals':
                 var beds      = field_1,
                     employees = field_2,
-                    spaces    = Math.round(beds / 5) + parseInt(employees);
+                    spaces    = parseInt(beds) + parseInt(employees);
                 return spaces;
                 break;
             
@@ -1290,8 +1290,8 @@
                   case '1':
                     test_spaces = 0;
                     break;
-                  case '1012':
-                    test_spaces = 3;
+                  case '513':
+                    test_spaces = 1;
                     break;
                   default:
                     test_spaces = "N/A. Test value not entered.";
@@ -1312,8 +1312,8 @@
                     else if(employees == '1') {
                       test_spaces = 1;
                     }
-                    else if(employees == '1012') {
-                      test_spaces = 1012;
+                    else if(employees == '513') {
+                      test_spaces = 513;
                     }
                     break;
                   case '1':
@@ -1323,19 +1323,19 @@
                     else if(employees == '1') {
                       test_spaces = 4;
                     }
-                    else if(employees == '1012') {
-                      test_spaces = 1015;
+                    else if(employees == '513') {
+                      test_spaces = 516;
                     }
                     break;
-                  case '1012':
+                  case '513':
                     if(employees == '0') {
-                      test_spaces = 3036;
+                      test_spaces = 1539;
                     }
                     else if(employees == '1') {
-                      test_spaces = 3037;
+                      test_spaces = 1540;
                     }
-                    else if(employees == '1012') {
-                      test_spaces = 4048;
+                    else if(employees == '513') {
+                      test_spaces = 2052;
                     }
                     break;
                   default:
@@ -1357,8 +1357,8 @@
                     else if(atms == '1') {
                       test_spaces = 2;
                     }
-                    else if(atms == '1012') {
-                      test_spaces = 1518;
+                    else if(atms == '513') {
+                      test_spaces = 770;
                     }
                     break;
                   case '1':
@@ -1368,24 +1368,1011 @@
                     else if(atms == '1') {
                       test_spaces = 2;
                     }
-                    else if(atms = '1012') {
-                      test_spaces = 1518;
+                    else if(atms = '513') {
+                      test_spaces = 770;
                     }
                     break;
-                  case '1012':
+                  case '513':
                     if(atms == '0') {
-                      test_spaces = 3;
+                      test_spaces = 1;
                     }
                     else if(atms == '1') {
-                      test_spaces = 4;
+                      test_spaces = 3;
                     }
-                    else if(atms = '1012') {
-                      test_spaces = 1521;
+                    else if(atms = '513') {
+                      test_spaces = 771;
                     }
                     break;
                   default:
                     test_spaces = "N/A. Test value not entered.";
                     break;
+                }
+                return test_spaces;
+                break;
+            
+            // This field will most likely be removed
+            case 'parking_banks_no_atms':
+                return test_spaces;
+                break;
+            
+            case 'parking_billiard':
+                var tables    = field_1;
+
+                switch (tables) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 2;
+                    break;
+                  case '513':
+                    test_spaces = 770;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_child_homes':
+                var beds      = field_1,
+                    employees = field_2;
+
+                switch (beds) {
+                  case '0':
+                    if(employees == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 513;
+                    }
+                    break;
+                  case '1':
+                    if(employees == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 513;
+                    }
+                    break;
+                  case '513':
+                    if(employees == '0') {
+                      test_spaces = 103;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 104;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 616;
+                    }
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_daycare_foster':
+                var guests = field_1;
+
+                switch(guests) {
+                  case '0':
+                    test_spaces = 1;
+                    break;
+                  case '1':
+                    test_spaces = 1;
+                    break;
+                  case '513':
+                    test_spaces = 104;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+           
+            case 'parking_communications':
+                var square_feet = field_1;
+
+                switch(square_feet) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '513':
+                    test_spaces = 1;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_lower_schools':
+                var employees = field_1;
+
+                switch(employees) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 1;
+                    break;
+                  case '513':
+                    test_spaces = 513;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+           
+            case 'parking_high_schools':
+                var students  = field_1,
+                    employees = field_2;
+
+                switch(students) {
+                  case '0':
+                    if(employees == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '513') { 
+                      test_spaces = 513;
+                    }
+                    break;
+                  case '1':
+                    if(employees == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '513') { 
+                      test_spaces = 513;
+                    }
+                    break;
+                  case '513':
+                    if(employees == '0') {
+                      test_spaces = 51;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 52;
+                    }
+                    else if(employees == '513') { 
+                      test_spaces = 564;
+                    }
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_colleges':
+                var students  = field_1,
+                    employees = field_2;
+
+                switch(students) {
+                  case '0':
+                    if(employees == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '513') { 
+                      test_spaces = 513;
+                    }
+                    break;
+                  case '1':
+                    if(employees == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '513') { 
+                      test_spaces = 513;
+                    }
+                    break;
+                  case '513':
+                    if(employees == '0') {
+                      test_spaces = 171;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 172;
+                    }
+                    else if(employees == '513') { 
+                      test_spaces = 684;
+                    }
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_multi_program_fitness':
+                var square_feet = field_1;
+
+                switch(square_feet) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '513':
+                    test_spaces = 5;
+                    break;
+                  case '15001':
+                    test_spaces = 165;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }                
+                return test_spaces;
+                break;
+         
+            case 'parking_single_program_fitness':
+                var aerobics_area                   = field_1,
+                    basketball_volleyball_occupancy = field_2,
+                    pool_lanes                      = field_3,
+                    pool_non_water_area             = field_4,
+                    weights_area                    = field_5,
+                    square_feet                     = field_6;
+                    test_spaces = 0;
+
+                if(aerobics_area == '0' || aerobics_area == '1') {
+                  test_spaces += 0;
+                }
+                else if(aerobics_area == '513') {
+                  test_spaces += 10.26; 
+                }
+                if(basketball_volleyball_occupancy == '0' || basketball_volleyball_occupancy == '1') {
+                  test_spaces += 0;
+                }
+                else if(basketball_volleyball_occupancy == '513') {
+                  test_spaces += 171;
+                }
+                if(pool_lanes == '0') {
+                  test_spaces += 0;
+                }
+                else if(pool_lanes == '1') {
+                  test_spaces += 2;
+                }
+                else if(pool_lanes == '513') {
+                  test_spaces += 1026;
+                }
+                if(pool_non_water_area == '0' || pool_non_water_area == '1') {
+                  test_spaces += 0;
+                }
+                else if(pool_non_water_area == '513') {
+                  test_spaces += 1.71;
+                }
+                if(weights_area == '0' || weights_area == '0') {
+                  test_spaces += 0;
+                }
+                else if(weights_area == '513') {
+                  test_spaces += 2.052;
+                }
+                if(square_feet > 15000) {
+                  test_spaces = Math.round(test_spaces * 1.1);
+                }
+                test_spaces = Math.round(test_spaces);
+                return test_spaces;
+                break;
+            
+            case 'parking_food':
+                var square_feet = field_1;
+                
+                switch (square_feet) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '513':
+                    test_spaces = 4;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_take_out':
+                var square_feet   = field_1,
+                    take_out_area = field_2;
+
+                switch (square_feet) {
+                  case '0':
+                    if(take_out_area == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(take_out_area == '1') {
+                      test_spaces = 0;
+                    }
+                    else if(take_out_area == '513') {
+                      test_spaces = 10;
+                    }
+                    break;
+                  case '1':
+                    if(take_out_area == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(take_out_area == '1') {
+                      test_spaces = 0;
+                    }
+                    else if(take_out_area == '513') {
+                      test_spaces = 10;
+                    }
+                    break;
+                  case '513':
+                    if(take_out_area == '0') {
+                      test_spaces = 4;
+                    }
+                    else if(take_out_area == '1') {
+                      test_spaces = 4;
+                    }
+                    else if(take_out_area == '513') {
+                      test_spaces = 15;
+                    }
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_funeral':
+                var seats  = field_1;
+
+                switch (seats) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '513':
+                    test_spaces = 103;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+           
+            case 'parking_furniture_repair':
+                var square_feet = field_1;
+
+                switch (square_feet) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '513':
+                    test_spaces = 1;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_halls_with_seats':
+                var seats  = field_1;
+
+                switch (seats) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '513':
+                    test_spaces = 147;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_halls_no_seats':
+                var max_occupancy_load = field_1;
+
+                switch (max_occupancy_load) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '513':
+                    test_spaces = 171;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_household':
+                var sales_area = field_1;
+                switch (sales_area) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '513':
+                    test_spaces = 1;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+             
+            case 'parking_laundry':
+                var square_feet = field_1;
+                switch (square_feet) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '513':
+                    test_spaces = 3;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_community_care':
+                var guests    = field_1,
+                    employees = field_2;
+
+                switch (guests) {
+                  case '0':
+                    if(employees == '0') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 2;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 514;
+                    }
+                    break;
+                  case '1':
+                    if(employees == '0') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 2;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 514;
+                    }
+                    break;
+                  case '513':
+                    if(employees == '0') {
+                      test_spaces = 104;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 105;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 617;
+                    }
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_hotels':
+                var hotel_units = field_1;
+
+                switch (hotel_units) {
+                  case '0':
+                    test_spaces = 1;
+                    break;
+                  case '1':
+                    test_spaces = 2;
+                    break;
+                  case '513':
+                    test_spaces = 514;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+           
+            case 'parking_convalescent':
+                var beds      = field_1,
+                    employees = field_2;
+
+                switch (beds) {
+                  case '0':
+                    if(employees == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 513;
+                    }
+                    break;
+                  case '1':
+                    if(employees == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 513;
+                    }
+                    break;
+                  case '513':
+                    if(employees == '0') {
+                      test_spaces = 103;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 104;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 616;
+                    }
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_hospitals':
+                var beds      = field_1,
+                    employees = field_2;
+
+                switch (beds) {
+                  case '0':
+                    if(employees == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 513;
+                    }
+                    break;
+                  case '1':
+                    if(employees == '0') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 2;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 514;
+                    }
+                    break;
+                  case '513':
+                    if(employees == '0') {
+                      test_spaces = 513;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 514;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 1026;
+                    }
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_medical_offices':
+                var square_feet = field_1;
+
+                switch (square_feet) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '513':
+                    test_spaces = 3;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_physical_therapy':
+                var square_feet     = field_1,
+                    pool_water_area = field_2;
+
+                switch (square_feet) {
+                  case '0':
+                    if(pool_water_area == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(pool_water_area == '1') {
+                      test_spaces = 0;
+                    }
+                    else if(pool_water_area == '513') {
+                      test_spaces = 10;
+                    }
+                    break;
+                  case '1':
+                    if(pool_water_area == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(pool_water_area == '1') {
+                      test_spaces = 0;
+                    }
+                    else if(pool_water_area == '513') {
+                      test_spaces = 10;
+                    }
+                    break;
+                  case '513':
+                    if(pool_water_area == '0') {
+                      test_spaces = 3;
+                    }
+                    else if(pool_water_area == '1') {
+                      test_spaces = 3;
+                    }
+                    else if(pool_water_area == '513') {
+                      test_spaces = 13;
+                    }
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_business_offices':
+                var square_feet = field_1;
+
+                switch (square_feet) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '513':
+                    test_spaces = 2;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_plants':
+                var square_feet = field_1;
+
+                switch (square_feet) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '513':
+                    test_spaces = 1;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_research_development':
+                var square_feet               = field_1,
+                    employees                 = field_2,
+                    test_spaces_by_square_footage,
+                    test_spaces_by_employees;
+
+                switch (square_feet) {
+                  case '0':
+                    test_spaces_by_square_footage = 0;
+                    break;
+                  case '1':
+                    test_spaces_by_square_footage = 0;
+                    break;
+                  case '513':
+                    test_spaces_by_square_footage = 2;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+
+                switch (employees) {
+                  case '0':
+                    test_spaces_by_employees = 0;
+                    break;
+                  case '1':
+                    test_spaces_by_employees = 1;
+                    break;
+                  case '513':
+                    test_spaces_by_employees = 257;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+
+                return ( test_spaces_by_square_footage >= test_spaces_by_employees ) ? test_spaces_by_square_footage : test_spaces_by_employees;
+                break;
+           
+            case 'parking_retail':
+                var square_feet = field_1;
+
+                switch (square_feet) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '513':
+                    test_spaces = 2;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_boarding':
+                var beds      = field_1,
+                    employees = field_2;
+
+                switch (beds) {
+                  case '0':
+                    if(employees == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 513;
+                    }
+                    break;
+                  case '1':
+                    if(employees == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 513;
+                    }
+                    break;
+                  case '513':
+                    if(employees == '0') {
+                      test_spaces = 103;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 104;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 616;
+                    }
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_institutions':
+                var guests    = field_1,
+                    employees = field_2;
+
+                switch (guests) {
+                  case '0':
+                    if(employees == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 513;
+                    }
+                    break;
+                  case '1':
+                    if(employees == '0') {
+                      test_spaces = 0;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 513;
+                    }
+                    break;
+                  case '513':
+                    if(employees == '0') {
+                      test_spaces = 103;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 104;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 616;
+                    }
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_nursing':
+                var guests    = field_1,
+                    employees = field_2;
+
+                switch (guests) {
+                  case '0':
+                    if(employees == '0') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 2;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 514;
+                    }
+                    break;
+                  case '1':
+                    if(employees == '0') {
+                      test_spaces = 1;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 2;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 514;
+                    }
+                    break;
+                  case '513':
+                    if(employees == '0') {
+                      test_spaces = 104;
+                    }
+                    else if(employees == '1') {
+                      test_spaces = 105;
+                    }
+                    else if(employees == '513') {
+                      test_spaces = 617;
+                    }
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_theaters':
+                var seats = field_1;
+                
+                switch (seats) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '513':
+                    test_spaces = 133;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_warehouses':
+                var square_feet = field_1;
+
+                switch (square_feet) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '513':
+                    test_spaces = 1;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break;  
+                }
+                return test_spaces;
+                break;
+            
+            case 'parking_worship':
+                var seats   = field_1;
+
+                switch (seats) {
+                  case '0':
+                    test_spaces = 0;
+                    break;
+                  case '1':
+                    test_spaces = 0;
+                    break;
+                  case '513':
+                    test_spaces = 147;
+                    break;
+                  default:
+                    test_spaces = "N/A. Test value not entered.";
+                    break; 
                 }
                 return test_spaces;
                 break;
