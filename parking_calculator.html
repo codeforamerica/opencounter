@@ -110,18 +110,18 @@
 
   <div id="business_type_banks">
 
-    <h3>Banks with automatic teller machines</h3>
+    <h3>Banks</h3>
     
     <div class="rules">
       <h5>Rules:</h5>
       <ul>
         <li>1 space for each 400 square feet floor area</li>
         <li>1.5 spaces for each ATM machine</li>
-        <li>If there are no ATMs, just enter 0</li>
+        <li>If there are no ATMs, you can leave it blank</li>
       </ul>
     </div>
     
-    <form id="parking_banks_with_atms" class="parking-calculator" method="post" action="#">
+    <form id="parking_banks" class="parking-calculator" method="post" action="#">
       <label>
         Floor area:
         <input id="square_feet" name="square_feet" type="text">
@@ -129,23 +129,6 @@
       <label>
         ATM machines:
         <input id="ATMs" name="ATMs" type="text">
-      </label>
-      <input type="submit" value="Calculate">
-    </form>
-
-    <h3>Banks without automatic teller machines</h3>
-    
-    <div class="rules">
-    <h5>Rules:</h5>
-      <ul>
-        <li>1 space for each 400 square feet floor area</li>
-      </ul>
-    </div>
-    
-    <form id="parking_banks_no_atms" class="parking-calculator" method="post" action="#">
-      <label>
-        Floor area:
-        <input id="square_feet" name="square_feet" type="text">
       </label>
       <input type="submit" value="Calculate">
     </form>
@@ -1025,16 +1008,10 @@
                 return spaces;
                 break;
             
-            case 'parking_banks_with_atms':
+            case 'parking_banks':
                 var square_feet = field_1,
                     atms        = field_2,
                     spaces      = Math.round( (square_feet / 400) + (atms * 1.5) );
-                return spaces;
-                break;
-            
-            case 'parking_banks_no_atms':
-                var square_feet = field_1,
-                    spaces      = Math.round(square_feet / 400);
                 return spaces;
                 break;
             
@@ -1345,7 +1322,7 @@
                 return test_spaces;
                 break;
     
-            case 'parking_banks_with_atms':
+            case 'parking_banks':
                 var square_feet = field_1,
                     atms        = field_2;
 
@@ -1387,11 +1364,6 @@
                     test_spaces = "N/A. Test value not entered.";
                     break;
                 }
-                return test_spaces;
-                break;
-            
-            // This field will most likely be removed
-            case 'parking_banks_no_atms':
                 return test_spaces;
                 break;
             
