@@ -1,3 +1,16 @@
+
+== NOTES
+
+users  (user can have multiple biz, and biz can have multiple users)
+businesses (has many field answers)
+fieldanswers (linked to biz, and field)
+forms (which pdf to fill out)
+fields (forms have fields, a field can be on multiple forms)
+
+
+
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
@@ -259,3 +272,4 @@ vendor
   External libraries that the application depends on. Also includes the plugins
   subdirectory. If the app has frozen rails, those gems also go here, under
   vendor/rails/. This directory is in the load path.
+
