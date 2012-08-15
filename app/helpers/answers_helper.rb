@@ -1,2 +1,2 @@
-module FieldAnswersHelper
+module AnswersHelper
 end
