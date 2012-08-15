@@ -3,10 +3,11 @@ define([
   "app",
   "modules/user",
   "modules/business",
-  "modules/answer"
+  "modules/answer",
+  "modules/navigation"
 ],
 
-function(app, User, Business, Answer) {
+       function(app, User, Business, Answer, Navigation) {
 
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
@@ -18,20 +19,25 @@ function(app, User, Business, Answer) {
       console.log("index");
     },
     panel: function(path){
-      console.log("panel: ", path);
+
+      var sidebar =  new Navigation.Views.Sidebar({  // this might make more sense as a view on user? - Mick
+        business:this.business
+      });
       app.layout.setViews({
-        "#cpan": new Answer.Views.Panel({
+        "div#panel": new Answer.Views.Panel({
           collection:this.answers,
           // this input needs to be scrubbed if bb doesnt already - Mick
           useTemplate:"panels/"+path
         }),
-        "section.profile": new Answer.Views.Profile({
+        "div#profile": new Answer.Views.Profile({
           collection:this.answers
-        })
-
+        }),
+        "div#nav-main": sidebar
       });
 
       this.answers.reset();
+      //this.business.change();
+      sidebar.render();
     },
     initialize: function(){
       this.user = new User.Model();

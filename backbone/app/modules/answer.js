@@ -41,7 +41,7 @@ function(app) {
     },
     afterRender: function(){
       console.log("template:",this.el);
-      $("section.content").html(this.el);
+      $("div#content").html(this.el);
     },
     cleanup: function() {
       this.model.off(null, null, this);
@@ -59,19 +59,18 @@ function(app) {
     className: "profile",
     template:"profile",
     events: {
+      "click .profile-toggle": "toggleProfile"
     },
     beforeRender: function(){
       console.log("template:",this.template);
     },
     afterRender: function(){
       console.log("template:",this.el);
-      $("section.profile").html(this.el);
-      $('.profile-contents').hide();
-      $('.profile-toggle').click(function(e){
-        // Draw .profile-contents
+      $("div#profile").html(this.el);
+      $('.profile-contents').hide();  // maybe do this in css -Mick
+    },
+    toggleProfile:function(e){
         $('.profile-contents').slideToggle();
-      });
-
     },
     cleanup: function() {
       this.model.off(null, null, this);
