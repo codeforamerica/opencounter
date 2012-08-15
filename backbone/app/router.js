@@ -24,7 +24,11 @@ function(app, User, Business, Answer) {
           collection:this.answers,
           // this input needs to be scrubbed if bb doesnt already - Mick
           useTemplate:"panels/"+path
+        }),
+        "section.profile": new Answer.Views.Profile({
+          collection:this.answers
         })
+
       });
 
       this.answers.reset();

@@ -21,8 +21,8 @@ function(app) {
 
   Answer.Views.Panel = Backbone.View.extend({
 
-    tagName: "div",
-    id: "panel",
+    tagName: "section",
+    className: "content",
 
     events: {
         "keypress #search": "enterSearch"
@@ -41,18 +41,47 @@ function(app) {
     },
     afterRender: function(){
       console.log("template:",this.el);
-      $("#cpan").html(this.el);
+      $("section.content").html(this.el);
     },
     cleanup: function() {
       this.model.off(null, null, this);
     },
-
     initialize: function(o) {
       this.template = o.useTemplate;
       this.collection.on("reset", this.render, this); 
       this.collection.on("change", this.render, this); 
     }
   });
+
+  Answer.Views.Profile = Backbone.View.extend({
+
+    tagName: "section",
+    className: "profile",
+    template:"profile",
+    events: {
+    },
+    beforeRender: function(){
+      console.log("template:",this.template);
+    },
+    afterRender: function(){
+      console.log("template:",this.el);
+      $("section.profile").html(this.el);
+      $('.profile-contents').hide();
+      $('.profile-toggle').click(function(e){
+        // Draw .profile-contents
+        $('.profile-contents').slideToggle();
+      });
+
+    },
+    cleanup: function() {
+      this.model.off(null, null, this);
+    },
+    initialize: function(o) {
+      this.collection.on("reset", this.render, this); 
+      this.collection.on("change", this.render, this); 
+    }
+  });
+
 
   // Return the module for AMD compliance.
   return Answer;
