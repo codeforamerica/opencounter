@@ -1,0 +1,153 @@
+        <div id="requirement_building_permit">
+          <h1>Building Permit</h1>
+          <p>Will you be doing tenant improvements or renovation?</p>
+          
+          <p class="next"><a href="#" id="yes_building_permit">Yes, I will be doing some renovation work.</a></p>
+          <p class="next" data-occupancy="non-home">No. Next: <a class="submit" href="requirement_parking">Parking &rarr;</a></p>
+          <p class="next" data-occupancy="home">No. Next: <a class="submit" href="requirement_business_license">Business License &rarr;</a></p>
+          
+          <!-- @condition YES CONSTRUCTION -->
+          <div class="conditional">
+          <p>Fill in as much as you can below.</p>
+          <form method="post" action="#" id="form_building_permit">
+            <label>
+              Permit ID
+              <input type="text" name="permit_id" placeholder="">
+            </label>
+            <label>
+              Date
+              <input type="text" name="date" placeholder="">
+            </label>
+            <label>
+              Expansion plan check due date
+              <input type="text" name="expansion_plan_check_due_date" placeholder="">
+            </label>
+            <label>
+              Business Street Address
+              <input type="text" name="business_physical_address_street" placeholder="">
+            </label>
+            <label>
+              Business Street Address (Detail)
+              <input type="text" name="business_physical_address_detail" placeholder="">
+            </label>
+            <label>
+              Business City
+              <input type="text" name="business_physical_address_city" placeholder="">
+            </label>
+            <label>
+              Business State
+              <input type="text" name="business_physical_address_state" placeholder="">
+            </label>
+            <label>
+              Business ZIP Code
+              <input type="text" name="business_physical_address_zip" placeholder="">
+            </label>
+            <label>
+              APN
+              <input type="text" name="apn" placeholder="">
+            </label>
+            <label>
+              New Square Footage
+              <input type="text" name="square_footage_new" placeholder="">
+            </label>
+            <label>
+              Role of Applicant
+              <input type="text" name="role_of_applicant" placeholder="">
+            </label>
+            <label>
+              Applicant First Name
+              <input type="text" name="applicant_first_name" placeholder="">
+            </label>
+            <label>
+              Applicant Last Name
+              <input type="text" name="applicant_last_name" placeholder="">
+            </label>
+            <label>
+              Applicant Street Address
+              <input type="text" name="applicant_address_street" placeholder="">
+            </label>
+            <label>
+              Applicant Street Address (Detail)
+              <input type="text" name="applicant_address_detail" placeholder="">
+            </label>
+            <label>
+              Applicant City
+              <input type="text" name="applicant_address_city" placeholder="">
+            </label>
+            <label>
+              Applicant State
+              <input type="text" name="applicant_address_state" placeholder="">
+            </label>
+            <label>
+              Applicant Zip Code
+              <input type="text" name="applicant_address_zip" placeholder="">
+            </label>
+            <label>
+              Applicant Phone Number
+              <input type="text" name="applicant_phone" placeholder="">
+            </label>
+            <label>
+              Applicant Email Address
+              <input type="text" name="applicant_email" placeholder="">
+            </label>
+            <label>
+              Role of Professional
+              <input type="text" name="role_of_professional" placeholder="">
+            </label>
+            <label>
+              Professional's Name
+              <input type="text" name="professional_name" placeholder="">
+            </label>
+            <label>
+              Professional's Address
+              <input type="text" name="professional_address" placeholder="">
+            </label>
+            <label>
+              Professional's Phone Number
+              <input type="text" name="professional_phone" placeholder="">
+            </label>
+            <label>
+              Professional's Email Address
+              <input type="text" name="professional_email" placeholder="">
+            </label>
+            <label>
+              Contractor License Number
+              <input type="text" name="contractor_license_num" placeholder="">
+            </label>
+            <label>
+              Occupancy Class
+              <input type="text" name="occupancy_class" placeholder="">
+            </label>
+            <label>
+              Type of Construction
+              <input type="text" name="type_of_construction" placeholder="">
+            </label>
+            <label>
+              Building Height (feet)
+              <input type="text" name="building_height_feet" placeholder="">
+            </label>
+            <label>
+              Building Height (stories)
+              <input type="text" name="building_height_stories" placeholder="">
+            </label>
+            <label>
+              Sprinklers?
+              <input type="checkbox" name="has_sprinklers"  checked="">
+            </label>
+            <label>
+              Is Quimby Fee?
+              <input type="checkbox" name="has_quimby_fee" checked="">
+            </label>
+            <label>
+              Is TIF Project?
+              <input type="checkbox" name="has_tif_project" checked="">
+            </label>
+          </form>
+          </div>
+          
+          <!-- @condition NO CONSTRUCTION -->
+          <p class="next" data-occupancy="non-home">Next: <a class="submit" href="requirement_parking">Parking &rarr;</a></p>
+          <p class="next" data-occupancy="home">Next: <a class="submit" href="requirement_business_license">Business License &rarr;</a></p>
+          <!-- @condition /NO CONSTRUCTION -->
+          
+        </div><!-- /#requirement_building_permit -->
