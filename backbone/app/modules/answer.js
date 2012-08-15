@@ -7,19 +7,19 @@ define([
 function(app) {
 
   // Create a new module.
-  var Answers = app.module();
+  var Answer = app.module();
 
   // Default model.
-  Answers.Model = Backbone.Model.extend({
+  Answer.Model = Backbone.Model.extend({
   
   });
 
   // Default collection.
-  Answers.Collection = Backbone.Collection.extend({
-    model: Answers.Model
+  Answer.Collection = Backbone.Collection.extend({
+    model: Answer.Model
   });
 
-  Answers.Views.Panel = Backbone.View.extend({
+  Answer.Views.Panel = Backbone.View.extend({
 
     tagName: "div",
     id: "panel",
@@ -55,6 +55,6 @@ function(app) {
   });
 
   // Return the module for AMD compliance.
-  return Answers;
+  return Answer;
 
 });

@@ -3,10 +3,10 @@ define([
   "app",
   "modules/user",
   "modules/business",
-  "modules/answers"
+  "modules/answer"
 ],
 
-function(app, User, Business, Answers) {
+function(app, User, Business, Answer) {
 
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
@@ -20,7 +20,7 @@ function(app, User, Business, Answers) {
     panel: function(path){
       console.log("panel: ", path);
       app.layout.setViews({
-        "#cpan": new Answers.Views.Panel({
+        "#cpan": new Answer.Views.Panel({
           collection:this.answers,
           // this input needs to be scrubbed if bb doesnt already - Mick
           useTemplate:"panels/"+path
@@ -32,7 +32,7 @@ function(app, User, Business, Answers) {
     initialize: function(){
       this.user = new User.Model();
       this.business = new Business.Model();
-      this.answers = new Answers.Collection();
+      this.answers = new Answer.Collection();
 
       app.useLayout("main").render();
 
