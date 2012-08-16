@@ -12,14 +12,14 @@ define([
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
     routes: {
-      "":"index",
       "*path":"panel"
     },
     index: function(e){
       console.log("index");
     },
     panel: function(path){
-
+      
+      if(path == ""){path="intro";}
       var sidebar =  new Navigation.Views.Sidebar({  // this might make more sense as a view on user? - Mick
         business:this.business
       });
