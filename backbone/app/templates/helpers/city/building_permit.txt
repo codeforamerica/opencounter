@@ -1,17 +1,4 @@
-<div id="requirement_building_permit">
-  <h1>Building Permit</h1>
-  <p>Will you be doing tenant improvements or renovation?</p>
-  
-  <p class="next"><a href="#" id="yes_building_permit">Yes, I will be doing some renovation work.</a></p>
-  <p class="next" data-occupancy="non-home">No. Next: <a class="submit" href="requirement_parking">Parking &rarr;</a></p>
-  <p class="next" data-occupancy="home">No. Next: <a class="submit" href="requirement_business_license">Business License &rarr;</a></p>
-  
-  <!-- @condition YES CONSTRUCTION -->
-  <div class="conditional">
-  <p>Fill in as much as you can below.</p>
-  <form method="post" action="#" id="form_building_permit">
-    <label>
-      Permit ID
+Permit ID
       <input type="text" name="permit_id" placeholder="">
     </label>
     <label>
@@ -142,12 +129,3 @@
       Is TIF Project?
       <input type="checkbox" name="has_tif_project" checked="">
     </label>
-  </form>
-  </div>
-  
-  <!-- @condition NO CONSTRUCTION -->
-  <p class="next" data-occupancy="non-home">Next: <a class="submit" href="requirement_parking">Parking &rarr;</a></p>
-  <p class="next" data-occupancy="home">Next: <a class="submit" href="requirement_business_license">Business License &rarr;</a></p>
-  <!-- @condition /NO CONSTRUCTION -->
-  
-</div><!-- /#requirement_building_permit -->

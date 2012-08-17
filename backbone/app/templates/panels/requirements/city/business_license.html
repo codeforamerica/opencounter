@@ -1,0 +1,59 @@
+<div id="requirement_business_license">
+  <h1>Business License Tax</h1>
+  <p>[@todo]</p>
+  
+  <form>
+    <label>
+      What type of business is this?
+      <input type="radio" name="business_type_class" value="class-a"> Retail, wholesale, contract, construction, or manufacturing
+      <input type="radio" name="business_type_class" value="class-b"> Services, hotels and motels, apartment houses, commercial property renting or leasing, recreation and entertainment services and facilities
+      <input type="radio" name="business_type_class" value="class-c"> Professions including, but not limited to, accountants, architects, attorneys, auctioneers, chiropractors, dentists, engineers, insurance brokers, medical/health professions, physicians, real estate brokers, security brokers, and veterinarians      
+    </label>
+    <label>
+      How many employees do you have?
+      <input type="text" name="employee_count">
+    </label>
+  </form>
+</div><!-- /#requirement_business_license -->
+
+<!-- 
+
+In order to calculate the fee, we need to know
+whether this business is Class A, Class B, or Class C.
+
+See: http://www.cityofsantacruz.com/index.aspx?page=764
+
+Class A: $145.15 base tax plus $2.55 per employee
+Class B: $145.15 base tax plus $4.95 per employee
+Class C: $145.15 base tax plus $7.40 per employee
+
+=======================================
+
+var base_tax = 145.15,
+    employees = [employee_count],
+    class = [business_type_class],
+    employee_rate,
+    total;
+
+switch(class) {
+    case 'class-a':
+        employee_rate = 2.55;
+        break;
+    case 'class-b':
+        employee_rate = 4.95;
+        break;
+    case 'class-c':
+        employee_rate = 7.40;
+        break;
+    default:
+        // throw exception
+        break;
+}
+
+// Formula from http://www.cityofsantacruz.com/index.aspx?page=764
+total = base_tax + (employee_rate * employees);
+
+// Round to nearest cent
+total = Math.round(100 * total) / 100;
+
+-->

@@ -1,0 +1,83 @@
+<div id="requirement_bida">
+  <h1>Business Improvement District Assessment</h1>
+  <p>Your Business Improvement Assessments are spent exclusively on promitng and improving the downtown area. The Assessments are collected by the City of Santa Cruz and forwarded directly to the Downtown Association of Santa Cruz.</p>
+  <form>
+    <input type="hidden" name="bida_zone" value="1||2">
+    <label>
+      Which of these business types are you?
+      <input type="radio" name="bida_type" value="1"> Retail, food
+      <input type="radio" name="bida_type" value="2"> Financial, bars, theaters
+      <input type="radio" name="bida_type" value="3"> Wholesale trade, services & professions, auto dealers
+    </label>
+    <label>
+      How many square feet is the business?
+      <input type="text" name="bida_square_footage">
+    </label>
+  </form>
+</div>
+
+<!-- 
+
+See http://www.cityofsantacruz.com/index.aspx?page=1797
+
+(Business Area X Rate [.34] X Type X Zone) + $50.00 = Annual Assessment
+Annual Assessment / 2 = Semi-Annual Assessment
+
+Calculation Example: 
+(1,000 Sq Ft) x .34 x 100% (Type 1) x 60% (Zone 2) + $50.00 = $236.00 / 2 = $118.00 Semi-Annual Assessment
+
+TYPE 1 - 100%	 RETAIL & FOOD
+TYPE 2 - 60%	 FINANCIAL, BARS & THEATERS
+TYPE 3 - 40%	 WHOLESALE TRADE, SERVICES & PROFESSIONS, AUTO DEALERS
+ 	 
+ZONE 1 - 100%	 CAP OF 10,000 SQ FT
+ZONE 2 - 60%	 CAP OF 10,000 SQ FT
+
+=======================================
+
+var zone,
+    type,
+    rate = 0.34,
+    annual_assessment,
+    semi_annual_assessment;
+
+switch(bida_zone) {
+    case 1:
+        zone = 1.0; /* 100% */
+        break;
+    case 2:
+        zone = 0.6; /* 60% */
+        break;
+    default:
+        // throw an exception
+        break;
+}
+
+if (bida_square_footage < 10000) {
+    switch(bida_type) {
+        case 1:
+            type = 1.0;
+            break;
+        case 2:
+            type = 0.6;
+            break;
+        case 3:
+            type = 0.4;
+            break;
+        default:
+            // throw an exception
+            break;
+    }
+} else {
+    // throw an exception
+}
+
+// Calculate annual assessment and round to nearest cent
+annual_assessment = (square_footage * rate * type * zone) + 50);
+annual_assessment = Math.round(100 * annual_assessment) / 100;
+
+// Calculate semi-annual assessment and round to nearest cent
+semi_annual_assessment = annual_assessment / 2;
+semi_annual_assessment = Math.round(100 * semi_annual_assessment) / 100;
+
+-->
