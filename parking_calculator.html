@@ -964,12 +964,18 @@
         var test_spaces = testAccuracy(form_id, inputs);
         
         // Build the display text
+        if (isNaN(spaces)) {
+          var display_text = "Please enter only numbers."
+        } 
+        else {
         var display_text = "<p>You must provide "
                             + spaces
                             + " car parking space"
                             + ((spaces !== 1) ? "s" : "")
                             + ".</p>";
+        }
 
+        // Build the test text
         var test_text = "Spaces should be: " + test_spaces + "<br>Test values are: 0, 1, 513 and for fitness, 15001.</br>";
         
         // Show the display text
