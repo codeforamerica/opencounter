@@ -7,7 +7,7 @@ define([
   "modules/navigation"
 ],
 
-       function(app, User, Business, Answer, Navigation) {
+function(app, User, Business, Answer, Navigation) {
 
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
