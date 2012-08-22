@@ -1,10 +1,6 @@
 require 'spec_helper'
 
-describe BusinessController do
-
-  before(:each) do
-    @biz = FactoryGirl.create(:business)
-  end
+describe BusinessesController do
 
   describe "#create" do
     it "creates a poll" do
