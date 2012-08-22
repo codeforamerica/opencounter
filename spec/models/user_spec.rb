@@ -1,5 +1,5 @@
 require 'spec_helper'
 
 describe User do
-  it { should have_many(:field_answers) }
+  it { should have_many(:businesses) }
 end
