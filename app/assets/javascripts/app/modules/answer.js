@@ -43,7 +43,7 @@ function(app) {
     addAnswer:function(answer){
       var models = this.collection.where({name:answer.name})
       if(models.length > 0){
-        models[0].value = answer.value;
+        models[0].set("value",answer.value);
       }else{
         this.collection.add({name:answer.name, value:answer.value});
       }
