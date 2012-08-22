@@ -23,17 +23,15 @@ function(app, Router) {
     // Get the absolute anchor href.
     var href = $(this).attr("href");
     
-    // If the href exists and is a hash route, run it through Backbone.
-    if (href && href.indexOf("#") === 0) {
-      // Stop the default event to ensure the link will not cause a page
-      // refresh.
-      evt.preventDefault();
+    // Stop the default event to ensure the link will not cause a page
+    // refresh.
+    evt.preventDefault();
 
-      // `Backbone.history.navigate` is sufficient for all Routers and will
-      // trigger the correct events. The Router's internal `navigate` method
-      // calls this anyways.  The fragment is sliced from the root.
-      Backbone.history.navigate(href, true);
-    }
+    // `Backbone.history.navigate` is sufficient for all Routers and will
+    // trigger the correct events. The Router's internal `navigate` method
+    // calls this anyways.  The fragment is sliced from the root.
+    Backbone.history.navigate(href, true);
+
   });
 
 });

@@ -35,16 +35,14 @@ function(app, User, Business, Answer, Navigation) {
         "div#nav-main": sidebar
       });
 
-      this.answers.reset();
-      //this.business.change();
-      sidebar.render();
+      app.layout.render();
     },
     initialize: function(){
       this.user = new User.Model();
       this.business = new Business.Model();
       this.answers = new Answer.Collection();
+      app.useLayout("main")
 
-      app.useLayout("main").render();
 
       //these should be a collection
     }});

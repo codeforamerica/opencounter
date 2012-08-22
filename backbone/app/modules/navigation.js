@@ -73,7 +73,7 @@ function(app) {
       },
       
       cleanup: function() {
-          this.model.off(null, null, this);
+          this.business.off(null, null, this);
       },
       
       initialize: function(o) {

@@ -44,7 +44,7 @@ function(app) {
       $("div#content").html(this.el);
     },
     cleanup: function() {
-      this.model.off(null, null, this);
+      this.collection.off(null, null, this);
     },
     initialize: function(o) {
       this.template = o.useTemplate;
@@ -73,7 +73,7 @@ function(app) {
         $('.profile-contents').slideToggle();
     },
     cleanup: function() {
-      this.model.off(null, null, this);
+      this.collection.off(null, null, this);
     },
     initialize: function(o) {
       this.collection.on("reset", this.render, this); 
