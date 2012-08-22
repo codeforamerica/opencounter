@@ -1,6 +1,7 @@
 Opencounter::Application.routes.draw do
   resources :users, :except => :index
   resources :field_answers
+  resources :businesses
 
   root :to => 'panels#intro'
   
