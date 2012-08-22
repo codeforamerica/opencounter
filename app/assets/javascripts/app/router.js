@@ -21,12 +21,12 @@ function(app, User, Business, Answer, Navigation) {
       
       if(path == ""){path="intro";}
       var sidebar =  new Navigation.Views.Sidebar({  // this might make more sense as a view on user? - Mick
-        business:this.business
+        business:this.business,
+        answers:this.answers
       });
       app.layout.setViews({
         "div#panel": new Answer.Views.Panel({
           collection:this.answers,
-          // this input needs to be scrubbed if bb doesnt already - Mick
           useTemplate:"panels/"+path
         }),
         "div#profile": new Answer.Views.Profile({
@@ -43,8 +43,6 @@ function(app, User, Business, Answer, Navigation) {
       this.answers = new Answer.Collection();
       app.useLayout("main")
 
-
-      //these should be a collection
     }});
   return Router;
 

@@ -1,23 +1,24 @@
 <div id="info_applicant">
-  <h1>About [if owner]you[else]the owner[/if]</h1>
+
+  <h1>About <% if(answers.is_owner == "true"){ %>You <% }else{ %> the Owner <% } %></h1>
   <form method="post" action="#" id="form_info_applicant">
     <label>
-      What is [if owner]your[else]the owner&rsquo;s[/if] first name?
+      What is <% if(answers.is_owner == "true"){ %>your<% }else{ %>the owner&rsquo;s<% } %> first name?
       <input type="text" name="applicant_first_name" placeholder="">
     </label>
     <label>
-      What is [if owner]your[else]the owner&rsquo;s[/if] last name?
+      What is <% if(answers.is_owner == "true"){ %>your<% }else{ %>the owner&rsquo;s<% } %> last name?
       <input type="text" name="applicant_last_name" placeholder="">
     </label>
     <label>
-      What is [if owner]your[else]the owner&rsquo;s[/if] email address?
+      What is <% if(answers.is_owner == "true"){ %>your<% }else{ %>the owner&rsquo;s<% } %> email address?
       <input type="text" name="applicant_email" placeholder="">
     </label>
     <label>
-      What is [if owner]your[else]the owner&rsquo;s[/if] phone number?
+      What is <% if(answers.is_owner == "true"){ %>your<% }else{ %>the owner&rsquo;s<% } %> phone number?
       <input type="text" name="applicant_phone" placeholder="(###) ###-####">
     </label>
-    <p class="next">Next, <a class="submit" href="/info/business">tell us about [if owner]your[else]the[/if] business &rarr;</a></p>
+    <p class="next">Next, <a class="submit" href="/info/business">tell us about <% if(answers.is_owner == "true"){ %>your<% }else{ %>the<% } %> business &rarr;</a></p>
   </form>
 </div><!-- /#info_applicant -->
 
