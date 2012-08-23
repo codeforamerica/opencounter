@@ -16,11 +16,14 @@ class BusinessController < ApplicationController
   # PUT /business/1
   # PUT /business/1.json
   # Expected structure: 
-  # {"business": { "answers": [{ "key": "value"}, { "key": "value"}, ...]}}
+  # {"business": {"name": "value"}, "answers": { "key": "value", "key": "value"}}
+  # TODO: change structure over to nested, make sure to copy params after pulling out answers so @biz.update_attrs doesn't fail
+  # OR push everything to biz and override the business.answers setter if rails does that
   def update
     @biz = Business.find(params[:id])
     errors = [] 
-    errors << @biz.save_answers(params[:answers])
+    errors << @biz.save_answers(params[:answers]) if params[:answers]
+    errors << @biz.update_attributes(params[:business]) if params[:business]
 
     respond_to do |format|
       if errors.empty?
