@@ -7,6 +7,7 @@ development: &DEVELOPMENT
   adapter: postgresql
   database: opencounter_dev
   encoding: utf8
+  host: localhost
   user: postgres
   pool: 5
   timeout: 5000

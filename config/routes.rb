@@ -5,8 +5,7 @@ Opencounter::Application.routes.draw do
 
   root :to => 'panels#intro'
   
-  match ':action' => 'panels#:action'
-
+  match "*path" => "panels#intro"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

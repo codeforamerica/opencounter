@@ -1,79 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+  <head>
 
-<html>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>OpenCounter - Start your business in Santa Cruz, CA</title>
 
-<head>
-  <title>OpenCounter - Start your business in Santa Cruz, CA</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700">
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
+    <!-- Application styles. -->
+    <%= stylesheet_link_tag   "application" %>
 
-<body>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+  </head>
 
-  <div class="container">
+  <body>
+  <!-- Main container. -->
+    <div role="main" id="main"></div>
 
-    <header><div class="inner">
-      
-      <div class="masthead">
-        <h1>OpenCounter</h1>
-        <p>Start your business in <span class="city">Santa Cruz, CA</span>.</p>
-      </div>
-      
-      <hr>
-      
-      <nav class="nav-main">
-        <%= render '/layouts/nav' %>
-      </nav><!-- /.nav-main -->
-    
-    </div></header><!-- /.inner -->
-    
-    <hr>
-    
-    <section class="panel">
-  
-      <section class="profile">
-        <h1>Your Profile</h1>
-        <div class="progress">
-          <h3>% Complete</h3>
-        </div>
-        <div class="forms-and-fees">
-          <h3>Forms &amp; Fees</h3>
-        </div>
-      </section><!-- /.profile -->
-
-      <hr>
-
-      <section class="content">
-
-        <%= yield %>
-
-      </section><!-- /.content -->
-      
-    </section><!-- /.panel -->
-  
-    <hr>
-  
-    <nav class="nav-utility">
-      <ul>
-        <li><a href="#help">Get Help</a></li>
-        <li><a href="#feedback">Give Feedback</a></li>
-        <li><a href="#credits">About OpenCounter</a></li>
-      </ul>
-    </nav><!-- /.nav-utility -->
-
-  </div><!-- /.container -->
-
-  <script type="text/javascript" src="assets/js/jquery-1.7.2.min.js"></script>
-  <script type="text/javascript">
-(function(){
-
-})();
-  </script>
-
-</body>
-
+    <!-- Application source. -->
+    <script data-main="/app/config" src="/assets/libs/require.js"></script>
+    <%= requirejs_include_tag "application" %>
+<!--    <script data-main="/app/config" src="/assets/js/libs/require.js"></script> -->
+  </body>
 </html>

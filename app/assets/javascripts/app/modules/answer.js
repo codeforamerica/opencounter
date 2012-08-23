@@ -25,26 +25,42 @@ function(app) {
     className: "content",
 
     events: {
-        "keypress #search": "enterSearch"
+      "change input": "updatedInput",
+      "click a": "checkForAnswer"
     },
-    enterSearch: function(ev){
-      
+    updatedInput:function(ev){
+      var name = $(ev.target).attr("name");
+      var value = $(ev.target).val();
+      this.addAnswer({name:name, value:value});
     },
-    findLocation: function(ev) {
-      var model = this.model;
-
-      //do search, and trigger add location event
-      //app.router.go("org", org, "user", name);
+    checkForAnswer:function(ev){
+      if($(ev.target).is("[data-answer]")){
+        var name = $(ev.target).attr("name");
+        var value = $(ev.target).attr("data-answer");
+        this.addAnswer({name:name, value:value});
+      }
     },
-    beforeRender: function(){
-      console.log("template:",this.template);
+    addAnswer:function(answer){
+      var models = this.collection.where({name:answer.name})
+      if(models.length > 0){
+        models[0].set("value",answer.value);
+      }else{
+        this.collection.add({name:answer.name, value:answer.value});
+      }
+    },
+    serialize: function() {
+      var model, answers={};
+      for(m in this.collection.models){
+        model = this.collection.models[m];
+        answers[model.get("name")] = model.get("value");
+      }
+      return {answers:answers};
     },
     afterRender: function(){
-      console.log("template:",this.el);
       $("div#content").html(this.el);
     },
     cleanup: function() {
-      this.model.off(null, null, this);
+      this.collection.off(null, null, this);
     },
     initialize: function(o) {
       this.template = o.useTemplate;
@@ -65,15 +81,14 @@ function(app) {
       console.log("template:",this.template);
     },
     afterRender: function(){
-      console.log("template:",this.el);
-      $("div#profile").html(this.el);
+
       $('.profile-contents').hide();  // maybe do this in css -Mick
     },
     toggleProfile:function(e){
         $('.profile-contents').slideToggle();
     },
     cleanup: function() {
-      this.model.off(null, null, this);
+      this.collection.off(null, null, this);
     },
     initialize: function(o) {
       this.collection.on("reset", this.render, this); 
