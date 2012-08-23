@@ -1,8 +1,89 @@
 <div id="requirement_utility_services">
   <h1>Utility Services</h1>
-  <p>[@todo]</p>
-  
+  <p>You've told us you're working out of a commercial location, which means you'll need utility service.</p>
+  <h3>Water, Sewage, and Trash Service</h3>
+  <p>These are all provided by the City of Santa Cruz, and we'll help you get your application in with this guide to save you a trip to City Hall.</p>
+  <p>For trash service, you must place the container on private property unless street access is permitted by the Public Works Department.</p>
+  <h3>Gas and Power</h3>
+  <p>In our City, gas and power is supplied by PG&E. You'll have to contact them on your own if your landlord or building owner hasn't set up a separate account and meter for you.</p>
+
   <form>
+    <label>
+      Business Name
+      <input type="text" name="business_name">
+    </label>
+    <label>
+      Service Address (street, city, zip)
+      <input type="text" name="business_physical_address_street">
+      <input type="text" name="business_physical_address_city">
+      <input type="text" name="business_phyiscal_address_zip">
+    </label>
+    <label>
+      Previous Service Address in Santa Cruz within the last 24 months (optional):
+      <input type="text" name="business_prev_service_adddress_street">
+      <input type="text" name="business_prev_service_address_city">
+      <input type="text" name="business_prev_service_address_zip">
+    </label>
+    <label>
+      Business Phone
+      <input type="text" name="business_phone">
+    </label>
+    <label>
+      Business Fax
+      <input type="text" name="business_fax">
+    </label>
+    <label>
+      Business Email
+      <input type="text" name="business_email">
+    </label>
+    <label>
+      Date to begin service
+      <input type="date">
+    </label>
+    <label>
+      Customer Name (last, first, middle initial)
+      <input type="text" name="owner_name">
+    </label>
+    <label>
+      Customer Home Address (street, city, state, zip)
+      <input type="text" name="owner_physical_address_street">
+      <input type="text" name="owner_physical_address_city">
+      <input type="text" name="owner_physical_address_state">
+      <input type="text" name="owner_physical_address_zip">
+    </label>
+    <label>
+      Customer Billing Address (street, city, state, zip)
+      <input type="text" name="owner_billing_address_street">
+      <input type="text" name="owner_billing_address_city">
+      <input type="text" name="owner_billing_address_state">
+      <input type="text" name="owner_billing_address_zip">
+    </label>
+    <label>
+      Home Phone
+      <input type="text" name="owner_home_phone">
+    </label>
+    <label>
+      Daytime Phone
+      <input type="text" name="owner_daytime_phone">
+    </label>
+    <label>
+      Tax ID or Driver's License:
+      <input type="text" name="tax_id">
+    </label>
+    <label>
+      Garbage Service:
+        I would like <input type="text" name="trash_can_20_gal_qty"> 20 gallon garbage cans ($16.16/mo),
+        <input type="text" name="trash_can_32_gal_qty"> 32 gallon garbage cans ($26.05/mo), and 
+        <input type="text" name="trash_can_68_gal_qty"> 68 gallon garbage can ($55.84/mo).
+    </label>
+    <label>
+      Containers:
+        <input type="text" name="trash_container_1_cubic_yard_qty"> 1-cubic yard container ($160.42 per container per pickup) <input type="text" name="trash_container_1_cubic_yard_pickups">
+        <input type="text" name="trash_container_2_cubic_yard_qty"> 2-cubic yard container ($239.11 per container per pickup) <input type="text" name="trash_container_2_cubic_yard_pickups">
+        <input type="text" name="trash_container_4_cubic_yard_qty"> 4-cubic yard container ($408.94 per container per pickup) <input type="text" name="trash_container_4_cubic_yard_pickups">
+        <input type="text" name="trash_container_6_cubic_yard_qty"> 6-cubic yard container ($578.77 per container per pickup) <input type="text" name="trash_container_6_cubic_yard_pickups">
+        Where will you be placing the container? Street placement is not allowed unless approved in advance by the Public Works Department.
+    </label>
   </form>
 </div><!-- /#requirement_utility_services -->
 
