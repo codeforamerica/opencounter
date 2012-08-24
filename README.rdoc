@@ -44,10 +44,36 @@ OpenCounter is alpha software. Use at your own risk.
 
 TBD
 
-== Development Notes (Disregard)
+== Contributing
 
-users  (user can have multiple biz, and biz can have multiple users)
-businesses (has many field answers)
-fieldanswers (linked to biz, and field)
-forms (which pdf to fill out)
-fields (forms have fields, a field can be on multiple forms)
+In the spirit of [free software][free-sw], **everyone** is encouraged to help
+improve this project.
+
+[free-sw]: http://www.fsf.org/licensing/essays/free-sw.html
+
+Here are some ways *you* can contribute:
+
+* by using alpha, beta, and prerelease versions
+* by reporting bugs
+* by suggesting new features
+* by translating to a new language
+* by writing or editing documentation
+* by writing specifications
+* by writing code (**no patch is too small**: fix typos, add comments, clean up
+  inconsistent whitespace)
+* by refactoring code
+* by reviewing patches
+
+== Submitting a Pull Request
+
+1. Fork the project.
+2. Create a topic branch.
+3. Implement your feature or bug fix.
+6. Commit and push your changes.
+7. Submit a pull request.
+
+== Copyright
+
+Copyright (c) 2012 Code for America. See [LICENSE][] for details.
+
+[license]: https://github.com/codeforamerica/cfa_template/blob/master/LICENSE.mkd
