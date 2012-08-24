@@ -1,5 +1,7 @@
 <div id="location_home_occ">
+  
   <h1>Working From Home</h1>
+  
   <p>You can work from home as long as you're not negatively impacting the neighborhood by increasing visitors or traffic, creating a lot of noise, or working with hazardous materials. You also can't have a sign on your home advertising the business.</p>
   <p>More precisely: work-from-home businesses &mdash; known as "home occupations" &mdash; need to follow the rules outlined in section <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.160">24.10.160</a> of the city of Santa Cruz's Municipal Code.</p>
   <p class="toggle">Read Santa Cruz Municipal Code 24.10.160. It won't take long! We'll wait.</p>
@@ -43,7 +45,7 @@
     </label>
     <label>
       City
-      <input type="text" name="business_physical_address_city" placeholder="City">,
+      <input type="text" name="business_physical_address_city" placeholder="City">
     </label>
     <label>
       State
@@ -70,7 +72,7 @@
       </label>
       <label>
         City
-        <input type="text" name="business_mailing_address_city" placeholder="City">,
+        <input type="text" name="business_mailing_address_city" placeholder="City">
       </label>
       <label>
         State
@@ -84,7 +86,7 @@
     <!-- /@condition -->
 
     <p>Does your business comply with section 24.10.160 of the city of Santa Cruz Municipal Code?</p>
-    <p class="next"><a class="submit" href="/requirements">Yep, my work-from-home business complies with all these rules &rarr;</a></p>
-    <p class="next"><a class="submit" href="/help">Uh-oh. Sounds like I might not be able to operate this business from home. Help! &rarr;</a></p>
+    <p class="next"><a class="submit" href="/requirements">Yep, <%= (answers.is_owner === "true") ? "my" : "this" %> work-from-home business complies with all these rules &rarr;</a></p>
+    <p class="next"><a class="submit" href="/help">Uh-oh. Sounds like <%= (answers.is_owner === "true") ? "I" : "the owner" %> might not be able to operate this business from home. Help! &rarr;</a></p>
   </form>
 </div><!-- /#location_home_occ -->
