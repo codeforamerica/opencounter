@@ -1,23 +1,21 @@
 <div id="info_business">
-  <h1>About [if owner]you[else]the[/if] business</h1>
-
-  <p>[if owner]Nice to meet you<span class="first-name"></span>![/if]</p>
+  <h1>About <%= (answers.is_owner === "true") ? "you" : "the" %> business</h1>
 
   <form method="post" action="#" id="form_info_business">
     
     <label>
-      What will [if owner]your[else]the[/if] business be called?
-      <input type="text" name="business_name" placeholder="Acme, Inc.">
+      What will <%= (answers.is_owner === "true") ? "your" : "the" %> business be called?
+      <input type="text" name="business_name" placeholder="">
     </label>
 
     <label>
-      What will [if owner]your[else]the[/if] business do?
+      What will <%= (answers.is_owner === "true") ? "your" : "the" %> business do?
       <input type="text" id="business_code" name="business_code" placeholder="e.g. Auto Parts">
       <div id="business-type-container" style="position:absolute; width: 500px;"></div>
     </label>
     
     <label>
-      What is [if owner]your[else]the[/if] business&rsquo;s legal structure?
+      What is <%= (answers.is_owner === "true") ? "your" : "the" %> business&rsquo;s legal structure?
       <select name="business_structure">
         <option value="unknown">Not sure, don&rsquo;t know, or haven&rsquo;t decided yet</option>
         <option value="individual">an Individual (Sole Proprietorship)</option>
@@ -36,7 +34,7 @@
     </label>
 
     <label>
-      [if owner]Are you[else]Is [applicant_name][/if] this business&rsquo;s sole owner?
+      <% if (answers.is_owner === "true") { %>Are you<% } else { %> Is <%= answers.owner_first_name %>  <%= answers.owner_last_name %> <% } %> this business&rsquo;s sole owner?
       <input type="checkbox" name="applicant_is_sole_owner" value="y" checked="checked"> Yes
     </label>
 
@@ -50,9 +48,9 @@
           <th>Address</th>
         </tr>
         <tr>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
+          <td><input type="text" name=""></td>
+          <td><input type="text" name=""></td>
+          <td><input type="text" name=""></td>
         </tr>
       </table>
     </div>
