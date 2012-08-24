@@ -345,6 +345,26 @@ td {
     vertical-align: top;
 }
 
+/* Custom table styles */
+
+
+
+th, td {
+    border-bottom: 1px solid #CCC;
+    font-size: 85%;
+    padding: 0.25em 10px;
+}
+
+td {
+    background: #EEE;
+}
+
+thead th {
+  background: #CCC;
+  text-align: left;
+}
+
+
 
 /* ==========================================================================
    Chrome Frame Prompt
@@ -448,7 +468,7 @@ body {
   display: inline-block;
   width: 209px;
   height: 38px;
-  background: transparent url(/assets/img/opencounter_logo.png);
+  background: transparent url(/assets/opencounter_logo.png);
   text-indent: -99em;
   margin: 0;
 }
