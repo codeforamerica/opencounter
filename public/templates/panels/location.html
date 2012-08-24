@@ -1,6 +1,6 @@
 <div id="location">
-  <h1>[if owner]Your[else]the[if] business&rsquo;s location</h1>
-  <h3>Where will [if owner]your[else]this[/if] business operate from?</h3>
-  <p class="next"><a href="/location/home" data-occupancy="home" data-zoning-status="home">[if owner]I'll[else][applicant_name]'ll[/if] be working from home &rarr;</a></p>
-  <p class="next"><a href="/location/commercial" data-occupancy="non-home" data-zoning-status="">[if owner]I'll[else][applicant_name]'ll[/if] be working out of a commercial space &rarr;</a></p>
+  <h1><%= (answers.is_owner === "true") ? "Your" : "The" %> business&rsquo;s location</h1>
+  <h3>Where will <%= (answers.is_owner === "true") ? "your" : "this" %> business operate from?</h3>
+  <p class="next"><a href="/location/home" data-occupancy="home" data-zoning-status="home"><%= (answers.is_owner === "true") ? "I" : "The owner" %> will be working from home &rarr;</a></p>
+  <p class="next"><a href="/location/commercial" data-occupancy="non-home" data-zoning-status=""><%= (answers.is_owner === "true") ? "I" : "The owner" %> will be working out of a commercial space &rarr;</a></p>
 </div><!-- /#location -->
