@@ -21,10 +21,9 @@ test:
 
 production:
   adapter: postgresql
-  database: opencounter
-  encoding: utf8
-  host: localhost
-  user: postgres
+  database: opencounter_prod
+  encoding: unicode
   pool: 5
   timeout: 5000
+
 
