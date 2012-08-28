@@ -48,3 +48,5 @@ end
 
 # To use Formtastic, a Rails form builder plugin
 gem 'formtastic'
+
+gem 'csv-mapper'
