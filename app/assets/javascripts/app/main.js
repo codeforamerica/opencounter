@@ -52,15 +52,22 @@ function(app, Router) {
   $(document).on("click", "a:not([data-bypass])", function(evt) {
     // Get the absolute anchor href.
     var href = $(this).attr("href");
-    
-    // Stop the default event to ensure the link will not cause a page
-    // refresh.
-    evt.preventDefault();
+    var protocol = this.protocol + "//";
 
-    // `Backbone.history.navigate` is sufficient for all Routers and will
-    // trigger the correct events. The Router's internal `navigate` method
-    // calls this anyways.  The fragment is sliced from the root.
-    Backbone.history.navigate(href, true);
+    // Ensure the protocol is not part of URL, meaning it's relative.
+    if (href && href.slice(0, protocol.length) !== protocol &&
+        href.indexOf("javascript:") !== 0  &&
+         href.indexOf("mailto:") !== 0) {
+    
+      // Stop the default event to ensure the link will not cause a page
+      // refresh.
+      evt.preventDefault();
+
+      // `Backbone.history.navigate` is sufficient for all Routers and will
+      // trigger the correct events. The Router's internal `navigate` method
+      // calls this anyways.  The fragment is sliced from the root.
+      Backbone.history.navigate(href, true);
+    }
 
   });
 
