@@ -48,6 +48,17 @@ function(app) {
         this.collection.add({name:answer.name, value:answer.value});
       }
     },
+    afterRender: function(){
+      $("div#content").html(this.el);
+      var self = this;
+      this.$el.find("input").each(function(i, el){
+        el = $(el);
+        var models = self.collection.where({name:el.attr("name")});
+        if(models.length > 0){
+          el.val(models[0].get("value"));
+        }
+      });
+    },
     serialize: function() {
       var model, answers={};
       for(m in this.collection.models){
@@ -55,9 +66,6 @@ function(app) {
         answers[model.get("name")] = model.get("value");
       }
       return {answers:answers};
-    },
-    afterRender: function(){
-      $("div#content").html(this.el);
     },
     cleanup: function() {
       this.collection.off(null, null, this);
