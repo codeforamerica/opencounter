@@ -3,6 +3,8 @@ Opencounter::Application.routes.draw do
   resources :field_answers
   resources :businesses
 
+  match "api/lookup/sic" => "sic#index"
+
   root :to => 'panels#intro'
   
   match "*path" => "panels#intro"
