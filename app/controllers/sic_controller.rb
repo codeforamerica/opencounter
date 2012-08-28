@@ -13,7 +13,7 @@ class SicController < ApplicationController
     jarow = FuzzyStringMatch::JaroWinkler.create( :native )
 
     results.each_with_index { |result, index  |
-      query_distances[index] = jarow.getDistance(query, result.industry_subtype)
+      query_distances[index] = jarow.getDistance(query, result.subtype + result.industry)
     }
 
     @response = results[query_distances.index(query_distances.max)]
