@@ -7,6 +7,8 @@ gem 'rails', '3.2.6'
 
 gem 'pg'
 
+gem 'thin'
+
 gem 'jquery-rails'
 gem 'requirejs-rails'
 
@@ -38,6 +40,8 @@ group :test, :development do
 
   # To use debugger
   gem 'debugger'
+  
+  gem 'foreman'
 end
 
 # To use ActiveModel has_secure_password
