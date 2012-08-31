@@ -1,0 +1,33 @@
+<div data-parking-district="downtown">
+  <h3>Downtown Businesses</h3>
+  <p>If your business is downtown, you don't need to provide any parking spaces, but you will need to pay a Parking Deficiency Fee.</p>
+  <label>
+    Business type
+    <select name="parking_proptype">
+      <option value="APARTMENT">Apartment</option>
+      <option value="DOCTOR">Doctor or Dentist</option>
+      <option value="MERCANTILE">Mercantile / Professional</option>
+      <option value="FURNITURE">Furniture Store</option>
+      <option value="SERVICE">Service Area/Warehouse</option>
+    </select>
+  </label>
+  <% if(answers.parking_proptype === "DOCTOR"){  %>
+  <p>Doctors and Dentists</p>
+  <label>
+    Practitioners
+    <input type="text" name="parking_doctor_count" value="1"/>
+  </label>
+  <% } %>
+  <label>
+    Size of Property
+    <input name="parking_size_existing" type="text" />&nbsp;<label><%= answers.parking_units %></label>
+  </label>
+  <label>
+    Existing Spaces
+    <input name="parking_spaces_existing" type="text" value="0"/>
+  </label>
+  <p><span class="calculated">Fill out form to calculate</span> required spaces.</p>
+  <p>Estimated parking deficiency fee:
+    <span class="fee">$<%= answers.parking_fee  %></span>
+  </p>
+</div>

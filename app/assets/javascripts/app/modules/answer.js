@@ -1,10 +1,11 @@
 define([
   // Application.
-  "app"
+  "app",
+  "modules/fees/parking"
 ],
 
 // Map dependencies from above array.
-function(app) {
+function(app, Parking) {
 
   // Create a new module.
   var Answer = app.module();
@@ -16,7 +17,24 @@ function(app) {
 
   // Default collection.
   Answer.Collection = Backbone.Collection.extend({
-    model: Answer.Model
+    model: Answer.Model,
+    addAnswer: function(key, val){
+      var m = this.where({"name": key});
+      if(m.length > 0){
+        m[0].set("value", val);
+      }else{
+        this.add({name:key, value:val});
+      }
+    },
+    getAnswer: function(key, val){
+      var m = this.where({"name": key});
+      if(m.length > 0){
+        return m[0].get("value");
+      }else{
+        return val;
+      }
+    }
+
   });
 
   Answer.Views.Panel = Backbone.View.extend({
@@ -47,6 +65,10 @@ function(app) {
       }else{
         this.collection.add({name:answer.name, value:answer.value});
       }
+    },
+    beforeRender: function(){
+      this.insertView("div.fee-calc-parking", 
+                     new Parking.Views.Calculator({collection:this.collection}));
     },
     afterRender: function(){
       $("div#content").html(this.el);
