@@ -1,9 +1,6 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
-    RubyInline (3.11.3)
-      ZenTest (~> 4.3)
-    ZenTest (4.8.2)
     actionmailer (3.2.6)
       actionpack (= 3.2.6)
       mail (~> 2.4.4)
@@ -72,9 +69,7 @@ GEM
       thor (>= 0.13.6)
     formtastic (2.2.1)
       actionpack (>= 3.0)
-    fuzzy-string-match (0.9.4)
-      RubyInline (>= 3.8.6)
-      RubyInline (>= 3.8.6)
+    fuzzy-string-match_pure (0.9.4)
     has_scope (0.5.1)
     hike (1.2.1)
     i18n (0.6.0)
@@ -183,7 +178,7 @@ DEPENDENCIES
   faker
   foreman
   formtastic
-  fuzzy-string-match
+  fuzzy-string-match_pure
   inherited_resources
   jquery-rails
   pg

@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source :rubygems
 
 gem 'rails', '3.2.6'
 
@@ -18,7 +18,7 @@ gem 'inherited_resources'
 gem 'formtastic'
 
 gem 'csv-mapper'
-gem 'fuzzy-string-match'
+gem 'fuzzy-string-match_pure'
 
 # Gems used only for assets and not required
 # in production environments by default.
