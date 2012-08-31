@@ -456,12 +456,13 @@ body {
 
 .branding {
   background: #33B6E6;
-  padding: 1em 5%;
+  padding: 17px 5%;
   z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  height: 30px;
 }
 
 .branding h1 {
@@ -490,9 +491,13 @@ body {
   position: fixed;
   width: 20%;
   left: 5%;
-  top: 15%;
+  top: 81px;
   height: 100%;
   z-index:1;
+}
+
+#nav-main {
+  min-height: 500px;
 }
 
 .nav-main ul {
