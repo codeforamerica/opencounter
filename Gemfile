@@ -12,6 +12,12 @@ gem 'requirejs-rails'
 
 gem 'inherited_resources'
 
+# To use Formtastic, a Rails form builder plugin
+gem 'formtastic'
+
+gem 'csv-mapper'
+gem 'fuzzy-string-match'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -29,6 +35,9 @@ group :test, :development do
   gem "factory_girl_rails"
   gem "shoulda-matchers"
   gem "faker"
+
+  # To use debugger
+  gem 'debugger'
 end
 
 # To use ActiveModel has_secure_password
@@ -43,11 +52,4 @@ end
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-# gem 'debugger'
 
-# To use Formtastic, a Rails form builder plugin
-gem 'formtastic'
-
-gem 'csv-mapper'
-gem 'fuzzy-string-match'
