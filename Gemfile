@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source :rubygems
 
 gem 'rails', '3.2.6'
 
@@ -7,10 +7,18 @@ gem 'rails', '3.2.6'
 
 gem 'pg'
 
+gem 'thin'
+
 gem 'jquery-rails'
 gem 'requirejs-rails'
 
 gem 'inherited_resources'
+
+# To use Formtastic, a Rails form builder plugin
+gem 'formtastic'
+
+gem 'csv-mapper'
+gem 'fuzzy-string-match_pure'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,6 +37,11 @@ group :test, :development do
   gem "factory_girl_rails"
   gem "shoulda-matchers"
   gem "faker"
+
+  # To use debugger
+  gem 'debugger'
+  
+  gem 'foreman'
 end
 
 # To use ActiveModel has_secure_password
@@ -43,11 +56,6 @@ end
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-# gem 'debugger'
-
-# To use Formtastic, a Rails form builder plugin
-gem 'formtastic'
-
 gem 'csv-mapper'
 gem 'fuzzy-string-match_pure'
+
