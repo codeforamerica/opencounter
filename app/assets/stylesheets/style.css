@@ -496,10 +496,6 @@ body {
   z-index:1;
 }
 
-#nav-main {
-  min-height: 500px;
-}
-
 .nav-main ul {
   overflow: auto;
   position: relative;
