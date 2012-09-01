@@ -50,4 +50,4 @@ end
 gem 'formtastic'
 
 gem 'csv-mapper'
-gem 'fuzzy-string-match'
+gem 'fuzzy-string-match_pure'

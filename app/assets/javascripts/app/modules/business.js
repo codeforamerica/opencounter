@@ -14,9 +14,8 @@ function(app) {
   
   });
 
-  // Default collection.
-  Business.Collection = Backbone.Collection.extend({
-    model: Business.Model
+  Business.TypeModel = Backbone.Model.extend({
+  
   });
 
   // Return the module for AMD compliance.

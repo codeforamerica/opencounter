@@ -3,7 +3,7 @@ define([
   "jquery",
   "lodash",
   "backbone",
-
+  "../libs/bootstrap-typeahead",
   // Plugins.
   "plugins/backbone.layoutmanager"
 ],
