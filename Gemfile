@@ -44,6 +44,10 @@ group :test, :development do
   gem 'foreman'
 end
 
+group :development do
+  gem 'heroku'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
