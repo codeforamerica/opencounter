@@ -2,17 +2,18 @@
 require.config({
 
   // Initialize the application with the main application file.
-  deps: ["main"],
-
+  //deps: ["main"],
+  baseUrl: "/assets/app/",
   paths: {
     // JavaScript folders.
-    libs: "../assets/js/libs",
-    plugins: "../assets/js/plugins",
+    libs: "../libs",
+    plugins: "../plugins",
 
     // Libraries.
-    jquery: "../assets/js/libs/jquery",
-    lodash: "../assets/js/libs/lodash",
-    backbone: "../assets/js/libs/backbone"
+    jquery: "../libs/jquery",
+    lodash: "../libs/lodash",
+    backbone: "../libs/backbone",
+    typeahead: "../libs/bootstrap-typeahead"
   },
 
   shim: {

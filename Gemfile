@@ -60,4 +60,6 @@ end
 # Deploy with Capistrano
 # gem 'capistrano'
 
+gem 'csv-mapper'
+gem 'fuzzy-string-match_pure'
 

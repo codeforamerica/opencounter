@@ -34,6 +34,7 @@ function(app, Parking) {
         return val;
       }
     }
+    // add sync function to talk with Rails
 
   });
 
@@ -80,6 +81,23 @@ function(app, Parking) {
           el.val(models[0].get("value"));
         }
       });
+      var typeaheadel = this.$el.find(".typeahead");
+      if(typeaheadel.length > 0){
+        //check for type of typeahead
+        $(typeaheadel).typeahead({source:this.getSIC, matcher:function(){return true;}});
+      }
+
+    },
+    getSIC:function(query, process){
+      
+      $.ajax("/api/lookup/sic.json",{data:{q:query}, success:function(data){
+        var list = [];
+        for(d in data){
+          list.push(data[d].sic_name ? data[d].sic_name : data[d].industry_subtype);
+        }
+        process(list);
+      }}, "json");
+
     },
     serialize: function() {
       var model, answers={};
