@@ -61,13 +61,26 @@ function(app) {
           $nav.find("li[data-section=" + dataSection + "]").show();
         }
       });
+      this.updateNavByAnswers();
+    },
+    updateNavByAnswers: function(){
+        this.$el.find("[data-occupancy]").show();
+      if(this.answers.getAnswer("location-type", "") == "home"){
+        this.$el.find("[data-occupancy=non-home]").hide();
+      }else if(this.answers.getAnswer("location-type", "") == "commercial"){
+        this.$el.find("[data-occupancy=home]").hide();
+      }
     },
     cleanup: function() {
       this.business.off(null, null, this);
+      this.answers.off(null, null, this);
     }, 
     initialize: function(o) {
       this.business = o.business;
       this.business.on("change", this.render, this);
+      this.answers = o.answers;
+      this.answers.on("add", this.render, this);
+      this.answers.on("change", this.render, this);
     }  
   });
   // Return the module for AMD compliance.
