@@ -13,7 +13,7 @@ require.config({
     jquery: "../libs/jquery",
     lodash: "../libs/lodash",
     backbone: "../libs/backbone",
-    typeahead: "../libs/bootstrap-typeahead"
+    bootstrap_typeahead: "../libs/bootstrap-typeahead"
   },
 
   shim: {
@@ -22,7 +22,7 @@ require.config({
       deps: ["lodash", "jquery"],
       exports: "Backbone"
     },
-
+    '../libs/bootstrap-typeahead': ['jquery'],
     // Backbone.LayoutManager depends on Backbone.
     "plugins/backbone.layoutmanager": ["backbone"]
   }
