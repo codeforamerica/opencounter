@@ -70,7 +70,8 @@ function(app, Parking) {
     },
     beforeRender: function(){
       //TODO redo the way fee calcs are loaded.
-      if(this.$el.find("div.fee-calc-parking").length >0){
+      
+      if(this.template == "panels/requirement/city/parking"){
         this.insertView("div.fee-calc-parking", 
                         new Parking.Views.Calculator({collection:this.collection}));
       }
