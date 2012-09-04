@@ -1,0 +1,119 @@
+<div id="requirement_fbn">
+  <h1>Fictitious Business Names (or, what’s in a name?)</h1>
+  
+  <p>If the name of <%= (answers.is_owner === "true") ? "your" : "this" %> business does not contain <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> last name, you will need to apply to Santa Cruz County for a Fictitious Business Name (FBN).</p>
+
+  <p>For example, if <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> last name is Smith and <%= (answers.is_owner === "true") ? "your" : "this" %> business is called "Smith&rsquo;s Tanning," you won't need an FBN. But if <%= (answers.is_owner === "true") ? "your" : "this" %> business is called "Eastside Tanning," you will need an FBN.</p>
+
+  <p>You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> name is <strong><%= answers.owner_first_name %> <%= answers.owner_last_name %></strong> and <%= (answers.is_owner === "true") ? "your" : "this" %> business&rsquo;s name is <strong><%= answers.business_name %></strong>.</p>
+
+  <p>This means you won't need an FBN. <a href="#">Next &rarr;</a></p>
+
+  <p>This means you will need an FBN from the County of Santa Cruz.</p>
+
+  <p>First, make sure that the fictitious business name you want is available, by searching <a href="http://sccounty01.co.santa-cruz.ca.us/clerkrecorder/Asp/FBNInquiry.asp">http://sccounty01.co.santa-cruz.ca.us/clerkrecorder/Asp/FBNInquiry.asp</a></p>
+
+  <p>Next, you'll need the following information:</p>
+  
+  <form>
+
+    <label>
+      Fictitious Business Name
+      <input type="text" name="fictitious_business_name">
+    </label>
+
+    <fieldset>
+      <h3>Business&rsquo; Physical Address</h3>
+      <label>
+        Street
+        <input type="text" name="business_physical_address_street">
+      </label>
+      <label>
+        City
+        <input type="text" name="business_physical_address_city">
+      </label>
+      <label>
+        State
+        <input type="text" name="business_physical_address_state">
+      <label>
+      <label>
+        ZIP
+        <input type="text" name="business_physical_address_zip">
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <h3>Business&rsquo;s Mailing Address</h3>
+      <label>
+        Street
+        <input type="text" name="business_mailing_address_street">
+      </label>
+      <label>
+        City
+        <input type="text" name="business_mailing_address_city">
+      </label>
+      <label>
+        State
+        <input type="text" name="business_mailing_address_state">
+      <label>
+      <label>
+        ZIP
+        <input type="text" name="business_mailing_address_zip">
+      </label>
+    </fieldset>
+    
+    <fieldset>
+      <h3>Registered Owner(s)</h3>
+      <label>
+        Name
+        <input type="text">
+      </label>
+      <label>
+        Residence Address, City, State, Zip
+        <input type="text">
+      </label>
+    </fieldset>
+    
+    <fieldset>
+      <label>
+        State of Incorporation/Organization
+        <select name="business_state_of_incorporation">
+          <option value="CA" selected="selected">CA</option>
+          <!-- @todo add all states here -->
+        </select>
+      </label>
+    </fieldset>
+    
+    <fieldset>
+      <label>
+        Business is conducted by:
+        <select name="business_structure">
+          <option value="unknown"                       <%= (answers.business_structure === 'unknown') ? 'selected="selected"' : '' %>                        >Not sure, don&rsquo;t know, or haven&rsquo;t decided yet</option>
+          <option value="individual"                    <%= (answers.business_structure === 'individual') ? 'selected="selected"' : '' %>                     >an Individual (Sole Proprietorship)</option>
+          <option value="general_partnership"           <%= (answers.business_structure === 'general_partnership') ? 'selected="selected"' : '' %>            >a General Partnership (GP)</option>
+          <option value="limited_partnership"           <%= (answers.business_structure === 'limited_partnership') ? 'selected="selected"' : '' %>            >a Limited Partnership (LP)</option>
+          <option value="limited_liability_company"     <%= (answers.business_structure === 'limited_liability_company') ? 'selected="selected"' : '' %>      >a Limited Liability Company (LLC)</option>
+          <option value="limited_liability_partnership" <%= (answers.business_structure === 'limited_liability_partnership') ? 'selected="selected"' : '' %>  >a Limited Liability Partnership (LLP)</option>
+          <option value="association"                   <%= (answers.business_structure === 'association') ? 'selected="selected"' : '' %>                    >an Unincorporated Association other than a Partnership</option>
+          <option value="corporation"                   <%= (answers.business_structure === 'corporation') ? 'selected="selected"' : '' %>                    >a Corporation</option>
+          <option value="trust"                         <%= (answers.business_structure === 'trust') ? 'selected="selected"' : '' %>                          >a Trust</option>
+          <option value="copartner"                     <%= (answers.business_structure === 'copartner') ? 'selected="selected"' : '' %>                      >Copartners</option>
+          <option value="married"                       <%= (answers.business_structure === 'married') ? 'selected="selected"' : '' %>                        >Husband and Wife</option>
+          <option value="joint_venture"                 <%= (answers.business_structure === 'joint_venture') ? 'selected="selected"' : '' %>                  >a Joint Venture</option>
+          <option value="domestic_partners"             <%= (answers.business_structure === 'domestic_partners') ? 'selected="selected"' : '' %>              >State or Local Registered Domestic Partners</option>
+        </select>
+      </label>
+    </fieldset>
+  </form>
+
+
+</div>
+
+
+<!-- 
+
+$40.00 for first business name on statement
+$7.00	for each additional business name filed on the same statement and doing business at the same location
+$7.00	for each additional owner in excess of one owner
+
+ -->
