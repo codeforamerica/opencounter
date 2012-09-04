@@ -18,12 +18,13 @@ function(app, Parking) {
   // Default collection.
   Answer.Collection = Backbone.Collection.extend({
     model: Answer.Model,
-    addAnswer: function(key, val){
+    addAnswer: function(key, val, opts){
+      if(!opts) opts = {};
       var m = this.where({"name": key});
       if(m.length > 0){
-        m[0].set("value", val);
+        m[0].set("value", val, opts);
       }else{
-        this.add({name:key, value:val});
+        this.add({name:key, value:val}, opts);
       }
     },
     getAnswer: function(key, val){
@@ -68,8 +69,11 @@ function(app, Parking) {
       }
     },
     beforeRender: function(){
-      this.insertView("div.fee-calc-parking", 
-                     new Parking.Views.Calculator({collection:this.collection}));
+      //TODO redo the way fee calcs are loaded.
+      if(this.$el.find("div.fee-calc-parking").length >0){
+        this.insertView("div.fee-calc-parking", 
+                        new Parking.Views.Calculator({collection:this.collection}));
+      }
     },
     afterRender: function(){
       $("div#content").html(this.el);
@@ -81,16 +85,28 @@ function(app, Parking) {
           el.val(models[0].get("value"));
         }
       });
+
+
+      //This looks for a typeahead connect with api for results
       var typeaheadel = this.$el.find(".typeahead");
       if(typeaheadel.length > 0){
-        //check for type of typeahead
-        $(typeaheadel).typeahead({source:this.getSIC, matcher:function(){return true;}});
+        // TODO check for type of typeahead, for now just SIC
+        $(typeaheadel).change(function(ev){
+          if(self.saveSICValues($(ev.target).val(), self.sicData)){
+
+            $(ev.target).addClass("invalid");
+          }else{
+            $(ev.target).removeClass("invalid");
+          }
+        });
+        $(typeaheadel).typeahead({source:this.getSIC, matcher:function(){return true;}, self:self});
       }
 
     },
     getSIC:function(query, process){
-      
+      var self = this.options.self;
       $.ajax("/api/lookup/sic.json",{data:{q:query}, success:function(data){
+        self.sicData = data;
         var list = [];
         for(d in data){
           list.push(data[d].sic_name ? data[d].sic_name : data[d].industry_subtype);
@@ -98,6 +114,18 @@ function(app, Parking) {
         process(list);
       }}, "json");
 
+    },
+    saveSICValues:function(text, data){
+      var found = false
+      for(d in data){
+        if((text == data[d].sic_name ) || (text == data[d].industry_subtype)){
+          for(key in data[d]){
+            this.collection.addAnswer("SIC_"+key, data[d][key], {silent:true});
+          }
+          found = true;
+        }
+      }
+      return found;
     },
     serialize: function() {
       var model, answers={};
@@ -126,7 +154,7 @@ function(app, Parking) {
       "click .profile-toggle": "toggleProfile"
     },
     beforeRender: function(){
-      console.log("template:",this.template);
+
     },
     afterRender: function(){
 
