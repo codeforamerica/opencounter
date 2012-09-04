@@ -1,4 +1,5 @@
 source :rubygems
+ruby '1.9.3'
 
 gem 'rails', '3.2.6'
 
@@ -42,6 +43,10 @@ group :test, :development do
   gem 'debugger'
   
   gem 'foreman'
+end
+
+group :development do
+  gem 'heroku'
 end
 
 # To use ActiveModel has_secure_password
