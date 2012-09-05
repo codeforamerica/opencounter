@@ -1,0 +1,19 @@
+<div id="incorporation">
+  <h1>Incorporation</h1>
+  <p>You don&rsquo;t need to incorporate to start a business in Santa Cruz, but it should be something you think about.</p>
+  <p>For more information on incorporation, speak with an accountant or visit <a href="http://www.sos.ca.gov/business/">The California Business Portal</a>.</p>
+
+  <p>You&rsquo;ve told us that <%= (applicant.is_owner === 'y') ? 'your' : 'this' %> business is structured as <strong><%= answers.business_structure %></strong>, and that you <%= (answers.applicant_is_sole_owner === 'y') ? "are" : "are not" %> the sole owner.</p>
+
+  <% if (answers.applicant_is_sole_owner === 'y') { %>
+
+    (no co-owners)
+
+  <% } else { %>
+
+    (list of all co-owners)
+
+  <% } %>
+  
+  <p class="next"><a href="#">Next requirement &rarr;</a></p>
+</div>
