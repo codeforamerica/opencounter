@@ -3,17 +3,36 @@
   <p>You don&rsquo;t need to incorporate to start a business in Santa Cruz, but it should be something you think about.</p>
   <p>For more information on incorporation, speak with an accountant or visit <a href="http://www.sos.ca.gov/business/">The California Business Portal</a>.</p>
 
-  <p>You&rsquo;ve told us that <%= (applicant.is_owner === 'y') ? 'your' : 'this' %> business is structured as <strong><%= answers.business_structure %></strong>, and that you <%= (answers.applicant_is_sole_owner === 'y') ? "are" : "are not" %> the sole owner.</p>
+  <hr>
 
-  <% if (answers.applicant_is_sole_owner === 'y') { %>
-
-    (no co-owners)
-
+  <% if (answers.business_structure) { %>
+  
+    <p>You&rsquo;ve told us that <%= (answers.is_owner === 'y') ? 'your' : 'this' %> business is structured as <strong><%= answers.business_structure %></strong>.</p>
+  
   <% } else { %>
+  
+    <p>You haven&rsquo;t yet told us how your business is structured. <a href="/info/business">Fill this in &rarr;</a></p>
+  
+  <% } %>
 
-    (list of all co-owners)
+  <p>You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "you are" : "the owner is" %> <%= (answers.applicant_is_sole_owner === 'y') ? "" : "not" %> the sole owner of this business.</p>
+
+  <% if (answers.applicant_is_sole_owner !== 'y') { %>
+
+    <table>
+      <tr>
+        <th>First &amp; Last Name</th>
+        <th>Title/Role</th>
+        <th>Mailing Address</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
 
   <% } %>
-  
+
   <p class="next"><a href="#">Next requirement &rarr;</a></p>
 </div>
