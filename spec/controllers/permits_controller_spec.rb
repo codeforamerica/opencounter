@@ -40,7 +40,7 @@ describe PermitsController do
     end
 
     context "when sic falls within a range" do
-      let(:sic) {"4500"}
+      let(:sic) {"5025"}
       let(:zoning) {"R-S"}
 
       it "returns prohibited" do
