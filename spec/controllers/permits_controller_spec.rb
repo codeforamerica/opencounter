@@ -37,6 +37,18 @@ describe PermitsController do
         parsed_response = JSON.parse(response.body)
         parsed_response["permit"].should == 'unknown'
       end
+    end
+
+    context "when sic falls within a range" do
+      let(:sic) {"4500"}
+      let(:zoning) {"R-S"}
+
+      it "returns prohibited" do
+        get :show, :sic => sic, :zoning => zoning
+        response.code.should == '200'
+        parsed_response = JSON.parse(response.body)
+        parsed_response["permit"].should == 'prohibited'
+      end
 
     end
   end

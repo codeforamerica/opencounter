@@ -15,8 +15,20 @@ class PermitsController < ApplicationController
     result = nil
 
     zoning_lookup.each do |zoning_type, sics|
-      if sics.split(",").include?(sic)
-        result = zoning_type
+      sics_split = sics.split(",")
+      sics_split.each do |sic_symbol|
+        if sic_symbol =~ /-/
+          range_start, range_end = sic_symbol.split("-")
+          if (range_start.to_i..range_end.to_i).include?(sic.to_i)
+            result = zoning_type
+            break
+          end
+        else
+          if sic_symbol == sic
+            result = zoning_type
+            break
+          end
+        end
       end
     end
 
