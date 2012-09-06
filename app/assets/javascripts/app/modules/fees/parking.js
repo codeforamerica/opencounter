@@ -17,7 +17,7 @@ function(app) {
 
     tagName: "section",
     className: "content",
-    template: "fees/parking-downtown",
+    template: "panels/requirement/city/parking-downtown",
 
     events: {
       "change select,input":"saveInput"
