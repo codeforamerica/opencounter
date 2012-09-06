@@ -15,12 +15,12 @@ function(app) {
 
   Parking.Views.Calculator = Backbone.View.extend({
 
-    tagName: "div",
-    className: "feecalculator",
+    tagName: "section",
+    className: "content",
     template: "fees/parking-downtown",
 
     events: {
-      "change input,select":"saveInput"
+      "change select,input":"saveInput"
     },
     units:{"apartment":{unit:"units", factor:4},
           "doctor":{unit:"square feet", factor:200},
@@ -38,6 +38,7 @@ function(app) {
       var factor = this.units[this.collection.getAnswer("parking_proptype").toLowerCase()].factor;
       var unit = this.units[this.collection.getAnswer("parking_proptype").toLowerCase()].unit;
       this.collection.addAnswer("parking_units", unit);
+      console.log("unit:", unit);
   	  if(this.collection.getAnswer("parking_proptype") == "DOCTOR" ){
   		if(( this.collection.getAnswer("parking_doctor_count") * 1 == 1 ) && 
            ( this.collection.getAnswer("parking_size_existing") * 1 < 1200 )){
@@ -68,14 +69,20 @@ function(app) {
       var c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
       return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
     },
-    afterRender: function(){
-      var self = this;
-      var proptype =this.collection.getAnswer("parking_proptype", "APARTMENT");
-      this.$el.find("select[name=parking_proptype]").val(proptype);
-      this.$el.find("input").each(function(i,elem){
-        $(elem).val(self.collection.getAnswer($(elem).attr("name"), ""));
-      });
-      this.calculate();
+    subviews: function(){
+      return {
+        afterRender: function(){
+          //$("div#content").html(this.el);
+          var self = this;
+          var proptype =this.collection.getAnswer("parking_proptype", "APARTMENT");
+          this.$el.find("select[name=parking_proptype]").val(proptype);
+          this.$el.find("input").each(function(i,elem){
+            $(elem).val(self.collection.getAnswer($(elem).attr("name"), ""));
+          });
+          this.calculate();
+        },
+        beforeRender: function(){}
+      };
     },
     serialize: function() {
       var model, answers={};
@@ -91,9 +98,9 @@ function(app) {
       this.collection.off(null, null, this);
     },
     initialize: function(o) {
-      this.collection.on("reset", this.render, this); 
-      this.collection.on("change", this.render, this); 
-      this.collection.on("add", this.render, this); 
+      //this.collection.on("reset", this.render, this); 
+      //this.collection.on("change", this.render, this); 
+      //this.collection.on("add", this.render, this); 
       if(this.collection.getAnswer("parking_proptype") === undefined){
         this.collection.addAnswer("parking_proptype", "APARTMENT");
       }

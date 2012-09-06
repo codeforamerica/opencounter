@@ -45,7 +45,7 @@ function(app, Parking) {
     className: "content",
 
     events: {
-      "change input": "updatedInput",
+      "click input": "updatedInput",
       "click a": "checkForAnswer"
     },
     updatedInput:function(ev){
@@ -60,6 +60,10 @@ function(app, Parking) {
         this.addAnswer({name:name, value:value});
       }
     },
+    subviews: function() {
+      return {beforeRender:function(){},
+              afterRender:function(){}};
+    },
     addAnswer:function(answer){
       var models = this.collection.where({name:answer.name})
       if(models.length > 0){
@@ -69,15 +73,9 @@ function(app, Parking) {
       }
     },
     beforeRender: function(){
-      //TODO redo the way fee calcs are loaded.
-      
-      if(this.template == "panels/requirement/city/parking"){
-        this.insertView("div.fee-calc-parking", 
-                        new Parking.Views.Calculator({collection:this.collection}));
-      }
+      this.subviews().beforeRender.call(this);
     },
     afterRender: function(){
-      $("div#content").html(this.el);
       var self = this;
       this.$el.find("input").each(function(i, el){
         el = $(el);
@@ -87,46 +85,7 @@ function(app, Parking) {
         }
       });
 
-
-      //This looks for a typeahead connect with api for results
-      var typeaheadel = this.$el.find(".typeahead");
-      if(typeaheadel.length > 0){
-        // TODO check for type of typeahead, for now just SIC
-        $(typeaheadel).change(function(ev){
-          if(self.saveSICValues($(ev.target).val(), self.sicData)){
-
-            $(ev.target).addClass("invalid");
-          }else{
-            $(ev.target).removeClass("invalid");
-          }
-        });
-        $(typeaheadel).typeahead({source:this.getSIC, matcher:function(){return true;}, self:self});
-      }
-
-    },
-    getSIC:function(query, process){
-      var self = this.options.self;
-      $.ajax("/api/lookup/sic.json",{data:{q:query}, success:function(data){
-        self.sicData = data;
-        var list = [];
-        for(d in data){
-          list.push(data[d].sic_name ? data[d].sic_name : data[d].industry_subtype);
-        }
-        process(list);
-      }}, "json");
-
-    },
-    saveSICValues:function(text, data){
-      var found = false
-      for(d in data){
-        if((text == data[d].sic_name ) || (text == data[d].industry_subtype)){
-          for(key in data[d]){
-            this.collection.addAnswer("SIC_"+key, data[d][key], {silent:true});
-          }
-          found = true;
-        }
-      }
-      return found;
+      this.subviews().afterRender.call(this);
     },
     serialize: function() {
       var model, answers={};
