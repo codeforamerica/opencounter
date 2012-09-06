@@ -5,6 +5,8 @@ Opencounter::Application.routes.draw do
 
   match "api/lookup/sic" => "sic#index"
 
+  match "api/lookup/permit/:zoning/:sic" => "permits#show"
+
   root :to => 'panels#intro'
   
   match "*path" => "panels#intro"
