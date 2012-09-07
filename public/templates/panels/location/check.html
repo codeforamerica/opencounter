@@ -4,16 +4,22 @@
     <strong class="business-type"><%= answers.SIC_sic_name %></strong>
     (SIC code <span class="business-sic-code"><%= answers.SIC_sic_code %></span>).</p>
   <h3>What is your business's physical address?</h3>
-  <form method="post" action="#" id="form_location_non_home_occ_check_site">
+  <form  action="" id="form_location_non_home_occ_check_site">
     <label>
       Street
       <input type="text" name="business_physical_address_street" placeholder="Street">
     </label>
+
+
 <!--    <label>
       ZIP
       <input type="text" name="business_physical_address_zip" placeholder="ZIP">
     </label> -->
-    <input type="submit" value="Check Zoning" />
-    <p class="text"><a class="submit" href="/requirements">Next: Requirements &rarr;</a></p>
+<input type="submit" value="Check Zoning" />
+
+    <div id="map" style="height:200px; width:200px;"></div>
+    <div id="zoning_display"></div>
+
+    <p class="next"><a class="submit" href="/requirements">Next: Requirements &rarr;</a></p>
   </form>
 </div><!-- /#location_check_site -->

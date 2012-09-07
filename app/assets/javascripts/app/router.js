@@ -5,16 +5,18 @@ define([
   "modules/business",
   "modules/answer",
   "modules/navigation",
-  "modules/fees/parking"
+  "modules/fees/parking",
+  "modules/location"
 ],
 
-function(app, User, Business, Answer, Navigation, Parking) {
+function(app, User, Business, Answer, Navigation, Parking, Location) {
 
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
     routes: {
       "requirement/city/parking":"parking",
       "info/business": "businessInfo",
+      "location/check":"locationCheck",
       "*path":"panel"
     },
     index: function(e){
@@ -34,6 +36,14 @@ function(app, User, Business, Answer, Navigation, Parking) {
       var panel = new (Answer.Views.Panel.extend(Business.Views.Info.prototype))({
         collection:this.answers,
         useTemplate:"panels/info/business"
+      });
+
+      app.layout.setView("div#content", panel);
+      app.layout.render();
+    },
+    locationCheck: function(){
+      var panel = new (Answer.Views.Panel.extend(Location.Views.Check.prototype))({
+        collection:this.answers
       });
 
       app.layout.setView("div#content", panel);
