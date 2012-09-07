@@ -64,12 +64,23 @@ function(app) {
       this.updateNavByAnswers();
     },
     updateNavByAnswers: function(){
-        this.$el.find("[data-occupancy]").show();
+      this.$el.find("[data-show]").show();
+
+      //show or hide based on home occ.
       if(this.answers.getAnswer("location-type", "") == "home"){
-        this.$el.find("[data-occupancy=non-home]").hide();
+        this.$el.find("[data-show=commercial]").hide();
+        this.$el.find("[data-show=food]").hide();
+        this.$el.find("[data-show=retail]").hide();
+        this.$el.find("[data-show=bid]").hide();
       }else if(this.answers.getAnswer("location-type", "") == "commercial"){
-        this.$el.find("[data-occupancy=home]").hide();
+        this.$el.find("[data-show=home]").hide();
       }
+
+      // Show BID
+      if(this.answers.getAnswer("bid", "") == ""){
+        this.$el.find("[data-show=bid]").hide();
+      }
+      
     },
     cleanup: function() {
       this.business.off(null, null, this);
