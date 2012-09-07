@@ -16,6 +16,8 @@
         <div id="business-type-container" style="position:absolute; width: 500px;"></div>
       </label>
       
+      <p>If you aren't able to find a matching category, please <a href="/contact">contact us</a> so we can help you find the best match.</p>
+      
       <label>
         What is <%= (answers.is_owner === "true") ? "your" : "the" %> business&rsquo;s legal structure?
         <select name="business_structure">
@@ -43,9 +45,9 @@
     </label>
 
     <!-- @condition Not the sole owner -->
-    <div class="conditional">
+    <div class="conditional co-owners">
       <p>Please list the names, roles, and mailing addresses of all co-owners.</p>
-      <fieldset class="co-owner">
+      <fieldset>
         <label>
           First &amp; Last Name
           <input type="text" name="coowner_name" placeholder="Corey Coowner">
