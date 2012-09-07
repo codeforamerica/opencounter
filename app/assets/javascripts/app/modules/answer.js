@@ -99,7 +99,8 @@ function(app, Parking) {
       this.collection.off(null, null, this);
     },
     initialize: function(o) {
-      this.template = o.useTemplate;
+      if(o.useTemplate)
+        this.template = o.useTemplate;
       this.collection.on("reset", this.render, this); 
       this.collection.on("change", this.render, this); 
     }

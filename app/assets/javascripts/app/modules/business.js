@@ -20,33 +20,6 @@ function(app) {
 
   Business.Views.Info = Backbone.View.extend({
     template: "panels/info/business",
-    afterRender: function(){
-      var self = this;
-      this.$el.find("input").each(function(i, el){
-        el = $(el);
-        var models = self.collection.where({name:el.attr("name")});
-        if(models.length > 0){
-          el.val(models[0].get("value"));
-        }
-      });
-
-
-      //This looks for a typeahead connect with api for results
-      var typeaheadel = this.$el.find(".typeahead");
-      if(typeaheadel.length > 0){
-        // TODO check for type of typeahead, for now just SIC
-        $(typeaheadel).change(function(ev){
-          if(self.saveSICValues($(ev.target).val(), self.sicData)){
-
-            $(ev.target).addClass("invalid");
-          }else{
-            $(ev.target).removeClass("invalid");
-          }
-        });
-        $(typeaheadel).typeahead({source:this.getSIC, matcher:function(){return true;}, self:self});
-      }
-
-    },
     getSIC:function(query, process){
       var self = this.options.self;
       $.ajax("/api/lookup/sic.json",{data:{q:query}, success:function(data){
