@@ -45,22 +45,47 @@ function(app) {
       return found;
     },
     subviews:function(){
-      //This looks for a typeahead connect with api for results
       return {
         afterRender: function(){
+          
+          // --- TypeAhead For Business Type ---
+          
           var typeaheadel = this.$el.find(".typeahead");
-          if(typeaheadel.length > 0){
+          if (typeaheadel.length > 0) {
             // TODO check for type of typeahead, for now just SIC
             $(typeaheadel).change(function(ev){
               if(self.saveSICValues($(ev.target).val(), self.sicData)){
-
                 $(ev.target).addClass("invalid");
-              }else{
+              } else {
                 $(ev.target).removeClass("invalid");
               }
             });
             $(typeaheadel).typeahead({source:this.getSIC, matcher:function(){return true;}, self:self});
           }
+          
+          // --- Sole Owner / Co-Owner Toggle ---
+          
+          var isSoleOwnerEl = this.$el.find('input[name="applicant_is_sole_owner"]'),
+              isSoleOwner = (isSoleOwnerEl.attr('checked') && isSoleOwnerEl.attr('checked') === 'checked') ? true : false,
+              coOwnersEl = this.$el.find(".co-owners");
+          
+          // If sole owner, hide co-owner fields
+          if (isSoleOwner) {
+              coOwnersEl.hide();
+          }
+          
+          // On change, toggle co-owner fields
+          isSoleOwnerEl.change(function(e) {
+              
+              isSoleOwner = (isSoleOwnerEl.attr('checked') && isSoleOwnerEl.attr('checked') === 'checked') ? true : false;
+              
+              if (isSoleOwner) {
+                  coOwnersEl.hide();
+              } else {
+                  coOwnersEl.show();
+              }
+          });
+          
         },
         beforeRender: function(){}
       }
