@@ -26,7 +26,7 @@ function(app) {
         self.sicData = data;
         var list = [];
         for(d in data){
-          list.push(data[d].sic_name ? data[d].sic_name : data[d].industry_subtype);
+          list.push(data[d].industry_subtype);
         }
         process(list);
       }}, "json");

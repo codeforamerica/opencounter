@@ -23,7 +23,7 @@ function(app) {
       "change select,input":"saveInput"
     },
     units:{"apartment":{unit:"units", factor:4},
-          "doctor":{unit:"square feet", factor:200},
+           "doctor":{unit:"square feet", factor:200},
            "mercantile":{unit:"square feet", factor:400},
            "furniture":{unit:"square feet", factor:800},
            "service":{unit:"square feet", factor:1000}},
@@ -109,5 +109,4 @@ function(app) {
 
   // Return the module for AMD compliance.
   return Parking;
-
 });
