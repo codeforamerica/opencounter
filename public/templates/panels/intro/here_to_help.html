@@ -7,8 +7,16 @@
     <p>The Planning Department will be your business&rsquo;s main point of contact within city government.</p>
     <p><img src="/assets/planning-department.png" alt="City of Santa Cruz Planning Department" width="450" height="302"></p>
     <div class="tool status">
-      <p>The planning department's public counter is currently <span class="status">OPEN</span>. Come on by!</p>
-      <p>The planning department's public counter is currently <span class="status">CLOSED</span>. <a href="mailto:planningcounter@cityofsantacruz.com">Email us &rarr;</a></p>
+      <%
+      var now = new Date(),
+          day = now.getDay(),
+          time = now.getHours();
+      
+      if ((day < 5) && (day > 0) && (hours > 7) && (hours < 12)) { %>
+        <p>The Planning Department&rsquo;s public counter is currently <span class="status">OPEN</span>. Come on by!</p>
+      <% } else { %>
+        <p>The Planning Department&rsquo;s public counter is currently <span class="status">CLOSED</span>. <a href="mailto:planningcounter@cityofsantacruz.com">Email us &rarr;</a></p>
+      <% } %>
     </div>
     <p>You are always welcome to visit the Planning Department in person.</p>
     <p>The Planning Department&rsquo;s public counter is located in City Hall, on the annex building&rsquo;s second floor, in room 206.</p>
