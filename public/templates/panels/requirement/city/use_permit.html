@@ -155,12 +155,19 @@
 
   <!-- /@condition NON HOME OCC - Prohibited -->
   <% if((answers.required_permit == "prohibited")&& (answers.location_type == "commercial")){ %>  
-    <p>You've told us that you're <strong>working from 123 Anystreet Place, Santa Cruz, CA 91234</strong>, and your business is of type <strong>[business type here]</strong>.</p>
+    <p>You've told us that you're <strong>working from <%= answers.business_physical_address_street %></strong>, and your business is of type <strong><%= answers.business_type %></strong>.</p>
     <p>This use is <strong>prohibited</strong> at this location.</p>
     <p>Siting your business here will require changing the City of Santa Cruz's zoning; this is a difficult process and can take years.</p>
     <p>Contact the Planning Department for next steps.</p>
     <p class="next"><a href="/help">Contact the Planning Department &rarr;</a></p>
     <% } %>
   <!-- /@condition NON HOME OCC - Prohibited -->
+
+  <!-- /#condition UNKNOWN -->
+  <div data-zoning-status="unknown">
+    <p>You've told us that you're <strong>working from <%= answers.business_physical_address_street %></strong>, and your business is of type <strong><%= answers.business_type %></strong>.</p>
+    <p>We're sorry, but right now OpenCounter can't automatically determine what type of use permit you need.</p>
+    <p>Help us make OpenCounter smarter: please <a href="/contact">contact the Planning Department</a>, and they'll help you -- and OpenCounter! -- figure out which type of use permit you need. Thank you for helping out the next person!</p>
+  </div>
 
 </div><!-- /#requirement_use_permit -->
