@@ -82,7 +82,6 @@ function(app) {
       $.ajax(url, {jsonp:"callback", dataType:"jsonp", success:function(data){self.setZoning.call(self,data)}}, "jsonp");
     },
     setZoning:function(data){
-      console.log(data);
       var zoning = [];
       if(data.features.length > 0){
         for(var i =1; i<7; i++){
@@ -90,7 +89,7 @@ function(app) {
             zoning.push(data.features[0].attributes['Zoning'+i].split(" - ")[0]);
           }
         }
-        this.collection.addAnswer("bida", data.features[0].attributes["BIA"])
+        this.collection.addAnswer("bid", data.features[0].attributes["BIA"].replace(" ", ""))
         this.collection.addAnswer("apn", data.features[0].attributes["APN"])
         this.collection.addAnswer("zoning", zoning);
 
@@ -109,67 +108,7 @@ function(app) {
 
       }
       
-    },
-/*    //zoningEndpointURL: "http://gis.cityofsantacruz.com/ArcGIS/rest/services/NewPlanning/MapServer/8/query",
-    zoningEndpointURL: "http://gis.cityofsantacruz.com/ArcGIS/rest/services/AddressSeach/MapServer/0/query",
-    queryData: {geometryType: "esriGeometryPoint",
-                geometry:"",
-                spatialRel:"esriSpatialRelIntersects",
-                outFields:"*",
-                outSR:"4326",
-                returnGeometry:"true",
-                where:"",
-                f:"json"},
-//geometryType=esriGeometryPoint&geometry=" + latlng.lng + "," + latlng.lat + "&f=json";
-      
-    getZoningAtAddress: function(address, callback) {
-      var address = 
-
-      this.queryData.geometry = latlng.lng()+","+ latlng.lat();
-      $.ajax({ 
-        url: this.zoningEndpointURL,
-        data:this.queryData,
-        dataType: 'jsonp',
-        success:function(data){
-          var zoningCodes = [];
-          for (var i=0; i < data.features.length; i++) {
-            zoningCodes.push(data.features[i].attributes.ZONING);
-          };
-          callback(zoningCodes);
-        }
-      });
-    },
-    codeAddress: function(){
-      var address = this.$el.find("input[name=business_physical_address_street]").val()
-      address += " Santa Cruz, CA";
-
-      
-
-      geocoder = new google.maps.Geocoder();
-      var self = this;
-      geocoder.geocode( { 'address': address }, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-
-          var latlng = new google.maps.LatLng(results[0].geometry.location.lat(),
-                                              results[0].geometry.location.lng());
-          var marker = new google.maps.Marker({
-            position: latlng,
-            map: self.map,
-            title:address
-            });
-
-          self.map.setCenter(latlng);
-          self.map.setZoom(16);
-          self.getZoningAtPoint.call(self, latlng, function(data) {
-            console.log(data);
-          });
-            
-        } else {
-          console.log("Geocode was not successful for the following reason: " + status);
-        }
-      });
     }
-*/
 
   });
 

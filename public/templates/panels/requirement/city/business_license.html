@@ -4,19 +4,27 @@
   <p>The fees for this are relatively nominal, at $145.15 plus employees fees of $2.55, $4.95, or $7.40 for each employee depending on your type of business. Luckily, based on what you've already told us, we think we know what kind of business that you are and have put that information into your profile. This may change when staff reviews your application. It's important to remember that you'll be responsible for this fee even if you conduct business for a single day (the fee will be pro-rated). You are exempt from the fee if your business is a registered nonprofit organization.</p>
   <p>Fees for your business license are used to support general city services, including police and fire protection, as well as for the services supplied by the City's Finance, Planning and Community Development Staff and other City Administrative Functions.</p>
   <p>After you register with the City, we'll sent a once a year renewal letter to you.</p>
+
+
+  <p>The business is <%= answers.SIC_sic_name %>  (SIC Code: <%= answers.SIC_sic_code %>) which means it is Class <%= answers.SIC_classifcation %></p>
   
   <form>
+<!--
     <label>
       What type of business is this?
       <input type="radio" name="business_type_class" value="class-a"> Retail, wholesale, contract, construction, or manufacturing
       <input type="radio" name="business_type_class" value="class-b"> Services, hotels and motels, apartment houses, commercial property renting or leasing, recreation and entertainment services and facilities
-      <input type="radio" name="business_type_class" value="class-c"> Professions including, but not limited to, accountants, architects, attorneys, auctioneers, chiropractors, dentists, engineers, insurance brokers, medical/health professions, physicians, real estate brokers, security brokers, and veterinarians      
-    </label>
+      <input type="radio" name="business_type_class" value="class-c"> Professions including, but not limited to, accountants, architects, attorneys, auctioneers, chiropractors, dentists, engineers, insurance brokers, medical/health professions, physicians, real estate brokers, security brokers, and veterinarians   
+    </label>    -->
+                  
     <label>
       How many employees do you have?
       <input type="text" name="employee_count">
     </label>
   </form>
+
+  <p class="fee">The fee for the business license will be: <span id="business_license_fee"></span></p>
+  
 </div><!-- /#requirement_business_license -->
 
 <!-- 

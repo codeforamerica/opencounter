@@ -17,6 +17,7 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
       "requirement/city/parking":"parking",
       "info/business": "businessInfo",
       "location/check":"locationCheck",
+      "requirement/city/business_license":"businessLicense",
       "*path":"panel"
     },
     index: function(e){
@@ -36,6 +37,14 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
       var panel = new (Answer.Views.Panel.extend(Business.Views.Info.prototype))({
         collection:this.answers,
         useTemplate:"panels/info/business"
+      });
+
+      app.layout.setView("div#content", panel);
+      app.layout.render();
+    },
+    businessLicense: function(){
+      var panel = new (Answer.Views.Panel.extend(Business.Views.License.prototype))({
+        collection:this.answers
       });
 
       app.layout.setView("div#content", panel);

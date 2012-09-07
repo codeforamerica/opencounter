@@ -22,7 +22,7 @@ class SicController < ApplicationController
       end
       business_class.each { |bclass|
         if !result.sic_code.nil? and bclass.sic.index(result.sic_code) == 0
-          result.classifcation = bclass.classifcation
+          result.classifcation = bclass.classifcation.sub("CLASS", "")
         end
       }
     }

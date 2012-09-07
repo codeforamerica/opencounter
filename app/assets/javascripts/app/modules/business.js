@@ -18,6 +18,50 @@ function(app) {
   
   });
 
+  Business.Views.License = Backbone.View.extend({
+    template: "panels/requirement/city/business_license",
+    calculate:function(){
+      var employees = this.$el.find("input[name=employee_count]").val();
+      var base_tax = 145.15,
+      employee_rate = 1,
+      total = 0,
+      business_class = this.collection.getAnswer('SIC_classification', '');
+
+      switch(business_class) {
+      case 'A':
+        employee_rate = 2.55;
+        break;
+      case 'B':
+        employee_rate = 4.95;
+        break;
+      case 'C':
+        employee_rate = 7.40;
+        break;
+      }
+       
+      // Formula from http://www.cityofsantacruz.com/index.aspx?page=764
+      total = base_tax + (employee_rate * employees);
+
+      // Round to nearest cent
+      total = Math.round(100 * total) / 100;
+      this.collection.addAnswer("#business_license_fee", total);
+      this.$el.find('#business_license_fee').html("$"+total);
+
+    },
+    subviews:function(){
+      //This looks for a typeahead connect with api for results
+      return {
+        afterRender: function(){
+          var self = this;
+          this.$el.find('input[name=employee_count]').change(function(){self.calculate.call(self)});
+        },
+        beforeRender: function(){}
+      }
+
+    }    
+    
+  })
+
   Business.Views.Info = Backbone.View.extend({
     template: "panels/info/business",
     getSIC:function(query, process){
@@ -48,6 +92,7 @@ function(app) {
       //This looks for a typeahead connect with api for results
       return {
         afterRender: function(){
+          var self = this;
           var typeaheadel = this.$el.find(".typeahead");
           if(typeaheadel.length > 0){
             // TODO check for type of typeahead, for now just SIC
