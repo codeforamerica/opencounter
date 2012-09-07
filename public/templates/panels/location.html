@@ -1,6 +1,6 @@
 <div id="location">
   <h1><%= (answers.is_owner === "true") ? "Your" : "The" %> business&rsquo;s location</h1>
   <h3>Where will <%= (answers.is_owner === "true") ? "your" : "this" %> business operate from?</h3>
-  <p class="next"><a href="/location/home"  data-answer="home" name="location-type"><%= (answers.is_owner === "true") ? "I" : "The owner" %> will be working from home &rarr;</a></p>
-  <p class="next"><a href="/location/commercial"  data-answer="commercial" name="location-type"><%= (answers.is_owner === "true") ? "I" : "The owner" %> will be working out of a commercial space &rarr;</a></p>
+  <p class="next"><a href="/location/home"  data-answer="home" name="location_type"><%= (answers.is_owner === "true") ? "I" : "The owner" %> will be working from home &rarr;</a></p>
+  <p class="next"><a href="/location/commercial"  data-answer="commercial" name="location_type"><%= (answers.is_owner === "true") ? "I" : "The owner" %> will be working out of a commercial space &rarr;</a></p>
 </div><!-- /#location -->

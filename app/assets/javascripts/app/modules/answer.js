@@ -85,6 +85,11 @@ function(app, Parking) {
         }
       });
 
+      $('.drawer').hide();
+      $('.toggle').click(function(e){
+        $(e.target).next('.drawer').toggle();
+      })
+
       this.subviews().afterRender.call(this);
     },
     serialize: function() {

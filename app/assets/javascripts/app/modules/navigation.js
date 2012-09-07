@@ -67,12 +67,12 @@ function(app) {
       this.$el.find("[data-show]").show();
 
       //show or hide based on home occ.
-      if(this.answers.getAnswer("location-type", "") == "home"){
+      if(this.answers.getAnswer("location_type", "") == "home"){
         this.$el.find("[data-show=commercial]").hide();
         this.$el.find("[data-show=food]").hide();
         this.$el.find("[data-show=retail]").hide();
         this.$el.find("[data-show=bid]").hide();
-      }else if(this.answers.getAnswer("location-type", "") == "commercial"){
+      }else if(this.answers.getAnswer("location_type", "") == "commercial"){
         this.$el.find("[data-show=home]").hide();
       }
 
