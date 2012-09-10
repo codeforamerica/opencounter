@@ -39,6 +39,7 @@ function(app) {
       var unit = this.units[this.collection.getAnswer("parking_proptype").toLowerCase()].unit;
       this.collection.addAnswer("parking_units", unit);
       console.log("unit:", unit);
+      this.$el.find(".units").html(unit);
   	  if(this.collection.getAnswer("parking_proptype") == "DOCTOR" ){
   		if(( this.collection.getAnswer("parking_doctor_count") * 1 == 1 ) && 
            ( this.collection.getAnswer("parking_size_existing") * 1 < 1200 )){
@@ -62,7 +63,7 @@ function(app) {
         fee = 0.0;
       }
   	  this.collection.addAnswer("parking_fee", fee);
-      console.log("fee", fee);
+      this.$el.find(".fee").html("$"+this.dollarFormat(fee,2,".", ","));
       //.html( "$" + this.dollarFormat(fee, 2, ".", ",") );
     },    
     dollarFormat: function(n, c, d, t){
