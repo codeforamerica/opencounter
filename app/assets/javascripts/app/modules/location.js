@@ -11,9 +11,6 @@ function(app) {
 
   Location.Views.Check = Backbone.View.extend({
     template: "panels/location/check",
-    events: {
-      "submit form": "checkLocation"
-    },
     checkLocation:function(ev){
       ev.preventDefault();
       var address = this.$el.find("input[name=business_physical_address_street]").val()
@@ -31,6 +28,10 @@ function(app) {
             mapTypeId: google.maps.MapTypeId.ROADMAP
           };
           this.map = new google.maps.Map(this.$el.find("#map")[0], myOptions);
+          var self = this;
+          // TODO, we should extent inherited events.
+          this.$el.find("form").submit(function(ev){self.checkLocation.call(self)});
+
         },
         beforeRender: function(){}
       }
