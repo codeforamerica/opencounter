@@ -7,13 +7,14 @@
     <p>The Planning Department will be your business&rsquo;s main point of contact within city government.</p>
     <p><img src="/assets/planning-department.png" alt="City of Santa Cruz Planning Department" width="450" height="302"></p>
     <div class="tool status">
-      <%
+      <% 
       var now = new Date(),
           day = now.getDay(),
-          time = now.getHours();
+          hours = now.getHours(),
+          isOpen = ( (day < 5) && (day > 0) && (hours > 7) && (hours < 12) ) ? true : false;
       
-      if ((day < 5) && (day > 0) && (hours > 7) && (hours < 12)) { %>
-        <p>The Planning Department&rsquo;s public counter is currently <span class="status">OPEN</span>. Come on by!</p>
+      if (isOpen) { %>
+          <p>The Planning Department&rsquo;s public counter is currently <span class="status">OPEN</span>. Come on by!</p>
       <% } else { %>
         <p>The Planning Department&rsquo;s public counter is currently <span class="status">CLOSED</span>. <a href="mailto:planningcounter@cityofsantacruz.com">Email us &rarr;</a></p>
       <% } %>

@@ -1,21 +1,24 @@
 <div id="location_check_site">
   <h1>Check Your Business&rsquo;s Zoning</h1>
-  <p>You've told us that your business is of type
-    <strong class="business-type"><%= answers.SIC_sic_name %></strong>
-    (SIC code <span class="business-sic-code"><%= answers.SIC_sic_code %></span>).</p>
-  <h3>What is your business's physical address?</h3>
-  <form  action="" id="form_location_non_home_occ_check_site">
+  
+  <p>You&rsquo;ve told us that your business is of type <strong class="business-type"><%= answers.SIC_sic_name %></strong> (SIC code <span class="business-sic-code"><%= answers.SIC_sic_code %></span>).</p>
+  
+  <h3>What is your business&rsquo;s physical address?</h3>
+  
+  <form action="" id="form_location_non_home_occ_check_site">
     <label>
       Street
       <input type="text" name="business_physical_address_street" placeholder="Street">
     </label>
 
-
-<!--    <label>
+    <!--
+    <label>
       ZIP
       <input type="text" name="business_physical_address_zip" placeholder="ZIP">
-    </label> -->
-<input type="submit" value="Check Zoning" />
+    </label>
+    -->
+
+    <input type="submit" value="Check Zoning">
 
     <div id="map" style="height:200px; width:200px;"></div>
     <div id="zoning_display"></div>
