@@ -30,7 +30,7 @@ function(app) {
           this.map = new google.maps.Map(this.$el.find("#map")[0], myOptions);
           var self = this;
           // TODO, we should extent inherited events.
-          this.$el.find("form").submit(function(ev){self.checkLocation.call(self)});
+          this.$el.find("form").submit(function(ev){self.checkLocation.call(self, ev)});
 
         },
         beforeRender: function(){}
