@@ -45,7 +45,7 @@ function(app, Parking) {
     className: "content",
 
     events: {
-      "click input": "updatedInput",
+      "change input": "updatedInput",
       "click a": "checkForAnswer"
     },
     updatedInput:function(ev){
