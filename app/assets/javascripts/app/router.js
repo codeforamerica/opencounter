@@ -73,7 +73,8 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
       this.business = new Business.Model();
       this.answers = new Answer.Collection();
       app.useLayout("main");
-
+      
+      app.on("lookuppermit", Answer.lookupPermit, this);
       var sidebar =  new Navigation.Views.Sidebar({  // this might make more sense as a view on user? - Mick
         business:this.business,
         answers:this.answers

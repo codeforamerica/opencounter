@@ -54,7 +54,7 @@
   <hr class="visuallyhidden">
 
   <!-- @condition NON HOME OCC - PRINCIPALLY PERMITTED -->
-  <% if((answers.required_permit == "zoning-clearance")&& (answers.location_type == "commercial")){ %>
+  <% if((answers.required_permit == "zoning clearance")&& (answers.location_type == "commercial")){ %>
 
   <p>You've told us that you're <strong>working from 123 Anystreet Place, Santa Cruz, CA 91234</strong>, and your business is of type <strong>[business type here]</strong>.</p>
   <p>This use is <strong>principally permitted</strong> at this location.</p>
@@ -142,10 +142,10 @@
   <hr class="visuallyhidden">
 
   <!-- /@condition NON HOME OCC - NOT PRINCIPALLY PERMITTED -->
-  <% if((answers.required_permit == "administrative-use")&& (answers.location_type == "commercial")){ %>
+  <% if((answers.required_permit == "administrative")&& (answers.location_type == "commercial")){ %>
   <p>You've told us that you&lsquo;re <strong>working from <%= answers.business_physical_address_street %></strong>, and your business is a <strong><%= answers.SIC_sic_name %></strong> (SIC code <%= answers.SIC_sic_code %>).</p>
   <p>This use is <strong>not principally permitted</strong> at this location.</p>
-  <p>You will need either an <abbr title="Administrative Use Permit">AUP</abbr> or a <abbr title="Special Use Permit">SUP</abbr> to site your business here.</p>
+  <p>You will need either an <abbr title="Administrative Use Permit">AUP</abbr> to site your business here.</p>
   <p>Contact the Planning Department for next steps.</p>
   <p class="next"><a href="/help">Contact the Planning Department &rarr;</a></p>
   <% } %>
@@ -153,6 +153,14 @@
 
   <hr class="visuallyhidden">
 
+  <% if((answers.required_permit == "prohibited")&& (answers.location_type == "commercial")){ %>
+  <p>You've told us that you&lsquo;re <strong>working from <%= answers.business_physical_address_street %></strong>, and your business is a <strong><%= answers.SIC_sic_name %></strong> (SIC code <%= answers.SIC_sic_code %>).</p>
+  <p>This use is requires a <strong>special use permit</strong> at this location.</p>
+  <p>You will need either an <abbr title="Special Use Permit">SUP</abbr> to site your business here.</p>
+  <p>Contact the Planning Department for next steps.</p>
+  <p class="next"><a href="/help">Contact the Planning Department &rarr;</a></p>
+  <% } %>
+  
   <!-- /@condition NON HOME OCC - Prohibited -->
   <% if((answers.required_permit == "prohibited")&& (answers.location_type == "commercial")){ %>  
     <p>You've told us that you're <strong>working from <%= answers.business_physical_address_street %></strong>, and your business is a <strong><%= answers.SIC_sic_name %></strong> (SIC code <%= answers.SIC_sic_code %>).</p>
@@ -164,10 +172,10 @@
   <!-- /@condition NON HOME OCC - Prohibited -->
 
   <!-- /#condition UNKNOWN -->
-  <div data-zoning-status="unknown">
+  <% if((answers.required_permit == "unknown")&& (answers.location_type == "commercial")){ %>  
     <p>You've told us that you&rsquo;re <strong>working from <%= answers.business_physical_address_street %></strong>, and your business is business is a <strong><%= answers.SIC_sic_name %></strong> (SIC code <%= answers.SIC_sic_code %>).</p>
     <p>We're sorry, but right now OpenCounter can't automatically determine what type of use permit you need.</p>
     <p>Help us make OpenCounter smarter: please <a href="/help">contact the Planning Department</a>, and they'll help you -- and OpenCounter! -- figure out which type of use permit you need. Thank you for helping out the next person!</p>
-  </div>
+    <% } %>
 
 </div><!-- /#requirement_use_permit -->

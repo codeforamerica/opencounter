@@ -86,6 +86,7 @@ function(app) {
           found = true;
         }
       }
+      app.trigger("lookuppermit");
       return found;
     },
     subviews:function(){

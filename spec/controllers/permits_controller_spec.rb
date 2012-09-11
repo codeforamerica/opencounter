@@ -27,6 +27,19 @@ describe PermitsController do
       end
 
     end
+    context "when zoning does not exist" do
+      let(:sic) {"1234"}
+      let(:zoning) {"JLKASD"} # <- not valid zone
+
+      it "returns unkonwn" do
+        get :show, :sic => sic, :zoning => zoning
+        response.code.should == '200'
+        parsed_response = JSON.parse(response.body)
+        parsed_response["permit"].should == 'unknown'
+      end
+
+    end
+
     context "when zoning is explicitly unknown" do
       let(:sic) {"5555"}
       let(:zoning) {"R-S"}

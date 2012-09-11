@@ -138,6 +138,23 @@ function(app, Parking) {
     }
   });
 
+  //this isnt this function final resting place, need to be more thought out.
+  Answer.lookupPermit = function(){
+    var zoning = this.answers.getAnswer("zoning");
+    var sic = this.answers.getAnswer("SIC_sic_code");
+    if(zoning && sic){
+      //we know what we need at this point.
+      var self = this;
+      var url = "/api/lookup/permit/"+zoning[0]+"/"+sic
+
+      $.ajax(url, {success:function(data){
+        self.answers.addAnswer("required_permit", data.permit);
+      },dataType:"json"});
+
+    }
+
+  };
+  
 
   // Return the module for AMD compliance.
   return Answer;

@@ -93,7 +93,7 @@ function(app) {
         this.collection.addAnswer("bid", data.features[0].attributes["BIA"].replace(" ", ""))
         this.collection.addAnswer("apn", data.features[0].attributes["APN"])
         this.collection.addAnswer("zoning", zoning);
-
+        app.trigger("lookuppermit");
         this.$el.find("#zoning_display").html("That location is zoned for: "+zoning.join(","));
 
         var latlng = new google.maps.LatLng(data.features[0].geometry.y,
