@@ -141,7 +141,7 @@ function(app, Parking) {
   //this isnt this function final resting place, need to be more thought out.
   Answer.lookupPermit = function(){
     var zoning = this.answers.getAnswer("zoning");
-    var sic = this.answers.getAnswer("SIC_sic_code");
+    var sic = this.answers.getAnswer("SIC_code");
     if(zoning && sic){
       //we know what we need at this point.
       var self = this;
