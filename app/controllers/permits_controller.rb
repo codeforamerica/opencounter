@@ -16,6 +16,9 @@ class PermitsController < ApplicationController
 
     if zoning_lookup != 0
       zoning_lookup.each do |zoning_type, sics|
+        if sics.nil?
+          sics = ""
+        end
         sics_split = sics.split(",")
         sics_split.each do |sic_symbol|
           if sic_symbol =~ /-/
