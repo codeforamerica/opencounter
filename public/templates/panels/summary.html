@@ -56,8 +56,7 @@
         <p>You haven&rsquo;t told us where you&rsquo;ll be working from. <a href="/location">Go back &rarr;</a></p>
       </td>
     </tr>
-    <% } else { %>
-    <%    if (answers.location_type === "home") { %>
+    <% } else if (answers.location_type === "home") { %>
     <tr>
       <td>
         <p class="task">Get a <strong<%= answers.required_permit %></strong>.</p>
@@ -74,7 +73,7 @@
         </ol>
       </td>
     </tr>
-    <%    } elseif (answers.location_type === "commercial") { %>
+    <% } else if (answers.location_type === "commercial") { %>
     <tr>
       <td>
         <p class="task">Get a <strong<%= answers.required_permit %></strong>.</p>
@@ -91,13 +90,42 @@
         </ol>
       </td>
     </tr>
-    <%    } else { %>
+    <% } else { %>
     <tr>
       <td colspan="3">Oops, something's gone wrong. (Developer: answers.location_type = <%= answers.location_type %>.)</td>
     </tr>
-    <%    } %>
     <% } %>
 
+    <!-- Fictitious Business Name -->
+    <tr>
+      <td>
+        <p class="task">Register a <strong>Fictitious Business Name</strong></p>
+        <p class="fee">$[] <a href="#">(how was this calculated?)</a></p>
+      </td>
+      <td>[]</td>
+      <td>
+        <ol>
+          <li></li>
+          <li></li>
+        </ol>
+      </td>
+    </tr>
+
+    <!-- Incorporation -->
+    <tr>
+      <td>
+        <p class="task">Register your <strong>corporation</strong></p>
+        <p class="fee">$[] <a href="#">(how was this calculated?)</a></p>
+      </td>
+      <td>[]</td>
+      <td>
+        <ol>
+          <li></li>
+          <li></li>
+        </ol>
+      </td>
+    </tr>
+    
     <!-- Business License -->
     <tr>
       <td>
@@ -113,8 +141,7 @@
         </ol>
       </td>
     </tr>
-
-
+    
     <!-- Fire Inspection -->
     <!--
     <tr>
@@ -167,6 +194,8 @@
       </td>
     </tr>
     -->
+
+
 
   </table>
   
