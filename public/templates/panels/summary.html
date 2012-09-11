@@ -1,11 +1,11 @@
 <div id="summary">
   <h1>Summary</h1>
   <p>Thank you for answering all of our questions.</p>
-  <p>Based on what you&rsquo;ve told us, we believe [if owner]your[else]this[/if] business needs to complete the following paperwork:</p>
+  <p>Based on what you&rsquo;ve told us, we believe <%= (answers.is_owner === "true") ? "your" : "this" %> business needs to complete the following paperwork:</p>
 
   <h3>Overview</h3>
   <div class="statistics">
-    Total forms: [total_forms]
+    Total forms: 4
     Total fees: $[total_fees]
   </div>
   
@@ -26,7 +26,8 @@
         <p>You haven't told us whether you're the owner or the owner's agent. <a href="/info">Go back &rarr;</a></p>
       </td>
     </tr>
-    <% } elseif ((answers.is_owner) && (answers.is_owner !== "true")) { %>
+    <% } else {
+          if ((answers.is_owner) && (answers.is_owner !== "true")) { %>
     <tr>
       <td>
         <p class="task">Register as the <strong>Owner Agent</strong>.</p>
@@ -44,7 +45,9 @@
         </ol>
       </td>
     </tr>
-    <% } %>
+    <%    }
+       }
+    %>
 
     <!-- Use Permit -->
     <% if (!answers.location_type) { %>
@@ -95,6 +98,25 @@
     <%    } %>
     <% } %>
 
+    <!-- Business License -->
+    <tr>
+      <td>
+        <p class="task">Get a <strong>Business License</strong>.</p>
+        <p class="fee">$145.15 <a href="#">(how was this calculated?)</a></p>
+      </td>
+      <td>Your business, [business_name], is located at [business_address], which is within the Santa Cruz city limits, so you are required to have a City of Santa Cruz Business License Tax Certificate.</td>
+      <td>
+        <ol>
+          <li>Download and print the <a href="#">business license tax</a> form.</li>
+          <li>Fill it out with the <a href="/helper/city/business_license">information you provided</a>.</li>
+          <li></li>
+        </ol>
+      </td>
+    </tr>
+
+
+    <!-- Fire Inspection -->
+    <!--
     <tr>
       <td>
         <p class="task">Get a <strong>Fire Inspection</strong>.</p>
@@ -109,7 +131,10 @@
         </ol>
       </td>
     </tr>
+    -->
 
+    <!-- Building Permit -->
+    <!--
     <tr>
       <td>
         <p class="task">Get a <strong>Building Permit</strong>.</p>
@@ -126,21 +151,9 @@
         </ol>
       </td>
     </tr>
-    <tr>
-      <td>
-        <p class="task">Get a <strong>Business License</strong>.</p>
-        <p class="fee">$145.15 <a href="#">(how was this calculated?)</a></p>
-      </td>
-      <td>Your business, [business_name], is located at [business_address], which is within the Santa Cruz city limits, so you are required to have a City of Santa Cruz Business License Tax Certificate.</td>
-      <td>
-        <ol>
-          <li>Download and print the <a href="#">business license tax</a> form.</li>
-          <li>Fill it out with the <a href="/helper/city/business_license">information you provided</a>.</li>
-          <li></li>
-        </ol>
-      </td>
-    </tr>
+    -->
 
+    <!--
     <tr>
       <td>
         <p class="task"></p>
@@ -153,6 +166,7 @@
         </ol>
       </td>
     </tr>
+    -->
 
   </table>
   

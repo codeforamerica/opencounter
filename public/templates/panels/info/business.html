@@ -21,19 +21,19 @@
       <label>
         What is <%= (answers.is_owner === "true") ? "your" : "the" %> business&rsquo;s legal structure?
         <select name="business_structure">
-          <option value="unknown">Not sure, don&rsquo;t know, or haven&rsquo;t decided yet</option>
-          <option value="individual">an Individual (Sole Proprietorship)</option>
-          <option value="general_partnership">a General Partnership (GP)</option>
-          <option value="limited_partnership">a Limited Partnership (LP)</option>
-          <option value="limited_liability_company">a Limited Liability Company (LLC)</option>
-          <option value="limited_liability_partnership">a Limited Liability Partnership (LLP)</option>
-          <option value="association">an Unincorporated Association other than a Partnership</option>
-          <option value="corporation">a Corporation</option>
-          <option value="trust">a Trust</option>
-          <option value="copartner">Copartners</option>
-          <option value="married">Husband and Wife</option>
-          <option value="joint_venture">a Joint Venture</option>
-          <option value="domestic_partners">State or Local Registered Domestic Partners</option>
+          <option value="unknown"                       <%= (answers.business_structure === 'unknown') ? 'selected="selected"' : '' %>                        >Not sure, don&rsquo;t know, or haven&rsquo;t decided yet</option>
+          <option value="individual"                    <%= (answers.business_structure === 'individual') ? 'selected="selected"' : '' %>                     >an Individual (Sole Proprietorship)</option>
+          <option value="general_partnership"           <%= (answers.business_structure === 'general_partnership') ? 'selected="selected"' : '' %>            >a General Partnership (GP)</option>
+          <option value="limited_partnership"           <%= (answers.business_structure === 'limited_partnership') ? 'selected="selected"' : '' %>            >a Limited Partnership (LP)</option>
+          <option value="limited_liability_company"     <%= (answers.business_structure === 'limited_liability_company') ? 'selected="selected"' : '' %>      >a Limited Liability Company (LLC)</option>
+          <option value="limited_liability_partnership" <%= (answers.business_structure === 'limited_liability_partnership') ? 'selected="selected"' : '' %>  >a Limited Liability Partnership (LLP)</option>
+          <option value="association"                   <%= (answers.business_structure === 'association') ? 'selected="selected"' : '' %>                    >an Unincorporated Association other than a Partnership</option>
+          <option value="corporation"                   <%= (answers.business_structure === 'corporation') ? 'selected="selected"' : '' %>                    >a Corporation</option>
+          <option value="trust"                         <%= (answers.business_structure === 'trust') ? 'selected="selected"' : '' %>                          >a Trust</option>
+          <option value="copartner"                     <%= (answers.business_structure === 'copartner') ? 'selected="selected"' : '' %>                      >Copartners</option>
+          <option value="married"                       <%= (answers.business_structure === 'married') ? 'selected="selected"' : '' %>                        >Husband and Wife</option>
+          <option value="joint_venture"                 <%= (answers.business_structure === 'joint_venture') ? 'selected="selected"' : '' %>                  >a Joint Venture</option>
+          <option value="domestic_partners"             <%= (answers.business_structure === 'domestic_partners') ? 'selected="selected"' : '' %>              >State or Local Registered Domestic Partners</option>
         </select>
       </label>
     

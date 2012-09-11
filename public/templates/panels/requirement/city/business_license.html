@@ -6,7 +6,9 @@
   <p>After you register with the City, we'll sent a once a year renewal letter to you.</p>
 
 
-  <p>The business is <%= answers.SIC_sic_name %>  (SIC Code: <%= answers.SIC_sic_code %>) which means it is Class <%= answers.SIC_classification %></p>
+  <hr>
+  
+  <p>You've told us that your business is a <%= answers.SIC_sic_name %> (SIC Code: <%= answers.SIC_sic_code %>).</p>
   
   <form>
     <label>
@@ -24,6 +26,7 @@
 
   <p class="fee">The fee for the business license will be: <span id="business_license_fee"></span></p>
   
+  <p class="next">Next: <a href="/requirement/county/fbn">fictitious business name &rarr;</a></p>
 <!-- 
 
 In order to calculate the fee, we need to know

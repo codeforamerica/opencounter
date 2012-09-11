@@ -1,15 +1,23 @@
 <div id="requirement_fbn">
-  <h1>Fictitious Business Names (or, what’s in a name?)</h1>
+  <h1>Fictitious Business Names</h1>
   
   <p>If the name of <%= (answers.is_owner === "true") ? "your" : "this" %> business does not contain <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> last name, you will need to apply to Santa Cruz County for a Fictitious Business Name (FBN).</p>
 
   <p>For example, if <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> last name is Smith and <%= (answers.is_owner === "true") ? "your" : "this" %> business is called "Smith&rsquo;s Tanning," you won't need an FBN. But if <%= (answers.is_owner === "true") ? "your" : "this" %> business is called "Eastside Tanning," you will need an FBN.</p>
 
-  <p>You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> name is <strong><%= answers.owner_first_name %> <%= answers.owner_last_name %></strong> and <%= (answers.is_owner === "true") ? "your" : "this" %> business&rsquo;s name is <strong><%= answers.business_name %></strong>.</p>
+  <hr>
 
-  <p>This means you won't need an FBN. <a href="#">Next &rarr;</a></p>
+  <p>You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> name is <strong><% if (answers.is_owner === "true") { %><%= answers.applicant_first_name %> <%= answers.applicant_last_name %><% } else { %><%= answers.owner_first_name %> <%= answers.owner_last_name %><% } %></strong> and <%= (answers.is_owner === "true") ? "your" : "this" %> business&rsquo;s name is <strong><%= answers.business_name %></strong>.</p>
+
+  <p>This means you won&rsquo;t need an FBN.</p>
+
+  <p class="next">Next: <a href="/requirement/state/incorporation">incorporation &rarr;</a></p>
+
+  <hr>
 
   <p>This means you will need an FBN from the County of Santa Cruz.</p>
+
+  <hr>
 
   <p>First, make sure that the fictitious business name you want is available, by searching <a href="http://sccounty01.co.santa-cruz.ca.us/clerkrecorder/Asp/FBNInquiry.asp">http://sccounty01.co.santa-cruz.ca.us/clerkrecorder/Asp/FBNInquiry.asp</a></p>
 
@@ -19,26 +27,26 @@
 
     <label>
       Fictitious Business Name
-      <input type="text" name="fictitious_business_name">
+      <input type="text" name="fictitious_business_name" value="<%= answers.fictitious_business_name %>">
     </label>
 
     <fieldset>
       <h3>Business&rsquo; Physical Address</h3>
       <label>
         Street
-        <input type="text" name="business_physical_address_street">
+        <input type="text" name="business_physical_address_street" value="<%= answers.business_physical_address_street %>">
       </label>
       <label>
         City
-        <input type="text" name="business_physical_address_city">
+        <input type="text" name="business_physical_address_city" value="<%= answers.business_physical_address_street %>">
       </label>
       <label>
         State
-        <input type="text" name="business_physical_address_state">
-      <label>
+        <input type="text" name="business_physical_address_state" value="<%= answers.business_physical_address_street %>">
+      </label>
       <label>
         ZIP
-        <input type="text" name="business_physical_address_zip">
+        <input type="text" name="business_physical_address_zip" value="<%= answers.business_physical_address_zip %>">
       </label>
     </fieldset>
 
@@ -46,19 +54,19 @@
       <h3>Business&rsquo;s Mailing Address</h3>
       <label>
         Street
-        <input type="text" name="business_mailing_address_street">
+        <input type="text" name="business_mailing_address_street" value="<%= answers.business_mailing_address_street %>">
       </label>
       <label>
         City
-        <input type="text" name="business_mailing_address_city">
+        <input type="text" name="business_mailing_address_city" value="<%= answers.business_mailing_address_city %>">
       </label>
       <label>
         State
-        <input type="text" name="business_mailing_address_state">
-      <label>
+        <input type="text" name="business_mailing_address_state" value="<%= answers.business_mailing_address_state %>">
+      </label>
       <label>
         ZIP
-        <input type="text" name="business_mailing_address_zip">
+        <input type="text" name="business_mailing_address_zip" value="<%= answers.business_mailing_address_zip %>">
       </label>
     </fieldset>
     
@@ -66,7 +74,7 @@
       <h3>Registered Owner(s)</h3>
       <label>
         Name
-        <input type="text">
+        <input type="text" name="owner_first_name" value="<%= answers.owner_first_name %> <%= answers.owner_last_name %>">
       </label>
       <label>
         Residence Address, City, State, Zip
@@ -106,6 +114,8 @@
     </fieldset>
   </form>
 
+
+  <p class="next">Next: <a href="/requirement/state/incorporation">incorporation &rarr;</a></p>
 
 </div>
 
