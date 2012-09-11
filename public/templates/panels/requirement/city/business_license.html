@@ -6,17 +6,16 @@
   <p>After you register with the City, we'll sent a once a year renewal letter to you.</p>
 
 
-  <p>The business is <%= answers.SIC_sic_name %>  (SIC Code: <%= answers.SIC_sic_code %>) which means it is Class <%= answers.SIC_classifcation %></p>
+  <p>The business is <%= answers.SIC_sic_name %>  (SIC Code: <%= answers.SIC_sic_code %>) which means it is Class <%= answers.SIC_classification %></p>
   
   <form>
-<!--
     <label>
       What type of business is this?
       <input type="radio" name="business_type_class" value="class-a"> Retail, wholesale, contract, construction, or manufacturing
       <input type="radio" name="business_type_class" value="class-b"> Services, hotels and motels, apartment houses, commercial property renting or leasing, recreation and entertainment services and facilities
       <input type="radio" name="business_type_class" value="class-c"> Professions including, but not limited to, accountants, architects, attorneys, auctioneers, chiropractors, dentists, engineers, insurance brokers, medical/health professions, physicians, real estate brokers, security brokers, and veterinarians   
-    </label>    -->
-                  
+    </label>
+    
     <label>
       How many employees do you have?
       <input type="text" name="employee_count">
@@ -25,8 +24,6 @@
 
   <p class="fee">The fee for the business license will be: <span id="business_license_fee"></span></p>
   
-</div><!-- /#requirement_business_license -->
-
 <!-- 
 
 In order to calculate the fee, we need to know
@@ -68,3 +65,5 @@ total = base_tax + (employee_rate * employees);
 total = Math.round(100 * total) / 100;
 
 -->
+
+</div><!-- /#requirement_business_license -->
