@@ -44,7 +44,7 @@ function(app) {
 
       // Round to nearest cent
       total = Math.round(100 * total) / 100;
-      this.collection.addAnswer("#business_license_fee", total);
+      this.collection.addAnswer("business_license_fee", total);
       this.$el.find('#business_license_fee').html("$"+total);
 
     },

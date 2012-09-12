@@ -6,7 +6,19 @@
   <h3>Overview</h3>
   <div class="statistics">
     Total forms: 4
-    Total fees: $[total_fees]
+    Total fees: $
+    <% var fee = 0;
+       if(answers.location_type == "home"){
+         fee+=221;
+       }
+       if ((answers.business_name) && (answers.business_name.indexOf(answers.applicant_last_name) === -1)) { 
+         fee+=40;
+       }
+       if(answers.business_license_fee){
+         fee+=answers.business_license_fee;
+       } %>
+    <%= fee  %>
+  
   </div>
   
   <h3>Breakdown</h3>
@@ -132,7 +144,7 @@
     <tr>
       <td>
         <p class="task">Get a <strong>Business License</strong>.</p>
-        <p class="fee">$145.15 <a href="#">(how was this calculated?)</a></p>
+        <p class="fee">$<%= answers.business_license_fee %> <a href="#">(how was this calculated?)</a></p>
       </td>
       <td>Your business, <strong><%= answers.business_name %></strong>, is located at <strong><%= answers.business_physical_address_street %></strong>, which is within the Santa Cruz city limits, so you are required to have a City of Santa Cruz Business License Tax Certificate.</td>
       <td>
