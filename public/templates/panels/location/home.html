@@ -39,25 +39,26 @@
     <p>What&lsquo;s your business's physical address? (This should be your home address.)</p>
     <label>
       Street
-      <input type="text" name="business_physical_address_street" placeholder="Street Address">
+      <input type="text" name="business_physical_address_street" placeholder="Street Address" value="<%= answers.business_physical_address_street %>">
     </label>
     <label>
       Detail
-      <input type="text" name="business_physical_address_detail" placeholder="Detail">
+      <input type="text" name="business_physical_address_detail" placeholder="Detail" value="<%= answers.business_physical_address_detail %>">
     </label>
+<!--
     <label>
       City
-      <input type="text" name="business_physical_address_city" placeholder="City">
+      <input type="text" name="business_physical_address_city" placeholder="City" value="<%= answers.business_physical_address_city %>">
     </label>
     <label>
       State
-      <input type="text" name="business_physical_address_state" placeholder="State">
+      <input type="text" name="business_physical_address_state" placeholder="State" value="<%= answers.business_physical_address_state %>">
     </label>
     <label>
       ZIP Code
-      <input type="text" name="business_physical_address_zip" placeholder="Zip">
+      <input type="text" name="business_physical_address_zip" placeholder="Zip" value="<%= answers.business_physical_address_zip %>">
     </label>
-
+-->
     <label>
       <input type="checkbox" name="does_mailing_address_match_business_address" checked="checked"> My business's mailing address is the same.
     </label>
@@ -66,29 +67,29 @@
     <div class="conditional mailing-address visuallyhidden">
       <label>
         Street
-        <input type="text" name="business_mailing_address_street" placeholder="Street Address">
+        <input type="text" name="business_mailing_address_street" placeholder="Street Address"  value="<%= answers.business_mailing_address_street %>">
       </label>
       <label>
         Detail
-        <input type="text" name="business_mailing_address_detail" placeholder="Detail">
+        <input type="text" name="business_mailing_address_detail" placeholder="Detail" value="<%= answers.business_mailing_address_detail %>">
       </label>
       <label>
         City
-        <input type="text" name="business_mailing_address_city" placeholder="City">
+        <input type="text" name="business_mailing_address_city" placeholder="City" value="<%= answers.business_mailing_address_city %>">
       </label>
       <label>
         State
-        <input type="text" name="business_mailing_address_state" placeholder="State">
+        <input type="text" name="business_mailing_address_state" placeholder="State" value="<%= answers.business_physical_address_state %>">
       </label>
       <label>
         ZIP Code
-        <input type="text" name="business_mailing_address_zip" placeholder="Zip">
+        <input type="text" name="business_mailing_address_zip" placeholder="Zip"  value="<%= answers.business_physical_address_zip %>">
       </label>
     </div>
     <!-- /@condition -->
 
     <p>Does your business comply with section 24.10.160 of the city of Santa Cruz Municipal Code?</p>
-    <p class="next"><a class="submit" href="/requirements">Yep, <%= (answers.is_owner === "true") ? "my" : "this" %> work-from-home business complies with all these rules &rarr;</a></p>
+    <p class="next"><a class="submit" href="/location/check">Yep, <%= (answers.is_owner === "true") ? "my" : "this" %> work-from-home business complies with all these rules &rarr;</a></p>
     <p class="next"><a class="submit" href="/help">Uh-oh. Sounds like <%= (answers.is_owner === "true") ? "I" : "the owner" %> might not be able to operate this business from home. Help! &rarr;</a></p>
   </form>
 </div><!-- /#location_home_occ -->
