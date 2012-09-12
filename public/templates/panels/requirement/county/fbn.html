@@ -7,14 +7,30 @@
 
   <hr>
 
-  <p>You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> name is <strong><% if (answers.is_owner === "true") { %><%= answers.applicant_first_name %> <%= answers.applicant_last_name %><% } else { %><%= answers.owner_first_name %> <%= answers.owner_last_name %><% } %></strong> and <%= (answers.is_owner === "true") ? "your" : "this" %> business&rsquo;s name is <strong><%= answers.business_name %></strong>.</p>
 
+
+  <% if(!answers.business_name){ %>
+
+  <p>You need to first enter your business name.</p>
+  <p class="next">Next: <a href="/info/business">business info &rarr;</a></p>
+  
+  <% }else if(!answers.applicant_last_name) { %>
+
+  <p>You need to first enter the applicant's name.</p>
+  <p class="next">Next: <a href="/info/applicant">your info &rarr;</a></p>
+
+
+  <% }else{ %>
+    <p>You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> name is <strong><% if (answers.is_owner === "true") { %><%= answers.applicant_first_name %> <%= answers.applicant_last_name %><% } else { %><%= answers.owner_first_name %> <%= answers.owner_last_name %><% } %></strong> and <%= (answers.is_owner === "true") ? "your" : "this" %> business&rsquo;s name is <strong><%= answers.business_name %></strong>.</p>
+  
+  <% if ((answers.business_name) && (answers.business_name.indexOf(answers.applicant_last_name) >= 0)) { %>
+  
   <p>This means you won&rsquo;t need an FBN.</p>
 
   <p class="next">Next: <a href="/requirement/state/incorporation">incorporation &rarr;</a></p>
-
+  
   <hr>
-
+  <% }else { %>
   <p>This means you will need an FBN from the County of Santa Cruz.</p>
 
   <hr>
@@ -91,7 +107,7 @@
         </select>
       </label>
     </fieldset>
-    
+
     <fieldset>
       <label>
         Business is conducted by:
@@ -116,7 +132,8 @@
 
 
   <p class="next">Next: <a href="/requirement/state/incorporation">incorporation &rarr;</a></p>
-
+  <% } %>
+  <% } %>
 </div>
 
 
