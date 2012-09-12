@@ -97,6 +97,7 @@
     <% } %>
 
     <!-- Fictitious Business Name -->
+    <% if ((answers.business_name) && (answers.business_name.indexOf(answers.applicant_last_name) === -1)) { %>
     <tr>
       <td>
         <p class="task">Register a <strong>Fictitious Business Name</strong></p>
@@ -111,7 +112,7 @@
         </ol>
       </td>
     </tr>
-
+    <% } %>
     <!-- Incorporation -->
     <tr>
       <td>
