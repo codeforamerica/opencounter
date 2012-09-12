@@ -14,6 +14,7 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
     routes: {
+      "clear":"clear",
       "requirement/city/parking":"parking",
       "info/business": "businessInfo",
       "location/check":"locationCheck",
@@ -22,6 +23,13 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
     },
     index: function(e){
       console.log("index");
+    },
+    clear: function(){
+      this.answers.each(function(m){
+        if(m)
+          m.destroy();
+      });
+      window.alert("cleared!");
     },
     parking:function(){
 
@@ -72,6 +80,7 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
       this.user = new User.Model();
       this.business = new Business.Model();
       this.answers = new Answer.Collection();
+      this.answers.fetch();
       app.useLayout("main");
       
       app.on("lookuppermit", Answer.lookupPermit, this);

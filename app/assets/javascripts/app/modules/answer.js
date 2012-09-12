@@ -18,14 +18,16 @@ function(app, Parking) {
   // Default collection.
   Answer.Collection = Backbone.Collection.extend({
     model: Answer.Model,
+    localStorage: new Backbone.LocalStorage("Answer"), 
     addAnswer: function(key, val, opts){
       if(!opts) opts = {};
       var m = this.where({"name": key});
       if(m.length > 0){
-        m[0].set("value", val, opts);
+        m[0].set("value", val, opts).save();
       }else{
-        this.add({name:key, value:val}, opts);
+        this.create({name:key, value:val}, opts);
       }
+      
     },
     getAnswer: function(key, val){
       var m = this.where({"name": key});
@@ -51,26 +53,18 @@ function(app, Parking) {
     updatedInput:function(ev){
       var name = $(ev.target).attr("name");
       var value = $(ev.target).val();
-      this.addAnswer({name:name, value:value});
+      this.collection.addAnswer(name, value);
     },
     checkForAnswer:function(ev){
       if($(ev.target).is("[data-answer]")){
         var name = $(ev.target).attr("name");
         var value = $(ev.target).attr("data-answer");
-        this.addAnswer({name:name, value:value});
+        this.collection.addAnswer(name, value);
       }
     },
     subviews: function() {
       return {beforeRender:function(){},
               afterRender:function(){}};
-    },
-    addAnswer:function(answer){
-      var models = this.collection.where({name:answer.name})
-      if(models.length > 0){
-        models[0].set("value",answer.value);
-      }else{
-        this.collection.add({name:answer.name, value:answer.value});
-      }
     },
     beforeRender: function(){
       this.subviews().beforeRender.call(this);
