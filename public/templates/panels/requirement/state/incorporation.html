@@ -15,7 +15,7 @@
   
   <% } %>
 
-  <p>You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "you are" : "the owner is" %> <%= (answers.applicant_is_sole_owner === 'y') ? "" : "not" %> the sole owner of this business.</p>
+  <p>You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "you are" : "the owner is" %> <%= (answers.applicant_is_sole_owner) ? "" : "not" %> the sole owner of this business.</p>
 
   <% if (answers.applicant_is_sole_owner !== 'y') { %>
 

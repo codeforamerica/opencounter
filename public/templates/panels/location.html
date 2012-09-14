@@ -8,9 +8,9 @@
   <% if (answers.location_type) { %>
   <p>You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "your" : "this" %> business will operate 
     <% if (answers.location_type == "home") { %>
-      out of <%= (answers.is_owner === "true") ? "your" : "the owner's" %> home
+      out of <%= (answers.is_owner === "true") ? "your" : "the owner's" %> home.
     <% } else { %>
-      from a commercial location
+      from a commercial location.
     <% } %>
   </p>
   <% } else { %>
