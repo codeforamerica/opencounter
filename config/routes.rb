@@ -4,6 +4,8 @@ Opencounter::Application.routes.draw do
   resources :businesses
 
   match "api/lookup/sic" => "sic#index"
+  
+  match "user/:email/planning" => "users#update_planning"
 
   match "api/lookup/permit/:zoning/:sic" => "permits#show"
 

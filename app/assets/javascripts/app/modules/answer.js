@@ -48,7 +48,8 @@ function(app, Parking) {
 
     events: {
       "change input,select": "updatedInput",
-      "click a": "checkForAnswer"
+      "click a": "checkForAnswer",
+      "click #sendToPlanning": "sendPlanningEmail"
     },
     updatedInput:function(ev){
       var name = $(ev.target).attr("name");
@@ -61,6 +62,12 @@ function(app, Parking) {
         var value = $(ev.target).attr("data-answer");
         this.collection.addAnswer(name, value);
       }
+    },
+    sendPlanningEmail:function(ev){
+      //do things here
+      $.get("/users/email@email.com/planning", function(data){
+        
+      });
     },
     subviews: function() {
       return {beforeRender:function(){},
