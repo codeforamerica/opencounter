@@ -12,13 +12,14 @@ function(app, Parking) {
 
   // Default model.
   Answer.Model = Backbone.Model.extend({
-  
+    name: 'answer'
   });
 
   // Default collection.
   Answer.Collection = Backbone.Collection.extend({
     model: Answer.Model,
-    localStorage: new Backbone.LocalStorage("Answer"), 
+    url: '/answers',
+    // localStorage: new Backbone.LocalStorage("Answer"), 
     addAnswer: function(key, val, opts){
       if(!opts) opts = {};
       var m = this.where({"name": key});

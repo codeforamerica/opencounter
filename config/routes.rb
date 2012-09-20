@@ -1,6 +1,6 @@
 Opencounter::Application.routes.draw do
   resources :users, :except => :index
-  resources :field_answers
+  resources :answers
   resources :businesses
 
   match "api/lookup/sic" => "sic#index"

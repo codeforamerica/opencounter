@@ -16,7 +16,8 @@ describe UsersController do
       post :create, :user => user
     end
 
-    it("assigns @user") { assigns(:user).should_not == nil }
+    it("assigns @user") { assigns(:user).should == user }
     it("sets the session") { session[:user_id].should == assigns(:user).id }
+    it("renders :302") { response.status.should == 302 }
   end
 end

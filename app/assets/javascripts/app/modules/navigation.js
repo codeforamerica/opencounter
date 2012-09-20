@@ -11,6 +11,7 @@ function(app) {
 
   // Default model.
   Navigation.Model = Backbone.Model.extend({
+    name: 'navigation'
   
   });
 

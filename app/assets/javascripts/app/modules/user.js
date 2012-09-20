@@ -11,7 +11,7 @@ function(app) {
 
   // Default model.
   User.Model = Backbone.Model.extend({
-  
+    name: 'user'
   });
 
   // Default collection.

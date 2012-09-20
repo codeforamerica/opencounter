@@ -11,11 +11,11 @@ function(app) {
 
   // Default model.
   Business.Model = Backbone.Model.extend({
-  
+    name: "business"
   });
 
   Business.TypeModel = Backbone.Model.extend({
-  
+    name: "typemodel"
   });
 
   Business.Views.License = Backbone.View.extend({
