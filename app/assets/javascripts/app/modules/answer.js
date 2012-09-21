@@ -23,13 +23,8 @@ function(app, Parking) {
     addAnswer: function(key, val, opts){
       if(!opts) opts = {};
       var m = this.where({"name": key});
-      console.log(m);
       if(m.length > 0){
-        var a = m[0];
-        a.set("value", val, opts).save();
-        console.log(a instanceof Answer.Model);
-        console.log(a.url);
-        console.log(a.id);
+        m[0].set("value", val, opts).save();
       }else{
         this.create({name:key, value:val}, opts);
       }

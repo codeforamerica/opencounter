@@ -4,5 +4,6 @@ class Field < ActiveRecord::Base
   has_many :answers
   has_and_belongs_to_many :forms
 
+  validates_presence_of :name
   validates_uniqueness_of :name
 end
