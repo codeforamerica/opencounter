@@ -3,15 +3,15 @@ class AnswersController < InheritedResources::Base
 
   def create
     @answer = Answer.new()
-    @answer.text = params[:answer][:value]
-    @answer.field = Field.where(:key => params[:answer][:name]).first
+    @answer.value = params[:answer][:value]
+    @answer.field = Field.where(:name => params[:answer][:name]).first
     @answer.user = current_user
     create!
   end
 
   def update
     @answer = Answer.new(params[:answer])
-    @answer.field = Field.where(:key => params[:field_key])
+    @answer.field = Field.where(:name => params[:answer][:name]).first
     @answer.user = current_user
     update!
   end

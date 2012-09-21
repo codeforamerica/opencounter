@@ -1,4 +1,4 @@
-class UsersController < ActiveController::Base
+class UsersController < ActionController::Base
   respond_to :html, :json, :xml
 
   def create
