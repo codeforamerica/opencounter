@@ -5,6 +5,7 @@ class AnswersController < InheritedResources::Base
     @answer = Answer.new()
     @answer.text = params[:answer][:value]
     @answer.field = Field.where(:key => params[:answer][:name]).first
+    @answer.user = current_user
     create!
   end
 

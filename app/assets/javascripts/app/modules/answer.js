@@ -19,7 +19,6 @@ function(app, Parking) {
   Answer.Collection = Backbone.Collection.extend({
     model: Answer.Model,
     url: '/answers',
-    // localStorage: new Backbone.LocalStorage("Answer"), 
     addAnswer: function(key, val, opts){
       if(!opts) opts = {};
       var m = this.where({"name": key});
@@ -28,7 +27,6 @@ function(app, Parking) {
       }else{
         this.create({name:key, value:val}, opts);
       }
-      
     },
     getAnswer: function(key, val){
       var m = this.where({"name": key});

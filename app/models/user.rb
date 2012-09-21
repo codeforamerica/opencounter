@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   after_create :assign_token
 
   def assign_token
-    update_attributes!(:token => User.generate_token)
+    update_attributes(:token => User.generate_token)
   end
 
   private

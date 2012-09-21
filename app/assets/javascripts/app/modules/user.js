@@ -16,7 +16,8 @@ function(app) {
 
   // Default collection.
   User.Collection = Backbone.Collection.extend({
-    model: User.Model
+    model: User.Model,
+    url: '/users'
   });
 
   // Return the module for AMD compliance.
