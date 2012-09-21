@@ -22,15 +22,15 @@ function(app, Parking) {
     url: '/answers/',
     addAnswer: function(key, val, opts){
       if(!opts) opts = {};
-      var m = this.where({"name": key});
+      var m = this.where({"field_name": key});
       if(m.length > 0){
         m[0].set("value", val, opts).save();
       }else{
-        this.create({name:key, value:val}, opts);
+        this.create({field_name:key, value:val}, opts);
       }
     },
     getAnswer: function(key, val){
-      var m = this.where({"name": key});
+      var m = this.where({"field_name": key});
       if(m.length > 0){
         return m[0].get("value");
       }else{
@@ -88,7 +88,7 @@ function(app, Parking) {
       var model, answers={};
       for(m in this.collection.models){
         model = this.collection.models[m];
-        answers[model.get("name")] = model.get("value");
+        answers[model.get("field_name")] = model.get("value");
       }
       return {answers:answers};
     },
