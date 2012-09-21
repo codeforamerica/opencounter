@@ -12,19 +12,23 @@ function(app, Parking) {
 
   // Default model.
   Answer.Model = Backbone.Model.extend({
-    name: 'answer'
+    name: 'answer',
+    url: this.id? '/answers/' + this.id : '/answers'
   });
 
   // Default collection.
   Answer.Collection = Backbone.Collection.extend({
     model: Answer.Model,
-    url: '/answers',
-    // localStorage: new Backbone.LocalStorage("Answer"), 
+    url: '/answers/',
     addAnswer: function(key, val, opts){
       if(!opts) opts = {};
       var m = this.where({"field_name": key});
       if(m.length > 0){
-        m[0].set("value", val, opts).save();
+        var a = m[0];
+        a.set("value", val, opts).save();
+        console.log(a instanceof Answer.Model);
+        console.log(a.url);
+        console.log(a.id);
       }else{
         this.create({field_name:key, value:val}, opts);
       }
