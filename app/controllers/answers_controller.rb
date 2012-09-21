@@ -5,7 +5,9 @@ class AnswersController < InheritedResources::Base
     @answer = Answer.new()
     @answer.value = params[:answer][:value]
     @answer.field = Field.where(:name => params[:answer][:name]).first
-    @answer.user = current_user
+    if current_user
+      @answer.business = current_user.businesses.first
+    end
     create!
   end
 
