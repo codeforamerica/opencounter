@@ -5,8 +5,8 @@ define([
   "backbone",
   "../libs/bootstrap-typeahead",
   // Plugins.
-  "plugins/backbone.layoutmanager",
-  "plugins/backbone.localStorage"
+  "plugins/backbone.layoutmanager"
+
 ],
 
 function($, _, Backbone) {
