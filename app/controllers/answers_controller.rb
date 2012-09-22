@@ -1,6 +1,13 @@
 class AnswersController < InheritedResources::Base
   respond_to :html, :json, :xml
 
+  def index
+    if current_user
+      @answers = current_user.answers
+    end
+    respond_with @answers
+  end
+
   def create
     @answer = Answer.new()
     @answer.value = params[:answer][:value]
@@ -8,7 +15,6 @@ class AnswersController < InheritedResources::Base
     if current_user
       @answer.business = current_user.businesses.first
     end
-    p @answer
     create!
   end
 
