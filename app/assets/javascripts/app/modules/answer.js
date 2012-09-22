@@ -13,13 +13,15 @@ function(app, Parking) {
   // Default model.
   Answer.Model = Backbone.Model.extend({
     name: 'answer',
-    url: this.id? '/answers/' + this.id : '/answers'
+    url: function(){
+      return this.id? '/answers/' + this.id : '/answers';
+    }
   });
 
   // Default collection.
   Answer.Collection = Backbone.Collection.extend({
     model: Answer.Model,
-    url: '/answers/',
+    url: '/answers',
     addAnswer: function(key, val, opts){
       if(!opts) opts = {};
       var m = this.where({"field_name": key});

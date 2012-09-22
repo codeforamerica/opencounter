@@ -13,9 +13,12 @@ class AnswersController < InheritedResources::Base
   end
 
   def update
-    @answer = Answer.new(params[:answer])
-    @answer.field = Field.find_or_create_by_name(:name => params[:answer][:field_name])
-    @answer.user = current_user
-    update!
+    @answer = Answer.find(params[:id])
+    @answer.update_attribute(:value, params[:answer][:value])
+    if current_user
+      @answer.business = current_user.businesses.first
+    end
+    @answer.save
+    render :json => @answer
   end
 end

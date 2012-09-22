@@ -72,8 +72,9 @@ function($, _, Backbone) {
 
     // Extracts the object's wrapped attributes.
     unwrappedAttributes : function(object) {
-      if(object[this._name()]){
-        return object[this._name()];
+      var name = this._name();
+      if(object && object[name]){
+        return object[name];
       }else{
         return object;
       }
