@@ -73,7 +73,7 @@ function(app, Parking) {
       var self = this;
       this.$el.find("input").each(function(i, el){
         el = $(el);
-        var models = self.collection.where({name:el.attr("name")});
+        var models = self.collection.where({field_name:el.attr("name")});
         if(models.length > 0){
           el.val(models[0].get("value"));
         }
@@ -101,7 +101,7 @@ function(app, Parking) {
       if(o.useTemplate)
         this.template = o.useTemplate;
       this.collection.on("reset", this.render, this); 
-      this.collection.on("change", this.render, this); 
+
     }
   });
 

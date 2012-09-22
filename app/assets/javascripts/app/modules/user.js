@@ -47,7 +47,7 @@ function(app) {
     },
     initialize: function(o) {
       this.collection.on("reset", this.render, this); 
-      this.collection.on("change", this.render, this); 
+      
       this.user = o.user;
     }
 
