@@ -17,3 +17,5 @@
 /log/*.log
 /tmp
 /data
+
+.DS_Store
