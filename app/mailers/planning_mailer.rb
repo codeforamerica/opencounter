@@ -1,9 +1,9 @@
 class PlanningMailer < ActionMailer::Base
-  default from: "submission@opencounter.org"
+  default from: "planningcounter@opencounter.org"
 
   def deliver_submission_email(user)
     @user = user
-    mail(:to => "planning@cityofsantacruz.com", :subject => "OpenCounter submission")
+    mail(:to => "planningcounter@cityofsantacruz.com", :subject => "[OpenCounter] New Business Inquiry")
   end
 
 end
