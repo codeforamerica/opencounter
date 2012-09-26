@@ -1,0 +1,46 @@
+<h1>Editing CIC Code <%= @cic_code.code %></h1>
+
+<%= form_for(:cic_code, :url => admin_cic_code_path(@cic_code, :zoning_district_id => @zoning_district.id), :html => {:method => :put}) do |f| %>
+  <% if @cic_code.errors.any? -%>
+    <div id='error_explanation'>
+      <h2><%= pluralize(@cic_code.errors.count, "error") -%> prohibited this county from being saved:"</h2>
+      <ul>
+        <% @cic_code.errors.full_messages.each do |msg| -%>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end -%>
+
+  <div class="field">
+    <%= f.label :code %>
+    <%= f.text_field :code %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :industry %>
+    <%= f.text_field :industry %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :subindustry %>
+    <%= f.text_field :subindustry %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :keywords %>
+    <%= f.text_area :keywords %>
+  </div>
+  
+  <div class="field">
+    <br />
+    <%= f.check_box :home_occ_prohibited %> Home Occ Prohibited?
+  </div>
+
+  <div class="actions">
+    <br />
+    <%= f.submit 'Save', :class => 'btn btn-success btn-large' %>
+    &nbsp;&nbsp;
+    <%= link_to 'Cancel', admin_zoning_district_path(@zoning_district) %>
+  </div>
+<% end -%>

@@ -1,0 +1,21 @@
+<h1>Zoning Districts</h1>
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>CIC Codes</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <% for zone in @zoning_districts %>
+    <tr class="<%= cycle("odd", "even") -%>">
+      <td><%= zone.code %></td>
+      <td><%= zone.name %></td>
+      <td><%= zone.active_cic_codes.size %></td>
+      <td><%= link_to 'Edit', admin_zoning_district_path(zone) %></td>
+    </tr>
+  <% end %>
+</table>

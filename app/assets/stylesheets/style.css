@@ -885,7 +885,7 @@ ul.dropdown-menu {
     padding: 3px 20px;
     clear: both;
     font-weight: normal;
-    line-height: @baseLineHeight;
-    color: @dropdownLinkColor;
+    line-height: 1;
+    color: #009;
     white-space: nowrap;
 }
