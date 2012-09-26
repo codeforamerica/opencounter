@@ -886,6 +886,6 @@ ul.dropdown-menu {
     clear: both;
     font-weight: normal;
     line-height: 1;
-    color: @dropdownLinkColor;
+    color: #009;
     white-space: nowrap;
 }
