@@ -19,9 +19,9 @@ Code,Industry,Subtype
 155A,"Industry, Manufacturing and Production",Fabricated Wire Products
 155B,"Industry, Manufacturing and Production",Industrial Machining / Equipment
 155C,"Industry, Manufacturing and Production",Solar Equipment / Related
-155,"Industry, Manufacturing and Production",Software
+155D,"Industry, Manufacturing and Production",Software
 155E,"Industry, Manufacturing and Production",Motion Picture Production
-155,"Industry, Manufacturing and Production","Petroleum, bulk"
+155F,"Industry, Manufacturing and Production","Petroleum, bulk"
 155G,"Industry, Manufacturing and Production",Prefabricated Wood Buildings
 155H,"Industry, Manufacturing and Production",Pressed and Molded Goods
 155I,"Industry, Manufacturing and Production",Scraps and Waste Materials
@@ -30,9 +30,9 @@ Code,Industry,Subtype
 200A,Trade (Wholesale and Retail),Bakery
 200B,Trade (Wholesale and Retail),Confectionary and Related
 200C,Trade (Wholesale and Retail),Dairy Products
-200,Trade (Wholesale and Retail),Chemicals and Related
+200D,Trade (Wholesale and Retail),Chemicals and Related
 200E,Trade (Wholesale and Retail),Drugs / Sundries and related
-200,Trade (Wholesale and Retail),Fish / Seafood
+200F,Trade (Wholesale and Retail),Fish / Seafood
 200G,Trade (Wholesale and Retail),Frozen Foods
 200H,Trade (Wholesale and Retail),Health Foods
 200I,Trade (Wholesale and Retail),Meat/Meat Products
@@ -44,18 +44,18 @@ Code,Industry,Subtype
 210A,Trade (Wholesale and Retail),Building Materials
 210B,Trade (Wholesale and Retail),Industrial Supplies
 210C,Trade (Wholesale and Retail),Lumber and Construction Materials
-210,Trade (Wholesale and Retail),Nursery Products and related
+210D,Trade (Wholesale and Retail),Nursery Products and related
 210E,Trade (Wholesale and Retail),Paper Products and related
-210,Trade (Wholesale and Retail),Special Equipment / Machine Supply
+210F,Trade (Wholesale and Retail),Special Equipment / Machine Supply
 210G,Trade (Wholesale and Retail),Software
 210H,Trade (Wholesale and Retail),Misc. Wholesale Trade
 220,Trade (Wholesale and Retail),Retail (Building Materials / Garden Supplies)
 220A,Trade (Wholesale and Retail),Hardware/Building Materials except lumber
 220B,Trade (Wholesale and Retail),Lumberyard
 220C,Trade (Wholesale and Retail),Air Conditioning / Heating / Plumbing / Electrical
-200,Trade (Wholesale and Retail),Paint / Glass / Wallpaper
+200D,Trade (Wholesale and Retail),Paint / Glass / Wallpaper
 220E,Trade (Wholesale and Retail),Solar Equipment and Supply
-220,Trade (Wholesale and Retail),Nursery - Flower and Stock
+220F,Trade (Wholesale and Retail),Nursery - Flower and Stock
 220G,Trade (Wholesale and Retail),Nursery - Garden and Supply
 230,Trade (Wholesale and Retail),Retail (General Merchandise)
 230A,Trade (Wholesale and Retail),Department Store
@@ -65,48 +65,48 @@ Code,Industry,Subtype
 240A,Trade (Wholesale and Retail),Grovery and Related Retail
 240B,Trade (Wholesale and Retail),Convenience  / Liquor Store
 240C,Trade (Wholesale and Retail),Seafood/Fishmarket
-240,Trade (Wholesale and Retail),Butcher Shop
+240D,Trade (Wholesale and Retail),Butcher Shop
 240E,Trade (Wholesale and Retail),Health Foods
-240,Trade (Wholesale and Retail),Dairy Products
+240F,Trade (Wholesale and Retail),Dairy Products
 240G,Trade (Wholesale and Retail),Produce
 240H,Trade (Wholesale and Retail),Misc. / Food Trade
 250,Trade (Wholesale and Retail),Retail (Apparel and Accessory Stores)
 250A,Trade (Wholesale and Retail),Clothing and Related Retail
 250B,Trade (Wholesale and Retail),Shoe Store
 250C,Trade (Wholesale and Retail),Jewelry Store
-250,Trade (Wholesale and Retail),Fabric and Related
+250D,Trade (Wholesale and Retail),Fabric and Related
 250E,Trade (Wholesale and Retail),Leather Goods
 260,Trade (Wholesale and Retail),Retail (Motor Vehicle Dealers and Supply)
 260A,Trade (Wholesale and Retail),New Auto
 260B,Trade (Wholesale and Retail),Used Auto
 260C,Trade (Wholesale and Retail),Auto Supply Store
-260,Trade (Wholesale and Retail),Mortorcycle / Scooter and Supply
+260D,Trade (Wholesale and Retail),Mortorcycle / Scooter and Supply
 206E,Trade (Wholesale and Retail),Recreation Vehicles
 270,Trade (Wholesale and Retail),Retail (Home Furnishings)
 270A,Trade (Wholesale and Retail),Appliance
 270B,Trade (Wholesale and Retail),Antiques
 270C,Trade (Wholesale and Retail),Furniture and Home Furnishings ect.
-270,Trade (Wholesale and Retail),Drapery
+270D,Trade (Wholesale and Retail),Drapery
 270E,Trade (Wholesale and Retail),Floor Covering / Tile
-270,Trade (Wholesale and Retail),Patio and Pool Supplies
+270F,Trade (Wholesale and Retail),Patio and Pool Supplies
 270G,Trade (Wholesale and Retail),TV/Stereo
 270H,Trade (Wholesale and Retail),"China, Glassware, Metalware"
 280,Trade (Wholesale and Retail),Retail (Eating and Drinking Establishments)
 280A,Trade (Wholesale and Retail),Restaurant
 280B,Trade (Wholesale and Retail),Deli
 280C,Trade (Wholesale and Retail),"Bar, Cocktail, Lounge Tavern"
-280,Trade (Wholesale and Retail),"Bakery / Donuts / Coolies, related"
+280D,Trade (Wholesale and Retail),"Bakery / Donuts / Coolies, related"
 280E,Trade (Wholesale and Retail),Candy / nuts and confections
-280,Trade (Wholesale and Retail),Ice Cream / Ice / Yogurt / Frozen Products
+280F,Trade (Wholesale and Retail),Ice Cream / Ice / Yogurt / Frozen Products
 280G,Trade (Wholesale and Retail),CafÈ / Coffee Shop
 280H,Trade (Wholesale and Retail),Fast Food/Snack Bar
 290,Trade (Wholesale and Retail),Retail (Specialty / Supply Stores)
 290A,Trade (Wholesale and Retail),Stationery / Gift/Novelty
 290B,Trade (Wholesale and Retail),"Sporting Goods, Bike Store"
 290C,Trade (Wholesale and Retail),Florist
-290,Trade (Wholesale and Retail),"Camera, Photo Equipment, Developing and Supply"
+290D,Trade (Wholesale and Retail),"Camera, Photo Equipment, Developing and Supply"
 290E,Trade (Wholesale and Retail),Music Store (Instrument and Record)
-290,Trade (Wholesale and Retail),Picture Frames and Mirrors
+290F,Trade (Wholesale and Retail),Picture Frames and Mirrors
 290G,Trade (Wholesale and Retail),"Books, Magazines, Comins and Periodicals"
 290H,Trade (Wholesale and Retail),"Office, Store, School Furniture, Equipment Supply"
 290I,Trade (Wholesale and Retail),Tabacconist
@@ -131,13 +131,13 @@ Code,Industry,Subtype
 300A,Commercial Services,Hotel / Motel
 300B,Commercial Services,Motel/ Winter SRO
 300C,Commercial Services,Bed and Breakfast
-310,Commercial Services,Professional / Personal Service
+310D,Commercial Services,Professional / Personal Service
 310A,Commercial Services,Delivery (includes FedEx UPS)
 310B,Commercial Services,Landscaping / Gardening
 310C,Commercial Services,Printing
-310,Commercial Services,Photography
+310D,Commercial Services,Photography
 310E,Commercial Services,Contractor / Building / Development / Remodel
-310,Commercial Services,Travel Agency
+310F,Commercial Services,Travel Agency
 310G,Commercial Services,Drycleaning / Laundry
 310H,Commercial Services,Beauty Salon / Haircutting
 310I,Commercial Services,Burial / Mortuary / Cemetary/ Mausoluem
@@ -153,26 +153,26 @@ Code,Industry,Subtype
 340A,Commercial Services,Shoe
 340B,Commercial Services,Clothing/Tailor
 340C,Commercial Services,Appliance
-340,Commercial Services,Boat
+340D,Commercial Services,Boat
 340E,Commercial Services,Equipment and Machine (includes TV and Stereo)
-340,Commercial Services,Misc.
+340F,Commercial Services,Misc.
 350,Commercial Services,Automobile Services and Repair
 350A,Commercial Services,Gas Station w. or w/out repair
 350B,Commercial Services,Gas Station w/ or w/out repair and w/Mini market
 350C,Commercial Services,"Vehicle repair, tires, stereo, body, lube, tune, oil, wheels"
-350,Commercial Services,Car Wash
+350D,Commercial Services,Car Wash
 360,Commercial Services,Rental Service
 360A,Commercial Services,Equipment / Leasing
 360B,Commercial Services,Video / Electronic / Telephone Components and Equipment
 360C,Commercial Services,Auto
-260,Commercial Services,Commerical Industrial Space Leasing
+260D,Commercial Services,Commerical Industrial Space Leasing
 400,Offices,Professional Office
 400A,Offices,Architecture
 400B,Offices,Engineering
 400C,Offices,Graphic Design
-400,Offices,Interior Design
+400D,Offices,Interior Design
 400E,Offices,Legal Offices
-400,Offices,Consulting
+400F,Offices,Consulting
 400G,Offices,Advertising
 400H,Offices,Counseling
 400I,Offices,Accountant / Bookkeeping
@@ -184,50 +184,50 @@ Code,Industry,Subtype
 410A,Offices,Veterinary
 410B,Offices,Physician / Optometrist / Health Professional
 410C,Offices,Laboratory
-410,Offices,Dental/Orthodontist
+410D,Offices,Dental/Orthodontist
 410E,Offices,Acupuncture
-410,Offices,Chiropractor
+410F,Offices,Chiropractor
 410G,Offices,Physical Therapy
 410H,Offices,Ambulance Service
 420,Offices,"Financial, Insurance, Real Estate Office"
 420A,Offices,"Holding, Investment, Security, Commodity Brokerage Service"
 420B,Offices,Real Estate
 420C,Offices,"Combines Real Estate, Insurance Carriers, ect. "
-420,Offices,Title Company and Escrow Service
+420D,Offices,Title Company and Escrow Service
 420E,Offices,"Insurance Carriers, Agents, Brokers, Services"
 500,Public Facilities (Community and Institutional),Church /  Religious Purposes
 510,Public Facilities (Community and Institutional),Educational (includes public/private)
 510A,Public Facilities (Community and Institutional),Preschool / Childcare
 510B,Public Facilities (Community and Institutional),Elementary School
 510C,Public Facilities (Community and Institutional),Jr. High / Middle School
-510,Public Facilities (Community and Institutional),High School
+510D,Public Facilities (Community and Institutional),High School
 510E,Public Facilities (Community and Institutional),College / University
-510,Public Facilities (Community and Institutional),Professional / Trade School
+510F,Public Facilities (Community and Institutional),Professional / Trade School
 520,Public Facilities (Community and Institutional),Health Care
 520A,Public Facilities (Community and Institutional),Hospital / Clinic
 530,Public Facilities (Community and Institutional),Government and Public Agencies
 530A,Public Facilities (Community and Institutional),Federal (includes Post Office)
 530B,Public Facilities (Community and Institutional),State
 530C,Public Facilities (Community and Institutional),County
-530,Public Facilities (Community and Institutional),City (does not inlude libraries or the wharf)
+530D,Public Facilities (Community and Institutional),City (does not inlude libraries or the wharf)
 540,Public Facilities (Community and Institutional),Utility and Resources
 540A,Public Facilities (Community and Institutional),Gas / Electric
 540B,Public Facilities (Community and Institutional),Water
 540C,Public Facilities (Community and Institutional),Sanitation
-540,Public Facilities (Community and Institutional),"Flood Control, Erosion"
+540D,Public Facilities (Community and Institutional),"Flood Control, Erosion"
 550,Public Facilities (Community and Institutional),Communication and Information Services
 550A,Public Facilities (Community and Institutional),Radio / TV
 550B,Public Facilities (Community and Institutional),Phone
 550C,Public Facilities (Community and Institutional),Telegraph
-550,Public Facilities (Community and Institutional),"Newspaper publication, print, write"
+550D,Public Facilities (Community and Institutional),"Newspaper publication, print, write"
 550E,Public Facilities (Community and Institutional),"Magazine publication, print, write"
-550,Public Facilities (Community and Institutional),"Books publication, print, write"
+550F,Public Facilities (Community and Institutional),"Books publication, print, write"
 550G,Public Facilities (Community and Institutional),Libraries
 560,Public Facilities (Community and Institutional),Transportation and Marine Facilities
 560A,Public Facilities (Community and Institutional),Railroad
 560B,Public Facilities (Community and Institutional),"Local/Interurban Passenger Transit (bus, cab)"
 560C,Public Facilities (Community and Institutional),"Motor Freight, Trucking, Warehousing"
-560,Public Facilities (Community and Institutional),Misc. Transportation Services
+560D,Public Facilities (Community and Institutional),Misc. Transportation Services
 560E,Public Facilities (Community and Institutional),"Marine Facilities and Related (includes Harbor, fishing, the Wharf)"
 570,Public Facilities (Community and Institutional),"Community Organizations, Associations, Clubs and Meeting Halls (that are not just business offices)"
 570A,Public Facilities (Community and Institutional),"Organizations, Association, Clubs and Lodgehalls (includes Veterans, Unions, Elks, Boys Cluib, YWCA)"
@@ -247,9 +247,9 @@ Code,Industry,Subtype
 720A,Culture and Entertainment,Bowling
 720B,Culture and Entertainment,Billiards / Pool Hall
 720C,Culture and Entertainment,Martial Arts
-720,Culture and Entertainment,Health Clubs / Gyms
+720D,Culture and Entertainment,Health Clubs / Gyms
 720E,Culture and Entertainment,Misc. sports and recreation facilities
-720,Culture and Entertainment,"Amusement Parks, Arcades and related"
+720F,Culture and Entertainment,"Amusement Parks, Arcades and related"
 720G,Culture and Entertainment,Golf Courses
 800,Residential,Single Family Residential
 800A,Residential,Single Family Home
@@ -265,7 +265,7 @@ Code,Industry,Subtype
 830A,Residential,4 unit multi-family
 830B,Residential,4 unit condo
 830C,Residential,5-9 unit Multi-family
-830,Residential,5-9 unit condo
+830D,Residential,5-9 unit condo
 840,Residential,Multi-family (10+ units)
 840A,Residential,10+ units Multi-family
 840B,Residential,10+ units condo
@@ -273,13 +273,13 @@ Code,Industry,Subtype
 850A,Residential,Residential Halls or Dorms
 850B,Residential,Retirement Homes
 850C,Residential,Religious Quarters
-850,Residential,Military Quarters
+850D,Residential,Military Quarters
 850E,Residential,Residential Care Facilities (includes Rest Homes / Convalescent Homes)
 860,Residential,Single Room Occupancy (SRO) Housing
 860A,Residential,Affordable Lower Inc. (65% of median)
 860B,Residential,Affordable Low Inc. (80% of median)
 860C,Residential,Other/Market Rate
-860,Residential,Senior
+860D,Residential,Senior
 860E,Residential,Undetermined Mix
 870,Vacant Lands and Parking,Mobile Home/ Trailer Parks
 900,Vacant Lands and Parking,Vacant Parcels
