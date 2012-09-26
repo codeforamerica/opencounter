@@ -1,0 +1,37 @@
+<h1><%= @zoning_district.code %> &mdash; <%= @zoning_district.name %></h1>
+<p><%= @zoning_district.description %></p>
+
+<% if @zoning_district.cic_code_zoning_districts.blank? %>
+  <p>There are no CIC Codes associated with this Zoning District.</p>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Industry</th>
+        <th>Subindustry</th>
+        <th>Permitted</th>
+        <th>AUP</th>
+        <th>SUP</th>
+        <th>Prohibited</th>
+        <th>Unknown</th>
+        <th>Home Occ Prohibited</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for permission in @cic_code_zoning_districts %>
+        <tr class="<%= cycle("odd", "even") -%>">
+          <td><%= link_to permission.cic_code.code, edit_admin_cic_code_path(permission.cic_code, :zoning_district_id => @zoning_district.id) %></td>
+          <td><%= permission.cic_code.industry %></td>
+          <td><%= permission.cic_code.subindustry %></td>
+          <td align="center"><%= radio_button_tag "#{permission.id}_permission", 1, permission.permission == 1 %></td>
+          <td align="center"><%= radio_button_tag "#{permission.id}_permission", 2, permission.permission == 2 %></td>
+          <td align="center"><%= radio_button_tag "#{permission.id}_permission", 3, permission.permission == 3 %></td>
+          <td align="center"><%= radio_button_tag "#{permission.id}_permission", 4, permission.permission == 4 %></td>
+          <td align="center"><%= radio_button_tag "#{permission.id}_permission", 5, permission.permission == 5 %></td>
+          <td align="center"><%= check_box_tag "#{permission.id}_home_occ_prohibited", 1, permission.home_occ_prohibited? %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

@@ -8,8 +8,15 @@ Opencounter::Application.routes.draw do
   match "api/lookup/permit/:zoning/:sic" => "permits#show"
 
   root :to => 'panels#intro'
+    
+  namespace :admin do
+    resources :cic_codes
+    resources :cic_code_zoning_districts
+    resources :zoning_districts
+  end
   
   match "*path" => "panels#intro"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
