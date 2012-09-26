@@ -1,0 +1,297 @@
+Code,Industry,SubIndustry
+700,Agriculture and Forestry,Agriculture / Grazing Services
+850,Agriculture and Forestry,"Forestry Services, other"
+2000,"Industry, Manufacturing and Production","Food and Beverage Preparation, Production"
+2200,"Industry, Manufacturing and Production","Millwork Textile Products (knit goods, dying, woven fabric)"
+3110,"Industry, Manufacturing and Production","Clothing, Leather Tanning"
+2400,"Industry, Manufacturing and Production","Wood products, Lumber and Fuelwood"
+2500,"Industry, Manufacturing and Production",Furniture and Fixtures
+5110,"Industry, Manufacturing and Production",Paper and Allied Products
+2800,"Industry, Manufacturing and Production",Chemicals and Allied Products
+3000,"Industry, Manufacturing and Production","Rubber, Plastic, Misc. Materials and Products"
+3200,"Industry, Manufacturing and Production","Stone, Clay, Glass Products"
+3300,"Industry, Manufacturing and Production",Primary Metals and Materials Industry
+3440,"Industry, Manufacturing and Production",Fabricated Medal Products
+3600,"Industry, Manufacturing and Production",Electronic Equipment and Manufacturing
+3799,"Industry, Manufacturing and Production",Transportation building and equipment
+3490,"Industry, Manufacturing and Production",Misc. Fabricated Metal Products
+3999,"Industry, Manufacturing and Production",Other Manufacturing and Processing Undistries
+3496,"Industry, Manufacturing and Production",Fabricated Wire Products
+3560,"Industry, Manufacturing and Production",Industrial Machining / Equipment
+3674,"Industry, Manufacturing and Production",Solar Equipment / Related
+7372,"Industry, Manufacturing and Production",Software
+7810,"Industry, Manufacturing and Production",Motion Picture Production
+5170,"Industry, Manufacturing and Production","Petroleum, bulk"
+2452,"Industry, Manufacturing and Production",Prefabricated Wood Buildings
+3390,"Industry, Manufacturing and Production",Pressed and Molded Goods
+5093,"Industry, Manufacturing and Production",Scraps and Waste Materials
+3900,"Industry, Manufacturing and Production",Mic. Manufacturing and Processing
+5100,Trade (Wholesale and Retail),Wholesale (Non Durable Goods)
+2050,Trade (Wholesale and Retail),Bakery
+5440,Trade (Wholesale and Retail),Confectionary and Related
+2020,Trade (Wholesale and Retail),Dairy Products
+2800,Trade (Wholesale and Retail),Chemicals and Related
+5120,Trade (Wholesale and Retail),Drugs / Sundries and related
+5146,Trade (Wholesale and Retail),Fish/Seafood
+5142,Trade (Wholesale and Retail),Frozen Foods
+5490,Trade (Wholesale and Retail),Health Foods
+5147,Trade (Wholesale and Retail),Meat/Meat Products
+5410,Trade (Wholesale and Retail),Misc. Food Trade
+5144,Trade (Wholesale and Retail),Poultry/Poultry Products
+5430,Trade (Wholesale and Retail),Produce
+5920,Trade (Wholesale and Retail),Alcohol Distribution
+5099,Trade (Wholesale and Retail),Wholesale (Durable Goods)
+5200,Trade (Wholesale and Retail),Building Materials
+5085,Trade (Wholesale and Retail),Industrial Supplies
+5030,Trade (Wholesale and Retail),Lumber and Construction Materials
+5260,Trade (Wholesale and Retail),Nursery Products and related
+2600,Trade (Wholesale and Retail),Paper Products and related
+5080,Trade (Wholesale and Retail),Special Equipment / Machine Supply
+5734,Trade (Wholesale and Retail),Software
+0,Trade (Wholesale and Retail),Misc. Wholesale Trade
+5200,Trade (Wholesale and Retail),Retail (Building Materials / Garden Supplies)
+5250,Trade (Wholesale and Retail),Hardware/Building Materials except lumber
+5210,Trade (Wholesale and Retail),Lumberyard
+1710,Trade (Wholesale and Retail),Air Conditionsin / Heating / Plumbing / Electrical
+5230,Trade (Wholesale and Retail),Paint / Glass / Wallpaper
+1710,Trade (Wholesale and Retail),Solar Equipment and Supply
+5193,Trade (Wholesale and Retail),Nursery - Flower and Stock
+5193,Trade (Wholesale and Retail),Nursery - Garden and Supply
+0,Trade (Wholesale and Retail),Retail (General Merchandise)
+5310,Trade (Wholesale and Retail),Department Store
+5330,Trade (Wholesale and Retail),Variety Store
+5910,Trade (Wholesale and Retail),Variety / Drug Store
+5410,Trade (Wholesale and Retail),Retail (Food and Beverage Stores)
+5140,Trade (Wholesale and Retail),Grovery and Related Retail
+5920,Trade (Wholesale and Retail),Convenience  / Liquor Store
+5420,Trade (Wholesale and Retail),Seafood/Fishmarket
+5420,Trade (Wholesale and Retail),Butcher Shop
+5490,Trade (Wholesale and Retail),Health Foods
+2020,Trade (Wholesale and Retail),Dairy Products
+5430,Trade (Wholesale and Retail),Produce
+5400,Trade (Wholesale and Retail),Misc/ Food Trade
+5600,Trade (Wholesale and Retail),Retail (Apparel and Accessory Stores)
+5650,Trade (Wholesale and Retail),Clothing and Related Retail
+5660,Trade (Wholesale and Retail),Shoe Store
+5944,Trade (Wholesale and Retail),Jewelry Store
+2299,Trade (Wholesale and Retail),Fabric and Related
+3190,Trade (Wholesale and Retail),Leather Goods
+5590,Trade (Wholesale and Retail),Retail (Motor Vehicle Dealers and Supply)
+5510,Trade (Wholesale and Retail),New Auto
+5520,Trade (Wholesale and Retail),Used Auto
+5530,Trade (Wholesale and Retail),Auto Supply Store
+3750,Trade (Wholesale and Retail),Mortorcycle / Scooter and Supply
+5560,Trade (Wholesale and Retail),Recreation Vehicles
+5020,Trade (Wholesale and Retail),Retail (Home Furnishings)
+5720,Trade (Wholesale and Retail),Appliance
+5710,Trade (Wholesale and Retail),Antiques
+5710,Trade (Wholesale and Retail),Furniture and Home Furnishings ect.
+5714,Trade (Wholesale and Retail),Drapery
+3253,Trade (Wholesale and Retail),Floor Covering / Tile
+5700,Trade (Wholesale and Retail),Patio and Pool Supplies
+5731,Trade (Wholesale and Retail),TV/Stereo
+5710,Trade (Wholesale and Retail),"China, Glassware, Metalware"
+5800,Trade (Wholesale and Retail),Retail (Eating and Drinking Establishments)
+5800,Trade (Wholesale and Retail),Restaurant
+5800,Trade (Wholesale and Retail),Deli
+5800,Trade (Wholesale and Retail),"Bar.Cocktail, Lounge Tavern"
+2050,Trade (Wholesale and Retail),"Bakery/Donuts/Coolies, related"
+2064,Trade (Wholesale and Retail),Candy/nuts and confections
+2024,Trade (Wholesale and Retail),Ice Cream/Ice/Yogurt/Frozen Products
+5800,Trade (Wholesale and Retail),Cafâ  Â©/Coffee Shop
+5800,Trade (Wholesale and Retail),Fast Food/Snack Bar
+5999,Trade (Wholesale and Retail),Retail (Specialty/Supply Stores)
+5947,Trade (Wholesale and Retail),Stationery / Gift/Novelty
+5941,Trade (Wholesale and Retail),"Sporting Goods, Bike Store"
+5992,Trade (Wholesale and Retail),Florist
+5946,Trade (Wholesale and Retail),"Camera, Photo Quipment, Developing and Suplly"
+5736,Trade (Wholesale and Retail),Music Store (Instrument and Record)
+5710,Trade (Wholesale and Retail),Picture Frames and Mirrors
+5192,Trade (Wholesale and Retail),"Books, Magazines, Comins and Periodicals"
+5044,Trade (Wholesale and Retail),"Office, Store, School Furniture, Equipment Supply"
+132 - this is for a farm ,Trade (Wholesale and Retail),Tabacconist
+5940,Trade (Wholesale and Retail),"Crasts, Imports, Arts"
+3940,Trade (Wholesale and Retail),"Games, Hobbies, Toys"
+5990,Trade (Wholesale and Retail),Pet Sales and Supplies
+5930,Trade (Wholesale and Retail),Second Hand Merchandise/Thrift Shop
+5094,Trade (Wholesale and Retail),"Coins, Stams, Precious Metals"
+5734,Trade (Wholesale and Retail),Computer Equipment Software
+2844,Trade (Wholesale and Retail),Cosmetics/Perfumes
+5910,Trade (Wholesale and Retail),Pharmacy
+5941,Trade (Wholesale and Retail),Guns and Supplies
+5250,Trade (Wholesale and Retail),Keys and Lock Shop
+5961,Trade (Wholesale and Retail),Mail Order
+5550,Trade (Wholesale and Retail),Marin Craft/Accessories (Boats)
+5930,Trade (Wholesale and Retail),Pawn Shop
+3260 - this is mft,Trade (Wholesale and Retail),Pottery Shop
+3600 - this is mft ,Trade (Wholesale and Retail),Video/Electronic/Telephone Components and Equipment
+5046,Trade (Wholesale and Retail),Special Equipment / Machine/Supply
+5900,Trade (Wholesale and Retail),Misc. Specialty Retail
+7020,Commercial Services,Lodging
+7010,Commercial Services,Hotel/Motel
+7020,Commercial Services,Motel/ Winter SRO
+7010,Commercial Services,Bed and Breakfast
+7389,Commercial Services,Professional / Personal Service
+4513,Commercial Services,Delivery (includes FedEx UPS)
+782,Commercial Services,Landscaping / Gardening
+2759,Commercial Services,Printing
+7335,Commercial Services,Photography
+1500,Commercial Services,Contractor / Building / Development / Remodel
+4724,Commercial Services,Travel Agency
+7211,Commercial Services,Drycleaning / Laundry
+7230,Commercial Services,Beauty Salon / Haircutting
+7260,Commercial Services,Burial ? Mortuary / Cemetary/ Mausoluem
+,Commercial Services,Catering
+7389,Commercial Services,Misc. Professional / Personal Services
+7920,Commercial Services,Musicians
+6282,Commercial Services,Financial Services
+6021,Commercial Services,Banking & Saving and Loans
+6111,Commercial Services,Credit Agency (other than banks)
+7322,Commercial Services,Collection Agency
+4225,Commercial Services,Storage and Warehousing
+5690,Commercial Services,"Retail, Alterations, Service Maintainence"
+7250,Commercial Services,Shoe
+5690,Commercial Services,Clothing/Tailor
+7699,Commercial Services,Appliance
+4499,Commercial Services,Boat
+7699,Commercial Services,Equipment and Machine (includes TV and Stero)
+7699,Commercial Services,Misc.
+7538,Commercial Services,Automobile Services and Repair
+5540,Commercial Services,Gas Station w. or w/our repair
+5540,Commercial Services,Gas Station w/ or w/out rpail and w/Mini market
+7538,Commercial Services,"Vehicle repair, tires, stereo, body, lube, tune, oil, wheels"
+7542,Commercial Services,Car Wash
+7359,Commercial Services,Rental Service
+7359,Commercial Services,Equipment / Leasing
+7622,Commercial Services,Video/Electronic/Telephone Components and Equipment
+7549,Commercial Services,Auto
+6531,Commercial Services,Commericl Industrial Space Leasing
+8700,Offices,Professional Office
+8712,Offices,Architecture
+8711,Offices,Engineering
+7336,Offices,Graphic Design
+5023,Offices,Interior Design
+8100,Offices,Legal Offices
+8748,Offices,Consulting
+7310,Offices,Advertising
+9222,Offices,Counseling
+8720,Offices,Accountant/Bookkeeping
+7389,Offices,Freelance Writing
+9110,Offices,Mic. Professional Office
+,Offices,Research
+8733,Offices,Nonprofit Organization
+8010,Offices,Medical/ Health Office
+740,Offices,Veterinary
+8010,Offices,Physician/Optometrist/Health Professional
+,Offices,Laboratory
+8020,Offices,Dental/Orthodontist
+8049,Offices,Acupuncture
+8041,Offices,Chiropractor
+8000,Offices,Physical Therapy
+4119,Offices,Ambulance Service
+6390,Offices,"Financial, Insurance, Real Estate Office"
+6700,Offices,"Holding, Investment, Security, Commodity Brokerage Service"
+6530,Offices,Real Estate
+,Offices,"Combines Real Estate, Insurance Carriers, ect. "
+8100 - wrong,Offices,Title Compnet and Escrow Service
+6400,Offices,"Insurance Carriers, Agents, Brokers, Services"
+8660,Public Facilities (Community and Institutional),Church/ Religious Purposes
+8200,Public Facilities (Community and Institutional),Educational (includes public/private)
+8350,Public Facilities (Community and Institutional),Preschool/ Childcare
+8210,Public Facilities (Community and Institutional),Elementary School
+8210,Public Facilities (Community and Institutional),r. High / Middle School
+8210,Public Facilities (Community and Institutional),High Shool
+8221,Public Facilities (Community and Institutional),College / University
+8221,Public Facilities (Community and Institutional),Professional/ Trade School
+8099,Public Facilities (Community and Institutional),Health Care
+8060,Public Facilities (Community and Institutional),Hospital/ Clinic
+9190,Public Facilities (Community and Institutional),Government and Public Agencies
+,Public Facilities (Community and Institutional),Federal (includes PostOffice)
+,Public Facilities (Community and Institutional),State
+,Public Facilities (Community and Institutional),County
+,Public Facilities (Community and Institutional),City (does not inlude libraries or the wharf)
+4930,Public Facilities (Community and Institutional),Utility and Resources
+4900,Public Facilities (Community and Institutional),Gas/ Electric
+4940,Public Facilities (Community and Institutional),Water
+,Public Facilities (Community and Institutional),Sanitation
+9190,Public Facilities (Community and Institutional),"Flood Cotnrol, Erosion"
+4890,Public Facilities (Community and Institutional),Communication and Information Services
+4830,Public Facilities (Community and Institutional),Radio/ TV
+4810,Public Facilities (Community and Institutional),Phone
+4820,Public Facilities (Community and Institutional),Telegraph
+2710,Public Facilities (Community and Institutional),"Newspaper publication, print, write"
+2720,Public Facilities (Community and Institutional),"Magazine publication, print, write"
+2700,Public Facilities (Community and Institutional),"Books publication, print, write"
+8230,Public Facilities (Community and Institutional),Libraries
+,Public Facilities (Community and Institutional),Transportation and Marine Facilities
+4010,Public Facilities (Community and Institutional),Railroad
+4110,Public Facilities (Community and Institutional),"Local/Interurban Passenger Transit (bus, cab)"
+4200,Public Facilities (Community and Institutional),"Motor Freight, Trucking, Warehousing"
+4780,Public Facilities (Community and Institutional),Misc. Transportation Services
+,Public Facilities (Community and Institutional),"Marine Facilites and Related (includes Harbor, fishing, the Wharf)"
+8600,Public Facilities (Community and Institutional),"Community Organizations, Associations, Clubs and Meeting Halls (that are not just business offices)"
+8600,Public Facilities (Community and Institutional),"Organizations, Association, Cluibs and Lodgehalls (includes Veterans, Unions, Elks, Boys Cluib, YWCA)"
+7389,Public Facilities (Community and Institutional),Conference / Community Centers
+7922,Public Facilities (Community and Institutional),Auditorium
+8410,Culture and Entertainment,Museums and Art Galleries
+7929,Culture and Entertainment,Acting/ Art/ Music/ Dance Facilites/ Studios/ Schools
+7920,Culture and Entertainment,Theater
+7830,Culture and Entertainment,Movie Theater
+7920,Culture and Entertainment,"Performing Arts, Theater"
+5813,Culture and Entertainment,"Night Clubs, Music Halls"
+,Culture and Entertainment,Mission Adobe
+7840,Culture and Entertainment,Video Rental
+7999,Culture and Entertainment,"Undeveloped Parkland, Open Space / Greenbelt"
+7999,Culture and Entertainment,"Developed Parklind, Beaches"
+7997,Culture and Entertainment,Sports and Recreation Facilities
+7999,Culture and Entertainment,Bowling
+7999,Culture and Entertainment,Billiards / Pool Hall
+7997,Culture and Entertainment,Martial Arts
+7991,Culture and Entertainment,Health Clubs / Gyms
+7997,Culture and Entertainment,Misc. sports and recreation facilities
+7996,Culture and Entertainment,"Amusement Parks, Arcafes and related"
+7992,Culture and Entertainment,Golf Courses
+,Residential,Single Family Residential
+,Residential,Single Family Home
+,Residential,Accessory Dwelling Unit
+,Residential,One Unit Apartment
+,Residential,Duplex
+,Residential,2 unit multi-family
+,Residential,2 unit condo
+,Residential,Triplex
+,Residential,2 unit multi-family
+,Residential,3 unit condo
+,Residential,Multi-family (4-9 units)
+,Residential,4 unit multi-family
+,Residential,4 unit condo
+,Residential,5-9 unit multi-family
+,Residential,5-9 unit condo
+,Residential,Multi-family (10+ units)
+,Residential,10+ units Multi-family
+,Residential,10+ units condo
+,Residential,Group Quarters Facilites
+,Residential,Residential Halls or Dorms
+,Residential,Retirement Homes
+,Residential,Religious Quarters
+,Residential,Military Quarters
+8051,Residential,Residential Care Facilities (includes Rest Homes / Convalescent Homes)
+,Residential,Single Room Occupancy (SRO) Housing
+,Residential,Affordable Lower Inc. (65% of median)
+,Residential,Affordable Low Inc. (80% of median)
+,Residential,Other/Market Rate
+,Residential,Senior
+,Residential,Undetermined Mix
+7033,Vacant Lands and Parking,Mobile Home/ Trailer Parks
+7999,Vacant Lands and Parking,Vacant Parcels
+7999,Vacant Lands and Parking,Underutilized Land
+,Vacant Lands and Parking,Supplemental Residential Use
+,Vacant Lands and Parking,Common Areas -- Condos
+7999,Vacant Lands and Parking,Private Parking
+7999,Vacant Lands and Parking,Reserved
+7999,Vacant Lands and Parking,Public Use
+7520,Vacant Lands and Parking,Private Parking (Unknown Use)
+7520,Vacant Lands and Parking,Public Parking Off-Street Lots and Structures)
+7520,Vacant Lands and Parking,Public On-Street Parking
+7520,Vacant Lands and Parking,Metererd
+7520,Vacant Lands and Parking,Permit
+7520,Vacant Lands and Parking,Nonmetered

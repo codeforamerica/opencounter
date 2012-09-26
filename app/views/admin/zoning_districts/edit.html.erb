@@ -1,0 +1,37 @@
+<h1><%= @zoning_district.code %> &mdash; <%= @zoning_district.name %></h1>
+<p><%= @zoning_district.description %></p>
+
+<% if @zoning_district.cic_code_zoning_districts.blank? %>
+  <p>There are no CIC Codes associated with this Zoning District.</p>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Industry</th>
+        <th>Subindustry</th>
+        <th>Permitted?</th>
+        <th>Administrative Use Permit?</th>
+        <th>Special Use Permit?</th>
+        <th>Prohibited?</th>
+        <th>Unknown?</th>
+        <th>Home Occ Prohibited?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for permission in @cic_code_zoning_districts %>
+        <tr class="<%= cycle("odd", "even") -%>">
+          <td><%= permission.cic_code.code %></td>
+          <td><%= permission.cic_code.industry %></td>
+          <td><%= permission.cic_code.subindustry %></td>
+          <td align="center"><%= check_box_tag :permitted %></td>
+          <td align="center"><%= check_box_tag :permitted_aup? %></td>
+          <td align="center"><%= check_box_tag :permitted_sup? %></td>
+          <td align="center"><%= check_box_tag :prohibited? %></td>
+          <td align="center"><%= check_box_tag :unknown? %></td>
+          <td align="center"><%= check_box_tag :home_occ_prohibited? %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
