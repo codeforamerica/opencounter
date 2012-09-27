@@ -11,6 +11,7 @@ Opencounter::Application.routes.draw do
 
   root :to => 'panels#intro'
     
+  match '/admin/' => 'admin/zoning_districts#index'
   namespace :admin do
     resources :cic_codes
     resources :cic_code_zoning_districts
