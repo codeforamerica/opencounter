@@ -14,9 +14,9 @@
     <tr class="<%= cycle("odd", "even") -%>">
       <td><%= zone.code %></td>
       <td><%= zone.name %></td>
-      <td><%= zone.active_cic_codes.size %></td>
-      <td><%= link_to 'Permissions', admin_zoning_district_path(zone) %></td>
-      <td><%= link_to 'Edit', edit_admin_zoning_district_path(zone) %></td>
+      <td width="100px"><%= zone.active_cic_codes.size %></td>
+      <td width="80px"><%= link_to 'Permissions', admin_zoning_district_path(zone) %></td>
+      <td width="50px"><%= link_to 'Edit', edit_admin_zoning_district_path(zone) %></td>
     </tr>
   <% end %>
 </table>
