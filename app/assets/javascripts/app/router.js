@@ -93,16 +93,26 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
       app.useLayout("main");
       
       app.on("lookuppermit", Answer.lookupPermit, this);
-      var sidebar =  new Navigation.Views.Sidebar({  // this might make more sense as a view on user? - Mick
-        business:this.business,
-        answers:this.answers
+      
+      
+      
+      var nav =  new Navigation.Views.Main({
+        business: this.business,
+        answers: this.answers
       });
+
+      var subnav =  new Navigation.Views.Sub({
+        business: this.business,
+        answers: this.answers
+      });
+
 
       app.layout.setViews({
         "div#profile": new Answer.Views.Profile({
           collection:this.answers
         }),
-        "div#nav-main": sidebar
+        "div#nav-main": nav,
+        "div#nav-sub": subnav
       });
 
 

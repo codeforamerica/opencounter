@@ -1,38 +1,49 @@
-  <div class="container">
+  <div class="wrapper">
 
-    <div class="branding">
-      <h1>OpenCounter</h1>
-      <p>Start your business in <span class="city">Santa Cruz, CA</span>.</p>
+    <!-- HEADER -->
+    <header id="header" class="row-fluid">
+    
+      <div id="branding" class="span3 offset1">
+        <h1 class="logo">OpenCounter</h1>
+        <p class="tagline">Start your business in <span class="city">Santa Cruz, CA</span>.</p>
+      </div><!-- /.branding -->
+
+      <div id="profile" class="span4 offset1"></div><!-- /.profile -->
+
+      <div id="help" class="span2"><div class="well well-small">
+        <p>Have Questions? <a href="#" class="btn btn-info">Get Help From A Planner</a></p>
+      </div></div><!-- /#help -->
+
+    </header><!-- /#header -->
+
+    <hr class="hidden">
+
+    <!-- NAVIGATION -->
+    <div class="row-fluid" id="nav-main"></div><!-- /.nav-main -->
+    
+    <hr class="hidden">
+
+    <div class="row-fluid">
+
+      <!-- SUBNAVIGATION -->
+      <div id="nav-sub" class="span2 offset1"></div>
+      
+      <!-- CONTENT -->
+      <div id="content" class="span8"></div>
+
     </div>
+
+    <hr class="hidden">
     
-    <hr class="visuallyhidden">
-    
-    <div id="nav-main"></div><!-- /.nav-main -->
-    
-    <hr class="visuallyhidden">
-    <section class="panel">
-      <div id="profile"></div><!-- /.profile -->
+    <div class="push"></div>
 
-      <hr class="visuallyhidden">
+  </div><!-- /.wrapper -->
 
-      <div id="content"></div>
-
-    </section><!-- /.panel --> 
-
-    <hr class="visuallyhidden">
-    
-    <nav class="nav-utility">
-      <ul>
-        <li><a href="/help">Get Help</a></li>
-        <li><a href="/feedback">Give Feedback</a></li>
-        <li><a href="/about">About OpenCounter</a></li>
-      </ul>
-    </nav><!-- /.nav-utility -->
-
-  </div><!-- /.container -->
-
-</body>
-
-</html>
-
-
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="row-fluid">
+      <div class="span10 offset1">
+        <p><small>OpenCounter is brought to you by the city of Santa Cruz and Code for America. <a href="/about">Learn more</a>, or <a href="/feedback">give us feedback</a>.</small></p>
+      </div>
+    </div>
+  </footer><!-- /.footer -->
