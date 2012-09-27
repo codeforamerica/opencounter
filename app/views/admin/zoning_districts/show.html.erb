@@ -1,11 +1,20 @@
 <h1><%= @zoning_district.code %> &mdash; <%= @zoning_district.name %></h1>
 <p><%= @zoning_district.description %></p>
 
+<% if flash[:notice].present? %>
+  <div class="flash notice"><%= flash[:notice] %></div>
+<% end %>
+
 <% if @zoning_district.cic_code_zoning_districts.blank? %>
   <p>There are no CIC Codes associated with this Zoning District.</p>
 <% else %>
   <table>
     <thead>
+      <tr>
+        <th colspan="3">&nbsp;</th>
+        <th colspan="6" style="text-align:center;">Permit Type</th>
+        <th colspan="2">&nbsp;</th>
+      </tr>
       <tr>
         <th>Code</th>
         <th>Industry</th>
@@ -15,21 +24,27 @@
         <th>SUP</th>
         <th>Prohibited</th>
         <th>Unknown</th>
+        <th>Explanation (if Unknown)</th>
         <th>Home Occ Prohibited</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-      <% for permission in @cic_code_zoning_districts %>
-        <tr class="<%= cycle("odd", "even") -%>">
-          <td><%= link_to permission.cic_code.code, edit_admin_cic_code_path(permission.cic_code, :zoning_district_id => @zoning_district.id) %></td>
-          <td><%= permission.cic_code.industry %></td>
-          <td><%= permission.cic_code.subindustry %></td>
-          <td align="center"><%= radio_button_tag "#{permission.id}_permission", 1, permission.permission == 1 %></td>
-          <td align="center"><%= radio_button_tag "#{permission.id}_permission", 2, permission.permission == 2 %></td>
-          <td align="center"><%= radio_button_tag "#{permission.id}_permission", 3, permission.permission == 3 %></td>
-          <td align="center"><%= radio_button_tag "#{permission.id}_permission", 4, permission.permission == 4 %></td>
-          <td align="center"><%= radio_button_tag "#{permission.id}_permission", 5, permission.permission == 5 %></td>
-          <td align="center"><%= check_box_tag "#{permission.id}_home_occ_prohibited", 1, permission.home_occ_prohibited? %></td>
+      <% for cic_code_zoning_district in @cic_code_zoning_districts %>
+          <tr class="<%= cycle("odd", "even") -%>">
+            <%= form_for(cic_code_zoning_district, :url => admin_cic_code_zoning_district_path(cic_code_zoning_district, :zoning_district_id => @zoning_district.id), :html => {:method => :put}) do |f| %>
+            <td><%= link_to cic_code_zoning_district.cic_code.code, edit_admin_cic_code_path(cic_code_zoning_district.cic_code, :zoning_district_id => @zoning_district.id) %></td>
+            <td><%= cic_code_zoning_district.cic_code.industry %></td>
+            <td><%= cic_code_zoning_district.cic_code.subindustry %></td>
+            <td align="center"><%= f.radio_button :permission, 1 %></td>
+            <td align="center"><%= f.radio_button :permission, 2 %></td>
+            <td align="center"><%= f.radio_button :permission, 3 %></td>
+            <td align="center"><%= f.radio_button :permission, 4 %></td>
+            <td align="center"><%= f.radio_button :permission, 5 %></td>
+            <td><%= f.text_field :notes %></td>
+            <td align="center"><%= f.check_box :home_occ_prohibited %></td>
+            <td><%= f.submit 'Update', :class => 'btn btn-success btn-large' %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

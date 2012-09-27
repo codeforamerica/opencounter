@@ -15,7 +15,8 @@
       <td><%= zone.code %></td>
       <td><%= zone.name %></td>
       <td><%= zone.active_cic_codes.size %></td>
-      <td><%= link_to 'Edit', admin_zoning_district_path(zone) %></td>
+      <td><%= link_to 'CIC Permissions', admin_zoning_district_path(zone) %></td>
+      <td><%= link_to 'Edit', edit_admin_zoning_district_path(zone) %></td>
     </tr>
   <% end %>
 </table>

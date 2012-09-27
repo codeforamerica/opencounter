@@ -13,6 +13,11 @@
   <% end -%>
 
   <div class="field">
+    <%= f.label :parent %>
+    <%= f.select :parent_id, options_from_collection_for_select(@zoning_district.cic_codes, :id, :code) %>
+  </div>
+
+  <div class="field">
     <%= f.label :code %>
     <%= f.text_field :code %>
   </div>
