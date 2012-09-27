@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>OpenCounter - Admin</title>
+
+    <!-- Application styles. -->
+    <%= stylesheet_link_tag   "application" %>
+
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <!-- KISSMetrics -->
+    <script type="text/javascript">
+      var _kmq = _kmq || [];
+      var _kmk = _kmk || 'b51678933486d599c97ce18f3792fbd282107461';
+      function _kms(u){
+        setTimeout(function(){
+          var d = document, f = d.getElementsByTagName('script')[0],
+          s = d.createElement('script');
+          s.type = 'text/javascript'; s.async = true; s.src = u;
+          f.parentNode.insertBefore(s, f);
+        }, 1);
+      }
+      _kms('//i.kissmetrics.com/i.js');
+      _kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
+    </script>
+
+  </head>
+
+  <body>
+    <div role="main" id="main">
+      <%= yield %>
+    </div>
+  </body>
+</html>

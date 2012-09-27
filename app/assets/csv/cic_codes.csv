@@ -1,0 +1,297 @@
+Code,Industry,Subtype
+0,Agriculture and Forestry,Agriculture / Grazing Services
+10,Agriculture and Forestry,"Forestry Services, other"
+100,"Industry, Manufacturing and Production","Food and Beverage Preparation, Production"
+105,"Industry, Manufacturing and Production","Millwork Textile Products (knit goods, dying, woven fabric)"
+110,"Industry, Manufacturing and Production","Clothing, Leather Tanning"
+115,"Industry, Manufacturing and Production","Wood products, Lumber and Fuelwood"
+120,"Industry, Manufacturing and Production",Furniture and Fixtures
+125,"Industry, Manufacturing and Production",Paper and Allied Products
+130,"Industry, Manufacturing and Production",Chemicals and Allied Products
+135,"Industry, Manufacturing and Production","Rubber, Plastic, Misc. Materials and Products"
+140,"Industry, Manufacturing and Production","Stone, Clay, Glass Products"
+145,"Industry, Manufacturing and Production",Primary Metals and Materials Industry
+150,"Industry, Manufacturing and Production",Fabricated Medal Products
+150A,"Industry, Manufacturing and Production",Electronic Equipment and Manufacturing
+150B,"Industry, Manufacturing and Production",Transportation building and equipment
+150C,"Industry, Manufacturing and Production",Misc. Fabricated Metal Products
+155,"Industry, Manufacturing and Production",Other Manufacturing and Processing Undistries
+155A,"Industry, Manufacturing and Production",Fabricated Wire Products
+155B,"Industry, Manufacturing and Production",Industrial Machining / Equipment
+155C,"Industry, Manufacturing and Production",Solar Equipment / Related
+155D,"Industry, Manufacturing and Production",Software
+155E,"Industry, Manufacturing and Production",Motion Picture Production
+155F,"Industry, Manufacturing and Production","Petroleum, bulk"
+155G,"Industry, Manufacturing and Production",Prefabricated Wood Buildings
+155H,"Industry, Manufacturing and Production",Pressed and Molded Goods
+155I,"Industry, Manufacturing and Production",Scraps and Waste Materials
+155J,"Industry, Manufacturing and Production",Mic. Manufacturing and Processing
+200,Trade (Wholesale and Retail),Wholesale (Non Durable Goods)
+200A,Trade (Wholesale and Retail),Bakery
+200B,Trade (Wholesale and Retail),Confectionary and Related
+200C,Trade (Wholesale and Retail),Dairy Products
+200D,Trade (Wholesale and Retail),Chemicals and Related
+200E,Trade (Wholesale and Retail),Drugs / Sundries and related
+200F,Trade (Wholesale and Retail),Fish / Seafood
+200G,Trade (Wholesale and Retail),Frozen Foods
+200H,Trade (Wholesale and Retail),Health Foods
+200I,Trade (Wholesale and Retail),Meat/Meat Products
+200J,Trade (Wholesale and Retail),Misc. Food Trade
+200K,Trade (Wholesale and Retail),Poultry / Poultry Products
+200L,Trade (Wholesale and Retail),Produce
+200M,Trade (Wholesale and Retail),Alcohol Distribution
+210,Trade (Wholesale and Retail),Wholesale (Durable Goods)
+210A,Trade (Wholesale and Retail),Building Materials
+210B,Trade (Wholesale and Retail),Industrial Supplies
+210C,Trade (Wholesale and Retail),Lumber and Construction Materials
+210D,Trade (Wholesale and Retail),Nursery Products and related
+210E,Trade (Wholesale and Retail),Paper Products and related
+210F,Trade (Wholesale and Retail),Special Equipment / Machine Supply
+210G,Trade (Wholesale and Retail),Software
+210H,Trade (Wholesale and Retail),Misc. Wholesale Trade
+220,Trade (Wholesale and Retail),Retail (Building Materials / Garden Supplies)
+220A,Trade (Wholesale and Retail),Hardware/Building Materials except lumber
+220B,Trade (Wholesale and Retail),Lumberyard
+220C,Trade (Wholesale and Retail),Air Conditioning / Heating / Plumbing / Electrical
+200D,Trade (Wholesale and Retail),Paint / Glass / Wallpaper
+220E,Trade (Wholesale and Retail),Solar Equipment and Supply
+220F,Trade (Wholesale and Retail),Nursery - Flower and Stock
+220G,Trade (Wholesale and Retail),Nursery - Garden and Supply
+230,Trade (Wholesale and Retail),Retail (General Merchandise)
+230A,Trade (Wholesale and Retail),Department Store
+230B,Trade (Wholesale and Retail),Variety Store
+230C,Trade (Wholesale and Retail),Variety / Drug Store
+240,Trade (Wholesale and Retail),Retail (Food and Beverage Stores)
+240A,Trade (Wholesale and Retail),Grovery and Related Retail
+240B,Trade (Wholesale and Retail),Convenience  / Liquor Store
+240C,Trade (Wholesale and Retail),Seafood/Fishmarket
+240D,Trade (Wholesale and Retail),Butcher Shop
+240E,Trade (Wholesale and Retail),Health Foods
+240F,Trade (Wholesale and Retail),Dairy Products
+240G,Trade (Wholesale and Retail),Produce
+240H,Trade (Wholesale and Retail),Misc. / Food Trade
+250,Trade (Wholesale and Retail),Retail (Apparel and Accessory Stores)
+250A,Trade (Wholesale and Retail),Clothing and Related Retail
+250B,Trade (Wholesale and Retail),Shoe Store
+250C,Trade (Wholesale and Retail),Jewelry Store
+250D,Trade (Wholesale and Retail),Fabric and Related
+250E,Trade (Wholesale and Retail),Leather Goods
+260,Trade (Wholesale and Retail),Retail (Motor Vehicle Dealers and Supply)
+260A,Trade (Wholesale and Retail),New Auto
+260B,Trade (Wholesale and Retail),Used Auto
+260C,Trade (Wholesale and Retail),Auto Supply Store
+260D,Trade (Wholesale and Retail),Mortorcycle / Scooter and Supply
+206E,Trade (Wholesale and Retail),Recreation Vehicles
+270,Trade (Wholesale and Retail),Retail (Home Furnishings)
+270A,Trade (Wholesale and Retail),Appliance
+270B,Trade (Wholesale and Retail),Antiques
+270C,Trade (Wholesale and Retail),Furniture and Home Furnishings ect.
+270D,Trade (Wholesale and Retail),Drapery
+270E,Trade (Wholesale and Retail),Floor Covering / Tile
+270F,Trade (Wholesale and Retail),Patio and Pool Supplies
+270G,Trade (Wholesale and Retail),TV/Stereo
+270H,Trade (Wholesale and Retail),"China, Glassware, Metalware"
+280,Trade (Wholesale and Retail),Retail (Eating and Drinking Establishments)
+280A,Trade (Wholesale and Retail),Restaurant
+280B,Trade (Wholesale and Retail),Deli
+280C,Trade (Wholesale and Retail),"Bar, Cocktail, Lounge Tavern"
+280D,Trade (Wholesale and Retail),"Bakery / Donuts / Coolies, related"
+280E,Trade (Wholesale and Retail),Candy / nuts and confections
+280F,Trade (Wholesale and Retail),Ice Cream / Ice / Yogurt / Frozen Products
+280G,Trade (Wholesale and Retail),CafÈ / Coffee Shop
+280H,Trade (Wholesale and Retail),Fast Food/Snack Bar
+290,Trade (Wholesale and Retail),Retail (Specialty / Supply Stores)
+290A,Trade (Wholesale and Retail),Stationery / Gift/Novelty
+290B,Trade (Wholesale and Retail),"Sporting Goods, Bike Store"
+290C,Trade (Wholesale and Retail),Florist
+290D,Trade (Wholesale and Retail),"Camera, Photo Equipment, Developing and Supply"
+290E,Trade (Wholesale and Retail),Music Store (Instrument and Record)
+290F,Trade (Wholesale and Retail),Picture Frames and Mirrors
+290G,Trade (Wholesale and Retail),"Books, Magazines, Comins and Periodicals"
+290H,Trade (Wholesale and Retail),"Office, Store, School Furniture, Equipment Supply"
+290I,Trade (Wholesale and Retail),Tabacconist
+290J,Trade (Wholesale and Retail),"Crasts, Imports, Arts"
+290K,Trade (Wholesale and Retail),"Games, Hobbies, Toys"
+290L,Trade (Wholesale and Retail),Pet Sales and Supplies
+290M,Trade (Wholesale and Retail),Second Hand Merchandise / Thrift Shop
+290N,Trade (Wholesale and Retail),"Coins, Stams, Precious Metals"
+290O,Trade (Wholesale and Retail),Computer Equipment Software
+290P,Trade (Wholesale and Retail),Cosmetics / Perfumes
+290Q,Trade (Wholesale and Retail),Pharmacy
+290R,Trade (Wholesale and Retail),Guns and Supplies
+290S,Trade (Wholesale and Retail),Keys and Lock Shop
+290T,Trade (Wholesale and Retail),Mail Order
+290U,Trade (Wholesale and Retail),Marine Craft / Accessories (Boats)
+290V,Trade (Wholesale and Retail),Pawn Shop
+290W,Trade (Wholesale and Retail),Pottery Shop
+290X,Trade (Wholesale and Retail),Video / Electronic / Telephone Components and Equipment
+290Y,Trade (Wholesale and Retail),Special Equipment / Machine/Supply
+290Z,Trade (Wholesale and Retail),Misc. Specialty Retail
+300,Commercial Services,Lodging
+300A,Commercial Services,Hotel / Motel
+300B,Commercial Services,Motel/ Winter SRO
+300C,Commercial Services,Bed and Breakfast
+310D,Commercial Services,Professional / Personal Service
+310A,Commercial Services,Delivery (includes FedEx UPS)
+310B,Commercial Services,Landscaping / Gardening
+310C,Commercial Services,Printing
+310D,Commercial Services,Photography
+310E,Commercial Services,Contractor / Building / Development / Remodel
+310F,Commercial Services,Travel Agency
+310G,Commercial Services,Drycleaning / Laundry
+310H,Commercial Services,Beauty Salon / Haircutting
+310I,Commercial Services,Burial / Mortuary / Cemetary/ Mausoluem
+310J,Commercial Services,Catering
+310K,Commercial Services,Misc. Professional / Personal Services
+310L,Commercial Services,Musicians
+320,Commercial Services,Financial Services
+320A,Commercial Services,Banking & Saving and Loans
+320B,Commercial Services,Credit Agency (other than banks)
+320C,Commercial Services,Collection Agency
+330,Commercial Services,Storage and Warehousing
+340,Commercial Services,"Retail, Alterations, Service Maintenance "
+340A,Commercial Services,Shoe
+340B,Commercial Services,Clothing/Tailor
+340C,Commercial Services,Appliance
+340D,Commercial Services,Boat
+340E,Commercial Services,Equipment and Machine (includes TV and Stereo)
+340F,Commercial Services,Misc.
+350,Commercial Services,Automobile Services and Repair
+350A,Commercial Services,Gas Station w. or w/out repair
+350B,Commercial Services,Gas Station w/ or w/out repair and w/Mini market
+350C,Commercial Services,"Vehicle repair, tires, stereo, body, lube, tune, oil, wheels"
+350D,Commercial Services,Car Wash
+360,Commercial Services,Rental Service
+360A,Commercial Services,Equipment / Leasing
+360B,Commercial Services,Video / Electronic / Telephone Components and Equipment
+360C,Commercial Services,Auto
+260D,Commercial Services,Commerical Industrial Space Leasing
+400,Offices,Professional Office
+400A,Offices,Architecture
+400B,Offices,Engineering
+400C,Offices,Graphic Design
+400D,Offices,Interior Design
+400E,Offices,Legal Offices
+400F,Offices,Consulting
+400G,Offices,Advertising
+400H,Offices,Counseling
+400I,Offices,Accountant / Bookkeeping
+400J,Offices,Freelance Writing
+400K,Offices,Misc. Professional Office
+400L,Offices,Research
+400M,Offices,Nonprofit Organization
+410,Offices,Medical/ Health Office
+410A,Offices,Veterinary
+410B,Offices,Physician / Optometrist / Health Professional
+410C,Offices,Laboratory
+410D,Offices,Dental/Orthodontist
+410E,Offices,Acupuncture
+410F,Offices,Chiropractor
+410G,Offices,Physical Therapy
+410H,Offices,Ambulance Service
+420,Offices,"Financial, Insurance, Real Estate Office"
+420A,Offices,"Holding, Investment, Security, Commodity Brokerage Service"
+420B,Offices,Real Estate
+420C,Offices,"Combines Real Estate, Insurance Carriers, ect. "
+420D,Offices,Title Company and Escrow Service
+420E,Offices,"Insurance Carriers, Agents, Brokers, Services"
+500,Public Facilities (Community and Institutional),Church /  Religious Purposes
+510,Public Facilities (Community and Institutional),Educational (includes public/private)
+510A,Public Facilities (Community and Institutional),Preschool / Childcare
+510B,Public Facilities (Community and Institutional),Elementary School
+510C,Public Facilities (Community and Institutional),Jr. High / Middle School
+510D,Public Facilities (Community and Institutional),High School
+510E,Public Facilities (Community and Institutional),College / University
+510F,Public Facilities (Community and Institutional),Professional / Trade School
+520,Public Facilities (Community and Institutional),Health Care
+520A,Public Facilities (Community and Institutional),Hospital / Clinic
+530,Public Facilities (Community and Institutional),Government and Public Agencies
+530A,Public Facilities (Community and Institutional),Federal (includes Post Office)
+530B,Public Facilities (Community and Institutional),State
+530C,Public Facilities (Community and Institutional),County
+530D,Public Facilities (Community and Institutional),City (does not inlude libraries or the wharf)
+540,Public Facilities (Community and Institutional),Utility and Resources
+540A,Public Facilities (Community and Institutional),Gas / Electric
+540B,Public Facilities (Community and Institutional),Water
+540C,Public Facilities (Community and Institutional),Sanitation
+540D,Public Facilities (Community and Institutional),"Flood Control, Erosion"
+550,Public Facilities (Community and Institutional),Communication and Information Services
+550A,Public Facilities (Community and Institutional),Radio / TV
+550B,Public Facilities (Community and Institutional),Phone
+550C,Public Facilities (Community and Institutional),Telegraph
+550D,Public Facilities (Community and Institutional),"Newspaper publication, print, write"
+550E,Public Facilities (Community and Institutional),"Magazine publication, print, write"
+550F,Public Facilities (Community and Institutional),"Books publication, print, write"
+550G,Public Facilities (Community and Institutional),Libraries
+560,Public Facilities (Community and Institutional),Transportation and Marine Facilities
+560A,Public Facilities (Community and Institutional),Railroad
+560B,Public Facilities (Community and Institutional),"Local/Interurban Passenger Transit (bus, cab)"
+560C,Public Facilities (Community and Institutional),"Motor Freight, Trucking, Warehousing"
+560D,Public Facilities (Community and Institutional),Misc. Transportation Services
+560E,Public Facilities (Community and Institutional),"Marine Facilities and Related (includes Harbor, fishing, the Wharf)"
+570,Public Facilities (Community and Institutional),"Community Organizations, Associations, Clubs and Meeting Halls (that are not just business offices)"
+570A,Public Facilities (Community and Institutional),"Organizations, Association, Clubs and Lodgehalls (includes Veterans, Unions, Elks, Boys Cluib, YWCA)"
+570B,Public Facilities (Community and Institutional),Conference / Community Centers
+570C,Public Facilities (Community and Institutional),Auditorium
+600,Culture and Entertainment,Museums and Art Galleries
+610,Culture and Entertainment,Acting / Art / Music / Dance Facilites / Studios / Schools
+620,Culture and Entertainment,Theater
+620A,Culture and Entertainment,Movie Theater
+620B,Culture and Entertainment,"Performing Arts, Theater"
+630,Culture and Entertainment,"Night Clubs, Music Halls"
+640,Culture and Entertainment,Mission Adobe
+650,Culture and Entertainment,Video Rental
+700,Culture and Entertainment,"Undeveloped Parkland, Open Space / Greenbelt"
+710,Culture and Entertainment,"Developed Parkland, Beaches"
+720,Culture and Entertainment,Sports and Recreation Facilities
+720A,Culture and Entertainment,Bowling
+720B,Culture and Entertainment,Billiards / Pool Hall
+720C,Culture and Entertainment,Martial Arts
+720D,Culture and Entertainment,Health Clubs / Gyms
+720E,Culture and Entertainment,Misc. sports and recreation facilities
+720F,Culture and Entertainment,"Amusement Parks, Arcades and related"
+720G,Culture and Entertainment,Golf Courses
+800,Residential,Single Family Residential
+800A,Residential,Single Family Home
+800B,Residential,Accessory Dwelling Unit
+800C,Residential,One Unit Apartment
+810,Residential,Duplex
+810A,Residential,2 unit Multi-family
+810B,Residential,2 unit condo
+820,Residential,Triplex
+820A,Residential,2 unit multi-family
+820B,Residential,3 unit condo
+830,Residential,Multi-family (4-9 units)
+830A,Residential,4 unit multi-family
+830B,Residential,4 unit condo
+830C,Residential,5-9 unit Multi-family
+830D,Residential,5-9 unit condo
+840,Residential,Multi-family (10+ units)
+840A,Residential,10+ units Multi-family
+840B,Residential,10+ units condo
+850,Residential,Group Quarters Facilites
+850A,Residential,Residential Halls or Dorms
+850B,Residential,Retirement Homes
+850C,Residential,Religious Quarters
+850D,Residential,Military Quarters
+850E,Residential,Residential Care Facilities (includes Rest Homes / Convalescent Homes)
+860,Residential,Single Room Occupancy (SRO) Housing
+860A,Residential,Affordable Lower Inc. (65% of median)
+860B,Residential,Affordable Low Inc. (80% of median)
+860C,Residential,Other/Market Rate
+860D,Residential,Senior
+860E,Residential,Undetermined Mix
+870,Vacant Lands and Parking,Mobile Home/ Trailer Parks
+900,Vacant Lands and Parking,Vacant Parcels
+910,Vacant Lands and Parking,Underutilized Land
+910A,Vacant Lands and Parking,Supplemental Residential Use
+920,Vacant Lands and Parking,Common Areas -- Condos
+930,Vacant Lands and Parking,Private Parking
+930A,Vacant Lands and Parking,Reserved
+930B,Vacant Lands and Parking,Public Use
+930C,Vacant Lands and Parking,Private Parking (Unknown Use)
+940,Vacant Lands and Parking,Public Parking Off-Street Lots and Structures)
+950,Vacant Lands and Parking,Public On-Street Parking
+950A,Vacant Lands and Parking,Metererd
+950B,Vacant Lands and Parking,Permit
+950C,Vacant Lands and Parking,Non-metered

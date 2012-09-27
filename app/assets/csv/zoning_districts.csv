@@ -1,0 +1,298 @@
+ZONING DISTRICT CODE,ZONING DISTRICT NAME,ZONING DISTRICT DESCRIPTION,HOME OCCS ALLOWED?,"PRINCIPALLY-PERMITTED USES
+(ZONING CLEARANCE)",,"NON-PRINCIPALLY-PERMITTED USES
+(ADMINISTRATIVE USE PERMIT)",,"NON-PRINCIPALLY-PERMITTED USES
+(SPECIAL USE PERMIT)",,"PROHIBITED USES
+",
+,,,,Zoning Code,SIC,Zoning Code,SIC,Zoning Code,SIC,Zoning Code,SIC
+,,,,,,,,,,,
+R-S,Residential Suburban District,,Y,800A; community care facilities including daycare and foster home (six or fewer persons); crop and tree farming and grazing lands; family daycare facilities in single-family dwelling or duplex; community garden; room and board for not more than two paying guests per dwelling unit when located within principal building; residential accessory uses and buildings customarily appurtenant to a permitted use; living quarters for persons regularly employed on the premises when located within principal building; 800B,,"family animal farm; temporary structures and uses; young farmer projects on sites of twenty thousand square feet or more on which a child may be permitted to raise one kid, lamb, or calf for a one-year period; accessory buildings containing plumbing fixtures; accessory dwelling units",,"bed and breakfast inns; community care facilities including nursing homes, retirement homes, daycare and foster homes (seven or more persons); health facilities for inpatient and outpatient psychiatric care and treatment; off-street parking facilities accessory to a contiguous commercial property not to exceed one hundred feet from the boundary of the site they are intended to serve; plant nurseries and greenhouses; noncommercial recreation areas, buildings and facilities such as parks, country clubs, golf courses, and riding, swimming and tennis clubs; educational, religious, cultural, or public utility or public service uses and buildings, but not including corporation yards, storage or repair yards, and warehouses; two-family dwellings (duplexes) on corner lots having an area of seven thousand five hundred square feet or more; riding stables on parcels at least five acres in size for the boarding of horses to serve the neighborhood",,,
+R-1,Single-Family Residence District,,Y,single-family dwelling; community care facilities including daycare and foster homes (six or fewer persons); family daycare in single-family dwelling or duplex; community garden; room and board for not more than two paying guests per dwelling unit when located within principal building; accessory dwelling units,,,,,,,
+R-L,Multiple Residence – Low Rise District,,Y,"830; 840; community care facilities including daycare, retirement homes and foster homes (six or fewer); small family daycare; large family daycare facilities in single-family dwelling or duplex; two-family dwellings; community garden; single-family dwellings; park and recreational facilities; room and board for not more than two paying guests per dwelling unit when located within principal building; accessory dwelling units",,"a.    Accessory buildings containing plumbing fixtures subject to the provisions of Section 24.12.140.
+
+b.    Temporary structures and uses.",,"a.    Bed-and-breakfast inns, subject to requirements in Part 9, Chapter 24.12.
+
+b.    Community care facilities including daycare, retirement home, foster home, and nursing home (seven or more persons).
+
+c.    Accessory dwelling units subject to the provisions of Chapter 24.16 Part 2, except that accessory dwelling units are not subject to approval of a design permit.
+
+d.    Dormitories, fraternity/sorority residence halls, boardinghouses.
+
+e.    Health facilities for inpatient and outpatient psychiatric care and treatment.
+
+f.    Off-street parking facilities accessory to a contiguous commercial property not to exceed one hundred feet from the boundary of the site it is intended to serve.
+
+g.    Noncommercial recreation areas, buildings, and facilities such as parks, country clubs, golf courses, and riding, swimming and tennis clubs.
+
+h.    Educational, religious, cultural, public utility or public service buildings and uses; but not including corporation yards, storage or repair yards, and warehouses.
+
+i.    Social halls, lodges, fraternal organizations, and clubs, except those operated for a profit.",,,
+R-M,Multiple Residence – Medium Rise District,,Y,"830; 840; community care facilities including daycare, foster home, retirement home (six or fewer persons); community garden; small family daycare facilities; large family daycare facilities in single-family home or duplex; park and recreational facilities; room and board for not more than two paying guests per dwelling unit when located within principal building",,expansion of an existing single-family dwelling if the lot area is six thousand square feet or less; two family dwelling if the lot area exceeds five thousand five hundred square feet; temporary structures and uses; accessory buildings containing plumbing fixtures; single-family dwellings on substandard lots,,"bed-and-breakfast inns; community care facilities (seven or more persons) including daycare, foster home, nursing home, retirement home; dormitories, fraternity/sorority residence halls, boardinghouses; health facilities for inpatient and outpatient psychiatric care and treatment; off-street parking facilities accessory to a contiguous commercial property not to exceed one hundred feet from the boundary of the site they are intended to serve; noncommercial recreation areas and facilities such as parks, country clubs, golf courses, and riding, swimming and tennis clubs; educational, religious, cultural, public utility or public service buildings or uses, and not including corporation yards, storage or repair yards, and warehouses; social halls, lodges, fraternal organizations, and clubs, except those operated for a profit.
+
+",,,
+R-H,Multiple Residence – High Density District,,Y,"830; 840; 510A; garages and parking areas, private
+",,"800, 810, 300C, 850E, 410B, 930, 710, 500, 510, 530, 540, any other use or service establishment determined by the zoning administrator to be of the same general character as the foregoing uses ",,300c; 850e; 410b; 930; 710; 500; 510; 530; 540; 570,,,
+R-T,Tourist Residential District,,Y,,,,,,,,
+R-T(A) ,Sub District A Medium Density Residential ,,Y,810; 510a; accessory dwelling units,,"810; accessory buildings containing plumbing fixtures; 830; accessory dwelling units
+
+",,300c; 850e; 510a; 850e; 840; public and private commercial parking; 710; 500; 510; 530; 540; 570; 850b,,,
+R-T(B),Sub District B Motel Residential ,,Y,accessory dwelling units,,830; 800; 810; storage and equipment structures; temporary structures and uses; the providing of board and room for not more than two paying guests per dwelling unit when located within principal building; accessory buildings containing plumbing fixtures; wireless telecommunication facilities,,280g; 850e; 510a; 300; 840; 940; 950; 710; 500; 510; 530; 540; 570; 850b,,,
+R-T(B)/PER,Motel Residential Performance Overlay,,Y,,,,,indoor and outdoor recreation facilities and other facilities related to existing hotel or motel facilities; bed and breakfast inns.,,,
+R-T(C) ,Sub District C - Beach Commercial ,,Y,240; 300; 820; 930; small family day care facility in single-family home or duplex; 280,,accessory buildings containing plumbing fixtures; 610; 250; 500; 570; 240B; 710; 700; 280; 510; 230; 530; 270; 240B; 830; 600; 400; 340; 860; 290; temporary structures and uses; 360B; 720; wireless telecommunications facilities;,,280C; 550; large family daycare facilities; 280H; 400; 840; 560E; 400L; 330; 200F; 830; 630; 930; 800; 860; 720; 620; 540; 400; 810; 310; 820; 510; 420; 410,,,
+R-T(C)/PER,Sub District C - Beack Commercial Performance Overlay,,Y,,,"a.    Retail uses, including stores, shops, specialty shops, and neighborhood convenience retail, excluding department stores or discount malls up to a total of 125,000 square feet for the district (230, 250, 290).
+
+b.    Eating establishments, not including drive-up or drive-in services, subject to live entertainment and alcohol regulations of Chapter 24.12 (280).
+
+c.    Off-site parking with fewer than five spaces (930).
+
+d.    Food and beverage stores (except liquor stores) (240).
+
+e.    Acting/art/music/dance/photography studios/schools (610) if such establishments are in compliance with the Design Guidelines and active people-orient uses are located adjacent to the street.
+
+f.    Administrative offices ancillary to a permitted use, if:
+
+•    offices in new structures are screened on street frontage by retail/recreational, and/or active people-oriented uses of at least 25 feet in depth, or
+
+•    offices in existing structures do not create a significant break in pedestrian activity and storefront continuity along the street, and are landscaped according to the Design Guidelines.
+
+g.    Indoor recreational uses and sports and health clubs, provided that the storefront adjacent to the street is designed in compliance with the guidelines, and active people oriented uses are located adjacent to the street (720).
+
+h.    Temporary structures and uses.",,"a.    Public performance space, art galleries and/or museums which are open to the public (600, 610).
+
+b.    Lodging, hotel development provided it incorporates specialty boutiques and/or restaurant(s) on the ground floor, and does not create a significant break in pedestrian activity and storefront continuity along the street (300).
+
+c.    Off-site public/private parking facilities, five or more spaces (930), so long as the total width of access to the facility is not more than 50 feet in width on any one street frontage, provided the parking is visually screened and separated from the street, and that access is designed in a manner not to disrupt retail continuity along Beach Street.
+
+d.    Residential development, located above the first floor of commercial uses, not to exceed 30 dwelling units/acre, if it includes a mixture of unit types (e.g. variety of unit sizes) and if 15% of the total number of units are affordable in accordance with Chapter 24.16 of the zoning regulations.
+
+e.    Theater and cinemas; exhibit space and libraries, auditoriums and conference space, providing significant pedestrian activity and storefront continuity is provided along the streets, (550g, 570b, 570c, 600, 620)
+
+f.    Live performing arts theaters or nightclub establishments providing live entertainment with stage/performance areas greater than 80 square feet or permitting dancing and establishments serving alcoholic beverages; provided, that the storefront is designed in compliance with design guidelines and to include active people-oriented activities of visual interest to the pedestrian and subject to acoustical studies indicating that such uses can achieve the city’s existing noise standards (630).",,,
+R-T(D),Sub District D - Beach Residential ,,Y,"a.    Single-family and duplexes (800, 810);
+
+b.    Storage and equipment structures, if ancillary to principal residential use;
+
+c.    Small family day care facility in single-family home or duplex (510a);
+
+d.    Accessory Uses. Other uses and buildings customarily appurtenant to a permitted use, subject to the provisions of Section 24.12.140, Accessory buildings.
+
+e.    Accessory dwelling units subject to the provisions of Chapter 24.16 Part 2, except accessory dwelling units are not subject to approval of a design permit.",,"a.    Small community care residential facilities.
+
+b.    Temporary structures and uses.
+
+c.    Accessory buildings containing plumbing fixtures subject to the provisions of Section 24.12.140.
+
+d.    Accessory dwelling units subject to the provisions of Chapter 24.16 Part 2, except that accessory dwelling units are not subject to approval of a design permit.",,"a.    Bed-and-breakfast inns, subject to the requirements contained in Part 9, Chapter 24.12. (300c)
+
+b.    Community care facilities. (850e)
+
+c.    Large family daycare facilities. (510a)
+
+d.    Multiple dwellings, townhouse dwelling groups, and condominiums, three units or more. (830, 840)
+
+e.    Public and private noncommercial recreation areas, buildings and facilities such as parks. (710)
+
+f.    Public and quasi-public buildings and uses including administrative, recreational, educational, religious, cultural, public utility or public service uses; but not including yards, storage or repair yards, and warehouses. (500, 510, 530, 540, 570)
+
+g.    Retirement homes or centers. (850b)",,,
+R-T(E),Sub District E - Beach Medium . High Density Residential,,Y,"a.    Duplex dwellings.
+
+b.    Small family daycare.
+
+c.    Accessory Uses. Other uses and buildings customarily appurtenant to a permitted use, subject to the provisions of Section 24.12.140, accessory buildings.",,"a.    Educational and cultural institutions.
+
+b.    Community care facilities.
+
+c.    Multiple dwellings, townhouse dwelling groups and condominiums, six units or fewer.
+
+d.    Single-family dwellings on substandard lots.",,"a.    Multiple dwellings, townhouse dwelling groups and condominiums, seven units or more, subject to the approval of the city council upon recommendation of the zoning board.
+
+b.    Large family day care facilities.
+
+c.    Recreational buildings and community centers.
+
+d.    Public and private noncommercial recreation areas, buildings and facilities such as parks, playgrounds and basketball courts.
+
+e.    Public and private commercial parking, subject to landscaping and design standards. Non-conforming parking lots must be brought into compliance within five years of adoption of this Part 7E.",,,
+C-C,Community Commercial District,,Y,"610, 250, 260C, 280A, 280B, 280D, 280E, 280F, 280G, 420, 320, 240A, 240C, 240D, 240E, 240F, 240G, 240H, 230, 270, 410B, 410C, 410D, 410E, 410F, 410G, 830*, 600, 930*, 400, 310A, 310B, 310C, 310D, 310F, 310G, 310H, 310J, 310K, 310L, 340A, 340B, 340C, 340E, 340F, 510A, (small community care residential facilities), (small family daycare facility in single-family home or duplex), 290A, 290B, 290C, 290D, 290E, 290F, 290G, 290H, 290I, 290J, 290K, 290L, 290N, 290O, 290P, 290Q, 290R, 290S, 290T, 290U, 290V, 290W, 290X, 290Y, 290Z, 620, 650",,"(accessory buildings containing plumbing fixtures subject to provisions of Section 24.12.140), 410B, 350, (bakery, microbrewery, handicrafts or similar light manufacturing and assembly uses associated with retail sales if floor area is less than seven thousand square feet and retail sale or service area occupies at least thirty percent of the floor area), 280C, (brewpubs), 340D, 220, 500, 550, 570, 710, 510, 280H, (foster family homes), 530, 300, (mixed residential and commercial/office developments involving permitted or administrative uses on the ground floor and from three to nine multiple dwellings or condominiums above the first floor), 260, 830*, 930*, (recycling collection facilities), 860*, (temporary structures and uses), 290M, 700, 540, 410A, (wireless telecommunications facilities)",,"Carpenter, electrical, plumbing, heating and furniture upholstery shops, community care facilities, large family daycare, 310E, convenience stores, 150, 155A, 100, 120, 520, laboratory research experimentation, testing, software development, liquor stores, 560B, 105, 840, 310I, 155E630, 360, 860, 155C, 720, 140, 330, 200A, 200B, 200C, 200D, 210, 210E, 210F, medical marijuana providers, smoking lounges ",,,
+C-T,Thoroughfare Commercial District,,Y,"Art galleries, Branch banks, Carpenter shop; electrical, plumbing or heating shops; furniture upholstering shop, Clothing and apparel shops, Eating and drinking establishments subject to live entertainment and alcohol regulations of Chapter 24.12, garages for the repair of automobiles subject to performance standards as set forth in this title for principal permitted uses in the I-G District, Handicraft shops and workshops, Hotels, motels and bed-and-breakfast inns, Medical and dental offices, Medical, optical, and dental clinics and laboratories, not including the manufacture of pharmaceuticals or other (similar) products for general sale or distribution, Mobilehome, trailer, boat, motorcycle sales and service, New car sales and service, Parking facilities of five or fewer spaces, Plant nurseries and greenhouses, Professional, editorial, real estate, insurance and other general business offices, Small family daycare facility in a single-family home or duplex, Theaters, Used car sales and service, auto parts and supply stores.",,"Ambulance service, Automatic car wash, Bakery; soft-drink bottling plant; laundry, cleaning and dyeing establishment, Large family daycare homes, Garages for the repair of automobiles, trucks and other heavy equipment, subject to performance standards as set forth in this title for principal permitted uses in the I-G District, Multiple dwellings and condominiums, nine units or fewer, subject to the minimum land area (net) per dwelling unit of the R-M District. (830), Recycling collection facilities, Souvenir and gift shops, Single-family dwellings, Small community care residential facilities, Stores, shops and general retail, subject to alcohol regulations in Part 12 of Chapter 24.12, Temporary structures and uses, Truck, boat, trailer, farm equipment, and other heavy equipment sales, service and rental,  Two-family dwellings, Veterinary hospitals and clinics, Wireless telecommunications facilities, subject to the regulations in Part 15 of Chapter 24.12, Accessory buildings containing plumbing fixtures subject to the provisions of Section 24.12.140.",,"Administrative, executive, and financial offices,  Business and technical schools; schools and studios for arts and crafts, photography, music and dance, Cemeteries, crematories, mausoleums, columbariums, Commercial fishing and fish marketing facilities, and retailing and jobbing of fish only when conducted wholly within a building, or upon a wharf, Commercial recreation facilities such as bowling alleys, billiard parlors, skating rinks, and video games, Community care facilities, Community care residential facilities, Drive-in refreshment stands, eating places, or any other use involving a drive-in or drive-through function, subject to performance standards established in Section 24.14.290 herein, Fast-food restaurants, subject to live entertainment and alcohol regulations of Chapter 24.12, Mortuaries, Outdoor theaters, golf driving ranges, and other similar open-air commercial recreation facilities, subject to alcohol regulations in Part 12 of Chapter 24.12, Multiple dwellings and condominiums, ten units or more, subject to the minimum land area (net) per dwelling unit of the R-M District. (840), Printing and publishing or lithographic shops and plants, Public and private commercial parking of more than five spaces, Public and private noncommercial recreation areas, buildings and facilities such as parks, country clubs, golf courses, and riding, swimming and tennis clubs, subject to alcohol regulations in Part 12 of Chapter 24.12, Public and quasi-public buildings and uses, including administrative, recreational, educational, religious, cultural, public utility or public service uses; but not including corporation yards, storage or repair yards, and warehouses, subject to alcohol regulations in Part 12 of Chapter 24.12, Service stations, subject to alcohol regulations in Part 12 of Chapter 24.12, Social halls, lodges, fraternal organizations, and clubs, except, those operated for a profit, Medical marijuana provider association dispensaries, as defined in Section 24.22.539 and subject to the siting criteria and performance standards in Section 24.12.1300.",,,
+C-N,Neighborhood Commercial District,,Y,"280, 420, 320, 240, 220A, 410, 830, 930, 400, 310, (small family daycare facility in a single family home or duplex)",,"(accessory buildings containing pluming fixtures subject to the provisions of 24.12.140), 610, 250, 260C, 500, 570, 510, (family daycare homes and foster family homes), 230, 530, 270, 830, 700, 510A, (recycling collection facilities), 340, (small community care residential facilities), 290, (temporary structures and uses), 410A, 650, (wireless telecommunications facilities)",,"350, (bars subject to live entertainment and alcohol regulations of Chapter 24.12), 280C, (Brewpubs, subject to live entertainment and alcohol regulations of Chapter 24.12), (Community care facilities), (community care residential facilities) 240B, 280H, (large family daycare facilities),(liquor stores, subject to alcohol regulations in Part 12 of Chapter 24.12), 830, 840, 930, 720, 330",,,
+C-B,Beach Commercial District,,Y,"610, 250, 280, 420, 240, 230, 300, 560E, (mechanical contrivances for amusement purposes, such as Ferris wheels, and roller coasters, south and east of Beach Street only), 830, 600, 930, 310, 400, (small family daycare facilities in single family home or duplex), 290, 720, 620, 650",,"(accessory buildings containing plumbing fixtures subject to provisions of Section 24.12.140), 570, 240B, 500, 510, 320, 200F, 530, 270B, (liquor stores subject to alcohol regulations in Part 12 of Chapter 24.12), 830, 700, 340, (temporary structures and uses), 290M, (Professional offices associated with a visitor-serving use), (wireless telecommunication facilities) ",,"(bars subject to live entertainment and alcohol regulations of Chapter 24.12), (large family daycare facilities(, 280H, 850, 840, 840, 630, 930, (refreshment stands and vehicles, when located on private property, in locations clearly incidental and adjacent to the beach) ",,,
+P-A,Professional and Administrative Office District,,Y,"420, 320, 930, 400, 310, 410, 600, 810 (small family daycare facility in a single family home or duplex)",,"(accessory buildings containing plumbing fixtures subject to provisions of Section 24.12.140), 610, 500, 550, 570, 820, 510, (large family daycare homes and foster family homes), 530, 870, 830, 930, 810, 410A, (wireless telecommunication facilities) ",,"(community care facilities), (community care residential facilities), 520, 310I, 830, 410B",,,
+SC-H,Small Craft Harbor District,,Y,None ,,All ,,,,,
+C-D/R,Coastal Dependent/Related District,,Y,,,,,,,,
+I-G,General Industrial District,,Y,"610, 220, 420, 100, 120, (Laboratories and related facilities for research, experimentation, testing, film processing, software development), 410, 105, (Printing and publishing or lithographic shops and plants), 400, 310, 360, 340, (Small family daycare facility in a single-family home or duplex), (Start-up fabrication assembly or packaging from light metals, prepared materials, or prefabricated parts, including electrical devices), 210, 330, 200 ",,"000, 350, 340D, 500, 550, 570, 280, 510, 150, 240, 010, 530, 110, 930, 155, 140, 700, 560, 540, (wireless telecommunications facilities) ",,"220, 130, (Large family daycare), 850, 830, 840, 630, 125, 720, 145, 135), (Medical marijuana provider), 860, (Smoking lounges as defined in Section 24.22.748.2), (Emergency shelters subject to regulations in Part 17 of Chapter 24.12)",,,
+I-G PER ,General Industrial District Performance Overlay ,,,"610, 220, 420, 100, 120, 410, 105, (Printing and publishing or lithographic shops and plants), 400, 310, 360, 340, (Small family daycare facility in a single-family home or duplex), (Start-up fabrication assembly or packaging from light metals, prepared materials, or prefabricated parts, including electrical devices), 210, 300, 200 ",,"000, 350, 340D, 500, 550, 570, 280, 510, 150, 240, 010, 530, 110, 930, 155, 140, 700, (temporary strucutures), 560,540, (wireless telecommunications facilities) ",,"220, 130, (large family daycare), 850, 830, 840, 630, 125, 720, 145, 135, (Medical marijuana provider association dispensaries, as defined in Section 24.22.539), 860, (Smoking lounges as defined in Section 24.22.748.2), (Emergency shelters subject to regulations in Part 17 of Chapter 24.12.)",,,
+I-G PER-2,General Industrial District Performance Overlay 2,,Y,"610, 510F, 220, 550, 420, 150, 100, 120, 410, 105, 155, 145, 135, (Printing and publishing or lithographic shops and plants), 400, 310, 360, 340, (Small family daycare facility in a single-family home or duplex), (Start-up fabrication assembly or packaging from light metals, prepared materials, or prefabricated parts, including electrical devices), 140, 330, (Technology related research and development facilities and products), 210, 200",,"000, 350, 280, 010, 110, 930, (temporary structures), 540, (wireless telecommunications facilities)",,"220, 130, (large family daycare), 240, 530, 850, 830, 840, 125, 720, (Medical marijuana provider association dispensaries, as defined in Section 24.22.539), 860, 560",,,
+P-F,Public Facilities District,,Y,emergency shelters,,wireless telecommunications facilities,,arts galleries and museums on public property; cemeteries; government facilities; hospitals; libraries; public schools; public utility; publicly owned recreational facilities,,,
+PK,Parks District,,Y,,,,,,,,
+E-A,Exclusive Agricultural District,,Y,"agriculture; animal farm; crop and tree farming; ranch and farm dwellings incidental to a principal agricultural use; stables, barns, silos, and windmills; guest houses and guest rooms; living quarters for persons regularly employed on the premises, but not including labor supply camps; offices incidental and necessary to the conduct of a permitted use; roadside stands, not exceeding four hundred square feet in floor area, for the sale of agricultural products grown on the premises; the providing of board and room for not more than five paying guests",,daycare and foster homes for children; eating and drinking establishments; foster family homes; guest ranches; off-street parking facilities accessory and incidental to an adjacent commercial use; temporary structures; veterinary hospitals and clinics,,"agricultural processing plant; group care homes; helipads; institutions for children or the aged; kennels and riding stables; off-street parking facilities serving commercial districts within three hundred feet of the site; outdoor theaters, golf driving ranges, and other similar open-air commercial recreation facilities; public and private noncommercial recreation areas, buildings and facilities such as parks, country clubs, golf courses, and riding, swimming and tennis clubs; public and quasi-public buildings and uses including administrative, recreational, educational, religious, cultural, public utility or public service uses, but not including corporation yards, storage or repair yards, and warehouses; quarters, accommodation, or areas for transient labor, such as labor cabins or labor supply camps.",,,
+OF-R,Ocean Front (Recreational) District,,Y,"1.    Beach and surf access ways, public or private; public beach-recreation activities; but not including the use of any building or structure, other than stairways and handrails;
+
+2.    Outdoor classes, public or private; for scientific research, art, and other subjects;
+
+3.    Parking areas or lots, public or private; but not including the use of any building or structure;
+
+4.    Picnic grounds and barbecue facilities, public or private, including tables, benches, and fire pits; but not including any other structure or building;
+
+5.    Public fishing facilities;
+
+6.    Safety structures, including, but not limited to, warning signs, barricades, retaining walls, erosion control facilities, lifeguard towers built by, or under the direction of, or with special approval of the city.
+
+",,"a.    Beach, surfing and fishing equipment;
+
+b.    Fish market;
+
+c.    Identification signs, appurtenant to uses permitted on the premises;
+
+d.    Navigation aids and devices not involving the erection of a structure;
+
+e.    Walls or fences, not to exceed three and one-half feet in height.",,"a.    Navigation aids and devices involving the erection of a structure;
+
+b.    Public restroom facilities;
+
+c.    Temporary structures.",,,
+F-P,Floodplain District,,Y,"1.    Agriculture;
+
+2.    Crop and tree farming;
+
+3.    Nurseries.
+
+Garages, barns, and other structures customarily appurtenant to a permitted use.
+
+",,"a.    Ranch and farm dwellings incidental to a principal agricultural use.
+
+",,"a.    Recreational facilities, bridges, roads, utility transmission lines;
+
+b.    Riding stables for the keeping of horses on sites at least five acres in size.
+
+",,,
+H-O,Historic Overlay District,,Y,,,,,,,,
+GB-O,Greenbelt Overlay District,,Y,,,,,"1.    Timber production and harvesting;
+
+2.    Agriculture, including grazing;
+
+3.    Private recreational uses;
+
+4.    Public recreational uses;
+
+5.    Scientific or educational uses which maintain the open-space character of the land;
+
+6.    Single-family dwellings;
+
+7.    Accessory buildings;
+
+8.    Other land uses which maintain the open space character of the land.
+
+",,,
+CBD,Central Business District ,"This part implements the Land Use Plan, Development Standards and Design Guidelines of the Downtown Recovery Plan. It is intended to refine the Plan in the area of land use and regulations. It supports the purpose of the Plan, in the context of the General Plan, which aims to make downtown the urban center of the city, with the many functions a city center serves. This section of the Zoning Ordinance is also part of the Local Coastal Implementation Plan.
+
+The Central Business District Zone of the Downtown Recovery Plan is divided into four subareas, in order to enhance the character of each by special consideration of the character of each. The Lower Pacific Avenue subdistrict has been added and consists of the CBD District South of Laurel Street. The Lower Pacific Avenue subdistrict is intended to implement the policies of the South of Laurel Plan and is separate from the Downtown Recovery Plan.
+",,"Subject to Dowtown Recovery Plan, See Open Counter / Zoning for CBD breakdowns",,"Subject to Dowtown Recovery Plan, See Open Counter / Zoning for CBD breakdowns",,"Subject to Dowtown Recovery Plan, See Open Counter / Zoning for CBD breakdowns",,,
+CBD(E),Central Business District Sub District E - Lower Pacific Avenue ,"The purpose of the Lower Pacific Avenue Subdistrict Zone is to encourage the development/redevelopment of the Lower Pacific corridor between Laurel and Front Streets as an important linkage between the Downtown and the Beach. Its intent is to extend the commercial and mixed use developments of the Downtown along Lower Pacific Avenue in a manner that is compatible with and linked to the regional tourist serving uses of the Beach.
+",,"a.    Acting/art/music/dance school and studios (610);
+
+b.    Apparel and accessory stores (250);
+
+c.    Eating and drinking establishments (excepts bars, fast food), subject to live entertainment and alcohol regulations of Chapter 24.12 (280);
+
+d.    Educational facilities (public/private) (510);
+
+e.    Food and beverage stores (except liquor and convenience stores) (240);
+
+f.    General retail merchandise (drug and department stores) (230); not exceeding 16,000 square feet per individual store;
+
+g.    Home furnishing stores (270);
+
+h.    Lodging (300);
+
+i.    Multiple dwellings or condominiums or mixed use residential and commercial developments when multiple dwelling or condominium units are located above the first floor of commercial uses, subject to the minimum land area (net) per dwelling unit of the R-M District (830, 840);
+
+j.    Museums and art galleries (600);
+
+k.    Repair, alterations, and maintenance services for household items (except boat repair) (340);
+
+l.    Small community care residential facilities;
+
+m.    Small preschool/childcare (12 or fewer) (510A);
+
+n.    Specialty retail supply stores (290);
+
+o.    Theaters (620);
+
+p.    Video rental (360B).
+
+",,"a.    Auto supply stores (260C);
+
+b.    Bakery, micro-brewery (subject to alcohol regulations in Part 12 of Chapter 24.12), handicrafts or similar light manufacturing and assembly uses associated with retail sales, if floor area is less than seven thousand square feet and retail sale or service area occupies at least thirty percent of the floor area;
+
+c.    Brew pubs, subject to alcohol regulations in Part 12 of Chapter 24.12;
+
+d.    Churches (500);
+
+e.    Communication and information services (550);
+
+f.    Community organizations, associations, clubs, and meeting halls (570);
+
+g.    Developed parks (710);
+
+h.    Fast-food restaurants or drive-in eating facilities subject to performance standards in Section 24.14.290 and subject to alcohol regulations in Part 12 of Chapter 24.12 and Section 24.14.290 (280H);
+
+i.    Financial, insurance, real estate offices (420);
+
+j.    Financial services (320);
+
+k.    Foster family homes;
+
+l.    Government and public agencies (530);
+
+m.    Medical/health offices (except veterinarians and ambulance services) (410);
+
+n.    Off-site public/private parking facilities (930);
+
+o.    Professional offices (400);
+
+p.    Professional/personal services (except contractors yards and mortuaries) (310);
+
+q.    Recycling collection facilities;
+
+r.    Sports, recreation and entertainment facilities subject to alcohol regulations in Part 12 of Chapter 24.12 (720);
+
+s.    Temporary structures and uses;
+
+t.    Utilities and resources (540);
+
+u.    Veterinarians (410A);
+
+v.    Wireless telecommunications facilities, subject to the regulations in Part 15 of Chapter 24.12.",,"
+2.    The following uses are subject to approval of a special use permit and design permit in the Lower Pacific Avenue Subdistrict and possibly other requirements of the Municipal Code. (Numerical references at the end of these categories reflect the general use classifications listed in the city’s Land Use Codes. Further refinement of uses within these categories can be found in the Land Use Codes, but they are not intended to be an exhaustive list of potential uses.)
+
+a.    Bar and cocktail lounges, subject to alcohol regulations in Part 12 of Chapter 24.12 (280C);
+
+b.    Community care facilities;
+
+c.    Community care residential facilities;
+
+d.    Contractor/building (310E);
+
+e.    Convenience/liquor stores, subject to alcohol regulations of Part 12 of Chapter 24.12 (240B);
+
+f.    Night clubs (amplified live entertainment), subject to alcohol regulations of Part 12 of Chapter 24.12 (630);
+
+g.    Single-room occupancy (SRO) (860);
+
+h.    General retail merchandise (drug and department stores) exceeding sixteen thousand square feet (230);
+
+i.    Smoking lounges as defined in Section 24.22.748.2 and subject to siting criteria and performance standards in Chapter 5.54.
+
+",,,
+SP-O,Shoreline Protection Overlay District,"The purpose of the Shoreline Protection Overlay District is to preserve and protect the coastal and environmental resources in the city of Santa Cruz. It is furthermore intended that the Shoreline Protection Overlay District accomplish the following: minimize cut, fill, earthmoving, riprap placement, grading operations, and other such man-made intrusions in coastal areas; to control erosion; to protect development from geological or other coastal related hazards; to protect public views; to protect and enhance shoreline access for the public; to protect paleontological resources; to generally implement the policies of the Local Coastal Land Use Plan. This district lies generally between the sea and the first public road paralleling the sea, or within three hundred (300) feet of the mean high tide line of the sea, whichever is the greater distance. This section of the Zoning Ordinance is also part of the Local Coastal Implementation Plan.
+",Y,,,,,,,,
+CZ-O,Coastal Zone Overlay District,"The Coastal Zone District is an Overlay Zone, the boundaries of which are determined by the California Coastal Act of 1976. The purpose of the Coastal Zone is to provide a means of carrying out the policies of the Coastal Act and the city’s Local Coastal Land Use Plan. Within the Coastal Zone is an area which requires further, special consideration. The SP-O Shoreline Protection Overlay District is a subdistrict of the Coastal Zone Overlay, immediately adjacent to the ocean where certain Coastal Act policies are particularly significant and require special review. This section of the Zoning Ordinance is also part of the Local Coastal Implementation Plan.
+",Y,,,,,,,,
+MU-O,Mixed Use Overlay District,,,,,,,,,,
+FP-O,Floodplain Overlay District,,Y,,,,,,,,
+HD-O,High-Density Overlay District,,Y,,,,,,,,
+CON,Neighborhood Conservation Overlay District,,,,,,,,,,
+SOL,South of Laurel Interim Overlay District,,Y,,,,,,,,
+WCD,West Cliff Drive Overlay District,,Y,,,,,,,,
+MS-O,Mission Street Urban Design Plan Overlay District,,Y,,,,,,,,
