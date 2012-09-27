@@ -14,7 +14,7 @@
 
   <div class="field">
     <%= f.label :parent %>
-    <%= f.select :parent_id, options_from_collection_for_select(@zoning_district.cic_codes, :id, :code) %>
+    <%= f.select :parent_id, options_from_collection_for_select(@zoning_district.cic_codes, :id, :code, :selected => @cic_code.parent) %>
   </div>
 
   <div class="field">
