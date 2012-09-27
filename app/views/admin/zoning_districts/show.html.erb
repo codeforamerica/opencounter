@@ -11,6 +11,11 @@
   <table>
     <thead>
       <tr>
+        <th colspan="3">&nbsp;</th>
+        <th colspan="6" style="text-align:center;">Permit Type</th>
+        <th colspan="2">&nbsp;</th>
+      </tr>
+      <tr>
         <th>Code</th>
         <th>Industry</th>
         <th>Subindustry</th>
@@ -19,6 +24,7 @@
         <th>SUP</th>
         <th>Prohibited</th>
         <th>Unknown</th>
+        <th>Explanation (if Unknown)</th>
         <th>Home Occ Prohibited</th>
         <th></th>
       </tr>
@@ -35,6 +41,7 @@
             <td align="center"><%= f.radio_button :permission, 3 %></td>
             <td align="center"><%= f.radio_button :permission, 4 %></td>
             <td align="center"><%= f.radio_button :permission, 5 %></td>
+            <td><%= f.text_field :notes %></td>
             <td align="center"><%= f.check_box :home_occ_prohibited %></td>
             <td><%= f.submit 'Update', :class => 'btn btn-success btn-large' %></td>
           <% end %>
