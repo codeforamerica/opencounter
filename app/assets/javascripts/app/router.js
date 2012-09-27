@@ -63,7 +63,6 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
       var panel = new (Answer.Views.Panel.extend(Business.Views.License.prototype))({
         collection:this.answers
       });
-
       app.layout.setView("div#content", panel);
       app.layout.render();
     },
@@ -71,18 +70,20 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
       var panel = new (Answer.Views.Panel.extend(Location.Views.Check.prototype))({
         collection:this.answers
       });
-
       app.layout.setView("div#content", panel);
       app.layout.render();
     },
     panel: function(path){
-      
-      if(path == ""){path="intro";}
+      if (path == "") {
+        path="welcome";
+      }
+      if (path == "intro") {
+        path="intro/big_picture";
+      }
       app.layout.setView("div#content", new Answer.Views.Panel({
           collection:this.answers,
           useTemplate:"panels/"+path
       }));
-
       app.layout.render();
     },
     initialize: function(){
@@ -105,8 +106,7 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
         business: this.business,
         answers: this.answers
       });
-
-
+      
       app.layout.setViews({
         "div#profile": new Answer.Views.Profile({
           collection:this.answers
@@ -114,8 +114,7 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
         "div#nav-main": nav,
         "div#nav-sub": subnav
       });
-
-
+      
     }});
   return Router;
 
