@@ -1,25 +1,29 @@
-<div id="location">
+<div class="page-header">
   <h1><%= (answers.is_owner === "true") ? "Your" : "The" %> business&rsquo;s location</h1>
-  
-  <p>The rules are different for work-from-home businesses and those that operate out of commercial locations.</p>
-  
-  <hr>
-  
-  <% if (answers.location_type) { %>
-  <p>You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "your" : "this" %> business will operate 
-    <% if (answers.location_type == "home") { %>
-      out of <%= (answers.is_owner === "true") ? "your" : "the owner's" %> home.
+</div>
+
+<div class="row-fluid">
+  <div class="span8">
+    <p class="lead">The rules are different for work-from-home businesses and those that operate out of commercial locations.</p>
+    
+    <hr>
+    
+    <% if (answers.location_type) { %>
+    <p>You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "your" : "this" %> business will operate 
+      <% if (answers.location_type == "home") { %>
+        out of <%= (answers.is_owner === "true") ? "your" : "the owner's" %> home.
+      <% } else { %>
+        from a commercial location.
+      <% } %>
+    </p>
     <% } else { %>
-      from a commercial location.
+    <p>You haven't yet told us where this business will operate from.</p>
     <% } %>
-  </p>
-  <% } else { %>
-  <p>You haven't yet told us where this business will operate from.</p>
-  <% } %>
-
-  <hr>
-
-  <h3>Where will <%= (answers.is_owner === "true") ? "your" : "this" %> business operate from?</h3>
-  <p class="next"><a href="/location/home"  data-answer="home" name="location_type"><%= (answers.is_owner === "true") ? "I" : "The owner" %> will be working from home &rarr;</a></p>
-  <p class="next"><a href="/location/commercial" data-answer="commercial" name="location_type"><%= (answers.is_owner === "true") ? "I" : "The owner" %> will be working out of a commercial space &rarr;</a></p>
-</div><!-- /#location -->
+    
+    <hr>
+    
+    <h3>Where will <%= (answers.is_owner === "true") ? "your" : "this" %> business operate from?</h3>
+    <p class="next"><a href="/location/home"  data-answer="home" name="location_type"><%= (answers.is_owner === "true") ? "I" : "The owner" %> will be working from home &rarr;</a></p>
+    <p class="next"><a href="/location/commercial" data-answer="commercial" name="location_type"><%= (answers.is_owner === "true") ? "I" : "The owner" %> will be working out of a commercial space &rarr;</a></p>
+  </div>
+</div>
