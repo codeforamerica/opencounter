@@ -15,8 +15,8 @@
       <td><%= zone.code %></td>
       <td><%= zone.name %></td>
       <td width="100px"><%= zone.active_cic_codes.size %></td>
-      <td width="80px"><%= link_to 'Permissions', admin_zoning_district_path(zone) %></td>
-      <td width="50px"><%= link_to 'Edit', edit_admin_zoning_district_path(zone) %></td>
+      <td width="80px"><%= link_to 'Permissions', admin_zoning_district_path(zone), :class => 'btn btn-mini btn-info' %></td>
+      <td width="50px"><%= link_to 'Edit', edit_admin_zoning_district_path(zone), :class => 'btn btn-mini btn-info' %></td>
     </tr>
   <% end %>
 </table>
