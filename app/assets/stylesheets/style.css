@@ -889,3 +889,18 @@ ul.dropdown-menu {
     color: #009;
     white-space: nowrap;
 }
+
+.flash{
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+.flash.notice{
+  background-color: green;
+}
+.flash.alert{
+  background-color: red;
+}
+
