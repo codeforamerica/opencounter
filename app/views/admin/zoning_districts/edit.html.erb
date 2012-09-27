@@ -1,37 +1,41 @@
-<h1><%= @zoning_district.code %> &mdash; <%= @zoning_district.name %></h1>
-<p><%= @zoning_district.description %></p>
+<h1>Editing Zoning District</h1>
 
-<% if @zoning_district.cic_code_zoning_districts.blank? %>
-  <p>There are no CIC Codes associated with this Zoning District.</p>
-<% else %>
-  <table>
-    <thead>
-      <tr>
-        <th>Code</th>
-        <th>Industry</th>
-        <th>Subindustry</th>
-        <th>Permitted?</th>
-        <th>Administrative Use Permit?</th>
-        <th>Special Use Permit?</th>
-        <th>Prohibited?</th>
-        <th>Unknown?</th>
-        <th>Home Occ Prohibited?</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% for permission in @cic_code_zoning_districts %>
-        <tr class="<%= cycle("odd", "even") -%>">
-          <td><%= permission.cic_code.code %></td>
-          <td><%= permission.cic_code.industry %></td>
-          <td><%= permission.cic_code.subindustry %></td>
-          <td align="center"><%= check_box_tag :permitted %></td>
-          <td align="center"><%= check_box_tag :permitted_aup? %></td>
-          <td align="center"><%= check_box_tag :permitted_sup? %></td>
-          <td align="center"><%= check_box_tag :prohibited? %></td>
-          <td align="center"><%= check_box_tag :unknown? %></td>
-          <td align="center"><%= check_box_tag :home_occ_prohibited? %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
+<%= form_for(:zoning_district, :url => admin_zoning_district_path(@zoning_district), :html => {:method => :put}) do |f| %>
+  <% if @zoning_district.errors.any? -%>
+    <div id='error_explanation'>
+      <h2><%= pluralize(@zoning_district.errors.count, "error") -%> prohibited this county from being saved:"</h2>
+      <ul>
+        <% @zoning_district.errors.full_messages.each do |msg| -%>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end -%>
+
+  <div class="field">
+    <%= f.label :code %>
+    <%= f.text_field :code %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  
+  <div class="field">
+    <br />
+    <%= f.check_box :home_occ_prohibited %> Home Occ Prohibited?
+  </div>
+
+  <div class="actions">
+    <br />
+    <%= f.submit 'Save', :class => 'btn btn-success btn-large' %>
+    &nbsp;&nbsp;
+    <%= link_to 'Cancel', admin_zoning_districts_path %>
+  </div>
+<% end -%>

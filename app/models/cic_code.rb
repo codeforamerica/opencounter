@@ -1,4 +1,5 @@
 class CicCode < ActiveRecord::Base
+  belongs_to :parent, :class_name => "CicCode", :foreign_key => "parent_id"
   has_many :cic_code_zoning_districts, :dependent => :destroy
   has_many :zoning_districts, :through => :cic_code_zoning_districts, :dependent => :destroy, :order => "code ASC"
   attr_accessible :code, :industry, :subindustry, :home_occ_prohibited, :keywords, :parent_id
