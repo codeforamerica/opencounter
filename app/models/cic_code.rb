@@ -1,7 +1,7 @@
 class CicCode < ActiveRecord::Base
   has_many :cic_code_zoning_districts, :dependent => :destroy
-  has_many :zoning_districts, :through => :cic_code_zoning_districts, :dependent => :destroy
-  attr_accessible :code, :industry, :subindustry, :home_occ_prohibited, :keywords
+  has_many :zoning_districts, :through => :cic_code_zoning_districts, :dependent => :destroy, :order => "code ASC"
+  attr_accessible :code, :industry, :subindustry, :home_occ_prohibited, :keywords, :parent_id
   after_create :create_zoning_district_connections
   
   def permission_name(zoning_district_id)

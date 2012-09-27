@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120924221042) do
+ActiveRecord::Schema.define(:version => 20120927020404) do
 
   create_table "answers", :force => true do |t|
     t.text     "value"
@@ -28,22 +28,6 @@ ActiveRecord::Schema.define(:version => 20120924221042) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
-
-  create_table "delayed_jobs", :force => true do |t|
-    t.integer  "priority",   :default => 0
-    t.integer  "attempts",   :default => 0
-    t.text     "handler"
-    t.text     "last_error"
-    t.datetime "run_at"
-    t.datetime "locked_at"
-    t.datetime "failed_at"
-    t.string   "locked_by"
-    t.string   "queue"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-  end
-
-  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "cic_code_zoning_districts", :force => true do |t|
     t.integer  "cic_code_id"
@@ -66,10 +50,27 @@ ActiveRecord::Schema.define(:version => 20120924221042) do
     t.boolean  "home_occ_prohibited", :default => false
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.integer  "parent_id"
   end
 
   add_index "cic_codes", ["code"], :name => "index_cic_codes_on_code"
   add_index "cic_codes", ["keywords"], :name => "index_cic_codes_on_keywords"
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "fields", :force => true do |t|
     t.string   "format"
