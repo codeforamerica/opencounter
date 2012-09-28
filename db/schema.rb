@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120927020404) do
+ActiveRecord::Schema.define(:version => 20120928225408) do
 
   create_table "answers", :force => true do |t|
     t.text     "value"
@@ -56,6 +56,14 @@ ActiveRecord::Schema.define(:version => 20120927020404) do
   add_index "cic_codes", ["code"], :name => "index_cic_codes_on_code"
   add_index "cic_codes", ["keywords"], :name => "index_cic_codes_on_keywords"
 
+  create_table "cic_codes_sic_codes", :id => false, :force => true do |t|
+    t.integer "cic_code_id"
+    t.integer "sic_code_id"
+  end
+
+  add_index "cic_codes_sic_codes", ["cic_code_id"], :name => "index_cic_codes_sic_codes_on_cic_code_id"
+  add_index "cic_codes_sic_codes", ["sic_code_id"], :name => "index_cic_codes_sic_codes_on_sic_code_id"
+
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
     t.integer  "attempts",   :default => 0
@@ -91,6 +99,17 @@ ActiveRecord::Schema.define(:version => 20120927020404) do
     t.datetime "updated_at",   :null => false
     t.string   "jurisdiction"
   end
+
+  create_table "sic_codes", :force => true do |t|
+    t.string   "code"
+    t.string   "industry"
+    t.string   "subindustry"
+    t.integer  "parent_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "sic_codes", ["code"], :name => "index_sic_codes_on_code"
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
