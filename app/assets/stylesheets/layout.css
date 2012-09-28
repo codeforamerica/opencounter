@@ -12,10 +12,6 @@ header {
   text-align: center;
 }
 
-#profile .well,
-#help .well {
-}
-
 #profile a,
 #help a {
   display: block;
@@ -45,8 +41,6 @@ header {
 #branding .city {
   border-bottom: 1px dotted #CCC;
 }
-
-
 
 /* === Main Navigation ====================================================== */
 
@@ -96,15 +90,26 @@ header {
 #nav-main a:hover,
 #nav-main a:active,
 #nav-main .current a {
-  background-position: right top;
+  background-position: right top !important;
 }
-
 
 /* === Sidebar Navigation =================================================== */
 
 .subnav {
   margin: 20px 0;
 }
+
+.subnav a.current {
+  background: #1791BE;
+  color: #FFF;
+}
+
+.subnav a.current:hover,
+.subnav a.current:active {
+  background: #1791BE;
+  color: #FFF;
+}
+
 
 /* === Footer =============================================================== */
 
@@ -140,11 +145,6 @@ footer {
 header
 
   header profile
-
-<p><a href="">Welcome back, [name]. Pick up where you left off.</a></p>
-
-<p><a href="/intro">First time here? Get started.</a></p>
-<p><a href="#">Returning? Pick up where you left off.</a></p>
 
   header help
 
