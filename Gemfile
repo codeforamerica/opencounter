@@ -39,7 +39,6 @@ group :test, :development do
   gem "factory_girl_rails"
   gem "shoulda-matchers"
   gem "faker"
-  gem 'taps'
 
   # To use debugger
   gem 'debugger'
@@ -49,6 +48,8 @@ end
 
 group :development do
   gem 'heroku'
+  gem 'taps'
+  gem 'sqlite3' #need this for taps to work
 end
 
 # To use ActiveModel has_secure_password
