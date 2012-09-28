@@ -1,13 +1,13 @@
-<div id="requirement_fbn">
+<div class="page-header">
   <h1>Fictitious Business Names</h1>
-  
-  <p>If the name of <%= (answers.is_owner === "true") ? "your" : "this" %> business does not contain <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> last name, you will need to apply to Santa Cruz County for a Fictitious Business Name (FBN).</p>
+</div>
 
+<div class="row-fluid">
+
+  <p>If the name of <%= (answers.is_owner === "true") ? "your" : "this" %> business does not contain <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> last name, you will need to apply to Santa Cruz County for a Fictitious Business Name (FBN).</p>
   <p>For example, if <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> last name is Smith and <%= (answers.is_owner === "true") ? "your" : "this" %> business is called "Smith&rsquo;s Tanning," you won't need an FBN. But if <%= (answers.is_owner === "true") ? "your" : "this" %> business is called "Eastside Tanning," you will need an FBN.</p>
 
   <hr>
-
-
 
   <% if(!answers.business_name){ %>
 

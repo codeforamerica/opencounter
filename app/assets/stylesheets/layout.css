@@ -42,8 +42,6 @@ header {
   border-bottom: 1px dotted #CCC;
 }
 
-
-
 /* === Main Navigation ====================================================== */
 
 #nav-main {
@@ -94,9 +92,6 @@ header {
 #nav-main .current a {
   background-position: right top !important;
 }
-
-
-
 
 /* === Sidebar Navigation =================================================== */
 
@@ -150,11 +145,6 @@ footer {
 header
 
   header profile
-
-<p><a href="">Welcome back, [name]. Pick up where you left off.</a></p>
-
-<p><a href="/intro">First time here? Get started.</a></p>
-<p><a href="#">Returning? Pick up where you left off.</a></p>
 
   header help
 
