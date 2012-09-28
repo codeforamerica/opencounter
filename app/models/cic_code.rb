@@ -3,6 +3,7 @@ class CicCode < ActiveRecord::Base
   has_many :children, :class_name => "CicCode", :foreign_key => "parent_id"
   has_many :cic_code_zoning_districts, :dependent => :destroy
   has_many :zoning_districts, :through => :cic_code_zoning_districts, :dependent => :destroy, :order => "code ASC"
+  has_and_belongs_to_many :sic_codes, :uniq => true
   attr_accessible :code, :industry, :subindustry, :home_occ_prohibited, :keywords, :parent_id
   after_create :create_zoning_district_connections
   
