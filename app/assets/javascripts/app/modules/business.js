@@ -105,7 +105,7 @@ function(app) {
                 $(ev.target).removeClass("invalid");
               }
             });
-            $(typeaheadel).typeahead({source:this.getCIC, matcher:function(){return true;}, self:self});
+            $(typeaheadel).typeahead({source:this.getCIC, items:10, matcher:function(){return true;}, self:self});
           }
           
           // --- Sole Owner / Co-Owner Toggle ---
