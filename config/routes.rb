@@ -3,7 +3,7 @@ Opencounter::Application.routes.draw do
   resources :answers
   resources :businesses
 
-  match "api/lookup/sic" => "sic#index"
+  match "api/lookup/cic" => "cic_codes#index"
   
   match "user/:email/planning" => "users#update_planning"
 
