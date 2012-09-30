@@ -16,6 +16,7 @@ header {
 #help a {
   display: block;
   margin-top: 9px;
+  text-transform: uppercase;
 }
 
 #profile p,
@@ -136,6 +137,18 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.form-actions {
+  border: 1px solid #DDD;
+  padding-left: 5%;
+  background: #daeef5;
+  border-width:0 0 0 1px;
+  padding-bottom: 0;
+}
+
+.form-actions a {
+  font-weight: bold;
 }
 
 

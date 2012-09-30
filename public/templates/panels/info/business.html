@@ -6,23 +6,24 @@
 
   <form method="post" action="#" id="form_info_business">
     
-    <fieldset>
+    <div class="control-group">
+      <label class="control-label">What will <%= (answers.is_owner === "true") ? "your" : "the" %> business be called?</label>
+      <div class="controls"><input type="text" name="business_name" placeholder=""></div>
+    </div>
     
-      <label>
-        What will <%= (answers.is_owner === "true") ? "your" : "the" %> business be called?
-        <input type="text" name="business_name" placeholder="">
-      </label>
-  
-      <label>
-        What will <%= (answers.is_owner === "true") ? "your" : "the" %> business do?
+
+    <div class="control-group">
+      <label class="control-label">What will <%= (answers.is_owner === "true") ? "your" : "the" %> business do?</label>
+      <div class="controls">
         <input type="text" id="business_code" name="business_code" class="typeahead" placeholder="e.g. Auto Parts" />
         <div id="business-type-container" style="position:absolute; width: 500px;"></div>
-      </label>
-      
-      <p>If you aren't able to find a matching category, please <a href="/contact">contact us</a> so we can help you find the best match.</p>
-      
-      <label>
-        What is <%= (answers.is_owner === "true") ? "your" : "the" %> business&rsquo;s legal structure?
+      </div>
+      <p>If you aren't able to find a matching category, please <a href="/help">contact us</a> so we can help you find the best match.</p>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">What is <%= (answers.is_owner === "true") ? "your" : "the" %> business&rsquo;s legal structure?</label>
+      <div class="controls">
         <select name="business_structure">
           <option value="unknown"                       <%= (answers.business_structure === 'unknown') ? 'selected="selected"' : '' %>                        >Not sure, don&rsquo;t know, or haven&rsquo;t decided yet</option>
           <option value="individual"                    <%= (answers.business_structure === 'individual') ? 'selected="selected"' : '' %>                     >an Individual (Sole Proprietorship)</option>
@@ -38,37 +39,43 @@
           <option value="joint_venture"                 <%= (answers.business_structure === 'joint_venture') ? 'selected="selected"' : '' %>                  >a Joint Venture</option>
           <option value="domestic_partners"             <%= (answers.business_structure === 'domestic_partners') ? 'selected="selected"' : '' %>              >State or Local Registered Domestic Partners</option>
         </select>
-      </label>
-    
-    </fieldset>
+      </div>
+    </div>
 
-    <label>
-      <% if (answers.is_owner === "true") { %>Are you<% } else { %> Is <%= answers.owner_first_name %>  <%= answers.owner_last_name %> <% } %> this business&rsquo;s sole owner?
-      <input type="checkbox" name="applicant_is_sole_owner" value="y" checked="checked"> Yes
-    </label>
+
+    <div class="control-group">
+      <label class="control-label"><% if (answers.is_owner === "true") { %>Are you<% } else { %> Is <%= answers.owner_first_name %>  <%= answers.owner_last_name %> <% } %> this business&rsquo;s sole owner?</label>
+      <div class="controls">
+        <input type="checkbox" name="applicant_is_sole_owner" value="y" checked="checked"> Yes
+      </div>
+    </div>
 
     <!-- @condition Not the sole owner -->
-    <div class="conditional co-owners">
+    <div class="conditional co-owners well">
       <p>Please list the names, roles, and mailing addresses of all co-owners.</p>
-      <fieldset>
-        <label>
-          First &amp; Last Name
-          <input type="text" name="coowner_name" placeholder="Corey Coowner">
-        </label>
-        <label>
-          Title/Role
-          <input type="text" name="coowner_role" placeholder="e.g. Co-Owner">
-        </label>
-        <label>
-          Mailing Address
-          <input type="text" name="coowner_address" placeholder="123 Anystreet Road, Santa Cruz, CA 95060">
-        </label>
-      </fieldset>
-      <div class=""><a href="#">+ Add Another Co-Owner +</a></div>
+
+      <div class="control-group">
+        <label class="control-label">First &amp; Last Name</label>
+        <div class="controls"><input type="text" name="coowner_name" placeholder="Corey Coowner"></div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Title/Role</label>
+        <div class="controls"><input type="text" name="coowner_role" placeholder="e.g. Co-Owner"></div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Mailing Address</label>
+        <div class="controls"><input type="text" name="coowner_address" placeholder="123 Anystreet Road, Santa Cruz, CA 95060"></div>
+      </div>
+
+      <div class=""><a href="#" class="btn">+ Add Another Co-Owner +</a></div>
     </div>
     <!-- /@condition -->
     
-    <p class="next">Thanks! That's enough to get started. <a class="submit" href="/location">Next: Location &rarr;</a></p>
+    <div class="form-actions">
+      <p class="next lead">Thanks! That's enough to get started. <a class="submit" href="/location">Next: your location &rarr;</a></p>
+    </div>
   </form>
 
 </div>
