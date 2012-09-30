@@ -23,7 +23,7 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
       "*path":"panel"
     },
     index: function(e){
-      console.log("index");
+//      console.log("index");
     },
     clear: function(){
       this.answers.each(function(m){

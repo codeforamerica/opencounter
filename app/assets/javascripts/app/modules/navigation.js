@@ -40,9 +40,9 @@ function(app) {
             dataSection = href.slice(1).split('/')[0] || "",
             pathSection = path.slice(1).split('/')[0] || "";
         
-        console.log('dataSection: ' + dataSection);
-        console.log('pathSection: ' + pathSection);
-        console.log('path: ' + path);
+//        console.log('dataSection: ' + dataSection);
+//        console.log('pathSection: ' + pathSection);
+//        console.log('path: ' + path);
         
         // Unset class="current" from parent <li>
         $el.parent().removeClass("current");
