@@ -7,10 +7,31 @@
 </div>
 
 <div class="row-fluid">
-  <div class="span6">
+  <div class="span12">
     <p class="lead">Based on what you've told us about your business, let's walk through all of the requirements.</p>
   </div>
-  <div class="span6">
+</div>
+
+<div class="row-fluid">
+  <% if ((!answers.applicant_first_name) || (!answers.business_name) || (!answers.location_type)) { %>
+  <div class="well span12 alert alert-error">
+    <p class="lead">Before we can walk you through the requirements that apply to your business, we'll need some basic information.</p>
+    <ul class="lead">
+    <% if (!answers.applicant_first_name) { %>
+      <li>You haven't yet told us about yourself or the business owner. <a href="/info/applicant">About you &rarr;</a></li>
+    <% } %>
+    <% if (!answers.business_name) { %>
+      <li>You haven't yet told us about your business. <a href="/info/business">About your business &rarr;</a></li>
+    <% } %>
+    <% if (!answers.location_type) { %>
+      <li>You haven't yet told us whether you'll be working from home or a commercial space. <a href="/location">Your business's location &rarr;</a></li>
+    <% } %>
+    </ul>
+
+  <% } else { %>
+  <div class="well span12">
     <p class="next"><a class="submit btn btn-large" href="/requirements/city/planning_permit">First, Planning Permits &rarr;</a></p>
+  <% } %>
+
   </div>
 </div>
