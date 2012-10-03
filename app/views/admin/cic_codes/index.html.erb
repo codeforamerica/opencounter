@@ -1,0 +1,21 @@
+<h1>CIC Codes</h1>
+<br />
+
+<table class="table table-striped">
+	<thead>
+    <th>Code</th>
+    <th>Industry</th>
+    <th>Sub-industry</th>
+    <th>Keywords</th>
+    <th></th>
+  </thead>
+
+  <% for cic_code in @cic_codes %>
+    <tr class="<%= cycle("odd", "even") -%>">
+      <td><%= cic_code.code %></td>
+      <td><%= cic_code.industry %></td>
+      <td><%= cic_code.subindustry %></td>
+      <td><%= editable_field cic_code, :keywords %></td>
+    </tr>
+  <% end -%>
+</table>

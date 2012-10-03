@@ -4,6 +4,10 @@ class Admin::CicCodesController < ApplicationController
   def show
     @cic_code = CicCode.find(params[:id])
   end
+
+  def index
+    @cic_codes = CicCode.all
+  end
   
   def new
     @cic_code = CicCode.new(params[:cic_code])

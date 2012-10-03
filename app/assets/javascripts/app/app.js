@@ -4,6 +4,7 @@ define([
   "lodash",
   "backbone",
   "../libs/bootstrap-typeahead",
+  "../libs/jquery.jeditable",
   // Plugins.
   "plugins/backbone.layoutmanager"
 

@@ -24,4 +24,19 @@ class CicCodesController < ApplicationController
 
     render :json => cic_codes[0...10]
   end
+
+  def update
+  # update your model
+  @cic_code = CicCode.find(params[:id])
+  @cic_code.update_attributes!(params[:cic_code])
+
+  format.html {
+    if request.xhr?
+      # *** repond with the new value ***
+      render :text => params[:cic_code].values.first
+    else
+      redirect_to(@cic_code, :notice => 'CIC Code was successfully updated.')
+    end
+  }
+  end
 end

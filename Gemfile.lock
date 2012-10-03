@@ -120,6 +120,7 @@ GEM
       sketches (>= 0.1.1)
       wirb (>= 0.4.2)
       zucker (>= 12.1)
+    jeditable-rails (0.1.1)
     journey (1.0.4)
     jquery-rails (2.0.2)
       railties (>= 3.2.0, < 5.0)
@@ -251,6 +252,7 @@ DEPENDENCIES
   heroku
   inherited_resources
   irbtools
+  jeditable-rails
   jquery-rails
   pg
   rails (= 3.2.6)

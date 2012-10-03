@@ -67,4 +67,5 @@ end
 gem 'csv-mapper'
 gem 'fuzzy-string-match_pure'
 gem 'irbtools'
+gem 'jeditable-rails'
 

@@ -11,7 +11,7 @@ Opencounter::Application.routes.draw do
 
   root :to => 'panels#intro'
     
-  match '/admin/' => 'admin/zoning_districts#index'
+  match '/admin/' => redirect('/admin/zoning_districts#index')
   namespace :admin do
     resources :cic_codes
     resources :cic_code_zoning_districts
@@ -19,6 +19,8 @@ Opencounter::Application.routes.draw do
   end
   
   match "*path" => "panels#intro"
+
+  resources :cic_codes, :only => ['update']
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
