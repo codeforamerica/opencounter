@@ -71,7 +71,7 @@ header {
 }
 
 #nav-main a {
-  background: transparent url(/assets/assets-nav.png) right -48px;
+  background: transparent url(/assets/assets-nav.png) no-repeat right -48px;
   color: #FFF;
   font-size: 20px;
   line-height: 24px;

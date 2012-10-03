@@ -3,25 +3,47 @@
 </div>
 
 <div class="row-fluid">
+  <div class="span8">
+    <p class="lead">The type of planning permit your business needs depends on whether and how your zoning district permits your use.</p>
+    <p class="lead">Charges for planning permits are paid on a one-time only basis.</p>
+    <p class="lead">Planning permits are based upon your business in a specific location. So, if you move in the future, you&rsquo;ll need a new planning permit.</p>
+  </div>
+</div>
 
-  <p class="lead">The type of planning permit your business needs depends on whether and how your zoning district permits your use.</p>
-  <p class="lead">Charges for planning permits are paid on a one-time only basis.</p>
-  <p class="lead">Planning permits are based upon your business in a specific location. So, if you move in the future, you&rsquo;ll need a new planning permit.</p>
+<hr>
 
-  <h3>Is your use principally permitted? You need a zoning clearance.</h3>
-  <p>If the zoning code specifically allows your type of business to operate at the site you chose, great!</p>
-  <p>All you need is a Zoning Clearance. This is the simplest form of a planning permit, and is typically issued the same day, with minimal review.</p>
+<div class="row-fluid">
+
+  <div class="span4">
+    <h4>Is your use principally permitted?<br>You need a zoning clearance.</h4>
+    <p>If the zoning code specifically allows your type of business to operate at the site you chose, great!</p>
+    <p>All you need is a Zoning Clearance. This is the simplest form of a planning permit, and is typically issued the same day, with minimal review.</p>
+  </div>
+
+  <div class="span4">
+    <h4>Is your use not principally permitted?<br>You need a use permit.</h4>
+    <p>If your use is not principally permitted, you will need either an Administrative Use Permit or a Special Use Permit. These kind of permits require a public hearing.</p>
+    <dl>
+      <dt>Administrative Use Permit (<abbr title="Administrative Use Permit">AUP</abbr>)</dt>
+      <dd>This kind of application requires more staff analysis, and more information from the applicant. These permits entail a public hearing before the Zoning Administrator, and can take approximately 8-10 weeks to work their way through to completion. This public hearing is before the Zoning Administrator, a planning professional.</dd>
+      <dt>Special Use Permit (<abbr title="Special Use Permit">SUP</abbr>)</dt>
+      <dd>Requires a high level of scrutiny, typically due to the size of the project and its impact on the neighborhood. These applications go to Planning Commission, a panel of seven City Council appointees who meet twice a month. SUPs take 8-12 weeks.</dd>
+    </dl>
+  </div>
+
+  <div class="span4">
+    <h4>Is your use prohibited?<br>Choose a different location.</h4>
+    <p>If your use is explicitly prohibited, you should probably choose a different site for your business.</p>
+    <p>The alternative, changing the zoning for that property, is very difficult, rare, and can take years. It is not recommended, but you are welcome to <a href="/help">contact the Planning Department</a> for more information.</p>
+  </div>
+
+</div>
+
+<hr>
+
+<div class="row-fluid">
   
-  <h3>Is your use not principally permitted? You need a use permit.</h3>
-  <p>If your use is not principally permitted, you will need either an Administrative Use Permit or a Special Use Permit. These kind of permits require a public hearing.</p>
-  <p>Administrative Use Permit (<abbr title="Administrative Use Permit">AUP</abbr>): This kind of application requires more staff analysis, and more information from the applicant. These permits entail a public hearing before the Zoning Administrator, and can take approximately 8-10 weeks to work their way through to completion. This public hearing is before the Zoning Administrator, a planning professional.</p>
-  <p>Special Use Permit (<abbr title="Special Use Permit">SUP</abbr>): Requires a high level of scrutiny, typically due to the size of the project and its impact on the neighborhood. These applications go to Planning Commission, a panel of seven City Council appointees who meet twice a month. SUPs take 8-12 weeks.</p>
-  
-  <h3>Is your use prohibited? Choose a different location.</h3>
-  <p>If your use is explicitly prohibited, you should probably choose a different site for your business.</p>
-  <p>The alternative, changing the zoning for that property, is very difficult, rare, and can take years. It is not recommended, but you are welcome to <a href="/help">contact the Planning Department</a> for more information.</p>
-  
-  <hr>
+  <div class="span12 well">
 
   <% if (!answers.location_type) { %>
     <p>You haven&rsquo;t yet told us your business&rsquo;s location.</p>
@@ -173,6 +195,10 @@
     <!-- /@condition NON HOME OCC - UNKNOWN -->
   <% } %>
 
-  <p class="next">Next: <a href="/requirements/city/business_license">Business License &rarr;</a></p>
+  <div class="form-actions">
+    <p class="next lead">Next: <a href="/requirements/city/business_license">Business License &rarr;</a></p>
+  </div>
+
+  </div>
 
 </div>
