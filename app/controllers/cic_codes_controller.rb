@@ -6,7 +6,7 @@ class CicCodesController < ApplicationController
     CicCode.all.each do |cic_code|
       cic_codes << {code: cic_code.code, industry: cic_code.industry, subindustry: cic_code.subindustry, industry_subindustry: cic_code.industry_subindustry, keywords: cic_code.search_terms}
     end
-    query = params['q']
+    query = params['q'].downcase
     query_distances = Array.new(cic_codes.length)
     terms = query.split(%r{\s+})
 
