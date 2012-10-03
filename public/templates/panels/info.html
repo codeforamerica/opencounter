@@ -9,8 +9,13 @@
   </div>
   <div class="span6">
     <div class="form-actions">
-      <p class="next lead"><a href="/info/applicant" class="submit btn btn-large" data-answer="true" data-field-key="1234343" name="is_owner">I own this business &rarr;</a></p>
-      <p class="next lead"><a href="/info/applicant" class="submit btn btn-large" data-answer="false" name="is_owner">I&rsquo;m filling this out on the owner&rsquo;s behalf  &rarr;</a></p>
+      <% if (answers.is_owner == null) { %>
+        <p>You haven't yet told us whether you're the owner or not.</p>
+      <% } else { %>
+        <p>You've told us that you <strong>are<% if (answers.is_owner == 'no') { %> not<% } %></strong> the owner.</p>
+      <% } %>
+      <p class="next lead"><a href="/info/applicant" class="submit btn btn-large" data-answer="yes" data-field-key="1234343" name="is_owner">I own this business &rarr;</a></p>
+      <p class="next lead"><a href="/info/applicant" class="submit btn btn-large" data-answer="no" name="is_owner">I&rsquo;m filling this out on the owner&rsquo;s behalf  &rarr;</a></p>
     </div>
   </div>
 </div>
