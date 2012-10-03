@@ -1,16 +1,31 @@
 <div class="page-header">
-  <h1>Summary</h1>
+  <h1>Your Checklist</h1>
 </div>
 
 <div class="row-fluid">
 
-  <p class="lead">Thank you for answering all of our questions.</p>
-  <p class="lead">Based on what you&rsquo;ve told us, we believe <%= (answers.is_owner === "true") ? "your" : "this" %> business needs to complete the following paperwork:</p>
+  <div class="span6">
+    <p class="lead">Thank you for answering all of our questions.</p>
+    <p class="lead">Based on what you&rsquo;ve told us, we believe <%= (answers.is_owner === "true") ? "your" : "this" %> business needs to complete the following paperwork.</p>
+  </div>
+  
+  <div class="span6">
+    <div class="form-actions">
+      <ul class="lead">
+        <li>Total forms: 3</li>
+        <li>Total fees: $221.00</li>
+      </ul>
+      <p><a class="btn btn-large">Email this information to Planning</a></p>
+      <p><a class="btn btn-large">Print this checklist</a></p>
+    </div>
+  </div>
+</div>
 
-  <h3>Overview</h3>
-  <div class="statistics">
-    Total forms: 3
-    Total fees: $
+<hr>
+
+<div class="row-fluid">
+
+    <!--
     <% var fee = 0;
        if(answers.location_type == "home"){
          fee+=221;
@@ -22,11 +37,9 @@
          fee+=answers.business_license_fee;
        } %>
     <%= fee  %>
+    -->
   
-  </div>
-  
-  <h3>Breakdown</h3>
-  <table class="table table-hover">
+  <table class="table table-striped">
     <thead>
       <tr>
         <th>Task &amp; Fee</th>
@@ -36,6 +49,76 @@
     </thead>
     
     <!-- Owner Agent -->
+    <tr>
+      <td>
+        <p class="task">Register as the <strong>Owner Agent</strong>.</p>
+        <p class="fee">$0</p>
+      </td>
+      <td>
+        <p>You&rsquo;ve said that you are completing this application on <%= answers.owner_first_name %> <%= answers.owner_last_name %>&rsquo;s behalf. In order for the City of Santa Cruz to issue business-related permits to you, <%= answers.owner_first_name %> <%= answers.owner_last_name %> must give their written approval. This document serves as the City&rsquo;s authorization to issue permits to you.</p>
+      </td>
+      <td>
+        <ol>
+          <li>Download and print the <a href="/assets/pdf/city/owner-agent.pdf">owner agent form</a>.</li>
+          <li>Fill it out with the <a href="#">information you provided</a>.</li>
+          <li>Notarize it. The city clerk is a notary public.</li>
+          <li>Submit it to the Planning Department.</li>
+        </ol>
+      </td>
+    </tr>
+
+    <!-- Planning Permit -->
+    <tr>
+      <td>
+        <p class="task">Get a <strong>zoning clearance</strong>.</p>
+        <p class="fee">$221.00 <a href="#">(how was this calculated?)</a></p>
+      </td>
+      <td>
+        <p>You&rsquo;ve said that you are working from home and that your business complies with the restrictions on work-from-home businesses, so you will need a zoning clearance rather than a use permit.</p>
+      </td>
+      <td>
+        <ol>
+          <li>Download and print the <a href="#">zoning clearance form</a>.</li>
+          <li>Fill it out with the <a href="#">information you provided</a>.</li>
+          <li>Submit it to the Planning Department.</li>
+        </ol>
+      </td>
+    </tr>
+
+    <!-- Fictitious Business Name -->
+    <tr>
+      <td>
+        <p class="task">Register a <strong>Fictitious Business Name</strong></p>
+        <p class="fee">$40.00 <a href="#">(how was this calculated?)</a></p>
+      </td>
+      <td>You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> name is <strong><% if (answers.is_owner === "true") { %><%= answers.applicant_first_name %> <%= answers.applicant_last_name %><% } else { %><%= answers.owner_first_name %> <%= answers.owner_last_name %><% } %></strong> and <%= (answers.is_owner === "true") ? "your" : "this" %> business&rsquo;s name is <strong><%= answers.business_name %></strong>, so you will need an FBN from the County of Santa Cruz.</td>
+      <td>
+        <ol>
+          <li>Download and print the <a href="#">fictitious business name form</a>.</li>
+          <li>Fill it out with the <a href="#">information you provided.</a></li>
+          <li>Send the completed form, along with a check made payable to Santa Cruz County Clerk and a legal-size, self-addressed stamped envelope to: Santa Cruz County Clerk, 701 Ocean Street, Room 210, Santa Cruz, CA 95060</li>
+        </ol>
+      </td>
+    </tr>
+
+    <!-- Business License -->
+    <tr>
+      <td>
+        <p class="task">Get a <strong>Business License</strong>.</p>
+        <p class="fee">$155.35 <a href="#">(how was this calculated?)</a></p>
+      </td>
+      <td>Your business, <strong><%= answers.business_name %></strong>, is located at <strong><%= answers.business_physical_address_street %></strong>, which is within the Santa Cruz city limits, so you are required to have a City of Santa Cruz Business License Tax Certificate.</td>
+      <td>
+        <ol>
+          <li>Download and print the <a href="#">business license tax</a> form.</li>
+          <li>Fill it out with the <a href="/helper/city/business_license">information you provided</a>.</li>
+          <li>Bring the completed form and cash or check payment to the Finance Department at City Hall.</li>
+        </ol>
+      </td>
+    </tr>
+
+<!--
+
     <% if (!answers.is_owner) { %>
     <tr>
       <td colspan="3">
@@ -65,7 +148,7 @@
        }
     %>
 
-    <!-- Use Permit -->
+    <!-- Use Permit --
     <% if (!answers.location_type) { %>
     <tr>
       <td colspan="3">
@@ -112,7 +195,7 @@
     </tr>
     <% } %>
 
-    <!-- Fictitious Business Name -->
+    <!-- Fictitious Business Name --
     <% if ((answers.business_name) && (answers.business_name.indexOf(answers.applicant_last_name) === -1)) { %>
     <tr>
       <td>
@@ -129,7 +212,7 @@
       </td>
     </tr>
     <% } %>
-    <!-- Incorporation -->
+    <!-- Incorporation --
     <tr>
       <td>
         <p class="task">Register your <strong>corporation</strong></p>
@@ -143,7 +226,7 @@
       </td>
     </tr>
     
-    <!-- Business License -->
+    <!-- Business License --
     <tr>
       <td>
         <p class="task">Get a <strong>Business License</strong>.</p>
@@ -212,12 +295,6 @@
     </tr>
     -->
 
-
-
   </table>
-  
-  <div class=""></div>
-  
-  <a id="sendToPlanning">Send this to planning!</a>
-  
+
 </div>
