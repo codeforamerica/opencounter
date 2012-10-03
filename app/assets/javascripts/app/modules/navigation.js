@@ -24,7 +24,7 @@ function(app) {
   Navigation.Views.Main = Backbone.View.extend({
     
     template: "navigation",
-    className: "offset1 span11",
+    className: "span12",
     events: {},
     afterRender: function(){
           

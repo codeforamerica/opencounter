@@ -26,6 +26,12 @@ header {
 
 /* Branding */
 
+#branding .logo,
+#branding .tagline {
+  margin-left: 54px;
+}
+
+
 #branding .logo {
   display: inline-block;
   width: 209px;
@@ -53,15 +59,15 @@ header {
 
 #nav-main ul {
   margin: 0;
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
 #nav-main li,
 #nav-main a {
-  position: relative;
   display: block;
   float: left;
+  position: relative;
 }
 
 #nav-main a {
@@ -69,17 +75,17 @@ header {
   color: #FFF;
   font-size: 20px;
   line-height: 24px;
+  margin-right: -36px;
   padding: 12px 54px;
+  text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
-  margin-right: -36px;
-  text-decoration: none;
 }
 
 #nav-main li:last-child a {
-  margin-right: 0;
   background-position: left -48px;
   border-right: 24px solid #8BC8DE;
+  margin-right: 0;
 }
 
 #nav-main .nav-start        { z-index: 5; }
@@ -92,6 +98,31 @@ header {
 #nav-main a:active,
 #nav-main .current a {
   background-position: right top !important;
+}
+
+@media (max-width: 1048px) {
+  #nav-main a {
+    padding: 12px 28px 12px 42px;
+  }
+}
+
+@media (max-width: 840px) {
+  #nav-main {
+    background: transparent;
+  }
+
+  #nav-main li,
+  #nav-main a {
+    float: none;
+  }
+  #nav-main a {
+    margin-right: 0;
+    border-bottom: 3px solid #FFF;
+  }
+  #nav-main li:last-child a {
+    background-position: right -48px;
+    border-right: 0;
+  }
 }
 
 /* === Sidebar Navigation =================================================== */
