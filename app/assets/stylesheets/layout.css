@@ -170,6 +170,10 @@ footer {
   bottom: 0;
 }
 
+footer p {
+  margin: 0 5%;
+}
+
 .form-actions {
   border: 1px solid #DDD;
   padding-left: 5%;
