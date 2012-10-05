@@ -4,6 +4,36 @@
 
 <div class="row-fluid">
   <div class="span8">
-    <p>@TODO</p>
+    <div class="control-group">
+      <label for="help_query" class="lead">Your question or comment:</label>
+      <textarea name="help_query" class=""></textarea>
+    </div>
+    
+    <label for="followup_method">How should we follow up?</label>
+
+    <div class="control-group">
+      <label class="checkbox">
+        <input type="checkbox" name="followup_method_phone"> Phone
+      </label>
+      (We'll call you at <input type="text" name="applicant_phone" value="" placeholder="(###) ###-####">)
+    </div>
+
+    <div class="control-group">
+      <label class="checkbox">
+        <input type="checkbox" name="followup_method_email"> Email
+      </label>
+      (We'll email you at <input type="text" name="applicant_email" value="" placeholder="(###) ###-####">)
+    </div>
+    
+    <p>We'll include everything you've told us so far:</p>
+    <div class="well">
+      @TODO
+    </div>
+  </div>
+
+  <div class="span4">
+    <div class="form-actions">
+      <a class="btn btn-large">Send to Planning &rarr;</a>
+    </div>
   </div>
 </div>
