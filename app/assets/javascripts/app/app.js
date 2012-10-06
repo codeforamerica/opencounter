@@ -4,7 +4,6 @@ define([
   "lodash",
   "backbone",
   "../libs/bootstrap-typeahead",
-  "../libs/jquery.jeditable",
   // Plugins.
   "plugins/backbone.layoutmanager"
 
@@ -33,7 +32,7 @@ function($, _, Backbone) {
       path = path + ".html";
 
       if (!JST[path]) {
-        $.ajax({ url: app.root + path, async: false, cache:false }).then(function(contents) {
+        $.ajax({ url: app.include_root_in_jsonot + path, async: false, cache:false }).then(function(contents) {
           JST[path] = _.template(contents);
         });
       } 

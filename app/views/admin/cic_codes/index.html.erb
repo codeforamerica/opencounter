@@ -1,3 +1,8 @@
+<script type="text/javascript" src='/assets/libs/jquery.js'></script>
+
+<%= javascript_include_tag :on_the_spot %>
+<%= stylesheet_link_tag :on_the_spot %>
+
 <h1>CIC Codes</h1>
 <br />
 
@@ -10,12 +15,16 @@
     <th></th>
   </thead>
 
-  <% for cic_code in @cic_codes %>
+  <% @cic_codes.each do |cic_code| %>
     <tr class="<%= cycle("odd", "even") -%>">
       <td><%= cic_code.code %></td>
       <td><%= cic_code.industry %></td>
       <td><%= cic_code.subindustry %></td>
-      <td><%= editable_field cic_code, :keywords %></td>
+      <td><%= on_the_spot_edit cic_code, :keywords %></td>
     </tr>
   <% end -%>
 </table>
+
+
+
+

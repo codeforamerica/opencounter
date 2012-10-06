@@ -1,5 +1,6 @@
 class Admin::CicCodesController < ApplicationController
   layout 'admin'
+  can_edit_on_the_spot
   
   def show
     @cic_code = CicCode.find(params[:id])
