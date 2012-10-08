@@ -65,8 +65,9 @@ function(app, Parking) {
     },
     sendPlanningEmail:function(ev){
       //do things here
-      $.get("/users/email@email.com/planning", function(data){
-        
+      ev.preventDefault();
+      $.get("/users/email-planning", function(data){
+        console.log(data);  
       });
     },
     subviews: function() {

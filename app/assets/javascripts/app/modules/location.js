@@ -90,12 +90,22 @@ function(app) {
             zoning.push(data.features[0].attributes['Zoning'+i].split(" - ")[0]);
           }
         }
+        
+        // Get prior use
+        this.collection.addAnswer("prioruse", data.features[0].attributes["USECDDESC"])
+        
+        // Get Business Improvement District
         this.collection.addAnswer("bid", data.features[0].attributes["BIA"].replace(" ", ""))
+        
+        // Get APN
         this.collection.addAnswer("apn", data.features[0].attributes["APN"])
+        
+        // Get zoning
         this.collection.addAnswer("zoning", zoning);
+        
         app.trigger("lookuppermit");
         this.$el.find("#zoning_display").html("That location is zoned for: "+zoning.join(","));
-
+        
         var latlng = new google.maps.LatLng(data.features[0].geometry.y,
                                             data.features[0].geometry.x);
         var marker = new google.maps.Marker({

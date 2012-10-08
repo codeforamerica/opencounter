@@ -1,12 +1,12 @@
 Opencounter::Application.routes.draw do
+  match "users/email-planning" => "users#update_planning"
+
   resources :users, :except => :index
   resources :answers
   resources :businesses
 
   match "api/lookup/cic" => "cic_codes#index"
   
-  match "user/:email/planning" => "users#update_planning"
-
   match "api/lookup/permit/:zoning/:sic" => "permits#show"
 
   root :to => 'panels#intro'
