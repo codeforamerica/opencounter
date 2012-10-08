@@ -11,6 +11,11 @@
     <%= stylesheet_link_tag   "application" %>
     <%= requirejs_include_tag "application" %>
 
+    <script type="text/javascript" src='/assets/libs/jquery.js'></script>
+
+    <%= javascript_include_tag :on_the_spot %>
+    <%= stylesheet_link_tag :on_the_spot %>
+
     <%= csrf_meta_tags %>
     <meta charset="utf-8">
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>

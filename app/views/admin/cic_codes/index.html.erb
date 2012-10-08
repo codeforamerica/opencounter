@@ -1,6 +1,6 @@
 <div class="page-header">
   <h1>Santa Cruz's industry classification codes <small>[CIC Codes]</small></h1>
-  <p>Click on any industry, sub-industry, or keyword to edit it. Your changes will be saved when you click or tab away.</p>
+  <p>Click on any industry, sub-industry, or keyword to edit it. Your changes will be saved when you click away or hit enter.</p>
 </div>
 
 <table class="table table-striped">
@@ -12,13 +12,13 @@
     <th></th>
   </thead>
   <tbody>
-  <% for cic_code in @cic_codes %>
-    <tr class="<%= cycle("odd", "even") -%>">
-      <td><%= cic_code.code %></td>
-      <td><%= cic_code.industry %></td>
-      <td><%= cic_code.subindustry %></td>
-      <td><%= editable_field cic_code, :keywords %></td>
-    </tr>
-  <% end -%>
+    <% for cic_code in @cic_codes %>
+      <tr class="<%= cycle("odd", "even") -%>">
+        <td><%= cic_code.code %></td>
+        <td><%= cic_code.industry %></td>
+        <td><%= cic_code.subindustry %></td>
+        <td><%= on_the_spot_edit cic_code, :keywords %></td>
+      </tr>
+    <% end -%>
   </tbody>
 </table>
