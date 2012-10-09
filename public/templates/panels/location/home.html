@@ -3,93 +3,106 @@
 </div>
 
 <div class="row-fluid">
-  <p class="lead">You can work from home as long as you're not negatively impacting the neighborhood by increasing visitors or traffic, creating a lot of noise, or working with hazardous materials. You also can't have a sign on your home advertising the business.</p>
-  <p>More precisely: work-from-home businesses &mdash; known as "home occupations" &mdash; need to follow the rules outlined in section <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.160">24.10.160</a> of the city of Santa Cruz's Municipal Code.</p>
-  <h5 class="toggle">Read Santa Cruz Municipal Code 24.10.160. It won't take long! We'll wait. &darr;</h5>
-  <blockquote class="drawer">
-    <ol>
-      <li>Intent. The discretionary approval of a home occupation is intended to allow for home enterprises, which are clearly incidental and secondary to the use of the dwelling unit and compatible with surrounding residential uses. A home occupation allows for the gainful employment in the home by any occupant of a dwelling so long as the enterprise does not require frequent customer access or have associated characteristics which would reduce the surrounding residents? enjoyment of their neighborhood.</li>
-      <li>General. A home occupation shall be operated and maintained only by a resident of the dwelling unit in which it occurs; shall not employ any help other than the members of the resident family or household; shall not change the residential character of the dwelling units; shall not generate a vehicular traffic increase of more than six trip ends (three round trips) per day including deliveries and clients.</li>
-      <li>Restrictions. A home occupation shall not involve:
-        <ol>
-          <li>The use of an area greater than four hundred feet;</li>
-          <li>The use of any required front or exterior side yard area or setback area, nor the use of any required covered or uncovered on-site parking space;</li>
-          <li>Any activity or use which involves:
-            <ol>
-              <li>A significant increase in vehicular trips to the residence;</li>
-              <li>Storage or use of hazardous or unsanitary materials;</li>
-              <li>Creation of noise levels exceeding the standards of this title and/or other nuisance factors inconsistent with Chapter 24.14, Part 2: Performance Standards;</li>
-              <li>Auto/truck/motorcycle/motor boat repair.</li>
-            </ol>
-          </li>
-          <li>The location is in a residential or mixed use zoning district</li>
-          <li>The placement of a sign advertising the business.</li>
-        </ol>
-      </li>
-      <li>Permits Required. A zoning clearance and business license shall be required, except for small family day care which is exempt from local regulations.</li>
-    </ol>
-  </blockquote>
-
-  <hr>
-
-  <p class="lead">You've told us that you're <strong>working from home</strong>. <a href="/location">Change your mind?</a></p>
-
-  <h3>Where do you live?</h3>
-  <form method="post" action="#" id="form_home_occ">
+  <div class="span8">
+    <p class="lead">You can work from home as long as you're not negatively impacting the neighborhood by increasing visitors or traffic, creating a lot of noise, or working with hazardous materials. You also can't have a sign on your home advertising the business.</p>
+    <p class="lead toggle">More precisely: work-from-home businesses &mdash; known as "home occupations" &mdash; need to follow the rules outlined in section <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.160">24.10.160</a> of the city of Santa Cruz's Municipal Code, which you should read right now &darr;</p>
+    <blockquote class="drawer">
+      <ol>
+        <li>Intent. The discretionary approval of a home occupation is intended to allow for home enterprises, which are clearly incidental and secondary to the use of the dwelling unit and compatible with surrounding residential uses. A home occupation allows for the gainful employment in the home by any occupant of a dwelling so long as the enterprise does not require frequent customer access or have associated characteristics which would reduce the surrounding residents? enjoyment of their neighborhood.</li>
+        <li>General. A home occupation shall be operated and maintained only by a resident of the dwelling unit in which it occurs; shall not employ any help other than the members of the resident family or household; shall not change the residential character of the dwelling units; shall not generate a vehicular traffic increase of more than six trip ends (three round trips) per day including deliveries and clients.</li>
+        <li>Restrictions. A home occupation shall not involve:
+          <ol>
+            <li>The use of an area greater than four hundred feet;</li>
+            <li>The use of any required front or exterior side yard area or setback area, nor the use of any required covered or uncovered on-site parking space;</li>
+            <li>Any activity or use which involves:
+              <ol>
+                <li>A significant increase in vehicular trips to the residence;</li>
+                <li>Storage or use of hazardous or unsanitary materials;</li>
+                <li>Creation of noise levels exceeding the standards of this title and/or other nuisance factors inconsistent with Chapter 24.14, Part 2: Performance Standards;</li>
+                <li>Auto/truck/motorcycle/motor boat repair.</li>
+              </ol>
+            </li>
+            <li>The location is in a residential or mixed use zoning district</li>
+            <li>The placement of a sign advertising the business.</li>
+          </ol>
+        </li>
+        <li>Permits Required. A zoning clearance and business license shall be required, except for small family day care which is exempt from local regulations.</li>
+      </ol>
+    </blockquote>
+  
+    <hr>
+  
+    <p class="lead">You've told us that you're <strong>working from home</strong>. <a href="/location">Change your mind?</a></p>
+  
+    <h3>Where do you live?</h3>
     <p>What&lsquo;s your business's physical address? (This should be your home address.)</p>
-    <label>
-      Street
-      <input type="text" name="business_physical_address_street" placeholder="Street Address" value="<%= answers.business_physical_address_street %>">
-    </label>
-    <label>
-      Suite or Room #
-      <input type="text" name="business_physical_address_detail" placeholder="Suite or Room #" value="<%= answers.business_physical_address_detail %>">
-    </label>
-<!--
-    <label>
-      City
-      <input type="text" name="business_physical_address_city" placeholder="City" value="<%= answers.business_physical_address_city %>">
-    </label>
-    <label>
-      State
-      <input type="text" name="business_physical_address_state" placeholder="State" value="<%= answers.business_physical_address_state %>">
-    </label>
-    <label>
-      ZIP Code
-      <input type="text" name="business_physical_address_zip" placeholder="Zip" value="<%= answers.business_physical_address_zip %>">
-    </label>
--->
-    <label>
-      <input type="checkbox" name="does_mailing_address_match_business_address" checked="checked"> My business's mailing address is the same.
-    </label>
 
-    <!-- @condition If mailing address does not match business address (if box above is unchecked) -->
-    <div class="conditional mailing-address visuallyhidden">
-      <label>
-        Street
-        <input type="text" name="business_mailing_address_street" placeholder="Street Address"  value="<%= answers.business_mailing_address_street %>">
-      </label>
-      <label>
-        Detail
-        <input type="text" name="business_mailing_address_detail" placeholder="Detail" value="<%= answers.business_mailing_address_detail %>">
-      </label>
-      <label>
+      <div class="control-group">
+        <label class="control-label">Street &amp; Building Number</label>
+        <div class="controls"><input type="text" name="business_physical_address_street" placeholder="Street Address" value="<%= answers.business_physical_address_street %>"></div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Suite or Room #</label>
+        <div class="controls"><input type="text" name="business_physical_address_detail" placeholder="Suite or Room #" value="<%= answers.business_physical_address_detail %>"></div>
+      </div>
+
+      <!--<label>
         City
-        <input type="text" name="business_mailing_address_city" placeholder="City" value="<%= answers.business_mailing_address_city %>">
+        <input type="text" name="business_physical_address_city" placeholder="City" value="<%= answers.business_physical_address_city %>">
       </label>
       <label>
         State
-        <input type="text" name="business_mailing_address_state" placeholder="State" value="<%= answers.business_physical_address_state %>">
+        <input type="text" name="business_physical_address_state" placeholder="State" value="<%= answers.business_physical_address_state %>">
       </label>
       <label>
         ZIP Code
-        <input type="text" name="business_mailing_address_zip" placeholder="Zip"  value="<%= answers.business_physical_address_zip %>">
-      </label>
-    </div>
-    <!-- /@condition -->
+        <input type="text" name="business_physical_address_zip" placeholder="Zip" value="<%= answers.business_physical_address_zip %>">
+      </label>-->
 
-    <p>Does your business comply with section 24.10.160 of the city of Santa Cruz Municipal Code?</p>
-    <p class="next"><a class="submit" href="/location/check">Yep, <%= (answers.is_owner === "true") ? "my" : "this" %> work-from-home business complies with all these rules &rarr;</a></p>
-    <p class="next"><a class="submit" href="/help">Uh-oh. Sounds like <%= (answers.is_owner === "true") ? "I" : "the owner" %> might not be able to operate this business from home. Help! &rarr;</a></p>
-  </form>
+      <div>
+        <div class="checkbox">
+          <input type="checkbox" name="does_mailing_address_match_business_address" checked="checked">
+          <% if (answers.is_owner === "true") { %>My<% } else { %> This <% } %> business&rsquo;s mailing address is the same.
+        </div>
+        <br>
+      </div>
+  
+      <!-- @condition If mailing address does not match business address (if box above is unchecked) -->
+      <div class="conditional mailing-address well">
+        <label>
+          Street
+          <input type="text" name="business_mailing_address_street" placeholder="Street Address"  value="<%= answers.business_mailing_address_street %>">
+        </label>
+        <label>
+          Detail
+          <input type="text" name="business_mailing_address_detail" placeholder="Detail" value="<%= answers.business_mailing_address_detail %>">
+        </label>
+        <label>
+          City
+          <input type="text" name="business_mailing_address_city" placeholder="City" value="<%= answers.business_mailing_address_city %>">
+        </label>
+        <label>
+          State
+          <input type="text" name="business_mailing_address_state" placeholder="State" value="<%= answers.business_physical_address_state %>">
+        </label>
+        <label>
+          ZIP Code
+          <input type="text" name="business_mailing_address_zip" placeholder="Zip"  value="<%= answers.business_physical_address_zip %>">
+        </label>
+      </div>
+      <!-- /@condition -->
+    </form>
+
+  
+  </div>
+  
+  <div class="span4">
+    <div class="form-actions">
+      <p class="lead">Does your business comply with section 24.10.160 of the city of Santa Cruz Municipal Code?</p>
+      <p class="next lead"><a class="submit" href="/location/check">Yep, <%= (answers.is_owner === "true") ? "my" : "this" %> work-from-home business complies with all these rules &rarr;</a></p>
+      <p class="next lead"><a class="submit" href="/help">Uh-oh. Sounds like <%= (answers.is_owner === "true") ? "I" : "the owner" %> might not be able to operate this business from home. Help! &rarr;</a></p>
+    </div>
+  </div>
+
 </div>
