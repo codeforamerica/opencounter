@@ -67,25 +67,25 @@
         
       <% } else { %>
       
-        <p>You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong>[@TODO]</strong></p>
+        <p>You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong></p>
         
-        <% if (answers.required_permit.permit == 1) { %>
+        <% if (answers.required_permit.permit == "1") { %>
 
           <p>This use is principally permitted, so you'll need a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
 
-        <% } else if (answers.required_permit.permit == 2) { %>
+        <% } else if (answers.required_permit.permit == "2") { %>
 
           <p>This use is not principally permitted, so you'll need an <em>Administrative Use Permit</em>. <a href="/help">Talk to a planner &rarr;</a></p>
         
-        <% } else if (answers.required_permit.permit == 3) { %>
+        <% } else if (answers.required_permit.permit == "3") { %>
 
           <p>This use is not principally permitted, so you'll need a <em>Special Use Permit</em>. <a href="/help">Talk to a planner &rarr;</a></p>
 
-        <% } else if (answers.required_permit.permit == 4) { %>
+        <% } else if (answers.required_permit.permit == "4") { %>
         
           <p>We're sorry, but businesses of this type are not allowed in this zoning district. <a href="/help">Talk to a planner &rarr;</a></p>
 
-        <% } else if (answers.required_permit.permit == 5) { %>
+        <% } else if (answers.required_permit.permit == "5") { %>
 
           <p>We're sorry, but OpenCounter doesn't know whether this use is allowed here. <a href="/help">Talk to a planner &rarr;</a></p>
           <% if (answers.required_permit.notes) { %><p>Some notes: <%= answers.required_permit.notes %></p><% } %>
