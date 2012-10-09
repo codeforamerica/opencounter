@@ -45,21 +45,64 @@
   
   <div class="span12 well">
 
-  <%= answers.lookupPermit %>
-
   <% if (!answers.location_type) { %>
-    <p>You haven&rsquo;t yet told us your business&rsquo;s location.</p>
-    <p class="next">Go back and <a href="/location">tell us whether you're working from home or a commercial space &rarr;</a></p>
+    <p class="lead">You haven&rsquo;t yet told us your business&rsquo;s location.</p>
+    <p class="next lead">Go back and <a href="/location">tell us whether you're working from home or a commercial space &rarr;</a></p>
+  <% } else { %>
+    
+    <% if (!answers.required_permit) { %>
+      <p class="lead">You&rsquo;ve told us that you&rsquo;re <strong>working <% if (answers.location_type === "home") { %>from home<% } else { %>out of a commercial space<% } %></strong>, but you haven&rsquo;t yet told us the location.</p>
+      <p class="next lead">Go back and <a href="/location/check">check the site's zoning &rarr;</a></p>
+    <% } else { %>
+    
+      <% if (answers.location_type === "home") { %>
+        
+        <p>You&rsquo;ve told us that you&rsquo;re <strong>working from home</strong> at <strong><%= answers.business_physical_address_street %></strong>, and you&rsquo;ve confirmed that your business complies with Santa Cruz Municipal Code 24.10.160.</p>
+        
+        <% if (answers.required_permit.home_occ_prohibited == true) { %>
+        <p>We're sorry, but work-from-home businesses are not allowed in this zoning district. <a href="/help">Talk to a planner &rarr;</a></p>
+        <% } else { %>
+        <p>The use permit you need is a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
+        <% } %>
+        
+      <% } else { %>
+      
+        <p>You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong>[@TODO]</strong></p>
+        
+        <% if (answers.required_permit.permit == 1) { %>
+
+          <p>This use is principally permitted, so you'll need a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
+
+        <% } else if (answers.required_permit.permit == 2) { %>
+
+          <p>This use is not principally permitted, so you'll need an <em>Administrative Use Permit</em>. <a href="/help">Talk to a planner &rarr;</a></p>
+        
+        <% } else if (answers.required_permit.permit == 3) { %>
+
+          <p>This use is not principally permitted, so you'll need a <em>Special Use Permit</em>. <a href="/help">Talk to a planner &rarr;</a></p>
+
+        <% } else if (answers.required_permit.permit == 4) { %>
+        
+          <p>We're sorry, but businesses of this type are not allowed in this zoning district. <a href="/help">Talk to a planner &rarr;</a></p>
+
+        <% } else if (answers.required_permit.permit == 5) { %>
+
+          <p>We're sorry, but OpenCounter doesn't know whether this use is allowed here. <a href="/help">Talk to a planner &rarr;</a></p>
+          <% if (answers.required_permit.notes) { %><p>Some notes: <%= answers.required_permit.notes %></p><% } %>
+
+        <% } %>
+
+      
+      <% } %>
+    
+    
+    <% } %>
+    
   <% } %>
   
-  <% if ((answers.location_type) && (answers.location_type != "home") && (!answers.required_permit)) { %>
-    <p>You&rsquo;ve told us that you're <strong>working out of a commercial space</strong>, but you haven&rsquo;t yet told us the location.</p>
-    <p class="next">Go back and <a href="/location/check">check the site's zoning &rarr;</a></p>
-  <% } %>
   
-  <% if (answers.location_type == "home") { %>
+  <% if (answers.location_type === "home") { %>
     <!-- @condition HOME OCC - PRINCIPALLY PERMITTED -->
-    <p>You've told us that you're <strong>working from home</strong>, and you&rsquo;ve confirmed that your business complies with Santa Cruz Municipal Code 24.10.160.</p>
     <p>The use permit you need is a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
   
     <form method="post" action="#" id="form_zoning_clearance">
