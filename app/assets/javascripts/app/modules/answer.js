@@ -24,6 +24,9 @@ function(app, Parking) {
     url: '/answers',
     addAnswer: function(key, val, opts){
       if(!opts) opts = {};
+      if (typeof val === "object") {
+        val = JSON.stringify(val);
+      }
       var m = this.where({"field_name": key});
       if(m.length > 0){
         m[0].set("value", val, opts).save();
@@ -34,7 +37,12 @@ function(app, Parking) {
     getAnswer: function(key, val){
       var m = this.where({"field_name": key});
       if(m.length > 0){
-        return m[0].get("value");
+        storedValue = m[0].get("value");
+        try {
+          storedValue = JSON.parse(storedValue);
+        }
+        catch(ex) {}
+        return storedValue;
       }else{
         return val;
       }
@@ -154,7 +162,7 @@ function(app, Parking) {
         dataType:"json",
         async:false,
         success:function(data){
-          self.answers.addAnswer("required_permit", data.permit);
+          self.answers.addAnswer("required_permit", data);
         }
       });
 
