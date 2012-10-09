@@ -1,10 +1,11 @@
 define([
   // Application.
-  "app"
+  "app",
+  "modules/util"
 ],
 
 // Map dependencies from above array.
-function(app) {
+function(app, util) {
 
   // Create a new module.
   var Navigation = app.module();
@@ -110,21 +111,26 @@ function(app) {
       this.updateNavByAnswers();
     },
     updateNavByAnswers: function(){
-      this.$el.find("[data-show]").show();
+      this.$el.find("[data-show]").hide();
+
+      // always show FBN
+      this.$el.find("[data-show=fbn]").show();
 
       // show or hide based on home occ.
       if (this.answers.getAnswer("location_type", "") == "home") {
-        this.$el.find("[data-show=commercial]").hide();
-        this.$el.find("[data-show=food]").hide();
-        this.$el.find("[data-show=retail]").hide();
-        this.$el.find("[data-show=bid]").hide();
+        this.$el.find("[data-show=home]").show();
       } else if (this.answers.getAnswer("location_type", "") == "commercial") {
-        this.$el.find("[data-show=home]").hide();
+        this.$el.find("[data-show=commercial]").show();
+
+        var requirements = util.requirementsForBusinessType(this.answers.getAnswer("CIC_code"), this.answers.getAnswer("business_code"));
+        for (var i = 0, len = requirements.length; i < len; i++) {
+          this.$el.find("[data-show=" + requirements[i] + "]").show();
+        }
       }
 
       // Show BID
-      if (this.answers.getAnswer("bid", "") == "") {
-        this.$el.find("[data-show=bid]").hide();
+      if (this.answers.getAnswer("bid", "")) {
+        this.$el.find("[data-show=bid]").show();
       }
       
     },
