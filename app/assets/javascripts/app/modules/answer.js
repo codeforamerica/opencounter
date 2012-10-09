@@ -15,6 +15,32 @@ function(app, Parking) {
     name: 'answer',
     url: function(){
       return this.id? '/answers/' + this.id : '/answers';
+    },
+
+    // allow getting/setting of objects (stored as JSON strings)
+    get: function(attr) {
+      var result = this.constructor.__super__.get.call(this, attr);
+      if (result) {
+        try {
+          result = JSON.parse(result);
+        }
+        catch(ex) {}
+      }
+      return result;
+    },
+
+    set: function(key, value, options) {
+      if (typeof key === "object") {
+        for (var keyName in key) {
+          var val = key[keyName];
+          key[keyName] = (val && typeof val === "object") ? JSON.stringify(val) : val;
+        }
+      }
+      else if (value && typeof value === "object") {
+        value = JSON.stringify(value);
+      }
+      
+      return this.constructor.__super__.set.call(this, key, value, options);
     }
   });
 
@@ -24,9 +50,6 @@ function(app, Parking) {
     url: '/answers',
     addAnswer: function(key, val, opts){
       if(!opts) opts = {};
-      if (typeof val === "object") {
-        val = JSON.stringify(val);
-      }
       var m = this.where({"field_name": key});
       if(m.length > 0){
         m[0].set("value", val, opts).save();
@@ -37,12 +60,7 @@ function(app, Parking) {
     getAnswer: function(key, val){
       var m = this.where({"field_name": key});
       if(m.length > 0){
-        storedValue = m[0].get("value");
-        try {
-          storedValue = JSON.parse(storedValue);
-        }
-        catch(ex) {}
-        return storedValue;
+        return m[0].get("value");
       }else{
         return val;
       }
