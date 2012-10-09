@@ -90,7 +90,7 @@ function(app, Parking) {
       $('.drawer').hide();
       $('.toggle').click(function(e){
         $(e.target).next('.drawer').toggle();
-      })
+      });
 
       this.subviews().afterRender.call(this);
     },
@@ -143,15 +143,20 @@ function(app, Parking) {
   //this isnt this function final resting place, need to be more thought out.
   Answer.lookupPermit = function(){
     var zoning = this.answers.getAnswer("zoning");
-    var sic = this.answers.getAnswer("SIC_code");
-    if(zoning && sic){
+    var cic = this.answers.getAnswer("CIC_code");
+    if(zoning && cic){
       //we know what we need at this point.
       var self = this;
-      var url = "/api/lookup/permit/"+zoning[0]+"/"+sic
+      var url = "/api/lookup/permit/"+zoning[0]+"/"+cic
 
-      $.ajax(url, {success:function(data){
-        self.answers.addAnswer("required_permit", data.permit);
-      },dataType:"json"});
+      $.ajax({
+        url:url,
+        dataType:"json",
+        async:false,
+        success:function(data){
+          self.answers.addAnswer("required_permit", data.permit);
+        }
+      });
 
     }
 

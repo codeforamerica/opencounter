@@ -2,9 +2,9 @@ class PermitsController < ApplicationController
 
   def show
     
-    cic_code_id = params['sic']
+    cic_code_id = CicCode.find_by_code(params['sic'])
     
-    zoning_district_id = params['zoning']
+    zoning_district_id = ZoningDistrict.find_by_code(params['zoning'])
     
     permissions = CicCodeZoningDistrict.find_by_cic_code_id_and_zoning_district_id(cic_code_id, zoning_district_id)
     

@@ -87,7 +87,7 @@ function(app) {
       if(data.features.length > 0){
         for(var i =1; i<7; i++){
           if(data.features[0].attributes['Zoning'+i] != " "){
-            zoning.push(data.features[0].attributes['Zoning'+i].split(" - ")[0]);
+            zoning.push(Location.convertGisToCityZoning(data.features[0].attributes['Zoning'+i].split(" - ")[0]));
           }
         }
         
@@ -122,6 +122,15 @@ function(app) {
     }
 
   });
+
+  // FIXME: this should really be in the database, rather than manually mapped in the code here
+  Location.convertGisToCityZoning = function(gisZoning) {
+    return {
+      "PF": "P-F",
+      "IGP2": "I-G PER-2",
+      "R17": "R-1"
+    }[gisZoning] || gisZoning;
+  };
 
   // Return the module for AMD compliance.
   return Location;
