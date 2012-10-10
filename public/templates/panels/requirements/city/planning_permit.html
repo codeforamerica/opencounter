@@ -60,9 +60,24 @@
         <p>You&rsquo;ve told us that you&rsquo;re <strong>working from home</strong> at <strong><%= answers.business_physical_address_street %></strong>, and you&rsquo;ve confirmed that your business complies with Santa Cruz Municipal Code 24.10.160.</p>
         
         <% if (answers.required_permit.home_occ_prohibited == true) { %>
-        <p>We're sorry, but work-from-home businesses are not allowed in this zoning district. <a href="/help">Talk to a planner &rarr;</a></p>
+
+        <p class="lead error">We're sorry, but work-from-home businesses are not allowed in this zoning district. <a href="/help">Talk to a planner &rarr;</a></p>
+
         <% } else { %>
-        <p>The use permit you need is a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
+
+        <p class="lead success">The use permit you need is a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
+
+        <form method="post" action="#" id="form_zoning_clearance">
+          <label>
+            Your Phone Number
+            <input type="text" name="applicant_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
+          </label>
+          <label>
+            Your Business's Phone Number
+            <input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
+          </label>
+        </form>
+
         <% } %>
         
       <% } else { %>
@@ -73,21 +88,33 @@
 
           <p>This use is principally permitted, so you'll need a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
 
+          <form method="post" action="#" id="form_zoning_clearance">
+            <label>
+              Your Phone Number
+              <input type="text" name="applicant_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
+            </label>
+            <label>
+              Your Business's Phone Number
+              <input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
+            </label>
+          </form>
+
         <% } else if (answers.required_permit.permit == "2") { %>
 
-          <p>This use is not principally permitted, so you'll need an <em>Administrative Use Permit</em>. <a href="/help">Talk to a planner &rarr;</a></p>
+          <p>This use is not principally permitted, so you'll need an <em>Administrative Use Permit</em>. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
         
         <% } else if (answers.required_permit.permit == "3") { %>
 
-          <p>This use is not principally permitted, so you'll need a <em>Special Use Permit</em>. <a href="/help">Talk to a planner &rarr;</a></p>
+          <p>This use is not principally permitted, so you'll need a <em>Special Use Permit</em>. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
 
         <% } else if (answers.required_permit.permit == "4") { %>
         
-          <p>We're sorry, but businesses of this type are not allowed in this zoning district. <a href="/help">Talk to a planner &rarr;</a></p>
+          <p>We're sorry, but businesses of this type are prohibited in this zoning district. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
 
         <% } else if (answers.required_permit.permit == "5") { %>
 
-          <p>We're sorry, but OpenCounter doesn't know whether this use is allowed here. <a href="/help">Talk to a planner &rarr;</a></p>
+          <p>We're sorry, but right now OpenCounter can't automatically determine what type of use permit you need.</p>
+          <p>Help us make OpenCounter smarter: please <a href="/help">contact the Planning Department</a>, and they'll help you -- and OpenCounter! -- figure out which type of use permit you need. Thank you for helping out the next person!</p>
           <% if (answers.required_permit.notes) { %><p>Some notes: <%= answers.required_permit.notes %></p><% } %>
 
         <% } %>
@@ -100,146 +127,6 @@
     
   <% } %>
   
-  
-  <% if (answers.location_type === "home") { %>
-    <!-- @condition HOME OCC - PRINCIPALLY PERMITTED -->
-    <p>The use permit you need is a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
-  
-    <form method="post" action="#" id="form_zoning_clearance">
-      <label>
-        Your Phone Number
-        <input type="text" name="applicant_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
-      </label>
-      <label>
-        Your Business's Phone Number
-        <input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
-      </label>
-    </form>
-    <!-- /@condition HOME OCC - PRINCIPALLY PERMITTED -->
-  <% } %>
-
-  <% if ((answers.location_type == "commercial") && (answers.required_permit == "zoning clearance")){ %>
-    <!-- @condition NON HOME OCC - PRINCIPALLY PERMITTED -->
-    <p>You've told us that you&rsquo;re <strong>working from <%= answers.business_physical_address_street %></strong>, and your business is a <strong><%= answers.SIC_sic_name %></strong> (SIC code <%= answers.SIC_sic_code %>).</p>
-    <p>This use is <strong>principally permitted</strong> at this location.</p>
-    <p>The use permit you need is a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
-    <p>Fill in as much as you can below.</p>
-    <form method="post" action="#" id="form_zoning_clearance">
-      <label>
-        Your Phone Number
-        <input type="text" name="applicant_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
-      </label>
-      <label>
-        Your Street Address
-        <input type="text" name="applicant_physical_address_street" placeholder="Street Address" value="<%= answers.applicant_physical_address_street %>">
-      </label>
-      <label>
-        Your Street Address (Detail)
-        <input type="text" name="applicant_physical_address_detail" placeholder="Detail" value="<%= answers.applicant_physical_address_detail %>">
-      </label>
-      <label>
-        Your City
-        <input type="text" name="applicant_physical_address_city" placeholder="City" value="<%= answers.applicant_physical_address_city %>">,
-      </label>
-      <label>
-        Your State
-        <input type="text" name="applicant_physical_address_state" placeholder="State" value="<%= answers.applicant_physical_address_state %>">
-      </label>
-      <label>
-        Your ZIP Code
-        <input type="text" name="applicant_physical_address_zip" placeholder="ZIP" value="<%= answers.applicant_physical_address_zip %>">
-      </label>
-      <label>
-        Your Business's Phone Number
-        <input type="text" name="business_phone" placeholder="" value="<%= answers.business_phone %>">
-      </label>
-      <label>
-        APN
-        <input type="text" name="apn" placeholder="" value="<%= answers.apn %>">
-      </label>
-      <label>
-        Zoning District
-        <input type="text" name="zoning_district" placeholder="" value="<%= answers.zoning_district %>">
-      </label>
-      <label>
-        Intended Property Use
-        <input type="text" name="intended_use" placeholder="" value="<%= answers.intended_use %>">
-      </label>
-      <label>
-        Previous Property Use
-        <input type="text" name="prior_use" placeholder="" value="<%= answers.prior_use %>">
-      </label>
-      <label>
-        Date of Occupancy
-        <input type="text" name="date_of_occupancy" placeholder="" value="<%= answers.date_of_occupancy %>">
-      </label>
-      <label>
-        Total Area (sq. ft)
-        <input type="text" name="total_area" placeholder="" value="<%= answers.total_area %>">
-      </label>
-      <label>
-        First Floor Area
-        <input type="text" name="first_floor_area" placeholder="" value="<%= answers.first_floor_area %>">
-      </label>
-      <label>
-        Outdoor Area
-        <input type="text" name="outdoor_area" placeholder="" value="<%= answers.outdoor_area %>">
-      </label>
-      <label>
-        Is this property single-tenant or multi-tenant?
-        <input type="radio" name="single_or_multi_tenant" value="single"> Single-tenant
-        <input type="radio" name="single_or_multi_tenant" value="multi"> Multi-tenant
-      </label>
-      <label>
-        Auto Parking Spaces
-        <input type="text" name="automobile_parking_spaces" placeholder="">
-      </label>
-      <label>
-        Bicycle Parking Spaces
-        <input type="text" name="bicycle_parking_spaces" placeholder="">
-      </label>
-    </form>
-    <!-- /@condition NON HOME OCC - PRINCIPALLY PERMITTED -->
-  <% } %>
-
-  <% if ((answers.location_type == "commercial") && (answers.required_permit == "administrative")) { %>
-    <!-- @condition NON HOME OCC - NOT PRINCIPALLY PERMITTED - AUP -->
-    <p>You've told us that you&lsquo;re <strong>working from <%= answers.business_physical_address_street %></strong>, and your business is a <strong><%= answers.SIC_sic_name %></strong> (SIC code <%= answers.SIC_sic_code %>).</p>
-    <p>This use is <strong>not principally permitted</strong> at this location.</p>
-    <p>You will need either an <abbr title="Administrative Use Permit">AUP</abbr> to site your business here.</p>
-    <p>Contact the Planning Department for next steps.</p>
-    <p class="next"><a href="/help">Contact the Planning Department &rarr;</a></p>
-    <!-- /@condition NON HOME OCC - NOT PRINCIPALLY PERMITTED - AUP -->
-  <% } %>
-
-  <% if ((answers.location_type == "commercial") && (answers.required_permit == "special")) { %>
-    <!-- @condition NON HOME OCC - NOT PRINCIPALLY PERMITTED - SUP -->
-    <p>You've told us that you&lsquo;re <strong>working from <%= answers.business_physical_address_street %></strong>, and your business is a <strong><%= answers.SIC_sic_name %></strong> (SIC code <%= answers.SIC_sic_code %>).</p>
-    <p>This use is requires a <strong>special use permit</strong> at this location.</p>
-    <p>You will need either an <abbr title="Special Use Permit">SUP</abbr> to site your business here.</p>
-    <p>Contact the Planning Department for next steps.</p>
-    <p class="next"><a href="/help">Contact the Planning Department &rarr;</a></p>
-    <!-- /@condition NON HOME OCC - NOT PRINCIPALLY PERMITTED - SUP -->
-  <% } %>
-  
-  <% if ((answers.location_type == "commercial") && (answers.required_permit == "prohibited")) { %>
-    <!-- @condition NON HOME OCC - PROHIBITED -->
-    <p>You've told us that you're <strong>working from <%= answers.business_physical_address_street %></strong>, and your business is a <strong><%= answers.SIC_sic_name %></strong> (SIC code <%= answers.SIC_sic_code %>).</p>
-    <p>This use is <strong>prohibited</strong> at this location.</p>
-    <p>Siting your business here will require changing the City of Santa Cruz's zoning; this is a difficult process and can take years.</p>
-    <p>Contact the Planning Department for next steps.</p>
-    <p class="next"><a href="/help">Contact the Planning Department &rarr;</a></p>
-    <!-- /@condition NON HOME OCC - PROHIBITED -->
-  <% } %>
-
-  <% if ((answers.location_type == "commercial") && (answers.required_permit == "unknown")) { %>
-    <!-- @condition NON HOME OCC - UNKNOWN -->
-    <p>You've told us that you&rsquo;re <strong>working from <%= answers.business_physical_address_street %></strong>, and your business is business is a <strong><%= answers.SIC_sic_name %></strong> (SIC code <%= answers.SIC_sic_code %>).</p>
-    <p>We're sorry, but right now OpenCounter can't automatically determine what type of use permit you need.</p>
-    <p>Help us make OpenCounter smarter: please <a href="/help">contact the Planning Department</a>, and they'll help you -- and OpenCounter! -- figure out which type of use permit you need. Thank you for helping out the next person!</p>
-    <!-- /@condition NON HOME OCC - UNKNOWN -->
-  <% } %>
-
   <div class="form-actions">
     <p class="next lead">Next: <a href="/requirements/city/business_license">Business License &rarr;</a></p>
   </div>
