@@ -21,6 +21,8 @@ gem 'csv-mapper'
 gem 'fuzzy-string-match_pure'
 
 gem 'delayed_job_active_record'
+gem 'therubyracer', :platforms => :ruby
+gem 'execjs'
 
 # Gems used only for assets and not required
 # in production environments by default.
