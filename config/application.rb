@@ -54,7 +54,7 @@ module Opencounter
     config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
-    config.assets.enabled = true
+    config.assets.enabled = false
 
     config.requirejs.loader = :almond
     
