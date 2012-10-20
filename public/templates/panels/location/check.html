@@ -1,28 +1,32 @@
-<div id="location_check_site">
+<div class="page-header">
   <h1>Check Your Business&rsquo;s Zoning</h1>
-  
-  <p>You&rsquo;ve told us that your business is of type <strong class="business-type"><%= answers.SIC_industry_subtype %></strong> (SIC code <span class="business-sic-code"><%= answers.SIC_sic_code %></span>).</p>
-  
-  <h3>What is your business&rsquo;s physical address?</h3>
-  
-  <form action="" id="form_location_non_home_occ_check_site">
-    <label>
-      Street
-      <input type="text" name="business_physical_address_street" placeholder="Street">
-    </label>
+</div>
 
-    <!--
-    <label>
-      ZIP
-      <input type="text" name="business_physical_address_zip" placeholder="ZIP">
-    </label>
-    -->
+<div class="row-fluid">
+  <div class="span8">
+    <p class="lead">You&rsquo;ve told us that your business is classified as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong>.</p>
+    <h3>What is your business&rsquo;s physical address?</h3>
+    <form action="" id="form_location_non_home_occ_check_site">
+      <label>
+        Street
+        <input type="text" name="business_physical_address_street" placeholder="Street">
+      </label>
+      <!--
+      <label>
+        ZIP
+        <input type="text" name="business_physical_address_zip" placeholder="ZIP">
+      </label>
+      -->
+      <input type="submit" value="Check Zoning">
+      <div id="map" style="height:200px; width:200px;"></div>
+      <div id="zoning_display"></div>
+    </form>
+  </div>
 
-    <input type="submit" value="Check Zoning">
+  <div class="span4">
+    <div class="form-actions">
+      <p class="next lead"><a class="submit" href="/requirements">Next: Requirements &rarr;</a></p>
+    </div>
+  </div>
 
-    <div id="map" style="height:200px; width:200px;"></div>
-    <div id="zoning_display"></div>
-
-    <p class="next"><a class="submit" href="/requirements">Next: Requirements &rarr;</a></p>
-  </form>
-</div><!-- /#location_check_site -->
+</div>

@@ -6,7 +6,6 @@ define([
   "../libs/bootstrap-typeahead",
   // Plugins.
   "plugins/backbone.layoutmanager"
-
 ],
 
 function($, _, Backbone) {
@@ -27,7 +26,7 @@ function($, _, Backbone) {
       layout: "templates/layouts/",
       template: "templates/"
     },
-    manage:true,
+    manage: true,
     fetch: function(path) {
       path = path + ".html";
 
@@ -35,7 +34,7 @@ function($, _, Backbone) {
         $.ajax({ url: app.root + path, async: false, cache:false }).then(function(contents) {
           JST[path] = _.template(contents);
         });
-      } 
+      }
       
       return JST[path];
     }

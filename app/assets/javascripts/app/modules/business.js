@@ -25,7 +25,7 @@ function(app) {
       var base_tax = 145.15,
       employee_rate = 1,
       total = 0,
-      business_class = this.collection.getAnswer('SIC_classification', '');
+      business_class = this.collection.getAnswer('CIC_classification', '');
 
       switch(business_class) {
       case 'A':
@@ -64,24 +64,24 @@ function(app) {
 
   Business.Views.Info = Backbone.View.extend({
     template: "panels/info/business",
-    getSIC:function(query, process){
+    getCIC:function(query, process){
       var self = this.options.self;
-      $.ajax("/api/lookup/sic.json",{data:{q:query}, success:function(data){
-        self.sicData = data;
+      $.ajax("/api/lookup/cic.json",{data:{q:query}, success:function(data){
+        self.cicData = data;
         var list = [];
         for(d in data){
-          list.push(data[d].industry_subtype);
+          list.push(data[d].industry_subindustry);
         }
         process(list);
       }}, "json");
 
     },
-    saveSICValues:function(text, data){
+    saveCICValues:function(text, data){
       var found = false
       for(d in data){
-        if((text == data[d].sic_name ) || (text == data[d].industry_subtype)){
+        if(text == data[d].industry_subindustry){
           for(key in data[d]){
-            this.collection.addAnswer("SIC_"+key, data[d][key], {silent:true});
+            this.collection.addAnswer("CIC_"+key, data[d][key], {silent:true});
           }
           found = true;
         }
@@ -97,15 +97,15 @@ function(app) {
           // --- TypeAhead For Business Type ---
           var typeaheadel = this.$el.find(".typeahead");
           if (typeaheadel.length > 0) {
-            // TODO check for type of typeahead, for now just SIC
+            // TODO check for type of typeahead, for now just CIC
             $(typeaheadel).change(function(ev){
-              if(self.saveSICValues($(ev.target).val(), self.sicData)){
+              if(self.saveCICValues($(ev.target).val(), self.cicData)){
                 $(ev.target).addClass("invalid");
               } else {
                 $(ev.target).removeClass("invalid");
               }
             });
-            $(typeaheadel).typeahead({source:this.getSIC, matcher:function(){return true;}, self:self});
+            $(typeaheadel).typeahead({source:this.getCIC, items:10, matcher:function(){return true;}, self:self});
           }
           
           // --- Sole Owner / Co-Owner Toggle ---

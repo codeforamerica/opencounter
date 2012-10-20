@@ -31,7 +31,7 @@ function(app) {
           answer.save();
         });
       },error:function(m, r){
-        console.log("error:", m, r);
+//        console.log("error:", m, r);
       }});
     },
     subviews:function(){

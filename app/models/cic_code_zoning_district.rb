@@ -8,16 +8,6 @@ class CicCodeZoningDistrict < ActiveRecord::Base
   end
   
   def permission_name
-    if permission == 1
-      return "Permitted"
-    elsif permission == 2
-      return "Administrative Use Permit Required"
-    elsif permission == 3
-      return "Special Use Permit Required"
-    elsif permission == 4
-      return "Prohibited"
-    elsif permission == 5
-      return "Unknown"
-    end
+    return permission
   end
 end

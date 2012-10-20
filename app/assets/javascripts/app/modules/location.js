@@ -87,15 +87,25 @@ function(app) {
       if(data.features.length > 0){
         for(var i =1; i<7; i++){
           if(data.features[0].attributes['Zoning'+i] != " "){
-            zoning.push(data.features[0].attributes['Zoning'+i].split(" - ")[0]);
+            zoning.push(Location.convertGisToCityZoning(data.features[0].attributes['Zoning'+i].split(" - ")[0]));
           }
         }
+        
+        // Get prior use
+        this.collection.addAnswer("prioruse", data.features[0].attributes["USECDDESC"])
+        
+        // Get Business Improvement District
         this.collection.addAnswer("bid", data.features[0].attributes["BIA"].replace(" ", ""))
+        
+        // Get APN
         this.collection.addAnswer("apn", data.features[0].attributes["APN"])
+        
+        // Get zoning
         this.collection.addAnswer("zoning", zoning);
+        
         app.trigger("lookuppermit");
         this.$el.find("#zoning_display").html("That location is zoned for: "+zoning.join(","));
-
+        
         var latlng = new google.maps.LatLng(data.features[0].geometry.y,
                                             data.features[0].geometry.x);
         var marker = new google.maps.Marker({
@@ -112,6 +122,15 @@ function(app) {
     }
 
   });
+
+  // FIXME: this should really be in the database, rather than manually mapped in the code here
+  Location.convertGisToCityZoning = function(gisZoning) {
+    return {
+      "PF": "P-F",
+      "IGP2": "I-G PER-2",
+      "R17": "R-1"
+    }[gisZoning] || gisZoning;
+  };
 
   // Return the module for AMD compliance.
   return Location;

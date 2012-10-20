@@ -1,5 +1,8 @@
-<div id="incorporation">
+<div class="page-header">
   <h1>Incorporation</h1>
+</div>
+
+<div class="row-fluid">
   <p>You don&rsquo;t need to incorporate to start a business in Santa Cruz, but it should be something you think about.</p>
   <p>For more information on incorporation, speak with an accountant or visit <a href="http://www.sos.ca.gov/business/">The California Business Portal</a>.</p>
 
@@ -7,7 +10,7 @@
 
   <% if (answers.business_structure) { %>
   
-    <p>You&rsquo;ve told us that <%= (answers.is_owner === 'y') ? 'your' : 'this' %> business is structured as <strong><%= answers.business_structure %></strong>.</p>
+    <p>You&rsquo;ve told us that <%= (answers.is_owner === 'y') ? 'your' : 'this' %> business is structured as a <strong><%= answers.business_structure %></strong>.</p>
   
   <% } else { %>
   

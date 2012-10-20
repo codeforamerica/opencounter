@@ -15,6 +15,32 @@ function(app, Parking) {
     name: 'answer',
     url: function(){
       return this.id? '/answers/' + this.id : '/answers';
+    },
+
+    // allow getting/setting of objects (stored as JSON strings)
+    get: function(attr) {
+      var result = this.constructor.__super__.get.call(this, attr);
+      if (result) {
+        try {
+          result = JSON.parse(result);
+        }
+        catch(ex) {}
+      }
+      return result;
+    },
+
+    set: function(key, value, options) {
+      if (typeof key === "object") {
+        for (var keyName in key) {
+          var val = key[keyName];
+          key[keyName] = (val && typeof val === "object") ? JSON.stringify(val) : val;
+        }
+      }
+      else if (value && typeof value === "object") {
+        value = JSON.stringify(value);
+      }
+      
+      return this.constructor.__super__.set.call(this, key, value, options);
     }
   });
 
@@ -65,8 +91,9 @@ function(app, Parking) {
     },
     sendPlanningEmail:function(ev){
       //do things here
-      $.get("/users/email@email.com/planning", function(data){
-        
+      ev.preventDefault();
+      $.get("/users/email-planning", function(data){
+        console.log(data);  
       });
     },
     subviews: function() {
@@ -89,7 +116,7 @@ function(app, Parking) {
       $('.drawer').hide();
       $('.toggle').click(function(e){
         $(e.target).next('.drawer').toggle();
-      })
+      });
 
       this.subviews().afterRender.call(this);
     },
@@ -142,15 +169,20 @@ function(app, Parking) {
   //this isnt this function final resting place, need to be more thought out.
   Answer.lookupPermit = function(){
     var zoning = this.answers.getAnswer("zoning");
-    var sic = this.answers.getAnswer("SIC_code");
-    if(zoning && sic){
+    var cic = this.answers.getAnswer("CIC_code");
+    if(zoning && cic){
       //we know what we need at this point.
       var self = this;
-      var url = "/api/lookup/permit/"+zoning[0]+"/"+sic
+      var url = "/api/lookup/permit/"+zoning[0]+"/"+cic
 
-      $.ajax(url, {success:function(data){
-        self.answers.addAnswer("required_permit", data.permit);
-      },dataType:"json"});
+      $.ajax({
+        url:url,
+        dataType:"json",
+        async:false,
+        success:function(data){
+          self.answers.addAnswer("required_permit", data);
+        }
+      });
 
     }
 

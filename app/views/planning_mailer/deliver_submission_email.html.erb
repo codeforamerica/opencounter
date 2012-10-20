@@ -352,7 +352,7 @@
                                             <!-- *|IFNOT:ARCHIVE_PAGE|* -->
                                             <td valign="top" width="190">
                                                 <div mc:edit="std_preheader_links">
-                                                    Is this email not displaying correctly?<br /><a href="*|ARCHIVE|*" target="_blank">View it in your browser</a>.
+                                                     Submitted at [date_time] from [ip]
                                                 </div>
                                             </td>
                                             <!-- *|END:IF|* -->
@@ -372,9 +372,6 @@
                                         <tr>
                                             <td class="headerContent">
                                             
-                                                <!-- // Begin Module: Standard Header Image \\ -->
-                                                <img src="http://gallery.mailchimp.com/653153ae841fd11de66ad181a/images/placeholder_600.gif" style="max-width:600px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext />
-                                                <!-- // End Module: Standard Header Image \\ -->
                                             
                                             </td>
                                         </tr>
@@ -394,14 +391,101 @@
                                                     <tr>
                                                         <td valign="top">
                                                             <div mc:edit="std_content00">
-                                                                <h1 class="h1">Heading 1</h1>
-                                                                <h2 class="h2">Heading 2</h2>
-                                                                <h3 class="h3">Heading 3</h3>
-                                                                <h4 class="h4">Heading 4</h4>
-                                                                <strong>Getting started:</strong> Customize your template by clicking on the style editor tabs up above. Set your fonts, colors, and styles. After setting your styling is all done you can click here in this area, delete the text, and start adding your own awesome content!
-                                                                <br />
-                                                                <br />
-                                                                After you enter your content, highlight the text you want to style and select the options you set in the style editor in the "styles" drop down box. Want to <a href="http://www.mailchimp.com/kb/article/im-using-the-style-designer-and-i-cant-get-my-formatting-to-change" target="_blank">get rid of styling on a bit of text</a>, but having trouble doing it? Just use the "remove formatting" button to strip the text of any formatting and reset your style.
+                                                                <h1 class="h1">OpenCounter Inquiry</h1>
+                                                                <hr><br>
+                                                                
+                                                                <h3 class="h3">Question</h3>
+                                                                [user_inquiry]
+                                                                
+                                                                <br><br>
+                                                                <h3 class="h3">People</h3>
+
+                                                                <!-- APPLICANT -->
+                                                                <dl>
+                                                                  <dt>Applicant Name</dt>
+                                                                  <dd>[applicant_first_name] [applicant_last_name]</dd>
+                                                                </dl>
+
+                                                                <dl>
+                                                                  <dt>Applicant Email</dt>
+                                                                  <dd>[applicant_email]</dd>
+                                                                </dl>
+
+                                                                <dl>
+                                                                  <dt>Applicant Phone</dt>
+                                                                  <dd>[applicant_phone]</dd>
+                                                                </dl>
+
+                                                                <!-- OWNER -->
+                                                                <dl>
+                                                                  <dt>Owner Name</dt>
+                                                                  <dd>[owner_first_name] [owner_last_name]</dd>
+                                                                </dl>
+
+                                                                <dl>
+                                                                  <dt>Owner Email</dt>
+                                                                  <dd>[owner_email]</dd>
+                                                                </dl>
+
+                                                                <dl>
+                                                                  <dt>Owner Phone</dt>
+                                                                  <dd>[owner_phone]</dd>
+                                                                </dl>
+
+                                                                <br><h3 class="h3">Business</h3>
+                                                                
+                                                                <dl>
+                                                                  <dt>Business Name</dt>
+                                                                  <dd>[business_name]</dd>
+                                                                </dl>
+                                                                
+                                                                <dl>
+                                                                  <dt>Business Type</dt>
+                                                                  <dd>[business_code (CIC)]</dd>
+                                                                  <dd>[class_a|class_b|class_c]</dd>
+                                                                  <dd>[type_1|type_2|type_3]</dd>
+                                                                </dl>
+                                                                
+                                                                <dl>
+                                                                  <dt>Business Structure</dt>
+                                                                  <dd>[business_structure]</dd>
+                                                                </dl>
+                                                                
+                                                                <br><h3 class="h3">Location</h3>
+
+                                                                <dl>
+                                                                  <dt>Home Occ?</dt>
+                                                                  <dd>[ (answers.location_type == "home") ? "yes" : "no" ]</dd>
+                                                                </dl>
+
+                                                                <dl>
+                                                                  <dt>Business Physical Address</dt>
+                                                                  <dd>
+                                                                    [business_physical_address_street]<br>
+                                                                    [business_physical_address_detail]<br>
+                                                                    [business_physical_address_city], [business_physical_address_state] [business_physical_address_zip]
+                                                                  </dd>
+                                                                </dl>
+
+                                                                <dl>
+                                                                  <dt>Business Mailing Address</dt>
+                                                                  <dd>
+                                                                    [business_mailing_address_street]<br>
+                                                                    [business_mailing_address_detail]<br>
+                                                                    [business_mailing_address_city], [business_mailing_address_state] [business_mailing_address_zip]
+                                                                  </dd>
+                                                                </dl>
+
+                                                                <dl>
+                                                                  <dt>Zoning District</dt>
+                                                                  <dd>[@todo]</dd>
+                                                                </dl>
+
+                                                                <dl>
+                                                                  <dt>Prior Use</dt>
+                                                                  <dd>[@todo]</dd>
+                                                                </dl>
+
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -412,56 +496,6 @@
                                         </tr>
                                     </table>
                                     <!-- // End Template Body \\ -->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="center" valign="top">
-                                    <!-- // Begin Template Footer \\ -->
-                                    <table border="0" cellpadding="10" cellspacing="0" width="600" id="templateFooter">
-                                        <tr>
-                                            <td valign="top" class="footerContent">
-                                            
-                                                <!-- // Begin Module: Standard Footer \\ -->
-                                                <table border="0" cellpadding="10" cellspacing="0" width="100%">
-                                                    <tr>
-                                                        <td colspan="2" valign="middle" id="social">
-                                                            <div mc:edit="std_social">
-                                                                &nbsp;<a href="*|TWITTER:PROFILEURL|*">follow on Twitter</a> | <a href="*|FACEBOOK:PROFILEURL|*">friend on Facebook</a> | <a href="*|FORWARD|*">forward to a friend</a>&nbsp;
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td valign="top" width="350">
-                                                            <div mc:edit="std_footer">
-                                                                <em>Copyright &copy; *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.</em>
-                                                                <br />
-                                                                *|IFNOT:ARCHIVE_PAGE|* *|LIST:DESCRIPTION|*
-                                                                <br />
-                                                                <strong>Our mailing address is:</strong>
-                                                                <br />
-                                                                *|HTML:LIST_ADDRESS_HTML|**|END:IF|* 
-                                                            </div>
-                                                        </td>
-                                                        <td valign="top" width="190" id="monkeyRewards">
-                                                            <div mc:edit="monkeyrewards">
-                                                                *|IF:REWARDS|* *|HTML:REWARDS|* *|END:IF|*
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="2" valign="middle" id="utility">
-                                                            <div mc:edit="std_utility">
-                                                                &nbsp;<a href="*|UNSUB|*">unsubscribe from this list</a> | <a href="*|UPDATE_PROFILE|*">update subscription preferences</a>&nbsp;
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                                <!-- // End Module: Standard Footer \\ -->
-                                            
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- // End Template Footer \\ -->
                                 </td>
                             </tr>
                         </table>

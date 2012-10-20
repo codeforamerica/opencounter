@@ -21,6 +21,8 @@ gem 'csv-mapper'
 gem 'fuzzy-string-match_pure'
 
 gem 'delayed_job_active_record'
+gem 'therubyracer', :platforms => :ruby
+gem 'execjs'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -39,7 +41,6 @@ group :test, :development do
   gem "factory_girl_rails"
   gem "shoulda-matchers"
   gem "faker"
-  gem 'taps'
 
   # To use debugger
   gem 'debugger'
@@ -49,6 +50,8 @@ end
 
 group :development do
   gem 'heroku'
+  gem 'taps'
+  gem 'sqlite3' #need this for taps to work
 end
 
 # To use ActiveModel has_secure_password
@@ -65,4 +68,6 @@ end
 
 gem 'csv-mapper'
 gem 'fuzzy-string-match_pure'
+gem 'irbtools'
+gem 'on_the_spot'
 

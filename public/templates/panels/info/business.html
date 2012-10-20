@@ -3,72 +3,85 @@
 </div>
 
 <div class="row-fluid">
-
-  <form method="post" action="#" id="form_info_business">
-    
-    <fieldset>
-    
-      <label>
-        What will <%= (answers.is_owner === "true") ? "your" : "the" %> business be called?
-        <input type="text" name="business_name" placeholder="">
-      </label>
   
-      <label>
-        What will <%= (answers.is_owner === "true") ? "your" : "the" %> business do?
-        <input type="text" id="business_code" name="business_code" class="typeahead" placeholder="e.g. Auto Parts" />
-        <div id="business-type-container" style="position:absolute; width: 500px;"></div>
-      </label>
-      
-      <p>If you aren't able to find a matching category, please <a href="/contact">contact us</a> so we can help you find the best match.</p>
-      
-      <label>
-        What is <%= (answers.is_owner === "true") ? "your" : "the" %> business&rsquo;s legal structure?
-        <select name="business_structure">
-          <option value="unknown"                       <%= (answers.business_structure === 'unknown') ? 'selected="selected"' : '' %>                        >Not sure, don&rsquo;t know, or haven&rsquo;t decided yet</option>
-          <option value="individual"                    <%= (answers.business_structure === 'individual') ? 'selected="selected"' : '' %>                     >an Individual (Sole Proprietorship)</option>
-          <option value="general_partnership"           <%= (answers.business_structure === 'general_partnership') ? 'selected="selected"' : '' %>            >a General Partnership (GP)</option>
-          <option value="limited_partnership"           <%= (answers.business_structure === 'limited_partnership') ? 'selected="selected"' : '' %>            >a Limited Partnership (LP)</option>
-          <option value="limited_liability_company"     <%= (answers.business_structure === 'limited_liability_company') ? 'selected="selected"' : '' %>      >a Limited Liability Company (LLC)</option>
-          <option value="limited_liability_partnership" <%= (answers.business_structure === 'limited_liability_partnership') ? 'selected="selected"' : '' %>  >a Limited Liability Partnership (LLP)</option>
-          <option value="association"                   <%= (answers.business_structure === 'association') ? 'selected="selected"' : '' %>                    >an Unincorporated Association other than a Partnership</option>
-          <option value="corporation"                   <%= (answers.business_structure === 'corporation') ? 'selected="selected"' : '' %>                    >a Corporation</option>
-          <option value="trust"                         <%= (answers.business_structure === 'trust') ? 'selected="selected"' : '' %>                          >a Trust</option>
-          <option value="copartner"                     <%= (answers.business_structure === 'copartner') ? 'selected="selected"' : '' %>                      >Copartners</option>
-          <option value="married"                       <%= (answers.business_structure === 'married') ? 'selected="selected"' : '' %>                        >Husband and Wife</option>
-          <option value="joint_venture"                 <%= (answers.business_structure === 'joint_venture') ? 'selected="selected"' : '' %>                  >a Joint Venture</option>
-          <option value="domestic_partners"             <%= (answers.business_structure === 'domestic_partners') ? 'selected="selected"' : '' %>              >State or Local Registered Domestic Partners</option>
-        </select>
-      </label>
+  <div class="span6">
     
-    </fieldset>
-
-    <label>
-      <% if (answers.is_owner === "true") { %>Are you<% } else { %> Is <%= answers.owner_first_name %>  <%= answers.owner_last_name %> <% } %> this business&rsquo;s sole owner?
-      <input type="checkbox" name="applicant_is_sole_owner" value="y" checked="checked"> Yes
-    </label>
-
-    <!-- @condition Not the sole owner -->
-    <div class="conditional co-owners">
-      <p>Please list the names, roles, and mailing addresses of all co-owners.</p>
-      <fieldset>
-        <label>
-          First &amp; Last Name
-          <input type="text" name="coowner_name" placeholder="Corey Coowner">
-        </label>
-        <label>
-          Title/Role
-          <input type="text" name="coowner_role" placeholder="e.g. Co-Owner">
-        </label>
-        <label>
-          Mailing Address
-          <input type="text" name="coowner_address" placeholder="123 Anystreet Road, Santa Cruz, CA 95060">
-        </label>
-      </fieldset>
-      <div class=""><a href="#">+ Add Another Co-Owner +</a></div>
-    </div>
-    <!-- /@condition -->
-    
-    <p class="next">Thanks! That's enough to get started. <a class="submit" href="/location">Next: Location &rarr;</a></p>
-  </form>
+    <form method="post" action="#" id="form_info_business">
+      
+      <h3>About <%= (answers.is_owner === "true") ? "your" : "the" %> business</h3>
+      
+      <div class="control-group">
+        <label class="control-label">What will <%= (answers.is_owner === "true") ? "your" : "the" %> business be called?</label>
+        <div class="controls"><input type="text" name="business_name" placeholder=""></div>
+      </div>
+      
+      <div class="control-group">
+        <label class="control-label">What will <%= (answers.is_owner === "true") ? "your" : "the" %> business do?</label>
+        <div class="controls">
+          <input type="text" id="business_code" name="business_code" class="typeahead input-xxlarge" placeholder="e.g. Auto Parts" />
+          <div id="business-type-container" style="position:absolute; width: 500px;"></div>
+        </div>
+        <p>If you aren't able to find a matching category, please <a href="/help">contact us</a> so we can help you find the best match.</p>
+      </div>
+      
+      <div class="control-group">
+        <label class="control-label">What is <%= (answers.is_owner === "true") ? "your" : "the" %> business&rsquo;s legal structure?</label>
+        <div class="controls">
+          <select name="business_structure" class="input-xxlarge">
+            <option value="unknown"                       <%= (answers.business_structure === 'unknown') ? 'selected="selected"' : '' %>                        >Not sure, don&rsquo;t know, or haven&rsquo;t decided yet</option>
+            <option value="individual"                    <%= (answers.business_structure === 'individual') ? 'selected="selected"' : '' %>                     >an Individual (Sole Proprietorship)</option>
+            <option value="general_partnership"           <%= (answers.business_structure === 'general_partnership') ? 'selected="selected"' : '' %>            >a General Partnership (GP)</option>
+            <option value="limited_partnership"           <%= (answers.business_structure === 'limited_partnership') ? 'selected="selected"' : '' %>            >a Limited Partnership (LP)</option>
+            <option value="limited_liability_company"     <%= (answers.business_structure === 'limited_liability_company') ? 'selected="selected"' : '' %>      >a Limited Liability Company (LLC)</option>
+            <option value="limited_liability_partnership" <%= (answers.business_structure === 'limited_liability_partnership') ? 'selected="selected"' : '' %>  >a Limited Liability Partnership (LLP)</option>
+            <option value="association"                   <%= (answers.business_structure === 'association') ? 'selected="selected"' : '' %>                    >an Unincorporated Association other than a Partnership</option>
+            <option value="corporation"                   <%= (answers.business_structure === 'corporation') ? 'selected="selected"' : '' %>                    >a Corporation</option>
+            <option value="trust"                         <%= (answers.business_structure === 'trust') ? 'selected="selected"' : '' %>                          >a Trust</option>
+            <option value="copartner"                     <%= (answers.business_structure === 'copartner') ? 'selected="selected"' : '' %>                      >Copartners</option>
+            <option value="married"                       <%= (answers.business_structure === 'married') ? 'selected="selected"' : '' %>                        >Husband and Wife</option>
+            <option value="joint_venture"                 <%= (answers.business_structure === 'joint_venture') ? 'selected="selected"' : '' %>                  >a Joint Venture</option>
+            <option value="domestic_partners"             <%= (answers.business_structure === 'domestic_partners') ? 'selected="selected"' : '' %>              >State or Local Registered Domestic Partners</option>
+          </select>
+        </div>
+      </div>
+      
+      <div>
+        <% if (answers.is_owner === "true") { %>Are you<% } else { %> Is <%= answers.owner_first_name %>  <%= answers.owner_last_name %> <% } %> this business&rsquo;s sole owner?
+        <div class="checkbox">
+          <input type="checkbox" name="applicant_is_sole_owner" value="y" checked="checked" class="checkbox">
+          Yes
+        </div>
+        <br>
+      </div>
+      
+      <!-- @condition Not the sole owner -->
+      <div class="conditional co-owners well input-xxlarge">
+        <p>Please list the names, roles, and mailing addresses of all co-owners.</p>
+        
+        <div class="control-group">
+          <label class="control-label">First &amp; Last Name</label>
+          <div class="controls"><input type="text" name="coowner_name" placeholder="Corey Coowner"></div>
+        </div>
+        
+        <div class="control-group">
+          <label class="control-label">Title/Role</label>
+          <div class="controls"><input type="text" name="coowner_role" placeholder="e.g. Co-Owner"></div>
+        </div>
+        
+        <div class="control-group">
+          <label class="control-label">Mailing Address</label>
+          <div class="controls"><input type="text" name="coowner_address" placeholder="123 Anystreet Road, Santa Cruz, CA 95060"></div>
+        </div>
+        
+        <div class=""><a href="#" class="btn">+ Add Another Co-Owner +</a></div>
+      </div>
+      <!-- /@condition -->
+      
+      <div class="form-actions">
+        <p class="next lead">Thanks! That's enough to get started. <a class="submit" href="/location">Next: your location &rarr;</a></p>
+      </div>
+      
+    </form>
+  </div><!-- /.span6 -->
 
 </div>

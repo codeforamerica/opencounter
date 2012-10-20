@@ -3,33 +3,48 @@
 </div>
 
 <div class="row-fluid">
-  <p>Everyone who operates a business in the City needs to register with the City's Finance department for a business license. This is an annual requirement that the City uses to track who makes up our business community and what they are doing.</p>
-  <p>The fees for this are $145.15 plus employees fees of $2.55, $4.95, or $7.40 for each employee depending on your type of business. It's important to remember that you'll be responsible for this fee even if you conduct business for a single day (the fee will be pro-rated). </p>
-  <p>You are exempt from the fee if your business is a registered nonprofit organization.</p>
-  <p>Fees for your business license are used to support general city services, including police and fire protection, as well as for the services supplied by the City's Finance, Planning and Community Development Staff and other City Administrative Functions.</p>
-  <p>After you register with the City, we'll sent a once a year renewal letter to you.</p>
+  <p class="lead">Everyone who operates a business in the City needs to register with the City's Finance department for a business license. This is an annual requirement that the City uses to track who makes up our business community and what they are doing.</p>
+  <p class="lead">The fees for this are $145.15 plus employees fees of $2.55, $4.95, or $7.40 for each employee depending on your type of business. It's important to remember that you'll be responsible for this fee even if you conduct business for a single day (the fee will be pro-rated). </p>
+  <p class="lead">You are exempt from the fee if your business is a registered nonprofit organization.</p>
+  <p class="lead">Fees for your business license are used to support general city services, including police and fire protection, as well as for the services supplied by the City's Finance, Planning and Community Development Staff and other City Administrative Functions.</p>
+  <p class="lead">After you register with the City, we'll sent a once a year renewal letter to you.</p>
 
   <hr>
   
-  <p>You've told us that your business is a <strong><%= answers.SIC_sic_name %></strong> (SIC Code: <%= answers.SIC_sic_code %>).</p>
-  
-  <form>
-    <label>
-      What type of business is this?
-      <p><input type="radio" name="business_type_class" value="class-a"> Retail, wholesale, contract, construction, or manufacturing</p>
-      <p><input type="radio" name="business_type_class" value="class-b"> Services, hotels and motels, apartment houses, commercial property renting or leasing, recreation and entertainment services and facilities</p>
-      <p><input type="radio" name="business_type_class" value="class-c"> Professions including, but not limited to, accountants, architects, attorneys, auctioneers, chiropractors, dentists, engineers, insurance brokers, medical/health professions, physicians, real estate brokers, security brokers, and veterinarians  </p>
-    </label>
-    
-    <label>
-      How many employees do you have?
-      <input type="text" name="employee_count">
-    </label>
-  </form>
+  <% if (answers.CIC_industry_subindustry) { %>
 
-  <p class="fee">The fee for the business license will be: <span id="business_license_fee"></span></p>
+    <p class="lead">You've told us that your business is a <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong>.</p>
   
-  <p class="next">Next: <a href="/requirements/county/fbn">fictitious business name &rarr;</a></p>
+    <form>
+      <label class="radio">
+        What type of business is this?
+        <p><input type="radio" name="business_type_class" value="class-a"> Retail, wholesale, contract, construction, or manufacturing</p>
+        <p><input type="radio" name="business_type_class" value="class-b"> Services, hotels and motels, apartment houses, commercial property renting or leasing, recreation and entertainment services and facilities</p>
+        <p><input type="radio" name="business_type_class" value="class-c"> Professions including, but not limited to, accountants, architects, attorneys, auctioneers, chiropractors, dentists, engineers, insurance brokers, medical/health professions, physicians, real estate brokers, security brokers, and veterinarians  </p>
+      </label>
+      
+      <div class="form-controls">
+        <label>How many employees do you have?</label>
+        <input type="text" name="employee_count">
+      </div>
+      
+    </form>
+  
+    <p class="fee">The fee for the business license will be: <span id="business_license_fee" style="border: 1px dotted #CCC; background: #EEE;padding: 0.5em 10px;">&nbsp;</span></p>
+    
+    <div class="form-actions">
+      <p class="next">Next: <a href="/requirements/county/fbn">fictitious business name &rarr;</a></p>
+    </div>
+
+  <% } else { %>
+
+    <div class="form-actions">
+      <p class="lead">You haven't yet told us what type of business you're starting.</p>
+      <p class="lead"><a href="/info/business" class="btn btn-large">&larr; Go back</a></p>
+    </div>
+
+  <% } %>
+  
 <!-- 
 
 In order to calculate the fee, we need to know

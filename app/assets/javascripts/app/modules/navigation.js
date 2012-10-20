@@ -1,10 +1,11 @@
 define([
   // Application.
-  "app"
+  "app",
+  "modules/util"
 ],
 
 // Map dependencies from above array.
-function(app) {
+function(app, util) {
 
   // Create a new module.
   var Navigation = app.module();
@@ -24,7 +25,7 @@ function(app) {
   Navigation.Views.Main = Backbone.View.extend({
     
     template: "navigation",
-    className: "offset1 span11",
+    className: "span12",
     events: {},
     afterRender: function(){
           
@@ -32,35 +33,27 @@ function(app) {
       var $nav = $(this.el),
           path = window.location.pathname.toLowerCase() || "";
       
-      
       // For each link in the navigation
       $nav.find("a").each(function(i, el) {
         
         var $el = $(el),
             href = $el.attr("href") || "",
-            dataSection = "";
+            dataSection = href.slice(1).split('/')[0] || "",
+            pathSection = path.slice(1).split('/')[0] || "";
+        
+//        console.log('dataSection: ' + dataSection);
+//        console.log('pathSection: ' + pathSection);
+//        console.log('path: ' + path);
         
         // Unset class="current" from parent <li>
         $el.parent().removeClass("current");
         
         // If the link's href matches the path:
-        if (href === path) {
+        if (dataSection === pathSection) {
           
           // Set class="current" on parent <li>
           $el.parent().addClass("current");
           
-          // Figure out what section we're in
-          if ( $el.is(".section_heading") ) {
-            dataSection = href.slice(1);
-          } else {
-            
-            dataSection = href.slice(1).split('/');
-            dataSection = dataSection[0];
-            // dataSection = $el.parents("nav > ul > li").prev().find("a").attr("href").slice(1);
-          }
-          
-          // Show the nav links for this section
-          $nav.find("ol[data-section=" + dataSection + "]").show();
         }
       });
     },
@@ -91,19 +84,22 @@ function(app) {
       // Hide all submenus
       $nav.find("ol[data-section]").hide();
       
+      // Remove all class="current
+      $nav.find("a").removeClass("current");
+      
       // For each link in the navigation
       $nav.find("a").each(function(i, el) {
         
         var $el = $(el),
             href = $el.attr("href") || "",
-            dataSection = "";
+            dataSection = href.slice(1).split('/')[0] || "",
+            pathSection = path.slice(1).split('/')[0] || "";
         
-        // Figure out what section we're in
-        dataSection = href.slice(1).split('/');
-        dataSection = dataSection[0];
-
-        pathSection = path.slice(1).split('/');
-        pathSection = pathSection[0];
+        // If the link's href matches the path:
+        if (path === href) {
+          // Set class="current" on the current link
+          $el.addClass("current");
+        }
 
         // If the link's href matches the path:
         if (dataSection === pathSection) {
@@ -115,21 +111,26 @@ function(app) {
       this.updateNavByAnswers();
     },
     updateNavByAnswers: function(){
-      this.$el.find("[data-show]").show();
+      this.$el.find("[data-show]").hide();
+
+      // always show FBN
+      this.$el.find("[data-show=fbn]").show();
 
       // show or hide based on home occ.
       if (this.answers.getAnswer("location_type", "") == "home") {
-        this.$el.find("[data-show=commercial]").hide();
-        this.$el.find("[data-show=food]").hide();
-        this.$el.find("[data-show=retail]").hide();
-        this.$el.find("[data-show=bid]").hide();
+        this.$el.find("[data-show=home]").show();
       } else if (this.answers.getAnswer("location_type", "") == "commercial") {
-        this.$el.find("[data-show=home]").hide();
+        this.$el.find("[data-show=commercial]").show();
+
+        var requirements = util.requirementsForBusinessType(this.answers.getAnswer("CIC_code"), this.answers.getAnswer("business_code"));
+        for (var i = 0, len = requirements.length; i < len; i++) {
+          this.$el.find("[data-show=" + requirements[i] + "]").show();
+        }
       }
 
       // Show BID
-      if (this.answers.getAnswer("bid", "") == "") {
-        this.$el.find("[data-show=bid]").hide();
+      if (this.answers.getAnswer("bid", "")) {
+        this.$el.find("[data-show=bid]").show();
       }
       
     },

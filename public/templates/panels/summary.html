@@ -1,12 +1,31 @@
-<div id="summary">
-  <h1>Summary</h1>
-  <p>Thank you for answering all of our questions.</p>
-  <p>Based on what you&rsquo;ve told us, we believe <%= (answers.is_owner === "true") ? "your" : "this" %> business needs to complete the following paperwork:</p>
+<div class="page-header">
+  <h1>Your Checklist</h1>
+</div>
 
-  <h3>Overview</h3>
-  <div class="statistics">
-    Total forms: 4
-    Total fees: $
+<div class="row-fluid">
+
+  <div class="span6">
+    <p class="lead">Thank you for answering all of our questions.</p>
+    <p class="lead">Based on what you&rsquo;ve told us, we believe <%= (answers.is_owner === "true") ? "your" : "this" %> business needs to complete the following paperwork.</p>
+  </div>
+  
+  <div class="span6">
+    <div class="form-actions">
+      <ul class="lead">
+        <li>Total forms: 3</li>
+        <li>Total fees: $221.00</li>
+      </ul>
+      <p><a class="btn btn-large" href="/help">Email this information to Planning</a></p>
+      <p><a class="btn btn-large">Print this checklist</a></p>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="row-fluid">
+
+    <!--
     <% var fee = 0;
        if(answers.location_type == "home"){
          fee+=221;
@@ -18,11 +37,9 @@
          fee+=answers.business_license_fee;
        } %>
     <%= fee  %>
+    -->
   
-  </div>
-  
-  <h3>Breakdown</h3>
-  <table class="table table-hover">
+  <table class="table table-striped">
     <thead>
       <tr>
         <th>Task &amp; Fee</th>
@@ -30,16 +47,19 @@
         <th>How?</th>
       </tr>
     </thead>
-    
+
+
     <!-- Owner Agent -->
-    <% if (!answers.is_owner) { %>
+<% if (!answers.is_owner) { %>
+
     <tr>
-      <td colspan="3">
-        <p>You haven't told us whether you're the owner or the owner's agent. <a href="/info">Go back &rarr;</a></p>
-      </td>
+      <td colspan="3"><p>You haven't yet told us whether you're the owner or filling this out on the owner's behalf. <a href="/info">Go back &rarr;</a></p></td>
     </tr>
-    <% } else {
-          if ((answers.is_owner) && (answers.is_owner !== "true")) { %>
+
+<% } else { %>
+
+    <% if (answers.is_owner !== "true") { %>
+
     <tr>
       <td>
         <p class="task">Register as the <strong>Owner Agent</strong>.</p>
@@ -50,32 +70,53 @@
       </td>
       <td>
         <ol>
-          <li>Download and print the <a href="/assets/pdf/city/owner-agent.pdf">owner agent form</a></li>
+          <li>Download and print the <a href="/assets/pdf/city/owner-agent.pdf">owner agent form</a>.</li>
           <li>Fill it out with the <a href="#">information you provided</a>.</li>
           <li>Notarize it. The city clerk is a notary public.</li>
           <li>Submit it to the Planning Department.</li>
         </ol>
       </td>
     </tr>
-    <%    }
-       }
-    %>
 
-    <!-- Use Permit -->
-    <% if (!answers.location_type) { %>
+    <% } %>
+
+<% } %>
+
+
+    <!-- Planning Permit -->
     <tr>
-      <td colspan="3">
-        <p>You haven&rsquo;t told us where you&rsquo;ll be working from. <a href="/location">Go back &rarr;</a></p>
-      </td>
-    </tr>
-    <% } else if (answers.location_type === "home") { %>
-    <tr>
+
+<% if (!answers.required_permit) { %>
+
+      <td colspan="3"><p class="error">You haven't yet told us where you'll be working from, so we're not able to tell you which planning permit you'll need. <a href="/location">Go back and choose your business's location &rarr;</a></p></td>
+
+<% } else { %>
+
+    <% if (answers.location_type === "home") { %>
+
+        <% if (answers.required_permit.home_occ_prohibited == true) { %>
+
       <td>
-        <p class="task">Get a <strong>zoning clearance</strong>.</p>
-        <p class="fee">$221.00 <a href="#">(how was this calculated?)</a></p>
+        <p class="task">Speak with a planner.</p>
+        <p class="fee">Fee n/a</p>
       </td>
       <td>
-        <p>You&rsquo;ve said that you are working from home and that your business complies with the restrictions on work-from-home businesses, so you will need a zoning clearance rather than a use permit.</p>
+        <p>You&rsquo;ve said that you are working from home and that your business complies with the restrictions on work-from-home businesses, but work-from-home businesses are not allowed in your zoning district.</p>
+      </td>
+      <td>
+        <ol>
+          <li><a href="/help">Contact a planner.</a></li>
+        </ol>
+      </td>
+
+        <% } else { %>
+
+      <td>
+        <p class="task">Get a <strong>Zoning Clearance</strong>.</p>
+        <p class="fee">$221.00 <a href="#">(how is this calculated?)</a></p>
+      </td>
+      <td>
+        <p>You&rsquo;ve said that you are working from home and that your business complies with the restrictions on work-from-home businesses, and your zoning district allows work-from-home businesses, so the only planning permit you need is a zoning clearance.</p>
       </td>
       <td>
         <ol>
@@ -84,32 +125,120 @@
           <li>Submit it to the Planning Department.</li>
         </ol>
       </td>
-    </tr>
-    <% } else if (answers.location_type === "commercial") { %>
-    <tr>
+
+        <% } %>
+
+    <% } else { %>
+
+        <% if (answers.required_permit.permit === "1") { %>
+
       <td>
-        <p class="task">Get a <strong<%= answers.required_permit %></strong>.</p>
-        <p class="fee">[$221] <a href="#">(how was this calculated?)</a></p>
+        <p class="task">Get a <strong>Zoning Clearance</strong>.</p>
+        <p class="fee">$221.00 <a href="#">(how is this calculated?)</a></p>
       </td>
       <td>
-        <p data-show="commercial">You&rsquo;ve said that the business is a <%= answers.SIC_sic_name %> (SIC code <%= answers.SIC_sic_code %>) and you want to site it at <%= answers.business_physical_address_street %>, which is zoned [zoning]. This is a [principally permitted] use, so you will need a <%= answers.required_permit %>.</p>
+        <p>You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong></p>
+        <p>This use is principally permitted, so you'll need a <em>Zoning Clearance</em>.</p>
       </td>
       <td>
         <ol>
-          <li>Download and print the <a href="#">[zoning clearance / use permit] form</a>.</li>
+          <li>Download and print the <a href="#">zoning clearance form</a>.</li>
           <li>Fill it out with the <a href="#">information you provided</a>.</li>
-          <li>[Submit it to the Planning Department. / Make an appointment with a city planner.]</li>
+          <li>Submit it to the Planning Department.</li>
         </ol>
       </td>
-    </tr>
-    <% } else { %>
-    <tr>
-      <td colspan="3">Oops, something's gone wrong. (Developer: answers.location_type = <%= answers.location_type %>.)</td>
-    </tr>
+
+        <% } else if (answers.required_permit.permit === "2") { %>
+
+      <td>
+        <p class="task">Get an <strong>Administrative Use Permit</strong>.</p>
+        <p class="fee">Fee varies <a href="#">(how iss this calculated?)</a></p>
+      </td>
+      <td>
+        <p>You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong></p>
+        <p>This use is not principally permitted, so you'll need an <em>Administrative Use Permit</em>.</p>
+      </td>
+      <td>
+        <ol>
+          <li><a href="/help">Contact a planner.</a></li>
+        </ol>
+      </td>
+    
+        <% } else if (answers.required_permit.permit === "3") { %>
+
+      <td>
+        <p class="task">Get a <strong>Special Use Permit</strong>.</p>
+        <p class="fee">Fee varies <a href="#">(how is this calculated?)</a></p>
+      </td>
+      <td>
+        <p>You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong></p>
+        <p>This use is not principally permitted, so you'll need a <em>Special Use Permit</em>.</p>
+      </td>
+      <td>
+        <ol>
+          <li><a href="/help">Contact a planner.</a></li>
+        </ol>
+      </td>
+
+        <% } else if (answers.required_permit.permit === "4") { %>
+
+      <td>
+        <p class="task">Speak with a planner.</p>
+        <p class="fee">Fee n/a</p>
+      </td>
+      <td>
+        <p>You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong></p>
+        <p>This use is prohibited.</p>
+      </td>
+      <td>
+        <ol>
+          <li><a href="/help">Contact a planner.</a></li>
+        </ol>
+      </td>
+
+        <% } else if (answers.required_permit.permit === "5") { %>
+
+      <td>
+        <p class="task">Speak with a planner.</p>
+        <p class="fee">Fee unknown</p>
+      </td>
+      <td>
+        <p>You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong></p>
+        <p>At this time, OpenCounter can't automatically determine which type of planning permit you need.</p>
+      </td>
+      <td>
+        <ol>
+          <li><a href="/help">Contact a planner.</a></li>
+        </ol>
+      </td>
+
+        <% } %>
+
     <% } %>
 
+<% } %>
+
+    </tr>
+
+<% if (!answers.business_name) { %>
+
+    <tr>
+      <td colspan="3"><p>You haven't yet told us the name of this business. <a href="/info/business">Go back &rarr;</a></p></td>
+    </tr>
+
+<% } else { %>
+
+    <% if (!answers.applicant_last_name) { %>
+
+    <tr>
+      <td colspan="3"><p>You haven't yet told us your last name. <a href="/info/applicant">Go back &rarr;</a></p></td>
+    </tr>
+    
+    <% } else { %>
+
+    <% if ((answers.business_name) && (answers.business_name.indexOf(answers.applicant_last_name) >= 0)) { %>
+    <% } else { %>
     <!-- Fictitious Business Name -->
-    <% if ((answers.business_name) && (answers.business_name.indexOf(answers.applicant_last_name) === -1)) { %>
     <tr>
       <td>
         <p class="task">Register a <strong>Fictitious Business Name</strong></p>
@@ -125,37 +254,55 @@
       </td>
     </tr>
     <% } %>
-    <!-- Incorporation -->
+
+    <% } %>
+
+<% } %>
+
+<% if (!answers.business_physical_address_street) { %>
+
+    <tr>
+      <td colspan="3"><p>You haven't yet told us the location of your business. <a href="/location">Go back &rarr;</a></p></td>
+    </tr>
+
+<% } else { %>
+
+    <!-- Business License -->
+    <tr>
+      <td>
+        <p class="task">Get a <strong>Business License</strong>.</p>
+        <p class="fee">$155.35 <a href="#">(how was this calculated?)</a></p>
+      </td>
+      <td>Your business<% if (answers.business_name) { %>, <strong><%= answers.business_name %></strong>,<% } %> is located at <strong><%= answers.business_physical_address_street %></strong>, which is within the Santa Cruz city limits, so you are required to have a City of Santa Cruz Business License Tax Certificate.</td>
+      <td>
+        <ol>
+          <li>Download and print the <a href="#">business license tax</a> form.</li>
+          <li>Fill it out with the <a href="#">information you provided</a>.</li>
+          <li>Bring the completed form and cash or check payment to the Finance Department at City Hall.</li>
+        </ol>
+      </td>
+    </tr>
+
+<% } %>
+
+
+<!--
+
+
+    <!-- Incorporation --
     <tr>
       <td>
         <p class="task">Register your <strong>corporation</strong></p>
         <p class="fee">Varies</p>
       </td>
-      <td>[]</td>
+      <td>You&rsquo;ve told us that this business is structured as a corporation.</td>
       <td>
         <ol>
-          <li></li>
-          <li></li>
+          <li>Speak with an accountant or visit The California Business Portal.</li>
         </ol>
       </td>
     </tr>
-    
-    <!-- Business License -->
-    <tr>
-      <td>
-        <p class="task">Get a <strong>Business License</strong>.</p>
-        <p class="fee">$<%= answers.business_license_fee %> <a href="#">(how was this calculated?)</a></p>
-      </td>
-      <td>Your business, <strong><%= answers.business_name %></strong>, is located at <strong><%= answers.business_physical_address_street %></strong>, which is within the Santa Cruz city limits, so you are required to have a City of Santa Cruz Business License Tax Certificate.</td>
-      <td>
-        <ol>
-          <li>Download and print the <a href="#">business license tax</a> form.</li>
-          <li>Fill it out with the <a href="/helper/city/business_license">information you provided</a>.</li>
-          <li>Bring the completed form and cash or check payment to the Finance Department at City Hall.</li>
-        </ol>
-      </td>
-    </tr>
-    
+        
     <!-- Fire Inspection -->
     <!--
     <tr>
@@ -209,12 +356,6 @@
     </tr>
     -->
 
-
-
   </table>
-  
-  <div class=""></div>
-  
-  <a id="sendToPlanning">Send this to planning!</a>
-  
-</div><!-- /#summary -->
+
+</div>

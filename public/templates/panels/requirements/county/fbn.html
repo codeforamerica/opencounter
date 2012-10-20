@@ -1,37 +1,44 @@
-<div id="requirement_fbn">
+<div class="page-header">
   <h1>Fictitious Business Names</h1>
-  
-  <p>If the name of <%= (answers.is_owner === "true") ? "your" : "this" %> business does not contain <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> last name, you will need to apply to Santa Cruz County for a Fictitious Business Name (FBN).</p>
+</div>
 
-  <p>For example, if <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> last name is Smith and <%= (answers.is_owner === "true") ? "your" : "this" %> business is called "Smith&rsquo;s Tanning," you won't need an FBN. But if <%= (answers.is_owner === "true") ? "your" : "this" %> business is called "Eastside Tanning," you will need an FBN.</p>
+<div class="row-fluid">
+
+  <p class="lead">If the name of <%= (answers.is_owner === "true") ? "your" : "this" %> business does not contain <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> last name, you will need to apply to Santa Cruz County for a Fictitious Business Name (FBN).</p>
+  <p class="lead">For example, if <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> last name is Smith and <%= (answers.is_owner === "true") ? "your" : "this" %> business is called "Smith&rsquo;s Tanning," you won't need an FBN. But if <%= (answers.is_owner === "true") ? "your" : "this" %> business is called "Eastside Tanning," you will need an FBN.</p>
 
   <hr>
 
+  <% if (!answers.business_name) { %>
 
-
-  <% if(!answers.business_name){ %>
-
-  <p>You need to first enter your business name.</p>
+  <p class="lead">You need to first enter your business name.</p>
   <p class="next">Next: <a href="/info/business">business info &rarr;</a></p>
   
-  <% }else if(!answers.applicant_last_name) { %>
+  <% } else if(!answers.applicant_last_name) { %>
 
-  <p>You need to first enter the applicant's name.</p>
-  <p class="next">Next: <a href="/info/applicant">your info &rarr;</a></p>
+  <p class="lead">You need to first enter the applicant's name.</p>
+  
+  <div class="form-actions">
+    <p class="next lead">Next: <a href="/info/applicant">your info &rarr;</a></p>
+  </div>
 
-
-  <% }else{ %>
-    <p>You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> name is <strong><% if (answers.is_owner === "true") { %><%= answers.applicant_first_name %> <%= answers.applicant_last_name %><% } else { %><%= answers.owner_first_name %> <%= answers.owner_last_name %><% } %></strong> and <%= (answers.is_owner === "true") ? "your" : "this" %> business&rsquo;s name is <strong><%= answers.business_name %></strong>.</p>
+  <% } else { %>
+  
+    <p class="lead">You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> name is <strong><% if (answers.is_owner === "true") { %><%= answers.applicant_first_name %> <%= answers.applicant_last_name %><% } else { %><%= answers.owner_first_name %> <%= answers.owner_last_name %><% } %></strong> and <%= (answers.is_owner === "true") ? "your" : "this" %> business&rsquo;s name is <strong><%= answers.business_name %></strong>.</p>
   
   <% if ((answers.business_name) && (answers.business_name.indexOf(answers.applicant_last_name) >= 0)) { %>
   
   <p>This means you won&rsquo;t need an FBN.</p>
 
-  <p class="next">Next: <a href="/requirement/state/incorporation">incorporation &rarr;</a></p>
+  <div class="form-actions">
+    <p class="next lead">Next: <a href="/requirement/state/incorporation">incorporation &rarr;</a></p>
+  </div>
   
   <hr>
-  <% }else { %>
-  <p>This means you will need an FBN from the County of Santa Cruz.</p>
+
+  <% } else { %>
+
+  <p class="lead">This means you will need an FBN from the County of Santa Cruz.</p>
 
   <hr>
 
