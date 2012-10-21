@@ -23,194 +23,477 @@
 
 <hr>
 
-<div class="row-fluid">
+<!-- ####################################################################### -->
 
-    <!--
-    <% var fee = 0;
-       if(answers.location_type == "home"){
-         fee+=221;
-       }
-       if ((answers.business_name) && (answers.business_name.indexOf(answers.applicant_last_name) === -1)) { 
-         fee+=40;
-       }
-       if(answers.business_license_fee){
-         fee+=answers.business_license_fee;
-       } %>
-    <%= fee  %>
-    -->
+<!-- Owner Agent -->
+<div class="row-fluid task">
+  <div class="span12">
   
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Task &amp; Fee</th>
-        <th>Why?</th>
-        <th>How?</th>
-      </tr>
-    </thead>
+  <% if (!answers.is_owner) { %>
 
+    <p class="lead alert alert-error">You haven't yet told us whether you're the owner or filling this out on the owner's behalf. <a href="/info">Go back &rarr;</a></p>
 
-    <!-- Owner Agent -->
-<% if (!answers.is_owner) { %>
-
-    <tr>
-      <td colspan="3"><p>You haven't yet told us whether you're the owner or filling this out on the owner's behalf. <a href="/info">Go back &rarr;</a></p></td>
-    </tr>
-
-<% } else { %>
+  <% } else { %>
 
     <% if (answers.is_owner !== "true") { %>
 
-    <tr>
-      <td>
-        <p class="task">Register as the <strong>Owner Agent</strong>.</p>
-        <p class="fee">$0</p>
-      </td>
-      <td>
-        <p>You&rsquo;ve said that you are completing this application on <%= answers.owner_first_name %> <%= answers.owner_last_name %>&rsquo;s behalf. In order for the City of Santa Cruz to issue business-related permits to you, <%= answers.owner_first_name %> <%= answers.owner_last_name %> must give their written approval. This document serves as the City&rsquo;s authorization to issue permits to you.</p>
-      </td>
-      <td>
-        <ol>
-          <li>Download and print the <a href="/assets/pdf/city/owner-agent.pdf">owner agent form</a>.</li>
-          <li>Fill it out with the <a href="#">information you provided</a>.</li>
-          <li>Notarize it. The city clerk is a notary public.</li>
-          <li>Submit it to the Planning Department.</li>
-        </ol>
-      </td>
-    </tr>
+    <h3 class="task-title">
+      <span class="task-count">1</span>
+      Register as the <strong>Owner Agent</strong>.
+    </h3>
 
+    <div class="row-fluid">
+      <div class="span8 task-why">
+        <p class="lead">You&rsquo;ve said that you are completing this application on <%= answers.owner_first_name %> <%= answers.owner_last_name %>&rsquo;s behalf. In order for the City of Santa Cruz to issue business-related permits to you, <%= answers.owner_first_name %> <%= answers.owner_last_name %> must give their written approval. This document serves as the City&rsquo;s authorization to issue permits to you.</p>
+      </div>
+      <div class="span3 offset1 task-fee">
+        <h4>HOW MUCH IS THE FEE?</h4>
+        <p class="lead">$0</p>
+      </div>
+    </div>
+    
+    <div class="row-fluid task-steps">
+      <div class="span4 task-instructions">
+        <h4>Instructions</h4>
+        <ol>
+          <li>Download and print <a href="/assets/pdf/city/owner-agent.pdf">this form &rarr;</a></li>
+          <li>Fill out this form with the information you provided.</li>
+          <li>Sign and notarize this form. (Tip: The city clerk is a notary public!)</li>
+          <li>Submit this form to the Planning Department. <a href="/help">Make an appointment with a planner &rarr;</a></li>
+        </ol>
+        <p></p>
+      </div>
+      <div class="span8 task-information">
+        <h4>Information You&rsquo;ll Need</h4>
+        <dl style="float: left; width: 33%;">
+          <dt>Application No.</dt>
+          <dd class="muted">(City staff will provide this)</dd>
+          
+          <dt>APN</dt>
+          <dd><%= answers.apn %></dd>
+          
+          <dt>Project Address</dt>
+          <dd><%= answers.business_physical_address_street %></dd>
+          
+          <dt>Date</dt>
+          <dd><% var now = new Date(), today = now.toDateString(); %> <%= today %></dd>
+        </dl>
+        <dl style="float: left; width: 33%;">
+          <dt>Agent Name</dt>
+          <dd><%= answers.applicant_first_name %> <%= answers.applicant_last_name %></dd>
+          
+          <dt>Agent Address</dt>
+          <dd class="muted">(You'll need to add the agent's mailing address)</dd>
+          
+          <dt>Agent Telephone:</dt>
+          <dd><%= answers.applicant_phone %></dd>
+        </dl>
+        <dl style="float: left; width: 33%;">
+          <dt>Owner Name</dt>
+          <dd><%= answers.owner_first_name %> <%= answers.owner_last_name %></dd>
+          
+          <dt>Owner Address</dt>
+          <dd class="muted">(You'll need to add the owner's mailing address)</dd>
+          
+          <dt>Owner Telephone</dt>
+          <dd><%= answers.owner_phone %></dd>
+        </dl>
+      </div>
+    </div><!-- /.task-steps -->
+    
     <% } %>
 
-<% } %>
+  <% } %>
+
+  </div><!-- /.span12 -->
+</div><!-- /.row-fluid -->
+<!-- /Owner Agent -->  
 
 
-    <!-- Planning Permit -->
-    <tr>
+<!-- ####################################################################### -->
+
+<!-- Planning Permit -->
+<div class="row-fluid task">
+  <div class="span12">
 
 <% if (!answers.required_permit) { %>
 
-      <td colspan="3"><p class="error">You haven't yet told us where you'll be working from, so we're not able to tell you which planning permit you'll need. <a href="/location">Go back and choose your business's location &rarr;</a></p></td>
+    <p class="lead alert alert-error">You haven't yet told us where you'll be working from, so we're not able to tell you which planning permit you'll need. <a href="/location">Go back and choose your business's location &rarr;</a></p>
 
 <% } else { %>
 
-    <% if (answers.location_type === "home") { %>
+    <% if (answers.location_type == "home") { %>
 
         <% if (answers.required_permit.home_occ_prohibited == true) { %>
 
-      <td>
-        <p class="task">Speak with a planner.</p>
-        <p class="fee">Fee n/a</p>
-      </td>
-      <td>
-        <p>You&rsquo;ve said that you are working from home and that your business complies with the restrictions on work-from-home businesses, but work-from-home businesses are not allowed in your zoning district.</p>
-      </td>
-      <td>
+    <!-- Home occ in a district that doesn't allow home occs -->
+    <h3 class="task-title">
+      <span class="task-count">2</span>
+      Ask a planner which planning permit you'll need.
+    </h3>
+
+    <div class="row-fluid">
+      <div class="span8 task-why">
+        <p class="lead">You&rsquo;ve said that you are working from home and that your business complies with the restrictions on work-from-home businesses, but work-from-home businesses are not allowed in your zoning district.</p>
+      </div>
+      <div class="span3 offset1 task-fee">
+        <h4>HOW MUCH IS THE FEE?</h4>
+        <p class="lead">Unknown</p>
+      </div>
+    </div>
+
+    <div class="row-fluid task-steps">
+      <div class="span12 task-instructions">
+        <h4>Instructions</h4>
         <ol>
-          <li><a href="/help">Contact a planner.</a></li>
+          <li><a href="/help">Make an appointment with a planner &rarr;</a></li>
         </ol>
-      </td>
+      </div>
+    </div><!-- /.task-steps -->
 
         <% } else { %>
 
-      <td>
-        <p class="task">Get a <strong>Zoning Clearance</strong>.</p>
-        <p class="fee">$221.00 <a href="#">(how is this calculated?)</a></p>
-      </td>
-      <td>
-        <p>You&rsquo;ve said that you are working from home and that your business complies with the restrictions on work-from-home businesses, and your zoning district allows work-from-home businesses, so the only planning permit you need is a zoning clearance.</p>
-      </td>
-      <td>
+    <!-- Home occ in a district that allows home occs -->
+    <h3 class="task-title">
+      <span class="task-count">2</span>
+      Get a zoning clearance.
+    </h3>
+
+    <div class="row-fluid">
+      <div class="span8 task-why">
+        <p class="lead">You&rsquo;ve said that you are working from home and that your business complies with the restrictions on work-from-home businesses, and your zoning district allows work-from-home businesses, so the only planning permit you need is a zoning clearance.</p>
+      </div>
+      <div class="span3 offset1 task-fee">
+        <h4>How much is the fee?</h4>
+        <p class="lead">$221.00</p>
+      </div>
+    </div>
+
+    <div class="row-fluid task-steps">
+      <div class="span4 task-instructions">
+        <h4>Instructions</h4>
         <ol>
-          <li>Download and print the <a href="#">zoning clearance form</a>.</li>
-          <li>Fill it out with the <a href="#">information you provided</a>.</li>
+          <li>Download and print the <a href="#">zoning clearance form &rarr;</a>.</li>
+          <li>Fill it out with the information you provided.</li>
           <li>Submit it to the Planning Department.</li>
         </ol>
-      </td>
+      </div>
+      <div class="span8 task-information">
+        <h4>Information You&rsquo;ll Need</h4>
+        <dl style="float: left; width: 33%;">
+          <dt>Business Address</dt>
+          <dd><%= answers.business_physical_address_street %></dd>
+          <dt>Telephone</dt>
+          <dd><%= answers.business_phone %></dd>
+          <dt>Name of Business</dt>
+          <dd><%= answers.business_name %></dd>
+          <dt>APN</dt>
+          <dd><%= answers.apn %></dd>
+          <dt>Zoning District</dt>
+          <dd><%= answers.zoning_district %></dd>
+          <dt>Applicant Name</dt>
+          <dd><%= answers.applicant_first_name %> <%= answers.applicant_last_name %></dd>
+          <dt>Applicant Phone</dt>
+          <dd><%= answers.applicant_phone %></dd>
+          <dt>Applicant Address</dt>
+          <dd><%= answers.applicant_physical_address_street %></dd>
+          <dt>Description of business (use determination)</dt>
+          <dd><%= answers.business_type %></dd>
+          <dt>Date of Occupancy</dt>
+          <dd><%= answers.business_date_of_occupancy %></dd>
+          <dt>Previous Use</dt>
+          <dd><%= answers.prior_use %></dd>
+          <dt>Area (Total)</dt>
+          <dd><%= answers.area_total %></dd>
+          <dt>Area (First Floor)</dt>
+          <dd><%= answers.area_first_floor %></dd>
+          <dt>Area (Outdoor)</dt>
+          <dd><%= answers.area_outdoor %></dd>
+          <dt>Single tenant? (Y/N)</dt>
+          <dd><%= answers.is_single_tenant %></dd>
+          <dt>Multi-tenant? (Y/N)</dt>
+          <dd><%= answers.is_multi_tenant %></dd>
+          <dt>Car parking spaces</dt>
+          <dd><%= answers.car_parking_spaces %></dd>
+          <dt>Bicycle parking spaces</dt>
+          <dd><%= answers.bicycle_parking_spaces %></dd>
+        </dl>
+      </div><!-- /.task-information -->
+    </div><!-- /.task-steps -->
 
         <% } %>
 
     <% } else { %>
 
-        <% if (answers.required_permit.permit === "1") { %>
+        <% if (answers.required_permit.permit == "1") { %>
 
-      <td>
-        <p class="task">Get a <strong>Zoning Clearance</strong>.</p>
-        <p class="fee">$221.00 <a href="#">(how is this calculated?)</a></p>
-      </td>
-      <td>
-        <p>You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong></p>
-        <p>This use is principally permitted, so you'll need a <em>Zoning Clearance</em>.</p>
-      </td>
-      <td>
+    <!-- Non-home occ that is principally permitted -->
+    <h3 class="task-title">
+      <span class="task-count">2</span>
+      Get a zoning clearance.
+    </h3>
+
+    <div class="row-fluid">
+      <div class="span8 task-why">
+        <p class="lead">You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong>. This use is principally permitted, so the only planning permit you need is a zoning clearance.</p>
+      </div>
+      <div class="span3 offset1 task-fee">
+        <h4>How much is the fee?</h4>
+        <p class="lead">$221.00</p>
+      </div>
+    </div>
+
+    <div class="row-fluid task-steps">
+      <div class="span4 task-instructions">
+        <h4>Instructions</h4>
         <ol>
-          <li>Download and print the <a href="#">zoning clearance form</a>.</li>
-          <li>Fill it out with the <a href="#">information you provided</a>.</li>
+          <li>Download and print the <a href="#">zoning clearance form &rarr;</a>.</li>
+          <li>Fill it out with the information you provided.</li>
           <li>Submit it to the Planning Department.</li>
         </ol>
-      </td>
+      </div>
+      <div class="span8 task-information">
+        <h4>Information You&rsquo;ll Need</h4>
+        <dl style="float: left; width: 33%;">
+          <dt>Business Address</dt>
+          <dd><%= answers.business_physical_address_street %></dd>
+          <dt>Telephone</dt>
+          <dd><%= answers.business_phone %></dd>
+          <dt>Name of Business</dt>
+          <dd><%= answers.business_name %></dd>
+          <dt>APN</dt>
+          <dd><%= answers.apn %></dd>
+          <dt>Zoning District</dt>
+          <dd><%= answers.zoning_district %></dd>
+          <dt>Applicant Name</dt>
+          <dd><%= answers.applicant_first_name %> <%= answers.applicant_last_name %></dd>
+          <dt>Applicant Phone</dt>
+          <dd><%= answers.applicant_phone %></dd>
+          <dt>Applicant Address</dt>
+          <dd><%= answers.applicant_physical_address_street %></dd>
+          <dt>Description of business (use determination)</dt>
+          <dd><%= answers.business_type %></dd>
+          <dt>Date of Occupancy</dt>
+          <dd><%= answers.business_date_of_occupancy %></dd>
+          <dt>Previous Use</dt>
+          <dd><%= answers.prior_use %></dd>
+          <dt>Area (Total)</dt>
+          <dd><%= answers.area_total %></dd>
+          <dt>Area (First Floor)</dt>
+          <dd><%= answers.area_first_floor %></dd>
+          <dt>Area (Outdoor)</dt>
+          <dd><%= answers.area_outdoor %></dd>
+          <dt>Single tenant? (Y/N)</dt>
+          <dd><%= answers.is_single_tenant %></dd>
+          <dt>Multi-tenant? (Y/N)</dt>
+          <dd><%= answers.is_multi_tenant %></dd>
+          <dt>Car parking spaces</dt>
+          <dd><%= answers.car_parking_spaces %></dd>
+          <dt>Bicycle parking spaces</dt>
+          <dd><%= answers.bicycle_parking_spaces %></dd>
+        </dl>
+      </div><!-- /.task-information -->
+    </div><!-- /.task-steps -->
 
-        <% } else if (answers.required_permit.permit === "2") { %>
+        <% } else if (answers.required_permit.permit == "2") { %>
 
-      <td>
-        <p class="task">Get an <strong>Administrative Use Permit</strong>.</p>
-        <p class="fee">Fee varies <a href="#">(how iss this calculated?)</a></p>
-      </td>
-      <td>
-        <p>You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong></p>
-        <p>This use is not principally permitted, so you'll need an <em>Administrative Use Permit</em>.</p>
-      </td>
-      <td>
+    <!-- Non-home occ that needs an AUP -->
+    <h3 class="task-title">
+      <span class="task-count">2</span>
+      Get an administrative use permit.
+    </h3>
+
+    <div class="row-fluid">
+      <div class="span8 task-why">
+        <p class="lead">You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong>. This use is not principally permitted, so the planning permit you need is an administrative use permit.</p>
+      </div>
+      <div class="span3 offset1 task-fee">
+        <h4>How much is the fee?</h4>
+        <p class="lead">$869.00</p>
+      </div>
+    </div>
+
+    <div class="row-fluid task-steps">
+      <div class="span4 task-instructions">
+        <h4>Instructions</h4>
         <ol>
-          <li><a href="/help">Contact a planner.</a></li>
+          <li>Download and print the <a href="#">land use permit form &rarr;</a></li>
+          <li>Fill it out with the information you provided.</li>
+          <li>Submit it to the Planning Department.</li>
         </ol>
-      </td>
-    
-        <% } else if (answers.required_permit.permit === "3") { %>
+      </div>
+      <div class="span8 task-information">
+        <h4>Information You&rsquo;ll Need</h4>
+        <dl style="float: left; width: 33%;">
+          <dt>Business Address</dt>
+          <dd><%= answers.business_physical_address_street %></dd>
+          <dt>Telephone</dt>
+          <dd><%= answers.business_phone %></dd>
+          <dt>Name of Business</dt>
+          <dd><%= answers.business_name %></dd>
+          <dt>APN</dt>
+          <dd><%= answers.apn %></dd>
+          <dt>Zoning District</dt>
+          <dd><%= answers.zoning_district %></dd>
+          <dt>Applicant Name</dt>
+          <dd><%= answers.applicant_first_name %> <%= answers.applicant_last_name %></dd>
+          <dt>Applicant Phone</dt>
+          <dd><%= answers.applicant_phone %></dd>
+          <dt>Applicant Address</dt>
+          <dd><%= answers.applicant_physical_address_street %></dd>
+          <dt>Description of business (use determination)</dt>
+          <dd><%= answers.business_type %></dd>
+          <dt>Date of Occupancy</dt>
+          <dd><%= answers.business_date_of_occupancy %></dd>
+          <dt>Previous Use</dt>
+          <dd><%= answers.prior_use %></dd>
+          <dt>Area (Total)</dt>
+          <dd><%= answers.area_total %></dd>
+          <dt>Area (First Floor)</dt>
+          <dd><%= answers.area_first_floor %></dd>
+          <dt>Area (Outdoor)</dt>
+          <dd><%= answers.area_outdoor %></dd>
+          <dt>Single tenant? (Y/N)</dt>
+          <dd><%= answers.is_single_tenant %></dd>
+          <dt>Multi-tenant? (Y/N)</dt>
+          <dd><%= answers.is_multi_tenant %></dd>
+          <dt>Car parking spaces</dt>
+          <dd><%= answers.car_parking_spaces %></dd>
+          <dt>Bicycle parking spaces</dt>
+          <dd><%= answers.bicycle_parking_spaces %></dd>
+          
+          <!-- @todo add aup additional fields -->
+          
+        </dl>
+      </div><!-- /.task-information -->
+    </div><!-- /.task-steps -->
 
-      <td>
-        <p class="task">Get a <strong>Special Use Permit</strong>.</p>
-        <p class="fee">Fee varies <a href="#">(how is this calculated?)</a></p>
-      </td>
-      <td>
-        <p>You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong></p>
-        <p>This use is not principally permitted, so you'll need a <em>Special Use Permit</em>.</p>
-      </td>
-      <td>
+        <% } else if (answers.required_permit.permit == "3") { %>
+
+    <!-- Non-home occ that needs an SUP -->
+    <h3 class="task-title">
+      <span class="task-count">2</span>
+      Get a special use permit.
+    </h3>
+
+    <div class="row-fluid">
+      <div class="span8 task-why">
+        <p class="lead">You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong>. This use is not principally permitted, so the planning permit you need is a special use permit.</p>
+      </div>
+      <div class="span3 offset1 task-fee">
+        <h4>How much is the fee?</h4>
+        <p class="lead">$1632.00</p>
+      </div>
+    </div>
+
+    <div class="row-fluid task-steps">
+      <div class="span4 task-instructions">
+        <h4>Instructions</h4>
         <ol>
-          <li><a href="/help">Contact a planner.</a></li>
+          <li>Download and print the <a href="#">land use permit form &rarr;</a></li>
+          <li>Fill it out with the information you provided.</li>
+          <li>Submit it to the Planning Department.</li>
         </ol>
-      </td>
+      </div>
+      <div class="span8 task-information">
+        <h4>Information You&rsquo;ll Need</h4>
+        <dl style="float: left; width: 33%;">
+          <dt>Business Address</dt>
+          <dd><%= answers.business_physical_address_street %></dd>
+          <dt>Telephone</dt>
+          <dd><%= answers.business_phone %></dd>
+          <dt>Name of Business</dt>
+          <dd><%= answers.business_name %></dd>
+          <dt>APN</dt>
+          <dd><%= answers.apn %></dd>
+          <dt>Zoning District</dt>
+          <dd><%= answers.zoning_district %></dd>
+          <dt>Applicant Name</dt>
+          <dd><%= answers.applicant_first_name %> <%= answers.applicant_last_name %></dd>
+          <dt>Applicant Phone</dt>
+          <dd><%= answers.applicant_phone %></dd>
+          <dt>Applicant Address</dt>
+          <dd><%= answers.applicant_physical_address_street %></dd>
+          <dt>Description of business (use determination)</dt>
+          <dd><%= answers.business_type %></dd>
+          <dt>Date of Occupancy</dt>
+          <dd><%= answers.business_date_of_occupancy %></dd>
+          <dt>Previous Use</dt>
+          <dd><%= answers.prior_use %></dd>
+          <dt>Area (Total)</dt>
+          <dd><%= answers.area_total %></dd>
+          <dt>Area (First Floor)</dt>
+          <dd><%= answers.area_first_floor %></dd>
+          <dt>Area (Outdoor)</dt>
+          <dd><%= answers.area_outdoor %></dd>
+          <dt>Single tenant? (Y/N)</dt>
+          <dd><%= answers.is_single_tenant %></dd>
+          <dt>Multi-tenant? (Y/N)</dt>
+          <dd><%= answers.is_multi_tenant %></dd>
+          <dt>Car parking spaces</dt>
+          <dd><%= answers.car_parking_spaces %></dd>
+          <dt>Bicycle parking spaces</dt>
+          <dd><%= answers.bicycle_parking_spaces %></dd>
+          
+          <!-- @todo add aup additional fields -->
+          
+        </dl>
+      </div><!-- /.task-information -->
+    </div><!-- /.task-steps -->
 
-        <% } else if (answers.required_permit.permit === "4") { %>
+        <% } else if (answers.required_permit.permit == "4") { %>
 
-      <td>
-        <p class="task">Speak with a planner.</p>
-        <p class="fee">Fee n/a</p>
-      </td>
-      <td>
-        <p>You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong></p>
-        <p>This use is prohibited.</p>
-      </td>
-      <td>
+    <!-- Non-home occ with a prohibited use -->
+    <h3 class="task-title">
+      <span class="task-count">2</span>
+      Ask a planner which planning permit you'll need.
+    </h3>
+
+    <div class="row-fluid">
+      <div class="span8 task-why">
+        <p class="lead">You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong>, but that type of business is not allowed in your zoning district.</p>
+      </div>
+      <div class="span3 offset1 task-fee">
+        <h4>How much is the fee?</h4>
+        <p class="lead">Unknown</p>
+      </div>
+    </div>
+
+    <div class="row-fluid task-steps">
+      <div class="span12 task-instructions">
+        <h4>Instructions</h4>
         <ol>
-          <li><a href="/help">Contact a planner.</a></li>
+          <li><a href="/help">Make an appointment with a planner &rarr;</a></li>
         </ol>
-      </td>
+      </div>
+    </div><!-- /.task-steps -->
 
-        <% } else if (answers.required_permit.permit === "5") { %>
+        <% } else if (answers.required_permit.permit == "5") { %>
 
-      <td>
-        <p class="task">Speak with a planner.</p>
-        <p class="fee">Fee unknown</p>
-      </td>
-      <td>
-        <p>You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong></p>
-        <p>At this time, OpenCounter can't automatically determine which type of planning permit you need.</p>
-      </td>
-      <td>
+    <!-- Non-home occ with an unknown use -->
+    <h3 class="task-title">
+      <span class="task-count">2</span>
+      Ask a planner which planning permit you'll need.
+    </h3>
+
+    <div class="row-fluid">
+      <div class="span8 task-why">
+        <p class="lead">You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong>. OpenCounter can't yet automatically determine which type of planning permit you need, so you'll need to ask a planner.</p>
+      </div>
+      <div class="span3 offset1 task-fee">
+        <h4>HOW MUCH IS THE FEE?</h4>
+        <p class="lead">Unknown</p>
+      </div>
+    </div>
+
+    <div class="row-fluid task-steps">
+      <div class="span12 task-instructions">
+        <h4>Instructions</h4>
         <ol>
-          <li><a href="/help">Contact a planner.</a></li>
+          <li><a href="/help">Make an appointment with a planner &rarr;</a></li>
         </ol>
-      </td>
+      </div>
+    </div><!-- /.task-steps -->
 
         <% } %>
 
@@ -218,72 +501,293 @@
 
 <% } %>
 
-    </tr>
+  </div><!-- /.span12 -->
+</div><!-- /.row-fluid -->
+<!-- /Planning Permit -->  
+
+<!-- ####################################################################### -->
+
+<!-- Fictitious Business Name -->
+<div class="row-fluid task">
+  <div class="span12">
 
 <% if (!answers.business_name) { %>
 
-    <tr>
-      <td colspan="3"><p>You haven't yet told us the name of this business. <a href="/info/business">Go back &rarr;</a></p></td>
-    </tr>
+    <p class="lead alert alert-error">You haven't yet told us the name of this business. <a href="/info/business">Go back &rarr;</a></p>
 
 <% } else { %>
 
     <% if (!answers.applicant_last_name) { %>
 
-    <tr>
-      <td colspan="3"><p>You haven't yet told us your last name. <a href="/info/applicant">Go back &rarr;</a></p></td>
-    </tr>
-    
+    <p class="lead alert alert-error">You haven't yet told us your last name. <a href="/info/applicant">Go back &rarr;</a></p>
+
     <% } else { %>
 
-    <% if ((answers.business_name) && (answers.business_name.indexOf(answers.applicant_last_name) >= 0)) { %>
-    <% } else { %>
-    <!-- Fictitious Business Name -->
-    <tr>
-      <td>
-        <p class="task">Register a <strong>Fictitious Business Name</strong></p>
-        <p class="fee">$40.00 <a href="#">(how was this calculated?)</a></p>
-      </td>
-      <td>You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> name is <strong><% if (answers.is_owner === "true") { %><%= answers.applicant_first_name %> <%= answers.applicant_last_name %><% } else { %><%= answers.owner_first_name %> <%= answers.owner_last_name %><% } %></strong> and <%= (answers.is_owner === "true") ? "your" : "this" %> business&rsquo;s name is <strong><%= answers.business_name %></strong>, so you will need an FBN from the County of Santa Cruz.</td>
-      <td>
+        <% if (answers.business_name.indexOf(answers.applicant_last_name) == -1) { %>
+
+    <!-- FBN required -->
+    <h3 class="task-title">
+      <span class="task-count">3</span>
+      Register a fictitious business name with the county.
+    </h3>
+
+    <div class="row-fluid">
+      <div class="span8 task-why">
+        <p class="lead">You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> name is <strong><% if (answers.is_owner === "true") { %><%= answers.applicant_first_name %> <%= answers.applicant_last_name %><% } else { %><%= answers.owner_first_name %> <%= answers.owner_last_name %><% } %></strong> and <%= (answers.is_owner === "true") ? "your" : "this" %> business&rsquo;s name is <strong><%= answers.business_name %></strong>, so you will need an FBN from the County of Santa Cruz.</p>
+      </div>
+      <div class="span3 offset1 task-fee">
+        <h4>HOW MUCH IS THE FEE?</h4>
+        <p class="lead">$40.00 </p>
+      </div>
+    </div>
+
+    <div class="row-fluid task-steps">
+      <div class="span4 task-instructions">
+        <h4>Instructions</h4>
         <ol>
-          <li>Download and print the <a href="#">fictitious business name form</a>.</li>
-          <li>Fill it out with the <a href="#">information you provided.</a></li>
+          <li>Download and print the <a href="#">fictitious business name form &rarr;</a></li>
+          <li>Fill it out with the information you provided.</li>
           <li>Send the completed form, along with a check made payable to Santa Cruz County Clerk and a legal-size, self-addressed stamped envelope to: Santa Cruz County Clerk, 701 Ocean Street, Room 210, Santa Cruz, CA 95060</li>
         </ol>
-      </td>
-    </tr>
-    <% } %>
+      </div>
+      <div class="span8 task-information">
+        <h4>Information You&rsquo;ll Need</h4>
+        <dl style="float: left; width: 33%;">
+          <dt>Fictitious Business Name</dt>
+          <dd><%= answers.fbn %></dd>
+          
+          <dt>Business Address</dt>
+          <dd><%= answers.business_physical_address_street %></dd>
+          
+          <dt>City</dt>
+          <dd><%= answers.business_physical_address_city %></dd>
+          
+          <dt>State</dt>
+          <dd><%= answers.business_physical_address_state %></dd>
+          
+          <dt>Zip</dt>
+          <dd><%= answers.business_physical_address_zip %></dd>
+          
+          <dt>County</dt>
+          <dd><%= answers.business_physical_address_county %></dd>
+        </dl>
+        <dl style="float: left; width: 33%">
+          <dt>Mailing Address</dt>
+          <dd><%= answers.business_mailing_address_street %></dd>
+          
+          <dt>City</dt>
+          <dd><%= answers.business_mailing_address_city %></dd>
+          
+          <dt>State</dt>
+          <dd><%= answers.business_mailing_address_state %></dd>
+          
+          <dt>Zip</dt>
+          <dd><%= answers.business_mailing_address_zip %></dd>
+
+          <dt>Business is conducted by:</dt>
+          <dd><%= answers.business_structure %></dd>
+        
+          <dt>Started using this name on:</dt>
+          <dd>[unknown]</dd>
+        </dl>
+        <dl style="float: left; width: 33%">
+          <dt>Registered Owner(s):
+          <dd>(Because you indicated that <%= answers.business_name %> is a <%= answers.business_structure %>.</dd>
+
+          <dt>Full Name</dt>
+          <dd><%= answers.owner_first_name %> <%= answers.owner_last_name %></dd>
+        
+          <dt>Residence Address</dt>
+          <dd><%= answers.owner_mailing_address_street %></dd>
+        
+          <dt>City</dt>
+          <dd><%= answers.owner_mailing_address_city %></dd>
+        
+          <dt>State</dt>
+          <dd><%= answers.owner_mailing_address_state %></dd>
+        
+          <dt>Zip</dt>
+          <dd><%= answers.owner_mailing_address_zip %></dd>
+        
+          <dt>(If corp or LLC) State of Incorporation/Organization</dt>
+          <dd><%= answers.business_state_of_incorporation %></dd>
+        </dl>
+      </div>
+    </div><!-- /.task-steps -->
+
+        <% } %>
 
     <% } %>
 
 <% } %>
+
+  </div><!-- /.span12 -->
+</div><!-- /.row-fluid -->
+<!-- /Fictitious Business Name -->
+
+<!-- ####################################################################### -->
+
+<!-- Business License -->
+<div class="row-fluid task">
+  <div class="span12">
 
 <% if (!answers.business_physical_address_street) { %>
 
-    <tr>
-      <td colspan="3"><p>You haven't yet told us the location of your business. <a href="/location">Go back &rarr;</a></p></td>
-    </tr>
+    <p class="lead alert alert-error">You haven't yet told us the location of your business. <a href="/location">Go back &rarr;</a></p>
 
 <% } else { %>
 
-    <!-- Business License -->
-    <tr>
-      <td>
-        <p class="task">Get a <strong>Business License</strong>.</p>
-        <p class="fee">$155.35 <a href="#">(how was this calculated?)</a></p>
-      </td>
-      <td>Your business<% if (answers.business_name) { %>, <strong><%= answers.business_name %></strong>,<% } %> is located at <strong><%= answers.business_physical_address_street %></strong>, which is within the Santa Cruz city limits, so you are required to have a City of Santa Cruz Business License Tax Certificate.</td>
-      <td>
+    <!-- FBN required -->
+    <h3 class="task-title">
+      <span class="task-count">4</span>
+      Get a business license tax certificate.
+    </h3>
+
+    <div class="row-fluid">
+      <div class="span8 task-why">
+        <p class="lead">Your business<% if (answers.business_name) { %>, <strong><%= answers.business_name %></strong>,<% } %> is located at <strong><%= answers.business_physical_address_street %></strong>, which is within the Santa Cruz city limits, so you are required to have a City of Santa Cruz Business License Tax Certificate.</p>
+      </div>
+      <div class="span3 offset1 task-fee">
+        <h4>HOW MUCH IS THE FEE?</h4>
+        <p class="lead">$155.35 (@FIX)</p>
+      </div>
+    </div>
+
+
+    <div class="row-fluid task-steps">
+      <div class="span4 task-instructions">
+        <h4>Instructions</h4>
         <ol>
-          <li>Download and print the <a href="#">business license tax</a> form.</li>
-          <li>Fill it out with the <a href="#">information you provided</a>.</li>
+          <li>Download and print the <a href="#">business license tax form &rarr;</a></li>
+          <li>Fill it out with the information you provided.</li>
           <li>Bring the completed form and cash or check payment to the Finance Department at City Hall.</li>
         </ol>
-      </td>
-    </tr>
+      </div>
+      <div class="span8 task-information">
+        <h4>Information You&rsquo;ll Need</h4>
+        <dl style="float: left; width: 33%;">
+
+          <dt>Business Name</dt>
+          <dd><%= answers.business_name %></dd>
+        
+          <dt>Business Address</dt>
+          <dd><%= answers.business_physical_address_street %></dd>
+        
+          <dt>Business City</dt>
+          <dd><%= answers.business_physical_address_city %></dd>
+        
+          <dt>Business State</dt>
+          <dd><%= answers.business_physical_address_state %></dd>
+        
+          <dt>Business ZIP</dt>
+          <dd><%= answers.business_physical_address_zip %></dd>
+        
+          <dt>Business Phone</dt>
+          <dd><%= answers.business_phone %></dd>
+        </dl>
+
+        <dl style="float: left; width:33%;">
+          <dt>Owner Name</dt>
+          <dd><%= answers.owner_first_name %> <%= answers.owner_last_name %></dd>
+        
+          <dt>Owner Address</dt>
+          <dd><%= answers.owner_physical_address_street %></dd>
+        
+          <dt>Owner City</dt>
+          <dd><%= answers.owner_physical_address_city %></dd>
+        
+          <dt>Owner State</dt>
+          <dd><%= answers.owner_physical_address_state %></dd>
+        
+          <dt>Owner ZIP</dt>
+          <dd><%= answers.owner_physical_address_zip %></dd>
+        
+          <dt>Owner Phone</dt>
+          <dd><%= answers.owner_phone %></dd>
+        
+          <dt>Owner Email</dt>
+          <dd><%= answers.owner_email %></dd>
+
+          <dt>Co-Owner Name</dt>
+          <dd><%= answers.coownerX_name %></dd>
+        
+          <dt>Co-Owner Address</dt>
+          <dd><%= answers.coownerX_address %></dd>
+        
+          <dt>Co-Owner City</dt>
+          <dd><%= answers.coownerX_city %></dd>
+        
+          <dt>Co-Owner State</dt>
+          <dd><%= answers.coownerX_state %></dd>
+        
+          <dt>Co-Owner ZIP</dt>
+          <dd><%= answers.coownerX_zip %></dd>
+        
+          <dt>Co-Owner Phone</dt>
+          <dd><%= answers.coownerX_phone %></dd>
+        
+          <dt>Co-Owner Email</dt>
+          <dd><%= answers.coownerX_email %></dd>
+        
+          <dt>Emergency Contact</dt>
+          <dd><%= answers.emergency_contact %></dd>
+
+        </dl>
+        <dl style="float:left; width: 33%;">
+        
+          <dt>Owner Social Security Number</dt>
+          <dd class="muted">(will be collected by staff later)</dd>
+        
+          <dt>Type of Ownership</dt>
+          <dd><%= answers.business_structure %></dd>
+        
+          <dt>Type of Business (SIC Code based on Use)</dt>
+          <dd><%= answers.SIC_Code %></dd>
+        
+          <dt>Start Date</dt>
+          <dd><%= answers.start_date %></dd>
+        
+          <dt>Number of Residential Units (for rental property businesses)</dt>
+          <dd><%= answers.quantity_residential_units %></dd>
+        
+          <dt>Business Square Feet</dt>
+          <dd><%= answers.square_feet_total %></dd>
+        
+          <dt>APN</dt>
+          <dd><%= answers.apn %></dd>
+        
+          <dt>State ID Number</dt>
+          <dd><%= answers.state_id %></dd>
+        
+          <dt>Sales Tax Number (from Reseller's license)</dt>
+          <dd><%= answers.sales_tax_number %></dd>
+        
+          <dt>FIN / EIN (from IRS)</dt>
+          <dd><%= answers.ein %></dd>
+        
+          <dt>State Contractors License (for licensed professionals)</dt>
+          <dd><%= answers.state_contractors_license %></dd>
+        
+          <dt>Number of Employees</dt>
+          <dd><%= answers.quantity_employees %></dd>
+
+        </dl>
+
+
+      </div>
+    </div><!-- /.task-steps -->
 
 <% } %>
+
+  </div><!-- /.span12 -->
+</div><!-- /.row-fluid -->
+<!-- /Business License -->
+
+<!-- ####################################################################### -->
+
+
+
+
 
 
 <!--
@@ -359,3 +863,22 @@
   </table>
 
 </div>
+
+
+
+
+
+
+    <!--
+    <% var fee = 0;
+       if(answers.location_type == "home"){
+         fee+=221;
+       }
+       if ((answers.business_name) && (answers.business_name.indexOf(answers.applicant_last_name) === -1)) { 
+         fee+=40;
+       }
+       if(answers.business_license_fee){
+         fee+=answers.business_license_fee;
+       } %>
+    <%= fee  %>
+    -->

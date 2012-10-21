@@ -186,6 +186,8 @@ footer p {
   font-weight: bold;
 }
 
+/* === Toggle Styles ======================================================== */
+
 .toggle {
   cursor: pointer;
   border: 1px solid transparent;
@@ -198,6 +200,49 @@ footer p {
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
+
+
+/* === Summary ============================================================== */
+
+.task {
+  margin-bottom: 1em;
+}
+
+
+.task-count {
+  background: #333;
+  border-radius: 50%;
+  padding: 0.1em 0.5em;
+  margin-right: 0.25em;
+  color: #FFF;
+}
+
+.task-title {
+  border-bottom: 5px solid #333;
+}
+
+.task-steps {
+  border-top: 1px dotted #CCC;
+}
+
+.task-steps h4 {
+  padding: 0.5em 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.task-instructions ol,
+.task-information dl {
+  margin-top: 0;
+  padding-top: 1em;
+}
+
+.task-instructions h4,
+.task-instructions ol {
+  border-right: 1px dotted #CCC;
+  padding-right: 10px;
+}
+
 
 /*
 
