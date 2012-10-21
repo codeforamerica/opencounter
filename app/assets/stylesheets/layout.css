@@ -186,6 +186,21 @@ footer p {
   font-weight: bold;
 }
 
+/* === Toggle Styles ======================================================== */
+
+.toggle {
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.toggle:hover {
+  background-color: whiteSmoke;
+  border: 1px solid #E3E3E3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
 
 /* === Summary ============================================================== */
 
