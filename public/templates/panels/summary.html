@@ -653,7 +653,6 @@
       </div>
     </div>
 
-
     <div class="row-fluid task-steps">
       <div class="span4 task-instructions">
         <h4>Instructions</h4>
@@ -784,6 +783,244 @@
 <!-- /Business License -->
 
 <!-- ####################################################################### -->
+
+<% if (answers) { %>
+
+<!-- Environmental Health & Safety -->
+<div class="row-fluid task">
+  <div class="span12">
+
+    <h3 class="task-title">
+      <span class="task-count">#</span>
+      Apply for a food service permit.
+    </h3>
+
+    <div class="row-fluid">
+      <div class="span8 task-why">
+        <p class="lead">Your business<% if (answers.business_name) { %>, <strong><%= answers.business_name %></strong>,<% } %> serves food, so you are required to have a food service permit from the county.</p>
+      </div>
+      <div class="span3 offset1 task-fee">
+        <h4>HOW MUCH IS THE FEE?</h4>
+        <p class="lead">Varies (@FIX)</p>
+      </div>
+    </div>
+
+
+    <div class="row-fluid task-steps">
+      <div class="span4 task-instructions">
+        <h4>Instructions</h4>
+        <ol>
+          <li>Download and print the <a href="http://sccounty01.co.santa-cruz.ca.us/eh/consumer_protection/Food_Establishment_Health_Permit_Application.pdf">health permit application &rarr;</a></li>
+          <li>Fill it out with the information you provided.</li>
+          <li>Mail the completed form and cash or check payment to Environmental Health Services.</li>
+          <li>This begins the process for a food service permit. This still requires an inspection.</li>
+        </ol>
+      </div>
+      <div class="span8 task-information">
+        <h4>Information You&rsquo;ll Need</h4>
+        <dl style="float: left; width: 33%;">
+          <dt>OW</dt>
+          <dd class="muted">(determined by EH&amp;S staff)</dd>
+        
+          <dt>FA</dt>
+          <dd class="muted">(determined by EH&amp;S staff)</dd>
+        
+          <dt>Permit #</dt>
+          <dd class="muted">(determined by EH&amp;S staff)</dd>
+        
+          <dt>Fee (Cash/ Check)</dt>
+          <dd class="muted">(determined by EH&amp;S staff)</dd>
+        
+          <dt>Record ID#</dt>
+          <dd class="muted">(determined by EH&amp;S staff)</dd>
+        
+          <dt>PE:16</dt>
+          <dd class="muted">(determined by EH&amp;S staff)</dd>
+        
+          <dt>Dist #</dt>
+          <dd class="muted">(determined by EH&amp;S staff)</dd>
+        
+          <dt>LOS</dt>
+          <dd class="muted">(determined by EH&amp;S staff)</dd>
+        
+          <dt>Application Approved by</dt>
+          <dd class="muted">(determined by EH&amp;S staff)</dd>
+        
+          <dt>REGS Date</dt>
+          <dd class="muted">(determined by EH&amp;S staff)</dd>
+        </dl>
+        <dl style="float: left; width:33%;">
+          <dt>Owner Name</dt>
+          <dd><%= answers.owner_first_name %> <%= answers.owner_last_name %></dd>
+        
+          <dt>Owner Address</dt>
+          <dd><%= answers.owner_physical_address_street %></dd>
+        
+          <dt>Owner City</dt>
+          <dd><%= answers.owner_physical_address_city %></dd>
+        
+          <dt>Owner State</dt>
+          <dd><%= answers.owner_physical_address_state %></dd>
+        
+          <dt>Owner ZIP</dt>
+          <dd><%= answers.owner_physical_address_zip %></dd>
+        
+          <dt>Owner Phone</dt>
+          <dd><%= answers.owner_phone %></dd>
+        
+          <dt>Owner Email</dt>
+          <dd><%= answers.owner_email %></dd>
+        
+          <dt>Co-Owner Name</dt>
+          <dd><%= answers.ownerX_name %></dd>
+        
+          <dt>Co-Owner Address</dt>
+          <dd><%= answers.ownerX_address %></dd>
+        
+          <dt>Co-Owner City</dt>
+          <dd><%= answers.ownerX_city %></dd>
+        
+          <dt>Co-Owner State</dt>
+          <dd><%= answers.ownerX_state %></dd>
+        
+          <dt>Co-Owner ZIP</dt>
+          <dd><%= answers.ownerX_zip %></dd>
+        
+          <dt>Co-Owner Phone</dt>
+          <dd><%= answers.ownerX_phone %></dd>
+        
+          <dt>Co-Owner Email</dt>
+          <dd><%= answers.ownerX_email %></dd>
+        </dl>
+        <dl class="float: left; width: 33%;">
+          <dt>Business Name</dt>
+          <dd><%= answers.business_name %></dd>
+        
+          <dt>Business Address</dt>
+          <dd><%= answers.business_physical_address_street %></dd>
+        
+          <dt>Business City</dt>
+          <dd><%= answers.business_city %></dd>
+        
+          <dt>Business State</dt>
+          <dd><%= answers.business_state %></dd>
+        
+          <dt>Business ZIP</dt>
+          <dd><%= answers.business_zip %></dd>
+        
+          <dt>Business Phone</dt>
+          <dd><%= answers.business_phone %></dd>
+
+          <dt> Previous Use </dt>
+          <dd><%= answers.prior_use %></dd>
+        
+          <dt>Application Type</dt>
+          <dd>(New Application / Renewal / Change in Ownership / Change in Category</dd>
+          
+          <dt>Business Type</dt>
+          <dd>@TODO see comment<!-- 
+            <ul>
+              <li>Food Service: 0-25 seats</li>
+              <li>Food Service: 26-50 seats</li>
+              <li>Food Service: 51-75 seats</li>
+              <li>Food Service: 76-100 seats</li>
+              <li>Bed &amp; Breakfast</li>
+              <li>Theater</li>
+              <li>Snack Bar</li>
+              <li>Bar - on sale, no food</li>
+              <li>Caterer</li>
+              <li>Bakery: 0-2000 square feet</li>
+              <li>Bakery: 2,001-2,999 square feet</li>
+              <li>Bakery: 3,000 square feet or greater</li>
+              <li>Food processing: 0-1,000 square feet</li>
+              <li>Food processing: 1,000+ feet<sup>2</sup></li>
+              <li>Food vending: &lt;= 2,000 feet<sup>2</sup></li>
+              <li>Food vending: 2,000 square feet or less +1 food prep/proc</li>
+              <li>Food vending: 2,000 square feet or less +2 food prep/proc</li>
+              <li>Food vending: 2,000 square feet or less +3 food prep/proc</li>
+              <li>Food vending: 2,001 square feet or greater</li>
+              <li>Food vending: 2,001 square feet or greater +1 food prep/proc</li>
+              <li>Food vending: 2,001 square feet or greater +2 food prep/proc</li>
+              <li>Food vending: 2,001 square feet or greater +3 food prep/proc</li>
+              <li>Limited food sales</li>
+              <li>Swap meet pre-packaged</li>
+              <li>Limited food sales</li>
+              <li>Produce stand</li>
+              <li>Certified farmers market</li>
+              <li>Commissary, 0-1000 feet<sup>2</sup></li>
+              <li>Commissary, 1,000 feet<sup>2</sup> or larger</li>
+              <li>Food: Central established kitchen, less than 1000 feet<sup>2</sup></li>
+              <li>Food: Central established kitchen, 1000 feet<sup>2</sup> or larger</li>
+              <li>Other</li>
+            </ul> -->
+          </dd>
+        </dl>
+      </div>
+    </div><!-- /.task-steps -->
+
+  </div><!-- /.span12 -->
+</div><!-- /.row-fluid -->
+<!-- /Environmental Health & Safety -->
+
+<% } %>
+
+<!-- ####################################################################### -->
+
+<!-- Incorporation -->
+<div class="row-fluid task">
+  <div class="span12">
+
+
+
+  </div><!-- /.span12 -->
+</div><!-- /.row-fluid -->
+<!-- /Incorporation -->
+
+<!-- ####################################################################### -->
+
+<!-- Sign Permit -->
+<div class="row-fluid task">
+  <div class="span12">
+
+
+
+  </div><!-- /.span12 -->
+</div><!-- /.row-fluid -->
+<!-- /Sign Permit -->
+
+<!-- ####################################################################### -->
+
+<!-- Building Permit -->
+<div class="row-fluid task">
+  <div class="span12">
+
+
+
+  </div><!-- /.span12 -->
+</div><!-- /.row-fluid -->
+<!-- /Building Permit -->
+
+<!-- ####################################################################### -->
+
+<!-- Utilities -->
+<div class="row-fluid task">
+  <div class="span12">
+
+
+
+  </div><!-- /.span12 -->
+</div><!-- /.row-fluid -->
+<!-- /Utilities -->
+
+
+
+
+
+
+
+
+
+
 
 
 
