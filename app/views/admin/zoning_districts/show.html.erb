@@ -5,6 +5,8 @@
   <div class="flash notice"><%= flash[:notice] %></div>
 <% end %>
 
+<%= will_paginate @cic_code_zoning_districts, :container => false %>
+
 <% if @zoning_district.cic_code_zoning_districts.blank? %>
   <p>There are no CIC Codes associated with this Zoning District.</p>
 <% else %>
@@ -40,3 +42,4 @@
     </tbody>
   </table>
 <% end %>
+

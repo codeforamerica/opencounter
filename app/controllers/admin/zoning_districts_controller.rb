@@ -8,7 +8,8 @@ class Admin::ZoningDistrictsController < ApplicationController
   
   def show
     @zoning_district = ZoningDistrict.find(params[:id])
-    @cic_code_zoning_districts = @zoning_district.cic_code_zoning_districts.sort_by {|x| x.cic_code.code}  
+    @cic_code_zoning_districts = @zoning_district.cic_code_zoning_districts.paginate(
+      :page => params[:page])
   end
   
   def edit
