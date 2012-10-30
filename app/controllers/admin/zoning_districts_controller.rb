@@ -1,5 +1,6 @@
 class Admin::ZoningDistrictsController < ApplicationController
   layout 'admin'
+  can_edit_on_the_spot
   
   def index
     @zoning_districts = ZoningDistrict.all(:order => :code)
