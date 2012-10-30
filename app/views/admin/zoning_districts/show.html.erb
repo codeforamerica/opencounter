@@ -21,7 +21,7 @@
         <th>Subindustry</th>
         <th>Permission Name</th>
         <th>Explanation (if Unknown)</th>
-        <th>Home Occ Prohibited</th>
+        <th>Home Occ. Prohibited?</th>
       </tr>
     </thead>
     <tbody>
@@ -34,7 +34,7 @@
             <td><%= cic_code_zoning_district.cic_code.subindustry %></td>
             <td width="30%"><%= on_the_spot_edit cic_code_zoning_district, :permission, :display_text => cic_code_zoning_district.permission_name, :type => :select, :data => [ [1,'Zoning Clearance'], [2,'AUP'], [3,'SUP'], [4,'Prohibited'], [5,'Unknown'] ] %></td>
             <td><%= on_the_spot_edit cic_code_zoning_district, :notes %></td>
-            <td><%= on_the_spot_edit cic_code_zoning_district, :home_occ_prohibited, :type => :checkbox %></td>
+            <td><%= on_the_spot_edit cic_code_zoning_district, :home_occ_prohibited, :display_method => :home_occ_prohibited_name, :type => :checkbox %></td>
         </tr>
       <% end %>
     </tbody>

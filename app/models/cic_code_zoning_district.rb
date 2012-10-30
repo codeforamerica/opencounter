@@ -18,4 +18,8 @@ class CicCodeZoningDistrict < ActiveRecord::Base
     end
   end
 
+  def home_occ_prohibited_name
+    home_occ_prohibited ? "Yes" : "No"
+  end
+
 end

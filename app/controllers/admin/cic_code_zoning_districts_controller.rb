@@ -1,6 +1,5 @@
 class Admin::CicCodeZoningDistrictsController < ApplicationController
   layout 'admin'
-  can_edit_on_the_spot
   
   def show
     @cic_code_zoning_district = CicCodeZoningDistrict.find(params[:id])
