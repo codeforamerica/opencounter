@@ -5,6 +5,8 @@
   <div class="flash notice"><%= flash[:notice] %></div>
 <% end %>
 
+<%= will_paginate @cic_code_zoning_districts, :container => false %>
+
 <% if @zoning_district.cic_code_zoning_districts.blank? %>
   <p>There are no CIC Codes associated with this Zoning District.</p>
 <% else %>
@@ -19,34 +21,25 @@
         <th>Code</th>
         <th>Industry</th>
         <th>Subindustry</th>
-        <th>Zoning Clearance</th>
-        <th>AUP</th>
-        <th>SUP</th>
-        <th>Prohibited</th>
-        <th>Unknown</th>
+        <th>Permission Name</th>
         <th>Explanation (if Unknown)</th>
-        <th>Home Occ Prohibited</th>
-        <th></th>
+        <th>Home Occ. Prohibited?</th>
       </tr>
     </thead>
     <tbody>
       <% for cic_code_zoning_district in @cic_code_zoning_districts %>
           <tr class="<%= cycle("odd", "even") -%>">
-            <%= form_for(cic_code_zoning_district, :url => admin_cic_code_zoning_district_path(cic_code_zoning_district, :zoning_district_id => @zoning_district.id), :html => {:method => :put}) do |f| %>
-            <td><%= link_to cic_code_zoning_district.cic_code.code, edit_admin_cic_code_path(cic_code_zoning_district.cic_code, :zoning_district_id => @zoning_district.id) %></td>
+            <td>
+              <%= link_to cic_code_zoning_district.cic_code.code, edit_admin_cic_code_path(cic_code_zoning_district.cic_code, :zoning_district_id => @zoning_district.id) %>
+            </td>
             <td><%= cic_code_zoning_district.cic_code.industry %></td>
             <td><%= cic_code_zoning_district.cic_code.subindustry %></td>
-            <td align="center"><%= f.radio_button :permission, 1 %></td>
-            <td align="center"><%= f.radio_button :permission, 2 %></td>
-            <td align="center"><%= f.radio_button :permission, 3 %></td>
-            <td align="center"><%= f.radio_button :permission, 4 %></td>
-            <td align="center"><%= f.radio_button :permission, 5 %></td>
-            <td><%= f.text_field :notes %></td>
-            <td align="center"><%= f.check_box :home_occ_prohibited %></td>
-            <td><%= f.submit 'Update', :class => 'btn btn-success btn-small' %></td>
-          <% end %>
+            <td width="30%"><%= on_the_spot_edit cic_code_zoning_district, :permission, :display_text => cic_code_zoning_district.permission_name, :type => :select, :data => [ [1,'Zoning Clearance'], [2,'AUP'], [3,'SUP'], [4,'Prohibited'], [5,'Unknown'] ] %></td>
+            <td><%= on_the_spot_edit cic_code_zoning_district, :notes %></td>
+            <td><%= on_the_spot_edit cic_code_zoning_district, :home_occ_prohibited, :display_method => :home_occ_prohibited_name, :type => :checkbox %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 <% end %>
+
