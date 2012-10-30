@@ -25,7 +25,7 @@
       </tr>
     </thead>
     <tbody>
-      <% for cic_code_zoning_district in @cic_code_zoning_districts.first(10) %>
+      <% for cic_code_zoning_district in @cic_code_zoning_districts %>
           <tr class="<%= cycle("odd", "even") -%>">
             <td>
               <%= link_to cic_code_zoning_district.cic_code.code, edit_admin_cic_code_path(cic_code_zoning_district.cic_code, :zoning_district_id => @zoning_district.id) %>
