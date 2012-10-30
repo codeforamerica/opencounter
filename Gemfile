@@ -14,6 +14,9 @@ gem 'requirejs-rails'
 
 gem 'inherited_resources'
 
+# to split up the long admin forms
+gem 'will_paginate', '~> 3.0'
+
 # To use Formtastic, a Rails form builder plugin
 gem 'formtastic'
 
