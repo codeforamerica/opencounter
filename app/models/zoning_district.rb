@@ -11,6 +11,11 @@ class ZoningDistrict < ActiveRecord::Base
   def active_cic_codes
     self.cic_codes.where('permission IN (?)', [1,2,3,4])
   end
+
+  def home_occ_prohibited_name
+    home_occ_prohibited ? "Yes" : "No"
+  end
+
   
   private
   
@@ -19,4 +24,6 @@ class ZoningDistrict < ActiveRecord::Base
       CicCodeZoningDistrict.find_or_create_by_cic_code_id_and_zoning_district_id(cic_code.id, self.id)
     end
   end
+
+
 end
