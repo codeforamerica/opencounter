@@ -106,9 +106,9 @@ header {
   }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 800px) {
   #nav-main {
-    background: transparent;
+    background: #1791BE;
   }
 
   #nav-main li,
@@ -116,6 +116,7 @@ header {
     float: none;
   }
   #nav-main a {
+    background: transparent;
     margin-right: 0;
     border-bottom: 3px solid #FFF;
   }
@@ -123,7 +124,17 @@ header {
     background-position: right -48px;
     border-right: 0;
   }
+  #nav-main a:after {
+    content: " \2192"; 
+  }
+  #nav-main a:hover,
+  #nav-main a:active,
+  #nav-main .current a {
+    background: #8BC8DE;
+  }
+
 }
+
 
 /* === Sidebar Navigation =================================================== */
 
