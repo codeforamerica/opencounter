@@ -29,16 +29,12 @@
       <dt>Special Use Permit (<abbr title="Special Use Permit">SUP</abbr>)</dt>
       <dd>Requires a high level of scrutiny, typically due to the size of the project and its impact on the neighborhood. These applications go to Planning Commission, a panel of seven City Council appointees who meet twice a month. SUPs take 8-12 weeks.</dd>
     </dl>
->>>>>>> 07253dcf558fb1955f444364b1e3fefc8e35f528
   </div>
 
   <div class="span4">
     <h4>Is your use prohibited?<br>Choose a different location.</h4>
     <p>If your use is explicitly prohibited, you should probably choose a different site for your business.</p>
-<<<<<<< HEAD
-=======
     <p>The alternative, changing the zoning for that property, is very difficult, rare, and can take years. It is not recommended, but you are welcome to <a href="/help">contact the Planning Department</a> for more information.</p>
->>>>>>> 07253dcf558fb1955f444364b1e3fefc8e35f528
   </div>
 
 </div>
@@ -51,12 +47,12 @@
 
   <% if (!answers.location_type) { %>
     <p class="lead">You haven&rsquo;t yet told us your business&rsquo;s location.</p>
-    <p class="next lead">Go back and <a href="/location">tell us whether you're working from home or a commercial space &rarr;</a></p>
+    <p class="next lead">Go back and <a href="/location">tell us whether you&rsquo;re working from home or a commercial space &rarr;</a></p>
   <% } else { %>
     
     <% if (!answers.required_permit) { %>
       <p class="lead">You&rsquo;ve told us that you&rsquo;re <strong>working <% if (answers.location_type === "home") { %>from home<% } else { %>out of a commercial space<% } %></strong>, but you haven&rsquo;t yet told us the location.</p>
-      <p class="next lead">Go back and <a href="/location/check">check the site's zoning &rarr;</a></p>
+      <p class="next lead">Go back and <a href="/location/check">check the site&rsquo;s zoning &rarr;</a></p>
     <% } else { %>
     
       <% if (answers.location_type === "home") { %>
@@ -65,7 +61,7 @@
         
         <% if (answers.required_permit.home_occ_prohibited == true) { %>
 
-        <p class="lead error">We're sorry, but work-from-home businesses are not allowed in this zoning district. <a href="/help">Talk to a planner &rarr;</a></p>
+        <p class="lead error">We&rsquo;re sorry, but work-from-home businesses are not allowed in this zoning district. <a href="/help">Talk to a planner &rarr;</a></p>
 
         <% } else { %>
 
@@ -77,7 +73,7 @@
             <input type="text" name="applicant_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
           </label>
           <label>
-            Your Business's Phone Number
+            Your Business&rsquo;s Phone Number
             <input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
           </label>
         </form>
@@ -90,7 +86,7 @@
         
         <% if (answers.required_permit.permit == "1") { %>
 
-          <p>This use is principally permitted, so you'll need a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
+          <p>This use is principally permitted, so you&rsquo;ll need a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
 
           <form method="post" action="#" id="form_zoning_clearance">
             <label>
@@ -98,27 +94,27 @@
               <input type="text" name="applicant_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
             </label>
             <label>
-              Your Business's Phone Number
+              Your Business&rsquo;s Phone Number
               <input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
             </label>
           </form>
 
         <% } else if (answers.required_permit.permit == "2") { %>
 
-          <p>This use is not principally permitted, so you'll need an <em>Administrative Use Permit</em>. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
+          <p>This use is not principally permitted, so you&rsquo;ll need an <em>Administrative Use Permit</em>. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
         
         <% } else if (answers.required_permit.permit == "3") { %>
 
-          <p>This use is not principally permitted, so you'll need a <em>Special Use Permit</em>. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
+          <p>This use is not principally permitted, so you&rsquo;ll need a <em>Special Use Permit</em>. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
 
         <% } else if (answers.required_permit.permit == "4") { %>
         
-          <p>We're sorry, but businesses of this type are prohibited in this zoning district. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
+          <p>We&rsquo;re sorry, but businesses of this type are prohibited in this zoning district. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
 
         <% } else if (answers.required_permit.permit == "5") { %>
 
-          <p>We're sorry, but right now OpenCounter can't automatically determine what type of use permit you need.</p>
-          <p>Help us make OpenCounter smarter: please <a href="/help">contact the Planning Department</a>, and they'll help you -- and OpenCounter! -- figure out which type of use permit you need. Thank you for helping out the next person!</p>
+          <p>We&rsquo;re sorry, but right now OpenCounter can&rsquo;t automatically determine what type of use permit you need.</p>
+          <p>Help us make OpenCounter smarter: please <a href="/help">contact the Planning Department</a>, and they&rsquo;ll help you -- and OpenCounter! -- figure out which type of use permit you need. Thank you for helping out the next person!</p>
           <% if (answers.required_permit.notes) { %><p>Some notes: <%= answers.required_permit.notes %></p><% } %>
 
         <% } %>
