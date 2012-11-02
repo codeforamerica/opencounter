@@ -21,3 +21,9 @@
 .DS_Store
 
 /config/database.yml
+
+# exclude ctags
+TAGS
+!TAGS/
+tags
+!tags/

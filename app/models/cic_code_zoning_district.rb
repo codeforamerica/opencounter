@@ -3,6 +3,9 @@ class CicCodeZoningDistrict < ActiveRecord::Base
   belongs_to :zoning_district
   attr_accessible :cic_code_id, :home_occ_prohibited, :notes, :permission, :zoning_district_id
   
+  #scope :sorted_by_cic_code, ->(cic_code) {  }
+  scope :sorted_by_cic_code, joins(:cic_code).order('cic_codes.code ASC')
+
   def self.cross_reference(cic_code_id, zoning_district_id)
     self.where(cic_code_id: cic_code_id, zoning_district_id: zoning_district_id).try(:first)
   end

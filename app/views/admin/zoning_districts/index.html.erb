@@ -6,6 +6,7 @@
       <th>Code</th>
       <th>Name</th>
       <th>CIC Codes</th>
+      <th>Home Occ. Prohibited?</th>
       <th></th>
       <th></th>
     </tr>
@@ -15,6 +16,7 @@
       <td><%= zone.code %></td>
       <td><%= zone.name %></td>
       <td width="100px"><%= zone.active_cic_codes.size %></td>
+      <td width="130px"><%= on_the_spot_edit zone, :home_occ_prohibited, :type => :checkbox, :display_method => :home_occ_prohibited_name %></td>
       <td width="80px"><%= link_to 'Permissions', admin_zoning_district_path(zone), :class => 'btn btn-mini btn-info' %></td>
       <td width="50px"><%= link_to 'Edit', edit_admin_zoning_district_path(zone), :class => 'btn btn-mini btn-info' %></td>
     </tr>

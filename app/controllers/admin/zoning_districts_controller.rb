@@ -8,7 +8,7 @@ class Admin::ZoningDistrictsController < ApplicationController
   
   def show
     @zoning_district = ZoningDistrict.find(params[:id])
-    @cic_code_zoning_districts = @zoning_district.cic_code_zoning_districts.paginate(
+    @cic_code_zoning_districts = @zoning_district.cic_code_zoning_districts.sorted_by_cic_code.paginate(
       :page => params[:page])
   end
   
