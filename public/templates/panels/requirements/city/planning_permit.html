@@ -67,15 +67,62 @@
 
         <p class="lead success">The use permit you need is a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
 
+        <p class="lead">We'll need this additional information:</p>
         <form method="post" action="#" id="form_zoning_clearance">
-          <label>
-            Your Phone Number
-            <input type="text" name="applicant_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
-          </label>
-          <label>
-            Your Business&rsquo;s Phone Number
-            <input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
-          </label>
+
+          <div class="control-group">
+            <label class="control-label">Your Phone Number</label>
+            <div class="controls"><input type="text" name="applicant_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>"></div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Your Business&rsquo;s Phone Number</label>
+            <div class="controls"><input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>"></div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Date of Occupancy</label>
+            <div class="controls"><input type="text" name="business_date_of_occupancy" placeholder="" value="<%= answers.business_date_of_occupancy %>"></div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Previous Use</label>
+            <div class="controls"><input type="text" name="prior_use" placeholder="" value="<%= answers.prior_use %>"></div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Area (Total), in square feet</label>
+            <div class="controls"><input type="text" name="area_total" placeholder="" value="<%= answers.area_total %>"></div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Area (First Floor), in square feet</label>
+            <div class="controls"><input type="text" name="area_first_floor" placeholder="" value="<%= answers.area_first_floor %>"></div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Area (Outdoor)</label>
+            <div class="controls"><input type="text" name="area_outdoor" placeholder="" value="<%= answers.area_outdoor %>"></div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Single or multi-tenant?</label>
+            <div class="controls">
+              <input type="checkbox" name="is_single_tenant" <% if (answers.is_single_tenant) { %>checked="checked"<% } %>> Single Tenant
+              <input type="checkbox" name="is_multi_tenant"  <% if (answers.is_multi_tenant)  { %>checked="checked"<% } %>> Multi Tenant
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">How many car parking spaces?</label>
+            <div class="controls"><input type="text" name="car_parking_spaces" placeholder="" value="<%= answers.car_parking_spaces %>"></div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">How many bicycle parking spaces?</label>
+            <div class="controls"><input type="text" name="bicycle_parking_spaces" placeholder="" value="<%= answers.bicycle_parking_spaces %>"></div>
+          </div>
+
         </form>
 
         <% } %>
@@ -88,15 +135,62 @@
 
           <p>This use is principally permitted, so you&rsquo;ll need a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
 
+          <p class="lead">We'll need this additional information:</p>
           <form method="post" action="#" id="form_zoning_clearance">
-            <label>
-              Your Phone Number
-              <input type="text" name="applicant_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
-            </label>
-            <label>
-              Your Business&rsquo;s Phone Number
-              <input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
-            </label>
+  
+            <div class="control-group">
+              <label class="control-label">Your Phone Number</label>
+              <div class="controls"><input type="text" name="applicant_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>"></div>
+            </div>
+  
+            <div class="control-group">
+              <label class="control-label">Your Business&rsquo;s Phone Number</label>
+              <div class="controls"><input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>"></div>
+            </div>
+  
+            <div class="control-group">
+              <label class="control-label">Date of Occupancy</label>
+              <div class="controls"><input type="text" name="business_date_of_occupancy" placeholder="" value="<%= answers.business_date_of_occupancy %>"></div>
+            </div>
+  
+            <div class="control-group">
+              <label class="control-label">Previous Use</label>
+              <div class="controls"><input type="text" name="prior_use" placeholder="" value="<%= answers.prior_use %>"></div>
+            </div>
+  
+            <div class="control-group">
+              <label class="control-label">Area (Total), in square feet</label>
+              <div class="controls"><input type="text" name="area_total" placeholder="" value="<%= answers.area_total %>"></div>
+            </div>
+  
+            <div class="control-group">
+              <label class="control-label">Area (First Floor), in square feet</label>
+              <div class="controls"><input type="text" name="area_first_floor" placeholder="" value="<%= answers.area_first_floor %>"></div>
+            </div>
+  
+            <div class="control-group">
+              <label class="control-label">Area (Outdoor)</label>
+              <div class="controls"><input type="text" name="area_outdoor" placeholder="" value="<%= answers.area_outdoor %>"></div>
+            </div>
+  
+            <div class="control-group">
+              <label class="control-label">Single or multi-tenant?</label>
+              <div class="controls">
+                <input type="checkbox" name="is_single_tenant" <% if (answers.is_single_tenant) { %>checked="checked"<% } %>> Single Tenant
+                <input type="checkbox" name="is_multi_tenant"  <% if (answers.is_multi_tenant)  { %>checked="checked"<% } %>> Multi Tenant
+              </div>
+            </div>
+  
+            <div class="control-group">
+              <label class="control-label">How many car parking spaces?</label>
+              <div class="controls"><input type="text" name="car_parking_spaces" placeholder="" value="<%= answers.car_parking_spaces %>"></div>
+            </div>
+  
+            <div class="control-group">
+              <label class="control-label">How many bicycle parking spaces?</label>
+              <div class="controls"><input type="text" name="bicycle_parking_spaces" placeholder="" value="<%= answers.bicycle_parking_spaces %>"></div>
+            </div>
+  
           </form>
 
         <% } else if (answers.required_permit.permit == "2") { %>
