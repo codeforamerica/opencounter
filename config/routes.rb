@@ -19,7 +19,12 @@ Opencounter::Application.routes.draw do
         put :update_attribute_on_the_spot
         get :get_attribute_on_the_spot
       end
+      member do
+        get :requirements
+      end
     end
+    
+    resources :requirements
 
     resources :cic_code_zoning_districts do
       collection do

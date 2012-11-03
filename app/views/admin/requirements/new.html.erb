@@ -1,0 +1,12 @@
+<h1>New Requirement</h1>
+
+<%= form_for(:requirement, :url => admin_requirements_path, :html => {:method => :post}) do |f| %>
+	<%= render :partial => 'form', :locals => {:f => f} %>
+
+  <div class="actions">
+    <br />
+    <%= f.submit 'Save', :class => 'btn btn-success btn-large' %>
+    &nbsp;&nbsp;
+    <%= link_to 'Cancel', admin_requirements_path %>
+  </div>
+<% end %>

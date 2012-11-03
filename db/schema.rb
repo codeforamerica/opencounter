@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120928225408) do
+ActiveRecord::Schema.define(:version => 20121102212652) do
 
   create_table "answers", :force => true do |t|
     t.text     "value"
@@ -56,6 +56,11 @@ ActiveRecord::Schema.define(:version => 20120928225408) do
   add_index "cic_codes", ["code"], :name => "index_cic_codes_on_code"
   add_index "cic_codes", ["keywords"], :name => "index_cic_codes_on_keywords"
 
+  create_table "cic_codes_requirements", :id => false, :force => true do |t|
+    t.integer "cic_code_id"
+    t.integer "requirement_id"
+  end
+
   create_table "cic_codes_sic_codes", :id => false, :force => true do |t|
     t.integer "cic_code_id"
     t.integer "sic_code_id"
@@ -98,6 +103,14 @@ ActiveRecord::Schema.define(:version => 20120928225408) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.string   "jurisdiction"
+  end
+
+  create_table "requirements", :force => true do |t|
+    t.string   "name"
+    t.text     "notes"
+    t.string   "jurisdiction"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "sic_codes", :force => true do |t|

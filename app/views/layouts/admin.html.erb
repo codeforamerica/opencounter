@@ -39,6 +39,11 @@
 
   <body>
     <div class="container-fluid">
+      <h4>
+        <%= link_to 'Zoning Districts', admin_zoning_districts_url %> |
+        <%= link_to 'CIC Codes', admin_cic_codes_url %> |
+        <%= link_to 'Requirements', admin_requirements_url %>
+      </h4>
       <%= yield %>
     </div>
   </body>

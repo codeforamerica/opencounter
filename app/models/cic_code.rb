@@ -4,6 +4,7 @@ class CicCode < ActiveRecord::Base
   has_many :cic_code_zoning_districts, :dependent => :destroy
   has_many :zoning_districts, :through => :cic_code_zoning_districts, :dependent => :destroy, :order => "code ASC"
   has_and_belongs_to_many :sic_codes, :uniq => true
+  has_and_belongs_to_many :requirements, :uniq => true
   attr_accessible :code, :industry, :subindustry, :home_occ_prohibited, :keywords, :parent_id
   after_create :create_zoning_district_connections
   
@@ -25,6 +26,11 @@ class CicCode < ActiveRecord::Base
     terms += subindustry + ', ' if subindustry.present?
     terms += keywords + ', ' if keywords.present?
     return terms
+  end
+  
+  def requirement_names
+    requirement_names = self.requirements.collect {|x| x.name }
+    requirement_names.join(', ')
   end
   
   private

@@ -10,6 +10,11 @@ class Admin::CicCodesController < ApplicationController
     @cic_codes = CicCode.all
   end
   
+  def requirements
+    @cic_code = CicCode.find(params[:id])
+    @requirements = Requirement.all(:order => :name)
+  end
+  
   def new
     @cic_code = CicCode.new(params[:cic_code])
     @zoning_district_id = params[:zoning_district_id]

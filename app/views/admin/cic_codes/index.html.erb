@@ -8,6 +8,7 @@
     <th>Code</th>
     <th>Industry</th>
     <th>Sub-industry</th>
+    <th>Requirements</th>
     <th>Keywords</th>
     <th></th>
   </thead>
@@ -17,6 +18,7 @@
         <td><%= cic_code.code %></td>
         <td><%= cic_code.industry %></td>
         <td><%= cic_code.subindustry %></td>
+        <td><%= cic_code.requirement_names %> <%= link_to 'add/edit', requirements_admin_cic_code_path(cic_code) %></td>
         <td><%= on_the_spot_edit cic_code, :keywords %></td>
       </tr>
     <% end -%>
