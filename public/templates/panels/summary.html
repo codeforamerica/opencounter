@@ -805,7 +805,6 @@
       </div>
     </div>
 
-
     <div class="row-fluid task-steps">
       <div class="span4 task-instructions">
         <h4>Instructions</h4>
@@ -915,7 +914,7 @@
           <dd><%= answers.prior_use %></dd>
         
           <dt>Application Type</dt>
-          <dd>(New Application / Renewal / Change in Ownership / Change in Category</dd>
+          <dd>(New Application / Renewal / Change in Ownership / Change in Category)</dd>
           
           <dt>Business Type</dt>
           <dd>@TODO see comment<!-- 
@@ -970,7 +969,35 @@
 <div class="row-fluid task">
   <div class="span12">
 
+    <h3 class="task-title">
+      <span class="task-count">#</span>
+      Register your corporation.
+    </h3>
 
+    <div class="row-fluid">
+      <div class="span8 task-why">
+        <p class="lead">You&rsquo;ve told us that your business<% if (answers.business_name) { %>, <strong><%= answers.business_name %></strong>,<% } %> is structured as a <%= answers.business_structure %>, and if you haven't already registered with the state of California, you will need to do so now.</p>
+      </div>
+      <div class="span3 offset1 task-fee">
+        <h4>HOW MUCH IS THE FEE?</h4>
+        <p class="lead">Varies (@FIX)</p>
+      </div>
+    </div>
+
+    <div class="row-fluid task-steps">
+      <div class="span4 task-instructions">
+        <h4>Instructions</h4>
+        <ol>
+          <li>Go to the <a href="http://www.sos.ca.gov/business/">California Business Portal</a></li>
+          <li>Fill it out with the information you provided.</li>
+        </ol>
+      </div>
+      <div class="span8 task-information">
+        <h4>Information You&rsquo;ll Need</h4>
+        <dl style="float: left; width: 33%;">
+        </dl>
+      </div>
+    </div>
 
   </div><!-- /.span12 -->
 </div><!-- /.row-fluid -->
@@ -982,7 +1009,47 @@
 <div class="row-fluid task">
   <div class="span12">
 
+    <h3 class="task-title">
+      <span class="task-count">#</span>
+      Get a permit for your sign.
+    </h3>
 
+    <div class="row-fluid">
+      <div class="span8 task-why">
+        <p class="lead">You&rsquo;ve told us that your business<% if (answers.business_name) { %>, <strong><%= answers.business_name %></strong>,<% } %> will be hanging a sign. You will need to obtain a permit for the sign from the Planning Department.</p>
+      </div>
+      <div class="span3 offset1 task-fee">
+        <h4>HOW MUCH IS THE FEE?</h4>
+        <p class="lead">$0</p>
+      </div>
+    </div>
+
+    <div class="row-fluid task-steps">
+      <div class="span4 task-instructions">
+        <h4>Instructions</h4>
+        <ol>
+          <li>Go to the <a href="http://www.sos.ca.gov/business/">California Business Portal</a></li>
+          <li>Fill it out with the information you provided.</li>
+        </ol>
+      </div>
+      <div class="span8 task-information">
+        <h4>Information You&rsquo;ll Need</h4>
+        <dl style="float: left; width: 33%;">
+          <dt>Is the sign freestanding or on a wall?</dt>
+          <dd><%= answers.sign_location %></dd>
+          <dt>Frontage of Lot</dt>
+          <dd><%= answers.frontage %></dd>
+          <dt>Parcel Area</dt>
+          <dd><%= answers.parcel_area %></dd>
+          <dt>Length of Wall</dt>
+          <dd><%= answers.length_of_wall %></dd>
+          <dt>Area of Wall</dt>
+          <dd><%= answers.area_of_wall %></dd>
+          <dt>Maximum sign size</dt>
+          <dd><%= answers.maximum_sign_size %></dd>
+        </dl>
+      </div>
+    </div>
 
   </div><!-- /.span12 -->
 </div><!-- /.row-fluid -->
@@ -1019,31 +1086,8 @@
 
 
 
-
-
-
-
-
-
-
-
 <!--
 
-
-    <!-- Incorporation --
-    <tr>
-      <td>
-        <p class="task">Register your <strong>corporation</strong></p>
-        <p class="fee">Varies</p>
-      </td>
-      <td>You&rsquo;ve told us that this business is structured as a corporation.</td>
-      <td>
-        <ol>
-          <li>Speak with an accountant or visit The California Business Portal.</li>
-        </ol>
-      </td>
-    </tr>
-        
     <!-- Fire Inspection -->
     <!--
     <tr>
