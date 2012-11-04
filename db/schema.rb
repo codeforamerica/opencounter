@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102212652) do
+ActiveRecord::Schema.define(:version => 20121104190433) do
 
   create_table "answers", :force => true do |t|
     t.text     "value"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(:version => 20121102212652) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "cic_code_requirements", :force => true do |t|
+    t.integer  "cic_code_id"
+    t.integer  "requirement_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "cic_code_requirements", ["cic_code_id"], :name => "index_cic_code_requirements_on_cic_code_id"
+  add_index "cic_code_requirements", ["requirement_id"], :name => "index_cic_code_requirements_on_requirement_id"
 
   create_table "cic_code_zoning_districts", :force => true do |t|
     t.integer  "cic_code_id"
@@ -55,11 +65,6 @@ ActiveRecord::Schema.define(:version => 20121102212652) do
 
   add_index "cic_codes", ["code"], :name => "index_cic_codes_on_code"
   add_index "cic_codes", ["keywords"], :name => "index_cic_codes_on_keywords"
-
-  create_table "cic_codes_requirements", :id => false, :force => true do |t|
-    t.integer "cic_code_id"
-    t.integer "requirement_id"
-  end
 
   create_table "cic_codes_sic_codes", :id => false, :force => true do |t|
     t.integer "cic_code_id"

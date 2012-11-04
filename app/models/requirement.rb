@@ -1,4 +1,5 @@
 class Requirement < ActiveRecord::Base
-  has_and_belongs_to_many :cic_codes, :uniq => true
+  has_many :cic_code_requirements, :dependent => :destroy
+  has_many :cic_codes, :through => :cic_code_requirements
   attr_accessible :name, :notes, :jurisdiction
 end

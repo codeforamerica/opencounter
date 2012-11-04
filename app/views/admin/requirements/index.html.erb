@@ -14,10 +14,13 @@
         <td><%= requirement.name %></td>
         <td><%= requirement.jurisdiction %></td>
         <td width="40px"><%= link_to 'Edit', edit_admin_requirement_path(requirement), :class => 'btn btn-mini' %></td>
-        <td width="60px"><%= link_to 'Delete', admin_requirement_path(requirement), :method => :delete, :confirm => 'Delete this Requirement?', :class => 'btn btn-mini btn-danger' %></td>
+        <td width="60px"><%= button_to 'Delete', admin_requirement_path(requirement), :method => :delete, :confirm => 'Delete this Requirement?', :class => 'btn btn-mini btn-danger' %></td>
       </tr>
     <% end -%>
   </tbody>
 </table>
 
-<%= link_to 'New Requirement', new_admin_requirement_path, :class => 'btn btn-success' %>
+<div>
+  <%= link_to 'New Requirement', new_admin_requirement_path, :class => 'btn btn-success' %>
+</div>
+<br />

@@ -18,9 +18,17 @@
         <td><%= cic_code.code %></td>
         <td><%= cic_code.industry %></td>
         <td><%= cic_code.subindustry %></td>
-        <td><%= cic_code.requirement_names %> <%= link_to 'add/edit', requirements_admin_cic_code_path(cic_code) %></td>
+        <td><%= cic_code.requirement_names %> <%= link_to 'add/edit', edit_admin_cic_code_path(cic_code, :requirements => true) %></td>
         <td><%= on_the_spot_edit cic_code, :keywords %></td>
+        <td width="40px"><%= link_to 'Edit', edit_admin_cic_code_path(cic_code), :class => 'btn btn-mini' %></td>
+        <td width="50px"><%= button_to 'Delete', admin_cic_code_path(cic_code), :method => :delete, :confirm => 'Delete this CIC Code?', :class => 'btn btn-mini btn-danger' %></td>
+        
       </tr>
     <% end -%>
   </tbody>
 </table>
+
+<div>
+  <%= link_to 'New CIC Code', new_admin_cic_code_path, :class => 'btn btn-success' %>
+</div>
+<br />

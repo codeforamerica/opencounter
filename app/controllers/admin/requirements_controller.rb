@@ -21,7 +21,7 @@ class Admin::RequirementsController < ApplicationController
   end
   
   def new
-    @requirement = Requirement.new(params[:requirement])
+    @requirement = Requirement.new
   end
   
   def create

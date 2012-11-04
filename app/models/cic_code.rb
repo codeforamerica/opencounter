@@ -4,8 +4,13 @@ class CicCode < ActiveRecord::Base
   has_many :cic_code_zoning_districts, :dependent => :destroy
   has_many :zoning_districts, :through => :cic_code_zoning_districts, :dependent => :destroy, :order => "code ASC"
   has_and_belongs_to_many :sic_codes, :uniq => true
-  has_and_belongs_to_many :requirements, :uniq => true
-  attr_accessible :code, :industry, :subindustry, :home_occ_prohibited, :keywords, :parent_id
+  has_many :cic_code_requirements, :dependent => :destroy
+  has_many :requirements, :through => :cic_code_requirements
+  
+  accepts_nested_attributes_for :requirements
+  
+  attr_accessible :code, :industry, :subindustry, :home_occ_prohibited, :keywords, :parent_id, :requirements, :requirement_ids, :requirements_attributes
+  
   after_create :create_zoning_district_connections
   
   def permission_name(zoning_district_id)
