@@ -21,8 +21,8 @@
   </div>
 
   <div class="span4">
-    <h4>Is your use not principally permitted?<br>You need a use permit.</h4>
-    <p>If your use is not principally permitted, you will need either an Administrative Use Permit or a Special Use Permit. These kind of permits require a public hearing.</p>
+    <h4>Is your use conditionally permitted?<br>You need a use permit.</h4>
+    <p>Some businesses need more review from the planning department before they are allowed to open. There are two levels of conditional permits at the City, the Administrative Use Permit and the Special Use Permit. These kind of permits require a public hearing.</p>
     <dl>
       <dt>Administrative Use Permit (<abbr title="Administrative Use Permit">AUP</abbr>)</dt>
       <dd>This kind of application requires more staff analysis, and more information from the applicant. These permits entail a public hearing before the Zoning Administrator, and can take approximately 8-10 weeks to work their way through to completion. This public hearing is before the Zoning Administrator, a planning professional.</dd>
@@ -127,6 +127,9 @@
 
         <% } %>
         
+        
+<! -- Ruthie, looks like you're still working on this. If the code returns "2" for AUP or "3" for SUP, it can return the same form info, as AUP and SUP use the same unified land use application and you can use the code under the else statment at 130 and clean-up / remove the conditionals down at line 199 ("talk to a planner")-->        
+        
       <% } else { %>
       
         <p>You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong></p>
@@ -195,11 +198,11 @@
 
         <% } else if (answers.required_permit.permit == "2") { %>
 
-          <p>This use is not principally permitted, so you&rsquo;ll need an <em>Administrative Use Permit</em>. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
+          <p>This use is conditionally permitted, so you&rsquo;ll need an <em>Administrative Use Permit</em>. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
         
         <% } else if (answers.required_permit.permit == "3") { %>
 
-          <p>This use is not principally permitted, so you&rsquo;ll need a <em>Special Use Permit</em>. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
+          <p>This use is conditionally permitted, so you&rsquo;ll need a <em>Special Use Permit</em>. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
 
         <% } else if (answers.required_permit.permit == "4") { %>
         
