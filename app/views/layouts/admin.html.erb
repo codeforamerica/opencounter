@@ -11,12 +11,12 @@
     <%= stylesheet_link_tag   "application" %>
     <%= requirejs_include_tag "application" %>
 
-    <script type="text/javascript" src='/assets/libs/jquery.js'></script>
-
-    <%= javascript_include_tag :on_the_spot %>
     <%= stylesheet_link_tag :on_the_spot %>
 
-    <%= csrf_meta_tags %>
+    <%= javascript_include_tag(:defaults) %>
+    <%= javascript_include_tag :on_the_spot %>
+    <%= csrf_meta_tag %>
+    
     <meta charset="utf-8">
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <!-- KISSMetrics -->
@@ -39,6 +39,11 @@
 
   <body>
     <div class="container-fluid">
+      <h4>
+        <%= link_to 'Zoning Districts', admin_zoning_districts_url %> |
+        <%= link_to 'CIC Codes', admin_cic_codes_url %> |
+        <%= link_to 'Requirements', admin_requirements_url %>
+      </h4>
       <%= yield %>
     </div>
   </body>

@@ -1,10 +1,6 @@
 class Admin::CicCodesController < ApplicationController
   layout 'admin'
   can_edit_on_the_spot
-  
-  def show
-    @cic_code = CicCode.find(params[:id])
-  end
 
   def index
     @cic_codes = CicCode.all
@@ -12,7 +8,6 @@ class Admin::CicCodesController < ApplicationController
   
   def new
     @cic_code = CicCode.new(params[:cic_code])
-    @zoning_district_id = params[:zoning_district_id]
   end
   
   def create
@@ -20,7 +15,7 @@ class Admin::CicCodesController < ApplicationController
     
     respond_to do |format|
       if @cic_code.save
-        format.html { redirect_to admin_zoning_districts_url, notice: 'CIC Code was successfully created.' }
+        format.html { redirect_to admin_cic_codes_url, notice: 'CIC Code was successfully created.' }
       else
         format.html { render action: "new" }
       end
@@ -29,16 +24,15 @@ class Admin::CicCodesController < ApplicationController
   
   def edit
     @cic_code = CicCode.find(params[:id])
-    @zoning_district = ZoningDistrict.find(params[:zoning_district_id])
   end
 
   def update
+    params[:cic_code][:requirement_ids] ||= []
     @cic_code = CicCode.find(params[:id])
-    @zoning_district = ZoningDistrict.find(params[:zoning_district_id])
     
     respond_to do |format|
       if @cic_code.update_attributes(params[:cic_code])
-        format.html { redirect_to admin_zoning_district_url(@zoning_district), notice: 'CIC Code was successfully updated.' }
+        format.html { redirect_to admin_cic_codes_url, notice: 'CIC Code was successfully updated.' }          
       else
         format.html { render action: "edit" }
       end
@@ -50,7 +44,7 @@ class Admin::CicCodesController < ApplicationController
     @cic_code.destroy
     
     respond_to do |format|
-      format.html { redirect_to admin_zoning_districts_url }
+      format.html { redirect_to admin_cic_codes_url }
     end
   end
 end

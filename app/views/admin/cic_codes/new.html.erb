@@ -1,6 +1,6 @@
 <h1>Editing CIC Code <%= @cic_code.code %></h1>
 
-<%= form_for(:cic_code, :url => admin_cic_code_path(@cic_code), :html => {:method => :put}) do |f| %>
+<%= form_for(:cic_code, :url => admin_cic_codes_path, :html => {:method => :post}) do |f| %>
   
   <%= render :partial => 'form', :locals => {:f => f} %>
   
