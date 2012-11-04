@@ -5,125 +5,96 @@
 <div class="row-fluid">
   <!-- content starts here -->
 
-  <p class="lead">Some Cities in California, like San Francisco and Pasedena charge an admissions tax. Santa Cruz established an admissions tax in 1985. If you'd like to read the municipal code section, click <a href=" http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz03/SantaCruz0336.html#3.36" target="_blank">here</a>.</p>
+  <p class="lead">Some Cities in California, like San Francisco and Pasadena, charge an admissions tax. Santa Cruz established an admissions tax in 1985. If you&rsquo;d like to read the municipal code section, click <a href=" http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz03/SantaCruz0336.html#3.36" target="_blank">here</a>.</p>
  
-  <p>If your business is involved in "entertainment, amusement or recreation," and if you will charge admission to your venue or place of business, it's your responsibility to register with the city and remit admissions tax on a monthly basis. This tax applies to movie theaters, music halls, bowling alleys gyms and other kinds of businesses. It also applies to events held in the City of Santa Cruz where admissions are charged.</p>
+  <p>If your business is involved in &ldquo;entertainment, amusement or recreation,&rdquo; and if you will charge admission to your venue or place of business, it&rsquo;s your responsibility to register with the city and remit admissions tax on a monthly basis. This tax applies to movie theaters, music halls, bowling alleys gyms and other kinds of businesses. It also applies to events held in the City of Santa Cruz where admissions are charged.</p>
   
-  <p>The tax is 5% on the price of admission or registration for events within the city limits of Santa Cruz. For example, an admission of $5.00 would be taxed $.25; for a total of $5.25 to be collected. The tax collected is remitted to the City Finance Department.Complete background on the tax can be found at the City's <a href="http://www.cityofsantacruz.com/index.aspx?page=250" target="_blank">website</a>.</p>
+  <p>The tax is 5% on the price of admission or registration for events within the city limits of Santa Cruz. For example, an admission of $5.00 would be taxed $.25; for a total of $5.25 to be collected. The tax collected is remitted to the City Finance Department.Complete background on the tax can be found at the City&rsquo;s <a href="http://www.cityofsantacruz.com/index.aspx?page=250" target="_blank">website</a>.</p>
+  
+  <p class="lead">We&rsquo;ll need this additional information to get you registered to collect admissions tax:</p>
+  
+  <form>
 
-  <!-- Ruthie, here's my best shot at getting this done correctly -->
-  
-  <p class="lead">We'll need this additional information to get you registered to collect admissions tax:</p>
-        <form method="post" action="#" id="admissions_tax">
-  </p>
-  
-   <form>
-      <div class="control-group">
-        <label>
-          Business Name
-           <div class="controls"><input type="text" name="business_name" placeholder="" value="<%= answers.business_name %>">
-           </div>
-        </label>
-     </div>
-      
-      <div class="control-group">
-        <label>
-          Applicant First Name
-           <div class="controls"><input type="text" name="applicant_first_name" placeholder="" value="<%= applicant.first.name%>">
-           </div>
-        </label>
-      </div>
-      <div class="control-group">
-        <label>
-          Applicant Last Name
-           <div class="controls"><input type="text" name="applicant_last_name" placeholder="" value="<%= applicant.last.name %>">
-           </div>
-        </label>
-      </div>
-      <div class="control-group">
-        <label class="radio">Type of Business
-            <div class="controls">
-              <p><input type="radio" name="is_sole_proprietorship" value="sole.proprietorship">Sole Proprietorship</p>
-              <p><input type="radio" name="is_partnership"  value="partnership">Partnership</p>
-              <p><input type="radio" name="is_corporation" value="corporation">Corporation</p>
-            </div>
-        </label>
-      </div>
-      <div class="control-group">
-            <label class="control-label">Date of Occupancy</label>
-            <div class="controls"><input type="text" name="business_date_of_occupancy" placeholder="" value="<%= answers.business_date_of_occupancy %>">
-            </div>
-      </div> 
-      <div class="control-group">
-        <label>
-          Business Mailing Address
-           <div class="controls"><input type="text" name="business_mailing_address_street" value="<%= answers.business_mailing_address_street %>">
-           </div>
-        </label>     
-      </div>  
-     <div class="control-group">
-        <label>
-          City 
-         <div class="controls"><input type="text" name="business_mailing_address_city" value="<%= answers.business_mailing_address_city %>">
-         </div>
-        </label>
-     </div>  
-     <div class="control-group">
-        <label> 
-          State
-         <div class="controls"><input type="text" name="business_mailing_address_state" value="<%= answers.business_mailing_address_state %>">
-         </div>
-        </label>
-     </div>   
-     <div class="control-group">
-        <label>
-          ZIP
-         <div class="controls"><input type="text" name="business_mailing_address_zip" value="<%= answers.business_mailing_address_zip %>">
-         </div>
-        </label>
-     </div>   
-     <div class="control-group">
-        <label>
-          Please describe your taxable operations (i.e. membership, ticket sales)
-           <div class="controls"><input type="text" name="operations" placeholder="" value="<%= operations %>">
-           </div>
-        </label>
-     </div>    
-     <div class="control-group">
-        <label>
-          Number of Amusement Devices (i.e. Pinball, Video Games)
-           <div class="controls"><input type="text" name="amusement devices" placeholder="" value="<%= amusement.devices %>">
-           </div>
-        </label>
-     </div>   
-      <div class="control-group">
-        <label>
-            Frequency of Events
-                 <div class="controls">
-                    <p><input type="radio" name="Daily" value="Daily">Daily</p>
-                    <p><input type="radio" name="Weekly"  value="Weekly">Weekly</p>
-                    <p><input type="radio" name="Monthly" value="Monthly">Monthly</p>
-                 </div>     
-            </label>
-      </div>        
-      <div class="control-group">
-          <label>
-            Your Business&rsquo;s Phone Number
-            <div class="controls"><input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
-            </div>
-          </label>
-      </div>  
-     <div class="control-group">
-          <label class="control-label">
-            Your Business&rsquo;s Phone Number
-              <div class="controls"><input type="text" name="business_phone" placeholder="(831) ###-####" value="<%= answers.applicant_phone %>">
-              </div>
-          </label>
-      </div>
-   </form>
-  
-<p>Please remember, if the operator or ownership changes, the City will request a new application</p>
+    <div class="control-group">
+      <label class="control-label">Business Name</label>
+      <div class="controls"><input type="text" name="business_name" placeholder="" value="<%= answers.business_name %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Applicant First Name</label>
+      <div class="controls"><input type="text" name="applicant_first_name" placeholder="" value="<%= applicant.first.name %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Applicant Last Name</label>
+      <div class="controls"><input type="text" name="applicant_last_name" placeholder="" value="<%= applicant.last.name %>"></div>
+    </div>
 
+    <div class="control-group">
+      <label class="control-label">Type of Business</label>
+      <div class="controls">
+        <p><input type="radio" name="is_sole_proprietorship" value="sole.proprietorship">Sole Proprietorship</p>
+        <p><input type="radio" name="is_partnership"  value="partnership">Partnership</p>
+        <p><input type="radio" name="is_corporation" value="corporation">Corporation</p>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Date of Occupancy</label>
+      <div class="controls"><input type="text" name="business_date_of_occupancy" placeholder="" value="<%= answers.business_date_of_occupancy %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Business Mailing Address</label>
+      <div class="controls"><input type="text" name="business_mailing_address_street" value="<%= answers.business_mailing_address_street %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">City</label>
+      <div class="controls"><input type="text" name="business_mailing_address_city" value="<%= answers.business_mailing_address_city %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">State</label>
+      <div class="controls"><input type="text" name="business_mailing_address_state" value="<%= answers.business_mailing_address_state %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">ZIP</label>
+      <div class="controls"><input type="text" name="business_mailing_address_zip" value="<%= answers.business_mailing_address_zip %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Please describe your taxable operations (i.e. membership, ticket sales)</label>
+      <div class="controls"><input type="text" name="operations" placeholder="" value="<%= answers.operations %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Number of Amusement Devices (i.e. Pinball, Video Games)</label>
+      <div class="controls"><input type="text" name="amusement devices" placeholder="" value="<%= answers.amusement_devices %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Frequency of Events</label>
+      <div class="controls">
+        <p><input type="radio" name="Daily" value="Daily">Daily</p>
+        <p><input type="radio" name="Weekly"  value="Weekly">Weekly</p>
+        <p><input type="radio" name="Monthly" value="Monthly">Monthly</p>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Your Business&rsquo;s Phone Number</label>
+      <div class="controls"><input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Your Business&rsquo;s Phone Number</label>
+      <div class="controls"><input type="text" name="business_phone" placeholder="(831) ###-####" value="<%= answers.applicant_phone %>"></div>
+    </div>
+
+  </form>
   
-  <!-- content ends here -->
+  <p>Please remember, if the operator or ownership changes, the City will request a new application.</p>
+
 </div>
