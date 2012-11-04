@@ -39,7 +39,7 @@ function(app, Parking) {
       else if (value && typeof value === "object") {
         value = JSON.stringify(value);
       }
-      
+
       return this.constructor.__super__.set.call(this, key, value, options);
     }
   });
@@ -93,7 +93,7 @@ function(app, Parking) {
       //do things here
       ev.preventDefault();
       $.get("/users/email-planning", function(data){
-        console.log(data);  
+        console.log(data);
       });
     },
     subviews: function() {
@@ -134,7 +134,7 @@ function(app, Parking) {
     initialize: function(o) {
       if(o.useTemplate)
         this.template = o.useTemplate;
-      this.collection.on("reset", this.render, this); 
+      this.collection.on("reset", this.render, this);
 
     }
   });
@@ -161,8 +161,8 @@ function(app, Parking) {
       this.collection.off(null, null, this);
     },
     initialize: function(o) {
-      this.collection.on("reset", this.render, this); 
-      this.collection.on("change", this.render, this); 
+      this.collection.on("reset", this.render, this);
+      this.collection.on("change", this.render, this);
     }
   });
 
@@ -187,7 +187,7 @@ function(app, Parking) {
     }
 
   };
-  
+
 
   // Return the module for AMD compliance.
   return Answer;
