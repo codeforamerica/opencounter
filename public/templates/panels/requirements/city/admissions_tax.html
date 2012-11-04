@@ -14,25 +14,30 @@
   <!-- Ruthie, here's my best shot at getting this done correctly -->
   
   <p class="lead">We'll need this additional information to get you registered to collect admissions tax:</p>
-        <form method="post" action="#" id="admissions_tax"></p>
+        <form method="post" action="#" id="admissions_tax">
+  </p>
   
    <form>
       <div class="control-group">
         <label>
           Business Name
-          <input type="text" name="business_name" placeholder="" value="<%= answers.business_name %>">
+           <div class="controls"><input type="text" name="business_name" placeholder="" value="<%= answers.business_name %>">
+           </div>
         </label>
      </div>
+      
       <div class="control-group">
         <label>
           Applicant First Name
-          <input type="text" name="applicant_first_name" placeholder="" value="<%= applicant.first.name%>">
+           <div class="controls"><input type="text" name="applicant_first_name" placeholder="" value="<%= applicant.first.name%>">
+           </div>
         </label>
       </div>
       <div class="control-group">
         <label>
           Applicant Last Name
-          <input type="text" name="applicant_last_name" placeholder="" value="<%= applicant.last.name %>">
+           <div class="controls"><input type="text" name="applicant_last_name" placeholder="" value="<%= applicant.last.name %>">
+           </div>
         </label>
       </div>
       <div class="control-group">
@@ -48,50 +53,49 @@
             <label class="control-label">Date of Occupancy</label>
             <div class="controls"><input type="text" name="business_date_of_occupancy" placeholder="" value="<%= answers.business_date_of_occupancy %>">
             </div>
-      </div>
-    
+      </div> 
       <div class="control-group">
         <label>
           Business Mailing Address
-          <input type="text" name="business_mailing_address_street" value="<%= answers.business_mailing_address_street %>">
+           <div class="controls"><input type="text" name="business_mailing_address_street" value="<%= answers.business_mailing_address_street %>">
+           </div>
         </label>     
-      </div>
-      
+      </div>  
      <div class="control-group">
         <label>
           City 
-        <input type="text" name="business_mailing_address_city" value="<%= answers.business_mailing_address_city %>">
+         <div class="controls"><input type="text" name="business_mailing_address_city" value="<%= answers.business_mailing_address_city %>">
+         </div>
         </label>
-     </div>
-      
+     </div>  
      <div class="control-group">
         <label> 
           State
-        <input type="text" name="business_mailing_address_state" value="<%= answers.business_mailing_address_state %>">
+         <div class="controls"><input type="text" name="business_mailing_address_state" value="<%= answers.business_mailing_address_state %>">
+         </div>
         </label>
-     </div>
-     
+     </div>   
      <div class="control-group">
         <label>
           ZIP
-        <input type="text" name="business_mailing_address_zip" value="<%= answers.business_mailing_address_zip %>">
+         <div class="controls"><input type="text" name="business_mailing_address_zip" value="<%= answers.business_mailing_address_zip %>">
+         </div>
         </label>
-     </div>
-     
+     </div>   
      <div class="control-group">
         <label>
           Please describe your taxable operations (i.e. membership, ticket sales)
-          <input type="text" name="operations" placeholder="" value="<%= operations %>">
+           <div class="controls"><input type="text" name="operations" placeholder="" value="<%= operations %>">
+           </div>
         </label>
-     </div>
-     
+     </div>    
      <div class="control-group">
         <label>
           Number of Amusement Devices (i.e. Pinball, Video Games)
-          <input type="text" name="amusement devices" placeholder="" value="<%= amusement.devices %>">
+           <div class="controls"><input type="text" name="amusement devices" placeholder="" value="<%= amusement.devices %>">
+           </div>
         </label>
-     </div>
-      
+     </div>   
       <div class="control-group">
         <label>
             Frequency of Events
@@ -101,22 +105,23 @@
                     <p><input type="radio" name="Monthly" value="Monthly">Monthly</p>
                  </div>     
             </label>
-      </div>
-          
+      </div>        
       <div class="control-group">
           <label>
             Your Business&rsquo;s Phone Number
-            <div class="controls"><input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>"></div>
+            <div class="controls"><input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>">
+            </div>
+          </label>
+      </div>  
+     <div class="control-group">
+          <label class="control-label">
+            Your Business&rsquo;s Phone Number
+              <div class="controls"><input type="text" name="business_phone" placeholder="(831) ###-####" value="<%= answers.applicant_phone %>">
+              </div>
           </label>
       </div>
-    
-    <div class="control-group">
-            <label class="control-label">
-              Your Business&rsquo;s Phone Number
-            <div class="controls"><input type="text" name="business_phone" placeholder="(831) ###-####" value="<%= answers.applicant_phone %>"></div>
-            </label>
-          </div>
-
+   </form>
+  
 <p>Please remember, if the operator or ownership changes, the City will request a new application</p>
 
   
