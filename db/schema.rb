@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120928225408) do
+ActiveRecord::Schema.define(:version => 20121104190433) do
 
   create_table "answers", :force => true do |t|
     t.text     "value"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(:version => 20120928225408) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "cic_code_requirements", :force => true do |t|
+    t.integer  "cic_code_id"
+    t.integer  "requirement_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "cic_code_requirements", ["cic_code_id"], :name => "index_cic_code_requirements_on_cic_code_id"
+  add_index "cic_code_requirements", ["requirement_id"], :name => "index_cic_code_requirements_on_requirement_id"
 
   create_table "cic_code_zoning_districts", :force => true do |t|
     t.integer  "cic_code_id"
@@ -98,6 +108,14 @@ ActiveRecord::Schema.define(:version => 20120928225408) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.string   "jurisdiction"
+  end
+
+  create_table "requirements", :force => true do |t|
+    t.string   "name"
+    t.text     "notes"
+    t.string   "jurisdiction"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "sic_codes", :force => true do |t|

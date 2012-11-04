@@ -1,0 +1,52 @@
+<% if @cic_code.errors.any? -%>
+  <div id='error_explanation'>
+    <h2><%= pluralize(@cic_code.errors.count, "error") -%> prohibited this county from being saved:"</h2>
+    <ul>
+      <% @cic_code.errors.full_messages.each do |msg| -%>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end -%>
+
+<% unless params[:requirements] %>
+  <div class="field">
+    <%= f.label :code %>
+    <%= f.text_field :code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :industry %>
+    <%= f.text_field :industry %>
+  </div>
+
+  <div class="field">
+    <%= f.label :subindustry %>
+    <%= f.text_field :subindustry %>
+  </div>
+
+  <div class="field">
+    <%= f.label :keywords %>
+    <%= f.text_area :keywords, :rows => 5 %>
+  </div>
+
+  <div class="field">
+    <br />
+    <%= f.check_box :home_occ_prohibited %> Home Occ Prohibited?
+  </div>
+  <br />
+<% end %>
+
+<div class="field">
+  <h3>Requirements</h3>
+  <table>
+    <% for requirement in Requirement.all %>
+      <tr>
+        <td width="25px"><%= check_box_tag "cic_code[requirement_ids][]", requirement.id, @cic_code.requirements.include?(requirement) %>
+        <td width="250px"><%= requirement.name %></td>
+        <td><%= requirement.jurisdiction %></td>
+      </tr>
+    <% end -%>
+  </table>
+  <br />
+</div>

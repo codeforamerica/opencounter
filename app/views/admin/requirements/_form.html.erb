@@ -1,0 +1,29 @@
+<% if @requirement.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@requirement.errors.count, "error") %> prohibited this requirement from being saved:</h2>
+
+    <ul>
+    <% @requirement.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="field">
+  <br />
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div class="field">
+  <br />
+  <%= f.label :jurisdiction %>
+  <%= f.select :jurisdiction, options_for_select(['City', 'County', 'State', 'Federal']) %>
+</div>
+
+<div class="field">
+  <br />
+  <%= f.label :notes %>
+  <%= f.text_area :notes, :rows => 5 %>
+</div>

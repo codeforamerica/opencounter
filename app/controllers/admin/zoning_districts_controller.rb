@@ -29,7 +29,7 @@ class Admin::ZoningDistrictsController < ApplicationController
   end
   
   def new
-    
+    @zoning_district = ZoningDistrict.new
   end
   
   def create
