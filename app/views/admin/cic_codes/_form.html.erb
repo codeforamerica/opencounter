@@ -40,7 +40,7 @@
 <div class="field">
   <h3>Requirements</h3>
   <table>
-    <% for requirement in Requirement.all %>
+    <% for requirement in @requirements %>
       <tr>
         <td width="25px"><%= check_box_tag "cic_code[requirement_ids][]", requirement.id, @cic_code.requirements.include?(requirement) %>
         <td width="250px"><%= requirement.name %></td>

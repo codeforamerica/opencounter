@@ -24,11 +24,13 @@ class Admin::CicCodesController < ApplicationController
   
   def edit
     @cic_code = CicCode.find(params[:id])
+    @requirements = Requirement.all(:order => 'jurisdiction, name')
   end
 
   def update
     params[:cic_code][:requirement_ids] ||= []
     @cic_code = CicCode.find(params[:id])
+    @requirements = Requirement.all(:order => 'jurisdiction, name')
     
     respond_to do |format|
       if @cic_code.update_attributes(params[:cic_code])
