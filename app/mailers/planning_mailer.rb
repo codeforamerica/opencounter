@@ -1,7 +1,7 @@
 class PlanningMailer < ActionMailer::Base
   default from: "planningcounter@opencounter.org"
 
-  def deliver_submission_email(user)
+  def submission_email(user)
     @user = user
     to_address = Rails.application.config.PLANNING_DEPARTMENT_EMAIL
     mail(:to => to_address, :subject => "[OpenCounter] New Business Inquiry")
