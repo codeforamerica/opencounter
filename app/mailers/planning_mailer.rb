@@ -3,7 +3,8 @@ class PlanningMailer < ActionMailer::Base
 
   def deliver_submission_email(user)
     @user = user
-    mail(:to => "planningcounter@cityofsantacruz.com", :subject => "[OpenCounter] New Business Inquiry")
+    to_address = Rails.application.config.PLANNING_DEPARTMENT_EMAIL
+    mail(:to => to_address, :subject => "[OpenCounter] New Business Inquiry")
   end
 
 end
