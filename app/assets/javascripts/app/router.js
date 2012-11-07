@@ -15,10 +15,10 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
   var Router = Backbone.Router.extend({
     routes: {
       "clear":"clear",
-      "requirement/city/parking":"parking",
+      "requirements/city/parking":"parking",
       "info/business": "businessInfo",
       "location/check":"locationCheck",
-      "requirement/city/business_license":"businessLicense",
+      "requirements/city/business_license":"businessLicense",
       "info/applicant": "userInfo",
       "*path":"panel"
     },
@@ -35,12 +35,14 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
     parking:function(){
 
       var panel = new (Answer.Views.Panel.extend(Parking.Views.Calculator.prototype))({
-        collection:this.answers,
-        useTemplate:"fees/parking-downtown"
+        collection:  this.answers,
+        //useTemplate: "panels/requirements/city/parking"
       });
+      console.log('parking panel', panel);
 
       app.layout.setView("div#content", panel);
       app.layout.render();
+      console.log('rendered parking panel');
     },
     userInfo: function(){
       var panel = new (Answer.Views.Panel.extend(User.Views.Info.prototype))({
