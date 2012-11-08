@@ -7,7 +7,7 @@
  
   <p>If your business is involved in &ldquo;entertainment, amusement or recreation,&rdquo; and if you will charge admission to your venue or place of business, it&rsquo;s your responsibility to register with the city and remit admissions tax on a monthly basis. This tax applies to movie theaters, music halls, bowling alleys gyms and other kinds of businesses. It also applies to events held in the City of Santa Cruz where admissions are charged.</p>
   
-  <p>The tax is 5% on the price of admission or registration for events within the city limits of Santa Cruz. For example, an admission of $5.00 would be taxed $.25; for a total of $5.25 to be collected. The tax collected is remitted to the City Finance Department.Complete background on the tax can be found at the City&rsquo;s <a href="http://www.cityofsantacruz.com/index.aspx?page=250" target="_blank">website</a>.</p>
+  <p>The tax is 5% on the price of admission or registration for events within the city limits of Santa Cruz. For example, an admission of $5.00 would be taxed $.25; for a total of $5.25 to be collected. The tax collected is remitted to the City Finance Department. Complete background on the tax can be found at the City&rsquo;s <a href="http://www.cityofsantacruz.com/index.aspx?page=250" target="_blank">website</a>.</p>
   
   <p class="lead">We&rsquo;ll need this additional information to get you registered to collect admissions tax:</p>
   
@@ -64,7 +64,7 @@
 
     <div class="control-group">
       <label class="control-label">Please describe your taxable operations.</label>
-      <div class="controls"><input type="text" name="operations" placeholder="i.e. membership, ticket sales..." value="<%= answers.operations %>"></div>
+      <div class="controls"><input type="text" name="operations" placeholder="i.e. membership, ticket sales..." value="<%= answers.taxable.operations %>"></div>
     </div>
 
     <div class="control-group">
@@ -81,6 +81,10 @@
       </div>
     </div>
 
+    <!-- Ruthie, I'm going to call this output <%= answers.event_frequency %>, I don't know how to make the outcome of the click above to that Db value, so leaving for smarter folks to handle -->  
+    
+    
+    
     <div class="control-group">
       <label class="control-label">Your Business&rsquo;s Phone Number</label>
       <div class="controls"><input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>"></div>
