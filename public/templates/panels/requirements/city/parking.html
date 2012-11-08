@@ -21,13 +21,13 @@
         <option value="SERVICE">Service Area/Warehouse</option>
       </select>
     </label>
-    <% if (answers.parking_proptype === "DOCTOR") {  %>
-    <p>Doctors and Dentists</p>
-    <label>
-      Practitioners
-      <input type="text" name="parking_doctor_count" value="1"/>
-    </label>
-    <% } %>
+    <div id='doctor_inputs'>
+      <p>Doctors and Dentists</p>
+      <label>
+        Practitioners
+        <input type="text" name="parking_doctor_count" value="1"/>
+      </label>
+    </div>
     <label>
       Size of Property
       <input name="parking_size_existing" type="text" />&nbsp;<label class="units"><%= answers.parking_units %></label>
