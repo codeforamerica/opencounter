@@ -31,9 +31,23 @@
     <div class="control-group">
       <label class="control-label">What type of business is this?</label>
       <div class="controls">
-        <p><input type="radio" name="is_sole_proprietorship" value="sole.proprietorship">Sole Proprietorship</p>
-        <p><input type="radio" name="is_partnership"  value="partnership">Partnership</p>
-        <p><input type="radio" name="is_corporation" value="corporation">Corporation</p>
+        <select name="business_structure" class="input-xxlarge">
+          <option value="unknown"                       <%= (answers.business_structure === 'unknown') ? 'selected="selected"' : '' %>                        >Not sure, don&rsquo;t know, or haven&rsquo;t decided yet</option>
+          <option value="individual"                    <%= (answers.business_structure === 'individual') ? 'selected="selected"' : '' %>                     >an Individual (Sole Proprietorship)</option>
+          <option value="general_partnership"           <%= (answers.business_structure === 'general_partnership') ? 'selected="selected"' : '' %>            >a General Partnership (GP)</option>
+          <option value="limited_partnership"           <%= (answers.business_structure === 'limited_partnership') ? 'selected="selected"' : '' %>            >a Limited Partnership (LP)</option>
+          <option value="limited_liability_company"     <%= (answers.business_structure === 'limited_liability_company') ? 'selected="selected"' : '' %>      >a Limited Liability Company (LLC)</option>
+          <option value="limited_liability_partnership" <%= (answers.business_structure === 'limited_liability_partnership') ? 'selected="selected"' : '' %>  >a Limited Liability Partnership (LLP)</option>
+          <option value="association"                   <%= (answers.business_structure === 'association') ? 'selected="selected"' : '' %>                    >an Unincorporated Association other than a Partnership</option>
+          <option value="corporation"                   <%= (answers.business_structure === 'corporation') ? 'selected="selected"' : '' %>                    >a Corporation</option>
+          <option value="trust"                         <%= (answers.business_structure === 'trust') ? 'selected="selected"' : '' %>                          >a Trust</option>
+          <option value="copartner"                     <%= (answers.business_structure === 'copartner') ? 'selected="selected"' : '' %>                      >Copartners</option>
+          <option value="married"                       <%= (answers.business_structure === 'married') ? 'selected="selected"' : '' %>                        >Husband and Wife</option>
+          <option value="joint_venture"                 <%= (answers.business_structure === 'joint_venture') ? 'selected="selected"' : '' %>                  >a Joint Venture</option>
+          <option value="domestic_partners"             <%= (answers.business_structure === 'domestic_partners') ? 'selected="selected"' : '' %>              >State or Local Registered Domestic Partners</option>
+        </select>
+        <!-- The Admissions tax needs to know whether the business is a sole proprietorship (=> individual), partnership (=>general_partnership, limited_partnership, limited_liability_partnership), or corporation -->
+        <!-- We need to map 'sole proprietorship' 'partnership' and 'corporation' to the business structures we use elsewhere in OpenCounter -->
       </div>
     </div>
 
@@ -75,16 +89,14 @@
     <div class="control-group">
       <label class="control-label">Frequency of Events</label>
       <div class="controls">
-        <p><input type="radio" name="admissions_tax_event_frequency" value="daily">Daily</p>
-        <p><input type="radio" name="admissions_tax_event_frequency" value="weekly">Weekly</p>
-        <p><input type="radio" name="admissions_tax_event_frequency" value="monthly">Monthly</p>
+        <select name="event_frequency" class="input-xxlarge">
+          <option value="daily"   <%= (answers.event_frequency === 'daily') ? 'selected="selected"' : '' %>  >Daily</option>
+          <option value="weekly"  <%= (answers.event_frequency === 'weekly') ? 'selected="selected"' : '' %> >Weekly</option>
+          <option value="monthly" <%= (answers.event_frequency === 'monthly') ? 'selected="selected"' : '' %>>Monthly</option>
+        </select>
       </div>
     </div>
 
-    <!-- Ruthie, I'm going to call this output <%= answers.event_frequency %>, I don't know how to make the outcome of the click above to that Db value, so leaving for smarter folks to handle -->  
-    
-    
-    
     <div class="control-group">
       <label class="control-label">Your Business&rsquo;s Phone Number</label>
       <div class="controls"><input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>"></div>
