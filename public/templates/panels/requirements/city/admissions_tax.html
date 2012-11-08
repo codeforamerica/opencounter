@@ -3,8 +3,6 @@
 </div>
 
 <div class="row-fluid">
-  <!-- content starts here -->
-
   <p class="lead">Some Cities in California, like San Francisco and Pasadena, charge an admissions tax. Santa Cruz established an admissions tax in 1985. If you&rsquo;d like to read the municipal code section, click <a href=" http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz03/SantaCruz0336.html#3.36" target="_blank">here</a>.</p>
  
   <p>If your business is involved in &ldquo;entertainment, amusement or recreation,&rdquo; and if you will charge admission to your venue or place of business, it&rsquo;s your responsibility to register with the city and remit admissions tax on a monthly basis. This tax applies to movie theaters, music halls, bowling alleys gyms and other kinds of businesses. It also applies to events held in the City of Santa Cruz where admissions are charged.</p>
@@ -22,16 +20,16 @@
     
     <div class="control-group">
       <label class="control-label">Applicant First Name</label>
-      <div class="controls"><input type="text" name="applicant_first_name" placeholder="" value="<%= applicant.first.name %>"></div>
+      <div class="controls"><input type="text" name="applicant_first_name" placeholder="" value="<%= answers.applicant_first.name %>"></div>
     </div>
     
     <div class="control-group">
       <label class="control-label">Applicant Last Name</label>
-      <div class="controls"><input type="text" name="applicant_last_name" placeholder="" value="<%= applicant.last.name %>"></div>
+      <div class="controls"><input type="text" name="applicant_last_name" placeholder="" value="<%= answers.applicant_last.name %>"></div>
     </div>
 
     <div class="control-group">
-      <label class="control-label">Type of Business</label>
+      <label class="control-label">What type of business is this?</label>
       <div class="controls">
         <p><input type="radio" name="is_sole_proprietorship" value="sole.proprietorship">Sole Proprietorship</p>
         <p><input type="radio" name="is_partnership"  value="partnership">Partnership</p>
@@ -65,32 +63,27 @@
     </div>
 
     <div class="control-group">
-      <label class="control-label">Please describe your taxable operations (i.e. membership, ticket sales)</label>
-      <div class="controls"><input type="text" name="operations" placeholder="" value="<%= answers.operations %>"></div>
+      <label class="control-label">Please describe your taxable operations.</label>
+      <div class="controls"><input type="text" name="operations" placeholder="i.e. membership, ticket sales..." value="<%= answers.operations %>"></div>
     </div>
 
     <div class="control-group">
-      <label class="control-label">Number of Amusement Devices (i.e. Pinball, Video Games)</label>
-      <div class="controls"><input type="text" name="amusement devices" placeholder="" value="<%= answers.amusement_devices %>"></div>
+      <label class="control-label">Number of Amusement Devices</label>
+      <div class="controls"><input type="text" name="amusement devices" placeholder="i.e. pinball, video games..." value="<%= answers.amusement_devices %>"></div>
     </div>
 
     <div class="control-group">
       <label class="control-label">Frequency of Events</label>
       <div class="controls">
-        <p><input type="radio" name="Daily" value="Daily">Daily</p>
-        <p><input type="radio" name="Weekly"  value="Weekly">Weekly</p>
-        <p><input type="radio" name="Monthly" value="Monthly">Monthly</p>
+        <p><input type="radio" name="admissions_tax_event_frequency" value="daily">Daily</p>
+        <p><input type="radio" name="admissions_tax_event_frequency" value="weekly">Weekly</p>
+        <p><input type="radio" name="admissions_tax_event_frequency" value="monthly">Monthly</p>
       </div>
     </div>
 
     <div class="control-group">
       <label class="control-label">Your Business&rsquo;s Phone Number</label>
       <div class="controls"><input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>"></div>
-    </div>
-
-    <div class="control-group">
-      <label class="control-label">Your Business&rsquo;s Phone Number</label>
-      <div class="controls"><input type="text" name="business_phone" placeholder="(831) ###-####" value="<%= answers.applicant_phone %>"></div>
     </div>
 
   </form>
