@@ -36,4 +36,7 @@ Opencounter::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # e-mail for help and form submission should go to this address
+  config.PLANNING_DEPARTMENT_EMAIL = ENV['PLANNING_DEPARTMENT_EMAIL'] || 'nobody@example.com'
 end

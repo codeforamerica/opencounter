@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def update_planning
     user = current_user
     if user
-      PlanningMailer.deliver_submission_email(current_user)
+      PlanningMailer.submission_email(current_user).deliver
       render :json => { :status => "sent" }
     else
       render :json => { :status => "error" }
