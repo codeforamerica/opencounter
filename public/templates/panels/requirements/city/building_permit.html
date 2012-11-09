@@ -17,6 +17,7 @@
   <p>Once you've passed final inspections on site, you'll receive a "Certificate of Occupancy" from the Building division for your commercial space, which means its safe and fully permitted for the public to utilize.</p>
   <p>This process does have charges associated with it to capture the labor costs the City undertakes to review the plans. Rates are calculated both on the complexity of the project and the valuation of the build.</p>
   <p>A general guideline is that a building permit will cost between 5-10% of the value of the building project that you'll undertake.</p>
+  <p>The City' Building Permit cover sheet can be found <a href="http://www.cityofsantacruz.com/Modules/ShowDocument.aspx?documentid=8770" target="_blank">here</a>.</p>
   
   <div class="conditional">
     
@@ -28,6 +29,11 @@
       <label class="control-label">Date</label>
       <div class="controls"><input type="text" name="date" placeholder="" value="<%= Time.now.strftime("%m/%d/%Y") %>"></div>
     </div>
+
+    <div class="control-group">
+      <label class="control-label">Building Project Description</label>
+      <div class="controls"><input type="text" name="building_project_description" placeholder="" value="What will you be building?"></div>
+    </div>    
        
     <div class="control-group">
       <label class="control-label">Business Physical Address</label>
