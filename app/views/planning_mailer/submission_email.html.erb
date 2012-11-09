@@ -346,13 +346,13 @@
                                         <tr>
                                             <td valign="top">
                                                 <div mc:edit="std_preheader_content">
-                                                     This is an OpenCounter submission from [user]
+                                                     This is an OpenCounter submission from <%= @user.first_name -%> <%= @user.last_name -%>
                                                 </div>
                                             </td>
                                             <!-- *|IFNOT:ARCHIVE_PAGE|* -->
                                             <td valign="top" width="190">
                                                 <div mc:edit="std_preheader_links">
-                                                     Submitted at [date_time] from [ip]
+                                                     Submitted at <%= @user.answers.where(:field_name => "date_time") -%> from <%= @user.answers.where(:field_name => "ip") -%>
                                                 </div>
                                             </td>
                                             <!-- *|END:IF|* -->
@@ -395,7 +395,7 @@
                                                                 <hr><br>
                                                                 
                                                                 <h3 class="h3">Question</h3>
-                                                                [user_inquiry]
+                                                                <%= @user.answers.where(:field_name => "user_inquiry") -%>
                                                                 
                                                                 <br><br>
                                                                 <h3 class="h3">People</h3>
@@ -403,87 +403,87 @@
                                                                 <!-- APPLICANT -->
                                                                 <dl>
                                                                   <dt>Applicant Name</dt>
-                                                                  <dd>[applicant_first_name] [applicant_last_name]</dd>
+                                                                  <dd><%= @user.answers.where(:field_name => "applicant_first_name") -%> <%= @user.answers.where(:field_name => "applicant_last_name") -%></dd>
                                                                 </dl>
 
                                                                 <dl>
                                                                   <dt>Applicant Email</dt>
-                                                                  <dd>[applicant_email]</dd>
+                                                                  <dd><%= @user.answers.where(:field_name => "applicant_email") -%></dd>
                                                                 </dl>
 
                                                                 <dl>
                                                                   <dt>Applicant Phone</dt>
-                                                                  <dd>[applicant_phone]</dd>
+                                                                  <dd><%= @user.answers.where(:field_name => "applicant_phone") -%></dd>
                                                                 </dl>
 
                                                                 <!-- OWNER -->
                                                                 <dl>
                                                                   <dt>Owner Name</dt>
-                                                                  <dd>[owner_first_name] [owner_last_name]</dd>
+                                                                  <dd><%= @user.answers.where(:field_name => "owner_first_name") -%> <%= @user.answers.where(:field_name => "owner_last_name") -%></dd>
                                                                 </dl>
 
                                                                 <dl>
                                                                   <dt>Owner Email</dt>
-                                                                  <dd>[owner_email]</dd>
+                                                                  <dd><%= @user.answers.where(:field_name => "owner_email") -%></dd>
                                                                 </dl>
 
                                                                 <dl>
                                                                   <dt>Owner Phone</dt>
-                                                                  <dd>[owner_phone]</dd>
+                                                                  <dd><%= @user.answers.where(:field_name => "owner_phone") -%></dd>
                                                                 </dl>
 
                                                                 <br><h3 class="h3">Business</h3>
                                                                 
                                                                 <dl>
                                                                   <dt>Business Name</dt>
-                                                                  <dd>[business_name]</dd>
+                                                                  <dd><%= @user.answers.where(:field_name => "business_name") -%></dd>
                                                                 </dl>
                                                                 
                                                                 <dl>
                                                                   <dt>Business Type</dt>
-                                                                  <dd>[business_code (CIC)]</dd>
-                                                                  <dd>[class_a|class_b|class_c]</dd>
-                                                                  <dd>[type_1|type_2|type_3]</dd>
+                                                                  <dd><%= @user.answers.where(:field_name => "business_code (CIC)") -%></dd>
+                                                                  <dd><%= @user.answers.where(:field_name => "class_a|class_b|class_c") -%></dd>
+                                                                  <dd><%= @user.answers.where(:field_name => "type_1|type_2|type_3") -%></dd>
                                                                 </dl>
                                                                 
                                                                 <dl>
                                                                   <dt>Business Structure</dt>
-                                                                  <dd>[business_structure]</dd>
+                                                                  <dd><%= @user.answers.where(:field_name => "business_structure") -%></dd>
                                                                 </dl>
                                                                 
                                                                 <br><h3 class="h3">Location</h3>
 
                                                                 <dl>
                                                                   <dt>Home Occ?</dt>
-                                                                  <dd>[ (answers.location_type == "home") ? "yes" : "no" ]</dd>
+                                                                  <dd><%= @user.answers.where(:field_name => " (answers.location_type == "home") ? "yes" : "no" ") -%></dd>
                                                                 </dl>
 
                                                                 <dl>
                                                                   <dt>Business Physical Address</dt>
                                                                   <dd>
-                                                                    [business_physical_address_street]<br>
-                                                                    [business_physical_address_detail]<br>
-                                                                    [business_physical_address_city], [business_physical_address_state] [business_physical_address_zip]
+                                                                    <%= @user.answers.where(:field_name => "business_physical_address_street") -%><br>
+                                                                    <%= @user.answers.where(:field_name => "business_physical_address_detail") -%><br>
+                                                                    <%= @user.answers.where(:field_name => "business_physical_address_city") -%>, <%= @user.answers.where(:field_name => "business_physical_address_state") -%> <%= @user.answers.where(:field_name => "business_physical_address_zip") -%>
                                                                   </dd>
                                                                 </dl>
 
                                                                 <dl>
                                                                   <dt>Business Mailing Address</dt>
                                                                   <dd>
-                                                                    [business_mailing_address_street]<br>
-                                                                    [business_mailing_address_detail]<br>
-                                                                    [business_mailing_address_city], [business_mailing_address_state] [business_mailing_address_zip]
+                                                                    <%= @user.answers.where(:field_name => "business_mailing_address_street") -%><br>
+                                                                    <%= @user.answers.where(:field_name => "business_mailing_address_detail") -%><br>
+                                                                    <%= @user.answers.where(:field_name => "business_mailing_address_city") -%>, <%= @user.answers.where(:field_name => "business_mailing_address_state") -%> <%= @user.answers.where(:field_name => "business_mailing_address_zip") -%>
                                                                   </dd>
                                                                 </dl>
 
                                                                 <dl>
                                                                   <dt>Zoning District</dt>
-                                                                  <dd>[@todo]</dd>
+                                                                  <dd><%= @user.answers.where(:field_name => "@todo") -%></dd>
                                                                 </dl>
 
                                                                 <dl>
                                                                   <dt>Prior Use</dt>
-                                                                  <dd>[@todo]</dd>
+                                                                  <dd><%= @user.answers.where(:field_name => "@todo") -%></dd>
                                                                 </dl>
 
                                                             </div>
