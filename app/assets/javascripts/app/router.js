@@ -6,7 +6,7 @@ define([
   "modules/answer",
   "modules/navigation",
   "modules/fees/parking",
-  "modules/fees/parking-non-downtown",
+  "modules/fees/parking_non_downtown",
   "modules/location"
 ],
 
@@ -17,7 +17,7 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, L
     routes: {
       "clear":"clear",
       "requirements/city/parking":"parking",
-      "requirements/city/parking-non-downtown":"parkingNonDowntown",
+      "requirements/city/parking_non_downtown":"parkingNonDowntown",
       "info/business": "businessInfo",
       "location/check":"locationCheck",
       "requirements/city/business_license":"businessLicense",
@@ -48,9 +48,8 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, L
     },
 
     parkingNonDowntown:function() {
-        alert('parkingNonDowntown function triggered');
         var panel = new (Answer.Views.Panel.extend(ParkingNonDowntown.Views.Calculator.prototype))({
-        collection: this.answers
+            collection: this.answers
         });
         app.layout.setView("div#content", panel);
         app.layout.render();
