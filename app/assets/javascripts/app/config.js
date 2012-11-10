@@ -11,6 +11,7 @@ require.config({
 
     // Libraries.
     jquery: "../libs/jquery",
+    jqueryui: "../libs/jquery-ui",
     lodash: "../libs/lodash",
     backbone: "../libs/backbone",
     bootstrap_typeahead: "../libs/bootstrap-typeahead"
