@@ -13,68 +13,142 @@
   <p>For trash service, you must place the container on private property unless street access is permitted by the Public Works Department.</p>
   
   <form>
-    <label>
-      Business Name
-      <input type="text" name="business_name">
-    </label>
-    <label>
-      Service Address (street, city, zip)
-      <input type="text" name="business_physical_address_street">
-      <input type="text" name="business_physical_address_city">
-      <input type="text" name="business_phyiscal_address_zip">
-    </label>
-    <label>
-      Previous Service Address in Santa Cruz within the last 24 months (optional):
-      <input type="text" name="business_prev_service_adddress_street">
-      <input type="text" name="business_prev_service_address_city">
-      <input type="text" name="business_prev_service_address_zip">
-    </label>
-    <label>
-      Business Phone
-      <input type="text" name="business_phone">
-    </label>
-    <label>
-      Business Fax
-      <input type="text" name="business_fax">
-    </label>
-    <label>
-      Business Email
-      <input type="text" name="business_email">
-    </label>
-    <label>
-      Date to begin service
-      <input type="date">
-    </label>
-    <label>
-      Customer Name (last, first, middle initial)
-      <input type="text" name="owner_name">
-    </label>
-    <label>
-      Customer Home Address (street, city, state, zip)
-      <input type="text" name="owner_physical_address_street">
-      <input type="text" name="owner_physical_address_city">
-      <input type="text" name="owner_physical_address_state">
-      <input type="text" name="owner_physical_address_zip">
-    </label>
-    <label>
-      Customer Billing Address (street, city, state, zip)
-      <input type="text" name="owner_billing_address_street">
-      <input type="text" name="owner_billing_address_city">
-      <input type="text" name="owner_billing_address_state">
-      <input type="text" name="owner_billing_address_zip">
-    </label>
-    <label>
-      Home Phone
-      <input type="text" name="owner_home_phone">
-    </label>
-    <label>
-      Daytime Phone
-      <input type="text" name="owner_daytime_phone">
-    </label>
-    <label>
-      Tax ID or Driver's License:
-      <input type="text" name="tax_id">
-    </label>
+    <p>Business Information</p>
+    
+    <div class="control-group">
+      <label class="control-label">Business Name</label>
+      <div class="controls"><input type="text" name="business_name" placeholder="" value="<%= answers.business_name %>"></div>
+    </div>
+    
+     <div class="control-group">
+      <label class="control-label">Business Mailing Address</label>
+      <div class="controls"><input type="text" name="business_physical_address_street" value="<%= answers.business_physical_address_street %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Suite or Office #?</label>
+      <div class="controls"><input type="text" name="business_physical_address_detail" value="<%= answers.business_physical_address_detail %>"></div>
+    </div>    
+    
+    <div class="control-group">
+      <label class="control-label">City</label>
+      <div class="controls"><input type="text" name="business_physical_address_city" value="<%= answers.business_physical_address_city %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">State</label>
+      <div class="controls"><input type="text" name="business_physical_address_state" value="<%= answers.business_physical_address_state %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">ZIP</label>
+      <div class="controls"><input type="text" name="business_physical_address_zip" value="<%= answers.business_physical_address_zip %>"></div>
+    </div>
+    
+     <div class="control-group">
+      <label class="control-label">Previous Business Mailing Address</label>
+      <div class="controls"><input type="text" name="business_physical_address_street_previous" value="<%= answers.business_physical_address_street_previous %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Previous Suite or Office #?</label>
+      <div class="controls"><input type="text" name="business_physical_address_detail_previous" value="<%= answers.business_physical_address_detail_previous %>"></div>
+    </div>    
+    
+    <div class="control-group">
+      <label class="control-label">City</label>
+      <div class="controls"><input type="text" name="business_physical_address_city" value="<%= answers.business_physical_address_city %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">State</label>
+      <div class="controls"><input type="text" name="business_physical_address_state" value="<%= answers.business_physical_address_state %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Previous ZIP</label>
+      <div class="controls"><input type="text" name="business_physical_address_zip_previous" value="<%= answers.business_physical_address_zip_previous %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Business Phone #</label>
+      <div class="controls"><input type="text" name="business_phone" placeholder="" value="<%= answers.business_phone %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Business Fax #</label>
+      <div class="controls"><input type="text" name="business_fax" placeholder="" value="<%= answers.business_fax %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Email</label>
+      <div class="controls"><input type="text" name="applicant_email" placeholder="" value="<%= answers.applicant_email %>"></div>
+    </div>
+        
+    <div class="control-group">
+      <label class="control-label">Date of Occupancy / Date to start service</label>
+      <div class="controls"><input type="text" name="business_date_of_occupancy" placeholder="" value="<%= answers.business_date_of_occupancy %>"></div>
+    </div>
+        
+    <p>Applicant Information </p>
+    
+    <div class="control-group">
+      <label class="control-label">Applicant First Name</label>
+      <div class="controls"><input type="text" name="applicant_first_name" placeholder="" value="<%= answers.applicant_first_name %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Applicant Last Name</label>
+      <div class="controls"><input type="text" name="applicant_last_name" placeholder="" value="<%= answers.applicant_last_name %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Applicant Address</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_street" placeholder="" value="<%= answers.applicant_physical_address_street %>"></div>
+    </div>      
+
+    <div class="control-group">
+      <label class="control-label">Suite or Office Number</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_detail" placeholder="" value="<%= answers.applicant_physical_address_street %>"></div>
+    </div> 
+
+    <div class="control-group">
+      <label class="control-label">Applicant City</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_city" placeholder="" value="<%= answers.applicant_physical_address_city %>"></div>
+    </div>     
+
+    <div class="control-group">
+      <label class="control-label">Applicant State</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_state" placeholder="" value="<%= answers.applicant_physical_address_state %>"></div>
+    </div>     
+
+    <div class="control-group">
+      <label class="control-label">Applicant ZIP</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_zip" placeholder="" value="<%= answers.applicant_physical_address_zip %>"></div>
+    </div>  
+
+    <div class="control-group">
+      <label class="control-label">Applicant Phone</label>
+      <div class="controls"><input type="text" name="applicant_phone" placeholder="" value="<%= answers.applicant_phone %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Applicant Other Phone</label>
+      <div class="controls"><input type="text" name="applicant_phone_other" placeholder="" value="<%= answers.applicant_phone_other %>"></div>
+    </div>  
+
+    <div class="control-group">
+      <label class="control-label">Business EIN</label>
+      <div class="controls"><input type="text" name="federal_EIN" placeholder="Business EIN only do not put SSN into this system" value="<%= answers.federal_EIN %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Applicant Driver's License</label>
+      <div class="controls"><input type="text" name="applicant_drivers_license" placeholder="" value="<%= answers.applicant_drivers_license %>"></div>
+    </div>
+    
+<!-- this needs help in here and will be the basis of a calculator that has to flow over to the summary screen -->
+
     <label>
       Garbage Service:
         I would like <input type="text" name="trash_can_20_gal_qty"> 20 gallon garbage cans ($16.16/mo),
