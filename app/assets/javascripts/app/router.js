@@ -34,8 +34,8 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, L
       });
       window.alert("cleared!");
     },
-    parking:function(){
 
+    parking:function(){
       var panel = new (Answer.Views.Panel.extend(Parking.Views.Calculator.prototype))({
         collection:  this.answers,
         //useTemplate: "panels/requirements/city/parking"
