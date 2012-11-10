@@ -987,7 +987,7 @@
         <h4>Information You&rsquo;ll Need</h4>
         <dl style="float: left; width: 33%;">
           
-          <!-- this can probably just be commented out, it's never going to be filled out -->
+          <!-- this can probably just be commented out, it's never going to be filled out, i'm leaving in for now as to not mess up the layout -PK -->
           
           <dt>OW</dt>
           <dd class="muted">(determined by EH&amp;S staff)</dd>
@@ -1160,11 +1160,11 @@
 
     <div class="row-fluid">
       <div class="span8 task-why">
-        <p class="lead">You&rsquo;ve told us that your business<% if (answers.business_name) { %>, <strong><%= answers.business_name %></strong>,<% } %> is structured as a <%= answers.business_structure %>, and if you haven't already registered with the state of California, you will need to do so now.</p>
+        <p class="lead">You&rsquo;ve told us that your business<% if (answers.business_name) { %>, <strong><%= answers.business_name %></strong>,<% } %> is structured as a <%= answers.business_structure %>, and if you haven't already registered with the state of California, you may want to do so now. You can register in other states as well. Many companies are registered in Delaware, for example. </p>
       </div>
       <div class="span3 offset1 task-fee">
         <h4>HOW MUCH IS THE FEE?</h4>
-        <p class="lead">Varies (@FIX)</p>
+        <p class="lead">Varies bases on strcuture of business</p>
       </div>
     </div>
 
@@ -1223,7 +1223,7 @@
           <dt>Frontage of Lot</dt>
           <dd><%= answers.frontage %></dd>
           <dt>Parcel Area</dt>
-          <dd><%= answers.parcel_area %></dd>
+          <dd><%= answers.lot_size_total_area %></dd>
           <dt>Length of Wall</dt>
           <dd><%= answers.length_of_wall %></dd>
           <dt>Area of Wall</dt>
@@ -1263,6 +1263,7 @@
       <div class="span4 task-instructions">
         <h4>Instructions</h4>
         <ol>
+          <li>Submit your session through OpenCounter to get this started, but you'll need to come into City hall with plans drawn up by a certified architect or engineer or design professional;</li>
           <li>Download and print the <a href="#">building permit</a> form.</li>
           <li>Fill it out with the <a href="#">information you provided</a>.</li>
           <li>Make an appointment with a city planner, who will direct you to the Building department.</li>
@@ -1272,104 +1273,123 @@
         <h4>Information You&rsquo;ll Need</h4>
         <dl style="float: left; width: 33%;">
         
+        <!-- we should probably just mute these, just like in the EH&S permit as they won't have answers -->
+        
         <dt>Permit Number (determined by building division staff)</dt>
         <dd><%= answers. %></dd>
 
         <dt>Expected Plan Check Due Date (determined by building division staff)</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_expansion_plan_check_due_date %></dd>
     
         <dt>Occupancy Class (determined by building division staff)</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_occupancy_class %></dd>
   
         <dt>Type of Construction (determined by building division staff)</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_construction_type %></dd>
   
         <dt>Sprinklers (Y/N) (determined by building division staff) </dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_sprinklers %></dd>
   
         <dt>Quimby Fee (Y/N) (determined by building division staff)</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_quimby %></dd>
     
         <dt>TIF Project (Y/N) (determined by building division staff)</dt>
-        <dd><%= answers. %></dd>
-  
+        <dd><%= answers.building_TIF %></dd>
+        
         <dt>APN</dt>
-        <dd><%= answers. %></dd>
-    
+        <dd><%= answers.apn %></dd>
+        
+        <dt>Project Description</dt>
+        <dd><%= answers.building_project_description %></dd>
+        
         <dt>Area (square feet)</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_square_footage_total %></dd>
     
         <dt>Project Address</dt>
-        <dd><%= answers. %></dd>
-    
+        <dd><%= answers.business_physical_address_street %></dd>
+        
+        <dt>Project Suite / Office </dt>
+        <dd> <%= answers.business_physical_address_detail %> </dd>
+        
         <dt>Project City</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.business_physical_address_city %></dd>
   
         <dt>Project State</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.business_physical_address_state %></dd>
   
         <dt>Project ZIP</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.business_physical_address_zip %></dd>
   
         <dt>Building Height (feet)</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_height_feet %></dd>
   
         <dt>Building Heght (stories)</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_height_stories %></dd>
     
         <dt>Applicant Role (owner, agent, tenant, architect, engineer</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.applicant_role %></dd>
   
         <dt>Applicant First Name</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.applicant_first_name %></dd>
   
         <dt>Applicant Last Name</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.applicant_last_name %></dd>
     
         <dt>Applicant Phone</dt>
-        <dd><%= answers. %></dd>
-    
+        <dd><%= answers.applicant_phone %></dd>
+        
+        <dt>Applicant Email</dt>
+        <dd><%= answers.applicant_email %> </dd>
+        
         <dt>Applicant Address</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.applicant_physical_address_street %></dd>
+        
+        <dt>Apt/Suite</dt>
+        <dd><%= answers.applicant_physical_address_detail %></dd>
   
         <dt>Appliant City</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.applicant_physical_address_city %></dd>
     
         <dt>Applicant State</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.applicant_physical_address_state %></dd>
     
         <dt>Applicant ZIP</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.applicant_physical_address_zip %></dd>
   
         <dt>Professional Role (Architect, Engineer, Designer) </dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_professional_role %></dd>
   
         <dt>Professional First Name</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_professional_first_name %></dd>
   
         <dt>Professional Last Name</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_professional_last_name %></dd>
     
         <dt>Professional Phone</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_professional_phone %></dd>
     
         <dt>Professional Address</dt>
-        <dd><%= answers. %></dd>
-  
+        <dd><%= answers.building_professional_physical_address_street %></dd>
+        
+        <dt>Suite</dt>
+        <dd><%= answers.building_professional_physical_address_detail %></dd>
+        
         <dt>Professional City</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_professional_physical_address_city %></dd>
     
         <dt>Professional State</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_professional_physical_address_state %></dd>
     
         <dt>Professional ZIP</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_professional_physical_address_ZIP %></dd>
   
         <dt>Professional Email</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_professional_email %></dd>
   
         <dt>Contractor License Number</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.building_professional_license %></dd>
+        
+        
                   
         </dl>
       </div>
