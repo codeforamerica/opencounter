@@ -341,12 +341,10 @@ function(app) {
 
     },
 
-    // TODO:  make it work with the 'calculate' buttons rather than invisibly calculating.
-    // ALT:   remove all the calculate buttons and stick with invisible calculations.
     events: {
-      // "change select,input":"saveInput",
+      "change select,input":"saveInput",
+      // "change select,input":"saveInput"
       // "click .calc_button":"calculate"
-      "change select,input":"calculate"
     },
 
     saveInput:function(ev) {
