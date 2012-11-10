@@ -67,12 +67,12 @@
     
     <div class="control-group">
       <label class="control-label">Applicant First Name</label>
-      <div class="controls"><input type="text" name="applicant_first_name" placeholder="" value="<%= answers.applicant_first.name %>"></div>
+      <div class="controls"><input type="text" name="applicant_first_name" placeholder="" value="<%= answers.applicant_first_name %>"></div>
     </div>
     
     <div class="control-group">
       <label class="control-label">Applicant Last Name</label>
-      <div class="controls"><input type="text" name="applicant_last_name" placeholder="" value="<%= answers.applicant_last.name %>"></div>
+      <div class="controls"><input type="text" name="applicant_last_name" placeholder="" value="<%= answers.applicant_last_name %>"></div>
     </div>  
 
     <div class="control-group">
@@ -122,104 +122,99 @@
 
     <div class="control-group">
       <label class="control-label">Building Height (In Feet)</label>
-      <div class="controls"><input type="text" name="building_height_feet" placeholder="" value="In feet"></div>
+      <div class="controls"><input type="text" name="building_height_feet" placeholder="feet" value="answers.building_height_feet"></div>
     </div>    
 
     <div class="control-group">
       <label class="control-label">Building Height (In stories)</label>
-      <div class="controls"><input type="text" name="building_height_stories" placeholder="" value="In stories"></div>
+      <div class="controls"><input type="text" name="building_height_stories" placeholder="stories" value="answers.building_height_stories"></div>
     </div>        
     
     <div class="control-group">
       <label class="control-label">Role of Building Professional </label>
-      <div class="controls"><input type="text" name="building_professional_role" placeholder="" value="Architect, Engineer, Design Professional"></div>
-    </div>  
-
-    <div class="control-group">
-      <label class="control-label">Role of Building Professional </label>
-      <div class="controls"><input type="text" name="building_professional_role" placeholder="" value="Architect, Engineer, Design Professional"></div>
+      <div class="controls"><input type="text" name="building_professional_role" placeholder="Architect, Engineer, Design Professional" value="answers.building_professional_role"></div>
     </div>      
    
     <div class="control-group">
       <label class="control-label">Building Professional's First Name</label>
-      <div class="controls"><input type="text" name="building_professional_first_name" placeholder="" value="First Name"></div>
+      <div class="controls"><input type="text" name="building_professional_first_name" placeholder="" value="answers.building_professional_first_name"></div>
     </div>
     
     <div class="control-group">
       <label class="control-label">Building Professional's Last Name</label>
-      <div class="controls"><input type="text" name="building_professional_last_name" placeholder="" value="Last Name"></div>
+      <div class="controls"><input type="text" name="building_professional_last_name" placeholder="" value="answers.building_professional_last_name"></div>
     </div>  
 
     <div class="control-group">
       <label class="control-label">Building Professional's Address</label>
-      <div class="controls"><input type="text" name="building_professional_physical_address_street" placeholder="" value="123 Main Street"></div>
+      <div class="controls"><input type="text" name="building_professional_physical_address_street" placeholder="123 Main Street" value="answers.building_professional_physical_address_street"></div>
     </div>      
 
     <div class="control-group">
       <label class="control-label">Suite or Office Number</label>
-      <div class="controls"><input type="text" name="building_professional_physical_address_detail" placeholder="" value="Suite 100"></div>
+      <div class="controls"><input type="text" name="building_professional_physical_address_detail" placeholder="Suite #" value="answers.building_professional_physical_address_detail"></div>
     </div> 
 
     <div class="control-group">
       <label class="control-label">City</label>
-      <div class="controls"><input type="text" name="building_professional_physical_address_city" placeholder="" value="Santa Cruz"></div>
+      <div class="controls"><input type="text" name="building_professional_physical_address_city" placeholder="Santa Cruz" value="answers.building_professional_physical_address_city"></div>
     </div>     
 
     <div class="control-group">
       <label class="control-label">State</label>
-      <div class="controls"><input type="text" name="building_professional_physical_address_state" placeholder="" value="CA"></div>
+      <div class="controls"><input type="text" name="building_professional_physical_address_state" placeholder="CA" value="answers.building_professional_physical_address_state"></div>
     </div>     
 
     <div class="control-group">
       <label class="control-label">ZIP</label>
-      <div class="controls"><input type="text" name="building_professional_physical_address_zip" placeholder="" value="95060"></div>
+      <div class="controls"><input type="text" name="building_professional_physical_address_zip" placeholder="95060" value="answers.building_professional_physical_address_zip"></div>
     </div>  
 
     <div class="control-group">
       <label class="control-label">Building Professional Phone</label>
-      <div class="controls"><input type="text" name="building_professional_phone" placeholder="" value="(831) 123-4567"></div>
+      <div class="controls"><input type="text" name="building_professional_phone" placeholder="(831) 123-4567" value="answers.building_professional_phone"></div>
     </div>  
 
     <div class="control-group">
       <label class="control-label">Building Professional email</label>
-      <div class="controls"><input type="text" name="building_professional_email" placeholder="" value="ben@builders.com"></div>
+      <div class="controls"><input type="text" name="building_professional_email" placeholder="ben@builders.com" value="answers.building_professional_email"></div>
     </div>           
     
     <div class="control-group">
-      <label class="control-label">Building Professional License Number</label>
-      <div class="controls"><input type="text" name="building_professional_license" placeholder="" value="CA license #"></div>
+      <label class="control-label">Building Professional (Contractor's) License Number</label>
+      <div class="controls"><input type="text" name="building_professional_license" placeholder="CA license #" value="answers.building_professional_license"></div>
     </div>               
  
    <p>Building Division Staff will help with the information below after you sumbit through OpenCounter.</p>   
  
     <div class="control-group">
       <label class="control-label">Expansion Plan Check Due Date</label>
-      <div class="controls"><input type="text" name="building_expansion_plan_check_due_date" placeholder="" value="Supplied by Building Division Staff"></div>
+      <div class="controls"><input type="text" name="building_expansion_plan_check_due_date" placeholder="Supplied by Building Division Staff" value="answers.building_expansion_plan_check_due_date"></div>
     </div>
 
     <div class="control-group">
       <label class="control-label">Occupancy Class</label>
-      <div class="controls"><input type="text" name="building_occupancy_class" placeholder="" value="Supplied by Building Division Staff"></div>
+      <div class="controls"><input type="text" name="building_occupancy_class" placeholder="Supplied by Building Division Staff" value="answers.building_occupancy_class"></div>
     </div>
 
     <div class="control-group">
       <label class="control-label">Construction Type</label>
-      <div class="controls"><input type="text" name="building_construction_type" placeholder="" value="Supplied by Building Division Staff"></div>
+      <div class="controls"><input type="text" name="building_construction_type" placeholder="Supplied by Building Division Staff" value="answers.building_construction_type"></div>
     </div>
 
    <div class="control-group">
       <label class="control-label">Sprinklers?</label>
-      <div class="controls"><input type="text" name="building_sprinklers" placeholder="" value="Supplied by Building Division Staff"></div>
+      <div class="controls"><input type="text" name="building_sprinklers" placeholder="Supplied by Building Division Staff" value="answers.building_sprinklers"></div>
     </div>
 
    <div class="control-group">
       <label class="control-label">Do Traffic Impact Fees Apply?</label>
-      <div class="controls"><input type="text" name="building_TIF" placeholder="" value="Supplied by Building Division Staff"></div>
+      <div class="controls"><input type="text" name="building_TIF" placeholder="Supplied by Building Division Staff" value="answers.building_TIF"></div>
     </div>
 
    <div class="control-group">
       <label class="control-label">Quimby Fees Apply?</label>
-      <div class="controls"><input type="text" name="building_quimby" placeholder="" value="Supplied by Building Division Staff"></div>
+      <div class="controls"><input type="text" name="building_quimby" placeholder="Supplied by Building Division Staff" value="answers.building_quimby"></div>
     </div>
    
   </form>
