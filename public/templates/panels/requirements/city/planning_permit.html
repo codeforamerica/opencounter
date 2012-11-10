@@ -128,7 +128,7 @@
         <% } %>
         
         
-<! -- Ruthie, looks like you're still working on this. If the code returns "2" for AUP or "3" for SUP, it can return the same form info, as AUP and SUP use the same unified land use application and you can use the code under the else statment at 130 and clean-up / remove the conditionals down at line 199 ("talk to a planner")-->        
+<!-- Ruthie, looks like you're still working on this. If the code returns "2" for AUP or "3" for SUP, it can return the same form info, as AUP and SUP use the same unified land use application and you can use the code under the else statment at 130 and clean-up / remove the conditionals down at line 199 ("talk to a planner")-->        
         
       <% } else { %>
       
@@ -143,12 +143,12 @@
   
             <div class="control-group">
               <label class="control-label">Your Phone Number</label>
-              <div class="controls"><input type="text" name="applicant_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>"></div>
+              <div class="controls"><input type="text" name="applicant_phone" placeholder="(831) ###-####" value="<%= answers.applicant_phone %>"></div>
             </div>
   
             <div class="control-group">
               <label class="control-label">Your Business&rsquo;s Phone Number</label>
-              <div class="controls"><input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>"></div>
+              <div class="controls"><input type="text" name="business_phone" placeholder="(831) ###-####" value="<%= answers.business_phone %>"></div>
             </div>
   
             <div class="control-group">
@@ -158,51 +158,439 @@
   
             <div class="control-group">
               <label class="control-label">Previous Use</label>
-              <div class="controls"><input type="text" name="prior_use" placeholder="" value="<%= answers.prior_use %>"></div>
+              <div class="controls"><input type="text" name="building_location_prior_use" placeholder="" value="<%= answers.building_location_prior_use %>"></div>
             </div>
   
             <div class="control-group">
-              <label class="control-label">Area (Total), in square feet</label>
-              <div class="controls"><input type="text" name="area_total" placeholder="" value="<%= answers.area_total %>"></div>
+              <label class="control-label">Building Square Feet</label>
+              <div class="controls"><input type="text" name="building_square_footage_ground" placeholder="" value="<%= answers.building_square_footage_ground %>"></div>
             </div>
   
             <div class="control-group">
-              <label class="control-label">Area (First Floor), in square feet</label>
-              <div class="controls"><input type="text" name="area_first_floor" placeholder="" value="<%= answers.area_first_floor %>"></div>
+              <label class="control-label">Building Square Feet Area (Outdoor)</label>
+              <div class="controls"><input type="text" name="building_square_footage_outdoor" placeholder="" value="<%= answers.building_square_footage_outdoor %>"></div>
             </div>
   
-            <div class="control-group">
-              <label class="control-label">Area (Outdoor)</label>
-              <div class="controls"><input type="text" name="area_outdoor" placeholder="" value="<%= answers.area_outdoor %>"></div>
+<!-- is there a way to populate this value as the sum of the previous two values? -->  
+  
+              <div class="control-group">
+              <label class="control-label">Total Square Feet</label>
+              <div class="controls"><input type="text" name="building_square_footage_total" placeholder="" value="<%= answers.building_square_footage_total %>"></div>
             </div>
   
             <div class="control-group">
               <label class="control-label">Single or multi-tenant?</label>
               <div class="controls">
-                <input type="checkbox" name="is_single_tenant" <% if (answers.is_single_tenant) { %>checked="checked"<% } %>> Single Tenant
-                <input type="checkbox" name="is_multi_tenant"  <% if (answers.is_multi_tenant)  { %>checked="checked"<% } %>> Multi Tenant
+                <input type="checkbox" name="building_is_single_tenant" <% if (answers.building_is_single_tenant) { %>checked="checked"<% } %>> Single Tenant
+                <input type="checkbox" name="building_is_multi_tenant"  <% if (answers.building_is_multi_tenant)  { %>checked="checked"<% } %>> Multi Tenant
               </div>
             </div>
+            
+<!-- this might be better moved to the parking panel, much like the sign panel, this is a subset of the main application -->
   
             <div class="control-group">
               <label class="control-label">How many car parking spaces?</label>
-              <div class="controls"><input type="text" name="car_parking_spaces" placeholder="" value="<%= answers.car_parking_spaces %>"></div>
+              <div class="controls"><input type="text" name="parking_spaces_auto" placeholder="" value="<%= answers.parking_spaces_auto %>"></div>
             </div>
   
             <div class="control-group">
               <label class="control-label">How many bicycle parking spaces?</label>
-              <div class="controls"><input type="text" name="bicycle_parking_spaces" placeholder="" value="<%= answers.bicycle_parking_spaces %>"></div>
+              <div class="controls"><input type="text" name="parking_spaces_bicycle" placeholder="" value="<%= answers.parking_spaces_bicycle %>"></div>
             </div>
   
           </form>
 
+
         <% } else if (answers.required_permit.permit == "2") { %>
 
-          <p>This use is conditionally permitted, so you&rsquo;ll need an <em>Administrative Use Permit</em>. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
-        
+          <p>This use is conditionally permitted, so you&rsquo;ll need an <em>Administrative Use Permit</em>.</p>
+ 
+ 
+          <p class="lead">We'll need this additional information:</p>
+          
+<!-- Check this to make sure that this isn't broken-->
+
+          <form method="post" action="#" id="form_administrative_use_permit">
+  
+            <div class="control-group">
+              <label class="control-label">Your Phone Number</label>
+              <div class="controls"><input type="text" name="applicant_phone" placeholder="(831) ###-####" value="<%= answers.applicant_phone %>"></div>
+            </div>
+  
+            <div class="control-group">
+              <label class="control-label">Your Business&rsquo;s Phone Number</label>
+              <div class="controls"><input type="text" name="business_phone" placeholder="(831) ###-####" value="<%= answers.business_phone %>"></div>
+            </div>
+  
+            <div class="control-group">
+              <label class="control-label">Date of Occupancy</label>
+              <div class="controls"><input type="text" name="business_date_of_occupancy" placeholder="" value="<%= answers.business_date_of_occupancy %>"></div>
+            </div>
+  
+            <div class="control-group">
+              <label class="control-label">Previous Use</label>
+              <div class="controls"><input type="text" name="building_location_prior_use" placeholder="" value="<%= answers.building_location_prior_use %>"></div>
+            </div>
+  
+            <p>Site Characteristics</p>
+  
+            <div class="control-group">
+              <label class="control-label">Building Square Feet Ground Floor</label>
+              <div class="controls"><input type="text" name="building_square_footage_ground" placeholder="" value="<%= answers.building_square_footage_ground %>"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Proposed Square Feet Ground Floor</label>
+              <div class="controls"><input type="text" name="building_square_footage_ground_proposed" placeholder="" value="<%= answers.building_square_footage_ground_proposed %>"></div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">Building Square Feet Second Floor</label>
+              <div class="controls"><input type="text" name="building_square_footage_second" placeholder="" value="<%= answers.building_square_footage_second %>"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Proposed Square Feet Ground Floor</label>
+              <div class="controls"><input type="text" name="building_square_footage_second_proposed" placeholder="" value="<%= answers.building_square_footage_second_proposed %>"></div>
+            </div>
+                     
+            <div class="control-group">
+              <label class="control-label">Building Square Feet Area (Outdoor)</label>
+              <div class="controls"><input type="text" name="building_square_footage_outdoor" placeholder="" value="<%= answers.building_square_footage_outdoor %>"></div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">Building Square Feet Area (Outdoor) Proposed</label>
+              <div class="controls"><input type="text" name="building_square_footage_outdoor_proposed" placeholder="" value="<%= answers.building_square_footage_outdoor_proposed %>"></div>
+            </div>
+                
+            <div class="control-group">
+              <label class="control-label">Building Square Feet Area (Detached)</label>
+              <div class="controls"><input type="text" name="building_square_footage_detached" placeholder="" value="<%= answers.building_square_footage_outdoor %>"></div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">Building Square Feet Area (Detached) Proposed</label>
+              <div class="controls"><input type="text" name="building_square_footage_detached_proposed" placeholder="" value="<%= answers.building_square_footage_detached_proposed %>"></div>
+            </div>             
+ 
+            <!-- is there a way to populate this value as the sum of the previous values? -->  
+  
+            <div class="control-group">
+              <label class="control-label">Total Square Feet</label>
+              <div class="controls"><input type="text" name="building_square_footage_total" placeholder="" value="<%= answers.building_square_footage_total %>"></div>
+            </div>
+              
+          <div class="control-group">
+              <label class="control-label">Lot Size</label>
+              <div class="controls"><input type="text" name="lot_size_length_x_width" placeholder="length x width" value="<%= answers.lot_size_length_x_width %>"></div>
+            </div>
+             
+          <div class="control-group">
+              <label class="control-label">Lot Size Area </label>
+              <div class="controls"><input type="text" name="lot_size_total_area" placeholder="area in square feet" value="<%= answers.lot_size_total_area %>"></div>
+            </div>
+                       
+          <div class="control-group">
+            <label class="control-label">Building Height (In Feet)</label>
+            <div class="controls"><input type="text" name="building_height_feet" placeholder="feet" value="answers.building_height_feet"></div>
+          </div>    
+      
+          <div class="control-group">
+            <label class="control-label">Building Height (In stories)</label>
+            <div class="controls"><input type="text" name="building_height_stories" placeholder="stories" value="answers.building_height_stories"></div>
+          </div>                               
+                           
+          <div class="control-group">
+            <label class="control-label">Accessory Building Height (In Feet)</label>
+            <div class="controls"><input type="text" name="building_height_accessory_feet" placeholder="feet" value="answers.building_height_accessory_feet"></div>
+          </div>    
+      
+          <div class="control-group">
+            <label class="control-label">Accessory Building Height (In stories)</label>
+            <div class="controls"><input type="text" name="building_height_accessory_stories" placeholder="stories" value="answers.building_height_accessory_stories"></div>
+          </div>                 
+  
+            <div class="control-group">
+              <label class="control-label">Single or multi-tenant?</label>
+              <div class="controls">
+                <input type="checkbox" name="building_is_single_tenant" <% if (answers.building_is_single_tenant) { %>checked="checked"<% } %>> Single Tenant
+                <input type="checkbox" name="building_is_multi_tenant"  <% if (answers.building_is_multi_tenant)  { %>checked="checked"<% } %>> Multi Tenant
+              </div>
+            </div>
+            
+<!-- this might be better moved to the parking panel, much like the sign panel, this is a subset of the main application -->
+
+            <p>Parking Data</p>
+  
+            <div class="control-group">
+              <label class="control-label">Existing auto parking spaces (standard) </label>
+              <div class="controls"><input type="text" name="parking_spaces_auto" placeholder="" value="<%= answers.parking_spaces_auto %>"></div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">Existing auto parking spaces  (compact)? </label>
+              <div class="controls"><input type="text" name="parking_spaces_auto_compact" placeholder="" value="<%= answers.parking_spaces_auto_compact %>"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Existing auto parking spaces  (handicap)? </label>
+              <div class="controls"><input type="text" name="parking_spaces_auto_handicap" placeholder="" value="<%= answers.parking_spaces_auto_handicap %>"></div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">Proposed auto parking spaces (standard) </label>
+              <div class="controls"><input type="text" name="parking_spaces_auto_proposed" placeholder="" value="<%= answers.parking_spaces_auto_proposed %>"></div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">Proposed auto parking spaces  (compact)? </label>
+              <div class="controls"><input type="text" name="parking_spaces_auto_compact_proposed" placeholder="" value="<%= answers.parking_spaces_auto_compact_proposed %>"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Proposed auto parking spaces  (handicap)? </label>
+              <div class="controls"><input type="text" name="parking_spaces_auto_handicap_proposed" placeholder="" value="<%= answers.parking_spaces_auto_handicap_proposed %>"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Bicycle parking spaces</label>
+              <div class="controls"><input type="text" name="parking_spaces_bicycle" placeholder="" value="<%= answers.parking_spaces_bicycle %>"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Bicycle parking spaces(covered)</label>
+              <div class="controls"><input type="text" name="parking_spaces_bicycle_covered" placeholder="" value="<%= answers.parking_spaces_bicycle_covered %>"></div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">Proposed bicycle parking spaces</label>
+              <div class="controls"><input type="text" name="parking_spaces_bicycle_proposed" placeholder="" value="<%= answers.parking_spaces_bicycle_proposed %>"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label"> Proposed bicycle parking spaces (covered)</label>
+              <div class="controls"><input type="text" name="parking_spaces_bicycle_proposed_covered" placeholder="" value="<%= answers.parking_spaces_bicycle_proposed_covered %>"></div>
+            </div>
+ 
+             <div class="control-group">
+              <label class="control-label"> Construction phasing plance, special design features or material </label>
+              <div class="controls"><input type="text" name="building_construction_phasing" placeholder="Yes or No" value="<%= answers.building_construction_phasing %>"></div>
+            </div> 
+ 
+            <div class="control-group">
+              <label class="control-label"> Does your project involve construction of a new structure or an improvement oto an existing structure which equals or exceeds 50% of the market value of the structure? </label>
+              <div class="controls"><input type="text" name="building_new_structure" placeholder="Yes or No" value="<%= answers.building_new_structure %>"></div>
+            </div> 
+ 
+ </div>
+  
+            <div class="span4">
+              <div class="form-actions">
+                <p class="lead">I hereby certify that the facts given on this application are true and correct to the best of my knowledge and I agree to, and authorize, such investigations as are deemed necessary by the City of Santa Curz City Planning Department for the preparation of reports related to this application, including the right of access to the property involved. In submitting this application I agree to hold the City of Santa Cruz harmless from all costs and expenses, including litigations costs and attornet's fees incurred by the City of held to be the City's responsibility in connection with the City's defense of its actions taken in connection with the project which is subject of this application" (Signed and dated)</p>
+                <p class="next lead"><a class="submit" href="/location/check">Yes <%= (answers.is_owner === "true") ? "I" : "the owner" %> will comply with all these rules &rarr;</a></p>
+                <p class="next lead"><a class="submit" href="/help">No, <%= (answers.is_owner === "true") ? "I" : "the owner" %> might not be able comply with these terms. &rarr;</a></p>
+              </div>
+            </div>
+          
+          </div>
+ 
+  </form>
+
         <% } else if (answers.required_permit.permit == "3") { %>
 
-          <p>This use is conditionally permitted, so you&rsquo;ll need a <em>Special Use Permit</em>. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
+          <p>This use is conditionally permitted, so you&rsquo;ll need a <em>Special Use Permit</em>.
+          
+          <p class="lead">We'll need this additional information:</p>
+<!-- check this Ruthie, don't want to mess this up-->
+
+          <form method="post" action="#" id="form_special_use_permit">
+  
+            <div class="control-group">
+              <label class="control-label">Your Phone Number</label>
+              <div class="controls"><input type="text" name="applicant_phone" placeholder="(831) ###-####" value="<%= answers.applicant_phone %>"></div>
+            </div>
+  
+            <div class="control-group">
+              <label class="control-label">Your Business&rsquo;s Phone Number</label>
+              <div class="controls"><input type="text" name="business_phone" placeholder="(831) ###-####" value="<%= answers.business_phone %>"></div>
+            </div>
+  
+            <div class="control-group">
+              <label class="control-label">Date of Occupancy</label>
+              <div class="controls"><input type="text" name="business_date_of_occupancy" placeholder="" value="<%= answers.business_date_of_occupancy %>"></div>
+            </div>
+  
+            <div class="control-group">
+              <label class="control-label">Previous Use</label>
+              <div class="controls"><input type="text" name="building_location_prior_use" placeholder="" value="<%= answers.building_location_prior_use %>"></div>
+            </div>
+  
+            <p>Site Characteristics</p>
+  
+            <div class="control-group">
+              <label class="control-label">Building Square Feet Ground Floor</label>
+              <div class="controls"><input type="text" name="building_square_footage_ground" placeholder="" value="<%= answers.building_square_footage_ground %>"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Proposed Square Feet Ground Floor</label>
+              <div class="controls"><input type="text" name="building_square_footage_ground_proposed" placeholder="" value="<%= answers.building_square_footage_ground_proposed %>"></div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">Building Square Feet Second Floor</label>
+              <div class="controls"><input type="text" name="building_square_footage_second" placeholder="" value="<%= answers.building_square_footage_second %>"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Proposed Square Feet Ground Floor</label>
+              <div class="controls"><input type="text" name="building_square_footage_second_proposed" placeholder="" value="<%= answers.building_square_footage_second_proposed %>"></div>
+            </div>
+                     
+            <div class="control-group">
+              <label class="control-label">Building Square Feet Area (Outdoor)</label>
+              <div class="controls"><input type="text" name="building_square_footage_outdoor" placeholder="" value="<%= answers.building_square_footage_outdoor %>"></div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">Building Square Feet Area (Outdoor) Proposed</label>
+              <div class="controls"><input type="text" name="building_square_footage_outdoor_proposed" placeholder="" value="<%= answers.building_square_footage_outdoor_proposed %>"></div>
+            </div>
+                
+            <div class="control-group">
+              <label class="control-label">Building Square Feet Area (Detached)</label>
+              <div class="controls"><input type="text" name="building_square_footage_detached" placeholder="" value="<%= answers.building_square_footage_outdoor %>"></div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">Building Square Feet Area (Detached) Proposed</label>
+              <div class="controls"><input type="text" name="building_square_footage_detached_proposed" placeholder="" value="<%= answers.building_square_footage_detached_proposed %>"></div>
+            </div>             
+ 
+            <!-- is there a way to populate this value as the sum of the previous values? -->  
+  
+            <div class="control-group">
+              <label class="control-label">Total Square Feet</label>
+              <div class="controls"><input type="text" name="building_square_footage_total" placeholder="" value="<%= answers.building_square_footage_total %>"></div>
+            </div>
+              
+          <div class="control-group">
+              <label class="control-label">Lot Size</label>
+              <div class="controls"><input type="text" name="lot_size_length_x_width" placeholder="length x width" value="<%= answers.lot_size_length_x_width %>"></div>
+            </div>
+             
+          <div class="control-group">
+              <label class="control-label">Lot Size Area </label>
+              <div class="controls"><input type="text" name="lot_size_total_area" placeholder="area in square feet" value="<%= answers.lot_size_total_area %>"></div>
+            </div>
+                       
+          <div class="control-group">
+            <label class="control-label">Building Height (In Feet)</label>
+            <div class="controls"><input type="text" name="building_height_feet" placeholder="feet" value="answers.building_height_feet"></div>
+          </div>    
+      
+          <div class="control-group">
+            <label class="control-label">Building Height (In stories)</label>
+            <div class="controls"><input type="text" name="building_height_stories" placeholder="stories" value="answers.building_height_stories"></div>
+          </div>                               
+                           
+          <div class="control-group">
+            <label class="control-label">Accessory Building Height (In Feet)</label>
+            <div class="controls"><input type="text" name="building_height_accessory_feet" placeholder="feet" value="answers.building_height_accessory_feet"></div>
+          </div>    
+      
+          <div class="control-group">
+            <label class="control-label">Accessory Building Height (In stories)</label>
+            <div class="controls"><input type="text" name="building_height_accessory_stories" placeholder="stories" value="answers.building_height_accessory_stories"></div>
+          </div>                 
+  
+            <div class="control-group">
+              <label class="control-label">Single or multi-tenant?</label>
+              <div class="controls">
+                <input type="checkbox" name="building_is_single_tenant" <% if (answers.building_is_single_tenant) { %>checked="checked"<% } %>> Single Tenant
+                <input type="checkbox" name="building_is_multi_tenant"  <% if (answers.building_is_multi_tenant)  { %>checked="checked"<% } %>> Multi Tenant
+              </div>
+            </div>
+            
+<!-- this might be better moved to the parking panel, much like the sign panel, this is a subset of the main application -->
+
+            <p>Parking Data</p>
+  
+            <div class="control-group">
+              <label class="control-label">Existing auto parking spaces (standard) </label>
+              <div class="controls"><input type="text" name="parking_spaces_auto" placeholder="" value="<%= answers.parking_spaces_auto %>"></div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">Existing auto parking spaces  (compact)? </label>
+              <div class="controls"><input type="text" name="parking_spaces_auto_compact" placeholder="" value="<%= answers.parking_spaces_auto_compact %>"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Existing auto parking spaces  (handicap)? </label>
+              <div class="controls"><input type="text" name="parking_spaces_auto_handicap" placeholder="" value="<%= answers.parking_spaces_auto_handicap %>"></div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">Proposed auto parking spaces (standard) </label>
+              <div class="controls"><input type="text" name="parking_spaces_auto_proposed" placeholder="" value="<%= answers.parking_spaces_auto_proposed %>"></div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">Proposed auto parking spaces  (compact)? </label>
+              <div class="controls"><input type="text" name="parking_spaces_auto_compact_proposed" placeholder="" value="<%= answers.parking_spaces_auto_compact_proposed %>"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Proposed auto parking spaces  (handicap)? </label>
+              <div class="controls"><input type="text" name="parking_spaces_auto_handicap_proposed" placeholder="" value="<%= answers.parking_spaces_auto_handicap_proposed %>"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">bicycle parking spaces</label>
+              <div class="controls"><input type="text" name="parking_spaces_bicycle" placeholder="" value="<%= answers.parking_spaces_bicycle %>"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">bicycle parking spaces? (covered)</label>
+              <div class="controls"><input type="text" name="parking_spaces_bicycle_covered" placeholder="" value="<%= answers.parking_spaces_bicycle_covered %>"></div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">Proposed bicycle parking spaces</label>
+              <div class="controls"><input type="text" name="parking_spaces_bicycle_proposed" placeholder="" value="<%= answers.parking_spaces_bicycle_proposed %>"></div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">bicycle parking spaces? (covered)</label>
+              <div class="controls"><input type="text" name="parking_spaces_bicycle_proposed_covered" placeholder="" value="<%= answers.parking_spaces_bicycle_proposed_covered %>"></div>
+            </div>
+ 
+             <div class="control-group">
+              <label class="control-label"> Construction phasing plance, special design features or material </label>
+              <div class="controls"><input type="text" name="building_construction_phasing" placeholder="Yes or No" value="<%= answers.building_construction_phasing %>"></div>
+            </div> 
+ 
+            <div class="control-group">
+              <label class="control-label"> Does your project involve construction of a new structure or an improvement oto an existing structure which equals or exceeds 50% of the market value of the structure? </label>
+              <div class="controls"><input type="text" name="building_new_structure" placeholder="Yes or No" value="<%= answers.building_new_structure %>"></div>
+            </div> 
+ 
+ </div>
+  
+            <div class="span4">
+              <div class="form-actions">
+                <p class="lead">I hereby certify that the facts given on this application are true and correct to the best of my knowledge and I agree to, and authorize, such investigations as are deemed necessary by the City of Santa Curz City Planning Department for the preparation of reports related to this application, including the right of access to the property involved. In submitting this application I agree to hold the City of Santa Cruz harmless from all costs and expenses, including litigations costs and attornet's fees incurred by the City of held to be the City's responsibility in connection with the City's defense of its actions taken in connection with the project which is subject of this application" (Signed and dated)</p>
+                <p class="next lead"><a class="submit" href="/location/check">Yes <%= (answers.is_owner === "true") ? "I" : "the owner" %> will comply with all these rules &rarr;</a></p>
+                <p class="next lead"><a class="submit" href="/help">No, <%= (answers.is_owner === "true") ? "I" : "the owner" %> might not be able comply with these terms. &rarr;</a></p>
+              </div>
+            </div>
+          
+          </div>
+ 
+  </form>      
+          
 
         <% } else if (answers.required_permit.permit == "4") { %>
         

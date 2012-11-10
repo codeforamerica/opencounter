@@ -56,6 +56,7 @@
       <div class="span4 task-instructions">
         <h4>Instructions</h4>
         <ol>
+          <li>Before proceeding with any construction on the site;</li>
           <li>Download and print <a href="/assets/pdf/city/owner-agent.pdf">this form &rarr;</a></li>
           <li>Fill out this form with the information you provided.</li>
           <li>Sign and notarize this form. (Tip: The city clerk is a notary public!)</li>
@@ -173,9 +174,9 @@
       <div class="span4 task-instructions">
         <h4>Instructions</h4>
         <ol>
+          <li>Submit your OpenCounter Session with following information, or;</li>
           <li>Download and print the <a href="#">zoning clearance form &rarr;</a>.</li>
           <li>Fill it out with the information you provided.</li>
-          <li>Submit it to the Planning Department by submitting your OpenCounter session.</li>
         </ol>
       </div>
       <div class="span8 task-information">
@@ -198,25 +199,25 @@
           <dt>Applicant Address</dt>
           <dd><%= answers.applicant_physical_address_street %></dd>
           <dt>Description of business (use determination)</dt>
-          <dd><%= answers.business_type %></dd>
+          <dd><%= answers.business_type %> <%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>) </dd>
           <dt>Date of Occupancy</dt>
           <dd><%= answers.business_date_of_occupancy %></dd>
           <dt>Previous Use</dt>
-          <dd><%= answers.prior_use %></dd>
+          <dd><%= answers.building_location_prior_use %></dd>
           <dt>Area (Total)</dt>
-          <dd><%= answers.area_total %></dd>
+          <dd><%= answers.building_square_footage_total %></dd>
           <dt>Area (First Floor)</dt>
-          <dd><%= answers.area_first_floor %></dd>
+          <dd><%= answers.building_square_footage_ground %></dd>
           <dt>Area (Outdoor)</dt>
-          <dd><%= answers.area_outdoor %></dd>
+          <dd><%= answers.building_square_footage_outdoor %></dd>
           <dt>Single tenant? (Y/N)</dt>
           <dd><%= answers.is_single_tenant %></dd>
           <dt>Multi-tenant? (Y/N)</dt>
           <dd><%= answers.is_multi_tenant %></dd>
           <dt>Car parking spaces</dt>
-          <dd><%= answers.car_parking_spaces %></dd>
+          <dd><%= answers.parking_spaces_auto %></dd>
           <dt>Bicycle parking spaces</dt>
-          <dd><%= answers.bicycle_parking_spaces %></dd>
+          <dd><%= answers.parking_spaces_bicycle %></dd>
         </dl>
       </div><!-- /.task-information -->
     </div><!-- /.task-steps -->
@@ -272,25 +273,25 @@
           <dt>Applicant Address</dt>
           <dd><%= answers.applicant_physical_address_street %></dd>
           <dt>Description of business (use determination)</dt>
-          <dd><%= answers.business_type %></dd>
+          <dd><%= answers.business_type %> <%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</dd>
           <dt>Date of Occupancy</dt>
           <dd><%= answers.business_date_of_occupancy %></dd>
           <dt>Previous Use</dt>
-          <dd><%= answers.prior_use %></dd>
+          <dd><%= answers.building_location_prior_use %></dd>
           <dt>Area (Total)</dt>
-          <dd><%= answers.area_total %></dd>
+          <dd><%= answers.building_square_footage_total %></dd>
           <dt>Area (First Floor)</dt>
-          <dd><%= answers.area_first_floor %></dd>
+          <dd><%= answers.building_square_footage_ground %></dd>
           <dt>Area (Outdoor)</dt>
-          <dd><%= answers.area_outdoor %></dd>
+          <dd><%= answers.building_square_footage_outdoor %></dd>
           <dt>Single tenant? (Y/N)</dt>
           <dd><%= answers.is_single_tenant %></dd>
           <dt>Multi-tenant? (Y/N)</dt>
           <dd><%= answers.is_multi_tenant %></dd>
           <dt>Car parking spaces</dt>
-          <dd><%= answers.car_parking_spaces %></dd>
+          <dd><%= answers.parking_spaces_auto %></dd>
           <dt>Bicycle parking spaces</dt>
-          <dd><%= answers.bicycle_parking_spaces %></dd>
+          <dd><%= answers.parking_spaces_bicycle %></dd>
         </dl>
       </div><!-- /.task-information -->
     </div><!-- /.task-steps -->
@@ -320,53 +321,127 @@
       <div class="span4 task-instructions">
         <h4>Instructions</h4>
         <ol>
+          <li>Submit a land use application through this OpenCounter session, or;</li>
           <li>Download and print the <a href="#">land use permit form &rarr;</a></li>
           <li>Fill it out with the information you provided.</li>
-          <li>Submit it to the Planning Department by submitting this OpenCounter session.</li>
         </ol>
       </div>
       <div class="span8 task-information">
         <h4>Information You&rsquo;ll Need</h4>
         <dl style="float: left; width: 33%;">
+          
+          <p> About the Business </p>
+          
           <dt>Business Address</dt>
           <dd><%= answers.business_physical_address_street %></dd>
-          <dt>Telephone</dt>
-          <dd><%= answers.business_phone %></dd>
+          <dt>Suite</dt>
+          <dd><%= answers.business_physical_address_detail %></dd>
+          <dt>City</dt>
+          <dd><%= answers.business_physical_address_city %> </dd>
+          <dt>State</dt>
+          <dd><%= answers.business_physical_address_state %></dd>
+          <dt>ZIP</dt>
+          <dd><%= answers.business_physical_address_zip %></dd>
           <dt>Name of Business</dt>
           <dd><%= answers.business_name %></dd>
           <dt>APN</dt>
           <dd><%= answers.apn %></dd>
           <dt>Zoning District</dt>
+          <dt>Description of business (use determination)</dt>
+          <dd><%= answers.business_type %> <%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</dd>
+          <dt>Telephone</dt>
+          <dd><%= answers.business_phone %></dd>
           <dd><%= answers.zoning_district %></dd>
+          <dt>Date of Occupancy</dt>
+          <dd><%= answers.business_date_of_occupancy %></dd>
+          <dt>Previous Use</dt>
+          <dd><%= answers.building_location_prior_use %></dd>
+          
+          <p> About the Applicant </p>
+          
           <dt>Applicant Name</dt>
           <dd><%= answers.applicant_first_name %> <%= answers.applicant_last_name %></dd>
           <dt>Applicant Phone</dt>
           <dd><%= answers.applicant_phone %></dd>
           <dt>Applicant Address</dt>
           <dd><%= answers.applicant_physical_address_street %></dd>
-          <dt>Description of business (use determination)</dt>
-          <dd><%= answers.business_type %></dd>
-          <dt>Date of Occupancy</dt>
-          <dd><%= answers.business_date_of_occupancy %></dd>
-          <dt>Previous Use</dt>
-          <dd><%= answers.prior_use %></dd>
+          <dt>Apt / Suite</dt>
+          <dd><%= answers.applicant_physical_address_detail %></dd>
+          <dt>City</dt>
+          <dd><%= answers.applicant_physical_address_city %></dd>
+          <dt>State</dt>
+          <dd><%= answers.applicant_physical_address_state %></dd>
+          <dt>ZIP</dt>
+          <dd><%= answers.applicant_physical_address_zip</dd>          
+
+          <p>About the Site</p>
+          
+          <dt>Building Height (stories)</dt>
+          <dd>answers.building_height_stories</dd>
+          <dt>Building Height (feet)</dt>
+          <dd>answers.building_height_feet</dd>
           <dt>Area (Total)</dt>
-          <dd><%= answers.area_total %></dd>
+          <dd><%= answers.building_square_footage_total %></dd>
           <dt>Area (First Floor)</dt>
-          <dd><%= answers.area_first_floor %></dd>
+          <dd><%= answers.building_square_footage_ground %></dd>
+          <dt>Proposed New First Floor Area</dt>
+          <dd><%= answers.building_square_footage_ground_proposed %></dd>
+          <dt>Area (Second Floor)</dt>
+          <dd>answers.building_square_footage_second</dd>
+          <dt>Proposed New Second Floor Area</dt>
+          <dd><%= answers.building_square_footage_second_proposed %></dd>
           <dt>Area (Outdoor)</dt>
-          <dd><%= answers.area_outdoor %></dd>
+          <dd><%= answers.building_square_footage_outdoor %></dd>
+          <dt>Proposed New Outdoor Area</dt>
+          <dd><%= answers.building_square_footage_outdoor_proposed %></dd>
+          <dt>Lot Size (LxW)</dt>
+          <dd><%= answers.lot_size_length_x_width %></dd>
+          <dt>Lot Area</dt>
+          <dd><%= answers.lot_size_total_area %></dd>
           <dt>Single tenant? (Y/N)</dt>
           <dd><%= answers.is_single_tenant %></dd>
           <dt>Multi-tenant? (Y/N)</dt>
           <dd><%= answers.is_multi_tenant %></dd>
-          <dt>Car parking spaces</dt>
-          <dd><%= answers.car_parking_spaces %></dd>
+          <dt>Accessory Building Height (stories)</dt>
+          <dd><%= answers.building_height_accessory_stories %></dd>
+          <dt>Accessory Building Height (feet)</dt>
+          <dd><%= answers.building_height_accessory_feet %></dd>
+          <dt>Accessory Building Area</dt>
+          <dd><%= answers.building_square_footage_detached %></dd>
+          <dt>Accessory Building Area Proposed</dt>
+          <dd><%= answers.building_square_footage_detached_proposed %></dd>
+          
+          
+          <p>About the parking</p>
+          
+          <dt>Auto parking spaces (standard)</dt>
+          <dd><%= answers.parking_spaces_auto %></dd>
+          <dt>Proposed auto parking spaces (standard)</dt>
+          <dd><%= answers.parking_spaces_auto_proposed %></dd>
+          <dt>Auto parking spaces (compact)</dt>
+          <dd><%= answers.parking_spaces_auto_compact %></dd>
+          <dt>Proposed auto parking spaces (compact)</dt>
+          <dd><%= answers.parking_spaces_auto_compact_proposed %></dd>
+          <dt>Auto parking spaces (ADA accessible)</dt>
+          <dd><%= answers.parking_spaces_auto_handicap %></dd>
+          <dt>Proposed ADA accessiblt Auto parking</dt>
+          <dd><%= answers.parking_spaces_auto_handicap_proposed %></dd>
           <dt>Bicycle parking spaces</dt>
-          <dd><%= answers.bicycle_parking_spaces %></dd>
+          <dd><%= answers.parking_spaces_bicycle %></dd>
+          <dt>Proposed bicycle parking spaces</dt>
+          <dd><%= answers.parking_spaces_bicycle_proposed %></dd>
+          <dt>Bicycle parking (covered)</dt>
+          <dd><%= answers.parking_spaces_bicycle_covered %></dd>
+          <dt>Proposed Bicycle parking (covered)</dt>
+          <dd><%= answers.parking_spaces_bicycle_proposed_covered %></dd>
           
-          <!-- @todo add aup additional fields -->
+          <p>About construction</p>
           
+          <dt>Construction Phasing</dt>
+          <dd><%= answers.building_construction_phasing %></dd>
+          <dt>New Structure?</dt>
+          <dd><%= answers.building_new_structure %></dd>
+      
         </dl>
       </div><!-- /.task-information -->
     </div><!-- /.task-steps -->
@@ -404,44 +479,117 @@
       <div class="span8 task-information">
         <h4>Information You&rsquo;ll Need</h4>
         <dl style="float: left; width: 33%;">
+          
+          <p> About the Business </p>
+          
           <dt>Business Address</dt>
           <dd><%= answers.business_physical_address_street %></dd>
-          <dt>Telephone</dt>
-          <dd><%= answers.business_phone %></dd>
+          <dt>Suite</dt>
+          <dd><%= answers.business_physical_address_detail %></dd>
+          <dt>City</dt>
+          <dd><%= answers.business_physical_address_city %> </dd>
+          <dt>State</dt>
+          <dd><%= answers.business_physical_address_state %></dd>
+          <dt>ZIP</dt>
+          <dd><%= answers.business_physical_address_zip %></dd>
           <dt>Name of Business</dt>
           <dd><%= answers.business_name %></dd>
           <dt>APN</dt>
           <dd><%= answers.apn %></dd>
           <dt>Zoning District</dt>
+          <dt>Description of business (use determination)</dt>
+          <dd><%= answers.business_type %> <%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</dd>
+          <dt>Telephone</dt>
+          <dd><%= answers.business_phone %></dd>
           <dd><%= answers.zoning_district %></dd>
+          <dt>Date of Occupancy</dt>
+          <dd><%= answers.business_date_of_occupancy %></dd>
+          <dt>Previous Use</dt>
+          <dd><%= answers.building_location_prior_use %></dd>
+          
+          <p> About the Applicant </p>
+          
           <dt>Applicant Name</dt>
           <dd><%= answers.applicant_first_name %> <%= answers.applicant_last_name %></dd>
           <dt>Applicant Phone</dt>
           <dd><%= answers.applicant_phone %></dd>
           <dt>Applicant Address</dt>
           <dd><%= answers.applicant_physical_address_street %></dd>
-          <dt>Description of business (use determination)</dt>
-          <dd><%= answers.business_type %></dd>
-          <dt>Date of Occupancy</dt>
-          <dd><%= answers.business_date_of_occupancy %></dd>
-          <dt>Previous Use</dt>
-          <dd><%= answers.prior_use %></dd>
+          <dt>Apt / Suite</dt>
+          <dd><%= answers.applicant_physical_address_detail %></dd>
+          <dt>City</dt>
+          <dd><%= answers.applicant_physical_address_city %></dd>
+          <dt>State</dt>
+          <dd><%= answers.applicant_physical_address_state %></dd>
+          <dt>ZIP</dt>
+          <dd><%= answers.applicant_physical_address_zip</dd>          
+
+          <p>About the Site</p>
+          
+          <dt>Building Height (stories)</dt>
+          <dd>answers.building_height_stories</dd>
+          <dt>Building Height (feet)</dt>
+          <dd>answers.building_height_feet</dd>
           <dt>Area (Total)</dt>
-          <dd><%= answers.area_total %></dd>
+          <dd><%= answers.building_square_footage_total %></dd>
           <dt>Area (First Floor)</dt>
-          <dd><%= answers.area_first_floor %></dd>
+          <dd><%= answers.building_square_footage_ground %></dd>
+          <dt>Proposed New First Floor Area</dt>
+          <dd><%= answers.building_square_footage_ground_proposed %></dd>
+          <dt>Area (Second Floor)</dt>
+          <dd>answers.building_square_footage_second</dd>
+          <dt>Proposed New Second Floor Area</dt>
+          <dd><%= answers.building_square_footage_second_proposed %></dd>
           <dt>Area (Outdoor)</dt>
-          <dd><%= answers.area_outdoor %></dd>
+          <dd><%= answers.building_square_footage_outdoor %></dd>
+          <dt>Proposed New Outdoor Area</dt>
+          <dd><%= answers.building_square_footage_outdoor_proposed %></dd>
+          <dt>Lot Size (LxW)</dt>
+          <dd><%= answers.lot_size_length_x_width %></dd>
+          <dt>Lot Area</dt>
+          <dd><%= answers.lot_size_total_area %></dd>
           <dt>Single tenant? (Y/N)</dt>
           <dd><%= answers.is_single_tenant %></dd>
           <dt>Multi-tenant? (Y/N)</dt>
           <dd><%= answers.is_multi_tenant %></dd>
-          <dt>Car parking spaces</dt>
-          <dd><%= answers.car_parking_spaces %></dd>
-          <dt>Bicycle parking spaces</dt>
-          <dd><%= answers.bicycle_parking_spaces %></dd>
+          <dt>Accessory Building Height (stories)</dt>
+          <dd><%= answers.building_height_accessory_stories %></dd>
+          <dt>Accessory Building Height (feet)</dt>
+          <dd><%= answers.building_height_accessory_feet %></dd>
+          <dt>Accessory Building Area</dt>
+          <dd><%= answers.building_square_footage_detached %></dd>
+          <dt>Accessory Building Area Proposed</dt>
+          <dd><%= answers.building_square_footage_detached_proposed %></dd>
           
-          <!-- @todo add aup additional fields -->
+          <p>About the parking</p>
+          
+          <dt>Auto parking spaces (standard)</dt>
+          <dd><%= answers.parking_spaces_auto %></dd>
+          <dt>Proposed auto parking spaces (standard)</dt>
+          <dd><%= answers.parking_spaces_auto_proposed %></dd>
+          <dt>Auto parking spaces (compact)</dt>
+          <dd><%= answers.parking_spaces_auto_compact %></dd>
+          <dt>Proposed auto parking spaces (compact)</dt>
+          <dd><%= answers.parking_spaces_auto_compact_proposed %></dd>
+          <dt>Auto parking spaces (ADA accessible)</dt>
+          <dd><%= answers.parking_spaces_auto_handicap %></dd>
+          <dt>Proposed ADA accessiblt Auto parking</dt>
+          <dd><%= answers.parking_spaces_auto_handicap_proposed %></dd>
+          <dt>Bicycle parking spaces</dt>
+          <dd><%= answers.parking_spaces_bicycle %></dd>
+          <dt>Proposed bicycle parking spaces</dt>
+          <dd><%= answers.parking_spaces_bicycle_proposed %></dd>
+          <dt>Bicycle parking (covered)</dt>
+          <dd><%= answers.parking_spaces_bicycle_covered %></dd>
+          <dt>Proposed Bicycle parking (covered)</dt>
+          <dd><%= answers.parking_spaces_bicycle_proposed_covered %></dd>
+          
+          <p>About construction</p>
+          
+          <dt>Construction Phasing</dt>
+          <dd><%= answers.building_construction_phasing %></dd>
+          <dt>New Structure?</dt>
+          <dd><%= answers.building_new_structure %></dd>          
           
         </dl>
       </div><!-- /.task-information -->
@@ -551,7 +699,8 @@
       <div class="span4 task-instructions">
         <h4>Instructions</h4>
         <ol>
-          <li>Download and print the <a href="#">fictitious business name form &rarr;</a></li>
+          <li>Sorry, but OpenCounter can only process City forms, so you'll have to physically submit this form at the county</li>
+          <li></li>Download and print the <a href="#">fictitious business name form &rarr;</a></li>
           <li>Fill it out with the information you provided.</li>
           <li>Send the completed form, along with a check made payable to Santa Cruz County Clerk and a legal-size, self-addressed stamped envelope to: Santa Cruz County Clerk, 701 Ocean Street, Room 210, Santa Cruz, CA 95060</li>
         </ol>
@@ -560,7 +709,7 @@
         <h4>Information You&rsquo;ll Need</h4>
         <dl style="float: left; width: 33%;">
           <dt>Fictitious Business Name</dt>
-          <dd><%= answers.fbn %></dd>
+          <dd><%= answers.business_name %></dd>
           
           <dt>Business Address</dt>
           <dd><%= answers.business_physical_address_street %></dd>
@@ -663,6 +812,7 @@
       <div class="span4 task-instructions">
         <h4>Instructions</h4>
         <ol>
+          <li>Submit your OpenCounter session to start this process, or;</li>
           <li>Download and print the <a href="#">business license tax form &rarr;</a></li>
           <li>Fill it out with the information you provided.</li>
           <li>Bring the completed form and cash or check payment to the Finance Department at City Hall.</li>
@@ -677,7 +827,10 @@
         
           <dt>Business Address</dt>
           <dd><%= answers.business_physical_address_street %></dd>
-        
+          
+          <dt>Suite</dt>
+          <dd><%= answers.business_physical_address_detail %></dd>
+          
           <dt>Business City</dt>
           <dd><%= answers.business_physical_address_city %></dd>
         
@@ -692,47 +845,53 @@
         </dl>
 
         <dl style="float: left; width:33%;">
-          <dt>Owner Name</dt>
-          <dd><%= answers.owner_first_name %> <%= answers.owner_last_name %></dd>
+          <dt>Applicant Name</dt>
+          <dd><%= answers.applicant_first_name %> <%= answers.applicant_last_name %></dd>
         
-          <dt>Owner Address</dt>
-          <dd><%= answers.owner_physical_address_street %></dd>
+          <dt>Applicant Address</dt>
+          <dd><%= answers.applicant_physical_address_street %></dd>
         
-          <dt>Owner City</dt>
-          <dd><%= answers.owner_physical_address_city %></dd>
+          <dt>Apartment or Suite</dt>
+          <dd><%= answers.applicant_physical_address_detail %></dd>
+          
+          <dt>City</dt>
+          <dd><%= answers.applicant_physical_address_city %></dd>
         
-          <dt>Owner State</dt>
-          <dd><%= answers.owner_physical_address_state %></dd>
+          <dt>State</dt>
+          <dd><%= answers.applicant_physical_address_state %></dd>
         
-          <dt>Owner ZIP</dt>
-          <dd><%= answers.owner_physical_address_zip %></dd>
+          <dt>ZIP</dt>
+          <dd><%= answers.applicant_physical_address_zip %></dd>
         
-          <dt>Owner Phone</dt>
-          <dd><%= answers.owner_phone %></dd>
+          <dt>Applicant Phone</dt>
+          <dd><%= answers.applicant_phone %></dd>
         
-          <dt>Owner Email</dt>
-          <dd><%= answers.owner_email %></dd>
+          <dt>Applicant Email</dt>
+          <dd><%= answers.applicant_email %></dd>
 
           <dt>Co-Owner Name</dt>
-          <dd><%= answers.coownerX_name %></dd>
+          <dd><%= answers.coapplicant_name %></dd>
         
           <dt>Co-Owner Address</dt>
-          <dd><%= answers.coownerX_address %></dd>
-        
+          <dd><%= answers.coapplicant_physical_address_street %></dd>
+          
+          <dt>Co-owner Apt or Suite</dt>
+          <dd><%= answers.coapplicant_physical_address_detail %></dd>
+          
           <dt>Co-Owner City</dt>
-          <dd><%= answers.coownerX_city %></dd>
+          <dd><%= answers.coapplicant_physical_address_city %></dd>
         
           <dt>Co-Owner State</dt>
-          <dd><%= answers.coownerX_state %></dd>
+          <dd><%= answers.coapplicant_physical_address_state %></dd>
         
           <dt>Co-Owner ZIP</dt>
-          <dd><%= answers.coownerX_zip %></dd>
+          <dd><%= answers.coapplicant_physical_address_zip %></dd>
         
           <dt>Co-Owner Phone</dt>
-          <dd><%= answers.coownerX_phone %></dd>
+          <dd><%= answers.coapplicant_phone %></dd>
         
           <dt>Co-Owner Email</dt>
-          <dd><%= answers.coownerX_email %></dd>
+          <dd><%= answer.coappliant_email %></dd>
         
           <dt>Emergency Contact</dt>
           <dd><%= answers.emergency_contact %></dd>
@@ -746,35 +905,37 @@
           <dt>Type of Ownership</dt>
           <dd><%= answers.business_structure %></dd>
         
+        <!-- check this one -->
+        
           <dt>Type of Business (SIC Code based on Use)</dt>
-          <dd><%= answers.SIC_Code %></dd>
+          <dd><%= answers.SIC_Code %> % <%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>) </dd>
         
           <dt>Start Date</dt>
-          <dd><%= answers.start_date %></dd>
+          <dd><%= answers.business_date_of_occupancy %></dd>
         
           <dt>Number of Residential Units (for rental property businesses)</dt>
-          <dd><%= answers.quantity_residential_units %></dd>
+          <dd><%= answers.business_number_of_units %></dd>
         
           <dt>Business Square Feet</dt>
-          <dd><%= answers.square_feet_total %></dd>
+          <dd><%= answers.building_square_footage_ground %></dd>
         
           <dt>APN</dt>
           <dd><%= answers.apn %></dd>
         
           <dt>State ID Number</dt>
-          <dd><%= answers.state_id %></dd>
+          <dd><%= answers.state_ID %></dd>
         
           <dt>Sales Tax Number (from Reseller's license)</dt>
-          <dd><%= answers.sales_tax_number %></dd>
+          <dd><%= answers.state_reseller_ID %></dd>
         
           <dt>FIN / EIN (from IRS)</dt>
-          <dd><%= answers.ein %></dd>
+          <dd><%= answers.federal_EIN %></dd>
         
           <dt>State Contractors License (for licensed professionals)</dt>
-          <dd><%= answers.state_contractors_license %></dd>
+          <dd><%= answers.building_professional_license %></dd>
         
           <dt>Number of Employees</dt>
-          <dd><%= answers.quantity_employees %></dd>
+          <dd><%= answers.business_employee_count %></dd>
 
         </dl>
 
@@ -815,6 +976,7 @@
       <div class="span4 task-instructions">
         <h4>Instructions</h4>
         <ol>
+          <li>You'll need to submit this form after you draw up plans and submit for a building permit; </li>
           <li>Download and print the <a href="http://sccounty01.co.santa-cruz.ca.us/eh/consumer_protection/Food_Establishment_Health_Permit_Application.pdf">health permit application &rarr;</a></li>
           <li>Fill it out with the information you provided.</li>
           <li>Mail the completed form and cash or check payment to Environmental Health Services.</li>
@@ -824,6 +986,9 @@
       <div class="span8 task-information">
         <h4>Information You&rsquo;ll Need</h4>
         <dl style="float: left; width: 33%;">
+          
+          <!-- this can probably just be commented out, it's never going to be filled out -->
+          
           <dt>OW</dt>
           <dd class="muted">(determined by EH&amp;S staff)</dd>
         
@@ -855,47 +1020,51 @@
           <dd class="muted">(determined by EH&amp;S staff)</dd>
         </dl>
         <dl style="float: left; width:33%;">
-          <dt>Owner Name</dt>
-          <dd><%= answers.owner_first_name %> <%= answers.owner_last_name %></dd>
+          <dt>Applicant Name</dt>
+          <dd><%= answers.applicant_first_name %> <%= answers.applicant_last_name %></dd>
         
-          <dt>Owner Address</dt>
-          <dd><%= answers.owner_physical_address_street %></dd>
+          <dt>Address</dt>
+          <dd><%= answers.applicant_physical_address_street %></dd>
         
-          <dt>Owner City</dt>
-          <dd><%= answers.owner_physical_address_city %></dd>
+          <dt>City</dt>
+          <dd><%= answers.applicant_physical_address_city %></dd>
         
-          <dt>Owner State</dt>
-          <dd><%= answers.owner_physical_address_state %></dd>
+          <dt>State</dt>
+          <dd><%= answers.applicant_physical_address_state %></dd>
         
-          <dt>Owner ZIP</dt>
-          <dd><%= answers.owner_physical_address_zip %></dd>
+          <dt>ZIP</dt>
+          <dd><%= answers.applicant_physical_address_zip %></dd>
         
-          <dt>Owner Phone</dt>
-          <dd><%= answers.owner_phone %></dd>
+          <dt>Phone</dt>
+          <dd><%= answers.applicant_phone %></dd>
         
           <dt>Owner Email</dt>
           <dd><%= answers.owner_email %></dd>
-        
+ 
           <dt>Co-Owner Name</dt>
-          <dd><%= answers.ownerX_name %></dd>
+          <dd><%= answers.coapplicant_name %></dd>
         
           <dt>Co-Owner Address</dt>
-          <dd><%= answers.ownerX_address %></dd>
-        
+          <dd><%= answers.coapplicant_physical_address_street %></dd>
+          
+          <dt>Co-owner Apt or Suite</dt>
+          <dd><%= answers.coapplicant_physical_address_detail %></dd>
+          
           <dt>Co-Owner City</dt>
-          <dd><%= answers.ownerX_city %></dd>
+          <dd><%= answers.coapplicant_physical_address_city %></dd>
         
           <dt>Co-Owner State</dt>
-          <dd><%= answers.ownerX_state %></dd>
+          <dd><%= answers.coapplicant_physical_address_state %></dd>
         
           <dt>Co-Owner ZIP</dt>
-          <dd><%= answers.ownerX_zip %></dd>
+          <dd><%= answers.coapplicant_physical_address_zip %></dd>
         
           <dt>Co-Owner Phone</dt>
-          <dd><%= answers.ownerX_phone %></dd>
+          <dd><%= answers.coapplicant_phone %></dd>
         
           <dt>Co-Owner Email</dt>
-          <dd><%= answers.ownerX_email %></dd>
+          <dd><%= answer.coappliant_email %></dd>
+ 
         </dl>
         <dl class="float: left; width: 33%;">
           <dt>Business Name</dt>
@@ -904,21 +1073,30 @@
           <dt>Business Address</dt>
           <dd><%= answers.business_physical_address_street %></dd>
         
+          <dt>Suite</dt>
+          <dd><%= answers.business_physical_address_detail %></dd>
+          
           <dt>Business City</dt>
-          <dd><%= answers.business_city %></dd>
+          <dd><%= answers.business_physical_address_city %></dd>
         
           <dt>Business State</dt>
-          <dd><%= answers.business_state %></dd>
+          <dd><%= answers.business_physical_address_state %></dd>
         
           <dt>Business ZIP</dt>
-          <dd><%= answers.business_zip %></dd>
-        
+          <dd><%= answers.business_physical_address_zip %></dd>
+          
           <dt>Business Phone</dt>
           <dd><%= answers.business_phone %></dd>
-
+          
           <dt> Previous Use </dt>
-          <dd><%= answers.prior_use %></dd>
-        
+          <dd><%= answers.building_location_prior_use %></dd>
+          
+          <dt>Previous Business Name</dt>
+          <dd><%= answers.previous_business_name %></dd>
+          
+          <dt>Other Phone</dt>
+          <dd><%= answers.other_phone %></dd>
+          
           <dt>Application Type</dt>
           <dd>(New Application / Renewal / Change in Ownership / Change in Category)</dd>
           
