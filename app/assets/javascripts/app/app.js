@@ -1,6 +1,7 @@
 define([
   // Libraries.
   "jquery",
+  "../libs/jquery-ui",
   "lodash",
   "backbone",
   "../libs/bootstrap-typeahead",

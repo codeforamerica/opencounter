@@ -37,6 +37,10 @@ function(app) {
       this.collection.off(null, null, this);
     },
 
+    // this method calculates the number of spaces, given the business type
+    // (currently called form_id), the size of the building (in square_feet)
+    // and any other fields.
+    //
     calculateSpaces: function(form_id, inputs) {
 
       var field_1 = (typeof inputs[0] === "undefined") ? 0 : inputs[0]['value'],
@@ -326,6 +330,11 @@ function(app) {
       // hide all the forms by default
       $('.business-type-rule').hide();
 
+      // make each div.business-type-rules an accordion
+      $('.business-type-rule').addClass('accordion');
+      $('.accordion').accordion();
+
+
       // When the applicant selects an option,
       $('#business_type').change(function() {
         // Get the selection
@@ -349,6 +358,7 @@ function(app) {
 
     saveInput:function(ev) {
       var $elem = $(ev.target);
+      console.log('adding answer: ' + $elem.attr('name'), $elem.val());
       this.collection.addAnswer($elem.attr("name"), $elem.val());
       this.calculate();
     },
