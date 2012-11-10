@@ -29,4 +29,418 @@
     <li><a href="https://efile.boe.ca.gov/ereg/common/capturePreparerInfo.boe?cid=85278">File online</a></li>
   </ul>
 
-</div>
+  <p class="lead">We'll help you collect the required information:</p>
+          
+          
+    <form method="post" action="#" id="form_sellers_permit">
+  
+      <div class="control-group">
+        <label class="control-label">Business Name </label>
+        <div class="controls"><input type="text" name="business_name" placeholder="" value="<%= answers.business_name %>"></div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Business Address </label>
+        <div class="controls"><input type="text" name="business_physical_address_street" placeholder="" value="<%= answers.business_physical_address_street %>"></div>
+      </div>
+                        
+      <div class="control-group">
+        <label class="control-label">Suite or Office Number</label>
+        <div class="controls"><input type="text" name="business_physical_address_detail" placeholder="" value="<%= answers.business_physical_address_detail %>"></div>
+      </div>
+ 
+      <div class="control-group">
+        <label class="control-label">City</label>
+        <div class="controls"><input type="text" name="business_physical_address_city" placeholder="" value="<%= answers.business_physical_address_city %>"></div>
+      </div>    
+
+      <div class="control-group">
+        <label class="control-label">State</label>
+        <div class="controls"><input type="text" name="business_physical_address_state" placeholder="" value="<%= answers.business_physical_address_state %>"></div>
+      </div>    
+    
+      <div class="control-group">
+        <label class="control-label">ZIP</label>
+        <div class="controls"><input type="text" name="business_physical_address_zip" placeholder="" value="<%= answers.business_physical_address_zip %>"></div>
+     </div>
+
+      <div class="control-group">
+        <label class="control-label">Business Phone</label>
+        <div class="controls"><input type="text" name="business_phone" placeholder="" value="<%= answers.business_phone %>"></div>
+     </div>        
+
+    <div class="control-group">
+      <label class="control-label">Applicant First Name</label>
+      <div class="controls"><input type="text" name="applicant_first_name" placeholder="" value="<%= answers.applicant_first_name %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Applicant Last Name</label>
+      <div class="controls"><input type="text" name="applicant_last_name" placeholder="" value="<%= answers.applicant_last_name %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Applicant Address</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_street" placeholder="" value="<%= answers.applicant_physical_address_street %>"></div>
+    </div>      
+
+    <div class="control-group">
+      <label class="control-label">Suite or Office Number</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_detail" placeholder="" value="<%= answers.applicant_physical_address_street %>"></div>
+    </div> 
+
+    <div class="control-group">
+      <label class="control-label">Applicant City</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_city" placeholder="" value="<%= answers.applicant_physical_address_city %>"></div>
+    </div>     
+
+    <div class="control-group">
+      <label class="control-label">Applicant State</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_state" placeholder="" value="<%= answers.applicant_physical_address_state %>"></div>
+    </div>     
+
+    <div class="control-group">
+      <label class="control-label">Applicant ZIP</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_zip" placeholder="" value="<%= answers.applicant_physical_address_zip %>"></div>
+    </div>  
+
+    <div class="control-group">
+      <label class="control-label">Applicant phone number?</label>
+      <div class="controls"><input type="text" name="applicant_phone" placeholder="(###) ###-####"></div>
+    </div>   
+    
+    <div class="control-group">
+     <label class="control-label">Applicant email address?</label>
+     <div class="controls"><input type="text" name="applicant_email" placeholder=""></div>
+    </div>
+  
+    <div class="control-group">
+      <label class="control-label">Co-Applicant  Name</label>
+      <div class="controls"><input type="text" name="coapplicant_name" placeholder="" value="<%= answers.coapplicant_name %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Co-Applicant Address</label>
+      <div class="controls"><input type="text" name="coapplicant_physical_address_street" placeholder="" value="<%= answers.coapplicant_physical_address_street %>"></div>
+    </div>      
+
+    <div class="control-group">
+      <label class="control-label">Suite or Office Number</label>
+      <div class="controls"><input type="text" name="coapplicant_physical_address_detail" placeholder="" value="<%= answers.coapplicant_physical_address_street %>"></div>
+    </div> 
+
+    <div class="control-group">
+      <label class="control-label">City</label>
+      <div class="controls"><input type="text" name="coapplicant_physical_address_city" placeholder="" value="<%= answers.coapplicant_physical_address_city %>"></div>
+    </div>     
+
+    <div class="control-group">
+      <label class="control-label">State</label>
+      <div class="controls"><input type="text" name="coapplicant_physical_address_state" placeholder="" value="<%= answers.coapplicant_physical_address_state %>"></div>
+    </div>     
+
+    <div class="control-group">
+      <label class="control-label">ZIP</label>
+      <div class="controls"><input type="text" name="coapplicant_physical_address_zip" placeholder="" value="<%= answers.coapplicant_physical_address_zip %>"></div>
+    </div>  
+
+    <div class="control-group">
+      <label class="control-label">Co-Applicant Phone</label>
+      <div class="controls"><input type="text" name="coapplicant_phone" placeholder="" value="<%= answers.coapplicant_phone %>"></div>
+    </div>  
+
+    <div class="control-group">
+      <label class="control-label">Sellers Permit Type (Regular; Temporary)</label>
+      <div class="controls"><input type="text" name="state_sellers_permit_type" placeholder="Regular or Temporary" value="<%= answers.state_sellers_permit_type %>"></div>
+    </div>   
+    
+    <div class="control-group">
+      <label class="control-label">Co-Applicant Email</label>
+      <div class="controls"><input type="text" name="coapplicant_email" placeholder="" value="<%= answers.coapplicant_email %>"></div>
+    </div>       
+  
+      <div class="control-group">
+      <label class="control-label">Ownership Type</label>
+      <div class="controls"><input type="text" name="business_structure" placeholder="Name and #" value="<%= answers.business_structure %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Corporate, LLC, LLP or LP Number</label>
+      <div class="controls"><input type="text" name="state_corporate_number" placeholder="Name and #" value="<%= answers.state_corporate_number %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">State of Incorporation or Organization</label>
+      <div class="controls"><input type="text" name="state_incorporatation_place" placeholder="Name and #" value="<%= answers.state_incorporatation_place %>"></div>
+    </div>
+        
+    <div class="control-group">
+      <label class="control-label">Date you Will Begin Business Activities (Start Date)</label>
+      <div class="controls"><input type="text" name="business_date_of_occupancy" placeholder="" value="<%= answers.business_date_of_occupancy %>"></div>
+    </div>    
+    
+    <div class="control-group">
+      <label class="control-label">Federal FIN / EIN </label>
+      <div class="controls"><input type="text" name="federal_EIN" placeholder="CA reseller license #" value="answers.federal_EIN"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Role of Applicant </label>
+      <div class="controls"><input type="text" name="applicant_role" placeholder="" value="<%= answers.applicant_role %>"></div>
+    </div>        
+
+    <div class="control-group">
+      <label class="control-label">Applicant Title </label>
+      <div class="controls"><input type="text" name="applicant_title" placeholder="" value="<%= answers.applicant_title %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">SSN</label>
+      <!-- I placed the value as null here, please ensure that this doesn't break the template-->
+      <div class="controls"><input type="text" name="SSN" placeholder="DO NOT FILL OUT. STAFF WILL CALL" value="null"></div>
+    </div>    
+    
+    <div class="control-group">
+      <label class="control-label">Applicant Driver's License</label>
+      <div class="controls"><input type="text" name="applicant_drivers_license" placeholder="" value="<%= answers.applicant_drivers_license %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Name of a Personal Reference Not Living With You</label>
+      <div class="controls"><input type="text" name="state_reference_name" placeholder="" value="<%= answers.state_reference_name %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Reference Address</label>
+      <div class="controls"><input type="text" name="state_reference_physical_address_street" placeholder="" value="<%= answers.state_reference_physical_address_street %>"></div>
+    </div>      
+
+    <div class="control-group">
+      <label class="control-label">Reference Suite or Office Number</label>
+      <div class="controls"><input type="text" name="state_reference_physical_address_detail" placeholder="" value="<%= answers.state_reference_physical_address_street %>"></div>
+    </div> 
+
+    <div class="control-group">
+      <label class="control-label">Reference City</label>
+      <div class="controls"><input type="text" name="state_reference_physical_address_city" placeholder="" value="<%= answers.state_reference_physical_address_city %>"></div>
+    </div>     
+
+    <div class="control-group">
+      <label class="control-label">Reference State</label>
+      <div class="controls"><input type="text" name="state_reference_physical_address_state" placeholder="" value="<%= answers.state_reference_physical_address_state %>"></div>
+    </div>     
+
+    <div class="control-group">
+      <label class="control-label">Reference ZIP</label>
+      <div class="controls"><input type="text" name="state_reference_physical_address_zip" placeholder="" value="<%= answers.state_reference_physical_address_zip %>"></div>
+    </div>  
+
+    <div class="control-group">
+      <label class="control-label">State Reference Phone</label>
+      <div class="controls"><input type="text" name="state_reference_phone" placeholder="" value="<%= answers.state_reference_phone %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Major Industry Classification</label>
+      <div class="controls"><input type="text" name="CIC_industry_subindustry" placeholder="" value="<%= answers.CIC_industry_subindustry %>"></div>
+    </div>  
+      
+    <div class="control-group">
+      <label class="control-label">What Items Will You Sell?</label>
+      <div class="controls"><input type="text" name="business_product" placeholder="" value="<%= answers.business_product %>"></div>
+    </div>            
+         
+    <div class="control-group">
+      <label class="control-label">Number of selling locations </label>
+      <div class="controls"><input type="text" name="business_location_number" placeholder="" value="<%= answers.business_location_number %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Additional selling locations </label>
+      <div class="controls"><input type="text" name="business_locations_additional" placeholder="" value="<%= answers.business_locations_additional %>"></div>
+    </div>    
+    
+ 
+    <div class="control-group">
+      <label class="control-label">Business Website </label>
+      <div class="controls"><input type="text" name="business_website" placeholder="http://www." value="<%= answers.business_website %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Do You Make Internet Sales </label>
+      <div class="controls"><input type="text" name="business_website_sales" placeholder="Yes/No" value="<%= answers.business_website_sales %>"></div>
+    </div>   
+
+      <div class="control-group">
+        <label class="control-label">Property owner's first name?</label>
+        <! suggest that we rename these DB fields to either "property owner" or "landlord" in the Db schema>
+        <div class="controls"><input type="text" name="owner_first_name" placeholder="" value="<%= answers.owner_first_name %>"></div>
+      </div>
+  
+      <div class="control-group">
+        <label class="control-label">Property owner's last name?</label>
+        <div class="controls"><input type="text" name="owner_last_name" placeholder="" value="<%= answers.owner_last_name %>"></div>
+      </div>
+  
+      <div class="control-group">
+        <label class="control-label">Property owner's email address?</label>
+        <div class="controls"><input type="text" name="owner_email" placeholder="" value="<%= answers.owner_email %>"></div>
+      </div>
+  
+      <div class="control-group">
+        <label class="control-label">Property owner's phone number?</label>
+        <div class="controls"><input type="text" name="owner_phone" placeholder="(###) ###-####" value="<%= answers.owner_phone %>"></div>
+      </div>
+   
+      <div class="control-group">
+        <label class="control-label">Property Owner's Address</label>
+        <div class="controls"><input type="text" name="owner_physical_address_street" placeholder="" value="<%= answers.owner_physical_address_street %>"></div>
+      </div>      
+
+      <div class="control-group">
+        <label class="control-label">Property Owner's Suite or Office Number</label>
+        <div class="controls"><input type="text" name="owner_physical_address_detail" placeholder="" value="<%= answers.owner_physical_address_detail %>"></div>
+      </div> 
+
+      <div class="control-group">
+        <label class="control-label">Property Owner's City</label>
+        <div class="controls"><input type="text" name="owner_physical_address_city" placeholder="" value="<%= answers.owner_physical_address_city %>"></div>
+      </div>     
+
+      <div class="control-group">
+        <label class="control-label">Property Owner's State</label>
+        <div class="controls"><input type="text" name="owner_physical_address_state" placeholder="" value="<%= answers.owner_physical_address_state %>"></div>
+      </div>     
+
+      <div class="control-group">
+        <label class="control-label">Property Owner's ZIP</label>
+        <div class="controls"><input type="text" name="owner_physical_address_zip" placeholder="" value="<%= answers.owner_physical_address_zip %>"></div>
+      </div>  
+ 
+      <div class="control-group">
+        <label class="control-label">Projected Monthly Gross Sales</label>
+        <div class="controls"><input type="text" name="business_projected_sales" placeholder="" value="<%= answers.business_projected_sales %>"></div>
+      </div>   
+ 
+      <div class="control-group">
+        <label class="control-label">Alcoholic Beverage Contral License Number (if selling alcohol, supplied by ABC)</label>
+        <div class="controls"><input type="text" name="abc_permit_number" placeholder="" value="<%= answers.abc_permit_number %>"></div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Selling New Tires At Retail (Yes/No) </label>
+        <div class="controls"><input type="text" name="state_tire_sales" placeholder="Yes/No" value="<%= answers.state_tire_sales %>"></div>
+      </div>         
+      
+      <div class="control-group">
+        <label class="control-label">Selling Electronics At Retail (Yes/No) </label>
+        <div class="controls"><input type="text" name="state_electronic_sales" placeholder="Yes/No" value="<%= answers.state_electronic_sales %>"></div>
+      </div>         
+            
+      <div class="control-group">
+        <label class="control-label">Selling Tobacco At Retail (Yes/No) </label>
+        <div class="controls"><input type="text" name="state_tobacco_sales" placeholder="Yes/No" value="<%= answers.state_tabacco_sales %>"></div>
+      </div>        
+  
+       <div class="control-group">
+        <label class="control-label">Record Maintainer's first name?</label>
+        <! suggest that we rename these DB fields to either "property owner" or "landlord" in the Db schema>
+        <div class="controls"><input type="text" name="state_maintainer_first_name" placeholder="" value="<%= answers.state_maintainer_first_name %>"></div>
+      </div>
+  
+      <div class="control-group">
+        <label class="control-label">Record Maintainer's last name?</label>
+        <div class="controls"><input type="text" name="state_maintainer_last_name" placeholder="" value="<%= answers.state_maintainer_last_name %>"></div>
+      </div>
+  
+      <div class="control-group">
+        <label class="control-label">Record Maintainer'semail address?</label>
+        <div class="controls"><input type="text" name="state_maintainer_email" placeholder="" value="<%= answers.state_maintainer_email %>"></div>
+      </div>
+  
+      <div class="control-group">
+        <label class="control-label">Record Maintainer's phone number?</label>
+        <div class="controls"><input type="text" name="state_maintainer_phone" placeholder="(###) ###-####" value="<%= answers.state_maintainer_phone %>"></div>
+      </div>
+   
+      <div class="control-group">
+        <label class="control-label">Record Maintainer's Address</label>
+        <div class="controls"><input type="text" name="state_maintainer_physical_address_street" placeholder="" value="<%= state_maintainer_physical_address_street %>"></div>
+      </div>      
+
+      <div class="control-group">
+        <label class="control-label">Record Maintainer's Suite or Office Number</label>
+        <div class="controls"><input type="text" name="state_maintainer_physical_address_detail" placeholder="" value="<%= state_maintainer_physical_address_detail %>"></div>
+      </div> 
+
+      <div class="control-group">
+        <label class="control-label">Record Maintainer's City</label>
+        <div class="controls"><input type="text" name="state_maintainer_physical_address_city" placeholder="" value="<%= answers.state_maintainer_physical_address_city %>"></div>
+      </div>     
+
+      <div class="control-group">
+        <label class="control-label">Record Maintainer's State</label>
+        <div class="controls"><input type="text" name="state_maintainer_physical_address_state" placeholder="" value="<%= answers.state_maintainer_address_state %>"></div>
+      </div>     
+
+      <div class="control-group">
+        <label class="control-label">Record Maintainer's ZIP</label>
+        <div class="controls"><input type="text" name="state_maintainer_physical_address_zip" placeholder="" value="<%= answers.state_maintainer_physical_address_zip %>"></div>
+      </div>  
+ 
+      <div class="control-group">
+        <label class="control-label">Bank Name</label>
+        <div class="controls"><input type="text" name="bank_name" placeholder="" value="<%= answers.bank_name %>"></div>
+      </div>
+      
+      <div class="control-group">
+        <label class="control-label">Merchant Card Processing Company </label>
+        <div class="controls"><input type="text" name="merchant_card_processor" placeholder="" value="<%= answers.merchant_card_processor %>"></div>
+      </div>   
+  
+      <div class="control-group">
+        <label class="control-label">Major California Suppliers </label>
+        <div class="controls"><input type="text" name="business_suppliers" placeholder="" value="<%= answers.business_suppliers %>"></div>
+      </div>    
+ 
+      <div class="control-group">
+        <label class="control-label">Major California Suppliers Address </label>
+        <div class="controls"><input type="text" name="business_suppliers_address" placeholder="" value="<%= answers.business_suppliers_address %>"></div>
+      </div>
+      
+      <div class="control-group">
+        <label class="control-label">What Items Will You Sell?</label>
+        <div class="controls"><input type="text" name="business_product_purchases" placeholder="" value="<%= answers.business_product_purchases %>"></div>
+      </div>            
+
+      <div class="control-group">
+        <label class="control-label">Are You Buying An Existing Business? (Yes / No)</label>
+        <div class="controls"><input type="text" name="business_previously_owned" placeholder="Yes/No" value="<%= answers.business_previously_owned %>"></div>
+      </div>
+      
+      <div class="control-group">
+        <label class="control-label">Former Owner' Name (if applicable) </label>
+        <div class="controls"><input type="text" name="business_previous_owner_name" placeholder="" value="<%= answers.business_previous_owner_name %>"></div>
+      </div>
+          
+      <div class="control-group">
+        <label class="control-label">Existing Seller's Permit Number?</label>
+        <div class="controls"><input type="text" name="state_sellers_permit_number_old" placeholder="" value="<%= answers.state_sellers_permit_number_old %>"></div>
+      </div>
+      
+      <div class="control-group">
+        <label class="control-label">Purchase Price of the Business</label>
+        <div class="controls"><input type="text" name="business_sales_price" placeholder="" value="<%= answers.business_sales_price %>"></div>
+      </div>
+      
+      <div class="control-group">
+        <label class="control-label">Purchase Price of Fixtures, Furniture & Equipment </label>
+        <div class="controls"><input type="text" name="business_sales_price_ffe" placeholder="" value="<%= answers.business_sales_price_ffe %>"></div>
+      </div>
+      
+       <div class="control-group">
+        <label class="control-label">f an escrow company is requesting a tax clearance on your behaf, please list their name address telephone number and the escrow number</label>
+        <div class="controls"><input type="text" name="business_escrow_clearance" placeholder="" value="<%= answer.business_escrow_clearance %>"></div>
+      </div>      
+            
+    </form> 
