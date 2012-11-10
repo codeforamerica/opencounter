@@ -20,36 +20,18 @@
     
     <div class="control-group">
       <label class="control-label">Applicant First Name</label>
-      <div class="controls"><input type="text" name="applicant_first_name" placeholder="" value="<%= answers.applicant_first.name %>"></div>
+      <div class="controls"><input type="text" name="applicant_first_name" placeholder="" value="<%= answers.applicant_first_name %>"></div>
     </div>
     
     <div class="control-group">
       <label class="control-label">Applicant Last Name</label>
-      <div class="controls"><input type="text" name="applicant_last_name" placeholder="" value="<%= answers.applicant_last.name %>"></div>
+      <div class="controls"><input type="text" name="applicant_last_name" placeholder="" value="<%= answers.applicant_last_name %>"></div>
     </div>
 
     <div class="control-group">
       <label class="control-label">What type of business is this?</label>
-      <div class="controls">
-        <select name="business_structure" class="input-xxlarge">
-          <option value="unknown"                       <%= (answers.business_structure === 'unknown') ? 'selected="selected"' : '' %>                        >Not sure, don&rsquo;t know, or haven&rsquo;t decided yet</option>
-          <option value="individual"                    <%= (answers.business_structure === 'individual') ? 'selected="selected"' : '' %>                     >an Individual (Sole Proprietorship)</option>
-          <option value="general_partnership"           <%= (answers.business_structure === 'general_partnership') ? 'selected="selected"' : '' %>            >a General Partnership (GP)</option>
-          <option value="limited_partnership"           <%= (answers.business_structure === 'limited_partnership') ? 'selected="selected"' : '' %>            >a Limited Partnership (LP)</option>
-          <option value="limited_liability_company"     <%= (answers.business_structure === 'limited_liability_company') ? 'selected="selected"' : '' %>      >a Limited Liability Company (LLC)</option>
-          <option value="limited_liability_partnership" <%= (answers.business_structure === 'limited_liability_partnership') ? 'selected="selected"' : '' %>  >a Limited Liability Partnership (LLP)</option>
-          <option value="association"                   <%= (answers.business_structure === 'association') ? 'selected="selected"' : '' %>                    >an Unincorporated Association other than a Partnership</option>
-          <option value="corporation"                   <%= (answers.business_structure === 'corporation') ? 'selected="selected"' : '' %>                    >a Corporation</option>
-          <option value="trust"                         <%= (answers.business_structure === 'trust') ? 'selected="selected"' : '' %>                          >a Trust</option>
-          <option value="copartner"                     <%= (answers.business_structure === 'copartner') ? 'selected="selected"' : '' %>                      >Copartners</option>
-          <option value="married"                       <%= (answers.business_structure === 'married') ? 'selected="selected"' : '' %>                        >Husband and Wife</option>
-          <option value="joint_venture"                 <%= (answers.business_structure === 'joint_venture') ? 'selected="selected"' : '' %>                  >a Joint Venture</option>
-          <option value="domestic_partners"             <%= (answers.business_structure === 'domestic_partners') ? 'selected="selected"' : '' %>              >State or Local Registered Domestic Partners</option>
-        </select>
-        <!-- The Admissions tax needs to know whether the business is a sole proprietorship (=> individual), partnership (=>general_partnership, limited_partnership, limited_liability_partnership), or corporation -->
-        <!-- We need to map 'sole proprietorship' 'partnership' and 'corporation' to the business structures we use elsewhere in OpenCounter -->
-      </div>
-    </div>
+      <div class="controls"><input type="text" name="applicant_last_name" placeholder="" value="<%= answers.business_structure %>"></div>
+    </div>  
 
     <div class="control-group">
       <label class="control-label">Date of Occupancy</label>
@@ -58,38 +40,43 @@
 
     <div class="control-group">
       <label class="control-label">Business Mailing Address</label>
-      <div class="controls"><input type="text" name="business_mailing_address_street" value="<%= answers.business_mailing_address_street %>"></div>
+      <div class="controls"><input type="text" name="business_physical_address_street" value="<%= answers.business_physical_address_street %>"></div>
     </div>
 
     <div class="control-group">
+      <label class="control-label">Suite or Office #?</label>
+      <div class="controls"><input type="text" name="business_physical_address_detail" value="<%= answers.business_physical_address_detail %>"></div>
+    </div>    
+    
+    <div class="control-group">
       <label class="control-label">City</label>
-      <div class="controls"><input type="text" name="business_mailing_address_city" value="<%= answers.business_mailing_address_city %>"></div>
+      <div class="controls"><input type="text" name="business_physical_address_city" value="<%= answers.business_physical_address_city %>"></div>
     </div>
 
     <div class="control-group">
       <label class="control-label">State</label>
-      <div class="controls"><input type="text" name="business_mailing_address_state" value="<%= answers.business_mailing_address_state %>"></div>
+      <div class="controls"><input type="text" name="business_physical_address_state" value="<%= answers.business_physical_address_state %>"></div>
     </div>
 
     <div class="control-group">
       <label class="control-label">ZIP</label>
-      <div class="controls"><input type="text" name="business_mailing_address_zip" value="<%= answers.business_mailing_address_zip %>"></div>
+      <div class="controls"><input type="text" name="business_physical_address_zip" value="<%= answers.business_physical_address_zip %>"></div>
     </div>
 
     <div class="control-group">
       <label class="control-label">Please describe your taxable operations.</label>
-      <div class="controls"><input type="text" name="operations" placeholder="i.e. membership, ticket sales..." value="<%= answers.taxable.operations %>"></div>
+      <div class="controls"><input type="text" name="operations" placeholder="i.e. membership, ticket sales..." value="<%= answers.ad_taxable_operations %>"></div>
     </div>
 
     <div class="control-group">
       <label class="control-label">Number of Amusement Devices</label>
-      <div class="controls"><input type="text" name="amusement devices" placeholder="i.e. pinball, video games..." value="<%= answers.amusement_devices %>"></div>
+      <div class="controls"><input type="text" name="amusement devices" placeholder="i.e. pinball, video games..." value="<%= answers.ad_amusement_devices %>"></div>
     </div>
 
     <div class="control-group">
       <label class="control-label">Frequency of Events</label>
       <div class="controls">
-        <select name="event_frequency" class="input-xxlarge">
+        <select name="ad_event_frequency" class="input-xxlarge">
           <option value="daily"   <%= (answers.event_frequency === 'daily') ? 'selected="selected"' : '' %>  >Daily</option>
           <option value="weekly"  <%= (answers.event_frequency === 'weekly') ? 'selected="selected"' : '' %> >Weekly</option>
           <option value="monthly" <%= (answers.event_frequency === 'monthly') ? 'selected="selected"' : '' %>>Monthly</option>
@@ -99,7 +86,7 @@
 
     <div class="control-group">
       <label class="control-label">Your Business&rsquo;s Phone Number</label>
-      <div class="controls"><input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.applicant_phone %>"></div>
+      <div class="controls"><input type="text" name="business_phone" placeholder="(###) ###-####" value="<%= answers.business_phone %>"></div>
     </div>
 
   </form>

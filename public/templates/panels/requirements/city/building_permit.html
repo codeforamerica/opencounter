@@ -17,139 +17,206 @@
   <p>Once you've passed final inspections on site, you'll receive a "Certificate of Occupancy" from the Building division for your commercial space, which means its safe and fully permitted for the public to utilize.</p>
   <p>This process does have charges associated with it to capture the labor costs the City undertakes to review the plans. Rates are calculated both on the complexity of the project and the valuation of the build.</p>
   <p>A general guideline is that a building permit will cost between 5-10% of the value of the building project that you'll undertake.</p>
+  <p>The City' Building Permit cover sheet can be found <a href="http://www.cityofsantacruz.com/Modules/ShowDocument.aspx?documentid=8770" target="_blank">here</a>.</p>
   
   <div class="conditional">
     
   <p>Fill in as much as you can below.</p>
   <form method="post" action="#" id="form_building_permit">
-    <label>
-      Date
-      <input type="text" name="date" placeholder="">
-    </label>
-    <label>
-      Expansion plan check due date
-      <input type="text" name="expansion_plan_check_due_date" placeholder="">
-    </label>
-    <label>
-      Business Street Address
-      <input type="text" name="business_physical_address_street" placeholder="">
-    </label>
-    <label>
-      Business Street Address (Detail)
-      <input type="text" name="business_physical_address_detail" placeholder="">
-    </label>
-    <label>
-      Business City
-      <input type="text" name="business_physical_address_city" placeholder="">
-    </label>
-    <label>
-      Business State
-      <input type="text" name="business_physical_address_state" placeholder="">
-    </label>
-    <label>
-      Business ZIP Code
-      <input type="text" name="business_physical_address_zip" placeholder="">
-    </label>
-    <label>
-      APN
-      <input type="text" name="apn" placeholder="">
-    </label>
-    <label>
-      New Square Footage
-      <input type="text" name="square_footage_new" placeholder="">
-    </label>
-    <label>
-      Role of Applicant
-      <input type="text" name="role_of_applicant" placeholder="">
-    </label>
-    <label>
-      Applicant First Name
-      <input type="text" name="applicant_first_name" placeholder="">
-    </label>
-    <label>
-      Applicant Last Name
-      <input type="text" name="applicant_last_name" placeholder="">
-    </label>
-    <label>
-      Applicant Street Address
-      <input type="text" name="applicant_address_street" placeholder="">
-    </label>
-    <label>
-      Applicant Street Address (Detail)
-      <input type="text" name="applicant_address_detail" placeholder="">
-    </label>
-    <label>
-      Applicant City
-      <input type="text" name="applicant_address_city" placeholder="">
-    </label>
-    <label>
-      Applicant State
-      <input type="text" name="applicant_address_state" placeholder="">
-    </label>
-    <label>
-      Applicant Zip Code
-      <input type="text" name="applicant_address_zip" placeholder="">
-    </label>
-    <label>
-      Applicant Phone Number
-      <input type="text" name="applicant_phone" placeholder="">
-    </label>
-    <label>
-      Applicant Email Address
-      <input type="text" name="applicant_email" placeholder="">
-    </label>
-    <label>
-      Role of Professional
-      <input type="text" name="role_of_professional" placeholder="">
-    </label>
-    <label>
-      Professional's Name
-      <input type="text" name="professional_name" placeholder="">
-    </label>
-    <label>
-      Professional's Address
-      <input type="text" name="professional_address" placeholder="">
-    </label>
-    <label>
-      Professional's Phone Number
-      <input type="text" name="professional_phone" placeholder="">
-    </label>
-    <label>
-      Professional's Email Address
-      <input type="text" name="professional_email" placeholder="">
-    </label>
-    <label>
-      Contractor License Number
-      <input type="text" name="contractor_license_num" placeholder="">
-    </label>
-    <label>
-      Occupancy Class
-      <input type="text" name="occupancy_class" placeholder="">
-    </label>
-    <label>
-      Type of Construction
-      <input type="text" name="type_of_construction" placeholder="">
-    </label>
-    <label>
-      Building Height (feet)
-      <input type="text" name="building_height_feet" placeholder="">
-    </label>
-    <label>
-      Building Height (stories)
-      <input type="text" name="building_height_stories" placeholder="">
-    </label>
-    <label>
-      Sprinklers?
-      <input type="checkbox" name="has_sprinklers"  checked="">
-    </label>
-    <label>
-      Is Quimby Fee?
-      <input type="checkbox" name="has_quimby_fee" checked="">
-    </label>
-    <label>
-      Is TIF Project?
-      <input type="checkbox" name="has_tif_project" checked="">
-    </label>
+    
+    
+    <div class="control-group">
+      <label class="control-label">Date</label>
+      <div class="controls"><input type="text" name="date" placeholder="" value="<%= Time.now.strftime("%m/%d/%Y") %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Building Project Description</label>
+      <div class="controls"><input type="text" name="building_project_description" placeholder="" value="What will you be building?"></div>
+    </div>    
+       
+    <div class="control-group">
+      <label class="control-label">Business Physical Address</label>
+      <div class="controls"><input type="text" name="business_physical_address_street" placeholder="" value="<%= answers.business_physical_address_street %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Suite or Office Number</label>
+      <div class="controls"><input type="text" name="business_physical_address_detail" placeholder="" value="<%= answers.business_physical_address_detail %>"></div>
+    </div>
+ 
+    <div class="control-group">
+      <label class="control-label">City</label>
+      <div class="controls"><input type="text" name="business_physical_address_city" placeholder="" value="<%= answers.business_physical_address_city %>"></div>
+    </div>    
+
+    <div class="control-group">
+      <label class="control-label">State</label>
+      <div class="controls"><input type="text" name="business_physical_address_state" placeholder="" value="<%= answers.business_physical_address_state %>"></div>
+    </div>    
+    
+    <div class="control-group">
+      <label class="control-label">ZIP</label>
+      <div class="controls"><input type="text" name="business_physical_address_zip" placeholder="" value="<%= answers.business_physical_address_zip %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Role of Applicant </label>
+      <div class="controls"><input type="text" name="Applicant Role" placeholder="" value="<%= answers.applicant_role %>"></div>
+    </div>        
+    
+    <div class="control-group">
+      <label class="control-label">Applicant First Name</label>
+      <div class="controls"><input type="text" name="applicant_first_name" placeholder="" value="<%= answers.applicant_first_name %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Applicant Last Name</label>
+      <div class="controls"><input type="text" name="applicant_last_name" placeholder="" value="<%= answers.applicant_last_name %>"></div>
+    </div>  
+
+    <div class="control-group">
+      <label class="control-label">Applicant Address</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_street" placeholder="" value="<%= answers.applicant_physical_address_street %>"></div>
+    </div>      
+
+    <div class="control-group">
+      <label class="control-label">Suite or Office Number</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_detail" placeholder="" value="<%= answers.applicant_physical_address_street %>"></div>
+    </div> 
+
+    <div class="control-group">
+      <label class="control-label">Applicant City</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_city" placeholder="" value="<%= answers.applicant_physical_address_city %>"></div>
+    </div>     
+
+    <div class="control-group">
+      <label class="control-label">Applicant State</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_state" placeholder="" value="<%= answers.applicant_physical_address_state %>"></div>
+    </div>     
+
+    <div class="control-group">
+      <label class="control-label">Applicant ZIP</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_zip" placeholder="" value="<%= answers.applicant_physical_address_zip %>"></div>
+    </div>  
+
+    <div class="control-group">
+      <label class="control-label">Applicant Phone</label>
+      <div class="controls"><input type="text" name="applicant_phone" placeholder="" value="<%= answers.applicant_phone %>"></div>
+    </div>  
+
+    <div class="control-group">
+      <label class="control-label">Applicant email</label>
+      <div class="controls"><input type="text" name="applicant_email" placeholder="" value="<%= answers.applicant_email %>"></div>
+    </div>       
+    
+    <div class="control-group">
+      <label class="control-label">Assessors Parcel Number</label>
+      <div class="controls"><input type="text" name="APN" placeholder="" value="<%= answers.apn %>"></div>
+    </div>
+  
+    <div class="control-group">
+      <label class="control-label">Building Square Footage </label>
+      <div class="controls"><input type="text" name="building_square_footage_ground" placeholder="" value="<%= answers.building_square_footage_ground %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Building Height (In Feet)</label>
+      <div class="controls"><input type="text" name="building_height_feet" placeholder="feet" value="answers.building_height_feet"></div>
+    </div>    
+
+    <div class="control-group">
+      <label class="control-label">Building Height (In stories)</label>
+      <div class="controls"><input type="text" name="building_height_stories" placeholder="stories" value="answers.building_height_stories"></div>
+    </div>        
+    
+    <div class="control-group">
+      <label class="control-label">Role of Building Professional </label>
+      <div class="controls"><input type="text" name="building_professional_role" placeholder="Architect, Engineer, Design Professional" value="answers.building_professional_role"></div>
+    </div>      
+   
+    <div class="control-group">
+      <label class="control-label">Building Professional's First Name</label>
+      <div class="controls"><input type="text" name="building_professional_first_name" placeholder="" value="answers.building_professional_first_name"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Building Professional's Last Name</label>
+      <div class="controls"><input type="text" name="building_professional_last_name" placeholder="" value="answers.building_professional_last_name"></div>
+    </div>  
+
+    <div class="control-group">
+      <label class="control-label">Building Professional's Address</label>
+      <div class="controls"><input type="text" name="building_professional_physical_address_street" placeholder="123 Main Street" value="answers.building_professional_physical_address_street"></div>
+    </div>      
+
+    <div class="control-group">
+      <label class="control-label">Suite or Office Number</label>
+      <div class="controls"><input type="text" name="building_professional_physical_address_detail" placeholder="Suite #" value="answers.building_professional_physical_address_detail"></div>
+    </div> 
+
+    <div class="control-group">
+      <label class="control-label">City</label>
+      <div class="controls"><input type="text" name="building_professional_physical_address_city" placeholder="Santa Cruz" value="answers.building_professional_physical_address_city"></div>
+    </div>     
+
+    <div class="control-group">
+      <label class="control-label">State</label>
+      <div class="controls"><input type="text" name="building_professional_physical_address_state" placeholder="CA" value="answers.building_professional_physical_address_state"></div>
+    </div>     
+
+    <div class="control-group">
+      <label class="control-label">ZIP</label>
+      <div class="controls"><input type="text" name="building_professional_physical_address_zip" placeholder="95060" value="answers.building_professional_physical_address_zip"></div>
+    </div>  
+
+    <div class="control-group">
+      <label class="control-label">Building Professional Phone</label>
+      <div class="controls"><input type="text" name="building_professional_phone" placeholder="(831) 123-4567" value="answers.building_professional_phone"></div>
+    </div>  
+
+    <div class="control-group">
+      <label class="control-label">Building Professional email</label>
+      <div class="controls"><input type="text" name="building_professional_email" placeholder="ben@builders.com" value="answers.building_professional_email"></div>
+    </div>           
+    
+    <div class="control-group">
+      <label class="control-label">Building Professional (Contractor's) License Number</label>
+      <div class="controls"><input type="text" name="building_professional_license" placeholder="CA license #" value="answers.building_professional_license"></div>
+    </div>               
+ 
+   <p>Building Division Staff will help with the information below after you sumbit through OpenCounter.</p>   
+ 
+    <div class="control-group">
+      <label class="control-label">Expansion Plan Check Due Date</label>
+      <div class="controls"><input type="text" name="building_expansion_plan_check_due_date" placeholder="Supplied by Building Division Staff" value="answers.building_expansion_plan_check_due_date"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Occupancy Class</label>
+      <div class="controls"><input type="text" name="building_occupancy_class" placeholder="Supplied by Building Division Staff" value="answers.building_occupancy_class"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Construction Type</label>
+      <div class="controls"><input type="text" name="building_construction_type" placeholder="Supplied by Building Division Staff" value="answers.building_construction_type"></div>
+    </div>
+
+   <div class="control-group">
+      <label class="control-label">Sprinklers?</label>
+      <div class="controls"><input type="text" name="building_sprinklers" placeholder="Supplied by Building Division Staff" value="answers.building_sprinklers"></div>
+    </div>
+
+   <div class="control-group">
+      <label class="control-label">Do Traffic Impact Fees Apply?</label>
+      <div class="controls"><input type="text" name="building_TIF" placeholder="Supplied by Building Division Staff" value="answers.building_TIF"></div>
+    </div>
+
+   <div class="control-group">
+      <label class="control-label">Quimby Fees Apply?</label>
+      <div class="controls"><input type="text" name="building_quimby" placeholder="Supplied by Building Division Staff" value="answers.building_quimby"></div>
+    </div>
+   
   </form>
   </div>
   

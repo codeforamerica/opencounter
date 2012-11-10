@@ -13,32 +13,59 @@
   
     <div class="control-group">
       <label class="control-label">Type of Application (new, renewal, etc)</label>
-      <div class="controls"><input type="text" name="ehs_type_of_application" placeholder="" value="<%= answers.ehs_type_of_application %>"></div>
+      <div class="controls"><input type="text" name="ehs_type_of_application" placeholder="new, renewal, etc" value="<%= answers.ehs_type_of_application %>"></div>
     </div>
     
     <div class="control-group">
       <label class="control-label">Type of Food Service</label>
       <div class="controls"><input type="text" name="ehs_type_of_food_service" placeholder="" value="<%= answers.ehs_type_of_food_service %>"></div>
     </div>
+    
+<!-- this is a duplicate, we should check this-->
 
     <div class="control-group">
       <label class="control-label">Type of Food Service</label>
       <div class="controls"><input type="text" name="ehs_type_of_application" placeholder="" value="<%= answers.ehs_type_of_application %>"></div>
     </div>
-  
-    <div class="control-group">
-      <label class="control-label">Applicant Name</label>
-      <div class="controls"><input type="text" name="ehs_applicant_name" placeholder="" value="<%= answers.ehs_applicant_name %>"></div>
-    </div>
 
     <div class="control-group">
+      <label class="control-label">Applicant First Name</label>
+      <div class="controls"><input type="text" name="applicant_first_name" placeholder="" value="<%= answers.applicant_first_name %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Applicant Last Name</label>
+      <div class="controls"><input type="text" name="applicant_last_name" placeholder="" value="<%= answers.applicant_last_name %>"></div>
+    </div>  
+  
+    <div class="control-group">
       <label class="control-label">Business Name</label>
-      <div class="controls"><input type="text" name="ehs_business_name" placeholder="" value="<%= answers.ehs_business_name %>"></div>
+      <div class="controls"><input type="text" name="ehs_business_name" placeholder="" value="<%= answers._business_name %>"></div>
     </div>
 
     <div class="control-group">
       <label class="control-label">Business Address</label>
-      <div class="controls"><input type="text" name="ehs_business_address" placeholder="" value="<%= answers.ehs_business_address %>"></div>
+      <div class="controls"><input type="text" name="business_mailing_address_street" placeholder="" value="<%= answers.business_mailing_address_street %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Suite or Office Number</label>
+      <div class="controls"><input type="text" name="business_physical_address_detail" placeholder="" value="<%= answers.business_physical_address_detail %>"></div>
+    </div>
+ 
+    <div class="control-group">
+      <label class="control-label">City</label>
+      <div class="controls"><input type="text" name="business_physical_address_city" placeholder="" value="<%= answers.business_physical_address_city %>"></div>
+    </div>    
+
+    <div class="control-group">
+      <label class="control-label">State</label>
+      <div class="controls"><input type="text" name="business_physical_address_state" placeholder="" value="<%= answers.business_physical_address_state %>"></div>
+    </div>    
+    
+    <div class="control-group">
+      <label class="control-label">ZIP</label>
+      <div class="controls"><input type="text" name="business_physical_address_zip" placeholder="" value="<%= answers.business_physical_address_zip %>"></div>
     </div>
 
     <div class="control-group">

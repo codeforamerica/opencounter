@@ -37,7 +37,7 @@
             <option value="association"                   <%= (answers.business_structure === 'association') ? 'selected="selected"' : '' %>                    >an Unincorporated Association other than a Partnership</option>
             <option value="corporation"                   <%= (answers.business_structure === 'corporation') ? 'selected="selected"' : '' %>                    >a Corporation</option>
             <option value="trust"                         <%= (answers.business_structure === 'trust') ? 'selected="selected"' : '' %>                          >a Trust</option>
-            <option value="copartner"                     <%= (answers.business_structure === 'copartner') ? 'selected="selected"' : '' %>                      >Copartners</option>
+            <option value="partnership"                     <%= (answers.business_structure === 'partnership') ? 'selected="selected"' : '' %>                      >Partnership</option>
             <option value="married"                       <%= (answers.business_structure === 'married') ? 'selected="selected"' : '' %>                        >Husband and Wife</option>
             <option value="joint_venture"                 <%= (answers.business_structure === 'joint_venture') ? 'selected="selected"' : '' %>                  >a Joint Venture</option>
             <option value="domestic_partners"             <%= (answers.business_structure === 'domestic_partners') ? 'selected="selected"' : '' %>              >State or Local Registered Domestic Partners</option>
@@ -46,7 +46,7 @@
       </div>
       
       <div>
-        <% if (answers.is_owner === "true") { %>Are you<% } else { %> Is <%= answers.owner_first_name %>  <%= answers.owner_last_name %> <% } %> this business&rsquo;s sole owner?
+        <% if (answers.is_owner === "true") { %>Are you<% } else { %> Is <%= answers.applicant_first_name %>  <%= answers.applicant_last_name %> <% } %> this business&rsquo;s sole owner?
         <div class="checkbox">
           <input type="checkbox" name="applicant_is_sole_owner" value="y" checked="checked" class="checkbox">
           Yes
@@ -60,17 +60,17 @@
         
         <div class="control-group">
           <label class="control-label">First &amp; Last Name</label>
-          <div class="controls"><input type="text" name="coowner_name" placeholder="Corey Coowner"></div>
+          <div class="controls"><input type="text" name="coapplicant_name" placeholder="Corey Coowner"></div>
         </div>
         
         <div class="control-group">
           <label class="control-label">Title/Role</label>
-          <div class="controls"><input type="text" name="coowner_role" placeholder="e.g. Co-Owner"></div>
+          <div class="controls"><input type="text" name="coapplicant_role" placeholder="e.g. Co-Owner"></div>
         </div>
         
         <div class="control-group">
           <label class="control-label">Mailing Address</label>
-          <div class="controls"><input type="text" name="coowner_address" placeholder="123 Anystreet Road, Santa Cruz, CA 95060"></div>
+          <div class="controls"><input type="text" name="coapplicant_address" placeholder="123 Anystreet Road, Santa Cruz, CA 95060"></div>
         </div>
         
         <div class=""><a href="#" class="btn">+ Add Another Co-Owner +</a></div>
