@@ -1551,7 +1551,7 @@
         <p class="lead">Explanation</p>
       </div>
       <div class="span3 offset1 task-fee">
-        <h4>HOW MUCH IS THE FEE?</h4>
+        <h4>OUTCOME FROM CALCULATOR HERE</h4>
         <p class="lead">$@TODO</p>
       </div>
     </div>
@@ -1634,7 +1634,7 @@
       </div>
       <div class="span3 offset1 task-fee">
         <h4>HOW MUCH IS THE FEE?</h4>
-        <p class="lead">$@TODO</p>
+        <p class="lead"> OUTCOME FROM PARKING CALC HERE @TODO</p>
       </div>
     </div>
 
@@ -1642,9 +1642,9 @@
       <div class="span4 task-instructions">
         <h4>Instructions</h4>
         <ol>
-          <li>?</li>
-          <li>?</li>
-          <li>?</li>
+          <li>There's no application for parking, if you're not downtown, then parking will play into the planning permit process.</li>
+          <li>If you're downtown, all the information the City needs is on your business license application, which is already filled out.</li>
+          <li>Either way, summit your OpenCounter session to begin the process.</li>
         </ol>
       </div>
       <div class="span8 task-information">
@@ -1692,15 +1692,21 @@
         <h4>Information You&rsquo;ll Need</h4>
         <dl style="float: left; width: 33%;">
           
-        <dt>Business Name</dt>
-        <dd><%= answers.business_name %></dd>
-          
         <dt>Applicant First Name</dt>  
         <dd><%= answers.applicant_first_name %></dd>
         
         <dd>Applicant Last Name</dd>  
         <dd><%= answers.applicant_last_name %></dd>  
           
+        <dt>Applicant Phone</dt>
+        <dd><%= answers.applicant_phone %></dd>  
+        
+        <dt>Business Name</dt>
+        <dd><%= answers.business_name %></dd>
+        
+        <dt>Business Phone</dt>
+        <dd><%= answers.business_phone %></dd>
+        
         <dt>Business Structure</dt>
         <dd><%= answers.business_structure %></dd>  
         
@@ -1709,6 +1715,9 @@
         
         <dt>Business Mailing Address</dt>
         <dd><%= answers.business_mailing_address_street %></dd>  
+
+        <dt>Business Mailing Address Detail</dt>
+        <dd><%= answers.business_mailing_address_detail %></dd>  
         
         <dt>Business City</dt>
         <dd><%= answers.business_mailing_address_city %>"></dd>
@@ -1720,17 +1729,14 @@
         <dd><%= answers.business_mailing_address_zip %>"></dd>
         
         <dt>Taxable Operations</dt>
-        <dd><%= answers.taxable_operations %></dd>
+        <dd><%= answers.ad_taxable_operations %></dd>
         
         <dt>Number of "Amusement Devices"</dt>
-        <dd><%= answers.amusement_devices %></dd>
+        <dd><%= answers.ad_amusement_devices %></dd>
         
         <dt>Event Frequency</dt>
-        <dd><%= answers.event_frequency %></dd>
-        
-        <dt>Applicant Phone</dt>
-        <dd><%= answers.applicant_phone %></dd>
-        
+        <dd><%= answers.ad_event_frequency %></dd>
+                
         </dl>
       </div>
     </div>
