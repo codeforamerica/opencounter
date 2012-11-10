@@ -323,20 +323,17 @@ function(app) {
     },
 
     afterRender: function(o) {
-
       // hide all the forms by default
       $('.business-type-rule').hide();
 
       // When the applicant selects an option,
       $('#business_type').change(function() {
-
         // Get the selection
         selected_option = '#business_type_' + $(this).val() || '';
-
         // Hide the parking spot counter
         $('#parking_spaces').hide();
-
-        // Show the selected <div class="business-type-rules">
+        // Show only the selected <div class="business-type-rules">
+        $('.business-type-rule').hide();
         $(selected_option)
         .show()
         .slideDown('slow');
