@@ -1435,6 +1435,8 @@
                 
         <dt>Date to Begin Service (determined by SCMUD staff)</dt>
         <dd><%= answers. %></dd>
+        
+        <!-- question here about whether to include or not, or just put on the panel or mute -->
 
         <dt>Account # (determined by SCMUD staff)</dt>
         <dd><%= answers. %></dd>
@@ -1452,61 +1454,72 @@
         <dd><%= answers. %></dd>
 
         <dt>Business Name</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.business_name %></dd>
 
         <dt>Business Address</dt>
-        <dd><%= answers. %></dd>
-
+        <dd><%= answers.business_physical_address_street %></dd>
+        
+        <dt>Suite / Unit</dt>
+        <dd><%= answers.business_physical_address_detail %></dd>
+        
         <dt>Business City</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.business_physical_address_city %></dd>
 
         <dt>Business State</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.business_physical_address_state %></dd>
 
         <dt>Business ZIP</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.business_physical_address_zip %></dd>
 
         <dt>Business Phone</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.business_phone %></dd>
   
         <dt>Business Fax</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.business_fax %></dd>
 
         <dt>Business Email</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.applicant_email %></dd>
   
         <dt>Owner Name</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.applicant_first_name %> V%= answers.applicant_last_name %> </dd>
 
         <dt>Owner Address</dt>
-        <dd><%= answers. %></dd>
-
+        <dd><%= answers.applicant_physical_address_street %></dd>
+        
+        <dt>Apartment / Unit #</dt>
+        <dd><%= answers.applicant_physical_address_detail %></dd>
+        
         <dt>Owner City</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.applicant_physical_address_city %></dd>
 
         <dt>Owner State</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.applicant_physical_address_state %></dd>
 
         <dt>Owner ZIP</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.applicant_physical_address_zip %></dd>
 
         <dt>Owner Phone</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.applicant_phone %></dd>
 
         <dt>Owner Email</dt>
-        <dd><%= answers. %></dd>
-
+        <dd><%= answers.applicant_email %></dd>
+        
+        <dt>Owner Driver's License</dt>
+        <dd><%= answers.applicant_drivers_license %></dd>
+        
         <dt>Previous Service Adress in Santa Cruz within the last 24 months (if applicable)</dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.business_physical_address_street_previous %> <%= answers.business_physical_address_detail_previous %></dd>
 
         <dt>City of Santa Cruz Business License Number (from Finance)</dt>
+        <!-- Should probably mute -->
         <dd><%= answers. %></dd>
 
         <dt>City of Santa Cruz Business License Expiration Date (from Finance)</dt>
+        <!-- Should probably mute -->
         <dd><%= answers. %></dd>
 
         <dt>Date to Begin Service (excludes Fridays, weekends and holidays) </dt>
-        <dd><%= answers. %></dd>
+        <dd><%= answers.business_date_of_occupancy %></dd>
 
         <dt>Solid Waste Container Size (select: 1 yard ($160.42), 2 yards ($239.11), 4 yards ($408.94), 5 yards ($578.77) </dt>
         <dd><%= answers. %></dd>
