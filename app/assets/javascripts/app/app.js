@@ -1,12 +1,12 @@
 define([
   // Libraries.
   "jquery",
-  "../libs/jquery-ui",
   "lodash",
   "backbone",
   "../libs/bootstrap-typeahead",
   // Plugins.
-  "plugins/backbone.layoutmanager"
+  "plugins/backbone.layoutmanager",
+  "jqueryui"
 ],
 
 function($, _, Backbone) {
@@ -36,7 +36,7 @@ function($, _, Backbone) {
           JST[path] = _.template(contents);
         });
       }
-      
+
       return JST[path];
     }
   });
@@ -121,7 +121,7 @@ function($, _, Backbone) {
     initialize : function(args) {
       this.maybeUnwrap(args);
     }
-  }); 
+  });
 
   // Mix Backbone.Events, modules, and layout management into the app object.
   return _.extend(app, {
