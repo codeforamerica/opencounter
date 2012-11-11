@@ -1,0 +1,22 @@
+<div class="page-header">
+  <h1>Submitted Applications</h1>
+  <p>Click on any application to see details.</p>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <th>Business</th>
+    <th>Applicant</th>
+    <th>Submitted</th>
+    <th>&nbsp;</th>
+  </thead>
+  <tbody>
+    <% for application in @applications %>
+      <tr class="<%= cycle("odd", "even") -%>">
+        <td><%= application.business_name %></td>
+        <td><%= application.applicant_first_name %> <%= application.applicant_last_name %></td>
+        <td width="40px"><%= link_to 'View This Application &rarr;', admin_application_path(application), :class => 'btn btn-mini' %></td>
+      </tr>
+    <% end -%>
+  </tbody>
+</table>

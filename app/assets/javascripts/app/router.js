@@ -6,16 +6,18 @@ define([
   "modules/answer",
   "modules/navigation",
   "modules/fees/parking",
+  "modules/fees/parking_non_downtown",
   "modules/location"
 ],
 
-function(app, User, Business, Answer, Navigation, Parking, Location) {
+function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, Location) {
 
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
     routes: {
       "clear":"clear",
       "requirements/city/parking":"parking",
+      "requirements/city/parking_non_downtown":"parkingNonDowntown",
       "info/business": "businessInfo",
       "location/check":"locationCheck",
       "requirements/city/business_license":"businessLicense",
@@ -32,8 +34,8 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
       });
       window.alert("cleared!");
     },
-    parking:function(){
 
+    parking:function(){
       var panel = new (Answer.Views.Panel.extend(Parking.Views.Calculator.prototype))({
         collection:  this.answers,
         //useTemplate: "panels/requirements/city/parking"
@@ -44,6 +46,15 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
       app.layout.render();
       console.log('rendered parking panel');
     },
+
+    parkingNonDowntown:function() {
+        var panel = new (Answer.Views.Panel.extend(ParkingNonDowntown.Views.Calculator.prototype))({
+            collection: this.answers
+        });
+        app.layout.setView("div#content", panel);
+        app.layout.render();
+    },
+
     userInfo: function(){
       var panel = new (Answer.Views.Panel.extend(User.Views.Info.prototype))({
         collection:this.answers,
@@ -94,11 +105,11 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
       this.answers = new Answer.Collection();
       this.answers.fetch();
       app.useLayout("main");
-      
+
       app.on("lookuppermit", Answer.lookupPermit, this);
-      
-      
-      
+
+
+
       var nav =  new Navigation.Views.Main({
         business: this.business,
         answers: this.answers
@@ -108,7 +119,7 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
         business: this.business,
         answers: this.answers
       });
-      
+
       app.layout.setViews({
         "div#profile": new Answer.Views.Profile({
           collection:this.answers
@@ -116,7 +127,7 @@ function(app, User, Business, Answer, Navigation, Parking, Location) {
         "div#nav-main": nav,
         "div#nav-sub": subnav
       });
-      
+
     }});
   return Router;
 
