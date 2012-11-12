@@ -6,14 +6,18 @@
   <thead>
     <th>Name</th>
     <th>Short Name</th>
+    <th>Applies to Home-Sited Businesses?</th>
+    <th>Applies to Commercially-Sited Businesses?</th>
     <th>Jurisdiction</th>
-    <th></th>
+    <th colspan="2">Actions</th>
   </thead>
   <tbody>
     <% for requirement in @requirements %>
       <tr class="<%= cycle("odd", "even") -%>">
         <td><%= requirement.name %></td>
         <td><%= requirement.short_name %></td>
+        <td><%= requirement.home_occ %></td>
+        <td><%= requirement.commercial %></td>
         <td><%= requirement.jurisdiction %></td>
         <td width="40px"><%= link_to 'Edit', edit_admin_requirement_path(requirement), :class => 'btn btn-mini' %></td>
         <td width="60px"><%= button_to 'Delete', admin_requirement_path(requirement), :method => :delete, :confirm => 'Delete this Requirement?', :class => 'btn btn-mini btn-danger' %></td>
