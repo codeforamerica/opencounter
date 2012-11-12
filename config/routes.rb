@@ -36,6 +36,9 @@ Opencounter::Application.routes.draw do
         get :get_attribute_on_the_spot
       end
     end
+
+    resources :applications
+
   end
   
   match "*path" => "panels#intro"

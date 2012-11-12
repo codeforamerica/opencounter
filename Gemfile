@@ -71,6 +71,6 @@ end
 
 gem 'csv-mapper'
 gem 'fuzzy-string-match_pure'
-gem 'irbtools'
+gem 'pry-rails'
 gem 'on_the_spot'
 
