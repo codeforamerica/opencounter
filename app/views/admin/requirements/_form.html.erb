@@ -30,6 +30,19 @@
 
 <div class="field">
   <br />
+  <%= f.label :home_occ %>
+  <%= f.checkbox :home_occ %> Applies to home-sited businesses?
+</div>
+
+<div class="field">
+  <br />
+  <%= f.label :commercial %>
+  <%= f.checkbox :commercial %> Applies to commercially-sited businesses?
+</div>
+
+<div class="field">
+  <br />
   <%= f.label :notes %>
   <%= f.text_area :notes, :rows => 5 %>
 </div>
+
