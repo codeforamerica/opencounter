@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121104190433) do
+ActiveRecord::Schema.define(:version => 20121112181309) do
 
   create_table "answers", :force => true do |t|
     t.text     "value"
@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(:version => 20121104190433) do
     t.string   "jurisdiction"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "short_name"
   end
 
   create_table "sic_codes", :force => true do |t|
