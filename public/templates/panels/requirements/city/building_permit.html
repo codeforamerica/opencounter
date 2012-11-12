@@ -20,11 +20,11 @@
     <p>This process does have charges associated with it to capture the labor costs the City undertakes to review the plans. Rates are calculated both on the complexity of the project and the valuation of the build.</p>
     <p>A general guideline is that a building permit will cost between 5-10% of the value of the building project that you'll undertake.</p>
     <p>The City' Building Permit cover sheet can be found <a href="http://www.cityofsantacruz.com/Modules/ShowDocument.aspx?documentid=8770" target="_blank">here</a>.</p>
-  
+    
     <p>Fill in as much as you can below.</p>
 
     <form method="post" action="#" id="form_building_permit">
-          
+   
       <div class="control-group">
         <label class="control-label">Date</label>
         <div class="controls"><input type="text" name="date" placeholder="" value="<%= Time.now.strftime("%m/%d/%Y") %>"></div>
@@ -62,7 +62,7 @@
       
       <div class="control-group">
         <label class="control-label">Role of Applicant </label>
-        <div class="controls"><input type="text" name="Applicant Role" placeholder="" value="<%= answers.applicant_role %>"></div>
+        <div class="controls"><input type="text" name="applicant_role" placeholder="" value="<%= answers.applicant_role %>"></div>
       </div>        
       
       <div class="control-group">
@@ -134,7 +134,7 @@
         <label class="control-label">Role of Building Professional </label>
         <div class="controls"><input type="text" name="building_professional_role" placeholder="Architect, Engineer, Design Professional" value="answers.building_professional_role"></div>
       </div>      
-     
+
       <div class="control-group">
         <label class="control-label">Building Professional's First Name</label>
         <div class="controls"><input type="text" name="building_professional_first_name" placeholder="" value="answers.building_professional_first_name"></div>
@@ -185,7 +185,7 @@
         <div class="controls"><input type="text" name="building_professional_license" placeholder="CA license #" value="answers.building_professional_license"></div>
       </div>               
    
-     <p>Building Division Staff will help with the information below after you sumbit through OpenCounter.</p>   
+      <p>Building Division Staff will help with the information below after you sumbit through OpenCounter.</p>   
    
       <div class="control-group">
         <label class="control-label">Expansion Plan Check Due Date</label>

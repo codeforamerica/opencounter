@@ -18,6 +18,12 @@
 
 <div class="field">
   <br />
+  <%= f.label :short_name %>
+  <%= f.text_field :short_name %>
+</div>
+
+<div class="field">
+  <br />
   <%= f.label :jurisdiction %>
   <%= f.select :jurisdiction, options_for_select(['City', 'County', 'State', 'Federal']) %>
 </div>
