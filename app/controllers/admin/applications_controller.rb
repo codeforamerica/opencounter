@@ -1,17 +1,14 @@
 class Admin::ApplicationsController < ApplicationController
   layout 'admin'
-
+  
   def index
-    # An application is defined as the collection of answers for a given user.
-    # TODO: class? activerecord model?
-    @applications = User.all.map{ |u| [u,u.answers] }
+    @applications = Business.all
   end
 
   def show
+    @application = Business.find_by_id(params[:id])
+    @user = @application.user
   end
-
+  
 end
-
-
-# Lifted from Facets
 
