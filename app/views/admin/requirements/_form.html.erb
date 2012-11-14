@@ -18,8 +18,24 @@
 
 <div class="field">
   <br />
+  <%= f.label :short_name %>
+  <%= f.text_field :short_name %>
+</div>
+
+<div class="field">
+  <br />
   <%= f.label :jurisdiction %>
   <%= f.select :jurisdiction, options_for_select(['City', 'County', 'State', 'Federal']) %>
+</div>
+
+<div class="field">
+  <br />
+  <%= f.check_box :home_occ %> Applies to home-sited businesses?
+</div>
+
+<div class="field">
+  <br />
+  <%= f.check_box :commercial %> Applies to commercially-sited businesses?
 </div>
 
 <div class="field">
@@ -27,3 +43,4 @@
   <%= f.label :notes %>
   <%= f.text_area :notes, :rows => 5 %>
 </div>
+

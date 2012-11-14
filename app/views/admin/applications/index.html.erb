@@ -13,13 +13,13 @@
   <tbody>
   <% for application in @applications %>
     <tr class="<%= cycle("odd", "even") -%>">
-    <td><%= application.user.answers.find_by_field_name('business_name').try(:value) %></td>
-    <td>
-      <%= application.user.answers.find_by_field_name('applicant_first_name').try(:value) %>
-      <%= application.user.answers.find_by_field_name('applicant_last_name').try(:value) %>
-    </td>
-    <td width="40px"><%= link_to 'View This Application &rarr;', admin_application_path(application), :class => 'btn btn-mini' %></td>
-  </tr>
-<% end -%>
+      <td><%= application.user.answers.find_by_field_name('business_name').try(:value) %></td>
+      <td>
+        <%= application.user.answers.find_by_field_name('applicant_first_name').try(:value) %>
+        <%= application.user.answers.find_by_field_name('applicant_last_name').try(:value) %>
+      </td>
+      <td width="40px"><%= link_to 'View This Application &rarr;', admin_application_path(application), :class => 'btn btn-mini' %></td>
+    </tr>
+  <% end -%>
   </tbody>
 </table>
