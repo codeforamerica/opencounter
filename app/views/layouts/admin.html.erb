@@ -42,7 +42,7 @@
       <div id="admin_header">
         <div style="float: right;">
           <% unless current_user %>
-            <%= link_to 'Log Out', destroy_admin_user_session_path, :method => :delete %>
+            <%= button_to 'Log Out', destroy_admin_user_session_path, :method => :delete %>
           <% end %>
         </div>
         <div>

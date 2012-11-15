@@ -10,15 +10,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   
   def after_sign_in_path_for(resource_or_scope)
-    admin_zoning_districts_path
+    admin_applications_url
   end
   
   def after_sign_out_path_for(resource_or_scope)
     root_url
-  end
-  
-  def auth_user!
-    redirect_to new_admin_user_session_path unless admin_user_signed_in?
   end
   
   def layout_by_resource
