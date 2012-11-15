@@ -293,22 +293,22 @@
                        
           <div class="control-group">
             <label class="control-label">Building Height (In Feet)</label>
-            <div class="controls"><input type="text" name="building_height_feet" placeholder="feet" value="answers.building_height_feet"></div>
+            <div class="controls"><input type="text" name="building_height_feet" placeholder="feet" value="<%= answers.building_height_feet %>"></div>
           </div>    
       
           <div class="control-group">
             <label class="control-label">Building Height (In stories)</label>
-            <div class="controls"><input type="text" name="building_height_stories" placeholder="stories" value="answers.building_height_stories"></div>
+            <div class="controls"><input type="text" name="building_height_stories" placeholder="stories" value="<%= answers.building_height_stories%> "></div>
           </div>                               
                            
           <div class="control-group">
             <label class="control-label">Accessory Building Height (In Feet)</label>
-            <div class="controls"><input type="text" name="building_height_accessory_feet" placeholder="feet" value="answers.building_height_accessory_feet"></div>
+            <div class="controls"><input type="text" name="building_height_accessory_feet" placeholder="feet" value="<%= answers.building_height_accessory_feet %>"></div>
           </div>    
       
           <div class="control-group">
             <label class="control-label">Accessory Building Height (In stories)</label>
-            <div class="controls"><input type="text" name="building_height_accessory_stories" placeholder="stories" value="answers.building_height_accessory_stories"></div>
+            <div class="controls"><input type="text" name="building_height_accessory_stories" placeholder="stories" value="<%= answers.building_height_accessory_stories %>"></div>
           </div>                 
   
             <div class="control-group">
@@ -380,7 +380,7 @@
  
             <div class="control-group">
               <label class="control-label"> Does your project involve construction of a new structure or an improvement oto an existing structure which equals or exceeds 50% of the market value of the structure? </label>
-              <div class="controls"><input type="text" name="building_new_structure" placeholder="Yes or No" value="<%= answers.building_new_structure %>"></div>
+              <div class="controls"><input type="text" name="building_new_structure" placeholder="" value="<%= answers.building_new_structure %>"></div>
             </div> 
  
  </div>
