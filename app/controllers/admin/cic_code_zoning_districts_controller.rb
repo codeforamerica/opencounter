@@ -1,5 +1,6 @@
 class Admin::CicCodeZoningDistrictsController < ApplicationController
   layout 'admin'
+  before_filter :authenticate_admin_user!
   
   def show
     @cic_code_zoning_district = CicCodeZoningDistrict.find(params[:id])

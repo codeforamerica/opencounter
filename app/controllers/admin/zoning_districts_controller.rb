@@ -1,5 +1,6 @@
 class Admin::ZoningDistrictsController < ApplicationController
   layout 'admin'
+  before_filter :authenticate_admin_user!
   can_edit_on_the_spot
   
   def index

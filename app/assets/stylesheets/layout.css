@@ -258,6 +258,11 @@ form.button_to{
   margin-bottom: 0px;
 }
 
+#admin_header{
+  margin: 10px 0 30px 0;
+  font-size: 16px;
+}
+
 
 /*
 

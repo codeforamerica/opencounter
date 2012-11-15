@@ -67,4 +67,7 @@ Opencounter::Application.configure do
 
   # e-mail for help and form submission should go to this address
   config.PLANNING_DEPARTMENT_EMAIL = 'planningcounter@cityofsantacruz.com'
+  
+  # e-mail configuration for devise
+  config.action_mailer.default_url_options = { :host => 'http://opencounter.cityofsantacruz.com/' }
 end

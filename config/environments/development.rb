@@ -39,4 +39,7 @@ Opencounter::Application.configure do
 
   # e-mail for help and form submission should go to this address
   config.PLANNING_DEPARTMENT_EMAIL = ENV['PLANNING_DEPARTMENT_EMAIL'] || 'nobody@example.com'
+  
+  # e-mail configuration for devise
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end

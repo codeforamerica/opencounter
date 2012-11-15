@@ -1,5 +1,6 @@
 class Admin::RequirementsController < ApplicationController
   layout 'admin'
+  before_filter :authenticate_admin_user!
   
   def index
     @requirements = Requirement.all(:order => 'jurisdiction, name')
