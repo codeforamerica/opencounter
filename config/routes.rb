@@ -4,8 +4,9 @@ Opencounter::Application.routes.draw do
   devise_for :admin_users
 
   match "users/email-planning" => "users#update_planning"
-  match "api/lookup/cic" => "cic_codes#index"  
+  match "api/lookup/cic" => "cic_codes#index"
   match "api/lookup/permit/:zoning/:sic" => "permits#show"
+  match "api/lookup/requirements" => "requirements#index"
   match '/admin/' => redirect('/admin/applications#index')
 
   resources :users, :except => :index
