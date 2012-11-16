@@ -23,6 +23,7 @@ require.config({
       deps: ["lodash", "jquery"],
       exports: "Backbone"
     },
+    '../libs/jquery-ui': ['jquery'],
     '../libs/bootstrap-typeahead': ['jquery'],
     // Backbone.LayoutManager depends on Backbone.
     "plugins/backbone.layoutmanager": ["backbone"]
