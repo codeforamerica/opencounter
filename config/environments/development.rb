@@ -38,8 +38,18 @@ Opencounter::Application.configure do
   config.assets.debug = true
 
   # e-mail for help and form submission should go to this address
-  config.PLANNING_DEPARTMENT_EMAIL = ENV['PLANNING_DEPARTMENT_EMAIL'] || 'nobody@example.com'
+  config.PLANNING_DEPARTMENT_EMAIL = ENV['PLANNING_DEPARTMENT_EMAIL'] || 'joel@codeforamerica.org'
   
   # e-mail configuration for devise
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  
+  ActionMailer::Base.smtp_settings = {
+    :address        => "smtp.sendgrid.net",
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => ENV['SENDGRID_DOMAIN'],
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 end
