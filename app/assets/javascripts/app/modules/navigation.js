@@ -101,9 +101,8 @@ function(app, util) {
           $el.addClass("current");
         }
 
-        // If the link's href matches the path:
+        // If the first part of the link's href matches the first part of the path:
         if (dataSection === pathSection) {
-          
           // Show the nav links for this section
           $nav.find("ol[data-section=" + dataSection + "]").show();
         }
@@ -133,6 +132,20 @@ function(app, util) {
         this.$el.find("[data-show=bid]").show();
       }
       
+      // requirements menu is based of the requirements collection
+      // TODO: only do this when the requirements collection changes
+      // FIXME: don't do the above stuff related to requirements anymore
+      var requirementsNav = this.$el.find("[data-section='requirements']").empty();
+      this.requirements.forEach(function(requirement) {
+        // TODO: check requirement.home_occ, requirement.commercial
+        
+        var navItem = document.createElement("li");
+        var navLink = document.createElement("a");
+        navLink.href = "/requirements/" + requirement.get("jurisdiction").toLowerCase() + "/" + requirement.get("short_name");
+        navLink.appendChild(document.createTextNode(requirement.get("name")));
+        navItem.appendChild(navLink);
+        requirementsNav.append(navItem);
+      });
     },
     cleanup: function() {
       this.business.off(null, null, this);
@@ -144,6 +157,9 @@ function(app, util) {
       this.answers = o.answers;
       this.answers.on("add", this.render, this);
       this.answers.on("change", this.render, this);
+      this.requirements = o.requirements;
+      this.requirements.on("change", this.render, this);
+      this.requirements.on("reset", this.render, this);
     }  
   });
 
