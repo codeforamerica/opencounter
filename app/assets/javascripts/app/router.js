@@ -7,10 +7,11 @@ define([
   "modules/navigation",
   "modules/fees/parking",
   "modules/fees/parking_non_downtown",
-  "modules/location"
+  "modules/location",
+  "modules/requirement"
 ],
 
-function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, Location) {
+function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, Location, Requirement) {
 
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
@@ -100,13 +101,21 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, L
       app.layout.render();
     },
     initialize: function(){
+      var self = this;
       this.user = new User.Model();
       this.business = new Business.Model();
       this.answers = new Answer.Collection();
-      this.answers.fetch();
+      this.requirements = new Requirement.Collection();
+      
+      this.answers.fetch({
+        success: function() {
+          Requirement.lookupRequirements.call(self);
+        }
+      });
       app.useLayout("main");
 
       app.on("lookuppermit", Answer.lookupPermit, this);
+      app.on("lookup_requirements", Requirement.lookupRequirements, this);
 
 
 
@@ -115,9 +124,10 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, L
         answers: this.answers
       });
 
-      var subnav =  new Navigation.Views.Sub({
+      var subnav = new Navigation.Views.Sub({
         business: this.business,
-        answers: this.answers
+        answers: this.answers,
+        requirements: this.requirements
       });
 
       app.layout.setViews({

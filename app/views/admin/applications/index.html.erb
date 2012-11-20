@@ -19,7 +19,7 @@
         <%= application.user.answers.find_by_field_name('applicant_last_name').try(:value) %>
       </td>
       <td width="100px"><%= application.submitted_at_s %></td>
-      <td width="40px"><%= link_to 'View This Application', admin_application_path(application), :class => 'btn btn-mini' %></td>
+      <td width="40px"><%= link_to 'View', admin_application_path(application), :class => 'btn btn-mini' %></td>
     </tr>
   <% end -%>
   </tbody>

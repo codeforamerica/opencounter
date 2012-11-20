@@ -66,5 +66,19 @@ Opencounter::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # e-mail for help and form submission should go to this address
-  config.PLANNING_DEPARTMENT_EMAIL = 'planningcounter@cityofsantacruz.com'
+  config.PLANNING_DEPARTMENT_EMAIL = 'pkoht@cityofsantacruz.com'
+  
+  # e-mail configuration for devise
+  config.action_mailer.default_url_options = { :host => 'http://opencounter.cityofsantacruz.com/' }
+
+  config.action_mailer.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address        => "smtp.sendgrid.net",
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => ENV['SENDGRID_DOMAIN'],
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 end

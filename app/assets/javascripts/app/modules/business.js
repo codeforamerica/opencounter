@@ -84,6 +84,7 @@ function(app) {
             this.collection.addAnswer("CIC_"+key, data[d][key], {silent:true});
           }
           found = true;
+          app.trigger("lookup_requirements");
         }
       }
       app.trigger("lookuppermit");

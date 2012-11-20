@@ -1,44 +1,41 @@
 Opencounter::Application.routes.draw do
+  root :to => 'panels#intro'
+
+  devise_for :admin_users
+
   match "users/email-planning" => "users#update_planning"
+  match "api/lookup/cic" => "cic_codes#index"
+  match "api/lookup/permit/:zoning/:sic" => "permits#show"
+  match "api/lookup/requirements" => "requirements#index"
+  match '/admin/' => redirect('/admin/applications#index')
 
   resources :users, :except => :index
   resources :answers
   resources :businesses
-
-  match "api/lookup/cic" => "cic_codes#index"
-  
-  match "api/lookup/permit/:zoning/:sic" => "permits#show"
-
-  root :to => 'panels#intro'
     
-  match '/admin/' => redirect('/admin/zoning_districts#index')
   namespace :admin do
     
+    resources :admin_users
     resources :cic_codes do
       collection do
         put :update_attribute_on_the_spot
         get :get_attribute_on_the_spot
       end
     end
-    
     resources :requirements
-
     resources :cic_code_zoning_districts do
       collection do
         put :update_attribute_on_the_spot
         get :get_attribute_on_the_spot
       end
     end
-
     resources :zoning_districts do
       collection do
         put :update_attribute_on_the_spot
         get :get_attribute_on_the_spot
       end
     end
-
     resources :applications
-
   end
   
   match "*path" => "panels#intro"

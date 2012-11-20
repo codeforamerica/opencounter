@@ -1,6 +1,7 @@
 class Admin::ApplicationsController < ApplicationController
   layout 'admin'
-  
+  before_filter :authenticate_admin_user!
+
   def index
     @applications = Business.submitted.order("created_at desc").all
   end
