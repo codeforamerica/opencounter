@@ -20,22 +20,25 @@
 </dl>
 
 <!-- OWNER -->
-<dl>
-  <dt>Owner Name</dt>
-  <dd><%= @user.answers.find_by_field_name("owner_first_name").try(:value) -%> <%= @user.answers.find_by_field_name("owner_last_name").try(:value) -%></dd>
-</dl>
+<% if @user.answers.find_by_field_name("is_owner").try(:value) == 'no' %>
+  <dl>
+    <dt>Owner Name</dt>
+    <dd><%= @user.answers.find_by_field_name("owner_first_name").try(:value) -%> <%= @user.answers.find_by_field_name("owner_last_name").try(:value) -%></dd>
+  </dl>
 
-<dl>
-  <dt>Owner Email</dt>
-  <dd><%= @user.answers.find_by_field_name("owner_email").try(:value) -%></dd>
-</dl>
+  <dl>
+    <dt>Owner Email</dt>
+    <dd><%= @user.answers.find_by_field_name("owner_email").try(:value) -%></dd>
+  </dl>
 
-<dl>
-  <dt>Owner Phone</dt>
-  <dd><%= @user.answers.find_by_field_name("owner_phone").try(:value) -%></dd>
-</dl>
+  <dl>
+    <dt>Owner Phone</dt>
+    <dd><%= @user.answers.find_by_field_name("owner_phone").try(:value) -%></dd>
+  </dl>
+  <br />
+<% end %>
 
-<br><h3 class="h3">Business</h3>
+<h3 class="h3">Business</h3>
 
 <dl>
   <dt>Business Name</dt>
@@ -44,9 +47,10 @@
 
 <dl>
   <dt>Business Type</dt>
-  <dd><%= @user.answers.find_by_field_name("business_code (CIC)").try(:value) -%></dd>
-  <dd><%= @user.answers.find_by_field_name("class_a|class_b|class_c").try(:value) -%></dd>
-  <dd><%= @user.answers.find_by_field_name("type_1|type_2|type_3").try(:value) -%></dd>
+  <dd><%= @user.answers.find_by_field_name("CIC_code").try(:value) -%></dd>
+  <dd><%= @user.answers.find_by_field_name("CIC_industry").try(:value) -%></dd>
+  <dd><%= @user.answers.find_by_field_name("CIC_subindustry").try(:value) -%></dd>
+  <!-- <dd> @user.answers.find_by_field_name("type_1|type_2|type_3").try(:value) </dd> -->
 </dl>
 
 <dl>
@@ -83,10 +87,10 @@
 
 <dl>
   <dt>Zoning District</dt>
-  <dd><%= @user.answers.find_by_field_name("@todo").try(:value) -%></dd>
+  <dd><%= @user.answers.find_by_field_name("CIC_code").try(:value) -%></dd>
 </dl>
 
 <dl>
   <dt>Prior Use</dt>
-  <dd><%= @user.answers.find_by_field_name("@todo").try(:value) -%></dd>
+  <dd><%= @user.answers.find_by_field_name("prioruse").try(:value) -%></dd>
 </dl>

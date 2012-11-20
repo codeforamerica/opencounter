@@ -2,7 +2,7 @@ class Admin::ApplicationsController < ApplicationController
   layout 'admin'
   
   def index
-    @applications = Business.all
+    @applications = Business.submitted.order("created_at desc").all
   end
 
   def show

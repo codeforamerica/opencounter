@@ -1,7 +1,22 @@
 class Business < ActiveRecord::Base
   belongs_to :user
   has_many :answers
-  attr_accessible :name, :description
+  attr_accessible :name, :description, :submitted, :submitted_at
+
+  scope :submitted, -> { where(submitted: true) }
+
+  def mark_submitted
+    update_attributes(submitted: true)
+    update_attributes(submitted_at: Time.now)
+  end
+
+  def submitted?
+    submitted || false
+  end
+
+  def submitted_at_s
+    submitted_at.in_time_zone('Hawaii').strftime('%m/%d/%Y at %I:%M%p')
+  end
 
   # answers are a hash of key/value pairs
   # TODO: proper error handling
