@@ -21,6 +21,7 @@ class Business < ActiveRecord::Base
   # answers are a hash of key/value pairs
   # TODO: proper error handling
   def save_answers(answers)
+    Rails.logger.info "save_answers method called: #{answers.each{|k,v| [k,v]}}"
     errors = []
     answers.each do |key, value|
       p "#{key}, #{value}"
