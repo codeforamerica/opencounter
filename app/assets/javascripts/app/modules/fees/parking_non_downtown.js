@@ -60,185 +60,186 @@ function(app) {
           break;
 
         case 'parking_banks_with_atms':
-          var square_feet = field_1,
-            atms = field_2,
+          var square_feet = this.collection.getAnswer("square_feet"),
+            atms = this.collection.getAnswer("ATMs"),
             spaces = Math.round((square_feet / 400) + (atms * 1.5));
           return spaces;
           break;
 
         case 'parking_banks_no_atms':
-          var square_feet = field_1,
+          var square_feet = this.collection.getAnswer("square_feet"),
             spaces = Math.round(square_feet / 400);
           return spaces;
           break;
 
         case 'parking_billiard':
-          var tables = field_1,
+          var tables = this.collection.getAnswer("tables"),
             spaces = Math.round(tables * 1.5);
           return spaces;
           break;
 
         case 'parking_child_homes':
-          var beds = field_1,
-            employees = field_2,
+          var beds = this.collection.getAnswer("beds"),
+            employees = this.collection.getAnswer("employees"),
             spaces = Math.round(beds / 5) + employees;
           return spaces;
           break;
 
         case 'parking_daycare_foster':
-          var guests = field_1,
+          var guests = this.collection.getAnswer("guests"),
             spaces = Math.round(guests / 5) + 1;
           return spaces;
           break;
 
         case 'parking_communications':
-          var square_feet = field_1,
-            spaces = Math.round(field_1 / 1000);
+          var square_feet = this.collection.getAnswer("square_feet"),
+            // the following line contained a reference to field_1, swapped out for square_feet
+            spaces = Math.round(square_feet / 1000);
           return spaces;
           break;
 
         case 'parking_lower_schools':
-          var employees = field_1,
+          var employees = this.collection.getAnswer("employees"),
             spaces = employees;
           return spaces;
           break;
 
         case 'parking_high_schools':
-          var students = field_1,
-            employees = field_2,
+          var students = this.collection.getAnswer("students"),
+            employees = this.collection.getAnswer("employees"),
             spaces = Math.round(students / 10) + employees;
           return spaces;
           break;
 
         case 'parking_colleges':
-          var students = field_1,
-            employees = field_2,
+          var students = this.collection.getAnswer("students"),
+            employees = this.collection.getAnswer("employees"),
             spaces = Math.round(students / 3) + employees;
           return spaces;
           break;
 
         case 'parking_multi_program_fitness':
-          var square_feet = field_1,
+          var square_feet = this.collection.getAnswer("square_feet"),
             spaces = (square_feet / 100),
             spaces = (square_feet > 15000) ? Math.round(spaces * 1.1) : Math.round(spaces);
           return spaces;
           break;
 
         case 'parking_single_program_fitness':
-          var aerobics_area = field_1,
-            basketball_volleyball_occupancy = field_2,
-            pool_lanes = field_3,
-            pool_non_water_area = field_4,
-            weights_area = field_5,
-            square_feet = field_6,
+          var aerobics_area = this.collection.getAnswer("aerobics_area"),
+            basketball_volleyball_occupancy = this.collection.getAnswer("basketball_volleyball_occupancy"),
+            pool_lanes = this.collection.getAnswer("pool_lanes"),
+            pool_non_water_area = this.collection.getAnswer("pool_non_water"),
+            weights_area = this.collection.getAnswer("weights_area"),
+            square_feet = this.collection.getAnswer("square_feet"),
             spaces = (aerobics_area / 50) + (basketball_volleyball_occupancy / 3) + (pool_lanes * 2) + (pool_non_water_area / 300) + (weights_area / 250),
             spaces = (square_feet > 15000) ? Math.round(spaces * 1.1) : Math.round(spaces);
           return spaces;
           break;
 
         case 'parking_food':
-          var square_feet = field_1,
+          var square_feet = this.collection.getAnswer("square_feet"),
             spaces = Math.round(square_feet / 120);
           return spaces;
           break;
 
         case 'parking_take_out':
-          var square_feet = field_1,
-            take_out_area = field_2,
+          var square_feet = this.collection.getAnswer("square_feet"),
+            take_out_area = this.collection.getAnswer("take_out_area"),
             spaces = Math.round((square_feet / 120) + (take_out_area / 50));
           return spaces;
           break;
 
         case 'parking_funeral':
-          var seats = field_1,
+          var seats = this.collection.getAnswer("seats"),
             spaces = Math.round(seats / 5);
           return spaces;
           break;
 
         case 'parking_furniture_repair':
-          var square_feet = field_1,
+          var square_feet = this.collection.getAnswer("square_feet"),
             spaces = Math.round(square_feet / 500);
           return spaces;
           break;
 
         case 'parking_halls_with_seats':
-          var seats = field_1,
+          var seats = this.collection.getAnswer("seats"),
             spaces = Math.round(seats / 3.5);
           return spaces;
           break;
 
         case 'parking_halls_no_seats':
-          var max_occupancy_load = field_1,
+          var max_occupancy_load = this.collection.getAnswer("max_occupancy_load"),
             spaces = Math.round(max_occupancy_load / 3);
           return spaces;
           break;
 
         case 'parking_household':
-          var sales_area = field_1,
+          var sales_area = this.collection.getAnswer("sales_area"),
             spaces = Math.round(sales_area / 800);
           return spaces;
           break;
 
         case 'parking_laundry':
-          var square_feet = field_1,
+          var square_feet = this.collection.getAnswer("square_feet"),
             spaces = Math.round(square_feet / 200);
           return spaces;
           break;
 
         case 'parking_community_care':
-          var guests = field_1,
-            employees = field_2,
+          var guests = this.collection.getAnswer("guests"),
+            employees = this.collection.getAnswer("employees"),
             spaces = Math.round((guests / 5) + 1 + employees);
           return spaces;
           break;
 
         case 'parking_hotels':
-          var hotel_units = field_1,
+          var hotel_units = this.collection.getAnswer("hotel_units"),
             spaces = hotel_units + 1;
           return spaces;
           break;
 
         case 'parking_convalescent':
-          var beds = field_1,
-            employees = field_2,
+          var beds = this.collection.getAnswer("beds"),
+            employees = this.collection.getAnswer("employees"),
             spaces = Math.round((beds / 5) + employees);
           return spaces;
           break;
 
         case 'parking_hospitals':
-          var beds = field_1,
-            employees = field_2,
+          var beds = this.collection.getAnswer("beds"),
+            employees = this.collection.getAnswer("employees"),
             spaces = Math.round((beds / 5) + employees);
           return spaces;
           break;
 
         case 'parking_medical_offices':
-          var square_feet = field_1,
+          var square_feet = this.collection.getAnswer("square_feet"),
             spaces = Math.round(square_feet / 200);
           return spaces;
           break;
 
         case 'parking_physical_therapy':
-          var square_feet = field_1,
-            pool_water_area = field_2,
+          var square_feet = this.collection.getAnswer("square_feet"),
+            pool_water_area = this.collection.getAnswer("pool_water_area"),
             spaces = Math.round((square_feet / 200) + (pool_water_area / 50));
           return spaces;
           break;
 
         case 'parking_business_offices':
-          var square_feet = field_1,
+          var square_feet = this.collection.getAnswer("square_feet"),
             spaces = Math.round(square_feet / 300);
           return spaces;
           break;
 
         case 'parking_plants':
-          var square_feet = field_1,
+          var square_feet = this.collection.getAnswer("square_feet"),
             spaces = Math.round(square_feet / 500);
           return spaces;
           break;
 
         case 'parking_research_development':
-          var square_feet = field_1,
+          var square_feet = this.collection.getAnswer("square_feet"),
             employees = field_2,
             spaces_by_square_footage = Math.round(square_feet / 325),
             spaces_by_employees = Math.round(employees / 2);
@@ -246,34 +247,34 @@ function(app) {
           break;
 
         case 'parking_retail':
-          var square_feet = field_1,
+          var square_feet = this.collection.getAnswer("square_feet"),
             spaces = Math.round(square_feet / 250);
           return spaces;
           break;
 
         case 'parking_boarding':
-          var beds = field_1,
-            employees = field_2,
+          var beds = this.collection.getAnswer("beds"),
+            employees = this.collection.getAnswer("employees"),
             spaces = Math.round((beds / 5) + employees);
           return spaces;
           break;
 
         case 'parking_institutions':
-          var guests = field_1,
-            employees = field_2,
+          var guests = this.collection.getAnswer("guests"),
+            employees = this.collection.getAnswer("employees"),
             spaces = Math.round((guests / 5) + employees);
           return spaces;
           break;
 
         case 'parking_nursing':
-          var guests = field_1,
-            employees = field_2,
+          var guests = this.collection.getAnswer("guests"),
+            employees = this.collection.getAnswer("employees"),
             spaces = Math.round((guests / 5) + employees + 1);
           return spaces;
           break;
 
         case 'parking_theaters':
-          var seats = field_1;
+          var seats = this.collection.getAnswer("seats");
           if ((seats - 350) > 0) {
             // if 351+ seats
             spaces = Math.round(350 / 3.5) + Math.round((seats - 350) / 5);
@@ -285,13 +286,13 @@ function(app) {
           break;
 
         case 'parking_warehouses':
-          var square_feet = field_1,
+          var square_feet = this.collection.getAnswer("square_feet"),
             spaces = Math.round(square_feet / 1000);
           return spaces;
           break;
 
         case 'parking_worship':
-          var seats = field_1,
+          var seats = this.collection.getAnswer("seats"),
             spaces = Math.round(seats / 3.5);
           return spaces;
           break;
