@@ -360,30 +360,21 @@ function(app) {
       this.calculate();
     },
 
-    // TODO:  perform the calculation based on data from the answers collection,
-    //        like in downtown parking.js, rather than reading from the form.
     calculate:function() {
-      // Grab form data
-    /*  var form    = $(this),                 // the submitted form*/
-      //form_id = form.attr('id'),         // the form's ID
-      /*inputs = $(this).serializeArray(); // the form data*/
-
-      // Calculate number of required car parking spaces
-      //var spaces = this.calculateSpaces(form_id, inputs);
-      var type = this.collection.getAnswer('business_type');
+      var type = 'parking_' + this.collection.getAnswer('business_type');
       var subtype = this.collection.getAnswer('business_subtype');
       var business_subtype = subtype || type;
 
+      console.log('calculating: ', business_subtype);
+
       var spaces = this.calculateSpaces(business_subtype);
 
-      // Build the display text
       var display_text = "<p>You must provide "
       + spaces
       + " car parking space"
       + ((spaces !== 1) ? "s" : "")
       + ".</p>";
 
-      // Show the display text
       $("#parking_spaces")
       .html(display_text)
       .show();
