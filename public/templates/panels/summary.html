@@ -988,7 +988,7 @@
         <dl style="float: left; width: 33%;">
           
           <!-- this can probably just be commented out, it's never going to be filled out, i'm leaving in for now as to not mess up the layout -PK -->
-          
+          <!--
           <dt>OW</dt>
           <dd class="muted">(determined by EH&amp;S staff)</dd>
         
@@ -1022,6 +1022,7 @@
         <dl style="float: left; width:33%;">
           <dt>Applicant Name</dt>
           <dd><%= answers.applicant_first_name %> <%= answers.applicant_last_name %></dd>
+           -->
         
           <dt>Address</dt>
           <dd><%= answers.applicant_physical_address_street %></dd>
@@ -1938,268 +1939,14 @@
       <div class="span4 task-instructions">
         <h4>Instructions</h4>
         <ol>
-          <li>OpenCounter can help you fill out the form, but this doens't get turned into to the City</li>
-          <li>Download the (re)Seller's Permit Applicaiton from the State Board of Equalization and sumbit it.</li>
-          <li>@TODO link to the file here on local system.</li>
+          <li>Download the (re)Seller's Permit Applicaiton from the State Board of Equalization and sumbit it or register online. </li>
         </ol>
       </div>
       <div class="span8 task-information">
         <h4>Information You&rsquo;ll Need</h4>
         <dl style="float: left; width: 33%;">
-          
-          <dt>Business Name</dt>
-          <dd><%= answers.business_name %></dd>
-        
-          <dt>Business Address</dt>
-          <dd><%= answers.business_physical_address_street %></dd>
-          
-          <dt>Suite #</dt>
-          <dd><%= business_physical_address_detail %></dd>
-          
-          <dt>Business City</dt>
-          <dd><%= answers.business_physical_address_city %></dd>
-        
-          <dt>Business State</dt>
-          <dd><%= answers.business_physical_address_state %></dd>
-        
-          <dt>Business ZIP</dt>
-          <dd><%= answers.business_physical_address_zip %></dd>
-        
-          <dt>Business Phone</dt>
-          <dd><%= answers.business_phone %></dd>
-          
-          <dt>Applicant First Name</dt>
-          <dd><%= answers.applicant_first_name %></dd>
-        
-          <dt>Applicant Last Name</dt>
-          <dd><%= answers.applicant_last_name %></dd>
-        
-          <dt>Applicant Address</dt>
-          <dd><%= answers.applicant_physical_address_street %></dd>
-          
-          <dt>Applicant Address Detail</dt>
-          <dd><%= answers.applicant_physical_address_detail %></dd>
-          
-          <dt>Applicant City</dt>
-          <dd><%= answers.applicant_physical_address_city %></dd>
-        
-          <dt>Owner State</dt>
-          <dd><%= answers.applicant_physical_address_state %></dd>
-        
-          <dt>Owner ZIP</dt>
-          <dd><%= answers.applicant_physical_address_zip %></dd>
-        
-          <dt>Owner Phone</dt>
-          <dd><%= answers.applicant_phone %></dd>
-        
-          <dt>Applicant Email</dt>
-          <dd><%= answers.applicant_email %></dd>
-        
-          <dt>Business Co-Applicant Name</dt>
-          <dd><%= answers.coapplicant_name %></dd>
-        
-          <dt>Co-Owner Address</dt>
-          <dd><%= answers.coapplicant_physical_address_street %></dd>
-        
-          <dt>Co-Owner Address Detail</dt>
-          <dd><%= answers.coapplicant_physical_address_detail %></dd>
-        
-          <dt>Co-Owner City</dt>
-          <dd><%= answers.coapplicant_physical_address_city %></dd>
-        
-          <dt>Co-Owner State</dt>
-          <dd><%= answers.coapplicant_physical_address_state %></dd>
-        
-          <dt>Co-Owner ZIP</dt>
-          <dd><%= answers.coapplicant_physical_address_zip %></dd>
-        
-          <dt>Co-Owner Phone</dt>
-          <dd><%= answers.coapplicant_phone %></dd>
-        
-          <dt>Co-Owner Email</dt>
-          <dd><%= answer.coappliant_email %></dd>
-        
-          <dt>Permit Type (Regular; Temporary)</dt>
-          <dd><%= answers.sellers_permit_type %></dd>
-        
-          <dt>Ownership Type </dt>
-          <dd><%= answers.business_structure %></dd>
-          
-          <dt>Corporate, LLC, LLP or LP Number</dt>
-          <dd><%= answers.state_corporate_number %></dd>
-            
-          <dt>State of Incorporation or Organization</dt>
-          <dd><%= answers.state_incorporatation_place %></dd>
-      
-          <dt>Business Trade Name (Ficticious Business Name)</dt>
-          <dd><%= answers.business_name %></dd>
-        
-          <dt>Date you Will Begin Business Activities (Start Date)</dt>
-          <dd><%= answers.business_date_of_occupancy %></dd>
-          
-          <dt>FIN / EIN</dt>
-          <dd><%= answers.federal_EIN %></dd>
-      
-          <dt>Applicant Role (check one)</dt>
-          <dd><%= answers.applicant_role %></dd>
-           
-          <dt>Applicant Title</dt>
-          <dd><%= answers.applicant_title %></dd>
-  
-  <!-- I placed the value as null here, please ensure that this doesn't break the template-->
-          <dt>SSN (Staff will contact you for this, do not fill in)</dt>
-          <dd>"muted"</dd>
-        
-          <dt>CA Driver's License #</dt>
-          <dd><%= answers.applicant_drivers_license %></dd>
-          
-          <dt>Name of a Personal Reference Not Living With You </dt>
-          <dd><%= answers.state_reference_name %></dd>
-        
-          <dt>Reference Address</dt>
-          <dd><%= answers.state_reference_physical_address_street %></dd>
-        
-          <dt>Reference Address</dt>
-          <dd><%= answers.state_reference_physical_address_detail %></dd>
-        
-          <dt>Reference City</dt>
-          <dd><%= answers.state_reference_physical_address_city %></dd>
-          
-          <dt>Reference State</dt>
-          <dd><%= answers.state_reference_physical_address_state %></dd>  
-        
-          <dt>Reference ZIP</dt>
-          <dd><%= answers.state_reference_physical_address_zip %></dd>
-          
-          <dt>Reference Phone</dt>
-          <dd><%= answers.state_reference_phone %></dd>          
-      
-          <dt>Type of Business (Check One)</dt>
-          <dd><%= answers.CIC_industry_subindustry %></dd>
- 
-          <dt>What items will you sell?</dt>
-          <dd><%= answers.business_product %></dd> 
-        
-          <dt>Number of selling locations (fulltime)</dt>
-          <dd><%= answers.business_location_number %></dd>
-          
-          <dt>Number of selling locations (part time)</dt>
-          <dd><%= answers.business_location_number %></dd>
-          
-          <dt>Business Website</dt>
-          <dd><%= answers.business_website %></dd>
-          
-          <dt>Do you make internet sales? (Yes/No)</dt>
-          <dd><%= answers.business_website_sales %></dd>  
-
-          <dt>Property Owner First Name</dt>
-          <dd><%= answers.owner_first_name %></dd>
-        
-          <dt>Property Owner Last Name</dt>
-          <dd><%= answers.owner_last_name %></dd>
-
-          <dt>Property Owner Address</dt>
-          <dd><%= answers.owner_physical_address_street %></dd>
-        
-          <dt>Property Owner Suite</dt>
-          <dd><%= answers.owner_physical_address_detail %></dd>
-          
-          <dt>Property Owner City</dt>
-          <dd><%= answers.owner_physical_address_city %></dd>
-        
-          <dt>Property Owner State</dt>
-          <dd><%= answers.owner_physical_address_state %></dd>
-        
-          <dt>Property Owner ZIP</dt>
-          <dd><%= answers.owner_physical_address_zip %></dd>
-        
-          <dt>Property Owner Phone</dt>
-          <dd><%= answers.owner_phone %></dd>
-        
-          <dt>Property Owner Email</dt>
-          <dd><%= answers.owner_email %></dd>
-      
-          <dt>Projected Monthly Gross Sales</dt>
-          <dd><%= answers.business_projected_sales %></dd>
-        
-          <dt>Alcoholic Beverage Contral License Number (if selling alcohol, supplied by ABC)</dt>
-          <dd><%= answers.abc_permit_number %></dd>
-          
-          <dt>Selling New Tires At Retail (Yes/No) </dt>
-          <dd><%= answers.state_tire_sales %></dd>         
-          
-          <dt>Selling Covered Electronic Devices (Yes/No) </dt>
-          <dd><%= answers.state_electronic_sales %></dd>            
-          
-          <dt>Selling Tobacco at Retail (Yes; No)</dt>
-          <dd><%= answers.state_tabacco_sales %></dd>    
-          
-          <dt>Record Maintainer First Name</dt>
-          <dd><%= answers.state_maintainer_first_name %></dd>
-        
-          <dt>Record Maintainer Last Name</dt>
-          <dd><%= answers.state_maintainer_last_name %></dd>
-
-          <dt>Record Maintainer Address</dt>
-          <dd><%= answers.state_maintainer_physical_address_street %></dd>
-        
-          <dt>Record Maintainer Suite</dt>
-          <dd><%= answers.state_maintainer_physical_address_detail %></dd>
-          
-          <dt>Record Maintainer City</dt>
-          <dd><%= answers.state_maintainer_physical_address_city %></dd>
-        
-          <dt>Record Maintainer State</dt>
-          <dd><%= answers.state_maintainer_physical_address_state %></dd>
-        
-          <dt>Record Maintainer ZIP</dt>
-          <dd><%= answers.state_maintainer_physical_address_zip %></dd>
-        
-          <dt>Record Maintainer Phone</dt>
-          <dd><%= answers.state_maintainer_phone %></dd>
-        
-          <dt>Record Maintainer Email</dt>
-          <dd><%= answers.state_maintainer_email %></dd>      
-          
-          <dt>Name of Bank of Other Financial Instituion</dt>
-          <dd><%= answers.bank_name %></dd>
-        
-          <dt>Name of Merchant Card Processor</dt>
-          <dd><%= answers.merchant_card_processor %></dd>
-          
-          <dt>Names of Major California Based Suppliers</dt>
-          <dd><%= answers.business_suppliers %></dd>  
-        
-          <dt>Suppliers Addresss </dt>
-          <dd><%= answers.business_suppliers_address %></dd>
-          
-          <dt>Products Purchases</dt>
-          <dd><%= answers.business_product_purchases %></dd>
-         
-          <dt>Additional Selling Locations</dt>
-          <dd><%= answers.business_locations_additional %></dd>
-        
-          <dt>Are You Buying An Existing Business? (Yes / No) </dt>
-          <dd><%= answers.business_previously_owned %></dd>
-          
-          <dt>Former Owner's Name</dt>
-          <dd><%= answers.business_previous_owner_name %></dd>
-          
-          <dt>Existing Seller's Permit Number</dt>
-          <dd><%= answers.state_sellers_permit_number_old %></dd>
-
-          <dt>Purchase Price</dt>
-          <dd><%= answers.business_sales_price %></dd>
-  
-          <dt>Fixtures, Furniture and Equipment Cost</dt>
-          <dd><%= answers.business_sales_price_ffe %></dd>
-  
-          <dt>If an escrow company is requesting a tax clearance on your behaf, please list their name address telephone number and the escrow number</dt>
-          <dd><%= answer.business_escrow_clearance %></dd>
-          
-        </dl>
-      </div>
-    </div><!-- /.task-steps -->
+               </div>
+      </div><!-- /.task-steps -->
 
   </div><!-- /.span12 -->
 </div><!-- /.row-fluid -->
