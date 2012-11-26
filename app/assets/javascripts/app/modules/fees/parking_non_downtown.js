@@ -41,7 +41,7 @@ function(app) {
     // Require the business sub-type and other fields specific to that business.
     calculateSpaces: function (business_subtype) {
 
-      console.log('calculating spaces for ', business_subtype);
+      //console.log('calculating spaces for ', business_subtype);
 
       var spaces;
 
@@ -320,13 +320,20 @@ function(app) {
       return this;
     },
 
+    clearBusinessSubtype: function() {
+      this.collection.addAnswer('business_subtype', null);
+    },
+
     afterRender: function(o) {
       // hide all the forms by default
       $('.business-type-rule').hide();
       $('.business-sub-type-rule').hide();
 
+      var self = this;
+
       // When the applicant selects a business category
       $('#business_type').change(function() {
+        self.clearBusinessSubtype();
         $('.business-type-rule').hide();
         selected_option = '#business_type_' + $(this).val() || '';
         $(selected_option).show();
