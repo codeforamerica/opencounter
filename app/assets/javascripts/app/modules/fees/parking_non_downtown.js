@@ -329,30 +329,27 @@ function(app) {
     afterRender: function(o) {
       // hide all the forms by default
       $('.business-type-rule').hide();
+      $('.business-sub-type-rule').hide();
 
-      //// make each div.business-type-rules an accordion
-      //$('.business-type-rule').addClass('accordion');
-      /*$('.accordion').accordion();*/
-
-
-      // When the applicant selects an option,
+      // When the applicant selects a business category
       $('#business_type').change(function() {
-        // Get the selection
-        selected_option = '#business_type_' + $(this).val() || '';
-        // Hide the parking spot counter
-        //$('#parking_spaces').hide();
-        // Show only the selected <div class="business-type-rules">
         $('.business-type-rule').hide();
-        $(selected_option)
-        .show()
+        selected_option = '#business_type_' + $(this).val() || '';
+        $(selected_option).show();
+      });
+
+      // FIXME: only works for 'automobiles and machinery' category
+      // When the applicant selects a business sub-category
+      $('.business_subtype').change(function() {
+        $('.business-sub-type-rule').hide();
+        selected_option = "#subtype_" + $(this).val() || '';
+        $(selected_option).show();
       });
 
     },
 
     events: {
       "change select,input":"saveInput",
-      // "change select,input":"saveInput"
-      // "click .calc_button":"calculate"
     },
 
     saveInput:function(ev) {
