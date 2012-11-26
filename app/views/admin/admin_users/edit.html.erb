@@ -1,0 +1,12 @@
+<h1>Edit User</h1>
+
+<%= form_for(:admin_user, :url => admin_admin_user_path(@admin_user), :html => {:method => :put}) do |f| %>
+	<%= render :partial => 'form', :locals => {:f => f} %>
+
+  <div class="actions">
+    <br />
+    <%= f.submit 'Save', :class => 'btn btn-success btn-large' %>
+    &nbsp;&nbsp;
+    <%= link_to 'Cancel', admin_admin_users_path %>
+  </div>
+<% end %>

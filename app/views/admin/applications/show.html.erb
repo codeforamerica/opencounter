@@ -5,85 +5,92 @@
 <!-- APPLICANT -->
 <dl>
   <dt>Applicant Name</dt>
-  <dd><%= @user.answers.where(:field_name => "applicant_first_name") -%> <%= @user.answers.where(:field_name => "applicant_last_name") -%></dd>
+  <!-- the applicant name is the  -->
+  <dd><%= @user.answers.find_by_field_name("applicant_first_name").try(:value) -%> <%= @user.answers.find_by_field_name("applicant_last_name").try(:value) -%></dd>
 </dl>
 
 <dl>
   <dt>Applicant Email</dt>
-  <dd><%= @user.answers.where(:field_name => "applicant_email") -%></dd>
+  <dd><%= @user.answers.find_by_field_name("applicant_email").try(:value) -%></dd>
 </dl>
 
 <dl>
   <dt>Applicant Phone</dt>
-  <dd><%= @user.answers.where(:field_name => "applicant_phone") -%></dd>
+  <dd><%= @user.answers.find_by_field_name("applicant_phone").try(:value) -%></dd>
 </dl>
 
 <!-- OWNER -->
-<dl>
-  <dt>Owner Name</dt>
-  <dd><%= @user.answers.where(:field_name => "owner_first_name") -%> <%= @user.answers.where(:field_name => "owner_last_name") -%></dd>
-</dl>
+<% if @user.answers.find_by_field_name("is_owner").try(:value) == 'no' %>
+  <dl>
+    <dt>Owner Name</dt>
+    <dd><%= @user.answers.find_by_field_name("owner_first_name").try(:value) -%> <%= @user.answers.find_by_field_name("owner_last_name").try(:value) -%></dd>
+  </dl>
 
-<dl>
-  <dt>Owner Email</dt>
-  <dd><%= @user.answers.where(:field_name => "owner_email") -%></dd>
-</dl>
+  <dl>
+    <dt>Owner Email</dt>
+    <dd><%= @user.answers.find_by_field_name("owner_email").try(:value) -%></dd>
+  </dl>
 
-<dl>
-  <dt>Owner Phone</dt>
-  <dd><%= @user.answers.where(:field_name => "owner_phone") -%></dd>
-</dl>
+  <dl>
+    <dt>Owner Phone</dt>
+    <dd><%= @user.answers.find_by_field_name("owner_phone").try(:value) -%></dd>
+  </dl>
+  <br />
+<% end %>
 
-<br><h3 class="h3">Business</h3>
+<h3 class="h3">Business</h3>
 
 <dl>
   <dt>Business Name</dt>
-  <dd><%= @user.answers.where(:field_name => "business_name") -%></dd>
+  <dd><%= @user.answers.find_by_field_name("business_name").try(:value) -%></dd>
 </dl>
 
 <dl>
   <dt>Business Type</dt>
-  <dd><%= @user.answers.where(:field_name => "business_code (CIC)") -%></dd>
-  <dd><%= @user.answers.where(:field_name => "class_a|class_b|class_c") -%></dd>
-  <dd><%= @user.answers.where(:field_name => "type_1|type_2|type_3") -%></dd>
+  <dd><%= @user.answers.find_by_field_name("CIC_code").try(:value) -%></dd>
+  <dd><%= @user.answers.find_by_field_name("CIC_industry").try(:value) -%></dd>
+  <dd><%= @user.answers.find_by_field_name("CIC_subindustry").try(:value) -%></dd>
+  <!-- <dd> @user.answers.find_by_field_name("type_1|type_2|type_3").try(:value) </dd> -->
 </dl>
 
 <dl>
   <dt>Business Structure</dt>
-  <dd><%= @user.answers.where(:field_name => "business_structure") -%></dd>
+  <dd><%= @user.answers.find_by_field_name("business_structure").try(:value) -%></dd>
 </dl>
 
 <br><h3 class="h3">Location</h3>
 
 <dl>
   <dt>Home Occ?</dt>
-  <dd><%= @user.answers.where(:field_name => " (answers.location_type == "home") ? "yes" : "no" ") -%></dd>
+  <dd><%= @user.answers.find_by_field_name("location_type").try(:value) == "home" ? "yes" : "no"  -%></dd>
 </dl>
 
 <dl>
   <dt>Business Physical Address</dt>
   <dd>
-    <%= @user.answers.where(:field_name => "business_physical_address_street") -%><br>
-    <%= @user.answers.where(:field_name => "business_physical_address_detail") -%><br>
-    <%= @user.answers.where(:field_name => "business_physical_address_city") -%>, <%= @user.answers.where(:field_name => "business_physical_address_state") -%> <%= @user.answers.where(:field_name => "business_physical_address_zip") -%>
+    <%= @user.answers.find_by_field_name("business_physical_address_street").try(:value) -%><br>
+    <%= @user.answers.find_by_field_name("business_physical_address_detail").try(:value) -%><br>
+    <%= @user.answers.find_by_field_name("business_physical_address_city").try(:value) -%>, 
+    <%= @user.answers.find_by_field_name("business_physical_address_state").try(:value) -%>
+    <%= @user.answers.find_by_field_name("business_physical_address_zip").try(:value) -%>
   </dd>
 </dl>
 
 <dl>
   <dt>Business Mailing Address</dt>
   <dd>
-    <%= @user.answers.where(:field_name => "business_mailing_address_street") -%><br>
-    <%= @user.answers.where(:field_name => "business_mailing_address_detail") -%><br>
-    <%= @user.answers.where(:field_name => "business_mailing_address_city") -%>, <%= @user.answers.where(:field_name => "business_mailing_address_state") -%> <%= @user.answers.where(:field_name => "business_mailing_address_zip") -%>
+    <%= @user.answers.find_by_field_name("business_mailing_address_street").try(:value) -%><br>
+    <%= @user.answers.find_by_field_name("business_mailing_address_detail").try(:value) -%><br>
+    <%= @user.answers.find_by_field_name("business_mailing_address_city").try(:value) -%>, <%= @user.answers.find_by_field_name("business_mailing_address_state").try(:value) -%> <%= @user.answers.find_by_field_name("business_mailing_address_zip").try(:value) -%>
   </dd>
 </dl>
 
 <dl>
   <dt>Zoning District</dt>
-  <dd><%= @user.answers.where(:field_name => "@todo") -%></dd>
+  <dd><%= @user.answers.find_by_field_name("CIC_code").try(:value) -%></dd>
 </dl>
 
 <dl>
   <dt>Prior Use</dt>
-  <dd><%= @user.answers.where(:field_name => "@todo") -%></dd>
+  <dd><%= @user.answers.find_by_field_name("prioruse").try(:value) -%></dd>
 </dl>
