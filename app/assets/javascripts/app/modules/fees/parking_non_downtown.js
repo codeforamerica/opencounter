@@ -338,7 +338,6 @@ function(app) {
         $(selected_option).show();
       });
 
-      // FIXME: only works for 'automobiles and machinery' category
       // When the applicant selects a business sub-category
       $('.business_subtype').change(function() {
         $('.business-sub-type-rule').hide();
