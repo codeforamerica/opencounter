@@ -330,9 +330,9 @@ function(app) {
       // hide all the forms by default
       $('.business-type-rule').hide();
 
-      // make each div.business-type-rules an accordion
-      $('.business-type-rule').addClass('accordion');
-      $('.accordion').accordion();
+      //// make each div.business-type-rules an accordion
+      //$('.business-type-rule').addClass('accordion');
+      /*$('.accordion').accordion();*/
 
 
       // When the applicant selects an option,
@@ -340,12 +340,11 @@ function(app) {
         // Get the selection
         selected_option = '#business_type_' + $(this).val() || '';
         // Hide the parking spot counter
-        $('#parking_spaces').hide();
+        //$('#parking_spaces').hide();
         // Show only the selected <div class="business-type-rules">
         $('.business-type-rule').hide();
         $(selected_option)
         .show()
-        .slideDown('slow');
       });
 
     },
