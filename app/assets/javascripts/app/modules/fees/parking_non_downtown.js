@@ -91,7 +91,7 @@ function(app) {
           return spaces;
           break;
 
-        case 'parking_communications':
+        case 'parking_communication':
           var square_feet = this.collection.getAnswer("square_feet"),
             // the following line contained a reference to field_1, swapped out for square_feet
             spaces = Math.round(square_feet / 1000);
@@ -156,7 +156,7 @@ function(app) {
           return spaces;
           break;
 
-        case 'parking_furniture_repair':
+        case 'parking_furn_repair':
           var square_feet = this.collection.getAnswer("square_feet"),
             spaces = Math.round(square_feet / 500);
           return spaces;
@@ -238,9 +238,9 @@ function(app) {
           return spaces;
           break;
 
-        case 'parking_research_development':
+        case 'parking_research':
           var square_feet = this.collection.getAnswer("square_feet"),
-            employees = field_2,
+            employees = this.collection.getAnswer("employees"),
             spaces_by_square_footage = Math.round(square_feet / 325),
             spaces_by_employees = Math.round(employees / 2);
           return (spaces_by_square_footage >= spaces_by_employees) ? spaces_by_square_footage : spaces_by_employees;
@@ -354,8 +354,8 @@ function(app) {
     },
 
     saveInput:function(ev) {
+      ev.preventDefault();
       var $elem = $(ev.target);
-      console.log('adding answer: ' + $elem.attr('name'), $elem.val());
       this.collection.addAnswer($elem.attr("name"), $elem.val());
       this.calculate();
     },
@@ -365,9 +365,10 @@ function(app) {
       var subtype = this.collection.getAnswer('business_subtype');
       var business_subtype = subtype || type;
 
-      console.log('calculating: ', business_subtype);
 
       var spaces = this.calculateSpaces(business_subtype);
+
+      this.collection.addAnswer('required_parking_spaces', spaces);
 
       var display_text = "<p>You must provide "
       + spaces
