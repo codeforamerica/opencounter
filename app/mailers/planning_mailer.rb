@@ -10,5 +10,13 @@ class PlanningMailer < ActionMailer::Base
     to_address = Rails.application.config.PLANNING_DEPARTMENT_EMAIL
     mail(:to => to_address, :subject => "[OpenCounter] New Business Inquiry")
   end
+  
+  def help_email(params, user)
+    @params = params
+    @user = user
+    to_address = Rails.application.config.PLANNING_DEPARTMENT_EMAIL
+    mail(:to => to_address, :subject => "[OpenCounter] Help Request")
+    logger.info "inside the mailer"
+  end
 
 end

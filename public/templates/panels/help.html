@@ -4,25 +4,19 @@
 
 <div class="row-fluid">
   <div class="span8">
+    <div class="user_message"></div>
     <div class="control-group">
       <label for="help_query" class="lead">Your question or comment:</label>
       <textarea name="help_query" class=""></textarea>
     </div>
     
-    <label for="followup_method">How should we follow up?</label>
 
     <div class="control-group">
-      <label class="checkbox">
-        <input type="checkbox" name="followup_method_phone"> Phone
-      </label>
-      (We'll call you at <input type="text" name="applicant_phone" value="" placeholder="(###) ###-####">)
+      We'll call you at <input type="text" name="applicant_phone" value="" placeholder="(###) ###-####">
     </div>
 
     <div class="control-group">
-      <label class="checkbox">
-        <input type="checkbox" name="followup_method_email"> Email
-      </label>
-      (We'll email you at <input type="text" name="applicant_email" value="" placeholder="youraddress@email.com">)
+      We'll email you at <input type="text" name="applicant_email" value="" placeholder="youraddress@email.com">
     </div>
     
     <p class="lead">We'll include everything you've told us so far</p>
@@ -33,7 +27,7 @@
 
   <div class="span4">
     <div class="form-actions">
-      <a class="btn btn-large" id="sendToPlanning">Send to Planning &rarr;</a>
+      <a class="btn btn-large" id="sendHelpEmail">Send to Planning &rarr;</a>
     </div>
   </div>
 </div>
