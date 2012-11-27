@@ -6,7 +6,20 @@
   <h2>Non-Downtown Businesses</h3>
   <p>Your business needs to provide parking spaces. This panel is to help you determine what volume of spaces the Municipal Code requires. It is only an estimation. There are often unique circumstances that may effect the final calculation. Your planner will confirm whether or not you have enough parking as you go through the process of opening your business.</p>
 
-
+  <% if (answers.business_type != null) { %>
+  <div>
+    <div class="well">
+      <p>You have told us the following information about your business:</p>
+      <ul>
+        <li>Business type: <strong><%=  answers.business_type %></strong></li>
+        <li>Business subtype: <strong><%=  answers.business_subtype %></strong></li>
+      </ul>
+    <% if (answers.required_parking_spaces != null) { %>
+        <p>You will need to provide <%= answers.required_parking_spaces %> spaces</p>
+    <% } %>
+    </div>
+  </div>
+  <% } %>
   <form class="calculator" id="parkingSpacesCalculator">
     <!-- 38 business types according to the SC Municipal Code, 25 when combined, 11 large categories -->
     <label>
