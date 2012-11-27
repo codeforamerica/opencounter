@@ -76,7 +76,7 @@ function(app, Parking) {
     events: {
       "change input,select": "updatedInput",
       "click a": "checkForAnswer",
-      "click #sendToPlanning": "sendPlanningEmail"
+      "click #sendHelpEmail": "sendHelpEmail"
     },
     updatedInput:function(ev){
       var name = $(ev.target).attr("name");
@@ -97,6 +97,22 @@ function(app, Parking) {
         console.log(data);
       });
     },
+    sendHelpEmail:function(ev){
+      //do things here
+      ev.preventDefault();
+      var help_data = {query:$("textarea[name=help_query]").val(),
+                       phone:$("input[name=applicant_phone]").val(),
+                       email:$("input[name=applicant_email]").val()};
+      
+      $.ajax("/api/email/help", {data:help_data, method:"POST", success:function(data){
+        console.log(data);
+        if(data && (data.status == "sent")){
+            $("div.user_message").html("Email has been sent. Someone will get back to you soon.");
+        }
+        
+      }});
+    },
+    
     subviews: function() {
       return {beforeRender:function(){},
               afterRender:function(){}};
