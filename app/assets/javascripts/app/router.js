@@ -41,16 +41,17 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, L
         collection:  this.answers,
         //useTemplate: "panels/requirements/city/parking"
       });
-      console.log('parking panel', panel);
-
+      //console.log('parking panel', panel);
       app.layout.setView("div#content", panel);
       app.layout.render();
-      console.log('rendered parking panel');
+      //console.log('rendered parking panel');
     },
 
     parkingNonDowntown:function() {
+
         var panel = new (Answer.Views.Panel.extend(ParkingNonDowntown.Views.Calculator.prototype))({
-            collection: this.answers
+            collection: this.answers,
+            useTemplate: "panels/requirements/city/parking_non_downtown"
         });
         app.layout.setView("div#content", panel);
         app.layout.render();
@@ -106,7 +107,7 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, L
       this.business = new Business.Model();
       this.answers = new Answer.Collection();
       this.requirements = new Requirement.Collection();
-      
+
       this.answers.fetch({
         success: function() {
           Requirement.lookupRequirements.call(self);

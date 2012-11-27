@@ -1,6 +1,6 @@
 define([
-       // Application.
-       "app"
+  // Application.
+  "app"
 ],
 
 // Map dependencies from above array.
@@ -9,9 +9,6 @@ function(app) {
   // Create a new module.
   var ParkingNonDowntown = app.module();
 
-  ParkingNonDowntown.Model = Backbone.Model.extend({
-
-  });
 
   ParkingNonDowntown.Views.Calculator = Backbone.View.extend({
 
@@ -304,6 +301,8 @@ function(app) {
     },
 
     initialize: function(options) {
+      this.collection.on("reset", this.render, this);
+
       _.bindAll(this, 'beforeRender', 'render', 'afterRender');
       var _this = this;
       this.render = _.wrap(this.render, function(render) {
@@ -321,8 +320,8 @@ function(app) {
       return this;
     },
 
-    clearBusinessSubtype: function() {
-      this.collection.addAnswer('business_subtype', null);
+    clearAnswer: function(field_name) {
+      this.collection.addAnswer(field_name, null);
     },
 
     afterRender: function(o) {
@@ -334,7 +333,8 @@ function(app) {
 
       // When the applicant selects a business category
       $('#business_type').change(function() {
-        self.clearBusinessSubtype();
+        self.clearAnswer('business_type');
+        self.clearAnswer('required_parking_spaces');
         $('.business-type-rule').hide();
         selected_option = '#business_type_' + $(this).val() || '';
         $(selected_option).show();
