@@ -126,7 +126,7 @@ function(app) {
           var aerobics_area = this.collection.getAnswer("aerobics_area"),
             basketball_volleyball_occupancy = this.collection.getAnswer("basketball_volleyball_occupancy"),
             pool_lanes = this.collection.getAnswer("pool_lanes"),
-            pool_non_water_area = this.collection.getAnswer("pool_non_water"),
+            pool_non_water_area = this.collection.getAnswer("pool_non_water_area"),
             weights_area = this.collection.getAnswer("weights_area"),
             square_feet = this.collection.getAnswer("square_feet"),
             spaces = (aerobics_area / 50) + (basketball_volleyball_occupancy / 3) + (pool_lanes * 2) + (pool_non_water_area / 300) + (weights_area / 250),
@@ -223,7 +223,7 @@ function(app) {
           return spaces;
           break;
 
-        case 'parking_business_offices':
+        case 'parking_office':
           var square_feet = this.collection.getAnswer("square_feet"),
             spaces = Math.round(square_feet / 300);
           return spaces;
