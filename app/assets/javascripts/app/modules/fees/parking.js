@@ -24,7 +24,7 @@ function(app) {
     },
 
     units: {
-      "apartment":  { unit: "units",       factor: 4    },
+      "apartment":  { unit: "in units",       factor: 4    },
       "doctor":     { unit: "square feet", factor: 200  },
       "mercantile": { unit: "square feet", factor: 400  },
       "furniture":  { unit: "square feet", factor: 800  },
