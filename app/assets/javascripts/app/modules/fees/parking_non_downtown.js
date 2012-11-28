@@ -223,7 +223,7 @@ function(app) {
           return spaces;
           break;
 
-        case 'parking_business_offices':
+        case 'parking_office':
           var square_feet = this.collection.getAnswer("square_feet"),
             spaces = Math.round(square_feet / 300);
           return spaces;
