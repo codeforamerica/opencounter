@@ -1,4 +1,6 @@
 class ZoningDistrict < ActiveRecord::Base
+  has_many :requirement_zoning_districts
+  has_many :requirements, :through => :requirement_zoning_districts, :dependent => :destroy, :order => "code ASC"
   has_many :cic_code_zoning_districts, :dependent => :destroy
   has_many :cic_codes, :through => :cic_code_zoning_districts, :dependent => :destroy, :order => "code ASC"
   attr_accessible :code, :description, :home_occ_prohibited, :name

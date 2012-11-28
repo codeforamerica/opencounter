@@ -66,7 +66,7 @@ Opencounter::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # e-mail for help and form submission should go to this address
-  config.PLANNING_DEPARTMENT_EMAIL = 'joel@codeforamerica.org'
+  config.PLANNING_DEPARTMENT_EMAIL = 'pkoht@cityofsantacruz.com'
   
   # e-mail configuration for devise
   config.action_mailer.default_url_options = { :host => 'http://opencounter.cityofsantacruz.com/' }
