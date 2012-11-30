@@ -38,9 +38,20 @@ Opencounter::Application.routes.draw do
     end
     resources :applications
   end
-  
-  match "*path" => "panels#intro"
-  
+
+  match "/intro" => "panels#intro"
+  match "/intro*path" => "panels#intro"
+  match "/info" => "panels#intro"
+  match "/info*path" => "panels#intro"
+  match "/location" => "panels#intro"
+  match "/location*path" => "panels#intro"
+  match "/requirements" => "panels#intro"
+  match "/requirements*path" => "panels#intro"
+  match "/summary" => "panels#intro"
+  match "/summary*path" => "panels#intro"
+  match "/help" => "panels#intro"  
+  match "/help*path" => "panels#intro"
+ 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
