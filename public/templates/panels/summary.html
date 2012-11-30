@@ -522,7 +522,7 @@
           <dt>State</dt>
           <dd><%= answers.applicant_physical_address_state %></dd>
           <dt>ZIP</dt>
-          <dd><%= answers.applicant_physical_address_zip</dd>          
+          <dd><%= answers.applicant_physical_address_zip %></dd>          
 
           <p>About the Site</p>
           
@@ -1276,9 +1276,6 @@
         
         <!-- we should probably just mute these, just like in the EH&S permit as they won't have answers -->
         
-        <dt>Permit Number (determined by building division staff)</dt>
-        <dd><%= answers. %></dd>
-
         <dt>Expected Plan Check Due Date (determined by building division staff)</dt>
         <dd><%= answers.building_expansion_plan_check_due_date %></dd>
     
@@ -1433,26 +1430,8 @@
       <div class="span8 task-information">
         <h4>Information You&rsquo;ll Need</h4>
         <dl style="float: left; width: 33%;">
-                
-        <dt>Date to Begin Service (determined by SCMUD staff)</dt>
-        <dd><%= answers. %></dd>
-        
+                        
         <!-- question here about whether to include or not, or just put on the panel or mute -->
-
-        <dt>Account # (determined by SCMUD staff)</dt>
-        <dd><%= answers. %></dd>
-  
-        <dt>Meter # (determined by SCMUD staff)</dt>
-        <dd><%= answers. %></dd>
-
-        <dt>Meter Read (determined by SCMUD staff)</dt>
-        <dd><%= answers. %></dd>
-
-        <dt>Water On/Off (Y/N) (determined by SCMUD staff) </dt>
-        <dd><%= answers. %></dd>
-
-        <dt>Hose Valve (Y/N) (determined by SCMUD staff)</dt>
-        <dd><%= answers. %></dd>
 
         <dt>Business Name</dt>
         <dd><%= answers.business_name %></dd>
@@ -1514,23 +1493,9 @@
         <dt>Previous Service Adress in Santa Cruz within the last 24 months (if applicable)</dt>
         <dd><%= answers.business_physical_address_street_previous %> <%= answers.business_physical_address_detail_previous %></dd>
 
-        <dt>City of Santa Cruz Business License Number (from Finance)</dt>
-        <!-- Should probably mute -->
-        <dd><%= answers. %></dd>
-
-        <dt>City of Santa Cruz Business License Expiration Date (from Finance)</dt>
-        <!-- Should probably mute -->
-        <dd><%= answers. %></dd>
-
         <dt>Date to Begin Service (excludes Fridays, weekends and holidays) </dt>
         <dd><%= answers.business_date_of_occupancy %></dd>
-
-        <dt>Solid Waste Container Size (select: 1 yard ($160.42), 2 yards ($239.11), 4 yards ($408.94), 5 yards ($578.77) </dt>
-        <dd><%= answers. %></dd>
-  
-        <dt>Additional Pickups? (each additional pickup: 1 yard ($160.42), 2 yards ($239.11), 4 yards ($408.94), 5 yards ($578.77) </dt>
-        <dd><%= answers. %></dd>
-        
+                
         </dl>
       </div>
     </div><!-- /.task-steps -->
@@ -1780,8 +1745,7 @@
       <div class="span8 task-information">
         <h4>Information You&rsquo;ll Need</h4>
         <dl style="float: left; width: 33%;">
-        <dt>We have everything we need!</dt>
-        <dd><%= answers. %></dd> 
+          <dt>We have everything we need!</dt>
         </dl>
       </div>
     </div>
@@ -1984,7 +1948,6 @@
                 <h4>Information You&rsquo;ll Need</h4>
                 <dl style="float: left; width: 33%;">
                     <dt>We have everything we need!</dt>
-                    <dd><%= answers. %></dd>
                 </dl>
             </div>
         </div>
