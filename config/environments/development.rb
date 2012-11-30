@@ -40,7 +40,8 @@ Opencounter::Application.configure do
   config.assets.debug = true
 
   # e-mail for help and form submission should go to this address
-  config.PLANNING_DEPARTMENT_EMAIL = 'pkoht@cityofsantacruz.com'
+  #config.PLANNING_DEPARTMENT_EMAIL = 'pkoht@cityofsantacruz.com'
+  config.PLANNING_DEPARTMENT_EMAIL = 'mick@codeforamerica.org'
   
   # e-mail configuration for devise
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }

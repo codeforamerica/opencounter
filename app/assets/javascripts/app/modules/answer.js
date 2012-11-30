@@ -56,7 +56,7 @@ function(app, Parking) {
       }else{
         this.create({field_name:key, value:val}, opts);
       }
-      console.log('adding answer: ' + key, val);
+
     },
     getAnswer: function(key, val){
       var m = this.where({"field_name": key});
@@ -76,7 +76,8 @@ function(app, Parking) {
     events: {
       "change input,select": "updatedInput",
       "click a": "checkForAnswer",
-      "click #sendHelpEmail": "sendHelpEmail"
+      "click #sendHelpEmail": "sendHelpEmail",
+      "click #sendPlanningEmail": "sendPlanningEmail"
     },
     updatedInput:function(ev){
       var name = $(ev.target).attr("name");
@@ -93,8 +94,11 @@ function(app, Parking) {
     sendPlanningEmail:function(ev){
       //do things here
       ev.preventDefault();
-      $.get("/users/email-planning", function(data){
-        console.log(data);
+      $.post("/api/email/planning", function(data){
+        if(data && (data.status == "sent")){
+            $("div.user_message").html("Email has been sent. Someone will get back to you soon.");
+        }
+
       });
     },
     sendHelpEmail:function(ev){
@@ -105,7 +109,7 @@ function(app, Parking) {
                        email:$("input[name=applicant_email]").val()};
       
       $.ajax("/api/email/help", {data:help_data, method:"POST", success:function(data){
-        console.log(data);
+
         if(data && (data.status == "sent")){
             $("div.user_message").html("Email has been sent. Someone will get back to you soon.");
         }

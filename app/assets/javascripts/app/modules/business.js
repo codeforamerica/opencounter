@@ -19,7 +19,7 @@ function(app) {
   });
 
   Business.Views.License = Backbone.View.extend({
-    template: "panels/requirement/city/business_license",
+    template: "panels/requirements/city/business_license",
     calculate:function(){
       var employees = this.$el.find("input[name=employee_count]").val();
       var base_tax = 145.15,

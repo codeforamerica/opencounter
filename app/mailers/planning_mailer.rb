@@ -6,7 +6,7 @@ class PlanningMailer < ActionMailer::Base
     @user = user
 
     @user.businesses.order("created_at DESC").first.mark_submitted
-
+    
     to_address = Rails.application.config.PLANNING_DEPARTMENT_EMAIL
     mail(:to => to_address, :subject => "OpenCounter New Business Inquiry")
   end
