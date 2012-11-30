@@ -7,7 +7,7 @@ class CreateRequirements < ActiveRecord::Migration
       t.timestamps
     end
     
-    create_table :cic_codes_requirements, :id => false, do |t|
+    create_table :cic_codes_requirements, :id => false do |t|
       t.integer :cic_code_id
       t.integer :requirement_id
     end
