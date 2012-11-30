@@ -6,7 +6,7 @@ define([
   "../libs/bootstrap-typeahead",
   // Plugins.
   "plugins/backbone.layoutmanager",
-  "jqueryui"
+  "../libs/jquery-ui"
 ],
 
 function($, _, Backbone) {
