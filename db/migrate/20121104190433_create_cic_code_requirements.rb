@@ -14,7 +14,7 @@ class CreateCicCodeRequirements < ActiveRecord::Migration
   def down
     drop_table :cic_code_requirements
     
-    create_table :cic_codes_requirements, :id => false, do |t|
+    create_table :cic_codes_requirements, :id => false do |t|
       t.integer :cic_code_id
       t.integer :requirement_id
     end
