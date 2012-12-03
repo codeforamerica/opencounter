@@ -7,16 +7,18 @@ define([
   "modules/navigation",
   "modules/fees/parking",
   "modules/fees/parking_non_downtown",
+  "modules/fees/traffic_impact_fee",
   "modules/location",
   "modules/requirement"
 ],
 
-function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, Location, Requirement) {
+function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, TrafficImpactFee, Location, Requirement) {
 
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
     routes: {
       "clear":"clear",
+      "requirements/city/traffic_impact_fee":"trafficImpactFee",
       "requirements/city/parking":"parking",
       "requirements/city/parking_non_downtown":"parkingNonDowntown",
       "info/business": "businessInfo",
@@ -34,6 +36,15 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, L
           m.destroy();
       });
       window.alert("cleared!");
+    },
+
+    trafficImpactFee:function() {
+      var panel = new (Answer.Views.Panel.extend(TrafficImpactFee.Views.Calculator.prototype)) ({
+        collection: this.answers,
+        useTemplate: "panels/requirements/city/trafic_impact_fee"
+      });
+      app.layout.setView("div#content", panel);
+      app.layout.render();
     },
 
     parking:function(){
