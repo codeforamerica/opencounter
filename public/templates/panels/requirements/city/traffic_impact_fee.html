@@ -9,7 +9,64 @@
   <p class="lead">It costs a lot to keep the traffic of Santa Cruz flowing.</p>
   <p>If your business has a higher traffic need than your space allows it is your responsibility to pay into a fund that helps traffic improvements. This is done by a one time charge called Traffic Impact Fee (TIF). TIF helps pay for things like wider lanes and signalized intersections. This fee can be $1,000 to $200,000.</p>
   <p>The fee is based on the number of trips your use switch causes. Here is a tool that helps estimate the fee: </p>
-  <iframe src="http://pdfmongotest.herokuapp.com/tif-calculator.html" frameborder="0" width="450" height="550"></iframe></p>
+  <!--<iframe src="http://pdfmongotest.herokuapp.com/tif-calculator.html" frameborder="0" width="450" height="550"></iframe>-->
+
+  <form class="well form-vertical" >
+    <!-- TODO: MAP TOOL -->
+    <label>1) Where is your business located?</label>
+    <input id="tif_address" class="input" type="text" name="tif_address" style="background-color: rgb(255, 255, 255);">
+    <br>
+    <span id="regionOut">Region: Citywide</span>
+    <hr>
+    <label>2) What is the existing property?</label>
+    <select id="tif_proptype_existing" name="tif_proptype_existing">
+      <option value="APARTMENT">Apartment</option>
+      <option value="CONDO">Condo/Townhouse</option>
+      <option value="CONVENIENCE">Convenience Market</option>
+      <option value="HOTEL">Hotel/Motel</option>
+      <option value="MEDICAL">Medical Office</option>
+      <option value="OFFICE">Office</option>
+      <option value="RESIDENTIAL">Residential</option>
+      <option value="RESTAURANT">Restaurant</option>
+      <option value="RETAIL">Retail</option>
+      <option value="RETAIL_LARGE">Retail (Building Materials/Large Items)</option>
+      <option value="SENIOR">Senior Housing</option>
+      <option value="SERVICE">Service Station</option>
+      <option value="SINGLE">Single Family Residence</option>
+      <option value="SRO">SRO</option>
+      <option value="SUPERMARKET">Supermarket</option>
+    </select>
+    <br>
+    <label>Size of Property</label>
+    <input id="tif_size_existing" name="tif_size_existing" type="text">&nbsp;<label id="units">Rooms</label>
+    <hr>
+    <label>3) What is the proposed use?</label>
+    <select id="tif_proptype_proposed" name="tif_proptype_proposed">
+      <option value="APARTMENT">Apartment</option>
+      <option value="CONDO">Condo/Townhouse</option>
+      <option value="CONVENIENCE">Convenience Market</option>
+      <option value="HOTEL">Hotel/Motel</option>
+      <option value="MEDICAL">Medical Office</option>
+      <option value="OFFICE">Office</option>
+      <option value="RESIDENTIAL">Residential</option>
+      <option value="RESTAURANT">Restaurant</option>
+      <option value="RETAIL">Retail</option>
+      <option value="RETAIL_LARGE">Retail (Building Materials/Large Items)</option>
+      <option value="SENIOR">Senior Housing</option>
+      <option value="SERVICE">Service Station</option>
+      <option value="SINGLE">Single Family Residence</option>
+      <option value="SRO">SRO</option>
+      <option value="SUPERMARKET">Supermarket</option>
+    </select>
+    <br>
+    <!--<label>Proposed Size</label>
+            <input id="size_proposed" type="text"/>&nbsp;<label id="units2">(units/square feet)</label>-->
+    <br>
+    <span id="calculated">Same or fewer </span> trips.
+    <br>
+    Estimated TIF: <span id="fee" style="background-color:#fff;">$0.00</span>
+  </form>
+
   <p class="lead">If you love a space, but might be facing a serious impact fee, remember, this is only an estimation and doesn't account for all types of businesses or uses. Our staff in <a href="http://www.cityofsantacruz.com/index.aspx?page=89" target="_blank">Public Works</a> and <a href="http://cityofsantacruz.com/index.aspx?page=445" target="_blank">Economic Development</a> can help you find ways to mitigate, reduce or finance this charge. You will not be charged until your building permit is issued in any case. </p>
 
   <div class="form-actions">
