@@ -56,7 +56,7 @@ function(app, Parking) {
       }else{
         this.create({field_name:key, value:val}, opts);
       }
-
+    console.log("adding answer: " + key, val);
     },
     getAnswer: function(key, val){
       var m = this.where({"field_name": key});
@@ -107,16 +107,16 @@ function(app, Parking) {
       var help_data = {query:$("textarea[name=help_query]").val(),
                        phone:$("input[name=applicant_phone]").val(),
                        email:$("input[name=applicant_email]").val()};
-      
+
       $.ajax("/api/email/help", {data:help_data, method:"POST", success:function(data){
 
         if(data && (data.status == "sent")){
             $("div.user_message").html("Email has been sent. Someone will get back to you soon.");
         }
-        
+
       }});
     },
-    
+
     subviews: function() {
       return {beforeRender:function(){},
               afterRender:function(){}};

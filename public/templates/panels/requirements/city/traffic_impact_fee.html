@@ -14,13 +14,12 @@
   <form class="well form-vertical" >
     <!-- TODO: MAP TOOL -->
     <label>1) Where is your business located?</label>
-    <input id="address" class="input" onkeydown="checkForEnter(event)" type="text" name="textfield" style="background-color: rgb(255, 255, 255);">
-    <a class="btn btn-info" href="#" onclick="getZoneFromAddress()" style="vertical-align:top;">Submit</a>
+    <input id="tif_address" class="input" type="text" name="tif_address" style="background-color: rgb(255, 255, 255);">
     <br>
     <span id="regionOut">Region: Citywide</span>
     <hr>
     <label>2) What is the existing property?</label>
-    <select id="proptype_existing">
+    <select id="tif_proptype_existing" name="tif_proptype_existing">
       <option value="APARTMENT">Apartment</option>
       <option value="CONDO">Condo/Townhouse</option>
       <option value="CONVENIENCE">Convenience Market</option>
@@ -39,10 +38,10 @@
     </select>
     <br>
     <label>Size of Property</label>
-    <input id="size_existing" type="text">&nbsp;<label id="units">Rooms</label>
+    <input id="tif_size_existing" name="tif_size_existing" type="text">&nbsp;<label id="units">Rooms</label>
     <hr>
     <label>3) What is the proposed use?</label>
-    <select id="proptype_proposed">
+    <select id="tif_proptype_proposed" name="tif_proptype_proposed">
       <option value="APARTMENT">Apartment</option>
       <option value="CONDO">Condo/Townhouse</option>
       <option value="CONVENIENCE">Convenience Market</option>
@@ -63,8 +62,6 @@
     <!--<label>Proposed Size</label>
             <input id="size_proposed" type="text"/>&nbsp;<label id="units2">(units/square feet)</label>-->
     <br>
-    <a id="calcBtn" class="btn btn-info" href="#" onclick="calculate()">Calculate</a>
-    <br><br>
     <span id="calculated">Same or fewer </span> trips.
     <br>
     Estimated TIF: <span id="fee" style="background-color:#fff;">$0.00</span>
