@@ -17,7 +17,6 @@ function(app) {
 
   events: {
     "change select,input":"saveInput",
-    "click #calcBtn":"saveInput"
   },
 
   saveInput:function(ev) {
@@ -29,29 +28,54 @@ function(app) {
   },
 
   calculate:function() {
-    // TODO: use answers values to calculate the TIF
-    // TODO: move page modification code to afterRender
+
+    // set the units
+    this.setUnits();
+    $("#units").html(this.collection.getAnswer("tif_units"));
+
+    // set the region
+    this.calculateRegion();
+    $("").html("Region: " + this.collection.getAnswer("tif_region"));
+
+    // TODO: calculate the TIF
+
     hasCalculated = true;
-    var rate_existing = getRate( $("#proptype_existing").val(), $("#myRegion").val() );
-    var rate_proposed = getRate( $("#proptype_proposed").val(), $("#myRegion").val() );
+    var rate_existing = this.getRate( this.collection.getAnswer("tif_proptype_existing"), this.collection.getAnswer("tif_region") );
+    var rate_proposed = this.getRate( this.collection.getAnswer("tif_proptype_proposed"), this.collection.getAnswer("tif_region") );
     var addtrips = rate_proposed * ( $("#size_existing").val() / factor ) - rate_existing * ($("#size_existing").val() / factor );
     addtrips = Math.ceil( addtrips );
     if(addtrips > 0){
       $("#calculated").html("Adding " + addtrips);
     }
     else{
-      // FIXME: this doesn't make a lot of sense - explain more clearly
+      // FIXME: this text doesn't make a lot of sense - explain more clearly
       $("#calculated").html("Same or fewer ");
     }
     var addfee = 405 * addtrips;
-    // FIXME: fetch myRegion from DB
-    if(myRegion == 2){ // BEACH / SOLA
+    if(this.collection.getAnswer("tif_region") === "Beach/SOLA"){
       addfee += 94 * addtrips;
     }
     addfee = Math.max(0, addfee);
     $("#fee").html("$" + dollarFormat(addfee, 2, ".", ","));
     //TODO: add the fee to the answers
 
+  },
+
+  // TODO: write `in_sola`, `in_downtown` functions
+  calculateRegion:function() {
+    var latlng = this.collection.getAnswer("latlng");
+    var region = "";
+
+    if( in_sola(latlng) ){
+      region = "Beach/SOLA";
+    }
+    else if( in_downtown(latlng) ){
+      region = "Downtown";
+    }
+    else{
+      region = "CityWide"
+    }
+    this.collection.addAnswer("tif_region", region);
   },
 
   getRate:function(zone, region) {
@@ -160,46 +184,38 @@ function(app) {
   },
 
   afterRender: function() {
-    // TODO: fill in the 'Region:' line
-    this.setUnits();
   },
 
-  // TODO: make this fetch property type from answers rather than take a propdrop param
-  setUnits:function(propdrop){
+  setUnits: function () {
     var units = "";
     factor = 1;
-    switch(propdrop.value){
+    switch (this.collection.getAnswer("tif_proptype_existing")) {
       case "RESIDENTIAL":
-        case "SINGLE":
-        case "APARTMENT":
-        case "CONDO":
-        case "SENIOR":
-        case "SRO":
+      case "SINGLE":
+      case "APARTMENT":
+      case "CONDO":
+      case "SENIOR":
+      case "SRO":
         units = "Units";
-      break;
+        break;
       case "HOTEL":
         units = "Rooms";
-      break;
+        break;
       case "SERVICE":
         units = "Pump Stations";
-      break;
+        break;
       case "RESTAURANT":
-        case "OFFICE":
-        case "MEDICAL":
-        case "RETAIL":
-        case "SUPERMARKET":
-        case "RETAIL_LARGE":
-        case "CONVENIENCE":
+      case "OFFICE":
+      case "MEDICAL":
+      case "RETAIL":
+      case "SUPERMARKET":
+      case "RETAIL_LARGE":
+      case "CONVENIENCE":
         units = "square feet gross floor area";
-      factor = 1000;
-      break;
+        factor = 1000;
+        break;
     }
-    if(propdrop.id.indexOf("existing") > -1){
-      $("#units").html(units);
-    }
-    else{
-      //$("#units2").html(units);
-    }
+    this.collection.addAnswer("tif_units", units);
   },
 
   //TODO: fetch address from answers rather than DOM
@@ -250,34 +266,6 @@ function(app) {
     s.type = "text/javascript";
     s.src = "http://gis.cityofsantacruz.com/ArcGIS/rest/services/AddressSeach/MapServer/0/query?f=json&spatialRel=esriSpatialRelIntersects&outSR=4326&returnGeometry=true&where=ADD_%20LIKE%20upper%20%28%27%25" + address + "%25%27%29&outFields=*&callback=setRegion";
     document.body.appendChild(s);
-  },
-
-  // TODO: set the region from answers rather than DOM
-  // TODO: write in_sola, in_downtown functions
-  setRegion:function(results){
-    if(results.features.length == 0){
-      // if address lookup fails, turn text box red
-      document.getElementById("address").style.backgroundColor = "#f44";
-    }
-    else{
-      document.getElementById("address").style.backgroundColor = "#fff";
-      var latlng = [results.features[0].geometry.y, results.features[0].geometry.x];
-      if( in_sola(latlng) ){
-        myRegion = 2;
-        $("#regionOut").html("Region: Beach/SOLA");
-      }
-      else if( in_downtown(latlng) ){
-        myRegion = 1;
-        $("#regionOut").html("Region: Downtown");
-      }
-      else{
-        myRegion = 0;
-        $("#regionOut").html("Region: Citywide");
-      }
-      if(hasCalculated){
-        calculate();
-      }
-    }
   },
 
   clearAnswer: function(field_name) {
