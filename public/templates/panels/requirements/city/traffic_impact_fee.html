@@ -13,10 +13,9 @@
 
   <form class="well form-vertical" >
     <!-- TODO: MAP TOOL -->
-    <label>1) Where is your business located?</label>
-    <input id="tif_address" class="input" type="text" name="tif_address" style="background-color: rgb(255, 255, 255);">
+    <span id="businessAddress"> </span>
     <br>
-    <span id="regionOut">Region: Citywide</span>
+    <span id="regionOut"></span>
     <hr>
     <label>2) What is the existing property?</label>
     <select id="tif_proptype_existing" name="tif_proptype_existing">
@@ -64,7 +63,7 @@
     <br>
     <span id="calculated">Same or fewer </span> trips.
     <br>
-    Estimated TIF: <span id="fee" style="background-color:#fff;">$0.00</span>
+    Estimated TIF: $<span id="fee" style="background-color:#fff;">0.00</span>
   </form>
 
   <p class="lead">If you love a space, but might be facing a serious impact fee, remember, this is only an estimation and doesn't account for all types of businesses or uses. Our staff in <a href="http://www.cityofsantacruz.com/index.aspx?page=89" target="_blank">Public Works</a> and <a href="http://cityofsantacruz.com/index.aspx?page=445" target="_blank">Economic Development</a> can help you find ways to mitigate, reduce or finance this charge. You will not be charged until your building permit is issued in any case. </p>
