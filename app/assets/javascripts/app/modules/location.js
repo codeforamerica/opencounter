@@ -109,7 +109,7 @@ function(app) {
         var latlng = new google.maps.LatLng(data.features[0].geometry.y,
                                             data.features[0].geometry.x);
 
-        this.collection.addAnswer("latlng", latlng);
+        this.collection.addAnswer("latlng", [latlng.lat(), latlng.lng()]);
 
         var marker = new google.maps.Marker({
           position: latlng,
