@@ -28,18 +28,17 @@ function(app) {
   },
 
   calculate:function() {
-    // TODO: use answers values to calculate the TIF
-    // TODO: fill in the 'Region:' line
 
     // set the units
     this.setUnits();
     $("#units").html(this.collection.getAnswer("tif_units"));
 
+    // set the region
+    this.calculateRegion();
+    $("").html("Region: " + this.collection.getAnswer("tif_region"));
 
-    // TODO: first calculate the region
-    if (!this.collection.getAnswer("tif_region")) {
-      this.calculateRegion();
-    }
+    // TODO: calculate the TIF
+
     hasCalculated = true;
     var rate_existing = this.getRate( this.collection.getAnswer("tif_proptype_existing"), this.collection.getAnswer("tif_region") );
     var rate_proposed = this.getRate( this.collection.getAnswer("tif_proptype_proposed"), this.collection.getAnswer("tif_region") );
@@ -49,12 +48,11 @@ function(app) {
       $("#calculated").html("Adding " + addtrips);
     }
     else{
-      // FIXME: this doesn't make a lot of sense - explain more clearly
+      // FIXME: this text doesn't make a lot of sense - explain more clearly
       $("#calculated").html("Same or fewer ");
     }
     var addfee = 405 * addtrips;
-    // FIXME: fetch myRegion from DB
-    if(myRegion == 2){ // BEACH / SOLA
+    if(this.collection.getAnswer("tif_region") === "Beach/SOLA"){
       addfee += 94 * addtrips;
     }
     addfee = Math.max(0, addfee);
@@ -63,32 +61,21 @@ function(app) {
 
   },
 
-  // TODO: set the region from answers rather than DOM
   // TODO: write `in_sola`, `in_downtown` functions
   calculateRegion:function() {
-    if(results.features.length == 0){
-      // if address lookup fails, turn text box red
-      document.getElementById("address").style.backgroundColor = "#f44";
+    var latlng = this.collection.getAnswer("latlng");
+    var region = "";
+
+    if( in_sola(latlng) ){
+      region = "Beach/SOLA";
+    }
+    else if( in_downtown(latlng) ){
+      region = "Downtown";
     }
     else{
-      document.getElementById("address").style.backgroundColor = "#fff";
-      var latlng = [results.features[0].geometry.y, results.features[0].geometry.x];
-      if( in_sola(latlng) ){
-        myRegion = 2;
-        $("#regionOut").html("Region: Beach/SOLA");
-      }
-      else if( in_downtown(latlng) ){
-        myRegion = 1;
-        $("#regionOut").html("Region: Downtown");
-      }
-      else{
-        myRegion = 0;
-        $("#regionOut").html("Region: Citywide");
-      }
-      if(hasCalculated){
-        calculate();
-      }
+      region = "CityWide"
     }
+    this.collection.addAnswer("tif_region", region);
   },
 
   getRate:function(zone, region) {
