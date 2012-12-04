@@ -21,7 +21,7 @@ function(app) {
       return {
         afterRender: function(){
           // Set up the map
-          
+
           var myOptions = {
             center: new google.maps.LatLng(36.9741171, -122.0307963),
             zoom: 13,
@@ -90,24 +90,27 @@ function(app) {
             zoning.push(Location.convertGisToCityZoning(data.features[0].attributes['Zoning'+i].split(" - ")[0]));
           }
         }
-        
+
         // Get prior use
         this.collection.addAnswer("prioruse", data.features[0].attributes["USECDDESC"])
-        
+
         // Get Business Improvement District
         this.collection.addAnswer("bid", data.features[0].attributes["BIA"].replace(" ", ""))
-        
+
         // Get APN
         this.collection.addAnswer("apn", data.features[0].attributes["APN"])
-        
+
         // Get zoning
         this.collection.addAnswer("zoning", zoning);
-        
+
         app.trigger("lookuppermit");
         this.$el.find("#zoning_display").html("That location is zoned for: "+zoning.join(","));
-        
+
         var latlng = new google.maps.LatLng(data.features[0].geometry.y,
                                             data.features[0].geometry.x);
+
+        this.collection.addAnswer("latlng", latlng);
+
         var marker = new google.maps.Marker({
           position: latlng,
           map: this.map
@@ -118,7 +121,7 @@ function(app) {
 
 
       }
-      
+
     }
 
   });
