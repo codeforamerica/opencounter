@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   def create
     @user = User.find_or_initialize_by_email(params[:user][:email])
     if @user.update_attributes(params[:user])
-      @current_user = @user
+
+      #sign in the new user
+      cookies.permanent[:remember_token] = @user.remember_token
+      current_user = @user
+
       @user.businesses << Business.create()
     end
     session[:user_id] = @user.id
@@ -12,6 +16,7 @@ class UsersController < ApplicationController
   end
   
   def update_planning
+    Rails.logger.debug "Updating planning: Current user: #{current_user}"
     if current_user
       PlanningMailer.submission_email(current_user).deliver
       render :json => { :status => "sent" }

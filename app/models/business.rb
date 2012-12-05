@@ -15,7 +15,7 @@ class Business < ActiveRecord::Base
   end
 
   def submitted_at_s
-    submitted_at.in_time_zone('Hawaii').strftime('%m/%d/%Y at %I:%M%p')
+    submitted_at.in_time_zone('Pacific Time (US & Canada)').strftime('%m/%d/%Y at %I:%M%p')
   end
 
   # answers are a hash of key/value pairs

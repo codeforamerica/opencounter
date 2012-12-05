@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :token
 
   after_create :assign_token
+  before_save :create_remember_token
+
 
   def assign_token
     update_attributes(:token => User.generate_token)
@@ -21,5 +23,9 @@ class User < ActiveRecord::Base
 
   def self.generate_token
     token = (Digest::MD5.hexdigest "#{SecureRandom.hex(10)}-#{DateTime.now.to_s}")
+  end
+
+  def self.create_remember_token
+    self.remember_token = SecureRandom.urlsafe_base64
   end
 end
