@@ -97,6 +97,8 @@ function(app, Parking) {
       $.post("/api/email/planning", function(data){
         if(data && (data.status == "sent")){
             $("div.user_message").html("Email has been sent. Someone will get back to you soon.");
+        } else {
+            $("div.user_message").html("Sorry, there was an error sending your application.")
         }
 
       });
