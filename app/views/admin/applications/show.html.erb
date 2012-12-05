@@ -94,3 +94,23 @@
   <dt>Prior Use</dt>
   <dd><%= @user.answers.find_by_field_name("prioruse").try(:value) -%></dd>
 </dl>
+
+<hr />
+
+<br><h3 class='h3'>List of all answers:</h3>
+<table class="table table-striped">
+  <thead>
+    <th>No.</th>
+    <th>field_name</th>
+    <th>value</th>
+  </thead>
+  <tbody>
+  <% @user.answers.each_with_index do |answer,i| %>
+    <tr class="<%= cycle("odd", "even") -%>">
+      <td><%= i+1 %></td>
+      <td><%= answer.field_name %></td>
+      <td><%= answer.value %></td>
+    </tr>
+  <% end -%>
+  </tbody>
+</table>
