@@ -2,6 +2,7 @@ define([
   // Application.
   "app",
   "modules/fees/parking"
+  // TODO: put here any path which extends this panel, I think this will allow access to .`answers` in the templates
 ],
 
 // Map dependencies from above array.
