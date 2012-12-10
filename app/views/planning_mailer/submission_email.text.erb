@@ -13,7 +13,7 @@ Applicant Phone
 
 ----------------------------------------
 
-<%- if @user.is_owner == "no" -%>
+<%- if @user.answers.where(:field_name => "is_owner").first.try(:value) == "no" -%>
 
 Owner Name
   <%= @user.answers.where(:field_name => "owner_first_name") -%> <%= @user.answers.where(:field_name => "owner_last_name") -%>
@@ -46,7 +46,7 @@ Business Type
   (used for BIDA)
 
 Business Structure
-  <%= @user.businesses.first.business_structure -%>
+  <%= @user.answers.where(:field_name => 'business_structure').first.try(:value) -%>
 
 === Location ===================================================================
 
@@ -56,8 +56,6 @@ Is home occ?
   <%- else -%>
   No
   <%- end -%>
-
-  <%= @user.applicant_first_name -%> <%= @user.applicant_last_name -%>
 
 
 Business Physical Address
