@@ -28,7 +28,7 @@ OpenCounter Help Request
 
   ----------------------------------------
 
-  <%- if @user.is_owner == "no" -%>
+  <%- if @user.answers.where(:field_name => 'is_owner').first.try(:value) == "no" -%>
 
   Owner Name
     <%= @user.answers.where(:field_name => "owner_first_name") -%> <%= @user.answers.where(:field_name => "owner_last_name") -%>

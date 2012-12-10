@@ -3,8 +3,8 @@ Opencounter::Application.routes.draw do
 
   devise_for :admin_users
 
-  match "api/email/planning" => "users#update_planning"
-  match "api/email/help" => "users#planning_help"
+  match "api/email/summary" => "users#summary_email"
+  match "api/email/help" => "users#help_email"
   match "api/lookup/cic" => "cic_codes#index"
   match "api/lookup/permit/:zoning/:sic" => "permits#show"
   match "api/lookup/requirements" => "requirements#index"
