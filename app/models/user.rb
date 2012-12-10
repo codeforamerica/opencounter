@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :email, :phone, :role, :last_state, :token
+  attr_accessible :first_name, :last_name, :email, :phone, :role, :last_state, :token, :created_at, :id, :updated_at
 
   has_many :businesses
   has_many :answers, :through => :businesses
@@ -11,21 +11,15 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :token
 
-  after_create :assign_token
-  before_save :create_remember_token
-
-
-  def assign_token
-    update_attributes(:token => User.generate_token)
-  end
+  after_create :assign_token, :create_business
 
   private
 
-  def self.generate_token
-    token = (Digest::MD5.hexdigest "#{SecureRandom.hex(10)}-#{DateTime.now.to_s}")
+  def assign_token
+    update_attribute(:token, (Digest::MD5.hexdigest "#{SecureRandom.hex(10)}-#{DateTime.now.to_s}"))
   end
 
-  def self.create_remember_token
-    self.remember_token = SecureRandom.urlsafe_base64
+  def create_business
+    self.businesses << Business.create()
   end
 end
