@@ -21,10 +21,8 @@ class UsersController < ApplicationController
     respond_with @user
   end
   
-  def summary_email
-    Rails.logger.debug "Updating planning: Current user: #{current_user}"
-    if current_user
-      PlanningMailer.submission_email(current_user).deliver
+  def application_email
+    if current_user && PlanningMailer.application_email(current_user).deliver
       render :json => { :status => "sent" }
     else
       render :json => { :status => "error" }
@@ -32,7 +30,10 @@ class UsersController < ApplicationController
   end
   
   def help_email
-    PlanningMailer.help_email(params, current_user).deliver
-    render :json => { :status => "sent" }    
+    if PlanningMailer.help_email(params, current_user).deliver
+      render :json => { :status => "sent" }
+    else
+      render :json => { :status => 'error' }
+    end
   end
 end

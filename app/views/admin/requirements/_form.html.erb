@@ -25,7 +25,7 @@
 <div class="field">
   <br />
   <%= f.label :jurisdiction %>
-  <%= f.select :jurisdiction, options_for_select(['City', 'County', 'State', 'Federal']) %>
+  <%= f.select :jurisdiction, options_for_select(['City', 'County', 'State', 'Federal'], selected = @requirement.jurisdiction) %>
 </div>
 
 <div class="field">

@@ -78,7 +78,7 @@ function(app, Parking) {
       "change input,select": "updatedInput",
       "click a": "checkForAnswer",
       "click #sendHelpEmail": "sendHelpEmail",
-      "click #sendPlanningEmail": "sendPlanningEmail"
+      "click #sendApplicationEmail": "sendApplicationEmail"
     },
     updatedInput:function(ev){
       var name = $(ev.target).attr("name");
@@ -92,18 +92,21 @@ function(app, Parking) {
         this.collection.addAnswer(name, value);
       }
     },
-    sendPlanningEmail:function(ev){
-      //do things here
-      ev.preventDefault();
-      $.post("/api/email/planning", function(data){
-        if(data && (data.status == "sent")){
-            $("div.user_message").html("Email has been sent. Someone will get back to you soon.");
-        } else {
-            $("div.user_message").html("Sorry, there was an error sending your application.")
-        }
+    sendApplicationEmail:function(ev){
+        //do things here
+        ev.preventDefault();
+        var help_data = {query:$("textarea[name=help_query]").val(),
+                         phone:$("input[name=applicant_phone]").val(),
+                         email:$("input[name=applicant_email]").val()};
 
-      });
-    },
+        $.ajax("/api/email/application", {data:help_data, method:"POST", success:function(data){
+
+          if(data && (data.status == "sent")){
+              $("div.user_message").html("Your application has been submitted. Someone will get back to you soon.");
+          }
+
+        }});
+      },
     sendHelpEmail:function(ev){
       //do things here
       ev.preventDefault();
@@ -114,7 +117,7 @@ function(app, Parking) {
       $.ajax("/api/email/help", {data:help_data, method:"POST", success:function(data){
 
         if(data && (data.status == "sent")){
-            $("div.user_message").html("Email has been sent. Someone will get back to you soon.");
+            $("div.user_message").html("Your email has been sent. Someone will get back to you soon.");
         }
 
       }});
