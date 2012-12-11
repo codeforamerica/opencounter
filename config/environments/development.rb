@@ -47,9 +47,9 @@ Opencounter::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   
   ActionMailer::Base.smtp_settings = {
+    :address        => "smtp.sendgrid.net",
     :user_name      => ENV['SENDGRID_USERNAME'],
     :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => ENV['SENDGRID_DOMAIN'],
     :domain         => 'localhost:3000',
     :port => 587,
     :authentication => :plain,
