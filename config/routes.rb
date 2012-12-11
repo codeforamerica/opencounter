@@ -39,18 +39,18 @@ Opencounter::Application.routes.draw do
     resources :applications
   end
 
-  match "/intro" => "panels#intro"
-  match "/intro*path" => "panels#intro"
-  match "/info" => "panels#intro"
-  match "/info*path" => "panels#intro"
-  match "/location" => "panels#intro"
-  match "/location*path" => "panels#intro"
-  match "/requirements" => "panels#intro"
-  match "/requirements*path" => "panels#intro"
-  match "/summary" => "panels#intro"
-  match "/summary*path" => "panels#intro"
-  match "/help" => "panels#intro"  
-  match "/help*path" => "panels#intro"
+  match "/about"              => "panels#about"  
+  match "/help"               => "panels#help"  
+  match "/info"               => "panels#info"
+  match "/info*path"          => "panels#info"
+  match "/intro"              => "panels#intro"
+  match "/intro*path"         => "panels#intro"
+  match "/location"           => "panels#location"
+  match "/location*path"      => "panels#location"
+  match "/requirements"       => "panels#requirements"
+  match "/requirements*path"  => "panels#requirements"
+  match "/summary"            => "panels#summary"
+  match "/welcome"            => "panels#welcome"
  
   # The priority is based upon order of creation:
   # first created -> highest priority.
