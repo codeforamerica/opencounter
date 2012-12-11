@@ -1,6 +1,24 @@
-<h1>OpenCounter New Business</h1>
+<h1>OpenCounter Business Application</h1>
 
-<h3>People</h3>
+
+<h2>Business</h2>
+
+<p>Business Name: <%= @user.businesses.first.name -%></p>
+
+<div>
+  Business Type:
+  <ul>
+    <li>Code: <%= @user.answers.where(:field_name => "business_code").first.try(:value) -%> (used for planning permit)</li>
+    <li>Class A/B/C: <%= @user.answers.where(:field_name => "business_type_class").first.try(:value) -%> (used for business license)</li>
+    <li>Type: <%= @user.answers.where(:field_name => "business_type_type").first.try(:value) -%> (used for BIDA)</li>
+  </ul>
+</div>
+
+<p>Business Structure: <%= @user.answers.where(:field_name => 'business_structure').first.try(:value) -%></p>
+
+
+
+<h2>Applicant</h2>
 
 <p>Applicant Name: <%= @user.first_name -%> <%= @user.last_name -%></p>
 
@@ -8,65 +26,40 @@
 
 <p>Applicant Phone: <%= @user.phone -%></p>
 
-----------------------------------------
+
+<h2>Home Occupation</h2>
 
 <%- if @user.answers.where(:field_name => "is_owner").first.try(:value) == "no" -%>
-
   <p>Owner Name: <%= @user.answers.where(:field_name => "owner_first_name").first.try(:value) -%> <%= @user.answers.where(:field_name => "owner_last_name").first.try(:value) -%></p>
-
   <p>Owner Email: <%= @user.answers.where(:field_name => "owner_email").first.try(:value) -%></p>
-
   <p>Owner Phone: <%= @user.answers.where(:field_name => "owner_phone").first.try(:value) -%></p>
-
 <%- else -%>
-
   This applicant is the owner.
-
 <% end -%>
 
-<h3>Business</h3>
 
-<p>Business Name: <%= @user.businesses.first.name -%></p>
-
-<div>
-  Business Type: 
-  <p>Code: <%= @user.answers.where(:field_name => "business_code").first.try(:value) -%> (used for planning permit)</p>
-
-  <p>Class A/B/C: <%= @user.answers.where(:field_name => "business_type_class").first.try(:value) -%> (used for business license)</p>
-
-  <p>Type: <%= @user.answers.where(:field_name => "business_type_type").first.try(:value) -%> (used for BIDA)</p>
-</div>
-
-<p>Business Structure: <%= @user.answers.where(:field_name => 'business_structure').first.try(:value) -%></p>
-
-<h3>Location</h3>
+<h2>Location</h2>
 
 <p>  
   <%- if @user.answers.where(:location_type) == "home" -%>
-    Is Home Occ
+    Home Occ: True
   <%- else -%>
-    Is Not Home Occ
+    Home Occ: False
   <% end -%>
 </p>
 
 <p>
   Business Physical Address:
-  <br />
   <%= @user.answers.where(:field_name => "business_physical_address_street").first.try(:value) -%>
-  <%- unless @user.answers.where(:field_name => "business_physical_address_street").first.blank? %><br /><% end -%>
   <%= @user.answers.where(:field_name => "business_physical_address_detail").first.try(:value) -%>
-  <%- unless @user.answers.where(:field_name => "business_physical_address_detail").first.blank? %><br /><% end -%>
   <%= @user.answers.where(:field_name => "business_physical_address_city").first.try(:value) -%>,   
   <%= @user.answers.where(:field_name => "business_physical_address_state").first.try(:value) -%> <%= @user.answers.where(:field_name => "business_physical_address_zip").first.try(:value) -%>
 </p>
 
 <p>
   Business Mailing Address:
-  <br />
   <%= @user.answers.where(:field_name => "business_mailing_address_street").first.try(:value) -%>
-  <%- unless @user.answers.where(:field_name => "business_mailing_address_street").first.blank? %><br /><% end -%>
   <%= @user.answers.where(:field_name => "business_mailing_address_detail").first.try(:value) -%>
-  <%- unless @user.answers.where(:field_name => "business_mailing_address_detail").first.blank? %><br /><% end -%>
   <%= @user.answers.where(:field_name => "business_mailing_address_city").first.try(:value) -%>,   <%= @user.answers.where(:field_name => "business_mailing_address_state").first.try(:value) -%>   <%= @user.answers.where(:field_name => "business_mailing_address_zip").first.try(:value) -%>
 </p>
 
@@ -78,6 +71,6 @@
 
 <p>Prior Use: <%= @user.answers.where(:field_name => "prioruse").first.try(:value) -%></p>
 
-<h3>Details</h3>
+<h2>Details</h2>
 
 [@todo, data from requirements panels]
