@@ -16,13 +16,13 @@ Applicant Phone
 <%- if @user.answers.where(:field_name => "is_owner").first.try(:value) == "no" -%>
 
 Owner Name
-  <%= @user.answers.where(:field_name => "owner_first_name") -%> <%= @user.answers.where(:field_name => "owner_last_name") -%>
+  <%= @user.answers.where(:field_name => "owner_first_name").first.try(:value) -%> <%= @user.answers.where(:field_name => "owner_last_name").first.try(:value) -%>
 
 Owner Email
-  <%= @user.answers.where(:field_name => "owner_email") -%>
+  <%= @user.answers.where(:field_name => "owner_email").first.try(:value) -%>
 
 Owner Phone
-  <%= @user.answers.where(:field_name => "owner_phone") -%>
+  <%= @user.answers.where(:field_name => "owner_phone").first.try(:value) -%>
 
 <%- else -%>
 
@@ -36,13 +36,13 @@ Business Name
   <%= @user.businesses.first.name -%>
 
 Business Type
-  Code: <%= @user.answers.where(:field_name => "business_code") -%>
+  Code: <%= @user.answers.where(:field_name => "business_code").first.try(:value) -%>
   (used for planning permit)
 
-  Class A/B/C: <%= @user.answers.where(:field_name => "business_type_class") -%>
+  Class A/B/C: <%= @user.answers.where(:field_name => "business_type_class").first.try(:value) -%>
   (used for business license)
 
-  Type: <%= @user.answers.where(:field_name => "business_type_type") -%>
+  Type: <%= @user.answers.where(:field_name => "business_type_type").first.try(:value) -%>
   (used for BIDA)
 
 Business Structure
@@ -59,26 +59,26 @@ Is home occ?
 
 
 Business Physical Address
-  <%= @user.answers.where(:field_name => "business_physical_address_street") -%>
-  <%= @user.answers.where(:field_name => "business_physical_address_detail") -%>
-  <%= @user.answers.where(:field_name => "business_physical_address_city") -%>,   <%= @user.answers.where(:field_name => "business_physical_address_state") -%>   <%= @user.answers.where(:field_name => "business_physical_address_zip") -%>
+  <%= @user.answers.where(:field_name => "business_physical_address_street").first.try(:value) -%>
+  <%= @user.answers.where(:field_name => "business_physical_address_detail").first.try(:value) -%>
+  <%= @user.answers.where(:field_name => "business_physical_address_city").first.try(:value) -%>,   <%= @user.answers.where(:field_name => "business_physical_address_state").first.try(:value) -%>   <%= @user.answers.where(:field_name => "business_physical_address_zip").first.try(:value) -%>
 
 Business Mailing Address
-  <%= @user.answers.where(:field_name => "business_mailing_address_street") -%>
-  <%= @user.answers.where(:field_name => "business_mailing_address_detail") -%>
-  <%= @user.answers.where(:field_name => "business_mailing_address_city") -%>,   <%= @user.answers.where(:field_name => "business_mailing_address_state") -%>   <%= @user.answers.where(:field_name => "business_mailing_address_zip") -%>
+  <%= @user.answers.where(:field_name => "business_mailing_address_street").first.try(:value) -%>
+  <%= @user.answers.where(:field_name => "business_mailing_address_detail").first.try(:value) -%>
+  <%= @user.answers.where(:field_name => "business_mailing_address_city").first.try(:value) -%>,   <%= @user.answers.where(:field_name => "business_mailing_address_state").first.try(:value) -%>   <%= @user.answers.where(:field_name => "business_mailing_address_zip").first.try(:value) -%>
 
 Zoning District
-  <%= @user.answers.where(:field_name => "zoning") -%>
+  <%= @user.answers.where(:field_name => "zoning").first.try(:value) -%>
 
 Business Improvement District?
-  <%= @user.answers.where(:field_name => "bid") -%>
+  <%= @user.answers.where(:field_name => "bid").first.try(:value) -%>
 
 APN
-  <%= @user.answers.where(:field_name => "apn") -%>
+  <%= @user.answers.where(:field_name => "apn").first.try(:value) -%>
 
 Prior Use
-  <%= @user.answers.where(:field_name => "prioruse") -%>
+  <%= @user.answers.where(:field_name => "prioruse").first.try(:value) -%>
 
 === Details ====================================================================
 
