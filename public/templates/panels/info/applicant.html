@@ -6,36 +6,6 @@
 
   <div class="span8">
   
-    <% if (answers.is_owner == "no") { %>
-    
-    <h3>About the property owner</h3>
-    
-    <form method="post" action="#" id="form_info_applicant">
-  
-      <div class="control-group">
-        <label class="control-label">What is the property owner&rsquo;s first name?</label>
-        <! suggest that we rename these DB fields to either "property owner" or "landlord" in the Db schema>
-        <div class="controls"><input type="text" name="owner_first_name" placeholder=""></div>
-      </div>
-  
-      <div class="control-group">
-        <label class="control-label">What is the property owner&rsquo;s last name?</label>
-        <div class="controls"><input type="text" name="owner_last_name" placeholder=""></div>
-      </div>
-  
-      <div class="control-group">
-        <label class="control-label">What is the property owner&rsquo;s email address?</label>
-        <div class="controls"><input type="text" name="owner_email" placeholder=""></div>
-      </div>
-  
-      <div class="control-group">
-        <label class="control-label">What is the property owner&rsquo;s phone number?</label>
-        <div class="controls"><input type="text" name="owner_phone" placeholder="(###) ###-####"></div>
-      </div>
-  
-    </form>
-    
-    <% } %>
   
     <h3>About you, the business&rsquo;s owner</h3>
     
