@@ -1,42 +1,54 @@
 <div class="page-header">
-  <h1>Applicant Info</h1>
+  <h1>About You</h1>
 </div>
 
 <div class="row-fluid">
-
-  <div class="span8">
-  
-  
+  <div class="span6">
     <h3>About you, the business&rsquo;s owner</h3>
-    
+
     <form method="post" action="#" id="form_info_applicant">
-  
       <div class="control-group">
         <label class="control-label">What is your first name?</label>
         <div class="controls"><input type="text" name="applicant_first_name" placeholder=""></div>
       </div>
-  
       <div class="control-group">
         <label class="control-label">What is your last name?</label>
         <div class="controls"><input type="text" name="applicant_last_name" placeholder=""></div>
       </div>
-  
       <div class="control-group">
         <label class="control-label">What is your email address?</label>
         <div class="controls"><input type="text" name="applicant_email" placeholder=""></div>
       </div>
-  
       <div class="control-group">
         <label class="control-label">What is your phone number?</label>
         <div class="controls"><input type="text" name="applicant_phone" placeholder="(###) ###-####"></div>
       </div>
-  
-    </form>
-  </div>
 
-  <div class="span4">
+      <div class="well">
+        <p class="lead">Sign up and you can:</p>
+        <ul>
+          <li>Come back and finish your application later.</li>
+          <li>Create multiple applications</li>
+          <li>Submit to the planning department.</li>
+        </ul>
+        <div class="control-group">
+          <label class="control-label">Please enter a password</label>
+          <div class="controls"><input type="text" name="applicant_password"></div>
+          <label class="control-label">Enter your password again</label>
+          <div class="controls"><input type="text" name="applicant_password_confirmation"></div>
+          <button class="btn btn-primary" id="applicant_sign_up">Sign up</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+  <div class="span4 ">
     <div class="form-actions">
-      <p class="next lead">Nice to meet you! <a class="submit" href="/info/business">Next: tell us about <% if (answers.is_owner === "true") { %>your<% } else { %>the<% } %> business &rarr;</a></p>
+      <p class="next lead">You can also choose to start a new application without creating an account</p>
+      <p class="next">Your answers will not be saved until you log in or create a new account</p>
+      <p class="next">You will need to tell us your name, email address and phone number before submitting to planning</p>
+      <p class="next lead"><a class="submit" href="/info/business">Next: tell us about <% if (answers.is_owner === "true") { %>your<% } else { %>the<% } %> business &rarr;</a></p>
     </div>
   </div>
 

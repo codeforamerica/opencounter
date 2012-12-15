@@ -146,6 +146,12 @@ function(app, Parking) {
       });
 
       this.subviews().afterRender.call(this);
+
+
+      // show the user name and business in the top 'profile' nav
+      console.log("trying to get answer: " + self.collection.getAnswer("applicant_first_name"))
+      $("#applicant_first_name").append(self.collection.getAnswer("applicant_first_name"))
+      $("#business_name").append(self.collection.getAnswer("business_name"))
     },
     serialize: function() {
       var model, answers={};
