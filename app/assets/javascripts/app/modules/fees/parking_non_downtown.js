@@ -380,7 +380,7 @@ function(app) {
         $("#parking_spaces")
         .html(display_text)
         .show();
-	  }
+      }
     }
 
   });
