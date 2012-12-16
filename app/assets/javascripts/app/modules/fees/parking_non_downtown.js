@@ -377,9 +377,9 @@ function(app) {
       + ".</p>";
 
       if ( !(isNaN(spaces) || spaces == null) ) {
-		$("#parking_spaces")
-		.html(display_text)
-		.show();
+        $("#parking_spaces")
+        .html(display_text)
+        .show();
 	  }
     }
 
