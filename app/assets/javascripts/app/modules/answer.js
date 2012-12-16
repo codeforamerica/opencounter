@@ -78,7 +78,7 @@ function(app, Parking) {
       "change input,select": "updatedInput",
       "click a": "checkForAnswer",
       "click #sendHelpEmail": "sendHelpEmail",
-      "click #sendApplicationEmail": "sendApplicationEmail"
+      "click #sendApplicationEmail": "sendApplicationEmail",
     },
     updatedInput:function(ev){
       var name = $(ev.target).attr("name");
@@ -123,6 +123,33 @@ function(app, Parking) {
       }});
     },
 
+    // FIXME: currently does not behave as expected.  Reveluate purpose and find another solution.
+    personaliseNav:function() {
+      console.log("will now personalise nav");
+
+      // show the user info pill if you are logged in
+      $(document).ready(function() {
+        if ( window.currentUser.name ) {
+          $("#login_pill").hide();
+          $("#current_user_pill>p").prepend(window.currentUser.name);
+          $("#current_user_pill").show();
+        } else {
+          $("#current_user_pill").hide();
+          $("#login_pill").show();
+        }
+
+        // show the business info pill if you've told us the business' name
+        if ( window.currentBusiness.name ) {
+          $("#newbie_pill").hide();
+          $("#current_business_pill>p").prepend(window.currentBusiness.name);
+          $("#current_business_pill").show();
+        } else {
+          $("#current_business_pill").hide();
+          $("#newbie_pill").show();
+        }
+      });
+    },
+
     subviews: function() {
       return {beforeRender:function(){},
               afterRender:function(){}};
@@ -146,13 +173,11 @@ function(app, Parking) {
       });
 
       this.subviews().afterRender.call(this);
-
-
-      // show the user name and business in the top 'profile' nav
-      console.log("trying to get answer: " + self.collection.getAnswer("applicant_first_name"))
-      $("#applicant_first_name").append(self.collection.getAnswer("applicant_first_name"))
-      $("#business_name").append(self.collection.getAnswer("business_name"))
+      
     },
+
+
+
     serialize: function() {
       var model, answers={};
       for(m in this.collection.models){

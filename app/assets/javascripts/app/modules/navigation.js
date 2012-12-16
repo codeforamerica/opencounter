@@ -26,17 +26,19 @@ function(app, util) {
 
     template: "navigation",
     className: "span12",
-    events: {},
+    events: {
+      //"click a": "personaliseNav",
+    },
+
+
+
     afterRender: function(){
-
-
       // Grab the navigation container and window.location
       var $nav = $(this.el),
       path = window.location.pathname.toLowerCase() || "";
 
       // For each link in the navigation
       $nav.find("a").each(function(i, el) {
-
         var $el = $(el),
         href = $el.attr("href") || "",
         dataSection = href.slice(1).split('/')[0] || "",
@@ -50,21 +52,25 @@ function(app, util) {
 
           // Set class="current" on parent <li>
           $el.parent().addClass("current");
-
         }
       });
     },
+
     cleanup: function() {
       this.business.off(null, null, this);
       this.answers.off(null, null, this);
     },
+
     initialize: function(o) {
       this.business = o.business;
       this.business.on("change", this.render, this);
       this.answers = o.answers;
       this.answers.on("add", this.render, this);
       this.answers.on("change", this.render, this);
-    }
+    },
+
+
+
   });
 
   // Sub nav view
@@ -105,6 +111,7 @@ function(app, util) {
         }
       });
       this.updateNavByAnswers();
+
     },
     updateNavByAnswers: function(){
       this.$el.find("[data-show]").hide();
@@ -162,6 +169,7 @@ function(app, util) {
 
 
   // Return the module for AMD compliance.
+
   return Navigation;
 
 });
