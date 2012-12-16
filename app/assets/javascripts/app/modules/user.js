@@ -7,17 +7,28 @@ define([
 function(app) {
 
   // Create a new module.
-  var User = app.module();
+  User = app.module();
 
   // Default model.
   User.Model = Backbone.Model.extend({
     name: 'user',
-    urlRoot: '/users'
+    urlRoot: '/users',
   });
 
 
   User.Views.Info = Backbone.View.extend({
     template: "panels/info/applicant",
+    // events: {
+    //   "click button#applicant_sign_up" : "signUp",
+    //   "change input,select" : "saveUser"
+    // },
+
+    signUp: function() {
+      // TODO: should actually sign the user up.
+
+    },
+
+
     saveUser: function(){
       var self = this;
       this.user.set("email",this.$el.find("input[name=applicant_email]").val());
@@ -38,6 +49,11 @@ function(app) {
       return {
         afterRender: function(){
           var self = this;
+          // save the user if any of these change
+          // this.$el.find("input[name=applicant_first_name]").change(function(){self.saveUser.call(self)});
+          // this.$el.find("input[name=applicant_last_name]").change(function(){self.saveUser.call(self)});
+          // this.$el.find("input[name=applicant_phone]").change(function(){self.saveUser.call(self)});
+
           this.$el.find("input[name=applicant_email]").change(function(){self.saveUser.call(self)});
           this.$el.find("p.next a").click(function(){self.saveUser.call(self)});
           this.$el.find("").click(function(){self.saveUser.call(self)});

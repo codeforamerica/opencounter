@@ -13,6 +13,8 @@ Opencounter::Application.routes.draw do
   resources :users, :except => :index
   resources :answers
   resources :businesses
+
+  match '/session/current_user' => 'sessions#current_user'
     
   namespace :admin do
     

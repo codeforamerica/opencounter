@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
   # TODO: This should return the current business not the most recent business
   def current_business
-    self.businesses.order("updated_at DESC").first
+    self.businesses.order("updated_at DESC").limit(1).first
   end
 
   def full_name

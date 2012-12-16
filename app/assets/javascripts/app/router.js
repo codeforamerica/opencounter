@@ -9,10 +9,11 @@ define([
   "modules/fees/parking_non_downtown",
   "modules/fees/traffic_impact_fee",
   "modules/location",
-  "modules/requirement"
+  "modules/requirement",
+  "modules/session"
 ],
 
-function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, TrafficImpactFee, Location, Requirement) {
+function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, TrafficImpactFee, Location, Requirement, Session) {
 
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({

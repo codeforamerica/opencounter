@@ -123,33 +123,6 @@ function(app, Parking) {
       }});
     },
 
-    // FIXME: currently does not behave as expected.  Reveluate purpose and find another solution.
-    personaliseNav:function() {
-      console.log("will now personalise nav");
-
-      // show the user info pill if you are logged in
-      $(document).ready(function() {
-        if ( window.currentUser.name ) {
-          $("#login_pill").hide();
-          $("#current_user_pill>p").prepend(window.currentUser.name);
-          $("#current_user_pill").show();
-        } else {
-          $("#current_user_pill").hide();
-          $("#login_pill").show();
-        }
-
-        // show the business info pill if you've told us the business' name
-        if ( window.currentBusiness.name ) {
-          $("#newbie_pill").hide();
-          $("#current_business_pill>p").prepend(window.currentBusiness.name);
-          $("#current_business_pill").show();
-        } else {
-          $("#current_business_pill").hide();
-          $("#newbie_pill").show();
-        }
-      });
-    },
-
     subviews: function() {
       return {beforeRender:function(){},
               afterRender:function(){}};
@@ -203,18 +176,71 @@ function(app, Parking) {
     className: "profile",
     template:"profile",
     events: {
-      "click .profile-toggle": "toggleProfile"
+      // "change input[name='business_name']" : "personalise",
+      // "change input[name='applicant_first_name']" : "personalise",
+      // "change input[name='applicant_last_name']" : "personalise",
+      // "click a#personalise" : "personalise"
     },
+
+
+    personalise:function() {
+      console.log("function: personalise");
+      
+      session = new Session();
+      currentUser = session.currentUser()
+
+      // hide the sign up form if the user is logged in
+      if ( currentUser ) {
+        $(".well#sign-up").hide();
+      } else {
+        $(".well#sign-up").show();
+      }
+
+      // TODO: would be nice to have a funtion to DRY these two up.
+
+      // user pill
+      if ( currentUser ) {
+        var text = currentUser;
+        var link = "#";
+        var link_text = "Log out";
+      } else {
+        var text = "Returning?";
+        var link = "#"
+        var link_text = "Jump back in &rarr;"
+      }
+      $("#user_pill > p > span").html(text);
+      $("#user_pill > p > a").attr("href", link);
+      $("#user_pill > p > a").html(link_text);
+
+      // business pill
+      currentBusiness = session.currentBusiness();
+      if ( currentBusiness ) {
+        var text = currentBusiness;
+        var link = "#";
+        var link_text = "View Business &rarr;";
+      } else {
+        var text = "New here?";
+        var link = "/intro"
+        var link_text = "Get started &rarr;"
+      }
+      $("#business_pill > p > span").html(text);
+      $("#business_pill > p > a").attr("href", link);
+      $("#business_pill > p > a").html(link_text);
+
+
+    },
+
     beforeRender: function(){
 
     },
-    afterRender: function(){
 
-      $('.profile-contents').hide();  // maybe do this in css -Mick
-    },
-    toggleProfile:function(e){
-        $('.profile-contents').slideToggle();
-    },
+    afterRender: function(){
+      this.personalise();
+      // $('.profile-contents').hide();  // maybe do this in css -Mick
+     },
+
+
+
     cleanup: function() {
       this.collection.off(null, null, this);
     },

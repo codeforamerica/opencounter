@@ -17,12 +17,8 @@
 
     <!-- Make current_user and current_business available in the templates and modules -->
     <script type="text/javascript">
-      window.currentUser = {
-        name : "<%=current_user.try(:full_name)%>",
-      }
-      window.currentBusiness = {
-        name : "<%=current_business.try(:business_name)%>"
-      }
+      window.currentUser = "<%=current_user.try(:full_name)%>";
+      window.currentBusiness = "<%= current_user.try(:current_business).try(:business_name) %>";
     </script>
     
   </head>
