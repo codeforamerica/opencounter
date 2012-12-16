@@ -376,10 +376,11 @@ function(app) {
       + ((spaces !== 1) ? "s" : "")
       + ".</p>";
 
-      $("#parking_spaces")
-      .html(display_text)
-      .show();
-
+      if ( !(isNaN(spaces) || spaces == null) ) {
+		$("#parking_spaces")
+		.html(display_text)
+		.show();
+	  }
     }
 
   });
