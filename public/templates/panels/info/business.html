@@ -1,10 +1,10 @@
 <div class="page-header">
-  <h1>About <%= (answers.is_owner === "true") ? "your" : "the" %> business</h1>
+  <h1>About <%= (answers.is_owner === "true") ? "Your" : "The" %> Business</h1>
 </div>
 
 <div class="row-fluid">
   
-  <div class="span6">
+  <div class="span12">
     
     <form method="post" action="#" id="form_info_business">
       
@@ -77,8 +77,9 @@
       </div>
       <!-- /@condition -->
       
+      <hr />
       <div class="form-actions">
-        <p class="next lead">Thanks! That's enough to get started. <a class="submit" href="/location">Next: your location &rarr;</a></p>
+        <p class="next lead"><a class="btn btn-large" href="/location">About your location &rarr;</a></p>
       </div>
       
     </form>

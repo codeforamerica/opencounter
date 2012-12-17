@@ -187,10 +187,10 @@ footer p {
 
 .form-actions {
   border: 1px solid #DDD;
-  padding-left: 5%;
+  padding-left: 25px;
   background: #daeef5;
   border-width:0 0 0 1px;
-  padding-bottom: 0;
+  padding-bottom: 5px;
 }
 
 .form-actions a {

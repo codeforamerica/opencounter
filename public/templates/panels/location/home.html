@@ -3,7 +3,7 @@
 </div>
 
 <div class="row-fluid">
-  <div class="span8">
+  <div class="span12">
     <p class="lead">You can work from home as long as you're not negatively impacting the neighborhood by increasing visitors or traffic, creating a lot of noise, or working with hazardous materials. You also can't have a sign on your home advertising the business.</p>
     <p class="lead toggle">More precisely: work-from-home businesses &mdash; known as "home occupations" &mdash; need to follow the rules outlined in section <a href="http://www.codepublishing.com/CA/SantaCruz/html/SantaCruz24/SantaCruz2410.html#24.10.160">24.10.160</a> of the city of Santa Cruz's Municipal Code, which you should read right now &darr;</p>
     <blockquote class="drawer">
@@ -94,14 +94,11 @@
       <!-- /@condition -->
     </form>
 
-  
-  </div>
-  
-  <div class="span4">
+    <hr />
     <div class="form-actions">
       <p class="lead">Does your business comply with section 24.10.160 of the city of Santa Cruz Municipal Code?</p>
-      <p class="next lead"><a class="submit" href="/location/check">Yep, <%= (answers.is_owner === "true") ? "my" : "this" %> work-from-home business complies with all these rules &rarr;</a></p>
-      <p class="next lead"><a class="submit" href="/help">Uh-oh. Sounds like <%= (answers.is_owner === "true") ? "I" : "the owner" %> might not be able to operate this business from home. Help! &rarr;</a></p>
+      <p class="next lead"><a class="btn btn-large" href="/location/check">Yes, it complies with the code &rarr;</a></p>
+      <p class="next lead"><a class="btn btn-large" href="/help">No, it doesn't comply with the code &rarr;</a></p>
     </div>
   </div>
 
