@@ -189,24 +189,29 @@ function(app, Parking) {
       session = new Session();
       currentUser = session.currentUser()
 
-      // hide the sign up form if the user is logged in
+      // hide the sign up form if the user is logged in and authenticated
       if ( currentUser ) {
         $(".well#sign-up").hide();
       } else {
         $(".well#sign-up").show();
       }
 
-      // TODO: would be nice to have a funtion to DRY these two up.
+      // TODO: would be nice to have a funtion to DRY these up.
 
       // user pill
-      if ( currentUser ) {
-        var text = currentUser;
-        var link = "#";
-        var link_text = "Log out";
-      } else {
-        var text = "Returning?";
-        var link = "#"
-        var link_text = "Jump back in &rarr;"
+      var text,link,link_text
+      if ( !currentUser ) {
+        text = "Returning?";
+        link = "#"
+        link_text = "Jump back in &rarr;"
+      } else if ( currentUser.account_type === "temp") {
+        text = "Save progress"
+        link = "#"
+        link_text = "Log in or Sign up"
+      } else if (currentUser.account_type === "perm") {
+        text = currentUser.full_name
+        link = "#"
+        link_text = "log out"
       }
       $("#user_pill > p > span").html(text);
       $("#user_pill > p > a").attr("href", link);

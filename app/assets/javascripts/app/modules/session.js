@@ -8,14 +8,14 @@ function(app) {
 
   Session = Backbone.View.extend( {
     currentUser: function() {
-      var user = ""
+      var user
       $.ajax({
         url: "/session/current_user.json",
         dataType: "json",
         // TODO: make asychronous
         async: false,
         success: function(data) {
-          user = data.first_name + ' ' + data.last_name
+          user = data
         }
       });
       console.log("currentUser returning: ", user)
