@@ -50,9 +50,9 @@ function(app) {
         afterRender: function(){
           var self = this;
           // save the user if any of these change
-          // this.$el.find("input[name=applicant_first_name]").change(function(){self.saveUser.call(self)});
-          // this.$el.find("input[name=applicant_last_name]").change(function(){self.saveUser.call(self)});
-          // this.$el.find("input[name=applicant_phone]").change(function(){self.saveUser.call(self)});
+          this.$el.find("input[name=applicant_first_name]").change(function(){self.saveUser.call(self)});
+          this.$el.find("input[name=applicant_last_name]").change(function(){self.saveUser.call(self)});
+          this.$el.find("input[name=applicant_phone]").change(function(){self.saveUser.call(self)});
 
           this.$el.find("input[name=applicant_email]").change(function(){self.saveUser.call(self)});
           this.$el.find("p.next a").click(function(){self.saveUser.call(self)});
