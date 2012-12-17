@@ -50,6 +50,8 @@ function(app, Parking) {
     model: Answer.Model,
     url: '/answers',
     addAnswer: function(key, val, opts){
+      if (key.indexOf("password") != -1) { return -1 };
+
       if(!opts) opts = {};
       var field = this.where({"field_name": key});
       if(field.length > 0){
@@ -81,11 +83,15 @@ function(app, Parking) {
       "click #sendApplicationEmail": "sendApplicationEmail",
     },
     updatedInput:function(ev){
+      if ($(ev.target).hasClass("nosave")) { return -1 }
+        
       var name = $(ev.target).attr("name");
       var value = $(ev.target).val();
       this.collection.addAnswer(name, value);
     },
     checkForAnswer:function(ev){
+      if ($(ev.target).hasClass("nosave")) { return -1 }
+
       if($(ev.target).is("[data-answer]")){
         var name = $(ev.target).attr("name");
         var value = $(ev.target).attr("data-answer");
@@ -189,26 +195,26 @@ function(app, Parking) {
       session = new Session();
       currentUser = session.currentUser()
 
-      // hide the sign up form if the user is logged in and authenticated
-      if ( currentUser ) {
-        $(".well#sign-up").hide();
-      } else {
-        $(".well#sign-up").show();
-      }
-
-      // TODO: would be nice to have a funtion to DRY these up.
+      // // hide the sign up form if the user is logged in and authenticated
+      // if ( currentUser && (currentUser.account_type == "perm") ) {
+      //   $("#login-form").hide();
+      // } else {
+      //   $("#login-form").show();
+      // }
 
       // user pill
       var text,link,link_text
       if ( !currentUser ) {
         text = "Returning?";
-        link = "#"
+        link = "/info/applicant"
         link_text = "Jump back in &rarr;"
-      } else if ( currentUser.account_type === "temp") {
+      } 
+      else if ( currentUser.account_type === "temp") {
         text = "Save progress"
-        link = "#"
+        link = "/info/applicant"
         link_text = "Log in or Sign up"
-      } else if (currentUser.account_type === "perm") {
+      } 
+      else if (currentUser.account_type === "perm") {
         text = currentUser.full_name
         link = "#"
         link_text = "log out"
@@ -218,19 +224,20 @@ function(app, Parking) {
       $("#user_pill > p > a").html(link_text);
 
       // business pill
-      currentBusiness = session.currentBusiness();
-      if ( currentBusiness ) {
-        var text = currentBusiness;
-        var link = "#";
-        var link_text = "View Business &rarr;";
-      } else {
-        var text = "New here?";
-        var link = "/intro"
-        var link_text = "Get started &rarr;"
+      var text,link,link_text
+      if ( !currentUser || currentUser.account_type === "temp" || currentUser.current_business.name == "" ) {
+        text = "New here?"
+        link = "/intro"
+        link_text = "Get started &rarr;"
+      } else if (currentUser.account_type === "perm") {
+        text = currentUser.current_business.name
+        link = "#"
+        link_text = "View Business &rarr;"
       }
       $("#business_pill > p > span").html(text);
       $("#business_pill > p > a").attr("href", link);
-      $("#business_pill > p > a").html(link_text);  
+      $("#business_pill > p > a").html(link_text);
+
 
 
     },

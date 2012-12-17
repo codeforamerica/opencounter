@@ -20,13 +20,7 @@ function(app) {
       });
       console.log("currentUser returning: ", user)
       return user;
-    },
-    // TODO: return the current business from Rails over AJAX 
-    currentBusiness: function() {
-      return window.currentBusiness;
-      // return "SAMPLE BUSINESS"
     }
-
   });
 
   // Return the module for AMD compliance

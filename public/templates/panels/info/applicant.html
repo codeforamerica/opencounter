@@ -4,9 +4,17 @@
 
 <div class="row-fluid">
   <div class="span6">
-    <h3>About you, the business&rsquo;s owner</h3>
+    <!-- <h3>About you, the business&rsquo;s owner</h3> -->
 
-    <form method="post" action="#" id="form_info_applicant">
+
+
+    <div class="" id="sign-up-form">
+      <h3>Sign up and you can:</h3>
+      <ul>
+        <li>Come back and finish your application later.</li>
+        <li>Create multiple applications</li>
+        <li>Submit to the planning department.</li>
+      </ul>
       <div class="control-group">
         <label class="control-label">What is your first name?</label>
         <div class="controls"><input type="text" name="applicant_first_name" placeholder=""></div>
@@ -23,33 +31,43 @@
         <label class="control-label">What is your phone number?</label>
         <div class="controls"><input type="text" name="applicant_phone" placeholder="(###) ###-####"></div>
       </div>
-
-      <div class="well" id="sign-up">
-        <p class="lead">Sign up and you can:</p>
-        <ul>
-          <li>Come back and finish your application later.</li>
-          <li>Create multiple applications</li>
-          <li>Submit to the planning department.</li>
-        </ul>
-        <div class="control-group">
-          <label class="control-label">Please enter a password</label>
-          <div class="controls"><input type="text" name="applicant_password"></div>
-          <label class="control-label">Enter your password again</label>
-          <div class="controls"><input type="text" name="applicant_password_confirmation"></div>
-          <button class="btn btn-primary" id="applicant_sign_up">Sign up</button>
-        </div>
+      <div class="control-group">
+        <label class="control-label">Please enter a password</label>
+        <div class="controls"><input type="password" name="applicant_password"></div>
       </div>
+      <div class="control-group">
+        <label class="control-label">Enter your password again</label>
+        <div class="controls"><input type="password" name="applicant_password_confirmation"></div>
+      </div>
+      <button class="btn btn-primary" id="applicant_sign_up">Sign up</button>
     </div>
-  </form>
+  </div>
 
 
   <div class="span4 ">
+
+    <div class="well" id="login-form">
+      <p class="lead">Already have an account?</p>
+      <div class="control-group ">
+        <label class="control-label">Email</label>
+        <div class="controls"><input type="text" name="login_email" class="nosave"/></div>
+      </div>  
+      <div class="control-group ">    
+        <label class="control-label">Password</label>
+        <div class="controls"><input type="password" name="login_password" /></div>
+      </div>
+      <button class="btn btn-success" id="applicant_log_in">Log in</button>
+    </div>
+    
     <div class="form-actions">
       <p class="next lead">You can also choose to start a new application without creating an account</p>
       <p class="next">Your answers will not be saved until you log in or create a new account</p>
-      <p class="next">You will need to tell us your name, email address and phone number before submitting to planning</p>
+      <!-- <p class="next">You will need to tell us your name, email address and phone number before submitting to planning</p> -->
       <p class="next lead"><a class="submit" href="/info/business">Next: tell us about <% if (answers.is_owner === "true") { %>your<% } else { %>the<% } %> business &rarr;</a></p>
     </div>
+
+
+
   </div>
 
 </div>
