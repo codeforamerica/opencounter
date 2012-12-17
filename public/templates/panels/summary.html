@@ -10,6 +10,7 @@
   </div>
   
   <div class="span6">
+    <hr />
     <div class="form-actions">
     <div class="user_message"></div>
       <ul class="lead">
@@ -32,7 +33,7 @@
   
   <% if (!answers.is_owner) { %>
 
-    <p class="lead alert alert-error">You haven't yet told us whether you're the property owner or filling this out on the property owner's behalf. <a href="/info">Go back &rarr;</a></p>
+    <p class="lead alert alert-error">You haven't told us whether you're the property owner or filling this out on the property owner's behalf. <a href="/info">Go back &rarr;</a></p>
 
   <% } else { %>
 
@@ -120,7 +121,7 @@
 
 <% if (!answers.required_permit) { %>
 
-    <p class="lead alert alert-error">You haven't yet told us where you'll be working from, so we're not able to tell you which planning permit you'll need. <a href="/location">Go back and choose your business's location &rarr;</a></p>
+    <p class="lead alert alert-error">You haven't told us where you'll be working from, so we're not able to tell you which planning permit you'll need. <a href="/location">Go back and choose your business's location &rarr;</a></p>
 
 <% } else { %>
 
@@ -668,13 +669,13 @@
 
 <% if (!answers.business_name) { %>
 
-    <p class="lead alert alert-error">You haven't yet told us the name of this business. <a href="/info/business">Go back &rarr;</a></p>
+    <p class="lead alert alert-error">You haven't told us the name of this business. <a href="/info/business">Go back &rarr;</a></p>
 
 <% } else { %>
 
     <% if (!answers.applicant_last_name) { %>
 
-    <p class="lead alert alert-error">You haven't yet told us your last name. <a href="/info/applicant">Go back &rarr;</a></p>
+    <p class="lead alert alert-error">You haven't told us your last name. <a href="/info/applicant">Go back &rarr;</a></p>
 
     <% } else { %>
 
@@ -789,7 +790,7 @@
 
 <% if (!answers.business_physical_address_street) { %>
 
-    <p class="lead alert alert-error">You haven't yet told us the location of your business. <a href="/location">Go back &rarr;</a></p>
+    <p class="lead alert alert-error">You haven't told us the location of your business. <a href="/location">Go back &rarr;</a></p>
 
 <% } else { %>
 
