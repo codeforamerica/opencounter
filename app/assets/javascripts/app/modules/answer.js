@@ -15,7 +15,7 @@ function(app, Parking) {
   Answer.Model = Backbone.Model.extend({
     name: 'answer',
     url: function(){
-      return this.id? '/answers/' + this.id : '/answers';
+      return this.id ? '/answers/' + this.id : '/answers';
     },
 
     // allow getting/setting of objects (stored as JSON strings)
@@ -51,18 +51,18 @@ function(app, Parking) {
     url: '/answers',
     addAnswer: function(key, val, opts){
       if(!opts) opts = {};
-      var m = this.where({"field_name": key});
-      if(m.length > 0){
-        m[0].set("value", val, opts).save();
+      var field = this.where({"field_name": key});
+      if(field.length > 0){
+        field[0].set("value", val, opts).save();
       }else{
         this.create({field_name:key, value:val}, opts);
       }
     console.log("adding answer: " + key, val);
     },
     getAnswer: function(key, val){
-      var m = this.where({"field_name": key});
-      if(m.length > 0){
-        return m[0].get("value");
+      var field = this.where({"field_name": key});
+      if(field.length > 0){
+        return field[0].get("value");
       }else{
         return val;
       }
@@ -225,7 +225,7 @@ function(app, Parking) {
       }
       $("#business_pill > p > span").html(text);
       $("#business_pill > p > a").attr("href", link);
-      $("#business_pill > p > a").html(link_text);
+      $("#business_pill > p > a").html(link_text);  
 
 
     },

@@ -12,7 +12,7 @@ function(app) {
       $.ajax({
         url: "/session/current_user.json",
         dataType: "json",
-        // TODO: make asychronous?
+        // TODO: make asychronous
         async: false,
         success: function(data) {
           user = data.first_name + ' ' + data.last_name
