@@ -13,6 +13,9 @@ Opencounter::Application.routes.draw do
   resources :users, :except => :index
   resources :answers
   resources :businesses
+
+  match '/session/current_user' => 'sessions#current_user'
+  match '/session/logout' => "sessions#destroy"
     
   namespace :admin do
     

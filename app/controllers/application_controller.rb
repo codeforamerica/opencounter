@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def current_business
+    @current_business ||= current_user.try(:current_business)
+  end
+  helper_method :current_business
+
   def current_user=(user)
     @current_user = user
   end

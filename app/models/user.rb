@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  # FIXME: I don't think id should be exposed
   attr_accessible :first_name, :last_name, :email, :phone, :role, :last_state, :token, :created_at, :id, :updated_at
 
   has_many :businesses
@@ -12,6 +13,15 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :token
 
   after_create :assign_token, :create_business
+
+  # TODO: This should return the current business not the most recent business
+  def current_business
+    self.businesses.order("updated_at DESC").limit(1).first
+  end
+
+  def full_name
+    first_name + " " + last_name
+  end
 
   private
 

@@ -223,14 +223,15 @@
       <div class="controls"><input type="text" name="federal_EIN" value="<%= answers.federal_EIN %>"></div>
     </div>  
 
-   <div class="form-actions">
-      <p class="next">Next: <a href="/requirements/county/fictitious_business_name">fictitious business name &rarr;</a></p>
-    </div>
+  <hr />
+  <div class="form-actions">
+    <p class="next lead"><a href="/requirements/county/fictitious_business_name" class="btn btn-large">Fictitious business name &rarr;</a></p>
+  </div>
 
   <% } else { %>
-
+    <hr/>
     <div class="form-actions">
-      <p class="lead">You haven't yet told us what type of business you're starting.</p>
+      <p class="lead">You haven't told us what type of business you're starting.</p>
       <p class="lead"><a href="/info/business" class="btn btn-large">&larr; Go back</a></p>
     </div>
 

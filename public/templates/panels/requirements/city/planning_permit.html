@@ -3,7 +3,7 @@
 </div>
 
 <div class="row-fluid">
-  <div class="span8">
+  <div class="span12">
     <p class="lead">The type of planning permit your business needs depends on whether and how your zoning district permits your use.</p>
     <p class="lead">Charges for planning permits are paid on a one-time only basis.</p>
     <p class="lead">Planning permits are based upon your business in a specific location. So, if you move in the future, you&rsquo;ll need a new planning permit.</p>
@@ -43,7 +43,7 @@
 
 <div class="row-fluid">
   
-  <div class="span12 well">
+  <div class="span12 form-actions">
 
   <% if (!answers.location_type) { %>
     <p class="lead">You haven&rsquo;t yet told us your business&rsquo;s location.</p>
@@ -386,6 +386,7 @@
  </div>
   
             <div class="span4">
+              <hr />
               <div class="form-actions">
                 <p class="lead">I hereby certify that the facts given on this application are true and correct to the best of my knowledge and I agree to, and authorize, such investigations as are deemed necessary by the City of Santa Curz City Planning Department for the preparation of reports related to this application, including the right of access to the property involved. In submitting this application I agree to hold the City of Santa Cruz harmless from all costs and expenses, including litigations costs and attornet's fees incurred by the City of held to be the City's responsibility in connection with the City's defense of its actions taken in connection with the project which is subject of this application" (Signed and dated)</p>
                 <p class="next lead"><a class="submit" href="/location/check">Yes <%= (answers.is_owner === "true") ? "I" : "the owner" %> will comply with all these rules &rarr;</a></p>
@@ -580,6 +581,7 @@
  </div>
   
             <div class="span4">
+              <hr />
               <div class="form-actions">
                 <p class="lead">I hereby certify that the facts given on this application are true and correct to the best of my knowledge and I agree to, and authorize, such investigations as are deemed necessary by the City of Santa Curz City Planning Department for the preparation of reports related to this application, including the right of access to the property involved. In submitting this application I agree to hold the City of Santa Cruz harmless from all costs and expenses, including litigations costs and attornet's fees incurred by the City of held to be the City's responsibility in connection with the City's defense of its actions taken in connection with the project which is subject of this application" (Signed and dated)</p>
                 <p class="next lead"><a class="submit" href="/location/check">Yes <%= (answers.is_owner === "true") ? "I" : "the owner" %> will comply with all these rules &rarr;</a></p>
@@ -612,9 +614,8 @@
     
   <% } %>
   
-  <div class="form-actions">
-    <p class="next lead">Next: <a href="/requirements/city/business_license">Business License &rarr;</a></p>
-  </div>
+  
+  <p class="next lead"><a href="/requirements/city/business_license" class="btn btn-large">Business license &rarr;</a></p>
 
   </div>
 

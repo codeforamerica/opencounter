@@ -15,7 +15,7 @@ function(app, Parking) {
   Answer.Model = Backbone.Model.extend({
     name: 'answer',
     url: function(){
-      return this.id? '/answers/' + this.id : '/answers';
+      return this.id ? '/answers/' + this.id : '/answers';
     },
 
     // allow getting/setting of objects (stored as JSON strings)
@@ -50,19 +50,21 @@ function(app, Parking) {
     model: Answer.Model,
     url: '/answers',
     addAnswer: function(key, val, opts){
+      if (key == undefined || key.indexOf("password") != -1) { return -1 };
+
       if(!opts) opts = {};
-      var m = this.where({"field_name": key});
-      if(m.length > 0){
-        m[0].set("value", val, opts).save();
+      var field = this.where({"field_name": key});
+      if(field.length > 0){
+        field[0].set("value", val, opts).save();
       }else{
         this.create({field_name:key, value:val}, opts);
       }
     console.log("adding answer: " + key, val);
     },
     getAnswer: function(key, val){
-      var m = this.where({"field_name": key});
-      if(m.length > 0){
-        return m[0].get("value");
+      var field = this.where({"field_name": key});
+      if(field.length > 0){
+        return field[0].get("value");
       }else{
         return val;
       }
@@ -78,14 +80,18 @@ function(app, Parking) {
       "change input,select": "updatedInput",
       "click a": "checkForAnswer",
       "click #sendHelpEmail": "sendHelpEmail",
-      "click #sendApplicationEmail": "sendApplicationEmail"
+      "click #sendApplicationEmail": "sendApplicationEmail",
     },
     updatedInput:function(ev){
+      if ($(ev.target).hasClass("nosave")) { return -1 }
+        
       var name = $(ev.target).attr("name");
       var value = $(ev.target).val();
       this.collection.addAnswer(name, value);
     },
     checkForAnswer:function(ev){
+      if ($(ev.target).hasClass("nosave")) { return -1 }
+
       if($(ev.target).is("[data-answer]")){
         var name = $(ev.target).attr("name");
         var value = $(ev.target).attr("data-answer");
@@ -123,6 +129,8 @@ function(app, Parking) {
       }});
     },
 
+
+
     subviews: function() {
       return {beforeRender:function(){},
               afterRender:function(){}};
@@ -146,7 +154,11 @@ function(app, Parking) {
       });
 
       this.subviews().afterRender.call(this);
+      
     },
+
+
+
     serialize: function() {
       var model, answers={};
       for(m in this.collection.models){
@@ -172,18 +184,95 @@ function(app, Parking) {
     className: "profile",
     template:"profile",
     events: {
-      "click .profile-toggle": "toggleProfile"
+      // "change input[name='business_name']" : "personalise",
+      // "change input[name='applicant_first_name']" : "personalise",
+      // "change input[name='applicant_last_name']" : "personalise",
+      // "click a#personalise" : "personalise"
+      "click a#logout" : "logout"
     },
+
+    logout: function(ev) {
+      console.log("attempting logout")
+
+      ev.preventDefault();
+      session = new Session();
+      session.logout();
+      window.location.reload();
+    },
+
+
+    personalise:function() {
+      console.log("function: personalise");
+      
+      session = new Session();
+      currentUser = session.currentUser()
+
+      // // hide the sign up form if the user is logged in and authenticated
+      // if ( currentUser && (currentUser.account_type == "perm") ) {
+      //   $("#login-form").hide();
+      // } else {
+      //   $("#login-form").show();
+      // }
+
+      // TODO: dry this up but keep it clear and maintainable.
+
+      // user pill
+      var text,link,link_text, link_id
+      if ( !currentUser ) {
+        text = "Returning?";
+        link = "/info/applicant"
+        link_text = "Jump back in &rarr;"
+        link_id = "info_applicant"
+      } 
+      else if ( currentUser.account_type === "temp") {
+        text = "Save progress"
+        link = "/info/applicant"
+        link_text = "Log in or Sign up"
+        link_id = "info_applicant"
+      } 
+      else if (currentUser.account_type === "perm") {
+        text = currentUser.full_name
+        link = "#"
+        link_text = "log out"
+        link_id = "logout"
+      }
+      $("#user_pill > p > span").html(text);
+      $("#user_pill > p > a").attr("href", link);
+      $("#user_pill > p > a").html(link_text);
+      $("#user_pill > p > a").attr("id", link_id)
+
+      // business pill
+      if ( !currentUser || currentUser.account_type === "temp" || currentUser.current_business.name == null ) {
+        text = "New here?"
+        link = "/intro"
+        link_text = "Get started &rarr;"
+        link_id = "intro"
+      } else if (currentUser.account_type === "perm") {
+        text = currentUser.current_business.name
+        link = "#"
+        link_text = "View Business &rarr;"
+        link_id = ""
+      }
+      $("#business_pill > p > span").html(text);
+      $("#business_pill > p > a").attr("href", link);
+      $("#business_pill > p > a").html(link_text);
+      $("#business_pill > p > a").attr("id", link_id)
+
+
+
+    },
+
     beforeRender: function(){
 
     },
-    afterRender: function(){
 
-      $('.profile-contents').hide();  // maybe do this in css -Mick
-    },
-    toggleProfile:function(e){
-        $('.profile-contents').slideToggle();
-    },
+    afterRender: function(){
+      this.personalise();
+      // $('.profile-contents').hide();  // maybe do this in css -Mick
+     },
+
+
+
     cleanup: function() {
       this.collection.off(null, null, this);
     },

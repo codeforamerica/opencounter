@@ -18,6 +18,10 @@ class Business < ActiveRecord::Base
     submitted_at.in_time_zone('Pacific Time (US & Canada)').strftime('%m/%d/%Y at %I:%M%p')
   end
 
+  def business_name
+    self.answers.find_by_field_name("business_name").try(:value)
+  end
+
   # answers are a hash of key/value pairs
   # TODO: proper error handling
   def save_answers(answers)
