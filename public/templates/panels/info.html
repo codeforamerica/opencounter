@@ -12,14 +12,14 @@
       <% if (answers.is_owner == null) { %>
         <p class="next lead">You haven't told us whether you're the property owner or not.</p>
         <p class="next lead"><a href="/info/applicant" class="submit btn btn-large" data-answer="yes" data-field-key="1234343" name="is_owner">Yes, I own the property &rarr;</a></p>
-        <p class="next lead"><a href="/info/applicant" class="submit btn btn-large" data-answer="no" name="is_owner">No, I do not own the property &rarr;</a></p>
+        <p class="next lead"><a href="/info/applicant" class="submit btn btn-large btn-success" data-answer="no" name="is_owner">No, I do not own the property &rarr;</a></p>
       <% } else { %>
         <% if (answers.is_owner == 'no') { %>
           <p class="next lead">You've told us that you <strong>are not</strong> the owner.</p>
-          <p class="next lead"><a href="/info/applicant" class="submit btn btn-large" data-answer="no" name="is_owner">Secure permits on a property  &rarr;</a></p>
+          <p class="next lead"><a href="/info/applicant" class="submit btn btn-large btn-success" data-answer="no" name="is_owner">Secure permits on a property  &rarr;</a></p>
         <% } else { %>
           <p class="next lead">You've told us that you <strong>are</strong> the owner.</p>
-          <p class="next lead"><a href="/info/applicant" class="submit btn btn-large" data-answer="yes" data-field-key="1234343" name="is_owner">Applicant info &rarr;</a></p>
+          <p class="next lead"><a href="/info/applicant" class="submit btn btn-large btn-success" data-answer="yes" data-field-key="1234343" name="is_owner">Applicant info &rarr;</a></p>
         <% } %>
       <% } %>
     </div>
