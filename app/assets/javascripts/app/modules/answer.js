@@ -50,7 +50,7 @@ function(app, Parking) {
     model: Answer.Model,
     url: '/answers',
     addAnswer: function(key, val, opts){
-      if (key.indexOf("password") != -1) { return -1 };
+      if (key == undefined || key.indexOf("password") != -1) { return -1 };
 
       if(!opts) opts = {};
       var field = this.where({"field_name": key});
