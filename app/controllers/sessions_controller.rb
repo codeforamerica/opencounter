@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     cookies[:token] = nil
-    redirect_to root_path
+    respond_with 'success'
   end
 
   def current_user

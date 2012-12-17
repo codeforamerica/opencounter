@@ -20,7 +20,19 @@ function(app) {
       });
       console.log("currentUser returning: ", user)
       return user;
-    }
+    },
+
+    logout: function() {
+      var self = this;
+      $.ajax({
+        url: "/session/logout.json",
+        dataType: "json",
+        async: false,
+        success: function(data) {
+
+        }
+      });
+    },
   });
 
   // Return the module for AMD compliance

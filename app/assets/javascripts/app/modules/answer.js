@@ -129,6 +129,8 @@ function(app, Parking) {
       }});
     },
 
+
+
     subviews: function() {
       return {beforeRender:function(){},
               afterRender:function(){}};
@@ -186,6 +188,16 @@ function(app, Parking) {
       // "change input[name='applicant_first_name']" : "personalise",
       // "change input[name='applicant_last_name']" : "personalise",
       // "click a#personalise" : "personalise"
+      "click a#logout" : "logout"
+    },
+
+    logout: function(ev) {
+      console.log("attempting logout")
+
+      ev.preventDefault();
+      session = new Session();
+      session.logout();
+      window.location.reload();
     },
 
 
@@ -202,41 +214,49 @@ function(app, Parking) {
       //   $("#login-form").show();
       // }
 
+      // TODO: dry this up but keep it clear and maintainable.
+
       // user pill
-      var text,link,link_text
+      var text,link,link_text, link_id
       if ( !currentUser ) {
         text = "Returning?";
         link = "/info/applicant"
         link_text = "Jump back in &rarr;"
+        link_id = "info_applicant"
       } 
       else if ( currentUser.account_type === "temp") {
         text = "Save progress"
         link = "/info/applicant"
         link_text = "Log in or Sign up"
+        link_id = "info_applicant"
       } 
       else if (currentUser.account_type === "perm") {
         text = currentUser.full_name
         link = "#"
         link_text = "log out"
+        link_id = "logout"
       }
       $("#user_pill > p > span").html(text);
       $("#user_pill > p > a").attr("href", link);
       $("#user_pill > p > a").html(link_text);
+      $("#user_pill > p > a").attr("id", link_id)
 
       // business pill
-      var text,link,link_text
-      if ( !currentUser || currentUser.account_type === "temp" || currentUser.current_business.name == "" ) {
+      if ( !currentUser || currentUser.account_type === "temp" || currentUser.current_business.name == null ) {
         text = "New here?"
         link = "/intro"
         link_text = "Get started &rarr;"
+        link_id = "intro"
       } else if (currentUser.account_type === "perm") {
         text = currentUser.current_business.name
         link = "#"
         link_text = "View Business &rarr;"
+        link_id = ""
       }
       $("#business_pill > p > span").html(text);
       $("#business_pill > p > a").attr("href", link);
       $("#business_pill > p > a").html(link_text);
+      $("#business_pill > p > a").attr("id", link_id)
 
 
 
