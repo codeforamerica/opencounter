@@ -18,6 +18,10 @@ function(app) {
 
   User.Views.Info = Backbone.View.extend({
     template: "panels/info/applicant",
+    events: {
+      // "click button#applicant_sign_up" : "signUp",
+      // "click button#applicant_sign_up" : ""
+    }
     // events: {
     //   "click button#applicant_sign_up" : "signUp",
     //   "change input,select" : "saveUser"
@@ -27,7 +31,6 @@ function(app) {
       // TODO: should actually sign the user up.
 
     },
-
 
     saveUser: function(){
       var self = this;
