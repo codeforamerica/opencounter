@@ -21,7 +21,7 @@ function(app) {
     events: {
       // "click button#applicant_sign_up" : "signUp",
       // "click button#applicant_sign_up" : ""
-    }
+    },
     // events: {
     //   "click button#applicant_sign_up" : "signUp",
     //   "change input,select" : "saveUser"
