@@ -4,7 +4,7 @@
 
 <div class="row-fluid">
   
-  <div class="span6">
+  <div>
 
     <% if (answers.is_owner == "no") { %>
     
@@ -37,7 +37,7 @@
     
     <% } %>
 
-  <div class="span12">
+  <div>
     
     <form method="post" action="#" id="form_info_business">
       
@@ -85,7 +85,6 @@
           <input type="checkbox" name="applicant_is_sole_owner" value="y" checked="checked" class="checkbox">
           Yes
         </div>
-        <br>
       </div>
       
       <!-- @condition Not the sole owner -->
@@ -113,7 +112,7 @@
       
       <hr />
       <div class="well">
-        <p class="next lead"><a class="btn btn-large btn-success" href="/location">About your location &rarr;</a></p>
+        <a class="btn btn-large btn-info" href="/location">About your location &rarr;</a>
       </div>
       
     </form>
