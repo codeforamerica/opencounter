@@ -18,7 +18,7 @@ function(app) {
           user = data
         }
       });
-      console.log("currentUser returning: ", user)
+      // console.log("currentUser returning: ", user)
       return user;
     },
 

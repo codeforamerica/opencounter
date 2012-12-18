@@ -192,7 +192,7 @@ function(app, Parking) {
     },
 
     logout: function(ev) {
-      console.log("attempting logout")
+      // console.log("attempting logout")
 
       ev.preventDefault();
       session = new Session();
@@ -202,7 +202,7 @@ function(app, Parking) {
 
 
     personalise:function() {
-      console.log("function: personalise");
+      // console.log("function: personalise");
       
       session = new Session();
       currentUser = session.currentUser()
