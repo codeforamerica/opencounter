@@ -13,23 +13,23 @@
   <% if (!(answers.zoning)) { %>
     <p>You haven't told us the business' location.  Please go back and tell us the location of your business.</p>
     <hr />
-    <div class="form-actions">
+    <div class="well">
       <p class="lead">You haven't told us the business' location.  Please go back and tell us the location of your business.</p>
-      <p class="lead"><a href="/location" class="btn btn-large">Go Back &larr;</a></p>
+      <p class="lead"><a href="/location" class="btn btn-large btn-success">&larr; Go Back</a></p>
     </div>
 
   <% } else if (answers.zoning != "CBD") { %>
     <hr />
-    <div class="form-actions">
+    <div class="well">
       <p class="lead">Your business is not located downtown so you can skip this step</p>
-      <p class="lead"><a href="#" class="btn btn-large">Next &rarr;</a></p>
+      <p class="lead"><a href="#" class="btn btn-large btn-success">Next &rarr;</a></p>
     </div>
 
   <% } else if (!(answers.CIC_industry_subindustry)) { %>
     <hr />
-    <div class="form-actions">
+    <div class="well">
       <p class="lead">You haven't told us what type of business you're starting.</p>
-      <p class="lead"><a href="/info/business" class="btn btn-large">&larr; Go back</a></p>
+      <p class="lead"><a href="/info/business" class="btn btn-large btn-success">&larr; Go back</a></p>
     </div>
 
   <% } else { %>
@@ -60,8 +60,8 @@
         </form>
       </div>
       <div class="span4">
-        <div class="form-actions">
-          <p class="lead"><a href="#">Next &rarr;</a></p>
+        <div class="well">
+          <a href="#">Next &rarr;</a>
         </div>
       </div>
     </div>

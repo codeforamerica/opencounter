@@ -8,18 +8,18 @@
     <p class="lead">To make sure we're asking the right questions, we first need to know if you're the owner of this business and the location where it will be located, or if you're filling this out to secure permits on a location which you do not own.</p>
 
     <hr />
-    <div class="form-actions">
+    <div class="well">
       <% if (answers.is_owner == null) { %>
         <p class="next lead">You haven't told us whether you're the property owner or not.</p>
         <p class="next lead"><a href="/info/applicant" class="submit btn btn-large" data-answer="yes" data-field-key="1234343" name="is_owner">Yes, I own the property &rarr;</a></p>
-        <p class="next lead"><a href="/info/applicant" class="submit btn btn-large btn-success" data-answer="no" name="is_owner">No, I do not own the property &rarr;</a></p>
+        <a href="/info/applicant" class="submit btn btn-large btn-success" data-answer="no" name="is_owner">No, I do not own the property &rarr;</a>
       <% } else { %>
         <% if (answers.is_owner == 'no') { %>
           <p class="next lead">You've told us that you <strong>are not</strong> the owner.</p>
-          <p class="next lead"><a href="/info/applicant" class="submit btn btn-large btn-success" data-answer="no" name="is_owner">Secure permits on a property  &rarr;</a></p>
+          <a href="/info/applicant" class="submit btn btn-large btn-success" data-answer="no" name="is_owner">Secure permits on a property  &rarr;</a>
         <% } else { %>
           <p class="next lead">You've told us that you <strong>are</strong> the owner.</p>
-          <p class="next lead"><a href="/info/applicant" class="submit btn btn-large btn-success" data-answer="yes" data-field-key="1234343" name="is_owner">Applicant info &rarr;</a></p>
+          <a href="/info/applicant" class="submit btn btn-large btn-success" data-answer="yes" data-field-key="1234343" name="is_owner">Applicant info &rarr;</a>
         <% } %>
       <% } %>
     </div>
