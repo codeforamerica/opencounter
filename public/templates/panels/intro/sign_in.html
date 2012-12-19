@@ -1,0 +1,80 @@
+<div class="page-header">
+  <h1>Get Started!</h1>
+</div>
+
+<div class="row-fluid">
+  <div>
+    <p class="lead">There are three ways to get started on OpenCounter: 1) create an account, which will allow you to return to unfinished applications; 2) you can log into your existing account; or 3) you can start a new application without creating an account.  Please choose the appropriate option below.</p>
+    <br />
+  </div>
+  
+  <div class="span4" style="margin-left: 0px;">
+    <!-- <h3>About you, the business&rsquo;s owner</h3> -->
+
+    <div class="well" id="sign-up-form">
+      <p class="lead">Create an account</p>
+      <div class="control-group">
+        <label class="control-label">Email Address</label>
+        <div class="controls"><input type="text" name="applicant_email" placeholder=""></div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Password</label>
+        <div class="controls"><input type="password" name="applicant_password"></div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Re-Enter Password</label>
+        <div class="controls"><input type="password" name="applicant_password_confirmation"></div>
+      </div>
+      <button class="btn btn-large btn-info" id="applicant_sign_up">Sign up &rarr;</button>
+    </div>
+  </div>
+
+  <div class="span4">
+    <div class="well" id="login-form">
+      <p class="lead">Log into your account</p>
+      <div class="control-group ">
+        <label class="control-label">Email</label>
+        <div class="controls"><input type="text" name="login_email" class="nosave"/></div>
+      </div>
+      <div class="control-group ">    
+        <label class="control-label">Password</label>
+        <div class="controls"><input type="password" name="login_password" /></div>
+      </div>
+      <br />
+      <button class="btn btn-large btn-info" id="applicant_log_in">Log in &rarr;</button>
+    </div>
+  </div>
+  
+  <div class="span4">
+    <div class="well">
+      <p class="next lead">Start a New Application</p>
+      <p class="next">Your information will not be saved until you submit your application.</p>
+      <!-- <p class="next">You will need to tell us your name, email address and phone number before submitting to planning</p> -->
+      <br />
+      <p class="next lead"><a class="btn btn-large btn-info" href="/info/business">Begin &rarr;</a></p>
+    </div>
+  </div>
+</div>
+
+<!--
+if it's the owner,
+  owner name = applicant name
+  owner address = applicant address
+  owner email = applicant email
+  owner phone = applicant phone
+  agent name = blank
+  agent address = blank
+  agent email = blank
+  agent phone = blank
+
+
+if it's the agent,
+  owner name = owner name
+  owner address = owner address
+  owner email = owner email
+  owner phone = owner phone
+  agent name = applicant name
+  agent address = applicant address
+  agent email = applicant email
+  agent phone = applicant phone
+-->
