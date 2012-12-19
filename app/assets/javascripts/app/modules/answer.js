@@ -243,7 +243,7 @@ function(app, Parking) {
 
       // business pill
       if ( !currentUser || currentUser.account_type === "temp" || currentUser.current_business.name == null ) {
-        text = "New here?"
+        text = "New Here?"
         link = "/intro"
         link_text = "Get started &rarr;"
         link_id = "intro"
