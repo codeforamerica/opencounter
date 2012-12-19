@@ -51,6 +51,7 @@ function(app, Parking) {
     url: '/answers',
     addAnswer: function(key, val, opts){
       if (key == undefined || key.indexOf("password") != -1) { return -1 };
+      console.log("start addAnswer()", [key, val, opts])
 
       if(!opts) opts = {};
       var field = this.where({"field_name": key});
@@ -59,7 +60,6 @@ function(app, Parking) {
       }else{
         this.create({field_name:key, value:val}, opts);
       }
-    console.log("adding answer: " + key, val);
     },
     getAnswer: function(key, val){
       var field = this.where({"field_name": key});
