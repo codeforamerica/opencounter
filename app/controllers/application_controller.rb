@@ -9,12 +9,8 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-  def current_business
-    @current_business ||= current_user.try(:current_business)
-  end
-  helper_method :current_business
-
   def current_user=(user)
+    cookies.permanent[:token] = user.token
     @current_user = user
   end
   helper_method :current_user

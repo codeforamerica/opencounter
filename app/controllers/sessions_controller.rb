@@ -6,8 +6,9 @@ class SessionsController < ApplicationController
     email, password = params[:email], params[:password]
     # TODO: properly authenticate the user
     if user = User.find_by_email( email )
+      current_user = user.authenticate(password)
       cookies.permanent[:token] = user.token
-      respond_with user
+      respond_with current_user # is false if authenticaate fails
     else
       respond_with 'error'
     end

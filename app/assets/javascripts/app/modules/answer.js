@@ -259,8 +259,8 @@ function(app, Parking) {
         link_id = "intro"
       } else if (currentUser.account_type === "perm") {
         text = currentUser.current_business.name
-        link = "#"
-        link_text = "View Business &rarr;"
+        link = "/summary"
+        link_text = "Show checklist &rarr;"
         link_id = ""
       }
       $("#business_pill > p > span").html(text);

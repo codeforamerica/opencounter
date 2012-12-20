@@ -224,6 +224,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby (= 3.0.1)
   capybara
   csv-mapper
   debugger

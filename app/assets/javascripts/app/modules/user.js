@@ -36,8 +36,14 @@ function(app) {
 
       signUp: function() {
         // this.user.set("account_type", "perm")
-        this.saveUser();
-        window.location.pathname = "/info/applicant"
+        var response = this.saveUser();
+        if (response == 'success') {
+          
+        } else {
+
+
+
+        }
       },
 
       logIn: function() {
@@ -52,10 +58,13 @@ function(app) {
       saveUser: function(){
         var self = this;
         email = $("input[name=applicant_email]").val()
-        this.user.set("email", email);
-        // this.user.set("phone",this.$el.find("input[name=applicant_phone]").val());
-        // this.user.set("first_name",this.$el.find("input[name=applicant_first_name]").val());
-        // this.user.set("last_name",this.$el.find("input[name=applicant_last_name]").val());
+        pass = $("input[name=applicant_password]").val()
+        pass_conf = $("input[name=applicant_password_confirmation]").val()
+        this.user.set({
+          email: email,
+          password: pass,
+          password_confirmation: pass_conf
+        });
 
         // need to save an answers we had from before the user was created.
         this.user.save({}, {success:function(){
@@ -63,8 +72,17 @@ function(app) {
           self.collection.each(function(answer){
             answer.save();
           });
-        },error:function(m, r){
-        // console.log("error:", m, r);
+          window.location.pathname = "/info/applicant"
+        },error:function(model, xhr, options){
+          // console.log("model: ", model)
+          // console.log("xhr: ", xhr)
+          // console.log("options: ", options)
+          errors = $.parseJSON(xhr.responseText)
+          console.log("Error signing up: ", errors)
+          $("div#errors > h4").html("We couldn't sign you up")
+          $("div#errors > span").html(JSON.stringify(errors))
+          $("div#errors").removeClass("hidden")
+
       }});
       },
       subviews:function(){

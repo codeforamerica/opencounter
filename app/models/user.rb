@@ -1,16 +1,23 @@
 class User < ActiveRecord::Base
   # FIXME: I don't think id should be exposed
-  attr_accessible :first_name, :last_name, :email, :phone, :role, :last_state, :token, :created_at, :id, :updated_at, :remember_token
+  attr_accessible :first_name, :last_name, :email, :phone, :role, 
+                  :last_state, :token, :created_at, :id, :updated_at, 
+                  :remember_token, :password, :password_confirmation
 
   has_many :businesses
   has_many :answers, :through => :businesses
 
-  validates_presence_of :email
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
-  # validates_presence_of :first_name
-  # validates_presence_of :last_name
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence:   true,
+                    format:     { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
 
   validates_uniqueness_of :token
+
+  validates :password, presence: true, length: { minimum: 6 }
+  validates :password_confirmation, presence: true
+  
+  has_secure_password
 
   after_create :assign_token, :create_business
 
