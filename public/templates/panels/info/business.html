@@ -3,9 +3,7 @@
 </div>
 
 <div class="row-fluid">
-  
   <div>
-
     <% if (answers.is_owner == "no") { %>
     
     <h3>About the property owner</h3>
@@ -85,6 +83,7 @@
           <input type="checkbox" name="applicant_is_sole_owner" value="y" checked="checked" class="checkbox">
           Yes
         </div>
+        <br />
       </div>
       
       <!-- @condition Not the sole owner -->
@@ -110,8 +109,7 @@
       </div>
       <!-- /@condition -->
       
-      <hr />
-      <div class="well">
+      <div class="form-submit">
         <a class="btn btn-large btn-info" href="/location">About your location &rarr;</a>
       </div>
       
