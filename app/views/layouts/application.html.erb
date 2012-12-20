@@ -14,12 +14,6 @@
     <%= csrf_meta_tags %>
     <meta charset="utf-8">
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-
-    <!-- Make current_user and current_business available in the templates and modules -->
-    <script type="text/javascript">
-      window.currentUser = "<%=current_user.try(:full_name)%>";
-      window.currentBusiness = "<%= current_user.try(:current_business).try(:business_name) %>";
-    </script>
     
   </head>
 

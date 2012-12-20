@@ -26,6 +26,7 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
       "location/check":"locationCheck",
       "requirements/city/business_license":"businessLicense",
       "info/applicant": "userInfo",
+      "intro/sign_in" : "loginSignup",
       "*path":"panel"
     },
     index: function(e){
@@ -69,10 +70,22 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
         app.layout.render();
     },
 
-    userInfo: function(){
+    userInfo: function() {
       var panel = new (Answer.Views.Panel.extend(User.Views.Info.prototype))({
         collection:this.answers,
-        user:this.user
+        user:this.user,
+        useTemplate:"info/applicant"
+      });
+
+      app.layout.setView("div#content", panel);
+      app.layout.render();
+    },
+
+    loginSignup: function(){
+      var panel = new (Answer.Views.Panel.extend(User.Views.LoginSignup.prototype))({
+        collection:this.answers,
+        user:this.user,
+        useTemplate:"intro/sign_in"
       });
 
       app.layout.setView("div#content", panel);
@@ -145,7 +158,8 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
 
       app.layout.setViews({
         "div#profile": new Answer.Views.Profile({
-          collection:this.answers
+          collection:this.answers,
+          user: this.user
         }),
         "div#nav-main": nav,
         "div#nav-sub": subnav

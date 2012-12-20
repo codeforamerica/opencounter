@@ -14,8 +14,9 @@ Opencounter::Application.routes.draw do
   resources :answers
   resources :businesses
 
-  match '/session/current_user' => 'sessions#current_user'
-  match '/session/logout' => "sessions#destroy"
+  match '/sessions/create'  => 'sessions#create'
+  match '/sessions/show'    => "sessions#show"
+  match '/sessions/destroy' => "sessions#destroy"
     
   namespace :admin do
     
