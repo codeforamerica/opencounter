@@ -29,7 +29,7 @@ function(app) {
         dataType: "json",
         async: false,
         success: function(data) {
-
+          window.location.pathname = "/"
         }
       });
     },
@@ -47,8 +47,8 @@ function(app) {
           "password": password
         },
         success: function(data) {
-          console.log("Successfully logged in")
-          // window.location.reload();
+          // console.log("Successfully logged in")
+          window.location.pathname = "/info/applicant"
         }
 
       });

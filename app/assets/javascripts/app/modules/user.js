@@ -24,8 +24,8 @@ function(app) {
   User.Views.LoginSignup = Backbone.View.extend({
     template: "panels/intro/sign_in",
     events: {
-      "click button#applicant_sign_up" : "signUp",
-      "click button#applicant_log_in" : "logIn",
+      "click a#applicant_sign_up" : "signUp",
+      "click a#applicant_log_in" : "logIn",
       "click a#begin" : "anonSignUp",
     },
 
@@ -37,6 +37,7 @@ function(app) {
       signUp: function() {
         // this.user.set("account_type", "perm")
         this.saveUser();
+        window.location.pathname = "/info/applicant"
       },
 
       logIn: function() {
@@ -45,7 +46,6 @@ function(app) {
         if (email != "" && password != "") {
           session = new Session();
           session.login(email, password);
-          // window.location.reload();
         };
       },
 
