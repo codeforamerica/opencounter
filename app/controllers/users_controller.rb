@@ -2,22 +2,25 @@ class UsersController < ApplicationController
   respond_to :html, :json, :xml
 
   def create
-    @user = User.find_or_create_by_email(params[:user][:email])
-    if @user.update_attributes(params[:user])
-      cookies.permanent[:token] = @user.token
-      current_user = @user
-    end
-    session[:user_id] = @user.id
+    @user = User.create(params[:user])
+    # @user = User.find_or_create_by_email(params[:user][:email])
+    # if @user.update_attributes(params[:user])
+    #   cookies.permanent[:token] = @user.token
+    #   current_user = @user
+    # end
+    # session[:user_id] = @user.id
+    cookies.permanent[:token] = @user.token
     respond_with @user
   end
   
   def update
-    @user = current_user
-    if @user.update_attributes(params[:user])
-      cookies.permanent[:token] = @user.token
-      session[:user_id] = @user.id
-      current_user = @user
-    end
+    @user = User.find_by_id(params[:user_id])
+    # @user = current_user
+    # if @user.update_attributes(params[:user])
+    #   cookies.permanent[:token] = @user.token
+    #   session[:user_id] = @user.id
+    #   current_user = @user
+    # end
     respond_with @user
   end
   

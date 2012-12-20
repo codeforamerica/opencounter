@@ -51,6 +51,7 @@ function(app, Parking) {
     url: '/answers',
     addAnswer: function(key, val, opts){
       if (key == undefined || key.indexOf("password") != -1) { return -1 };
+      console.log("start addAnswer()", [key, val, opts])
 
       if(!opts) opts = {};
       var field = this.where({"field_name": key});
@@ -59,7 +60,6 @@ function(app, Parking) {
       }else{
         this.create({field_name:key, value:val}, opts);
       }
-    console.log("adding answer: " + key, val);
     },
     getAnswer: function(key, val){
       var field = this.where({"field_name": key});
@@ -157,8 +157,6 @@ function(app, Parking) {
       
     },
 
-
-
     serialize: function() {
       var model, answers={};
       for(m in this.collection.models){
@@ -183,13 +181,22 @@ function(app, Parking) {
     tagName: "section",
     className: "profile",
     template:"profile",
+    //  TODO: this does not work.  fetch from user or personalise the top profile nav when
+    //        1)  log in 
+    //        2)  log out 
+    //        3)  sign up
+    //        4) change of user first name, second name
     events: {
       // "change input[name='business_name']" : "personalise",
-      // "change input[name='applicant_first_name']" : "personalise",
-      // "change input[name='applicant_last_name']" : "personalise",
-      // "click a#personalise" : "personalise"
+      "change input[name='applicant_first_name']" : "personalise",
+      "change input[name='applicant_last_name']" : "personalise",
+      "click button#applicant_sign_up" : "personalise",
+      "click button#applicant_log_in" : "personalise",
+
       "click a#logout" : "logout"
     },
+
+    // user.on("all", this.personalise());
 
     logout: function(ev) {
       // console.log("attempting logout")
@@ -197,9 +204,8 @@ function(app, Parking) {
       ev.preventDefault();
       session = new Session();
       session.logout();
-      window.location.reload();
+      // window.location.reload();
     },
-
 
     personalise:function() {
       // console.log("function: personalise");
@@ -214,24 +220,28 @@ function(app, Parking) {
       //   $("#login-form").show();
       // }
 
-      // TODO: dry this up but keep it clear and maintainable.
+      // TODO: logic out of the dom / html out of the js.  Put these as small html 'partials'
 
       // user pill
       var text,link,link_text, link_id
       if ( !currentUser ) {
         text = "Returning?";
-        link = "/info/applicant"
+        link = "/intro/sign_in"
         link_text = "Jump back in &rarr;"
         link_id = "info_applicant"
       } 
       else if ( currentUser.account_type === "temp") {
         text = "Save progress"
-        link = "/info/applicant"
+        link = "/intro/sign_in"
         link_text = "Log in or Sign up"
         link_id = "info_applicant"
       } 
       else if (currentUser.account_type === "perm") {
-        text = currentUser.full_name
+        if (currentUser.full_name == " ") {
+          text = "Logged in."
+        } else {
+          text = currentUser.full_name  
+        }        
         link = "#"
         link_text = "log out"
         link_id = "logout"
@@ -257,10 +267,11 @@ function(app, Parking) {
       $("#business_pill > p > a").attr("href", link);
       $("#business_pill > p > a").html(link_text);
       $("#business_pill > p > a").attr("id", link_id)
-
-
-
     },
+
+
+
+
 
     beforeRender: function(){
 
@@ -268,8 +279,7 @@ function(app, Parking) {
 
     afterRender: function(){
       this.personalise();
-      // $('.profile-contents').hide();  // maybe do this in css -Mick
-     },
+    },
 
 
 

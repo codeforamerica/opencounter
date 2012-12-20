@@ -1,14 +1,14 @@
 class User < ActiveRecord::Base
   # FIXME: I don't think id should be exposed
-  attr_accessible :first_name, :last_name, :email, :phone, :role, :last_state, :token, :created_at, :id, :updated_at
+  attr_accessible :first_name, :last_name, :email, :phone, :role, :last_state, :token, :created_at, :id, :updated_at, :remember_token
 
   has_many :businesses
   has_many :answers, :through => :businesses
 
   validates_presence_of :email
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
-  validates_presence_of :first_name
-  validates_presence_of :last_name
+  # validates_presence_of :first_name
+  # validates_presence_of :last_name
 
   validates_uniqueness_of :token
 
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def full_name
-    first_name + " " + last_name
+    "#{try(:first_name)} #{try(:last_name)}"
   end
 
   private
