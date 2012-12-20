@@ -7,18 +7,9 @@
     <p class="lead">You&rsquo;ve told us that your business, <strong><%= answers.business_name %></strong>, is classified as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong>.</p>
     <h3>What is your business&rsquo;s physical address?</h3>
     <form action="" id="form_location_non_home_occ_check_site">
-      <label>
-        Street
-        <input type="text" name="business_physical_address_street" value="<%= answers.business_physical_address_street %>" placeholder="Street">
-      </label>
-      <!--
-      <label>
-        ZIP
-        <input type="text" name="business_physical_address_zip" placeholder="ZIP">
-      </label>
-      -->
-      <input type="submit" value="Check Zoning">
-      <div id="map" style="height:200px; width:200px;"></div>
+      <input type="text" name="business_physical_address_street" value="<%= answers.business_physical_address_street %>" placeholder="Street"> &nbsp;<input type="submit" value="Check Zoning" class="btn" style="margin-top: -7px;">
+
+      <div id="map" style="height:400px; width:700px; margin-top: 10px;"></div>
       <div id="zoning_display"></div>
     </form>
     
