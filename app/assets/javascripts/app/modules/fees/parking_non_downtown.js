@@ -364,23 +364,26 @@ function(app) {
       var type = 'parking_' + this.collection.getAnswer('business_type');
       var subtype = this.collection.getAnswer('business_subtype');
       var business_subtype = subtype || type;
-
-
       var spaces = this.calculateSpaces(business_subtype);
+	  
+	  if ( !(isNaN(spaces) || spaces == null) ) {
+		this.collection.addAnswer('required_parking_spaces', spaces);
 
-      this.collection.addAnswer('required_parking_spaces', spaces);
+		var display_text = "<p>You must provide "
+		+ spaces
+		+ " car parking space"
+		+ ((spaces !== 1) ? "s" : "")
+		+ ".</p>";
 
-      var display_text = "<p>You must provide "
-      + spaces
-      + " car parking space"
-      + ((spaces !== 1) ? "s" : "")
-      + ".</p>";
-
-      if ( !(isNaN(spaces) || spaces == null) ) {
-        $("#parking_spaces")
-        .html(display_text)
-        .show();
-      }
+		$("#parking_spaces")
+		.html(display_text)
+		.show();
+      }  
+	  else {
+		$("#parking_spaces")
+		.html("Please fill out all the fields.")
+		.show();
+	  }
     }
 
   });
