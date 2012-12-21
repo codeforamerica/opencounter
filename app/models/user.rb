@@ -26,6 +26,13 @@ class User < ActiveRecord::Base
   def current_business
     self.businesses.order("updated_at DESC").limit(1).first
   end
+  # # this is what i'd like
+  # def current_business
+  #   self.businesses.find_by_id(self.answers.find_by_field_name('current_business_id'))
+  #   # even better
+  #   self.businesses.find_by_id(current_business_id)
+  # end
+
 
   def full_name
     "#{try(:first_name)} #{try(:last_name)}"

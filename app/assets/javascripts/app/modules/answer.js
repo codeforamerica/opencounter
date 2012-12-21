@@ -207,20 +207,31 @@ function(app, Parking) {
       // window.location.reload();
     },
 
+    // TODO: logic out of the dom / html out of the js.  Put these as small html 'partials'
     personalise:function() {
       // console.log("function: personalise");
       
       session = new Session();
       currentUser = session.currentUser()
 
-      // // hide the sign up form if the user is logged in and authenticated
-      // if ( currentUser && (currentUser.account_type == "perm") ) {
-      //   $("#login-form").hide();
-      // } else {
-      //   $("#login-form").show();
-      // }
+      // hide the sign up form if the user is logged in and authenticated
+      if ( currentUser && (currentUser.account_type == "perm") ) {
+        // hide all the forms
+        $("#login-form").hide();
+        $("#begin-form").hide();
+        $("#sign-up-form").hide();
 
-      // TODO: logic out of the dom / html out of the js.  Put these as small html 'partials'
+        // make it a 'welcome back!' page
+        $("h1").html("Welcome back!")
+        $("p#intro-text").html("Welcome back to OpenCounter.  You can choose which application you want to edit from the list below.")
+      } 
+      else if ( currentUser && (currentUser.account_type == "temp") ) {
+        // make the "begin" form a 'start afresh' form
+        // $("#begin-form p").html("We will delete your current progress and start afresh with a new application. Your information will not be saved until you submit your application.")
+
+      }
+
+      
 
       // user pill
       var text,link,link_text, link_id
