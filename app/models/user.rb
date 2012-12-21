@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   # FIXME: I don't think id should be exposed
   attr_accessible :first_name, :last_name, :email, :phone, :role, 
                   :last_state, :token, :created_at, :id, :updated_at, 
-                  :remember_token, :password, :password_confirmation
+                  :remember_token, :password, :password_confirmation,
+                  :account_type
 
   has_many :businesses
   has_many :answers, :through => :businesses
@@ -16,7 +17,7 @@ class User < ActiveRecord::Base
 
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
-  
+
   has_secure_password
 
   after_create :assign_token, :create_business

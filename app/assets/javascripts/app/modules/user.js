@@ -30,12 +30,12 @@ function(app) {
     },
 
     anonSignUp: function() {
-        // this.user.set("account_type", "temp")
+        this.user.set("account_type", "temp")
         this.saveUser();
       },
 
       signUp: function() {
-        // this.user.set("account_type", "perm")
+        this.user.set("account_type", "perm")
         this.saveUser();
       },
 

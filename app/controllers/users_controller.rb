@@ -2,8 +2,16 @@ class UsersController < ApplicationController
   respond_to :html, :json, :xml
 
   def create
-    user = User.create(params[:user])
-    cookies.permanent[:token] = user.token if user.valid?
+    user = User.new(params[:user])
+    # hack to bypass authentication requirements
+    if params[:user][:account_type] == "temp"
+      pass = SecureRandom.hex(10)
+      user.password = pass
+      user.password_confirmation = pass
+      user.email = "#{pass}@notarealemail.com"
+    end
+    user.save
+    cookies.permanent[:token] = user.token
     respond_with user
   end
   
