@@ -25,7 +25,7 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
       "info/business": "businessInfo",
       "location/check":"locationCheck",
       "requirements/city/business_license":"businessLicense",
-      "info/applicant": "userInfo",
+      // "info/applicant": "userInfo",
       "intro/sign_in" : "loginSignup",
       "*path":"panel"
     },

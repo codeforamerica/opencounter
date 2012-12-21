@@ -181,15 +181,7 @@ function(app, Parking) {
     tagName: "section",
     className: "profile",
     template:"profile",
-    //  TODO: this does not work.  fetch from user or personalise the top profile nav when
-    //        1)  log in 
-    //        2)  log out 
-    //        3)  sign up
-    //        4) change of user first name, second name
     events: {
-      // "change input[name='business_name']" : "personalise",
-      "change input[name='applicant_first_name']" : "personalise",
-      "change input[name='applicant_last_name']" : "personalise",
       "click button#applicant_sign_up" : "personalise",
       "click button#applicant_log_in" : "personalise",
 
@@ -207,20 +199,10 @@ function(app, Parking) {
       // window.location.reload();
     },
 
-    personalise:function() {
-      // console.log("function: personalise");
-      
+    // TODO: logic out of the dom / html out of the js.
+    personalise:function() {      
       session = new Session();
-      currentUser = session.currentUser()
-
-      // // hide the sign up form if the user is logged in and authenticated
-      // if ( currentUser && (currentUser.account_type == "perm") ) {
-      //   $("#login-form").hide();
-      // } else {
-      //   $("#login-form").show();
-      // }
-
-      // TODO: logic out of the dom / html out of the js.  Put these as small html 'partials'
+      currentUser = session.currentUser()      
 
       // user pill
       var text,link,link_text, link_id
@@ -252,15 +234,15 @@ function(app, Parking) {
       $("#user_pill > p > a").attr("id", link_id)
 
       // business pill
-      if ( !currentUser || currentUser.account_type === "temp" || currentUser.current_business.name == null ) {
+      if ( !currentUser || currentUser.current_business.name == null ) {
         text = "New Here?"
         link = "/intro"
         link_text = "Get started &rarr;"
         link_id = "intro"
-      } else if (currentUser.account_type === "perm") {
+      } else if (currentUser.account_type === "perm" || currentUser.account_type === "temp" ) {
         text = currentUser.current_business.name
-        link = "#"
-        link_text = "View Business &rarr;"
+        link = "/summary"
+        link_text = "Show checklist &rarr;"
         link_id = ""
       }
       $("#business_pill > p > span").html(text);

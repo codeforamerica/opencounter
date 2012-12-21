@@ -2,26 +2,38 @@ class UsersController < ApplicationController
   respond_to :html, :json, :xml
 
   def create
-    @user = User.create(params[:user])
-    # @user = User.find_or_create_by_email(params[:user][:email])
-    # if @user.update_attributes(params[:user])
-    #   cookies.permanent[:token] = @user.token
-    #   current_user = @user
-    # end
-    # session[:user_id] = @user.id
-    cookies.permanent[:token] = @user.token
-    respond_with @user
+    user = User.new(params[:user])
+
+    # hack to bypass authentication requirements
+    if params[:user][:account_type] == "temp"
+      pass = SecureRandom.hex(10)
+      user.password = pass
+      user.password_confirmation = pass
+      mail = SecureRandom.hex(10)
+      user.email = "#{mail}@notarealemail.com"
+    end
+
+    user.save
+
+    # inherit answers from temp account
+    if (user.valid? && (user.account_type == "perm") && (current_user.try(:account_type) == "temp"))
+      user.current_business.destroy
+      current_user.current_business.update_attribute("user_id", user.id)
+      current_user.destroy
+    end
+
+    # login (temp accounts always valid)
+    if user.valid? || (params[:user][:account_type] == "temp")
+      cookies.permanent[:token] = user.token 
+    end
+
+    respond_with user
   end
   
   def update
     @user = User.find_by_id(params[:user_id])
-    # @user = current_user
-    # if @user.update_attributes(params[:user])
     #   cookies.permanent[:token] = @user.token
-    #   session[:user_id] = @user.id
-    #   current_user = @user
-    # end
-    respond_with @user
+    respond_with @user.update_attributes(params[:user])
   end
   
   def application_email

@@ -1,16 +1,24 @@
 class User < ActiveRecord::Base
   # FIXME: I don't think id should be exposed
-  attr_accessible :first_name, :last_name, :email, :phone, :role, :last_state, :token, :created_at, :id, :updated_at, :remember_token
+  attr_accessible :first_name, :last_name, :email, :phone, :role, 
+                  :last_state, :token, :created_at, :id, :updated_at, 
+                  :remember_token, :password, :password_confirmation,
+                  :account_type
 
   has_many :businesses
   has_many :answers, :through => :businesses
 
-  validates_presence_of :email
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
-  # validates_presence_of :first_name
-  # validates_presence_of :last_name
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence:   true,
+                    format:     { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
 
   validates_uniqueness_of :token
+
+  validates :password, presence: true, length: { minimum: 6 }
+  validates :password_confirmation, presence: true
+
+  has_secure_password
 
   after_create :assign_token, :create_business
 
@@ -18,6 +26,17 @@ class User < ActiveRecord::Base
   def current_business
     self.businesses.order("updated_at DESC").limit(1).first
   end
+  # # this is what i'd like
+  # def current_business
+  #   self.businesses.find_by_id(self.answers.find_by_field_name('current_business_id'))
+  #   # even better
+  #   self.businesses.find_by_id(current_business_id)
+  # end
+
+  def current_business=(business)
+    self.update_attribute()
+  end
+
 
   def full_name
     "#{try(:first_name)} #{try(:last_name)}"
@@ -26,10 +45,10 @@ class User < ActiveRecord::Base
   private
 
   def assign_token
-    update_attribute(:token, (Digest::MD5.hexdigest "#{SecureRandom.hex(10)}-#{DateTime.now.to_s}"))
+    update_attribute(:token, SecureRandom.hex(16))
   end
 
   def create_business
-    self.businesses << Business.create()
+    self.businesses << Business.create() if self.businesses.blank?
   end
 end
