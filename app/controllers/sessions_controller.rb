@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
   # current user
   def show
     if (user=User.find_by_token(cookies[:token]))
-      respond_with user.as_json(only: ['first_name', 'last_name', 'email', 'account_type']).merge( 
+      respond_with user.as_json(only: ['first_name', 'last_name', 'token', 'email', 'account_type']).merge( 
         "full_name" => user.full_name,
         "current_business" => { "name" => user.current_business.business_name }
         )

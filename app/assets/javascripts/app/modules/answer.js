@@ -216,19 +216,27 @@ function(app, Parking) {
 
       // hide the sign up form if the user is logged in and authenticated
       if ( currentUser && (currentUser.account_type == "perm") ) {
-        // hide all the forms
+        // hide signup / login
         $("#login-form").hide();
-        $("#begin-form").hide();
         $("#sign-up-form").hide();
+
+        // change new application text
+        $("#begin-form > p.next").not(".lead").html("Saves the progress of your current application on our servers and starts a new one.")
 
         // make it a 'welcome back!' page
         $("h1").html("Welcome back!")
-        $("p#intro-text").html("Welcome back to OpenCounter.  You can choose which application you want to edit from the list below.")
+        $("p#intro-text").html("Welcome back to OpenCounter.  Continue with your application or click below to create a new one.")
       } 
       else if ( currentUser && (currentUser.account_type == "temp") ) {
         // make the "begin" form a 'start afresh' form
-        // $("#begin-form p").html("We will delete your current progress and start afresh with a new application. Your information will not be saved until you submit your application.")
+        $("#begin-form > p.next").not(".lead").html("We will delete your current progress and start afresh with a new application. Your information will not be saved until you submit your application.")
 
+        // make it a save application page
+        $("h1").html("Save your progress")
+        $("p#intro-text").html("You are currently using a temporary account.  Log in or sign up below to retain your progress, or click 'Begin' to start a new application.")
+
+      } else {
+        // do nothing with the layout.
       }
 
       
