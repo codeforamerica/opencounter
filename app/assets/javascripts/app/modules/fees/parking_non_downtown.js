@@ -350,7 +350,8 @@ function(app) {
     },
 
     events: {
-      "change select,input":"saveInput",
+      //"change select,input":"saveInput",
+	  "change .calc_btn":"saveInput",
     },
 
     saveInput:function(ev) {
@@ -378,8 +379,7 @@ function(app) {
 		$("#parking_spaces")
 		.html(display_text)
 		.show();
-      }  
-	  else {
+      } else {
 		$("#parking_spaces")
 		.html("Please fill out all the fields.")
 		.show();
