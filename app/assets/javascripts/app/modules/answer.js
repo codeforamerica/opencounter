@@ -181,15 +181,7 @@ function(app, Parking) {
     tagName: "section",
     className: "profile",
     template:"profile",
-    //  TODO: this does not work.  fetch from user or personalise the top profile nav when
-    //        1)  log in 
-    //        2)  log out 
-    //        3)  sign up
-    //        4) change of user first name, second name
     events: {
-      // "change input[name='business_name']" : "personalise",
-      "change input[name='applicant_first_name']" : "personalise",
-      "change input[name='applicant_last_name']" : "personalise",
       "click button#applicant_sign_up" : "personalise",
       "click button#applicant_log_in" : "personalise",
 
@@ -207,39 +199,10 @@ function(app, Parking) {
       // window.location.reload();
     },
 
-    // TODO: logic out of the dom / html out of the js.  Put these as small html 'partials'
-    personalise:function() {
-      // console.log("function: personalise");
-      
+    // TODO: logic out of the dom / html out of the js.
+    personalise:function() {      
       session = new Session();
-      currentUser = session.currentUser()
-
-      // hide the sign up form if the user is logged in and authenticated
-      if ( currentUser && (currentUser.account_type == "perm") ) {
-        // hide signup / login
-        $("#login-form").hide();
-        $("#sign-up-form").hide();
-
-        // change new application text
-        $("#begin-form > p.next").not(".lead").html("Saves the progress of your current application on our servers and starts a new one.")
-
-        // make it a 'welcome back!' page
-        $("h1").html("Welcome back!")
-        $("p#intro-text").html("Welcome back to OpenCounter.  Continue with your application or click below to create a new one.")
-      } 
-      else if ( currentUser && (currentUser.account_type == "temp") ) {
-        // make the "begin" form a 'start afresh' form
-        $("#begin-form > p.next").not(".lead").html("We will delete your current progress and start afresh with a new application. Your information will not be saved until you submit your application.")
-
-        // make it a save application page
-        $("h1").html("Save your progress")
-        $("p#intro-text").html("You are currently using a temporary account.  Log in or sign up below to retain your progress, or click 'Begin' to start a new application.")
-
-      } else {
-        // do nothing with the layout.
-      }
-
-      
+      currentUser = session.currentUser()      
 
       // user pill
       var text,link,link_text, link_id

@@ -15,11 +15,21 @@ class UsersController < ApplicationController
     respond_with user
   end
   
+  # this will get
   def update
     @user = User.find_by_id(params[:user_id])
     #   cookies.permanent[:token] = @user.token
     respond_with @user.update_attributes(params[:user])
   end
+
+  # def new_business
+  #   # the perm user we want to attach the business to
+  #   @user = User.find_by_token(params[:token])
+
+  #   # the temp user who currently has the business
+
+  #   @user.businesses.create(params[:business])
+  # end
   
   def application_email
     if current_user && PlanningMailer.application_email(current_user).deliver

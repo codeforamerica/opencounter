@@ -79,9 +79,6 @@ function(app) {
         });
         window.location.pathname = "/info/applicant"
       },error:function(model, xhr, options){
-        // console.log("model: ", model)
-        // console.log("xhr: ", xhr)
-        // console.log("options: ", options)
         errors = $.parseJSON(xhr.responseText)
         console.log("Error signing up: ", errors)
         $("div#errors > h4").html("We couldn't sign you up")
@@ -90,18 +87,37 @@ function(app) {
 
     }});
     },
+
+    // TODO: logic out of the dom / html out of the js.
+    personalise: function() {
+      session = new Session();
+      currentUser = session.currentUser();
+
+      if ( currentUser && (currentUser.account_type == "perm") ) {
+        $("#login-form").hide();
+        $("#sign-up-form").hide();
+
+        $("#begin-form > p.next").not(".lead").html("Saves the progress of your current application on our servers and starts a new one.")
+
+        $("h1").html("Welcome back!")
+        $("p#intro-text").html("Welcome back to OpenCounter.  Continue with your application or click below to create a new one.")
+      } 
+      else if ( currentUser && (currentUser.account_type == "temp") ) {
+        $("#begin-form > p.next").not(".lead").html("We will delete your current progress and start afresh with a new application. Your information will not be saved until you submit your application.")
+
+        $("h1").html("Save your progress")
+        $("p#intro-text").html("You are currently using a temporary account.  Log in or sign up below to retain your progress, or click 'Begin' to start a new application.")
+
+      } else {
+        // do nothing when there is no currentUser, or if for some reason curentUser has a dfferent account_type
+      }
+    },
+
     subviews:function(){
+      var self = this;
       return {
         afterRender: function(){
-          // var self = this;
-          // // save the user if any of these change
-          // this.$el.find("input[name=applicant_first_name]").change(function(){self.saveUser.call(self)});
-          // this.$el.find("input[name=applicant_last_name]").change(function(){self.saveUser.call(self)});
-          // this.$el.find("input[name=applicant_phone]").change(function(){self.saveUser.call(self)});
-
-          // this.$el.find("input[name=applicant_email]").change(function(){self.saveUser.call(self)});
-          // this.$el.find("p.next a").click(function(){self.saveUser.call(self)});
-          // this.$el.find("").click(function(){self.saveUser.call(self)});
+          self.personalise();
         },
         beforeRender: function(){}
       }
