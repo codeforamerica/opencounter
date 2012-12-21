@@ -11,6 +11,7 @@ class CicCode < ActiveRecord::Base
   
   attr_accessible :code, :industry, :subindustry, :home_occ_prohibited, :keywords, :parent_id, :requirements, :requirement_ids, :requirements_attributes
   
+  before_save :strip_code
   after_create :create_zoning_district_connections
   
   def permission_name(zoning_district_id)
@@ -39,6 +40,10 @@ class CicCode < ActiveRecord::Base
   end
   
   private
+  
+  def strip_code
+    self.code.strip
+  end
   
   def create_zoning_district_connections
     ZoningDistrict.all.each do |zoning_district|
