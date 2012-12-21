@@ -85,7 +85,7 @@ function(app, util) {
           path = window.location.pathname.toLowerCase() || "";
 
       // Hide all submenus
-      $nav.find("ol[data-section]").hide();
+      // $nav.find("ol[data-section]").hide();
 
       // Remove all class="current
       $nav.find("a").removeClass("current");
