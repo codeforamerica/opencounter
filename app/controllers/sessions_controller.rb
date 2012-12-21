@@ -4,20 +4,20 @@ class SessionsController < ApplicationController
   # login
   def create
     email, password = params[:email], params[:password]
-    # TODO: properly authenticate the user
-    if user = User.find_by_email( email )
-      current_user = user.authenticate(password)
+
+    user = User.find_by_email( email )
+    if user.try(:authenticate, password)
       cookies.permanent[:token] = user.token
-      respond_with current_user # is false if authenticaate fails
+      respond_with user, location: nil
     else
-      respond_with 'error'
+      respond_with({}, location: nil, status: :unauthorized)
     end
   end
 
   # current user
   def show
     if (user=User.find_by_token(cookies[:token]))
-      respond_with user.as_json(only: ['first_name', 'last_name']).merge( 
+      respond_with user.as_json(only: ['first_name', 'last_name', 'email']).merge( 
         "account_type" => "perm",
         "full_name" => user.full_name,
         "current_business" => { "name" => user.current_business.business_name }

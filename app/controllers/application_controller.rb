@@ -9,11 +9,12 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-  def current_user=(user)
-    cookies.permanent[:token] = user.token
-    @current_user = user
-  end
-  helper_method :current_user
+  ## causing trouble, banished to the nuaghty comments.
+  # def current_user=(user)
+  #   cookies.permanent[:token] = user.token
+  #   @current_user = user
+  # end
+  # helper_method :current_user
 
   def after_sign_in_path_for(resource_or_scope)
     admin_applications_url

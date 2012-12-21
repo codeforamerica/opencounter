@@ -9,12 +9,7 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find_by_id(params[:user_id])
-    # @user = current_user
-    # if @user.update_attributes(params[:user])
     #   cookies.permanent[:token] = @user.token
-    #   session[:user_id] = @user.id
-    #   current_user = @user
-    # end
     respond_with @user.update_attributes(params[:user])
   end
   

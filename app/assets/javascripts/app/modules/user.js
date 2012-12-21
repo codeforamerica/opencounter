@@ -36,22 +36,24 @@ function(app) {
 
       signUp: function() {
         // this.user.set("account_type", "perm")
-        var response = this.saveUser();
-        if (response == 'success') {
-          
-        } else {
-
-
-
-        }
+        this.saveUser();
       },
 
       logIn: function() {
+        $("div#errors").addClass("hidden")
         email = $("input[name=login_email]").val();
         password = $("input[name=login_password]").val();
         if (email != "" && password != "") {
           session = new Session();
           session.login(email, password);
+          if (session.currentUser() == email) {
+            window.location.pathname = "/info/applicant"
+          } else {
+          console.log("Error logging in.")
+          $("div#errors > h4").html("We couldn't log you in")
+          $("div#errors > span").html("Please check you have the right email address and password.")
+          $("div#errors").removeClass("hidden")
+          }
         };
       },
 
