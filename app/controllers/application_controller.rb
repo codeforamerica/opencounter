@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    @current_user ||= User.find_by_token(cookies[:token])
+    User.find_by_token(cookies[:token])
   end
   helper_method :current_user
 

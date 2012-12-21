@@ -33,6 +33,10 @@ class User < ActiveRecord::Base
   #   self.businesses.find_by_id(current_business_id)
   # end
 
+  def current_business=(business)
+    self.update_attribute()
+  end
+
 
   def full_name
     "#{try(:first_name)} #{try(:last_name)}"
@@ -41,10 +45,10 @@ class User < ActiveRecord::Base
   private
 
   def assign_token
-    update_attribute(:token, (Digest::MD5.hexdigest "#{SecureRandom.hex(10)}-#{DateTime.now.to_s}"))
+    update_attribute(:token, SecureRandom.hex(16))
   end
 
   def create_business
-    self.businesses << Business.create()
+    self.businesses << Business.create() if self.businesses.blank?
   end
 end

@@ -234,12 +234,12 @@ function(app, Parking) {
       $("#user_pill > p > a").attr("id", link_id)
 
       // business pill
-      if ( !currentUser || currentUser.account_type === "temp" || currentUser.current_business.name == null ) {
+      if ( !currentUser || currentUser.current_business.name == null ) {
         text = "New Here?"
         link = "/intro"
         link_text = "Get started &rarr;"
         link_id = "intro"
-      } else if (currentUser.account_type === "perm") {
+      } else if (currentUser.account_type === "perm" || currentUser.account_type === "temp" ) {
         text = currentUser.current_business.name
         link = "/summary"
         link_text = "Show checklist &rarr;"
