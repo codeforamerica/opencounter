@@ -3,14 +3,13 @@
 </div>
 
 <div class="row-fluid">
-  <div class="span12">
+  <div class="span8">
     <p class="lead">You&rsquo;ve told us that your business, <strong><%= answers.business_name %></strong>, is classified as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong>.</p>
     <h3>What is your business&rsquo;s physical address?</h3>
     <form action="" id="form_location_non_home_occ_check_site">
       <input type="text" name="business_physical_address_street" value="<%= answers.business_physical_address_street %>" placeholder="Street"> &nbsp;<input type="submit" value="Check Zoning" class="btn" style="margin-top: -7px;">
-
-      <div id="map" style="height:400px; width:700px; margin-top: 10px;"></div>
-      <div id="zoning_display"></div>
+      <div id="flash-notice"></div>
+      <div id="map" style="height:400px; width:698px; margin-top: 10px;"></div>
     </form>
     
     <div class="form-submit">
