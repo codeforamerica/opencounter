@@ -132,7 +132,7 @@ function(app) {
     return {
        "CB": "C-B",
        "CBD": "CBD",
-       "CBD-E": "CBD(E)"
+       "CBD-E": "CBD(E)",
        "CC": "C-C",
        "CD/R": "C-D/R",
        "CN": "C-N",
@@ -179,7 +179,7 @@ function(app) {
        "R-T(C)/PER": "R-T(C)/PER",
        "RTD": "R-T(D)",
        "RTE": "R-T(E)",
-       "SCH": "SC-H", /need to ask rich on this one, returning as CZ-O
+       "SCH": "SC-H", //need to ask rich on this one, returning as CZ-O
        // "GIS_return": "SOL",
        // "GIS_return": "SP-O", also will ask rich on this one it maps to both WCD and CZ-O
        // "GIS_return": "WCD"
