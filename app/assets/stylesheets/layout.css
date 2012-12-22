@@ -197,10 +197,6 @@ footer p {
   font-weight: bold;
 }
 
-.form-submit{
-  border-top: solid 1px #eee;
-  padding: 25px 0 25px 0;
-}
 
 /* === Toggle Styles ======================================================== */
 
@@ -277,6 +273,11 @@ form.button_to{
   font-size: 16px;
   color: white;
   display: none;
+}
+
+.form-submit{
+  border-top: solid 1px #eee;
+  padding: 25px 0 25px 0;
 }
 
 /*

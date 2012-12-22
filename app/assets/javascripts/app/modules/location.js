@@ -104,7 +104,8 @@ function(app) {
         this.collection.addAnswer("zoning", zoning);
 
         app.trigger("lookuppermit");
-        this.$el.find("#zoning_display").html("That location is zoned for: "+zoning.join(","));
+        this.$el.find("#flash-notice").show();
+        this.$el.find("#flash-notice").html("That location is zoned for: "+zoning.join(","));
 
         var latlng = new google.maps.LatLng(data.features[0].geometry.y,
                                             data.features[0].geometry.x);
@@ -129,6 +130,7 @@ function(app) {
   // FIXME: this should really be in the database, rather than manually mapped in the code here
   Location.convertGisToCityZoning = function(gisZoning) {
     return {
+      "RTC": "R-T(C)",
       "PF": "P-F",
       "IGP2": "I-G PER-2",
       "R17": "R-1"

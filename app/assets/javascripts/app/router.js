@@ -27,6 +27,8 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
       "requirements/city/business_license":"businessLicense",
       // "info/applicant": "userInfo",
       "intro/sign_in" : "loginSignup",
+      "requirements": "requirements",
+      "requirements/*path": "requirements",
       "*path":"panel"
     },
     index: function(e){
@@ -113,6 +115,18 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
       app.layout.setView("div#content", panel);
       app.layout.render();
     },
+    requirements: function(path) {
+      var view = new Requirement.Views.Panel({
+          collection:this.answers,
+          useTemplate: "panels/requirements" + (path ? "/"+path : "")
+      });
+      // Add requirements info to panel
+      // Requirements should probably be more available in some way, but this works for now
+      view.requirements = this.requirements;
+      
+      app.layout.setView("div#content", view);
+      app.layout.render();
+    },
     panel: function(path){
       if (path == "") {
         path="welcome";
@@ -120,28 +134,31 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
       if (path == "intro") {
         path="intro/big_picture";
       }
-      app.layout.setView("div#content", new Answer.Views.Panel({
+      
+      var view = new Answer.Views.Panel({
           collection:this.answers,
           useTemplate:"panels/"+path
-      }));
+      });
+      // Add requirements info to panel
+      // Requirements should probably be more available in some way, but this works for now
+      view.requirements = this.requirements;
+      
+      app.layout.setView("div#content", view);
       app.layout.render();
     },
-    initialize: function(){
+    initialize: function(onReady){
       var self = this;
+      this.ready = false;
+      if (onReady) {
+        this.onReady = onReady;
+      }
       this.user = new User.Model();
       this.business = new Business.Model();
       this.answers = new Answer.Collection();
       this.requirements = new Requirement.Collection();
 
-      this.answers.fetch({
-        success: function() {
-          Requirement.lookupRequirements.call(self);
-        }
-      });
+      
       app.useLayout("main");
-
-      app.on("lookuppermit", Answer.lookupPermit, this);
-      app.on("lookup_requirements", Requirement.lookupRequirements, this);
 
 
 
@@ -164,6 +181,26 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
         "div#nav-main": nav,
         "div#nav-sub": subnav
       });
+      
+      console.log("FETCHING ANSWERS");
+      this.answers.fetch({
+        success: function() {
+          console.log("GOT ANSWERS!");
+          Requirement.lookupRequirements.call(self);
+          // this should really be some proper subscription/event mechanism
+          // HACK: this only works because lookupRequirements() is synchronous
+          self.ready = true;
+          if (self.onReady) {
+            self.onReady();
+          }
+        },
+        error: function() {
+          console.log("FAILED FETCHING ANSWERS")
+        }
+      });
+
+      app.on("lookuppermit", Answer.lookupPermit, this);
+      app.on("lookup_requirements", Requirement.lookupRequirements, this);
 
     }});
   return Router;

@@ -1,10 +1,11 @@
 define([
   // Application.
-  "app"
+  "app",
+  "modules/answer"
 ],
 
 // Map dependencies from above array.
-function(app) {
+function(app, answer) {
 
   // Create a new module.
   var Requirement = app.module();
@@ -20,12 +21,25 @@ function(app) {
   // Default collection.
   Requirement.Collection = Backbone.Collection.extend({
     model: Requirement.Model,
-    url: '/requirements'
+    url: '/requirements',
+    
+    matchingIndex: function(jurisdiction, shortName) {
+      var index = -1;
+      for (var i = 0, len = this.length; i < len; i++) {
+        var requirement = this.at(i);
+        if (requirement.get("jurisdiction").toLowerCase() === jurisdiction && requirement.get("short_name").toLowerCase() === shortName) {
+          index = i;
+        }
+      }
+      return index;
+    }
   });
   
   Requirement.lookupRequirements = function() {
+    console.log("Looking up");
     var cic = this.answers.getAnswer("CIC_code");
     if (cic) {
+      console.log("Found CIC, making request");
       // grab the requirements for this code
       var self = this;
 
@@ -35,6 +49,7 @@ function(app) {
         dataType: "json",
         async: false,
         success: function (data){
+          console.log("Got data: ", data);
           self.requirements.reset(data);
         }
       });
@@ -44,7 +59,26 @@ function(app) {
     }
   };
   
-
+  Requirement.Views.Panel = answer.Views.Panel.extend({
+    initialize: function(o) {
+      this.pathInfo = window.location.pathname.toLowerCase().split("/").slice(2);
+      this.pathInfo = {
+        jurisdiction: this.pathInfo[0],
+        shortName: this.pathInfo[1]
+      };
+      answer.Views.Panel.prototype.initialize.call(this, o);
+    },
+    
+    serialize: function() {
+      console.log("Serializing");
+      var result = answer.Views.Panel.prototype.serialize.call(this);
+      var requirementIndex = this.requirements.matchingIndex(this.pathInfo.jurisdiction, this.pathInfo.shortName);
+      result.pathInfo = this.pathInfo;
+      result.firstRequirement = this.requirements.at(0);
+      result.nextRequirement = this.requirements.at(requirementIndex + 1);
+      return result;
+    }
+  });
   // Return the module for AMD compliance.
   return Requirement;
 

@@ -163,7 +163,7 @@ function(app, Parking) {
         model = this.collection.models[m];
         answers[model.get("field_name")] = model.get("value");
       }
-      return {answers:answers};
+      return {answers:answers, requirements:this.requirements};
     },
     cleanup: function() {
       this.collection.off(null, null, this);
@@ -225,7 +225,7 @@ function(app, Parking) {
           text = currentUser.full_name  
         }        
         link = "#"
-        link_text = "log out"
+        link_text = "log out &rarr;"
         link_id = "logout"
       }
       $("#user_pill > p > span").html(text);
@@ -250,9 +250,6 @@ function(app, Parking) {
       $("#business_pill > p > a").html(link_text);
       $("#business_pill > p > a").attr("id", link_id)
     },
-
-
-
 
 
     beforeRender: function(){
