@@ -609,8 +609,8 @@
   <% } %>
   
   
-  <p class="next lead"><a href="/requirements/<%= nextRequirement.get('jurisdiction').toLowerCase() %>/<%= nextRequirement.get('short_name') %>" class="btn btn-large btn-info"><%= nextRequirement.get('name') %> &rarr;</a></p>
-
+  <div class="form-submit">
+    <a href="<%= nextRequirementHref %>" class="btn btn-large btn-info"><%= nextRequirementName %> &rarr;</a>
   </div>
 
 </div>

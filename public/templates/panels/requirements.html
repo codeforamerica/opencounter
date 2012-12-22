@@ -31,7 +31,7 @@
 
   <% } else { %>
     <div class="form-submit">
-      <p class="next lead"><a href="/requirements/<%= firstRequirement.get('jurisdiction').toLowerCase() %>/<%= firstRequirement.get('short_name') %>" class="btn btn-large btn-info"><%= firstRequirement.get('name') %> &rarr;</a></p>      
+      <a href="/requirements/<%= firstRequirement.get('jurisdiction').toLowerCase() %>/<%= firstRequirement.get('short_name') %>" class="btn btn-large btn-info">Get Started &rarr;</a>
     </div>
   <% } %>
 

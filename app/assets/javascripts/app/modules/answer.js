@@ -51,7 +51,6 @@ function(app, Parking) {
     url: '/answers',
     addAnswer: function(key, val, opts){
       if (key == undefined || key.indexOf("password") != -1) { return -1 };
-      console.log("start addAnswer()", [key, val, opts])
 
       if(!opts) opts = {};
       var field = this.where({"field_name": key});
@@ -191,7 +190,6 @@ function(app, Parking) {
     // user.on("all", this.personalise());
 
     logout: function(ev) {
-      // console.log("attempting logout")
 
       ev.preventDefault();
       session = new Session();

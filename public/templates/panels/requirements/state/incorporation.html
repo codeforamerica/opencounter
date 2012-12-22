@@ -6,9 +6,6 @@
   <p>You don&rsquo;t need to incorporate to start a business in Santa Cruz, but it should be something you think about.</p>
   <p>For more information on incorporation, speak with an accountant or visit <a href="http://www.sos.ca.gov/business/">The California Business Portal</a>.</p>
 
-  <hr />
-  <div class="well">
-
     <% if (answers.business_structure) { %>
   
       <p class="next lead">You&rsquo;ve told us that <%= (answers.is_owner === 'y') ? 'your' : 'this' %> business is structured as a <strong><%= answers.business_structure %></strong>.</p>
@@ -38,7 +35,7 @@
 
     <% } %>
     <div class="form-submit">
-      <a href="/summary" class="btn btn-large btn-info">Summary &rarr;</a>
+      <a href="<%= nextRequirementHref %>" class="btn btn-large btn-info"><%= nextRequirementName %> &rarr;</a>
     </div>
   </div>
 </div>

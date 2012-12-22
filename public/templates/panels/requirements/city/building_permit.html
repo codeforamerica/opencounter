@@ -27,7 +27,7 @@
    
       <div class="control-group">
         <label class="control-label">Date</label>
-        <div class="controls"><input type="text" name="date" placeholder="" value="<%= Time.now.strftime("%m/%d/%Y") %>"></div>
+        <div class="controls"><input type="text" name="date" placeholder="" value="<%= Date.now() %>"></div>
       </div>
   
       <div class="control-group">
@@ -220,9 +220,8 @@
     </form>
   </div>
   
-  <!-- @condition NO CONSTRUCTION -->
-  <p class="next" data-occupancy="non-home"><a class="btn btn-large btn-info" href="/requirements/city/parking">Parking &rarr;</a></p>
-  <p class="next" data-occupancy="home"><a class="btn btn-large btn-info" href="/requirements/city/business_license">Business License &rarr;</a></p>
-  <!-- @condition /NO CONSTRUCTION -->
+  <div class="form-submit">
+    <a href="<%= nextRequirementHref %>" class="btn btn-large btn-info"><%= nextRequirementName %> &rarr;</a>
+  </div>
   
 </div>

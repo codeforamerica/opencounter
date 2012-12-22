@@ -19,12 +19,8 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
   var Router = Backbone.Router.extend({
     routes: {
       "clear":"clear",
-      "requirements/city/traffic_impact_fee":"trafficImpactFee",
-      "requirements/city/parking":"parking",
-      "requirements/city/parking_non_downtown":"parkingNonDowntown",
       "info/business": "businessInfo",
       "location/check":"locationCheck",
-      "requirements/city/business_license":"businessLicense",
       // "info/applicant": "userInfo",
       "intro/sign_in" : "loginSignup",
       "requirements": "requirements",
@@ -32,7 +28,6 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
       "*path":"panel"
     },
     index: function(e){
-//      console.log("index");
     },
     clear: function(){
       this.answers.each(function(m){
@@ -56,10 +51,8 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
         collection:  this.answers,
         //useTemplate: "panels/requirements/city/parking"
       });
-      //console.log('parking panel', panel);
       app.layout.setView("div#content", panel);
       app.layout.render();
-      //console.log('rendered parking panel');
     },
 
     parkingNonDowntown:function() {
@@ -182,10 +175,8 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
         "div#nav-sub": subnav
       });
       
-      console.log("FETCHING ANSWERS");
       this.answers.fetch({
         success: function() {
-          console.log("GOT ANSWERS!");
           Requirement.lookupRequirements.call(self);
           // this should really be some proper subscription/event mechanism
           // HACK: this only works because lookupRequirements() is synchronous
@@ -195,7 +186,6 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
           }
         },
         error: function() {
-          console.log("FAILED FETCHING ANSWERS")
         }
       });
 

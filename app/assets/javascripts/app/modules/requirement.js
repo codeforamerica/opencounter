@@ -36,10 +36,8 @@ function(app, answer) {
   });
   
   Requirement.lookupRequirements = function() {
-    console.log("Looking up");
     var cic = this.answers.getAnswer("CIC_code");
     if (cic) {
-      console.log("Found CIC, making request");
       // grab the requirements for this code
       var self = this;
 
@@ -49,12 +47,10 @@ function(app, answer) {
         dataType: "json",
         async: false,
         success: function (data){
-          console.log("Got data: ", data);
           self.requirements.reset(data);
         }
       });
-    }
-    else {
+    } else {
       this.requirements.reset([]);
     }
   };
@@ -70,12 +66,18 @@ function(app, answer) {
     },
     
     serialize: function() {
-      console.log("Serializing");
       var result = answer.Views.Panel.prototype.serialize.call(this);
       var requirementIndex = this.requirements.matchingIndex(this.pathInfo.jurisdiction, this.pathInfo.shortName);
       result.pathInfo = this.pathInfo;
       result.firstRequirement = this.requirements.at(0);
-      result.nextRequirement = this.requirements.at(requirementIndex + 1);
+      if ((requirementIndex + 1) < this.requirements.length) {
+        var nextRequirement = this.requirements.at(requirementIndex + 1);
+        result.nextRequirementHref = "/requirements/" + nextRequirement.get('jurisdiction').toLowerCase() + "/" + nextRequirement.get('short_name');
+        result.nextRequirementName = nextRequirement.get('name');
+      } else {
+        result.nextRequirementHref = "/summary";
+        result.nextRequirementName = "Summary";
+      }
       return result;
     }
   });

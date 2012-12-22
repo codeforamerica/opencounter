@@ -140,16 +140,18 @@ function(app, util) {
       // TODO: only do this when the requirements collection changes
       // FIXME: don't do the above stuff related to requirements anymore
       var requirementsNav = this.$el.find("[data-section='requirements']").empty();
-      this.requirements.forEach(function(requirement) {
-      // TODO: check requirement.home_occ, requirement.commercial
+      if (window.location.pathname.toLowerCase().split("/").slice(1)[0] == 'requirements') {
+        this.requirements.forEach(function(requirement) {
+        // TODO: check requirement.home_occ, requirement.commercial
 
-        var navItem = document.createElement("li");
-        var navLink = document.createElement("a");
-        navLink.href = "/requirements/" + requirement.get("jurisdiction").toLowerCase() + "/" + requirement.get("short_name");
-        navLink.appendChild(document.createTextNode(requirement.get("name")));
-        navItem.appendChild(navLink);
-        requirementsNav.append(navItem);
-      });
+          var navItem = document.createElement("li");
+          var navLink = document.createElement("a");
+          navLink.href = "/requirements/" + requirement.get("jurisdiction").toLowerCase() + "/" + requirement.get("short_name");
+          navLink.appendChild(document.createTextNode(requirement.get("name")));
+          navItem.appendChild(navLink);
+          requirementsNav.append(navItem);
+        });
+      }
     },
     cleanup: function() {
       this.business.off(null, null, this);
