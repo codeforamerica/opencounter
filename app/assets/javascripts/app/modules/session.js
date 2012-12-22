@@ -10,7 +10,7 @@ function(app) {
     currentUser: function() {
       var user
       $.ajax({
-        url: "/session/current_user.json",
+        url: "/sessions/show.json",
         dataType: "json",
         // TODO: make asychronous
         async: false,
@@ -25,16 +25,35 @@ function(app) {
     logout: function() {
       var self = this;
       $.ajax({
-        url: "/session/logout.json",
+        url: "/sessions/destroy.json",
         dataType: "json",
         async: false,
         success: function(data) {
-
+          window.location.pathname = "/"
         }
+      });
+    },
+
+    login: function(email, password) {
+      var self = this;
+      $.ajax({
+        url: "/sessions/create.json",
+        dataType: "json",
+        async: false,
+        type: "POST",
+        beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+        data: {
+          "email": email,
+          "password": password
+        },
+        success: function(data) {
+          // console.log("Successfully logged in")
+          window.location.pathname = "/info/applicant"
+        }
+
       });
     },
   });
 
-  // Return the module for AMD compliance
   return new Session();
 });

@@ -19,17 +19,15 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
   var Router = Backbone.Router.extend({
     routes: {
       "clear":"clear",
-      "requirements/city/traffic_impact_fee":"trafficImpactFee",
-      "requirements/city/parking":"parking",
-      "requirements/city/parking_non_downtown":"parkingNonDowntown",
       "info/business": "businessInfo",
       "location/check":"locationCheck",
-      "requirements/city/business_license":"businessLicense",
-      "info/applicant": "userInfo",
+      // "info/applicant": "userInfo",
+      "intro/sign_in" : "loginSignup",
+      "requirements": "requirements",
+      "requirements/*path": "requirements",
       "*path":"panel"
     },
     index: function(e){
-//      console.log("index");
     },
     clear: function(){
       this.answers.each(function(m){
@@ -53,10 +51,8 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
         collection:  this.answers,
         //useTemplate: "panels/requirements/city/parking"
       });
-      //console.log('parking panel', panel);
       app.layout.setView("div#content", panel);
       app.layout.render();
-      //console.log('rendered parking panel');
     },
 
     parkingNonDowntown:function() {
@@ -69,10 +65,22 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
         app.layout.render();
     },
 
-    userInfo: function(){
+    userInfo: function() {
       var panel = new (Answer.Views.Panel.extend(User.Views.Info.prototype))({
         collection:this.answers,
-        user:this.user
+        user:this.user,
+        useTemplate:"info/applicant"
+      });
+
+      app.layout.setView("div#content", panel);
+      app.layout.render();
+    },
+
+    loginSignup: function(){
+      var panel = new (Answer.Views.Panel.extend(User.Views.LoginSignup.prototype))({
+        collection:this.answers,
+        user:this.user,
+        useTemplate:"intro/sign_in"
       });
 
       app.layout.setView("div#content", panel);
@@ -100,6 +108,18 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
       app.layout.setView("div#content", panel);
       app.layout.render();
     },
+    requirements: function(path) {
+      var view = new Requirement.Views.Panel({
+          collection:this.answers,
+          useTemplate: "panels/requirements" + (path ? "/"+path : "")
+      });
+      // Add requirements info to panel
+      // Requirements should probably be more available in some way, but this works for now
+      view.requirements = this.requirements;
+      
+      app.layout.setView("div#content", view);
+      app.layout.render();
+    },
     panel: function(path){
       if (path == "") {
         path="welcome";
@@ -107,28 +127,31 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
       if (path == "intro") {
         path="intro/big_picture";
       }
-      app.layout.setView("div#content", new Answer.Views.Panel({
+      
+      var view = new Answer.Views.Panel({
           collection:this.answers,
           useTemplate:"panels/"+path
-      }));
+      });
+      // Add requirements info to panel
+      // Requirements should probably be more available in some way, but this works for now
+      view.requirements = this.requirements;
+      
+      app.layout.setView("div#content", view);
       app.layout.render();
     },
-    initialize: function(){
+    initialize: function(onReady){
       var self = this;
+      this.ready = false;
+      if (onReady) {
+        this.onReady = onReady;
+      }
       this.user = new User.Model();
       this.business = new Business.Model();
       this.answers = new Answer.Collection();
       this.requirements = new Requirement.Collection();
 
-      this.answers.fetch({
-        success: function() {
-          Requirement.lookupRequirements.call(self);
-        }
-      });
+      
       app.useLayout("main");
-
-      app.on("lookuppermit", Answer.lookupPermit, this);
-      app.on("lookup_requirements", Requirement.lookupRequirements, this);
 
 
 
@@ -145,11 +168,29 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
 
       app.layout.setViews({
         "div#profile": new Answer.Views.Profile({
-          collection:this.answers
+          collection:this.answers,
+          user: this.user
         }),
         "div#nav-main": nav,
         "div#nav-sub": subnav
       });
+      
+      this.answers.fetch({
+        success: function() {
+          Requirement.lookupRequirements.call(self);
+          // this should really be some proper subscription/event mechanism
+          // HACK: this only works because lookupRequirements() is synchronous
+          self.ready = true;
+          if (self.onReady) {
+            self.onReady();
+          }
+        },
+        error: function() {
+        }
+      });
+
+      app.on("lookuppermit", Answer.lookupPermit, this);
+      app.on("lookup_requirements", Requirement.lookupRequirements, this);
 
     }});
   return Router;

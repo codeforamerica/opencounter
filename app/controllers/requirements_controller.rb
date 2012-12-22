@@ -5,7 +5,7 @@ class RequirementsController < ApplicationController
     if cic_code
       requirements = CicCode.find_by_code(cic_code).requirements
     else
-      requirements = Requirement.find(:all)
+      requirements = Requirement.all.order('name')
     end
     render :json => requirements
   end

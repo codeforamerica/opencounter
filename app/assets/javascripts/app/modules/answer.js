@@ -51,7 +51,6 @@ function(app, Parking) {
     url: '/answers',
     addAnswer: function(key, val, opts){
       if (key == undefined || key.indexOf("password") != -1) { return -1 };
-      console.log("start addAnswer()", [key, val, opts])
 
       if(!opts) opts = {};
       var field = this.where({"field_name": key});
@@ -157,15 +156,13 @@ function(app, Parking) {
       
     },
 
-
-
     serialize: function() {
       var model, answers={};
       for(m in this.collection.models){
         model = this.collection.models[m];
         answers[model.get("field_name")] = model.get("value");
       }
-      return {answers:answers};
+      return {answers:answers, requirements:this.requirements};
     },
     cleanup: function() {
       this.collection.off(null, null, this);
@@ -184,56 +181,49 @@ function(app, Parking) {
     className: "profile",
     template:"profile",
     events: {
-      // "change input[name='business_name']" : "personalise",
-      // "change input[name='applicant_first_name']" : "personalise",
-      // "change input[name='applicant_last_name']" : "personalise",
-      // "click a#personalise" : "personalise"
+      "click button#applicant_sign_up" : "personalise",
+      "click button#applicant_log_in" : "personalise",
+
       "click a#logout" : "logout"
     },
 
+    // user.on("all", this.personalise());
+
     logout: function(ev) {
-      // console.log("attempting logout")
 
       ev.preventDefault();
       session = new Session();
       session.logout();
-      window.location.reload();
+      // window.location.reload();
     },
 
-
-    personalise:function() {
-      // console.log("function: personalise");
-      
+    // TODO: logic out of the dom / html out of the js.
+    personalise:function() {      
       session = new Session();
-      currentUser = session.currentUser()
-
-      // // hide the sign up form if the user is logged in and authenticated
-      // if ( currentUser && (currentUser.account_type == "perm") ) {
-      //   $("#login-form").hide();
-      // } else {
-      //   $("#login-form").show();
-      // }
-
-      // TODO: dry this up but keep it clear and maintainable.
+      currentUser = session.currentUser()      
 
       // user pill
       var text,link,link_text, link_id
       if ( !currentUser ) {
         text = "Returning?";
-        link = "/info/applicant"
+        link = "/intro/sign_in"
         link_text = "Jump back in &rarr;"
         link_id = "info_applicant"
       } 
       else if ( currentUser.account_type === "temp") {
         text = "Save progress"
-        link = "/info/applicant"
+        link = "/intro/sign_in"
         link_text = "Log in or Sign up"
         link_id = "info_applicant"
       } 
       else if (currentUser.account_type === "perm") {
-        text = currentUser.full_name
+        if (currentUser.full_name == " ") {
+          text = "Logged in."
+        } else {
+          text = currentUser.full_name  
+        }        
         link = "#"
-        link_text = "log out"
+        link_text = "log out &rarr;"
         link_id = "logout"
       }
       $("#user_pill > p > span").html(text);
@@ -242,25 +232,23 @@ function(app, Parking) {
       $("#user_pill > p > a").attr("id", link_id)
 
       // business pill
-      if ( !currentUser || currentUser.account_type === "temp" || currentUser.current_business.name == null ) {
+      if ( !currentUser || currentUser.current_business.name == null ) {
         text = "New Here?"
         link = "/intro"
         link_text = "Get started &rarr;"
         link_id = "intro"
-      } else if (currentUser.account_type === "perm") {
+      } else if (currentUser.account_type === "perm" || currentUser.account_type === "temp" ) {
         text = currentUser.current_business.name
-        link = "#"
-        link_text = "View Business &rarr;"
+        link = "/summary"
+        link_text = "Show checklist &rarr;"
         link_id = ""
       }
       $("#business_pill > p > span").html(text);
       $("#business_pill > p > a").attr("href", link);
       $("#business_pill > p > a").html(link_text);
       $("#business_pill > p > a").attr("id", link_id)
-
-
-
     },
+
 
     beforeRender: function(){
 
@@ -268,8 +256,7 @@ function(app, Parking) {
 
     afterRender: function(){
       this.personalise();
-      // $('.profile-contents').hide();  // maybe do this in css -Mick
-     },
+    },
 
 
 

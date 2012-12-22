@@ -4,6 +4,8 @@ class ZoningDistrict < ActiveRecord::Base
   has_many :cic_code_zoning_districts, :dependent => :destroy
   has_many :cic_codes, :through => :cic_code_zoning_districts, :dependent => :destroy, :order => "code ASC"
   attr_accessible :code, :description, :home_occ_prohibited, :name
+  
+  before_save :strip_code
   after_create :create_zoning_district_connections
     
   def permission_name(cic_code_id)
@@ -20,6 +22,10 @@ class ZoningDistrict < ActiveRecord::Base
 
   
   private
+  
+  def strip_code
+    self.code.strip
+  end
   
   def create_zoning_district_connections
     CicCode.all.each do |cic_code|

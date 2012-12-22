@@ -4,7 +4,7 @@
 
 <div class="row-fluid">
   <div class="span12">
-    <p class="lead">The rules are different for work-from-home businesses and those that operate out of commercial locations.</p>
+    <p class="lead">The rules are different for work-from-home businesses and those that operate out of commercial locations. Please indicate whether <%= (answers.is_owner === "true") ? "you" : "the owner" %> will be:</p>
     
 <!--
     <hr>
@@ -22,15 +22,14 @@
     <% } %>
 -->
 
-    <hr />
-    <div class="well">
+    <div class="form-submit">
       <% if (answers.location_type) { %>
 <!--      <p class="lead">Change your mind?</p> -->
       <% } else { %>
 <!--      <p class="lead">Where will <%= (answers.is_owner === "true") ? "your" : "this" %> business operate from?</p> -->
       <% } %>
-      <p class="next lead"><%= (answers.is_owner === "true") ? "I" : "The owner" %> will be &nbsp;<a href="/location/home"  data-answer="home" name="location_type" class="btn btn-large btn-info">working from home &rarr;</a></p>
-      <p class="next lead"><%= (answers.is_owner === "true") ? "I" : "The owner" %> will be &nbsp;<a href="/location/commercial" data-answer="commercial" name="location_type" class="btn btn-large btn-info">working out of a commercial space &rarr;</a></p>
+      <p class="next lead"><a href="/location/home"  data-answer="home" name="location_type" class="btn btn-large btn-info">Working from home &rarr;</a></p>
+      <p class="next lead"><a href="/location/commercial" data-answer="commercial" name="location_type" class="btn btn-large btn-info">Working out of a commercial space &rarr;</a></p>
     </div>
   </div>
 </div>

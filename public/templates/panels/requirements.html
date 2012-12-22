@@ -27,14 +27,12 @@
       <li>You haven't told us whether you'll be working from home or a commercial space. <a href="/location">Your business's location &rarr;</a></li>
     <% } %>
     </ul>
+  </div>
 
   <% } else { %>
-  <div class="span12">
-    <hr />
-    <div class="well">
-      <a class="submit btn btn-large btn-info" href="/requirements/city/planning_permit">Planning permits &rarr;</a>
+    <div class="form-submit">
+      <a href="/requirements/<%= firstRequirement.get('jurisdiction').toLowerCase() %>/<%= firstRequirement.get('short_name') %>" class="btn btn-large btn-info">Get Started &rarr;</a>
     </div>
   <% } %>
 
-  </div>
 </div>

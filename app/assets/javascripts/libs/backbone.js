@@ -756,7 +756,13 @@
       var collection = this;
       var success = options.success;
       options.success = function(resp, status, xhr) {
-        collection[options.add ? 'add' : 'reset'](collection.parse(resp, xhr), options);
+/*        try {*/
+          collection[options.add ? 'add' : 'reset'](collection.parse(resp, xhr), options);
+/*        } catch(ex) {
+          debugger;
+          console.log("WE FAILED!!!!! trying to " + (options.add ? 'add' : 'reset'));
+          throw ex;
+        }*/
         if (success) success(collection, resp);
       };
       options.error = Backbone.wrapError(options.error, collection, options);

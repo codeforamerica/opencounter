@@ -1,10 +1,11 @@
 define([
   // Application.
-  "app"
+  "app",
+  "modules/answer"
 ],
 
 // Map dependencies from above array.
-function(app) {
+function(app, answer) {
 
   // Create a new module.
   var Requirement = app.module();
@@ -20,7 +21,18 @@ function(app) {
   // Default collection.
   Requirement.Collection = Backbone.Collection.extend({
     model: Requirement.Model,
-    url: '/requirements'
+    url: '/requirements',
+    
+    matchingIndex: function(jurisdiction, shortName) {
+      var index = -1;
+      for (var i = 0, len = this.length; i < len; i++) {
+        var requirement = this.at(i);
+        if (requirement.get("jurisdiction").toLowerCase() === jurisdiction && requirement.get("short_name").toLowerCase() === shortName) {
+          index = i;
+        }
+      }
+      return index;
+    }
   });
   
   Requirement.lookupRequirements = function() {
@@ -38,13 +50,37 @@ function(app) {
           self.requirements.reset(data);
         }
       });
-    }
-    else {
+    } else {
       this.requirements.reset([]);
     }
   };
   
-
+  Requirement.Views.Panel = answer.Views.Panel.extend({
+    initialize: function(o) {
+      this.pathInfo = window.location.pathname.toLowerCase().split("/").slice(2);
+      this.pathInfo = {
+        jurisdiction: this.pathInfo[0],
+        shortName: this.pathInfo[1]
+      };
+      answer.Views.Panel.prototype.initialize.call(this, o);
+    },
+    
+    serialize: function() {
+      var result = answer.Views.Panel.prototype.serialize.call(this);
+      var requirementIndex = this.requirements.matchingIndex(this.pathInfo.jurisdiction, this.pathInfo.shortName);
+      result.pathInfo = this.pathInfo;
+      result.firstRequirement = this.requirements.at(0);
+      if ((requirementIndex + 1) < this.requirements.length) {
+        var nextRequirement = this.requirements.at(requirementIndex + 1);
+        result.nextRequirementHref = "/requirements/" + nextRequirement.get('jurisdiction').toLowerCase() + "/" + nextRequirement.get('short_name');
+        result.nextRequirementName = nextRequirement.get('name');
+      } else {
+        result.nextRequirementHref = "/summary";
+        result.nextRequirementName = "Summary";
+      }
+      return result;
+    }
+  });
   // Return the module for AMD compliance.
   return Requirement;
 

@@ -5,19 +5,16 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    @current_user ||= User.find_by_token(cookies[:token])
+    User.find_by_token(cookies[:token])
   end
   helper_method :current_user
 
-  def current_business
-    @current_business ||= current_user.try(:current_business)
-  end
-  helper_method :current_business
-
-  def current_user=(user)
-    @current_user = user
-  end
-  helper_method :current_user
+  ## causing trouble, banished to the nuaghty comments.
+  # def current_user=(user)
+  #   cookies.permanent[:token] = user.token
+  #   @current_user = user
+  # end
+  # helper_method :current_user
 
   def after_sign_in_path_for(resource_or_scope)
     admin_applications_url

@@ -39,11 +39,9 @@
 
 </div>
 
-<hr>
-
 <div class="row-fluid">
   
-  <div class="span12 well">
+  <div class="form-submit">
 
   <% if (!answers.location_type) { %>
     <p class="lead">You haven&rsquo;t yet told us your business&rsquo;s location.</p>
@@ -386,11 +384,10 @@
  </div>
   
             <div class="span4">
-              <hr />
               <div class="well">
                 <p class="lead">I hereby certify that the facts given on this application are true and correct to the best of my knowledge and I agree to, and authorize, such investigations as are deemed necessary by the City of Santa Curz City Planning Department for the preparation of reports related to this application, including the right of access to the property involved. In submitting this application I agree to hold the City of Santa Cruz harmless from all costs and expenses, including litigations costs and attornet's fees incurred by the City of held to be the City's responsibility in connection with the City's defense of its actions taken in connection with the project which is subject of this application" (Signed and dated)</p>
-                <p class="next lead"><a class="submit" href="/location/check">Yes <%= (answers.is_owner === "true") ? "I" : "the owner" %> will comply with all these rules &rarr;</a></p>
-                <p class="next lead"><a class="submit" href="/help">No, <%= (answers.is_owner === "true") ? "I" : "the owner" %> might not be able comply with these terms. &rarr;</a></p>
+                <p class="next lead"><a class="btn btn-large btn-info" href="/location/check">Yes <%= (answers.is_owner === "true") ? "I" : "the owner" %> will comply with all these rules &rarr;</a></p>
+                <p class="next lead"><a class="btn btn-large btn-info" href="/help">No, <%= (answers.is_owner === "true") ? "I" : "the owner" %> might not be able comply with these terms. &rarr;</a></p>
               </div>
             </div>
           
@@ -578,11 +575,8 @@
               <div class="controls"><input type="text" name="building_new_structure" placeholder="Yes or No" value="<%= answers.building_new_structure %>"></div>
             </div> 
  
- </div>
-  
-            <div class="span4">
-              <hr />
-              <div class="well">
+
+              <div class="form-submit">
                 <p class="lead">I hereby certify that the facts given on this application are true and correct to the best of my knowledge and I agree to, and authorize, such investigations as are deemed necessary by the City of Santa Curz City Planning Department for the preparation of reports related to this application, including the right of access to the property involved. In submitting this application I agree to hold the City of Santa Cruz harmless from all costs and expenses, including litigations costs and attornet's fees incurred by the City of held to be the City's responsibility in connection with the City's defense of its actions taken in connection with the project which is subject of this application" (Signed and dated)</p>
                 <p class="next lead"><a class="btn btn-large btn-info" href="/location/check">Yes <%= (answers.is_owner === "true") ? "I" : "the owner" %> will comply with all these rules &rarr;</a></p>
                 <p class="next lead"><a class="btn btn-large btn-info" href="/help">No, <%= (answers.is_owner === "true") ? "I" : "the owner" %> might not be able comply with these terms. &rarr;</a></p>
@@ -615,8 +609,8 @@
   <% } %>
   
   
-  <p class="next lead"><a href="/requirements/city/business_license" class="btn btn-large btn-info">Business license &rarr;</a></p>
-
+  <div class="form-submit">
+    <a href="<%= nextRequirementHref %>" class="btn btn-large btn-info"><%= nextRequirementName %> &rarr;</a>
   </div>
 
 </div>

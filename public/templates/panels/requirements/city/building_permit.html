@@ -27,7 +27,7 @@
    
       <div class="control-group">
         <label class="control-label">Date</label>
-        <div class="controls"><input type="text" name="date" placeholder="" value="<%= Time.now.strftime("%m/%d/%Y") %>"></div>
+        <div class="controls"><input type="text" name="date" placeholder="" value="<%= Date.now() %>"></div>
       </div>
   
       <div class="control-group">
@@ -122,107 +122,106 @@
   
       <div class="control-group">
         <label class="control-label">Building Height (In Feet)</label>
-        <div class="controls"><input type="text" name="building_height_feet" placeholder="feet" value="answers.building_height_feet"></div>
+        <div class="controls"><input type="text" name="building_height_feet" placeholder="feet" value="<%= answers.building_height_feet %>"></div>
       </div>    
   
       <div class="control-group">
         <label class="control-label">Building Height (In stories)</label>
-        <div class="controls"><input type="text" name="building_height_stories" placeholder="stories" value="answers.building_height_stories"></div>
+        <div class="controls"><input type="text" name="building_height_stories" placeholder="stories" value="<%= answers.building_height_stories %>"></div>
       </div>        
       
       <div class="control-group">
         <label class="control-label">Role of Building Professional </label>
-        <div class="controls"><input type="text" name="building_professional_role" placeholder="Architect, Engineer, Design Professional" value="answers.building_professional_role"></div>
+        <div class="controls"><input type="text" name="building_professional_role" placeholder="Architect, Engineer, Design Professional" value="<%= answers.building_professional_role %>"></div>
       </div>      
 
       <div class="control-group">
         <label class="control-label">Building Professional's First Name</label>
-        <div class="controls"><input type="text" name="building_professional_first_name" placeholder="" value="answers.building_professional_first_name"></div>
+        <div class="controls"><input type="text" name="building_professional_first_name" placeholder="" value="<%= answers.building_professional_first_name %>"></div>
       </div>
       
       <div class="control-group">
         <label class="control-label">Building Professional's Last Name</label>
-        <div class="controls"><input type="text" name="building_professional_last_name" placeholder="" value="answers.building_professional_last_name"></div>
+        <div class="controls"><input type="text" name="building_professional_last_name" placeholder="" value="<%= answers.building_professional_last_name %>"></div>
       </div>  
   
       <div class="control-group">
         <label class="control-label">Building Professional's Address</label>
-        <div class="controls"><input type="text" name="building_professional_physical_address_street" placeholder="123 Main Street" value="answers.building_professional_physical_address_street"></div>
+        <div class="controls"><input type="text" name="building_professional_physical_address_street" placeholder="123 Main Street" value="<%= answers.building_professional_physical_address_street %>"></div>
       </div>      
   
       <div class="control-group">
         <label class="control-label">Suite or Office Number</label>
-        <div class="controls"><input type="text" name="building_professional_physical_address_detail" placeholder="Suite #" value="answers.building_professional_physical_address_detail"></div>
+        <div class="controls"><input type="text" name="building_professional_physical_address_detail" placeholder="Suite #" value="<%= answers.building_professional_physical_address_detail %>"></div>
       </div> 
   
       <div class="control-group">
         <label class="control-label">City</label>
-        <div class="controls"><input type="text" name="building_professional_physical_address_city" placeholder="Santa Cruz" value="answers.building_professional_physical_address_city"></div>
+        <div class="controls"><input type="text" name="building_professional_physical_address_city" placeholder="Santa Cruz" value="<%= answers.building_professional_physical_address_city %>"></div>
       </div>     
   
       <div class="control-group">
         <label class="control-label">State</label>
-        <div class="controls"><input type="text" name="building_professional_physical_address_state" placeholder="CA" value="answers.building_professional_physical_address_state"></div>
+        <div class="controls"><input type="text" name="building_professional_physical_address_state" placeholder="CA" value="<%= answers.building_professional_physical_address_state %>"></div>
       </div>     
   
       <div class="control-group">
         <label class="control-label">ZIP</label>
-        <div class="controls"><input type="text" name="building_professional_physical_address_zip" placeholder="95060" value="answers.building_professional_physical_address_zip"></div>
+        <div class="controls"><input type="text" name="building_professional_physical_address_zip" placeholder="95060" value="<%= answers.building_professional_physical_address_zip %>"></div>
       </div>  
   
       <div class="control-group">
         <label class="control-label">Building Professional Phone</label>
-        <div class="controls"><input type="text" name="building_professional_phone" placeholder="(831) 123-4567" value="answers.building_professional_phone"></div>
+        <div class="controls"><input type="text" name="building_professional_phone" placeholder="(831) 123-4567" value="<%= answers.building_professional_phone %>"></div>
       </div>  
   
       <div class="control-group">
         <label class="control-label">Building Professional email</label>
-        <div class="controls"><input type="text" name="building_professional_email" placeholder="ben@builders.com" value="answers.building_professional_email"></div>
+        <div class="controls"><input type="text" name="building_professional_email" placeholder="ben@builders.com" value="<%= answers.building_professional_email %>"></div>
       </div>           
       
       <div class="control-group">
         <label class="control-label">Building Professional (Contractor's) License Number</label>
-        <div class="controls"><input type="text" name="building_professional_license" placeholder="CA license #" value="answers.building_professional_license"></div>
+        <div class="controls"><input type="text" name="building_professional_license" placeholder="CA license #" value="<%= answers.building_professional_license %>"></div>
       </div>               
    
       <p>Building Division Staff will help with the information below after you sumbit through OpenCounter.</p>   
    
       <div class="control-group">
         <label class="control-label">Expansion Plan Check Due Date</label>
-        <div class="controls"><input type="text" name="building_expansion_plan_check_due_date" placeholder="Supplied by Building Division Staff" value="answers.building_expansion_plan_check_due_date"></div>
+        <div class="controls"><input type="text" name="building_expansion_plan_check_due_date" placeholder="Supplied by Building Division Staff" value="<%= answers.building_expansion_plan_check_due_date %>"></div>
       </div>
   
       <div class="control-group">
         <label class="control-label">Occupancy Class</label>
-        <div class="controls"><input type="text" name="building_occupancy_class" placeholder="Supplied by Building Division Staff" value="answers.building_occupancy_class"></div>
+        <div class="controls"><input type="text" name="building_occupancy_class" placeholder="Supplied by Building Division Staff" value="<%= answers.building_occupancy_class %>"></div>
       </div>
   
       <div class="control-group">
         <label class="control-label">Construction Type</label>
-        <div class="controls"><input type="text" name="building_construction_type" placeholder="Supplied by Building Division Staff" value="answers.building_construction_type"></div>
+        <div class="controls"><input type="text" name="building_construction_type" placeholder="Supplied by Building Division Staff" value="<%= answers.building_construction_type %>"></div>
       </div>
   
      <div class="control-group">
         <label class="control-label">Sprinklers?</label>
-        <div class="controls"><input type="text" name="building_sprinklers" placeholder="Supplied by Building Division Staff" value="answers.building_sprinklers"></div>
+        <div class="controls"><input type="text" name="building_sprinklers" placeholder="Supplied by Building Division Staff" value="<%= answers.building_sprinklers %>"></div>
       </div>
   
      <div class="control-group">
         <label class="control-label">Do Traffic Impact Fees Apply?</label>
-        <div class="controls"><input type="text" name="building_TIF" placeholder="Supplied by Building Division Staff" value="answers.building_TIF"></div>
+        <div class="controls"><input type="text" name="building_TIF" placeholder="Supplied by Building Division Staff" value="<%= answers.building_TIF %>"></div>
       </div>
   
      <div class="control-group">
         <label class="control-label">Quimby Fees Apply?</label>
-        <div class="controls"><input type="text" name="building_quimby" placeholder="Supplied by Building Division Staff" value="answers.building_quimby"></div>
+        <div class="controls"><input type="text" name="building_quimby" placeholder="Supplied by Building Division Staff" value="<%= answers.building_quimby %>"></div>
       </div>
      
     </form>
   </div>
   
-  <!-- @condition NO CONSTRUCTION -->
-  <p class="next" data-occupancy="non-home"><a class="btn btn-large btn-info" href="/requirements/city/parking">Parking &rarr;</a></p>
-  <p class="next" data-occupancy="home"><a class="btn btn-large btn-info" href="/requirements/city/business_license">Business License &rarr;</a></p>
-  <!-- @condition /NO CONSTRUCTION -->
+  <div class="form-submit">
+    <a href="<%= nextRequirementHref %>" class="btn btn-large btn-info"><%= nextRequirementName %> &rarr;</a>
+  </div>
   
 </div>

@@ -74,4 +74,5 @@ gem 'csv-mapper'
 gem 'fuzzy-string-match_pure'
 gem 'pry-rails'
 gem 'on_the_spot'
+gem 'bcrypt-ruby', '3.0.1'
 

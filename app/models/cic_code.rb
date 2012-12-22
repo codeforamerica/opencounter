@@ -5,12 +5,13 @@ class CicCode < ActiveRecord::Base
   has_many :zoning_districts, :through => :cic_code_zoning_districts, :dependent => :destroy, :order => "code ASC"
   has_and_belongs_to_many :sic_codes, :uniq => true
   has_many :cic_code_requirements, :dependent => :destroy
-  has_many :requirements, :through => :cic_code_requirements
+  has_many :requirements, :through => :cic_code_requirements, :order => "name ASC"
   
   accepts_nested_attributes_for :requirements
   
   attr_accessible :code, :industry, :subindustry, :home_occ_prohibited, :keywords, :parent_id, :requirements, :requirement_ids, :requirements_attributes
   
+  before_save :strip_code
   after_create :create_zoning_district_connections
   
   def permission_name(zoning_district_id)
@@ -39,6 +40,10 @@ class CicCode < ActiveRecord::Base
   end
   
   private
+  
+  def strip_code
+    self.code.strip
+  end
   
   def create_zoning_district_connections
     ZoningDistrict.all.each do |zoning_district|

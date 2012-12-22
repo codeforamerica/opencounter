@@ -197,6 +197,7 @@ footer p {
   font-weight: bold;
 }
 
+
 /* === Toggle Styles ======================================================== */
 
 .toggle {
@@ -263,6 +264,21 @@ form.button_to{
   font-size: 16px;
 }
 
+/* === Misc ============================================================== */
+
+#flash-notice{
+  margin-top: 5px;
+  padding: 10px 15px 10px 15px;
+  background-color: #14a61d;
+  font-size: 16px;
+  color: white;
+  display: none;
+}
+
+.form-submit{
+  border-top: solid 1px #eee;
+  padding: 25px 0 25px 0;
+}
 
 /*
 

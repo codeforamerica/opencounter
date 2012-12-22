@@ -1,3 +1,4 @@
+# TODO: not convinced we need a Field model --PH
 class Field < ActiveRecord::Base
   attr_accessible :format, :prompt, :name
 
