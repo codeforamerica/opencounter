@@ -130,10 +130,60 @@ function(app) {
   // FIXME: this should really be in the database, rather than manually mapped in the code here
   Location.convertGisToCityZoning = function(gisZoning) {
     return {
-      "RTC": "R-T(C)",
-      "PF": "P-F",
-      "IGP2": "I-G PER-2",
-      "R17": "R-1"
+       "CB": "C-B",
+       "CBD": "CBD",
+       "CBD-E": "CBD(E)"
+       "CC": "C-C",
+       "CD/R": "C-D/R",
+       "CN": "C-N",
+       "R-L/ CON": "CON",
+       "R-M/MU/ CON": "CON",
+       "R-M/COM": "CON",
+       "CT": "C-T",
+       // "GIS_return": "CZ-O", suggest deleting  as it maps to OF-R
+       "EA-20": "E-A",
+       "FP": "F-P",
+       "F-P": "FP-O",
+       // "GIS_return": "GB-O",
+       // "GIS_return": "HD-O",
+       "IG": "I-G",
+       "IG/PER": "I-G PER",
+       "IG/ PER": "I-G PER",
+       "IG/PER2": "I-G PER-2",
+       "IGP2": "I-G PER-2",
+       // "GIS_return": "MS-O", likely to conflict with primary CC or PA zoning 
+       "R-M/ MU": "MU-O",
+       "OFR": "OF-R",
+       "PA": "P-A",
+       "PF": "P-F",
+       "PS": "PK",
+       "PK/PF": "PK",
+       "R15": "R-1",
+       "R17": "R-1",
+       "R110": "R-1",
+       "R-1-5": "R-1",
+       "R-1-7": "R-1",
+       "R-1-10": "R-1",
+       "RH": "R-H",
+       "RL": "R-L",
+       "RM": "R-M",
+       "RS-1A": "R-S",
+       "RS-2A": "R-S",
+       "RS-5A": "R-S",
+       "RS-10A": "R-S",
+       "RT": "R-T",
+       "RTA": "R-T(A)",
+       "RTB": "R-T(B)",
+       "R-T(B)/ PER": "R-T(B)/PER",
+       "RTC": "R-T(C)",
+       "R-T(C)/PER": "R-T(C)/PER",
+       "RTD": "R-T(D)",
+       "RTE": "R-T(E)",
+       "SCH": "SC-H", /need to ask rich on this one, returning as CZ-O
+       // "GIS_return": "SOL",
+       // "GIS_return": "SP-O", also will ask rich on this one it maps to both WCD and CZ-O
+       // "GIS_return": "WCD"
+   
     }[gisZoning] || gisZoning;
   };
 
