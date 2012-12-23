@@ -12,11 +12,13 @@ Opencounter::Application.routes.draw do
 
   resources :users, :except => :index
   resources :answers
-  resources :businesses
+  # resources :businesses
 
   match '/sessions/create'  => 'sessions#create'
   match '/sessions/show'    => "sessions#show"
   match '/sessions/destroy' => "sessions#destroy"
+
+  match '/users/add_business' => 'users#add_business'
     
   namespace :admin do
     

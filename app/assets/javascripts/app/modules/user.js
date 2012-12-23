@@ -32,15 +32,45 @@ function(app) {
     begin: function() {
       session = new Session();
       currentUser = session.currentUser();
-      this.user.set("account_type", "temp")
-      this.saveUser();
+
+      if ( currentUser && currentUser.account_type == "perm" ) {
+        this.addApplication();
+        window.location.pathname = "/info/applicant"
+        // FIXME: doesn't work.  How to reset all forms on the site? :/ --ph
+        // $("select,input").val('')
+      } 
+      else {
+        console.log("Creating a new temp user.")
+        this.user.clear();
+        this.user.set("account_type", "temp")
+        this.saveUser();
+        // do this last to undo the 'save answers from before user creation' step in saveUser() function.
+        this.collection.reset();
+      }
     },
 
+    addApplication: function() {
+      // call a method in users controller which adds a new business to the list of businesses
+      currentUser = (new Session()).currentUser()
+      user_token = currentUser.token
+      $.ajax({
+        url: "/users/add_business",
+        dataType: "json",
+        async: false,
+        type: 'POST',
+        beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+        data: { "user_token": user_token },
+        success: function(data) {
+          console.log("Added new application to perm user with token: ", user_token);
+        }
+      });
+    },
 
 
     signUp: function() {
       this.user.set("account_type", "perm")
       this.saveUser();
+      // window.location.pathname = "/info/applicant"
     },
 
     logIn: function() {
@@ -74,6 +104,7 @@ function(app) {
       // need to save an answers we had from before the user was created.
       this.user.save({}, {success:function(){
         console.log("New user: ", self.user)
+        currentUser = (new Session()).currentUser();
         self.collection.each(function(answer){
           answer.save();
         });

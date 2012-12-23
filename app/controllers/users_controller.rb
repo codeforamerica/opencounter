@@ -30,11 +30,17 @@ class UsersController < ApplicationController
     respond_with user
   end
   
-  def update
-    @user = User.find_by_id(params[:user_id])
-    #   cookies.permanent[:token] = @user.token
-    respond_with @user.update_attributes(params[:user])
+  def add_business
+    @user = User.find_by_token(params[:user_token])
+    @user.add_business()
+    respond_with @user
   end
+
+  # def update
+  #   @user = User.find_by_id(params[:user_id])
+  #   #   cookies.permanent[:token] = @user.token
+  #   respond_with @user.update_attributes(params[:user])
+  # end
   
   def application_email
     if current_user && PlanningMailer.application_email(current_user).deliver

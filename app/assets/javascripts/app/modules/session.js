@@ -29,6 +29,7 @@ function(app) {
         dataType: "json",
         async: false,
         success: function(data) {
+          console.log("Successfully logged out")
           window.location.pathname = "/"
         }
       });
@@ -47,8 +48,8 @@ function(app) {
           "password": password
         },
         success: function(data) {
-          // console.log("Successfully logged in")
-          window.location.pathname = "/info/applicant"
+          console.log("Successfully logged in", data)
+          // window.location.pathname = "/info/applicant"
         }
 
       });

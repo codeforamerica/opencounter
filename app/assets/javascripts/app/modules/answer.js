@@ -51,6 +51,7 @@ function(app, Parking) {
     url: '/answers',
     addAnswer: function(key, val, opts){
       if (key == undefined || key.indexOf("password") != -1) { return -1 };
+      console.log("Adding answer:", [key, val, opts])
 
       if(!opts) opts = {};
       var field = this.where({"field_name": key});
@@ -218,7 +219,7 @@ function(app, Parking) {
       } 
       else if (currentUser.account_type === "perm") {
         if (currentUser.full_name == " ") {
-          text = "Logged in."
+          text = "Logged in"
         } else {
           text = currentUser.full_name  
         }        
@@ -240,7 +241,7 @@ function(app, Parking) {
       } else if (currentUser.account_type === "perm" || currentUser.account_type === "temp" ) {
         text = currentUser.current_business.name
         link = "/summary"
-        link_text = "Show checklist &rarr;"
+        link_text = "View summary &rarr;"
         link_id = ""
       }
       $("#business_pill > p > span").html(text);

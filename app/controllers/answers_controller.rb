@@ -13,7 +13,7 @@ class AnswersController < InheritedResources::Base
     @answer.value = params[:answer][:value]
     @answer.field = Field.find_or_create_by_name(params[:answer][:field_name])
     if current_user
-      @answer.business = current_user.businesses.first
+      @answer.business = current_user.current_business
     end
     create!
   end
