@@ -36,8 +36,6 @@ function(app) {
       if ( currentUser && currentUser.account_type == "perm" ) {
         this.addApplication();
         window.location.pathname = "/info/applicant"
-        // FIXME: doesn't work.  How to reset all forms on the site? :/ --ph
-        // $("select,input").val('')
       } 
       else {
         console.log("Creating a new temp user.")
@@ -65,7 +63,7 @@ function(app) {
           console.log("Added new application to perm user with token: ", user_token);
         }
       });
-      
+
     },
 
 

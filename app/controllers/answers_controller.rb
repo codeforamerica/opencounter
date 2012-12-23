@@ -9,9 +9,9 @@ class AnswersController < InheritedResources::Base
   end
 
   def create
-    @answer = Answer.new()
-    @answer.value = params[:answer][:value]
-    @answer.field = Field.find_or_create_by_name(params[:answer][:field_name])
+    @answer = Answer.new(params[:answer])
+    # @answer.value = params[:answer][:value]
+    # @answer.field_name = params[:answer][:field_name]
     if current_user
       @answer.business = current_user.current_business
     end
