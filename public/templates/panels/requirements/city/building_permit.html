@@ -3,11 +3,15 @@
 </div>
 
 <div class="row-fluid">
-  <p>Will you be doing tenant improvements or renovation?</p>
-  
-  <p class="next"><a href="#" id="yes_building_permit">Yes, I will be doing some renovation work.</a></p>
+  <p class="lead">Will you be doing tenant improvements or renovation? If so, fill out as much info as you can below to start the process.</p>
+
+<p class="lead">No? If the site is ready to go, click here.</p><a href="<%= nextRequirementHref %>" class="btn btn-large btn-info"><%= nextRequirementName %> &rarr;</a>
+    
+   <!--
   <p class="next" data-occupancy="non-home">No. Next: <a class="submit" href="/requirements/city/parking">Parking &rarr;</a></p>
   <p class="next" data-occupancy="home">No. Next: <a class="submit" href="/requirements/city/business_license">Business License &rarr;</a></p>
+    
+    -->
   
   
   <!-- @condition YES CONSTRUCTION -->
@@ -129,11 +133,7 @@
         <label class="control-label">Building Height (In stories)</label>
         <div class="controls"><input type="text" name="building_height_stories" placeholder="stories" value="<%= answers.building_height_stories %>"></div>
       </div>        
-      
-      <div class="control-group">
-        <label class="control-label">Role of Building Professional </label>
-        <div class="controls"><input type="text" name="building_professional_role" placeholder="Architect, Engineer, Design Professional" value="<%= answers.building_professional_role %>"></div>
-      </div>      
+           
 
       <div class="control-group">
         <label class="control-label">Building Professional's First Name</label>
@@ -143,7 +143,12 @@
       <div class="control-group">
         <label class="control-label">Building Professional's Last Name</label>
         <div class="controls"><input type="text" name="building_professional_last_name" placeholder="" value="<%= answers.building_professional_last_name %>"></div>
-      </div>  
+      </div>
+        
+    <div class="control-group">
+        <label class="control-label">Role of Building Professional </label>
+        <div class="controls"><input type="text" name="building_professional_role" placeholder="Architect, Engineer, Design Professional" value="<%= answers.building_professional_role %>"></div>
+    </div>
   
       <div class="control-group">
         <label class="control-label">Building Professional's Address</label>
@@ -184,7 +189,8 @@
         <label class="control-label">Building Professional (Contractor's) License Number</label>
         <div class="controls"><input type="text" name="building_professional_license" placeholder="CA license #" value="<%= answers.building_professional_license %>"></div>
       </div>               
-   
+
+        <!-- 
       <p>Building Division Staff will help with the information below after you sumbit through OpenCounter.</p>   
    
       <div class="control-group">
@@ -216,6 +222,8 @@
         <label class="control-label">Quimby Fees Apply?</label>
         <div class="controls"><input type="text" name="building_quimby" placeholder="Supplied by Building Division Staff" value="<%= answers.building_quimby %>"></div>
       </div>
+         -->
+        
      
     </form>
   </div>
