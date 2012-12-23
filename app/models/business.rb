@@ -1,9 +1,11 @@
 class Business < ActiveRecord::Base
   belongs_to :user
   has_many :answers
-  attr_accessible :name, :description, :submitted, :submitted_at, :user_id
+  attr_accessible :name, :description, :submitted, :submitted_at, :user_id, :token
 
   scope :submitted, -> { where(submitted: true) }
+
+  after_create :assign_token
 
   def mark_submitted
     update_attributes(submitted: true)
@@ -20,6 +22,12 @@ class Business < ActiveRecord::Base
 
   def business_name
     self.answers.find_by_field_name("business_name").try(:value)
+  end
+
+  private
+
+  def assign_token
+    update_attribute(:token, SecureRandom.hex(16))
   end
 
   # answers are a hash of key/value pairs

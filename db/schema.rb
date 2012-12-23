@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121223214141) do
+ActiveRecord::Schema.define(:version => 20121223223006) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20121223214141) do
     t.datetime "updated_at",   :null => false
     t.boolean  "submitted"
     t.datetime "submitted_at"
+    t.string   "token"
   end
 
   create_table "cic_code_requirements", :force => true do |t|

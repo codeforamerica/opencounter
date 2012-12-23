@@ -7,6 +7,15 @@ class SessionsController < ApplicationController
 
     user = User.find_by_email( email )
     if user.try(:authenticate, password)
+
+      # TODO: put this somewhere more appropriate.  Something like an
+      #       authentication callback (Devise does this?).
+      #       --hale
+      if current_user.account_type == "temp"
+        user.assign_business Business.find_by_token(current_user.current_business.token)
+      end
+
+      current_user.destroy()
       cookies.permanent[:token] = user.token
       respond_with user, location: nil
     else
@@ -19,8 +28,11 @@ class SessionsController < ApplicationController
     if (user=User.find_by_token(cookies[:token]))
       respond_with user.as_json(only: ['first_name', 'last_name', 'token', 'email', 'account_type']).merge( 
         "full_name" => user.full_name,
-        "current_business" => { "name" => user.current_business.business_name }
-        )
+        "current_business" => { 
+          "name" => user.current_business.business_name,
+          "token" => user.current_business.token 
+        }
+      )
     else
       respond_with {}
     end
