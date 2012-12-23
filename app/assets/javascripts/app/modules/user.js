@@ -53,6 +53,7 @@ function(app) {
       // call a method in users controller which adds a new business to the list of businesses
       currentUser = (new Session()).currentUser()
       user_token = currentUser.token
+
       $.ajax({
         url: "/users/add_business",
         dataType: "json",
@@ -64,6 +65,7 @@ function(app) {
           console.log("Added new application to perm user with token: ", user_token);
         }
       });
+      
     },
 
 
@@ -79,14 +81,6 @@ function(app) {
       if (email != "" && password != "") {
         session = new Session();
         session.login(email, password);
-        if (session.currentUser() == email) {
-          window.location.pathname = "/info/applicant"
-        } else {
-          console.log("Error logging in.")
-          $("div#errors > h4").html("We couldn't log you in")
-          $("div#errors > span").html("Please check you have the right email address and password.")
-          $("div#errors").removeClass("hidden")
-        }
       };
     },
 
