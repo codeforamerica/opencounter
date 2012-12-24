@@ -12,6 +12,9 @@ class AnswersController < InheritedResources::Base
     @answer = Answer.new(params[:answer])
     if current_user
       @answer.business = current_user.current_business  
+    else
+      # you can't save an answer without a user, so no current_user means there is a problem
+      render({}, status: 500)
     end
     create!
   end
@@ -21,6 +24,9 @@ class AnswersController < InheritedResources::Base
     @answer.update_attribute(:value, params[:answer][:value])
     if current_user
       @answer.business = current_user.current_business
+    else
+      # you can't save an answer without a user, so no current_user means there is a problem
+      render({}, status: 500)
     end
     @answer.save
     respond_with @answer
