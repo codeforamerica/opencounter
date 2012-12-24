@@ -9,11 +9,9 @@ class AnswersController < InheritedResources::Base
   end
 
   def create
-    @answer = Answer.new()
-    @answer.value = params[:answer][:value]
-    @answer.field = Field.find_or_create_by_name(params[:answer][:field_name])
+    @answer = Answer.new(params[:answer])
     if current_user
-      @answer.business = current_user.current_business
+      @answer.business = current_user.current_business  
     end
     create!
   end
@@ -22,9 +20,10 @@ class AnswersController < InheritedResources::Base
     @answer = Answer.find(params[:id])
     @answer.update_attribute(:value, params[:answer][:value])
     if current_user
-      @answer.business = current_user.businesses.first
+      @answer.business = current_user.current_business
     end
     @answer.save
-    render :json => @answer
+    respond_with @answer
+    # render :json => @answer
   end
 end

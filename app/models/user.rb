@@ -36,6 +36,11 @@ class User < ActiveRecord::Base
     self.businesses << Business.create
   end
 
+  def assign_business(business)
+    business.user = self
+    business.save
+  end
+
   private
 
   def assign_token

@@ -49,7 +49,13 @@ function(app) {
         },
         success: function(data) {
           console.log("Successfully logged in", data)
-          // window.location.pathname = "/info/applicant"
+          window.location.pathname = "/info/applicant"
+        },
+        error: function(data) {
+          console.log("Error logging in.")
+          $("div#errors > h4").html("We couldn't log you in")
+          $("div#errors > span").html("Please check you have the right email address and password.")
+          $("div#errors").removeClass("hidden")
         }
 
       });

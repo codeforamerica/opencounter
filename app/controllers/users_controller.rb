@@ -17,8 +17,7 @@ class UsersController < ApplicationController
 
     # inherit answers from temp account
     if (user.valid? && (user.account_type == "perm") && (current_user.try(:account_type) == "temp"))
-      user.current_business.destroy
-      current_user.current_business.update_attribute("user_id", user.id)
+      user.assign_business(current_user.current_business)
       current_user.destroy
     end
 
