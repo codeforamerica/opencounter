@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121223223006) do
+ActiveRecord::Schema.define(:version => 20121224003012) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -168,6 +168,8 @@ ActiveRecord::Schema.define(:version => 20121223223006) do
     t.string   "password_digest"
     t.string   "account_type"
   end
+
+  add_index "users", ["token"], :name => "index_users_on_token"
 
   create_table "zoning_districts", :force => true do |t|
     t.string   "code"
