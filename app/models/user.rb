@@ -3,10 +3,10 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :phone, :role, 
                   :last_state, :token, :created_at, :id, :updated_at, 
                   :remember_token, :password, :password_confirmation,
-                  :account_type
+                  :account_type, :current_business_token
 
   has_many :businesses
-  has_many :answers, :through => :businesses
+  # has_many :answers, :through => :businesses
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence:   true,
@@ -20,12 +20,10 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  after_create :assign_token, :create_business
+  after_create :assign_token, :add_business
 
-  # TODO: This should return the current business not the most recent business
-  #       has_one current_business
   def current_business
-    self.businesses.order("updated_at DESC").limit(1).first
+    Business.find_by_token(self.current_business_token) || self.businesses.order("updated_at DESC").limit(1).first
   end
 
   def full_name
@@ -33,12 +31,17 @@ class User < ActiveRecord::Base
   end
 
   def add_business
-    self.businesses << Business.create
+    business = Business.create
+    self.businesses << business
+    # TODO: multiple businesses
+    update_attribute(:current_business_token , business.token)
   end
 
   def assign_business(business)
     business.user = self
     business.save
+    # TEMP: normally you would only switch the current business on UI event
+    update_attribute(:current_business_token , business.token)
   end
 
   private
@@ -47,7 +50,4 @@ class User < ActiveRecord::Base
     update_attribute(:token, SecureRandom.hex(16))
   end
 
-  def create_business
-    self.businesses << Business.create() if self.businesses.blank?
-  end
 end
