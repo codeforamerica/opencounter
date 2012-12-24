@@ -3,7 +3,7 @@ class AnswersController < InheritedResources::Base
 
   def index
     if current_user
-      @answers = current_user.answers
+      @answers = current_user.current_business.answers
     end
     respond_with @answers
   end

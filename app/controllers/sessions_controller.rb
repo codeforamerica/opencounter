@@ -11,11 +11,11 @@ class SessionsController < ApplicationController
       # TODO: put this somewhere more appropriate.  Something like an
       #       authentication callback (Devise does this?).
       #       --hale
-      if current_user.account_type == "temp"
+      if current_user.try(:account_type) == "temp"
         user.assign_business Business.find_by_token(current_user.current_business.token)
       end
 
-      current_user.destroy()
+      current_user.try(:destroy)
       cookies.permanent[:token] = user.token
       respond_with user, location: nil
     else
