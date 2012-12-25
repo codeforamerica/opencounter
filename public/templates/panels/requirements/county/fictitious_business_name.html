@@ -24,7 +24,7 @@
 
   <% } else { %>
   
-    <p class="lead">You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "your" : "the owner&rsquo;s" %> name is <strong><% if (answers.is_owner === "true") { %><%= answers.applicant_first_name %> <%= answers.applicant_last_name %><% } else { %><%= answers.owner_first_name %> <%= answers.owner_last_name %><% } %></strong> and <%= (answers.is_owner === "true") ? "your" : "this" %> business&rsquo;s name is <strong><%= answers.business_name %></strong>.</p>
+    <p class="lead">You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "your" : "the business owner&rsquo;s" %> name is <strong><% if (answers.is_owner === "true") { %><%= answers.applicant_first_name %> <%= answers.applicant_last_name %><% } else { %><%= answers.applicant_first_name %> <%= answers.applicant_last_name %><% } %></strong> and <%= (answers.is_owner === "true") ? "your" : "this" %> business&rsquo;s name is <strong><%= answers.business_name %></strong>.</p>
   
   <% if ((answers.business_name) && (answers.business_name.indexOf(answers.applicant_last_name) >= 0)) { %>
   
@@ -51,7 +51,7 @@
 
     <label>
       Fictitious Business Name
-      <input type="text" name="fictitious_business_name" value="<%= answers.fictitious_business_name %>">
+      <input type="text" name="fictitious_business_name" value="<%= answers.business_name %>">
     </label>
 
     <fieldset>
@@ -95,14 +95,29 @@
     </fieldset>
     
     <fieldset>
-      <h3>Registered Owner(s)</h3>
+      <h3>Registered Business Owner(s)</h3>
       <label>
         Name
-        <input type="text" name="owner_first_name" value="<%= answers.applicant_first_name %> <%= answers.applicant_last_name %>">
+        <input type="text" name="applicant_first_name" value="<%= answers.applicant_first_name %> <%= answers.applicant_last_name %>">
       </label>
       <label>
-        Residence Address, City, State, Zip
-        <input type="text">
+        Business Owner Address
+          <input type="text" name="applicant_physical_address_street" value="<%= answers.applicant_physical_address_street %>">
+      </label>
+      <label>
+          Unit Number
+          <input type="text" name="applicant_physical_address_detail" value="<%= answers.applicant_physical_address_detail %>">
+      </label>
+      <label>
+          City
+          <input type="text" name="applicant_physical_address_city" value="<%=answers.applicant_physical_address_city %>">
+      </label>
+          State
+          <input type="text" name="applicant_physical_address_state" value="<%= answers.applicant_physical_address_state %>">
+      </label>
+      <label>
+          ZIP
+          <input type="text" name="applicant_physical_address_zip" value="<%= answers.applicant_physical_address_zip %>">
       </label>
     </fieldset>
     
