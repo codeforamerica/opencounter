@@ -4,16 +4,15 @@ define([
   "modules/user",
   "modules/business",
   "modules/answer",
+  "modules/requirement",
   "modules/navigation",
-  "modules/fees/parking",
-  "modules/fees/parking_non_downtown",
   "modules/fees/traffic_impact_fee",
   "modules/location",
-  "modules/requirement",
-  "modules/session"
+  "modules/session",
+  "modules/fees/parking"
 ],
 
-function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, TrafficImpactFee, Location, Requirement, Session) {
+function(app, User, Business, Answer, Requirement, Navigation, TrafficImpactFee, Location, Session, Parking) {
 
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
@@ -23,6 +22,7 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
       "location/check":"locationCheck",
       "intro/sign_in" : "loginSignup",
       "requirements": "requirements",
+      "requirements/city/parking": "parking",
       "requirements/*path": "requirements",
       "*path":"panel"
     },
@@ -46,22 +46,20 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
     },
 
     parking:function(){
-      var panel = new (Answer.Views.Panel.extend(Parking.Views.Calculator.prototype))({
-        collection:  this.answers,
-        //useTemplate: "panels/requirements/city/parking"
-      });
+      var panel;
+      if (this.answers.getAnswer('zoning') == 'CBD') {
+        panel = new (Answer.Views.Panel.extend(Parking.Views.Downtown.prototype)) ({
+          collection: this.answers,
+          template: "panels/requirements/city/parking"
+        });
+      } else { 
+        panel = new (Answer.Views.Panel.extend(Parking.Views.NonDowntown.prototype)) ({
+          collection: this.answers,
+          template: "panels/requirements/city/parking_non_downtown"
+        });
+      }
       app.layout.setView("div#content", panel);
       app.layout.render();
-    },
-
-    parkingNonDowntown:function() {
-
-        var panel = new (Answer.Views.Panel.extend(ParkingNonDowntown.Views.Calculator.prototype))({
-            collection: this.answers,
-            useTemplate: "panels/requirements/city/parking_non_downtown"
-        });
-        app.layout.setView("div#content", panel);
-        app.layout.render();
     },
 
     userInfo: function() {
