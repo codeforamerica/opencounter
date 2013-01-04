@@ -21,7 +21,6 @@ function(app, User, Business, Answer, Navigation, Parking, ParkingNonDowntown, T
       "clear":"clear",
       "info/business": "businessInfo",
       "location/check":"locationCheck",
-      // "info/applicant": "userInfo",
       "intro/sign_in" : "loginSignup",
       "requirements": "requirements",
       "requirements/*path": "requirements",
