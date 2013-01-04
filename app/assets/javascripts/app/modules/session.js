@@ -30,7 +30,8 @@ function(app) {
         async: false,
         success: function(data) {
           console.log("Successfully logged out")
-          window.location.pathname = "/"
+          // FIXME: does not work on the home page...
+          window.location.reload();
         }
       });
     },
