@@ -4,29 +4,54 @@
 
 <table class="table table-striped">
   <thead>
-    <th>Name</th>
-    <th>Short Name</th>
-    <th>Applies to Home-Sited Businesses?</th>
-    <th>Applies to Commercially-Sited Businesses?</th>
-    <th>Jurisdiction</th>
-    <th colspan="2">Actions</th>
+    <th width="3%"></th>
+    <th width="30%">Name</th>
+    <th width="20%">Short Name</th>
+    <th width="15%">Applies to Home-Sited Businesses?</th>
+    <th width="15%">Applies to Commercially-Sited Businesses?</th>
+    <th width="10%">Jurisdiction</th>
+    <th width="110"></th>
   </thead>
-  <tbody>
-    <% for requirement in @requirements %>
-      <tr class="<%= cycle("odd", "even") -%>">
-        <td><%= requirement.name %></td>
-        <td><%= requirement.short_name %></td>
-        <td><%= requirement.home_occ %></td>
-        <td><%= requirement.commercial %></td>
-        <td><%= requirement.jurisdiction %></td>
-        <td width="40px"><%= link_to 'Edit', edit_admin_requirement_path(requirement), :class => 'btn btn-mini' %></td>
-        <td width="60px"><%= button_to 'Delete', admin_requirement_path(requirement), :method => :delete, :confirm => 'Delete this Requirement?', :class => 'btn btn-mini btn-danger' %></td>
-      </tr>
-    <% end -%>
-  </tbody>
 </table>
+<ul id="requirements-list" style="list-style: none; margin-left: 10px;">
+  <% for requirement in @requirements %>
+    <%= content_tag_for :li, requirement do %>
+      <table>
+        <tr class="<%= cycle("odd", "even") -%>">
+          <td width="3%" class="handle"><%= image_tag 'handle.png' %></td>
+          <td width="30%"><%= requirement.name %></td>
+          <td width="20%"><%= requirement.short_name %></td>
+          <td width="15%"><%= requirement.home_occ %></td>
+          <td width="15%"><%= requirement.commercial %></td>
+          <td width="12%"><%= requirement.jurisdiction %></td>
+          <td width="50"><%= link_to 'Edit', edit_admin_requirement_path(requirement), :class => 'btn btn-mini' %></td>
+          <td width="60"><%= button_to 'Delete', admin_requirement_path(requirement), :method => :delete, :confirm => 'Delete this Requirement?', :class => 'btn btn-mini btn-danger' %></td>
+        </tr>
+      </table>
+    <% end %>
+  <% end -%>
+</ul>
 
 <div>
+  <br />
   <%= link_to 'New Requirement', new_admin_requirement_path, :class => 'btn btn-success' %>
 </div>
-<br />
+
+<%= javascript_tag do %>
+  $('#requirements-list').sortable({
+  axis: 'y', 
+  dropOnEmpty:false, 
+  handle: '.handle', 
+  cursor: 'crosshair',
+  items: 'li',
+  opacity: 0.4,
+  scroll: true,
+  update: function(event, ui){      
+  $.ajax({
+    type: 'post', 
+    data: { requirement: { id: ui.item.attr('id'), sort_order: ui.item.index() } }, 
+    dataType: 'script', 
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    url: '/admin/requirements/sort'})}
+  })
+<% end %>

@@ -1,9 +1,9 @@
 class Admin::RequirementsController < ApplicationController
   layout 'admin'
-  before_filter :authenticate_admin_user!
+  before_filter :authenticate_admin_user!, :except => 'sort'
   
   def index
-    @requirements = Requirement.all(:order => 'jurisdiction, name')
+    @requirements = Requirement.rank(:sort_order).all
   end
   
   def edit
@@ -44,5 +44,11 @@ class Admin::RequirementsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to admin_requirements_url }
     end
+  end
+  
+  def sort
+    id = params['requirement']['id'].gsub(/requirement_/, '')
+    Requirement.find(id).update_attribute(:sort_order, params['requirement']['sort_order'])
+    render :nothing => true
   end
 end
