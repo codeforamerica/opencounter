@@ -1,4 +1,7 @@
 class Requirement < ActiveRecord::Base
+  include RankedModel
+  ranks :sort_order
+  
   has_many :cic_code_requirements, :dependent => :destroy
   has_many :cic_codes, :through => :cic_code_requirements
   has_many :requirement_zoning_districts, :dependent => :destroy
