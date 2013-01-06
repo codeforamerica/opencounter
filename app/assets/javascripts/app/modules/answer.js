@@ -138,7 +138,7 @@ function(app, Parking) {
     beforeRender: function(){
       this.subviews().beforeRender.call(this);
       session = new Session()
-      if ( !session.currentUser() && window.location.pathname.indexOf("intro") == -1 ) {
+      if ( !session.currentUser() && !(window.location.pathname == '/' || window.location.pathname == '/intro' || window.location.pathname == '/intro/big_picture' || window.location.pathname == '/intro/here_to_help' || window.location.pathname == '/intro/sign_in' || window.location.pathname == '/help')) {
         window.location.pathname = "/intro/sign_in"
       }
     },
