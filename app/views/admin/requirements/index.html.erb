@@ -5,12 +5,12 @@
 <table class="table table-striped">
   <thead>
     <th width="3%"></th>
-    <th width="30%">Name</th>
+    <th width="29%">Name</th>
     <th width="20%">Short Name</th>
     <th width="15%">Applies to Home-Sited Businesses?</th>
     <th width="15%">Applies to Commercially-Sited Businesses?</th>
     <th width="10%">Jurisdiction</th>
-    <th width="110"></th>
+    <th width="120"></th>
   </thead>
 </table>
 <ul id="requirements-list" style="list-style: none; margin-left: 10px;">
@@ -19,7 +19,7 @@
       <table>
         <tr class="<%= cycle("odd", "even") -%>">
           <td width="3%" class="handle"><%= image_tag 'handle.png' %></td>
-          <td width="30%"><%= requirement.name %></td>
+          <td width="29%"><%= requirement.name %></td>
           <td width="20%"><%= requirement.short_name %></td>
           <td width="15%"><%= requirement.home_occ %></td>
           <td width="15%"><%= requirement.commercial %></td>
