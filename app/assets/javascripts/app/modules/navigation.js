@@ -147,6 +147,9 @@ function(app, util) {
           var navItem = document.createElement("li");
           var navLink = document.createElement("a");
           navLink.href = "/requirements/" + requirement.get("jurisdiction").toLowerCase() + "/" + requirement.get("short_name");
+          if (window.location.pathname.split("/").slice(1)[2] === requirement.get("short_name")) {
+            navLink.setAttribute('class', 'current');
+          }
           navLink.appendChild(document.createTextNode(requirement.get("name")));
           navItem.appendChild(navLink);
           requirementsNav.append(navItem);
