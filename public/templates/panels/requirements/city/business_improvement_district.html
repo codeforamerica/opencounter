@@ -9,12 +9,13 @@
   <h3><%= answers.CIC_industry_subindustry %></h3>
   <h3><%= answers.zoning %></h3>
 
-  <% if (!(answers.zoning)) { %>
-    <p>You haven't told us the business' location.  Please go back and tell us the location of your business.</p>
+  <% if (!answers.business_physical_address_street || answers.business_physical_address_street === "") { %>
+    <div class="alert alert-error lead">
+      <p>You haven't told us where your business will be located. <a href="/location">&larr; Go back</a></p>
+    </div>
     <div class="form-submit">
       <a href="<%= nextRequirementHref %>" class="btn btn-large btn-info"><%= nextRequirementName %> &rarr;</a>
     </div>
-
   <% } else if (answers.zoning != "CBD") { %>
     <div class="form-submit">
       <a href="<%= nextRequirementHref %>" class="btn btn-large btn-info"><%= nextRequirementName %> &rarr;</a>

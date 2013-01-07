@@ -3,8 +3,8 @@
 </div>
 
 <div class="row-fluid">
-  <p>You don&rsquo;t need to incorporate to start a business in Santa Cruz, but it should be something you think about.</p>
-  <p>For more information on incorporation, speak with an accountant or visit <a href="http://www.sos.ca.gov/business/">The California Business Portal</a>.</p>
+  <p class="lead">You don&rsquo;t need to incorporate to start a business in Santa Cruz, but it should be something you think about.</p>
+  <p class="lead">For more information on incorporation, speak with an accountant or visit <a href="http://www.sos.ca.gov/business/">The California Business Portal</a>.</p>
 
     <% if (answers.business_structure) { %>
   
@@ -12,13 +12,13 @@
   
     <% } else { %>
   
-      <p class="next lead">You haven&rsquo;t yet told us how your business is structured. <a href="/info/business">Fill this in &rarr;</a></p>
+      <p class="next lead">You haven&rsquo;t yet told us how your business is structured. <a href="/info/business">&larr; Go back</a></p>
   
     <% } %>
 
     <p class="next lead">You&rsquo;ve told us that <%= (answers.is_owner === "true") ? "you are" : "the owner is" %> <%= (answers.applicant_is_sole_owner) ? "" : "not" %> the sole owner of this business.</p>
 
-    <% if (answers.applicant_is_sole_owner !== 'y') { %>
+    <!-- <% if (answers.applicant_is_sole_owner !== 'y') { %>
 
       <table>
         <tr>
@@ -33,7 +33,7 @@
         </tr>
       </table>
 
-    <% } %>
+    <% } %> -->
     <div class="form-submit">
       <a href="<%= nextRequirementHref %>" class="btn btn-large btn-info"><%= nextRequirementName %> &rarr;</a>
     </div>

@@ -6,7 +6,7 @@
 
 <div class="row-fluid">
   <div>
-    <p class="lead">There are three ways to get started on OpenCounter: 1) create an account, which will allow you to return to unfinished applications; 2) log into your existing account; or 3) start a new application without creating an account.  Please choose the appropriate option below.</p>
+    <p class="lead">If you would like to be able to return to your Open Counter application after you begin, please create an account or log into your existing account.  If you would like to start a new application without creating an account, please use a guest account.</p>
     <br />
   </div>
 
@@ -17,8 +17,24 @@
   </div>
   
   <div class="span4" style="margin-left: 0px;">
+    <div class="well" id="login-form">
+      <p class="lead">Existing account</p>
+      <div class="control-group ">
+        <label class="control-label">Email</label>
+        <div class="controls"><input type="text" name="login_email" class="nosave"/></div>
+      </div>
+      <div class="control-group ">    
+        <label class="control-label">Password</label>
+        <div class="controls"><input type="password" name="login_password" /></div>
+      </div>
+      <br />
+      <a class="btn btn-large btn-info" id="applicant_log_in">Log in &rarr;</a>
+    </div>
+  </div>
+
+  <div class="span4">
     <div class="well" id="sign-up-form">
-      <p class="lead">Create an account</p>
+      <p class="lead">New account</p>
       <div class="control-group">
         <label class="control-label">Email Address</label>
         <div class="controls"><input type="text" name="applicant_email" placeholder=""></div>
@@ -34,26 +50,10 @@
       <a class="btn btn-large btn-info" id="applicant_sign_up">Sign up &rarr;</a>
     </div>
   </div>
-
-  <div class="span4">
-    <div class="well" id="login-form">
-      <p class="lead">Log into your account</p>
-      <div class="control-group ">
-        <label class="control-label">Email</label>
-        <div class="controls"><input type="text" name="login_email" class="nosave"/></div>
-      </div>
-      <div class="control-group ">    
-        <label class="control-label">Password</label>
-        <div class="controls"><input type="password" name="login_password" /></div>
-      </div>
-      <br />
-      <a class="btn btn-large btn-info" id="applicant_log_in">Log in &rarr;</a>
-    </div>
-  </div>
   
   <div class="span4">
     <div class="well" id="begin-form">
-      <p class="next lead">Start a New Application</p>
+      <p class="next lead">Guest account</p>
       <p class="next">Your information will not be saved until you submit your application.</p>
       <!-- <p class="next">You will need to tell us your name, email address and phone number before submitting to planning</p> -->
       <br />
