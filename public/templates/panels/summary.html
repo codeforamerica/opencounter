@@ -2,48 +2,43 @@
   <h1>Summary</h1>
 </div>
 
-<% if (!answers.business_name || answers.business_name === "") { %>
-  <div class="row-fluid">
-      <p class="lead alert alert-error">You haven't told us the name of your business. <a href="/info/business"> Go back</a></p>
+<% if (!answers.business_name || answers.business_name === "" || !answers.business_code || answers.business_code === "" || !answers.business_physical_address_street || answers.business_physical_address_street === "" || !answers.is_owner || answers.is_owner === "" || !answers.applicant_first_name || answers.applicant_first_name === "" || !answers.applicant_last_name || answers.applicant_last_name === "" || !answers.applicant_phone || answers.applicant_phone === "") { %>
+  <div class="alert alert-error lead">
+    <p>It looks like you haven't provided all of the information we need to process your application. Please click the links below to add the missing fields.
+    </p>
+      <% if (!answers.business_name || answers.business_name === "") { %>
+        <a href="/info/business">&larr; business name</a><br />
+      <% } %>
+
+      <% if (!answers.business_code || answers.business_code === "") { %>
+        <a href="/info/business">&larr; business type</a><br />
+      <% } %>
+
+      <% if (!answers.business_physical_address_street || answers.business_physical_address_street === "") { %>
+        <a href="/location">&larr; business location</a><br />
+      <% } %>
+
+      <% if (!answers.is_owner || answers.is_owner === "") { %>
+        <a href="/info">&larr; property owner</a><br />
+      <% } %>
+
+      <% if (!answers.applicant_first_name || answers.applicant_first_name === "" || !answers.applicant_last_name || answers.applicant_last_name === "") { %>
+        <a href="/info/applicant">&larr; applicant name</a><br />
+      <% } %>
+
+      <% if (!answers.applicant_phone || answers.applicant_phone === "") { %>
+        <a href="/info/applicant">&larr; applicant phone number</a><br />
+      <% } %>
+      
+  </div>
+  <div class="well">
+    <p class="lead">If you are ready to submit your application to the Planning Department, click the link below.  A representative will review your application and get back to you regarding your next steps.  After you submit your application, you will receive an email summary for your records.  If you are not ready to submit your application, you can return to the site at any time and continue the process.</p>
+    <p><a class="btn btn-large btn-info" id="sendApplicationEmail">Submit your application &rarr;</a></p>
+  </div>
+<% } else { %>
+  <div class="alert alert-success lead">Congratulations.  You provided all of the information we need to process your application.</div>
+  <div class="well">
+    <p class="lead">To submit your application to the Planning Department, click the link below.  A representative will review your application and get back to you regarding your next steps.  After you submit your application, you will receive an email summary for your records.  If you are not ready to submit your application, you can return to the site at any time and continue the process.</p>
+    <p><a class="btn btn-large btn-info" id="sendApplicationEmail">Submit your application &rarr;</a></p>
   </div>
 <% } %>
-
-<% if (!answers.business_code || answers.business_code === "") { %>
-  <div class="row-fluid">
-      <p class="lead alert alert-error">You haven't told us what kind of business you're opening. <a href="/info/business">Go back</a></p>
-  </div>
-<% } %>
-
-<% if (!answers.business_physical_address_street || answers.business_physical_address_street === "") { %>
-  <div class="row-fluid">
-      <p class="lead alert alert-error">You haven't told us where your business will be located. <a href="/location">Go back</a></p>
-  </div>
-<% } %>
-
-<% if (!answers.is_owner || answers.is_owner === "") { %>
-  <div class="row-fluid">
-      <p class="lead alert alert-error">You haven't told us whether you're the property owner. <a href="/info">Go back</a></p>
-  </div>
-<% } %>
-
-<% if (!answers.applicant_first_name || answers.applicant_first_name === "" || !answers.applicant_last_name || answers.applicant_last_name === "") { %>
-  <div class="row-fluid">
-      <p class="lead alert alert-error">You haven't told us your name. <a href="/info/applicant">Go back</a></p>
-  </div>
-<% } %>
-
-<% if (!answers.applicant_phone || answers.applicant_phone === "") { %>
-  <div class="row-fluid">
-      <p class="lead alert alert-error">You haven't told us your phone number. <a href="/info/applicant">Go back</a></p>
-  </div>
-<% } %>
-
-<div class="row-fluid">
-  <div class="span12">
-    <div class="well">
-      <p class="lead">When you are ready to submit your application to the Planning Department, please click the button below.  A Planning Department representative will review your application and get back to you regarding your next steps.  After you submit your application, you will receive an email summary for your records.  By returning to this site and logging into your account, you can continue work on your application at any time.
-    <div class="user_message"></div>
-      <p><a class="btn btn-large btn-info" id="sendApplicationEmail">Submit your application &rarr;</a></p>
-    </div>
-  </div>
-</div>
