@@ -10,7 +10,7 @@
   
   <div data-parking-district="downtown">
     <h3>Downtown Businesses</h3>
-    <p class="lead">Because your business is downtown, you don&#39t need to provide any parking spaces; but you will need to pay a Parking Deficiency Fee every quarter.</p>
+    <p class="lead">Because your business is downtown, you don&#39t need to provide any parking spaces, but you will need to pay a Parking Deficiency Fee every quarter.</p>
     <p>These fees, based normally on square footage, are used to maintain City parking lots, build new ones, and also pay for extra public safety patrols, street cleaning and bike lockers.</p>
       <p>In 2011, the City created an incentive for new businesses that move downtown that waives these fees for a year, and then discounts them for an additional six months as your businesses grows downtown.</p>
       <p>There is no application form for parking fees, as it uses the same inforamtion we ask for on your business license application.</p>
@@ -42,9 +42,10 @@
       <input name="parking_spaces_existing" type="text" value="<%= answers.automobile_parking_spaces  %>"/>
     </label>
     <p><span class="calculated">Fill out form to calculate</span> required spaces.</p>
-    <p>Estimated quarterly parking deficiency fee:
+    <br />
+    <h4>Estimated quarterly parking deficiency fee:
       <span class="fee">$<%= answers.parking_fee %></span>
-    </p>
+    </h4>
   </div>
 
 <!-- proper parking Database field for importing into this calculator, the only one that count are standard really, the other are from the planning panel.
