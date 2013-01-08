@@ -13,10 +13,10 @@
   <tbody>
   <% for application in @applications %>
     <tr class="<%= cycle("odd", "even") -%>">
-      <td><%= answer_value(application.user, 'business_name') %></td>
+      <td><%= user_answer_value(application.user, 'business_name') %></td>
       <td>
-        <%= answer_value(application.user, 'applicant_first_name') %>
-        <%= answer_value(application.user, 'applicant_last_name') %>
+        <%= user_answer_value(application.user, 'applicant_first_name') %>
+        <%= user_answer_value(application.user, 'applicant_last_name') %>
       </td>
       <td width="100px"><%= application.submitted_at_s %></td>
       <td width="40px"><%= link_to 'View', admin_application_path(application), :class => 'btn btn-mini' %></td>
