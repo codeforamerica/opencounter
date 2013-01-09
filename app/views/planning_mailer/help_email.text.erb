@@ -13,7 +13,7 @@ OpenCounter Help Request
 <%= @params[:phone] %>
 
 
-<% if @user.present? %>
+<% if @user.present? && @user.answers.present? %>
 
   === People =====================================================================
 
