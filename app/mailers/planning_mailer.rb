@@ -1,7 +1,7 @@
 class PlanningMailer < ActionMailer::Base
   default from: "planningcounter@opencounter.org"
+  add_template_helper(ApplicationHelper)
   
-  #NOTE: the view currently uses @user.answers, perhaps it should use Business ?
   def application_email(user)
     @user = user
 
