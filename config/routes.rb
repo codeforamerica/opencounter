@@ -9,6 +9,7 @@ Opencounter::Application.routes.draw do
   match "api/lookup/permit/:zoning/:sic" => "permits#show"
   match "api/lookup/requirements" => "requirements#index"
   match '/admin/' => redirect('/admin/applications#index')
+  match '/help' => 'panels#intro'
 
   resources :users, :except => :index
   resources :answers
