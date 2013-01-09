@@ -108,7 +108,7 @@ function(app, Parking) {
         $.ajax("/api/email/application", {data:help_data, method:"POST", success:function(data){
 
           if(data && (data.status == "sent")){
-              $("div.user_message").html("Your application has been submitted. Someone will get back to you soon.");
+              $("div#user_message").html("Your application has been submitted. Someone will get back to you soon.").show();
           }
 
         }});
@@ -123,7 +123,8 @@ function(app, Parking) {
       $.ajax("/api/email/help", {data:help_data, method:"POST", success:function(data){
 
         if(data && (data.status == "sent")){
-            $("div.user_message").html("Your email has been sent. Someone will get back to you soon.");
+            $("div#user_message").html("Your application has been submitted! Someone will get back to you soon.");
+            $("div#summary_well").hide();
         }
 
       }});
