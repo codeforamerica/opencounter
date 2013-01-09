@@ -2,17 +2,17 @@ OpenCounter Business Application
 
 === Business ===================================================================
 
-Business Name: <%= @user.businesses.first.name -%>
+Business Name: <%= @user.current_business.name -%>
 
 Business Type:  
 
-  Code: <%= @user.answers.where(:field_name => "business_code").first.try(:value) -%> (used for planning permit)
+  Code: <%= user_answer_value(@user, "business_code") -%> (used for planning permit)
 
-  Class A/B/C: <%= @user.answers.where(:field_name => "business_type_class").first.try(:value) -%> (used for business license)
+  Class A/B/C: <%= user_answer_value(@user, "business_type_class") -%> (used for business license)
 
-  Type: <%= @user.answers.where(:field_name => "business_type_type").first.try(:value) -%> (used for BIDA)
+  Type: <%= user_answer_value(@user, "business_type_type") -%> (used for BIDA)
 
-Business Structure: <%= @user.answers.where(:field_name => 'business_structure').first.try(:value) -%>
+Business Structure: <%= user_answer_value(@user, 'business_structure') -%>
 
 === Applicant =====================================================================
 
@@ -22,13 +22,13 @@ Applicant Email: <%= @user.email -%>
 
 Applicant Phone: <%= @user.phone -%>
 
-<%- if @user.answers.where(:field_name => "is_owner").first.try(:value) == "no" -%>
+<%- if user_answer_value(@user, "is_owner") == "no" -%>
 
-Owner Name: <%= @user.answers.where(:field_name => "owner_first_name").first.try(:value) -%> <%= @user.answers.where(:field_name => "owner_last_name").first.try(:value) -%>
+Owner Name: <%= user_answer_value(@user, "owner_first_name") -%> <%= user_answer_value(@user, "owner_last_name") -%>
 
-Owner Email: <%= @user.answers.where(:field_name => "owner_email").first.try(:value) -%>
+Owner Email: <%= user_answer_value(@user, "owner_email") -%>
 
-Owner Phone: <%= @user.answers.where(:field_name => "owner_phone").first.try(:value) -%>
+Owner Phone: <%= user_answer_value(@user, "owner_phone") -%>
 
 <%- else -%>
 
@@ -38,24 +38,24 @@ This applicant is the owner.
 
 === Location ===================================================================
 
-<%- if @user.answers.where(:location_type) == "home" -%>
+<%- if @user.current_business.answers.where(:location_type) == "home" -%>
 Home Occ: True
 <%- else -%>
 Home Occ: False
 <%- end -%>
 
 
-Business Physical Address: <%= @user.answers.where(:field_name => "business_physical_address_street").first.try(:value) -%> <%= @user.answers.where(:field_name => "business_physical_address_detail").first.try(:value) -%> <%= @user.answers.where(:field_name => "business_physical_address_city").first.try(:value) -%>, <%= @user.answers.where(:field_name => "business_physical_address_state").first.try(:value) -%> <%= @user.answers.where(:field_name => "business_physical_address_zip").first.try(:value) -%>
+Business Physical Address: <%= user_answer_value(@user, "business_physical_address_street") -%> <%= user_answer_value(@user, "business_physical_address_detail") -%> <%= user_answer_value(@user, "business_physical_address_city") -%>, <%= user_answer_value(@user, "business_physical_address_state") -%> <%= user_answer_value(@user, "business_physical_address_zip") -%>
 
-Business Mailing Address: <%= @user.answers.where(:field_name => "business_mailing_address_street").first.try(:value) -%> <%= @user.answers.where(:field_name => "business_mailing_address_detail").first.try(:value) -%> <%= @user.answers.where(:field_name => "business_mailing_address_city").first.try(:value) -%>, <%= @user.answers.where(:field_name => "business_mailing_address_state").first.try(:value) -%> <%= @user.answers.where(:field_name => "business_mailing_address_zip").first.try(:value) -%>
+Business Mailing Address: <%= user_answer_value(@user, "business_mailing_address_street") -%> <%= user_answer_value(@user, "business_mailing_address_detail") -%> <%= user_answer_value(@user, "business_mailing_address_city") -%>, <%= user_answer_value(@user, "business_mailing_address_state") -%> <%= user_answer_value(@user, "business_mailing_address_zip") -%>
 
-Zoning District: <%= @user.answers.where(:field_name => "zoning").first.try(:value) -%>
+Zoning District: <%= user_answer_value(@user, "zoning") -%>
 
-Business Improvement District: <%= @user.answers.where(:field_name => "bid").first.try(:value) -%>
+Business Improvement District: <%= user_answer_value(@user, "bid") -%>
 
-APN: <%= @user.answers.where(:field_name => "apn").first.try(:value) -%>
+APN: <%= user_answer_value(@user, "apn") -%>
 
-Prior Use: <%= @user.answers.where(:field_name => "prioruse").first.try(:value) -%>
+Prior Use: <%= user_answer_value(@user, "prioruse") -%>
 
 === Details ====================================================================
 
