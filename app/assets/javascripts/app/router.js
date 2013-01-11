@@ -58,6 +58,7 @@ function(app, User, Business, Answer, Requirement, Navigation, TrafficImpactFee,
           template: "panels/requirements/city/parking_non_downtown"
         });
       }
+      panel.requirements = this.requirements;
       app.layout.setView("div#content", panel);
       app.layout.render();
     },
