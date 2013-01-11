@@ -150,20 +150,24 @@
 <!-- this needs help in here and will be the basis of a calculator that has to flow over to the summary screen -->
 
   <p>Selection of Services</p>
-    <label>
-      Garbage Service:
-        I would like <input type="text" name="trash_can_20_gal_qty"> 20 gallon garbage cans ($16.16/mo),
-        <input type="text" name="trash_can_32_gal_qty"> 32 gallon garbage cans ($26.05/mo), and 
-        <input type="text" name="trash_can_68_gal_qty"> 68 gallon garbage can ($55.84/mo).
-    </label>
-    <label>
-      Containers:
-        <input type="text" class="quantity" name="trash_container_1_cubic_yard_qty"> 1-cubic yard container ($160.42 per container per pickup) <input type="text" name="trash_container_1_cubic_yard_pickups">
-        <input type="text" class="quantity" name="trash_container_2_cubic_yard_qty"> 2-cubic yard container ($239.11 per container per pickup) <input type="text" class="quantity" name="trash_container_2_cubic_yard_pickups">
-        <input type="text" class="quantity" name="trash_container_4_cubic_yard_qty"> 4-cubic yard container ($408.94 per container per pickup) <input type="text" name="trash_container_4_cubic_yard_pickups">
-        <input type="text" class="quantity" name="trash_container_6_cubic_yard_qty"> 6-cubic yard container ($578.77 per container per pickup) <input type="text" class="quantity" name="trash_container_6_cubic_yard_pickups">
-        Where will you be placing the container? Street placement is not allowed unless approved in advance by the Public Works Department.
-    </label>
+    <div class="control-group">
+      <label class="control-label">Regular Garbage Services Size</label>
+      <div class="controls">
+        <input type="checkbox" name="trash_can_20_gal_qty" <% if (answers.trash_can_20_gal_qty) { %>checked="checked"<% } %>> 20 gallon garbage cans ($16.16/mo)
+        <input type="checkbox" name="trash_can_32_gal_qty"  <% if (answers.trash_can_32_gal_qty)  { %>checked="checked"<% } %>> 32 gallon garbage cans ($26.05/mo)
+        <input type="checkbox" name="trash_can_68_gal_qty"  <% if (answers.trash_can_86_gal_qty)  { %>checked="checked"<% } %>> 68 gallon garbage cans ($55.84/mo)
+        </div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Container Garbage Services Size</label>
+      <div class="controls">
+        <input type="checkbox" name="trash_container_1_cubic_yard_qty" <% if (answers.trash_container_1_cubic_yard_qty) { %>checked="checked"<% } %>> 1-cubic yard container ($160.42 per container per pickup)
+        <input type="checkbox" name="trash_container_2_cubic_yard_qty"  <% if (answers.trash_container_2_cubic_yard_qty)  { %>checked="checked"<% } %>> 2-cubic yard container ($239.11 per container per pickup)
+        <input type="checkbox" name="trash_container_4_cubic_yard_qty"  <% if (answers.trash_container_4_cubic_yard_qty)  { %>checked="checked"<% } %>> 4-cubic yard container ($408.94 per container per pickup)
+        <input type="checkbox" name="trash_container_6_cubic_yard_qty"  <% if (answers.trash_container_6_cubic_yard_qty)  { %>checked="checked"<% } %>> 6-cubic yard container ($578.77 per container per pickup)
+      </div>
+    </div>
   </form>
   
   <div class="form-submit">
