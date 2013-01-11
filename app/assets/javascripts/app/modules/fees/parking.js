@@ -121,7 +121,6 @@ function(app, answer) {
         answers[model.get("name")] = model.get("value");
       }
       
-      // var result = answer.Views.Panel.prototype.serialize.call(this);
       var jurisdiction = window.location.pathname.toLowerCase().split("/").slice(2)[0];
       var panel = window.location.pathname.toLowerCase().split("/").slice(2)[1];
       var requirementIndex = this.requirements.matchingIndex(jurisdiction, panel);
@@ -170,6 +169,17 @@ function(app, answer) {
       for (m in this.collection.models) {
         model = this.collection.models[m];
         answers[model.get("name")] = model.get("value");
+      }
+      var jurisdiction = window.location.pathname.toLowerCase().split("/").slice(2)[0];
+      var panel = window.location.pathname.toLowerCase().split("/").slice(2)[1];
+      var requirementIndex = this.requirements.matchingIndex(jurisdiction, panel);
+      if ((requirementIndex + 1) < this.requirements.length) {
+        var nextRequirement = this.requirements.at(requirementIndex + 1);
+        answers.nextRequirementHref = "/requirements/" + nextRequirement.get('jurisdiction').toLowerCase() + "/" + nextRequirement.get('short_name');
+        answers.nextRequirementName = nextRequirement.get('name');
+      } else {
+        answers.nextRequirementHref = "/summary";
+        answers.nextRequirementName = "Summary";
       }
       return {
         answers: answers
