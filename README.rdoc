@@ -33,7 +33,7 @@ they guide new business owners through their required paperwork.
 
 We took all this information, wrote an overview of the business permitting
 process, created an interactive zoning map, wrote calculators for many of the
-fees that new businesses pay, and stitched it into a step-by-step guide and 
+fees that new businesses pay, and stitched it into a step-by-step guide and
 questionnaire that guides applicants through the permitting process.
 
 == Status
@@ -43,6 +43,10 @@ OpenCounter is alpha software. Use at your own risk.
 == Roadmap
 
 TBD
+
+== Deploying on Heroku
+  rake secret # to generate a secret token
+  heroku config:set SECRET_TOKEN={{your secret token}}
 
 == Contributing
 
@@ -82,13 +86,13 @@ are permitted provided that the following conditions are met:
 
 * Redistributions of source code must retain the above copyright notice, this
   list of conditions and the following disclaimer.
-  
+
 * Redistributions in binary form must reproduce the above copyright notice, this
-  list of conditions and the following disclaimer in the documentation and/or 
+  list of conditions and the following disclaimer in the documentation and/or
   other materials provided with the distribution.
-  
+
 * Neither the name of Code for America nor the names of its contributors may be
-  used to endorse or promote products derived from this software without 
+  used to endorse or promote products derived from this software without
   specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
