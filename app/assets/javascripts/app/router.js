@@ -60,6 +60,7 @@ function(app, User, Business, Answer, Requirement, Navigation, TrafficImpactFee,
         });
         panel.requirements = this.requirements;
       }
+      panel.requirements = this.requirements;
       app.layout.setView("div#content", panel);
       app.layout.render();
     },
