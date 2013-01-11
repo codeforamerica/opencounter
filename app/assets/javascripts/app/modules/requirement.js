@@ -1,7 +1,7 @@
 define([
   // Application.
   "app",
-  "modules/answer"
+  "modules/answer",
 ],
 
 // Map dependencies from above array.
