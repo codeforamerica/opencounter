@@ -1,14 +1,14 @@
 define([
-       // Application.
-       "app"
+  // Application.
+  "app",
+  "modules/answer",
 ],
 
 // Map dependencies from above array.
-function(app) {
-
+function(app, answer) {
+  
   // Create a new module.
   var Parking = app.module();
-
   Parking.Views.Downtown = Backbone.View.extend({
 
     tagName:    "section",
@@ -19,7 +19,7 @@ function(app) {
     },
 
     units: {
-      "apartment":  { unit: "in units",       factor: 4    },
+      "apartment":  { unit: "in units",    factor: 4    },
       "doctor":     { unit: "square feet", factor: 200  },
       "mercantile": { unit: "square feet", factor: 400  },
       "furniture":  { unit: "square feet", factor: 800  },
@@ -112,13 +112,26 @@ function(app) {
       };
     },
 
-    serialize: function() {
+    serialize: function() {      
       var model;
       var answers = {};
 
       for (m in this.collection.models) {
         model = this.collection.models[m];
         answers[model.get("name")] = model.get("value");
+      }
+      
+      // var result = answer.Views.Panel.prototype.serialize.call(this);
+      var jurisdiction = window.location.pathname.toLowerCase().split("/").slice(2)[0];
+      var panel = window.location.pathname.toLowerCase().split("/").slice(2)[1];
+      var requirementIndex = this.requirements.matchingIndex(jurisdiction, panel);
+      if ((requirementIndex + 1) < this.requirements.length) {
+        var nextRequirement = this.requirements.at(requirementIndex + 1);
+        answers.nextRequirementHref = "/requirements/" + nextRequirement.get('jurisdiction').toLowerCase() + "/" + nextRequirement.get('short_name');
+        answers.nextRequirementName = nextRequirement.get('name');
+      } else {
+        answers.nextRequirementHref = "/summary";
+        answers.nextRequirementName = "Summary";
       }
       return {
         answers: answers
@@ -451,7 +464,6 @@ function(app) {
     },
 
     clearAnswer: function(field_name) {
-      console.log("clearing: ", field_name)
       this.collection.addAnswer(field_name, null);
     },
 

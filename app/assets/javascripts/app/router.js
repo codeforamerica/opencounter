@@ -45,19 +45,22 @@ function(app, User, Business, Answer, Requirement, Navigation, TrafficImpactFee,
       app.layout.render();
     },
 
-    parking:function(){
+    parking: function(){
       var panel;
       if (this.answers.getAnswer('zoning') == 'CBD') {
         panel = new (Answer.Views.Panel.extend(Parking.Views.Downtown.prototype)) ({
           collection: this.answers,
           template: "panels/requirements/city/parking"
         });
+        panel.requirements = this.requirements;
       } else { 
         panel = new (Answer.Views.Panel.extend(Parking.Views.NonDowntown.prototype)) ({
           collection: this.answers,
           template: "panels/requirements/city/parking_non_downtown"
         });
+        panel.requirements = this.requirements;
       }
+      panel.requirements = this.requirements;
       app.layout.setView("div#content", panel);
       app.layout.render();
     },
