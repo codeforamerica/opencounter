@@ -1,0 +1,199 @@
+<div class="page-header">
+  <h1>Utility Services</h1>
+</div>
+
+<div class="row-fluid">
+  <p class="lead">You've told us you're working out of a commercial location, which means you'll need utility service.</p>
+  
+  <h3>Gas and Power</h3>
+  <p>In our City, gas and power is supplied by PG&#38;E. You'll have to contact them on your own if your landlord or building owner hasn't set up a separate account and meter for you.</p>
+  
+  <h3>Water, Sewage, and Trash Service</h3>
+  <p>These are all provided by the City of Santa Cruz, and we'll help you get your application in with this guide to save you a trip to City Hall.</p>
+  <p>For trash service, you must place the container on private property unless street access is permitted by the Public Works Department.</p>
+  
+  <form>
+    <p>Business Information</p>
+    
+    <div class="control-group">
+      <label class="control-label">Business Name</label>
+      <div class="controls"><input type="text" name="business_name" placeholder="" value="<%= answers.business_name %>"></div>
+    </div>
+    
+     <div class="control-group">
+      <label class="control-label">Business Mailing Address</label>
+      <div class="controls"><input type="text" name="business_physical_address_street" value="<%= answers.business_physical_address_street %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Suite or Office #?</label>
+      <div class="controls"><input type="text" name="business_physical_address_detail" value="<%= answers.business_physical_address_detail %>"></div>
+    </div>    
+    
+    <div class="control-group">
+      <label class="control-label">City</label>
+      <div class="controls"><input type="text" name="business_physical_address_city" value="<%= answers.business_physical_address_city %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">State</label>
+      <div class="controls"><input type="text" name="business_physical_address_state" value="<%= answers.business_physical_address_state %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">ZIP</label>
+      <div class="controls"><input type="text" name="business_physical_address_zip" value="<%= answers.business_physical_address_zip %>"></div>
+    </div>
+    
+     <div class="control-group">
+      <label class="control-label">Previous Business Mailing Address</label>
+      <div class="controls"><input type="text" name="business_physical_address_street_previous" value="<%= answers.business_physical_address_street_previous %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Previous Suite or Office #?</label>
+      <div class="controls"><input type="text" name="business_physical_address_detail_previous" value="<%= answers.business_physical_address_detail_previous %>"></div>
+    </div>    
+    
+    <div class="control-group">
+      <label class="control-label">City</label>
+      <div class="controls"><input type="text" name="business_physical_address_city" value="<%= answers.business_physical_address_city %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">State</label>
+      <div class="controls"><input type="text" name="business_physical_address_state" value="<%= answers.business_physical_address_state %>"></div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Previous ZIP</label>
+      <div class="controls"><input type="text" name="business_physical_address_zip_previous" value="<%= answers.business_physical_address_zip_previous %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Business Phone #</label>
+      <div class="controls"><input type="text" name="business_phone" placeholder="" value="<%= answers.business_phone %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Business Fax #</label>
+      <div class="controls"><input type="text" name="business_fax" placeholder="" value="<%= answers.business_fax %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Email</label>
+      <div class="controls"><input type="text" name="applicant_email" placeholder="" value="<%= answers.applicant_email %>"></div>
+    </div>
+        
+    <div class="control-group">
+      <label class="control-label">Date of Occupancy / Date to start service</label>
+      <div class="controls"><input type="text" name="business_date_of_occupancy" placeholder="" value="<%= answers.business_date_of_occupancy %>"></div>
+    </div>
+        
+    <p>Applicant Information </p>
+    
+    <div class="control-group">
+      <label class="control-label">Applicant First Name</label>
+      <div class="controls"><input type="text" name="applicant_first_name" placeholder="" value="<%= answers.applicant_first_name %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Applicant Last Name</label>
+      <div class="controls"><input type="text" name="applicant_last_name" placeholder="" value="<%= answers.applicant_last_name %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Applicant Address</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_street" placeholder="" value="<%= answers.applicant_physical_address_street %>"></div>
+    </div>      
+
+    <div class="control-group">
+      <label class="control-label">Suite or Office Number</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_detail" placeholder="" value="<%= answers.applicant_physical_address_detail %>"></div>
+    </div> 
+
+    <div class="control-group">
+      <label class="control-label">Applicant City</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_city" placeholder="" value="<%= answers.applicant_physical_address_city %>"></div>
+    </div>     
+
+    <div class="control-group">
+      <label class="control-label">Applicant State</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_state" placeholder="" value="<%= answers.applicant_physical_address_state %>"></div>
+    </div>     
+
+    <div class="control-group">
+      <label class="control-label">Applicant ZIP</label>
+      <div class="controls"><input type="text" name="applicant_physical_address_zip" placeholder="" value="<%= answers.applicant_physical_address_zip %>"></div>
+    </div>  
+
+    <div class="control-group">
+      <label class="control-label">Applicant Phone</label>
+      <div class="controls"><input type="text" name="applicant_phone" placeholder="" value="<%= answers.applicant_phone %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Applicant Other Phone</label>
+      <div class="controls"><input type="text" name="applicant_phone_other" placeholder="" value="<%= answers.applicant_phone_other %>"></div>
+    </div>  
+
+    <div class="control-group">
+      <label class="control-label">Business EIN</label>
+      <div class="controls"><input type="text" name="federal_EIN" placeholder="Business EIN only do not put SSN into this system" value="<%= answers.federal_EIN %>"></div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Applicant Driver's License</label>
+      <div class="controls"><input type="text" name="applicant_drivers_license" placeholder="" value="<%= answers.applicant_drivers_license %>"></div>
+    </div>
+    
+<!-- this needs help in here and will be the basis of a calculator that has to flow over to the summary screen -->
+
+  <p>Selection of Services</p>
+<<<<<<< HEAD
+      
+      <div class="control-group">
+          <label class="control-label">Regular Garbage Services Size</label>
+          <div class="controls">
+            <input type="checkbox" name="trash_can_20_gal_qty" <% if (answers.trash_can_20_gal_qty) { %>checked="checked"<% } %>> 20 gallon garbage cans ($16.16/mo)
+            <input type="checkbox" name="trash_can_32_gal_qty"  <% if (answers.trash_can_32_gal_qty)  { %>checked="checked"<% } %>> 32 gallon garbage cans ($26.05/mo)
+            <input type="checkbox" name="trash_can_68_gal_qty"  <% if (answers.trash_can_86_gal_qty)  { %>checked="checked"<% } %>> 68 gallon garbage cans ($55.84/mo)
+            </div>
+      </div>
+      
+      <div class="control-group">
+          <label class="control-label">Container Garbage Services Size</label>
+          <div class="controls">
+              <input type="checkbox" name="trash_container_1_cubic_yard_qty" <% if (answers.trash_container_1_cubic_yard_qty) { %>checked="checked"<% } %>> 1-cubic yard container ($160.42 per container per pickup)
+              <input type="checkbox" name="trash_container_2_cubic_yard_qty"  <% if (answers.trash_container_2_cubic_yard_qty)  { %>checked="checked"<% } %>> 2-cubic yard container ($239.11 per container per pickup)
+              <input type="checkbox" name="trash_container_4_cubic_yard_qty"  <% if (answers.trash_container_4_cubic_yard_qty)  { %>checked="checked"<% } %>> 4-cubic yard container ($408.94 per container per pickup)
+              <input type="checkbox" name="trash_container_6_cubic_yard_qty"  <% if (answers.trash_container_6_cubic_yard_qty)  { %>checked="checked"<% } %>> 6-cubic yard container ($578.77 per container per pickup)
+            </div>
+      </div>
+      
+=======
+    <div class="control-group">
+      <label class="control-label">Regular Garbage Services Size</label>
+      <div class="controls">
+        <input type="checkbox" name="trash_can_20_gal_qty" <% if (answers.trash_can_20_gal_qty) { %>checked="checked"<% } %>> 20 gallon garbage cans ($16.16/mo)
+        <input type="checkbox" name="trash_can_32_gal_qty"  <% if (answers.trash_can_32_gal_qty)  { %>checked="checked"<% } %>> 32 gallon garbage cans ($26.05/mo)
+        <input type="checkbox" name="trash_can_68_gal_qty"  <% if (answers.trash_can_86_gal_qty)  { %>checked="checked"<% } %>> 68 gallon garbage cans ($55.84/mo)
+        </div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label">Container Garbage Services Size</label>
+      <div class="controls">
+        <input type="checkbox" name="trash_container_1_cubic_yard_qty" <% if (answers.trash_container_1_cubic_yard_qty) { %>checked="checked"<% } %>> 1-cubic yard container ($160.42 per container per pickup)
+        <input type="checkbox" name="trash_container_2_cubic_yard_qty"  <% if (answers.trash_container_2_cubic_yard_qty)  { %>checked="checked"<% } %>> 2-cubic yard container ($239.11 per container per pickup)
+        <input type="checkbox" name="trash_container_4_cubic_yard_qty"  <% if (answers.trash_container_4_cubic_yard_qty)  { %>checked="checked"<% } %>> 4-cubic yard container ($408.94 per container per pickup)
+        <input type="checkbox" name="trash_container_6_cubic_yard_qty"  <% if (answers.trash_container_6_cubic_yard_qty)  { %>checked="checked"<% } %>> 6-cubic yard container ($578.77 per container per pickup)
+      </div>
+    </div>
+>>>>>>> 4dfbd6cbe943f42790cb7500302520a02734608a
+  </form>
+  
+  <div class="form-submit">
+    <a href="<%= nextRequirementHref %>" class="btn btn-large btn-info"><%= nextRequirementName %> &rarr;</a>
+  </div>
+</div>
