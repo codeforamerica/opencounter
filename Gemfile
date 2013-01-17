@@ -27,6 +27,7 @@ gem 'delayed_job_active_record'
 gem 'therubyracer', :platforms => :ruby
 gem 'execjs'
 gem 'devise'
+gem 'airbrake'
 
 gem 'ranked-model'
 
