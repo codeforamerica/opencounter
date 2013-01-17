@@ -63,7 +63,7 @@
 
         <% } else { %>
 
-        <p class="lead success">The use permit you need is a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
+        <p class="lead">The planning permit you need is a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
 
         <p class="lead">We'll need this additional information:</p>
         <form method="post" action="#" id="form_zoning_clearance">
@@ -124,17 +124,15 @@
         </form>
 
         <% } %>
-        
-        
-<!-- Ruthie, looks like you're still working on this. If the code returns "2" for AUP or "3" for SUP, it can return the same form info, as AUP and SUP use the same unified land use application and you can use the code under the else statment at 130 and clean-up / remove the conditionals down at line 199 ("talk to a planner")-->        
+            
         
       <% } else { %>
       
-        <p>You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong></p>
+        <p class="lead">You&rsquo;ve told us that you&rsquo;re <strong>working from a commercial space</strong> at <strong><%= answers.business_physical_address_street %></strong>, and your business is categorized as <strong><%= answers.CIC_industry_subindustry %> (code <%= answers.CIC_code %>)</strong></p>
         
         <% if (answers.required_permit.permit == "1") { %>
 
-          <p>This use is principally permitted, so you&rsquo;ll need a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
+          <p class="lead">This use is principally permitted, so you&rsquo;ll need a <em>Zoning Clearance</em>. You&rsquo;ll need to submit it to the Planning Department, and the fee is <strong>$221.00</strong>.</p>
 
           <p class="lead">We'll need this additional information:</p>
           <form method="post" action="#" id="form_zoning_clearance">
@@ -201,7 +199,7 @@
 
         <% } else if (answers.required_permit.permit == "2") { %>
 
-          <p>This use is conditionally permitted, so you&rsquo;ll need an <em>Administrative Use Permit</em>.</p>
+          <p class="lead">This use is conditionally permitted, so you&rsquo;ll need an <em>Administrative Use Permit</em>.</p>
  
  
           <p class="lead">We'll need this additional information:</p>
@@ -383,21 +381,21 @@
  
  </div>
   
-            <div class="span4">
+          <!--  <div class="span4">
               <div class="well">
                 <p class="lead">I hereby certify that the facts given on this application are true and correct to the best of my knowledge and I agree to, and authorize, such investigations as are deemed necessary by the City of Santa Curz City Planning Department for the preparation of reports related to this application, including the right of access to the property involved. In submitting this application I agree to hold the City of Santa Cruz harmless from all costs and expenses, including litigations costs and attornet's fees incurred by the City of held to be the City's responsibility in connection with the City's defense of its actions taken in connection with the project which is subject of this application" (Signed and dated)</p>
                 <p class="next lead"><a class="btn btn-large btn-info" href="/location/check">Yes <%= (answers.is_owner === "true") ? "I" : "the owner" %> will comply with all these rules &rarr;</a></p>
                 <p class="next lead"><a class="btn btn-large btn-info" href="/help">No, <%= (answers.is_owner === "true") ? "I" : "the owner" %> might not be able comply with these terms. &rarr;</a></p>
               </div>
             </div>
-          
+          -->
           </div>
  
   </form>
 
         <% } else if (answers.required_permit.permit == "3") { %>
 
-          <p>This use is conditionally permitted, so you&rsquo;ll need a <em>Special Use Permit</em>.
+          <p class="lead">This use is conditionally permitted, so you&rsquo;ll need a <em>Special Use Permit</em>.
           
           <p class="lead">We'll need this additional information:</p>
 <!-- check this Ruthie, don't want to mess this up-->
@@ -575,14 +573,14 @@
               <div class="controls"><input type="text" name="building_new_structure" placeholder="Yes or No" value="<%= answers.building_new_structure %>"></div>
             </div> 
  
-
+<!--
               <div class="form-submit">
                 <p class="lead">I hereby certify that the facts given on this application are true and correct to the best of my knowledge and I agree to, and authorize, such investigations as are deemed necessary by the City of Santa Curz City Planning Department for the preparation of reports related to this application, including the right of access to the property involved. In submitting this application I agree to hold the City of Santa Cruz harmless from all costs and expenses, including litigations costs and attornet's fees incurred by the City of held to be the City's responsibility in connection with the City's defense of its actions taken in connection with the project which is subject of this application" (Signed and dated)</p>
                 <p class="next lead"><a class="btn btn-large btn-info" href="/location/check">Yes <%= (answers.is_owner === "true") ? "I" : "the owner" %> will comply with all these rules &rarr;</a></p>
                 <p class="next lead"><a class="btn btn-large btn-info" href="/help">No, <%= (answers.is_owner === "true") ? "I" : "the owner" %> might not be able comply with these terms. &rarr;</a></p>
               </div>
             </div>
-          
+-->          
           </div>
  
   </form>      
@@ -590,12 +588,12 @@
 
         <% } else if (answers.required_permit.permit == "4") { %>
         
-          <p>We&rsquo;re sorry, but businesses of this type are prohibited in this zoning district. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
+          <p class="lead">We&rsquo;re sorry, but businesses of this type are prohibited in this zoning district. <a href="/help" class="btn btn-large">Talk to a planner for next steps &rarr;</a></p>
 
         <% } else if (answers.required_permit.permit == "5") { %>
 
-          <p>We&rsquo;re sorry, but right now OpenCounter can&rsquo;t automatically determine what type of use permit you need.</p>
-          <p>Help us make OpenCounter smarter: please <a href="/help">contact the Planning Department</a>, and they&rsquo;ll help you -- and OpenCounter! -- figure out which type of use permit you need. Thank you for helping out the next person!</p>
+          <p class="lead">We&rsquo;re sorry, but right now OpenCounter can&rsquo;t automatically determine what type of use permit you need.</p>
+          <p class="lead">Help us make OpenCounter smarter: please <a href="/help">contact the Planning Department</a>, and they&rsquo;ll help you -- and OpenCounter! -- figure out which type of use permit you need. Thank you for helping out the next person!</p>
           <% if (answers.required_permit.notes) { %><p>Some notes: <%= answers.required_permit.notes %></p><% } %>
 
         <% } %>
