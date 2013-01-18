@@ -48,6 +48,17 @@ TBD
   rake secret # to generate a secret token
   heroku config:set SECRET_TOKEN={{your secret token}}
 
+== Preventing your Heroku dynos from spinning down
+	By default, Heroku spins down the dynos on sites that aren't accessed very often.
+	This can cause your site to take a long time to load when it is accessed after 
+	a period of inactivity. One solution is to use the free New Relic add-on with 
+	app monitoring, which pings your site throughout the day.
+
+  heroku config:set NEW_RELIC_LICENSE_KEY={{your New Relic License key}}
+  # Your License Key is listed on the New Relic Account Settings page
+
+  heroku config:set NEW_RELIC_APP_NAME={{any name you want to identify your app}}
+
 == Contributing
 
 In the spirit of [free software][free-sw], **everyone** is encouraged to help
