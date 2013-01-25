@@ -97,7 +97,7 @@
 
 <hr />
 
-<% unless @user.blank? || @user.answers.blank? %>
+<% if @user.try(:current_business).try(:answers).present? %>
   <br>
   <h3 class='h3'>List of all answers:</h3>
   <table class="table table-striped">
@@ -107,7 +107,7 @@
       <th>value</th>
     </thead>
     <tbody>
-    <% @user.answers.each_with_index do |answer,i| %>
+    <% @user.current_business.answers.each_with_index do |answer,i| %>
       <tr class="<%= cycle("odd", "even") -%>">
         <td><%= i+1 %></td>
         <td><%= answer.field_name %></td>
