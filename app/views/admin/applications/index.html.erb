@@ -5,19 +5,19 @@
 
 <table class="table table-striped">
   <thead>
-    <th>Business</th>
     <th>Applicant</th>
+    <th>Business</th>
     <th>Submitted (Pacific Time)</th>
     <th>&nbsp;</th>
   </thead>
   <tbody>
   <% for application in @applications %>
     <tr class="<%= cycle("odd", "even") -%>">
-      <td><%= user_answer_value(application.user, 'business_name') %></td>
       <td>
         <%= user_answer_value(application.user, 'applicant_first_name') %>
         <%= user_answer_value(application.user, 'applicant_last_name') %>
       </td>
+      <td><%= user_answer_value(application.user, 'business_name') %></td>
       <td width="100px"><%= application.submitted_at_s %></td>
       <td width="40px"><%= link_to 'View', admin_application_path(application), :class => 'btn btn-mini' %></td>
     </tr>
