@@ -71,7 +71,7 @@ Opencounter::Application.configure do
   # e-mail configuration for devise
   config.action_mailer.default_url_options = { :host => 'http://opencounter.herokuapp.com' }
 
-  config.action_mailer.delivery_method = :smtp
+  ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     :address        => "smtp.sendgrid.net",
     :user_name      => ENV['SENDGRID_USERNAME'],
