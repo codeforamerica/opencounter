@@ -108,7 +108,8 @@ function(app, Parking) {
         $.ajax("/api/email/application", {data:help_data, method:"POST", success:function(data){
 
           if(data && (data.status == "sent")){
-              $("div#user_message").html("Your application has been submitted. Someone will get back to you soon.").show();
+              $("div#user_message").html("Congratulations! Your application has been submitted. Someone will get back to you soon.").show();
+              $("#summary_well").hide();
           }
 
         }});
