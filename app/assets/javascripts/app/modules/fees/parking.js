@@ -522,17 +522,17 @@ function(app, answer) {
       var spaces = this.calculateSpaces(business_subtype);
     
       if ( spaces == 'Unable to calculate.' ) {
-        $("div#errors").html("Please fill out all the fields.").show();
+        $("div#errors").html("<h4>Please fill out all the fields.</h4>").show();
       } else if ( (isNaN(spaces) || spaces == null) ) {
-        $("div#errors").html("Unable to calculate.").show();
+        $("div#errors").html("<h4>Unable to calculate.</h4>").show();
       } else {
         this.collection.addAnswer('required_parking_spaces', spaces);
 
-        var display_text = "You must provide "
+        var display_text = "<h4>You must provide "
         + spaces
         + " car parking space"
         + ((spaces !== 1) ? "s" : "")
-        + ".";
+        + ".</h4>";
 
         $("#parking_spaces").html(display_text).show();
       }
