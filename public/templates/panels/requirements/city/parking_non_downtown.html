@@ -1047,10 +1047,13 @@
 
   </div>  <!-- /#business_type_worship -->
 
-  <input type="submit" value="Calculate" class="calc_btn btn btn-info" style="margin: 1em;">
+  <div id="parking_spaces" class="alert alert-success" style="display: none;"></div>
+  <div class="alert alert-block" id="errors" style="display: none;"></div>
+
+
+  <input type="submit" value="Calculate" id="calculate-parking" class="calc_btn btn btn-info" style="margin: 1em;">
   <br>
-  <div id="parking_spaces"></div>
-  
+    
   <div class="form-submit">
     <a href="<%= answers.nextRequirementHref %>" class="btn btn-large btn-info"><%= answers.nextRequirementName %> &rarr;</a>
   </div>

@@ -26,7 +26,7 @@ function(app, answer) {
       "service":    { unit: "square feet", factor: 1000 }
     },
 
-    saveInput:function(ev){
+    saveInput: function(ev){
       var $elem = $(ev.target);
       this.collection.addAnswer($elem.attr("name"), $elem.val());
       this.calculate();
@@ -153,13 +153,26 @@ function(app, answer) {
 
   });
 
+  
+  
+  
+  
+  
+  // NON-DOWNTOWN PARKING FUNCTIONS
   Parking.Views.NonDowntown = Backbone.View.extend({
 
     tagName:    "section",
     className:  "content",
 
     events: {
-      "change select,input":"calculate"
+      "change select,input":"saveInput",
+      "click #calculate-parking": "calculate"
+    },
+    
+    saveInput: function(ev){
+      var $elem = $(ev.target);
+      this.collection.addAnswer($elem.attr("name"), $elem.val());
+      $("div#errors").hide();
     },
 
     serialize: function() {
@@ -193,7 +206,7 @@ function(app, answer) {
 
     // Calculates the number of spaces a business must provide.
     // Requires the business sub-type and other fields specific to that business.
-    calculateSpaces: function (business_subtype) {
+    calculateSpaces: function(business_subtype) {
       var spaces;
       switch (business_subtype) {
         case 'parking_auto':
@@ -472,7 +485,7 @@ function(app, answer) {
     render: function() {
       return this;
     },
-
+    
     clearAnswer: function(field_name) {
       this.collection.addAnswer(field_name, null);
     },
@@ -486,8 +499,8 @@ function(app, answer) {
 
       // When the applicant selects a business category
       $('#business_type').change(function() {
-        self.clearAnswer('business_type');
-        self.clearAnswer('required_parking_spaces');
+        /*self.clearAnswer('business_type');*/
+        /*self.clearAnswer('required_parking_spaces');*/
         $('.business-type-rule').hide();
         selected_option = '#business_type_' + $(this).val() || '';
         $(selected_option).show();
@@ -502,28 +515,26 @@ function(app, answer) {
 
     },
 
-    calculate:function() {
-      var type = 'parking_' + this.collection.getAnswer('business_type');
+    calculate: function() {
+      var type = 'parking_' + this.collection.getAnswer('business_type_class');
       var subtype = this.collection.getAnswer('business_subtype');
       var business_subtype = subtype || type;
       var spaces = this.calculateSpaces(business_subtype);
     
-      if ( !(isNaN(spaces) || spaces == null) ) {
+      if ( spaces == 'Unable to calculate.' ) {
+        $("div#errors").html("Please fill out all the fields.").show();
+      } else if ( (isNaN(spaces) || spaces == null) ) {
+        $("div#errors").html("Unable to calculate.").show();
+      } else {
         this.collection.addAnswer('required_parking_spaces', spaces);
 
-        var display_text = "<p>You must provide "
+        var display_text = "You must provide "
         + spaces
         + " car parking space"
         + ((spaces !== 1) ? "s" : "")
-        + ".</p>";
+        + ".";
 
-        $("#parking_spaces")
-        .html(display_text)
-        .show();
-      } else {
-        $("#parking_spaces")
-        .html("Please fill out all the fields.")
-        .show();
+        $("#parking_spaces").html(display_text).show();
       }
     }
 
