@@ -70,11 +70,17 @@ function(app, answer) {
       fee = Math.max(0, fee);
       if (!fee) {
         fee = 0.0;
+        $("#alert").show();
+        $("#fees").hide();
+      } else {
+        // Add fee to answers and inject into template
+        this.collection.addAnswer("parking_fee", fee);
+        $("#alert").hide();
+        $("#fees").show();
+        this.$el.find(".fee").html("$"+this.dollarFormat(fee,2,".", ","));
       }
 
-      // Add fee to answers and inject into template
-      this.collection.addAnswer("parking_fee", fee);
-      this.$el.find(".fee").html("$"+this.dollarFormat(fee,2,".", ","));
+
     },
 
     showDoctorInputs: function() {

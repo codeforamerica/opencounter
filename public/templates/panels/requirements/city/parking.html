@@ -42,11 +42,16 @@
       <input name="parking_spaces_existing" type="text" value="<%= answers.parking_spaces_auto  %>"/>
         
     </label>
-    <p><span class="calculated">Fill out form to calculate</span> required spaces.</p>
     <br />
-    <h4>Estimated quarterly parking deficiency fee:
-      <span class="fee">$<%= answers.parking_fee %></span>
-    </h4>
+    <div class="alert alert-block" id="alert">
+      <h4><span class="calculated">Fill out form to calculate</span> required spaces.</h4>
+    </div>
+    <div class="alert alert-success" id="fees" style="display: none;">
+      <h4>
+        Estimated quarterly parking deficiency fee:
+        <span class="fee">$<%= answers.parking_fee %></span>
+      </h4>
+    </div>
   </div>
 
 <!-- proper parking Database field for importing into this calculator, the only one that count are standard really, the other are from the planning panel.
