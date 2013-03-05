@@ -13,46 +13,42 @@
     <p class="lead">Because your business is downtown, you don&#39;t need to provide any parking spaces, but you will need to pay a Parking Deficiency Fee every quarter.</p>
     <p>These fees, based normally on square footage, are used to maintain City parking lots, build new ones, and also pay for extra public safety patrols, street cleaning and bike lockers.</p>
       <p>In 2011, the City created an incentive for new businesses that move downtown that waives these fees for a year, and then discounts them for an additional six months as your businesses grows downtown.</p>
-      <p>There is no application form for parking fees, as it uses the same inforamtion we ask for on your business license application.</p>
+      <p>There is no application form for parking fees, as it uses the same information we ask for on your business license application.</p>
       <br/>
-      
-    <label>
-      Business type
-      <select name="parking_proptype">
-        <option value="APARTMENT">Apartment</option>
-        <option value="DOCTOR">Doctor or Dentist</option>
-        <option value="MERCANTILE">Mercantile / Professional</option>
-        <option value="FURNITURE">Furniture Store</option>
-        <option value="SERVICE">Service Area/Warehouse</option>
-      </select>
-    </label>
-    <div id='doctor_inputs'>
-      <p>Doctors and Dentists</p>
+    
+    <div class="well">
+      <h4>Calculator</h4><br />
       <label>
-        Practitioners
-        <input type="text" name="parking_doctor_count" value="1"/>
+        Business type
+        <select name="parking_proptype">
+          <option value="APARTMENT">Apartment</option>
+          <option value="DOCTOR">Doctor or Dentist</option>
+          <option value="MERCANTILE">Mercantile / Professional</option>
+          <option value="FURNITURE">Furniture Store</option>
+          <option value="SERVICE">Service Area/Warehouse</option>
+        </select>
       </label>
+      <div id='doctor_inputs'>
+        <p>Doctors and Dentists</p>
+        <label>
+          Practitioners
+          <input type="text" name="parking_doctor_count" value="1"/>
+        </label>
+      </div>
+      <label>
+        Size of Property
+        <input name="parking_size_existing" type="text" />&nbsp;<label class="units"><%= answers.parking_units %></label>
+      </label>
+      <label>
+        Existing Spaces
+        <input name="parking_spaces_existing" type="text" value="<%= answers.parking_spaces_auto  %>"/>
+      </label>
+      
+      <div class="alert alert-block" id="alert" style="display: none;"></div>
+      <div class="alert alert-success" id="fees" style="display: none;"></div>
+      
+      <button id="calculate-parking" class="btn btn-info" style="margin: 1em;">Calculate</button>
     </div>
-    <label>
-      Size of Property
-      <input name="parking_size_existing" type="text" />&nbsp;<label class="units"><%= answers.parking_units %></label>
-    </label>
-    <label>
-      Existing Spaces
-      <input name="parking_spaces_existing" type="text" value="<%= answers.parking_spaces_auto  %>"/>
-        
-    </label>
-    <br />
-    <div class="alert alert-block" id="alert">
-      <h4><span class="calculated">Fill out form to calculate</span> required spaces.</h4>
-    </div>
-    <div class="alert alert-success" id="fees" style="display: none;">
-      <h4>
-        Estimated quarterly parking deficiency fee:
-        <span class="fee">$<%= answers.parking_fee %></span>
-      </h4>
-    </div>
-  </div>
 
 <!-- proper parking Database field for importing into this calculator, the only one that count are standard really, the other are from the planning panel.
 
@@ -77,8 +73,6 @@
               <label class="control-label">bicycle parking spaces</label>
               <div class="controls"><input type="text" name="parking_spaces_bicycle" placeholder="" value="<%= answers.parking_spaces_bicycle %>"></div>
             </div>
-
-  
   -->
   
   <div class="form-submit">

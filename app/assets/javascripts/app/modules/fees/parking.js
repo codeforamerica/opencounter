@@ -15,7 +15,8 @@ function(app, answer) {
     className:  "content",
 
     events: {
-      "change select,input":"saveInput"
+      "change select,input":"saveInput",
+      "click #calculate-parking": "calculate"
     },
 
     units: {
@@ -29,7 +30,6 @@ function(app, answer) {
     saveInput: function(ev){
       var $elem = $(ev.target);
       this.collection.addAnswer($elem.attr("name"), $elem.val());
-      this.calculate();
     },
 
     calculate: function(){
@@ -70,17 +70,19 @@ function(app, answer) {
       fee = Math.max(0, fee);
       if (!fee) {
         fee = 0.0;
-        $("#alert").show();
+        $("#alert").html('<h4>Please complete the form to calculate your parking deficiency fee.</h4>').show();
         $("#fees").hide();
       } else {
         // Add fee to answers and inject into template
         this.collection.addAnswer("parking_fee", fee);
+        var display_text = "<h4>Estimated quarterly parking deficiency fee: "
+        + '$'
+        + this.dollarFormat(fee,2,".", ",")
+        + "</h4>"
+
         $("#alert").hide();
-        $("#fees").show();
-        this.$el.find(".fee").html("$"+this.dollarFormat(fee,2,".", ","));
+        $("#fees").html(display_text).show();
       }
-
-
     },
 
     showDoctorInputs: function() {
@@ -178,7 +180,6 @@ function(app, answer) {
     saveInput: function(ev){
       var $elem = $(ev.target);
       this.collection.addAnswer($elem.attr("name"), $elem.val());
-      $("div#errors").hide();
     },
 
     serialize: function() {
@@ -505,8 +506,8 @@ function(app, answer) {
 
       // When the applicant selects a business category
       $('#business_type').change(function() {
-        /*self.clearAnswer('business_type');*/
-        /*self.clearAnswer('required_parking_spaces');*/
+        self.clearAnswer('business_subtype');
+        self.clearAnswer('required_parking_spaces');
         $('.business-type-rule').hide();
         selected_option = '#business_type_' + $(this).val() || '';
         $(selected_option).show();
@@ -527,11 +528,12 @@ function(app, answer) {
       var business_subtype = subtype || type;
       var spaces = this.calculateSpaces(business_subtype);
     
-      if ( spaces == 'Unable to calculate.' ) {
-        $("div#errors").html("<h4>Please fill out all the fields.</h4>").show();
+      if ( spaces == 'Unable to calculate.') {
+        $("div#errors").html("<h4>Please complete the form to calculate your required parking spaces.</h4>").show();
       } else if ( (isNaN(spaces) || spaces == null) ) {
         $("div#errors").html("<h4>Unable to calculate.</h4>").show();
       } else {
+        $("div#errors").hide();
         this.collection.addAnswer('required_parking_spaces', spaces);
 
         var display_text = "<h4>You must provide "
