@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org' 
 
 gem 'rails', '3.2.12'
 
@@ -30,7 +30,7 @@ gem 'devise'
 gem 'airbrake'
 
 gem 'ranked-model'
-gem 'newrelic_rpm'
+gem "newrelic_rpm", "~> 3.5.5.38"
 
 # Gems used only for assets and not required
 # in production environments by default.
