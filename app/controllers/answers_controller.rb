@@ -9,7 +9,7 @@ class AnswersController < InheritedResources::Base
   end
 
   def create
-    @answer = Answer.new(params[:answer])
+    @answer = Answer.new(answer_params)
     if current_user
       @answer.business = current_user.current_business  
     else
@@ -21,7 +21,7 @@ class AnswersController < InheritedResources::Base
 
   def update
     @answer = Answer.find(params[:id])
-    @answer.update_attribute(:value, params[:answer][:value])
+    @answer.update_attribute(:value, answer_params[:value])
     if current_user
       @answer.business = current_user.current_business
     else
@@ -31,5 +31,9 @@ class AnswersController < InheritedResources::Base
     @answer.save
     respond_with @answer
     # render :json => @answer
+  end
+
+  def answer_params
+    params.require(:answer).permit(:value, :field_name, :business_id)
   end
 end

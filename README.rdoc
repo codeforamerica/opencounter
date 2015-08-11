@@ -3,7 +3,9 @@
 OpenCounter helps entrepreneurs navigate the regulatory jungle they face when
 starting a business.
 
-A joint project of the City of Santa Cruz, CA and Code for America.
+This was originally a joint project of the City of Santa Cruz, CA and Code for America.
+This fork is an attempt to update the codebase to support Startup in a Day efforts in
+Dayton, Ohio.
 
 == The Story Behind OpenCounter
 
@@ -47,6 +49,8 @@ TBD
 == Deploying on Heroku
   rake secret # to generate a secret token
   heroku config:set SECRET_TOKEN={{your secret token}}
+
+  This has not been tested on the Rails 4 fork.
 
 == Contributing
 
