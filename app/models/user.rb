@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
   # FIXME: I don't think id should be exposed
-  attr_accessible :first_name, :last_name, :email, :phone, :role, 
-                  :last_state, :token, :created_at, :id, :updated_at, 
-                  :remember_token, :password, :password_confirmation,
-                  :account_type, :current_business_token
+  #attr_accessible :first_name, :last_name, :email, :phone, :role, 
+  #                :last_state, :token, :created_at, :id, :updated_at, 
+  #                :remember_token, :password, :password_confirmation,
+  #                :account_type, :current_business_token
 
   has_many :businesses
   # has_many :answers, :through => :businesses

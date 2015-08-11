@@ -26,5 +26,8 @@ class CicCodesController < ApplicationController
     render :json => cic_codes[0...10]
   end
 
+  def cic_code_params
+    params.require(:answer).permit(:code, :industry, :subindustry, :home_occ_prohibited, :keywords, :parent_id, :requirements, :requirement_ids, :requirements_attributes)
+  end
 
 end

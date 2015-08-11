@@ -1,9 +1,6 @@
-source :rubygems
+source 'https://rubygems.org' 
 
-gem 'rails', '3.2.12'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', '4.2.3'
 
 gem 'pg'
 
@@ -30,12 +27,12 @@ gem 'devise'
 gem 'airbrake'
 
 gem 'ranked-model'
-gem 'newrelic_rpm'
+gem "newrelic_rpm", "~> 3.5.5.38"
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails',   '~> 5.0.3'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -44,14 +41,14 @@ group :assets do
 end
 
 group :test, :development do
-  gem "rspec-rails", "~> 2.0"
+  gem "rspec-rails", "~> 3.3.3"
   gem "capybara"
   gem "factory_girl_rails"
   gem "shoulda-matchers"
   gem "faker"
 
   # To use debugger
-  gem 'debugger'
+  #gem 'debugger'
   
   gem 'foreman'
 end
@@ -61,9 +58,6 @@ group :development do
   gem 'taps'
   gem 'sqlite3' #need this for taps to work
 end
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
@@ -78,5 +72,5 @@ gem 'csv-mapper'
 gem 'fuzzy-string-match_pure'
 gem 'pry-rails'
 gem 'on_the_spot'
-gem 'bcrypt-ruby', '3.0.1'
+gem 'bcrypt', "~> 3.1.10"
 

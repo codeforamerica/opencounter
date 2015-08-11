@@ -9,95 +9,98 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106075302) do
+ActiveRecord::Schema.define(version: 20130106075302) do
 
-  create_table "admin_users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
+    t.integer  "sign_in_count",          default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
-  add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
+  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "answers", :force => true do |t|
+  create_table "answers", force: :cascade do |t|
     t.text     "value"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "business_id"
     t.string   "field_name"
   end
 
-  create_table "businesses", :force => true do |t|
+  create_table "businesses", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "user_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.boolean  "submitted"
     t.datetime "submitted_at"
     t.string   "token"
   end
 
-  create_table "cic_code_requirements", :force => true do |t|
+  create_table "cic_code_requirements", force: :cascade do |t|
     t.integer  "cic_code_id"
     t.integer  "requirement_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "cic_code_requirements", ["cic_code_id"], :name => "index_cic_code_requirements_on_cic_code_id"
-  add_index "cic_code_requirements", ["requirement_id"], :name => "index_cic_code_requirements_on_requirement_id"
+  add_index "cic_code_requirements", ["cic_code_id"], name: "index_cic_code_requirements_on_cic_code_id", using: :btree
+  add_index "cic_code_requirements", ["requirement_id"], name: "index_cic_code_requirements_on_requirement_id", using: :btree
 
-  create_table "cic_code_zoning_districts", :force => true do |t|
+  create_table "cic_code_zoning_districts", force: :cascade do |t|
     t.integer  "cic_code_id"
     t.integer  "zoning_district_id"
-    t.integer  "permission",          :default => 5
-    t.boolean  "home_occ_prohibited", :default => false
+    t.integer  "permission",          default: 5
+    t.boolean  "home_occ_prohibited", default: false
     t.text     "notes"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "cic_code_zoning_districts", ["cic_code_id"], :name => "index_cic_code_zoning_districts_on_cic_code_id"
-  add_index "cic_code_zoning_districts", ["zoning_district_id"], :name => "index_cic_code_zoning_districts_on_zoning_district_id"
+  add_index "cic_code_zoning_districts", ["cic_code_id"], name: "index_cic_code_zoning_districts_on_cic_code_id", using: :btree
+  add_index "cic_code_zoning_districts", ["zoning_district_id"], name: "index_cic_code_zoning_districts_on_zoning_district_id", using: :btree
 
-  create_table "cic_codes", :force => true do |t|
+  create_table "cic_codes", force: :cascade do |t|
     t.string   "code"
     t.string   "industry"
     t.string   "subindustry"
     t.text     "keywords"
-    t.boolean  "home_occ_prohibited", :default => false
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.boolean  "home_occ_prohibited", default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "parent_id"
   end
 
-  add_index "cic_codes", ["code"], :name => "index_cic_codes_on_code"
-  add_index "cic_codes", ["keywords"], :name => "index_cic_codes_on_keywords"
+  add_index "cic_codes", ["code"], name: "index_cic_codes_on_code", using: :btree
+  add_index "cic_codes", ["keywords"], name: "index_cic_codes_on_keywords", using: :btree
 
-  create_table "cic_codes_sic_codes", :id => false, :force => true do |t|
+  create_table "cic_codes_sic_codes", id: false, force: :cascade do |t|
     t.integer "cic_code_id"
     t.integer "sic_code_id"
   end
 
-  add_index "cic_codes_sic_codes", ["cic_code_id"], :name => "index_cic_codes_sic_codes_on_cic_code_id"
-  add_index "cic_codes_sic_codes", ["sic_code_id"], :name => "index_cic_codes_sic_codes_on_sic_code_id"
+  add_index "cic_codes_sic_codes", ["cic_code_id"], name: "index_cic_codes_sic_codes_on_cic_code_id", using: :btree
+  add_index "cic_codes_sic_codes", ["sic_code_id"], name: "index_cic_codes_sic_codes_on_sic_code_id", using: :btree
 
-  create_table "delayed_jobs", :force => true do |t|
-    t.integer  "priority",   :default => 0
-    t.integer  "attempts",   :default => 0
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer  "priority",   default: 0
+    t.integer  "attempts",   default: 0
     t.text     "handler"
     t.text     "last_error"
     t.datetime "run_at"
@@ -105,65 +108,65 @@ ActiveRecord::Schema.define(:version => 20130106075302) do
     t.datetime "failed_at"
     t.string   "locked_by"
     t.string   "queue"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
-  create_table "fields_forms", :id => false, :force => true do |t|
+  create_table "fields_forms", id: false, force: :cascade do |t|
     t.integer "field_id"
     t.integer "form_id"
   end
 
-  create_table "forms", :force => true do |t|
+  create_table "forms", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "jurisdiction"
   end
 
-  create_table "requirement_zoning_districts", :force => true do |t|
+  create_table "requirement_zoning_districts", force: :cascade do |t|
     t.integer  "zoning_district_id"
     t.integer  "requirement_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "requirement_zoning_districts", ["requirement_id"], :name => "index_requirement_zoning_districts_on_requirement_id"
-  add_index "requirement_zoning_districts", ["zoning_district_id"], :name => "index_requirement_zoning_districts_on_zoning_district_id"
+  add_index "requirement_zoning_districts", ["requirement_id"], name: "index_requirement_zoning_districts_on_requirement_id", using: :btree
+  add_index "requirement_zoning_districts", ["zoning_district_id"], name: "index_requirement_zoning_districts_on_zoning_district_id", using: :btree
 
-  create_table "requirements", :force => true do |t|
+  create_table "requirements", force: :cascade do |t|
     t.string   "name"
     t.text     "notes"
     t.string   "jurisdiction"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "short_name"
-    t.boolean  "home_occ",     :default => false
-    t.boolean  "commercial",   :default => false
+    t.boolean  "home_occ",     default: false
+    t.boolean  "commercial",   default: false
     t.integer  "sort_order"
   end
 
-  create_table "sic_codes", :force => true do |t|
+  create_table "sic_codes", force: :cascade do |t|
     t.string   "code"
     t.string   "industry"
     t.string   "subindustry"
     t.integer  "parent_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "sic_codes", ["code"], :name => "index_sic_codes_on_code"
+  add_index "sic_codes", ["code"], name: "index_sic_codes_on_code", using: :btree
 
-  create_table "users", :force => true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "last_state"
     t.string   "email"
     t.string   "token"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "phone"
     t.string   "role"
     t.string   "password_digest"
@@ -171,17 +174,17 @@ ActiveRecord::Schema.define(:version => 20130106075302) do
     t.string   "current_business_token"
   end
 
-  add_index "users", ["token"], :name => "index_users_on_token"
+  add_index "users", ["token"], name: "index_users_on_token", using: :btree
 
-  create_table "zoning_districts", :force => true do |t|
+  create_table "zoning_districts", force: :cascade do |t|
     t.string   "code"
     t.string   "name"
     t.text     "description"
-    t.boolean  "home_occ_prohibited", :default => false
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.boolean  "home_occ_prohibited", default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "zoning_districts", ["code"], :name => "index_zoning_districts_on_code"
+  add_index "zoning_districts", ["code"], name: "index_zoning_districts_on_code", using: :btree
 
 end

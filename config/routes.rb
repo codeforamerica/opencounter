@@ -3,23 +3,23 @@ Opencounter::Application.routes.draw do
 
   devise_for :admin_users
 
-  match "api/email/application" => "users#application_email"
-  match "api/email/help" => "users#help_email"
-  match "api/lookup/cic" => "cic_codes#index"
-  match "api/lookup/permit/:zoning/:sic" => "permits#show"
-  match "api/lookup/requirements" => "requirements#index"
-  match '/admin/' => redirect('/admin/applications#index')
-  match '/help' => 'panels#intro'
+  match "api/email/application" => "users#application_email", :via => [:get]
+  match "api/email/help" => "users#help_email", :via => [:get]
+  match "api/lookup/cic" => "cic_codes#index", :via => [:get]
+  match "api/lookup/permit/:zoning/:sic" => "permits#show", :via => [:get]
+  match "api/lookup/requirements" => "requirements#index", :via => [:get]
+  match '/admin/' => redirect('/admin/applications#index'), :via => [:get]
+  match '/help' => 'panels#intro', :via => [:get]
 
   resources :users, :except => :index
   resources :answers
   # resources :businesses
 
-  match '/sessions/create'  => 'sessions#create'
-  match '/sessions/show'    => "sessions#show"
-  match '/sessions/destroy' => "sessions#destroy"
+  match '/sessions/create'  => 'sessions#create', :via => [:get, :post]
+  match '/sessions/show'    => "sessions#show", :via => [:get]
+  match '/sessions/destroy' => "sessions#destroy", :via => [:get]
 
-  match '/users/add_business' => 'users#add_business'
+  match '/users/add_business' => 'users#add_business', :via => [:get]
     
   namespace :admin do
     
@@ -49,18 +49,18 @@ Opencounter::Application.routes.draw do
     resources :applications
   end
 
-  match "/about"              => "panels#about"  
-  match "/help"               => "panels#help"  
-  match "/info"               => "panels#info"
-  match "/info*path"          => "panels#info"
-  match "/intro"              => "panels#intro"
-  match "/intro*path"         => "panels#intro"
-  match "/location"           => "panels#location"
-  match "/location*path"      => "panels#location"
-  match "/requirements"       => "panels#requirements"
-  match "/requirements*path"  => "panels#requirements"
-  match "/summary"            => "panels#summary"
-  match "/welcome"            => "panels#welcome"
+  get "/about"              => "panels#about" 
+  get "/help"               => "panels#help"
+  get "/info"               => "panels#info"
+  get "/info/*path"          => "panels#info"
+  get "/intro"              => "panels#intro"
+  get "/intro/*path"         => "panels#intro"
+  get "/location"           => "panels#location"
+  get "/location/*path"      => "panels#location"
+  get "/requirements"       => "panels#requirements"
+  get "/requirements/*path"  => "panels#requirements"
+  get "/summary"            => "panels#summary"
+  get "/welcome"            => "panels#welcome"
  
   # The priority is based upon order of creation:
   # first created -> highest priority.

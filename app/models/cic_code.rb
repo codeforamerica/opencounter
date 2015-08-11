@@ -2,14 +2,12 @@ class CicCode < ActiveRecord::Base
   belongs_to :parent, :class_name => "CicCode", :foreign_key => "parent_id"
   has_many :children, :class_name => "CicCode", :foreign_key => "parent_id"
   has_many :cic_code_zoning_districts, :dependent => :destroy
-  has_many :zoning_districts, :through => :cic_code_zoning_districts, :dependent => :destroy, :order => "code ASC"
+  has_many :zoning_districts, -> { order 'code ASC' }, :through => :cic_code_zoning_districts, :dependent => :destroy
   has_and_belongs_to_many :sic_codes, :uniq => true
   has_many :cic_code_requirements, :dependent => :destroy
-  has_many :requirements, :through => :cic_code_requirements, :order => "sort_order ASC"
+  has_many :requirements, -> { order('sort_order ASC') }, :through => :cic_code_requirements
   
   accepts_nested_attributes_for :requirements
-  
-  attr_accessible :code, :industry, :subindustry, :home_occ_prohibited, :keywords, :parent_id, :requirements, :requirement_ids, :requirements_attributes
   
   before_save :strip_code
   after_create :create_zoning_district_connections

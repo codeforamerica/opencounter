@@ -31,4 +31,7 @@ class BusinessesController < ApplicationController
 #     end
 
 #   end
+  def business_params 
+    params.require(:business).permit(:name, :description, :submitted, :submitted_at, :user_id, :token)
+  end
 end

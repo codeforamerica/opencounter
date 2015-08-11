@@ -1,8 +1,7 @@
 class Business < ActiveRecord::Base
   belongs_to :user
   has_many :answers
-  attr_accessible :name, :description, :submitted, :submitted_at, :user_id, :token
-
+  
   scope :submitted, -> { where(submitted: true) }
 
   after_create :assign_token

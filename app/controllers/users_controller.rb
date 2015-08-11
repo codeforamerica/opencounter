@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   respond_to :html, :json, :xml
 
   def create
-    user = User.new(params[:user])
+    user = User.new(user_params)
 
     # hack to bypass authentication requirements
     if params[:user][:account_type] == "temp"
@@ -55,5 +55,12 @@ class UsersController < ApplicationController
     else
       render :json => { :status => 'error' }
     end
+  end
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :phone, :role,
+                  :last_state, :token, :created_at, :id, :updated_at,
+                  :remember_token, :password, :password_confirmation,
+                  :account_type, :current_business_token, :authenticity_token)
   end
 end
