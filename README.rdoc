@@ -1,3 +1,5 @@
+<em>NOTE: This codebase was adopted by OpenCounter Enterprises Inc. and is now maintained in a separate repository. Please see www.opencounter.us for more information.</em>
+
 == OpenCounter
 
 OpenCounter helps entrepreneurs navigate the regulatory jungle they face when
